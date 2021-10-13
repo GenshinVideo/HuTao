@@ -4971,15 +4971,15 @@ function Exp_Calculator() {
   for (var i = 0; i < Ex_Volume_El.length; i++) {
     var Ex_Volume = Ex_Volume + parseInt(Ex_Volume_El[i].textContent)
   }
-  var Ex_Volume_Book = Ex_Volume / 1000
-  var Ex_Volume_Mora = Ex_Volume * 0.2
+  var Ex_Volume_Book = (Ex_Volume / 1000).toLocaleString();
+  var Ex_Volume_Mora = (Ex_Volume * 0.2).toLocaleString();
   var In_Character_EXP_Material
-  = parseInt(document.getElementById("Heros_Wit").value) * 20
-  + parseInt(document.getElementById("Adventurers_Experience").value) * 5
-  + parseInt(document.getElementById("Wanderers_Advice").value) * 1
-  var Ne_Character_EXP_Material = Ex_Volume - In_Character_EXP_Material
+  = parseInt(document.getElementById("Heros_Wit").value) * 20000
+  + parseInt(document.getElementById("Adventurers_Experience").value) * 5000
+  + parseInt(document.getElementById("Wanderers_Advice").value) * 1000
+  var Ne_Character_EXP_Material = ((Ex_Volume - In_Character_EXP_Material) / 1000).toLocaleString();
   var Ex_Volume = Ex_Volume.toLocaleString();
-  var In_Character_EXP_Material = In_Character_EXP_Material.toLocaleString();
+  var In_Character_EXP_Material = (In_Character_EXP_Material / 1000).toLocaleString();
   document.getElementById('Ex_Volume').innerHTML = Ex_Volume;
   document.getElementById('Ex_Volume_Book').innerHTML = Ex_Volume_Book;
   document.getElementById('Ex_Volume_Mora').innerHTML = Ex_Volume_Mora;
@@ -6953,4 +6953,4 @@ document.getElementById('Load').onclick = function changeContent() {
 }
 
 // 苦肉のエラー回避
-setTimeout(Sleep, 0);
+setTimeout(Sleep, 1000);
