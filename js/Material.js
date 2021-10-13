@@ -6953,4 +6953,4 @@ document.getElementById('Load').onclick = function changeContent() {
 }
 
 // 苦肉のエラー回避
-setTimeout(Sleep, 1000);
+setTimeout(Sleep, 0);
