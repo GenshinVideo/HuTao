@@ -1,0 +1,95 @@
+html, body {
+  background: #DDD;
+  cursor: default;
+  height: 100%;
+}
+
+.notice-main {
+  border: none;
+  width: 1920px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: block;
+}
+
+.sidenav {
+  background: #222;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidenav li>a>i.eins.material-icons,
+.sidenav li>div>i.eins.material-icons {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 22px;
+  width: auto;
+  height: auto;
+  margin: 0 0 0 0;
+}
+
+.sidenav li>a>i.zwei.material-icons,
+.sidenav li>div>i.zwei.material-icons {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  line-height: 22px;
+  width: auto;
+  height: auto;
+  margin: 0 3px 0 5px;
+}
+
+.iconadd {
+  display:inline-block ;
+}
+.iconremove {
+  display:none !important;
+}
+li.active>.collapsible-header .material-icons.iconadd {
+  display: none;
+}
+li.active>.collapsible-header .material-icons.iconremove {
+  display: inline-block !important;
+}
+
+.sidenav li,
+.sidenav li>a {
+  font-size: 12px;
+  line-height: 22px;
+  height: auto;
+}
+
+.sidenav li.active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidenav li>a.collapsible-header:hover,
+.sidenav li>div.collapsible-header:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav li>a.collapsible-header,
+.sidenav li>div.collapsible-header {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sidenav li>a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidenav li>div.collapsible-body {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+svg {
+  opacity: 0 ;
+}
+svg:hover {
+  opacity: 0.5 ;
+}
+
+li.text {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0px 0px 0px 16px;
+  text-align: center-align;
+  line-height: 16px;
+}

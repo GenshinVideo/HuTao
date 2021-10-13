@@ -1,0 +1,103 @@
+html, body {
+  cursor: default;
+  margin: 10px 10px;
+  padding-top: 20px;
+  height: 100%;
+}
+
+ul.header {
+  z-index: 2;
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.SaveAndLoad {
+  z-index: 1;
+  position:fixed;
+  right:20px;
+}
+
+.BackGroundMovie{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+  overflow: hidden;
+}
+.BackGroundMovie::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85);
+/*  ドットフィルター  */
+/*  background-image: radial-gradient(#111 30%, transparent 31%), radial-gradient(#111 30%, transparent 31%);  */
+/*  background-size: 4px 4px;  */
+/*  background-position: 0 0, 2px 2px;  */
+}
+
+.tabs {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.tabs .tab a {
+  color: rgba(255, 102, 153, 0.7);
+/*  #FF6699  */
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: #FF6699;
+}
+.tabs .indicator {
+  background-color: #FF6699;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  padding: 2px 0px 2px 0px;
+  height: 30px;
+}
+td.textright {
+  text-align: right;
+  padding-right: 12px;
+}
+td.textleft {
+  text-align: left;
+  padding-left: 12px;
+}
+
+td img.icon {
+  height: 50px;
+}
+
+img.miniicon {
+  text-align: center;
+  height: 40px;
+}
+
+.noUiSlider {
+  z-index: 0;
+  margin: 0px 0px 0px 0px;
+  width: 90%;
+}
+
+.input-field {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Hide {
+  display: none;
+}
