@@ -6031,6 +6031,7 @@ document.getElementsByClassName("Calculator")[0].addEventListener("click",() => 
 
 ``// セーブ系
 function Save() {
+var now = new Date().toUTCString();
 document.cookie = "Character4=\
 Sangonomiya_Kokomi_Ex_CookieMin=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[0] + "/\
 Sangonomiya_Kokomi_Ex_CookieMax=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[1] + "/\
@@ -6132,7 +6133,7 @@ Rosaria_T2_CookieMin=" + Rosaria_T2.noUiSlider.get()[0] + "/\
 Rosaria_T2_CookieMax=" + Rosaria_T2.noUiSlider.get()[1] + "/\
 Rosaria_T3_CookieMin=" + Rosaria_T3.noUiSlider.get()[0] + "/\
 Rosaria_T3_CookieMax=" + Rosaria_T3.noUiSlider.get()[1] + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 document.cookie = "Character3=\
 HuTao_Ex_CookieMin=" + HuTao_Ex.noUiSlider.get()[0] + "/\
 HuTao_Ex_CookieMax=" + HuTao_Ex.noUiSlider.get()[1] + "/\
@@ -6234,7 +6235,7 @@ Venti_T2_CookieMin=" + Venti_T2.noUiSlider.get()[0] + "/\
 Venti_T2_CookieMax=" + Venti_T2.noUiSlider.get()[1] + "/\
 Venti_T3_CookieMin=" + Venti_T3.noUiSlider.get()[0] + "/\
 Venti_T3_CookieMax=" + Venti_T3.noUiSlider.get()[1] + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 document.cookie = "Character2=\
 Keqing_Ex_CookieMin=" + Keqing_Ex.noUiSlider.get()[0] + "/\
 Keqing_Ex_CookieMax=" + Keqing_Ex.noUiSlider.get()[1] + "/\
@@ -6326,7 +6327,7 @@ Bennett_T2_CookieMin=" + Bennett_T2.noUiSlider.get()[0] + "/\
 Bennett_T2_CookieMax=" + Bennett_T2.noUiSlider.get()[1] + "/\
 Bennett_T3_CookieMin=" + Bennett_T3.noUiSlider.get()[0] + "/\
 Bennett_T3_CookieMax=" + Bennett_T3.noUiSlider.get()[1] + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 document.cookie = "Character1=\
 Fischl_Ex_CookieMin=" + Fischl_Ex.noUiSlider.get()[0] + "/\
 Fischl_Ex_CookieMax=" + Fischl_Ex.noUiSlider.get()[1] + "/\
@@ -6428,7 +6429,7 @@ Amber_T2_CookieMin=" + Amber_T2.noUiSlider.get()[0] + "/\
 Amber_T2_CookieMax=" + Amber_T2.noUiSlider.get()[1] + "/\
 Amber_T3_CookieMin=" + Amber_T3.noUiSlider.get()[0] + "/\
 Amber_T3_CookieMax=" + Amber_T3.noUiSlider.get()[1] + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 
 document.cookie = "Inventory1=\
 Heros_Wit_Cookie=" + document.getElementById("Heros_Wit").value + "/\
@@ -6489,7 +6490,7 @@ Perpetual_Heart_Cookie=" + document.getElementById("Perpetual_Heart").value + "/
 Smoldering_Pearl_Cookie=" + document.getElementById("Smoldering_Pearl").value + "/\
 Dew_of_Repudiation_Cookie=" + document.getElementById("Dew_of_Repudiation").value + "/\
 Storm_Beads_Cookie=" + document.getElementById("Storm_Beads").value + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 
 document.cookie = "Inventory2=\
 Agate_Gemstone_Cookie=" + document.getElementById("Agate_Gemstone").value + "/\
@@ -6547,7 +6548,7 @@ Teachings_of_Elegance_Cookie=" + document.getElementById("Teachings_of_Elegance"
 Philosophies_of_Light_Cookie=" + document.getElementById("Philosophies_of_Light").value + "/\
 Guide_to_Light_Cookie=" + document.getElementById("Guide_to_Light").value + "/\
 Teachings_of_Light_Cookie=" + document.getElementById("Teachings_of_Light").value + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 
 document.cookie = "Inventory3=\
 Calla_Lily_Cookie=" + document.getElementById("Calla_Lily").value + "/\
@@ -6574,7 +6575,7 @@ Naku_Weed_Cookie=" + document.getElementById("Naku_Weed").value + "/\
 Sea_Ganoderma_Cookie=" + document.getElementById("Sea_Ganoderma").value + "/\
 Sango_Pearl_Cookie=" + document.getElementById("Sango_Pearl").value + "/\
 Amakumo_Fruit_Cookie=" + document.getElementById("Amakumo_Fruit").value + "/\
-; max-age=60*60*24*365; path=/; SameSite=Strict;";
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 }
 
 document.getElementById('Save').onclick = function changeContent() {
