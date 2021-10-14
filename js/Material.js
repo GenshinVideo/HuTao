@@ -6588,364 +6588,363 @@ document.getElementById('Save').onclick = function changeContent() {
 
 
 // ロード系
-function Load() {
-  try{
-    var Character_Cookies = document.cookie.replace(/.*?;?\s?Character\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*)\//i, '$1$2$3$4');
-    var Character_CookieLoad = Character_Cookies.split( '/' )
-    for (var i = 0; i < Character_CookieLoad.length; i++) {
-      var Character_CookieLoading = Character_CookieLoad[i].split( '=' );
-      var Character_CookieName = Character_CookieLoading[0];
-      window[Character_CookieName] = Character_CookieLoading[1];
-    }
-    Sangonomiya_Kokomi_Ex.noUiSlider.set([Sangonomiya_Kokomi_Ex_CookieMin, Sangonomiya_Kokomi_Ex_CookieMax]);
-    Sangonomiya_Kokomi_Pr.noUiSlider.set([Sangonomiya_Kokomi_Pr_CookieMin, Sangonomiya_Kokomi_Pr_CookieMax]);
-    Sangonomiya_Kokomi_T1.noUiSlider.set([Sangonomiya_Kokomi_T1_CookieMin, Sangonomiya_Kokomi_T1_CookieMax]);
-    Sangonomiya_Kokomi_T2.noUiSlider.set([Sangonomiya_Kokomi_T2_CookieMin, Sangonomiya_Kokomi_T2_CookieMax]);
-    Sangonomiya_Kokomi_T3.noUiSlider.set([Sangonomiya_Kokomi_T3_CookieMin, Sangonomiya_Kokomi_T3_CookieMax]);
-    Raiden_Shogun_Ex.noUiSlider.set([Raiden_Shogun_Ex_CookieMin, Raiden_Shogun_Ex_CookieMax]);
-    Raiden_Shogun_Pr.noUiSlider.set([Raiden_Shogun_Pr_CookieMin, Raiden_Shogun_Pr_CookieMax]);
-    Raiden_Shogun_T1.noUiSlider.set([Raiden_Shogun_T1_CookieMin, Raiden_Shogun_T1_CookieMax]);
-    Raiden_Shogun_T2.noUiSlider.set([Raiden_Shogun_T2_CookieMin, Raiden_Shogun_T2_CookieMax]);
-    Raiden_Shogun_T3.noUiSlider.set([Raiden_Shogun_T3_CookieMin, Raiden_Shogun_T3_CookieMax]);
-    Kujou_Sara_Ex.noUiSlider.set([Kujou_Sara_Ex_CookieMin, Kujou_Sara_Ex_CookieMax]);
-    Kujou_Sara_Pr.noUiSlider.set([Kujou_Sara_Pr_CookieMin, Kujou_Sara_Pr_CookieMax]);
-    Kujou_Sara_T1.noUiSlider.set([Kujou_Sara_T1_CookieMin, Kujou_Sara_T1_CookieMax]);
-    Kujou_Sara_T2.noUiSlider.set([Kujou_Sara_T2_CookieMin, Kujou_Sara_T2_CookieMax]);
-    Kujou_Sara_T3.noUiSlider.set([Kujou_Sara_T3_CookieMin, Kujou_Sara_T3_CookieMax]);
-    Yoimiya_Ex.noUiSlider.set([Yoimiya_Ex_CookieMin, Yoimiya_Ex_CookieMax]);
-    Yoimiya_Pr.noUiSlider.set([Yoimiya_Pr_CookieMin, Yoimiya_Pr_CookieMax]);
-    Yoimiya_T1.noUiSlider.set([Yoimiya_T1_CookieMin, Yoimiya_T1_CookieMax]);
-    Yoimiya_T2.noUiSlider.set([Yoimiya_T2_CookieMin, Yoimiya_T2_CookieMax]);
-    Yoimiya_T3.noUiSlider.set([Yoimiya_T3_CookieMin, Yoimiya_T3_CookieMax]);
-    Sayu_Ex.noUiSlider.set([Sayu_Ex_CookieMin, Sayu_Ex_CookieMax]);
-    Sayu_Pr.noUiSlider.set([Sayu_Pr_CookieMin, Sayu_Pr_CookieMax]);
-    Sayu_T1.noUiSlider.set([Sayu_T1_CookieMin, Sayu_T1_CookieMax]);
-    Sayu_T2.noUiSlider.set([Sayu_T2_CookieMin, Sayu_T2_CookieMax]);
-    Sayu_T3.noUiSlider.set([Sayu_T3_CookieMin, Sayu_T3_CookieMax]);
-    Kamisato_Ayaka_Ex.noUiSlider.set([Kamisato_Ayaka_Ex_CookieMin, Kamisato_Ayaka_Ex_CookieMax]);
-    Kamisato_Ayaka_Pr.noUiSlider.set([Kamisato_Ayaka_Pr_CookieMin, Kamisato_Ayaka_Pr_CookieMax]);
-    Kamisato_Ayaka_T1.noUiSlider.set([Kamisato_Ayaka_T1_CookieMin, Kamisato_Ayaka_T1_CookieMax]);
-    Kamisato_Ayaka_T2.noUiSlider.set([Kamisato_Ayaka_T2_CookieMin, Kamisato_Ayaka_T2_CookieMax]);
-    Kamisato_Ayaka_T3.noUiSlider.set([Kamisato_Ayaka_T3_CookieMin, Kamisato_Ayaka_T3_CookieMax]);
-    Kaedehara_Kazuha_Ex.noUiSlider.set([Kaedehara_Kazuha_Ex_CookieMin, Kaedehara_Kazuha_Ex_CookieMax]);
-    Kaedehara_Kazuha_Pr.noUiSlider.set([Kaedehara_Kazuha_Pr_CookieMin, Kaedehara_Kazuha_Pr_CookieMax]);
-    Kaedehara_Kazuha_T1.noUiSlider.set([Kaedehara_Kazuha_T1_CookieMin, Kaedehara_Kazuha_T1_CookieMax]);
-    Kaedehara_Kazuha_T2.noUiSlider.set([Kaedehara_Kazuha_T2_CookieMin, Kaedehara_Kazuha_T2_CookieMax]);
-    Kaedehara_Kazuha_T3.noUiSlider.set([Kaedehara_Kazuha_T3_CookieMin, Kaedehara_Kazuha_T3_CookieMax]);
-    Eula_Ex.noUiSlider.set([Eula_Ex_CookieMin, Eula_Ex_CookieMax]);
-    Eula_Pr.noUiSlider.set([Eula_Pr_CookieMin, Eula_Pr_CookieMax]);
-    Eula_T1.noUiSlider.set([Eula_T1_CookieMin, Eula_T1_CookieMax]);
-    Eula_T2.noUiSlider.set([Eula_T2_CookieMin, Eula_T2_CookieMax]);
-    Eula_T3.noUiSlider.set([Eula_T3_CookieMin, Eula_T3_CookieMax]);
-    Yanfei_Ex.noUiSlider.set([Yanfei_Ex_CookieMin, Yanfei_Ex_CookieMax]);
-    Yanfei_Pr.noUiSlider.set([Yanfei_Pr_CookieMin, Yanfei_Pr_CookieMax]);
-    Yanfei_T1.noUiSlider.set([Yanfei_T1_CookieMin, Yanfei_T1_CookieMax]);
-    Yanfei_T2.noUiSlider.set([Yanfei_T2_CookieMin, Yanfei_T2_CookieMax]);
-    Yanfei_T3.noUiSlider.set([Yanfei_T3_CookieMin, Yanfei_T3_CookieMax]);
-    Rosaria_Ex.noUiSlider.set([Rosaria_Ex_CookieMin, Rosaria_Ex_CookieMax]);
-    Rosaria_Pr.noUiSlider.set([Rosaria_Pr_CookieMin, Rosaria_Pr_CookieMax]);
-    Rosaria_T1.noUiSlider.set([Rosaria_T1_CookieMin, Rosaria_T1_CookieMax]);
-    Rosaria_T2.noUiSlider.set([Rosaria_T2_CookieMin, Rosaria_T2_CookieMax]);
-    Rosaria_T3.noUiSlider.set([Rosaria_T3_CookieMin, Rosaria_T3_CookieMax]);
-    HuTao_Ex.noUiSlider.set([HuTao_Ex_CookieMin, HuTao_Ex_CookieMax]);
-    HuTao_Pr.noUiSlider.set([HuTao_Pr_CookieMin, HuTao_Pr_CookieMax]);
-    HuTao_T1.noUiSlider.set([HuTao_T1_CookieMin, HuTao_T1_CookieMax]);
-    HuTao_T2.noUiSlider.set([HuTao_T2_CookieMin, HuTao_T2_CookieMax]);
-    HuTao_T3.noUiSlider.set([HuTao_T3_CookieMin, HuTao_T3_CookieMax]);
-    Xiao_Ex.noUiSlider.set([Xiao_Ex_CookieMin, Xiao_Ex_CookieMax]);
-    Xiao_Pr.noUiSlider.set([Xiao_Pr_CookieMin, Xiao_Pr_CookieMax]);
-    Xiao_T1.noUiSlider.set([Xiao_T1_CookieMin, Xiao_T1_CookieMax]);
-    Xiao_T2.noUiSlider.set([Xiao_T2_CookieMin, Xiao_T2_CookieMax]);
-    Xiao_T3.noUiSlider.set([Xiao_T3_CookieMin, Xiao_T3_CookieMax]);
-    Ganyu_Ex.noUiSlider.set([Ganyu_Ex_CookieMin, Ganyu_Ex_CookieMax]);
-    Ganyu_Pr.noUiSlider.set([Ganyu_Pr_CookieMin, Ganyu_Pr_CookieMax]);
-    Ganyu_T1.noUiSlider.set([Ganyu_T1_CookieMin, Ganyu_T1_CookieMax]);
-    Ganyu_T2.noUiSlider.set([Ganyu_T2_CookieMin, Ganyu_T2_CookieMax]);
-    Ganyu_T3.noUiSlider.set([Ganyu_T3_CookieMin, Ganyu_T3_CookieMax]);
-    Albedo_Ex.noUiSlider.set([Albedo_Ex_CookieMin, Albedo_Ex_CookieMax]);
-    Albedo_Pr.noUiSlider.set([Albedo_Pr_CookieMin, Albedo_Pr_CookieMax]);
-    Albedo_T1.noUiSlider.set([Albedo_T1_CookieMin, Albedo_T1_CookieMax]);
-    Albedo_T2.noUiSlider.set([Albedo_T2_CookieMin, Albedo_T2_CookieMax]);
-    Albedo_T3.noUiSlider.set([Albedo_T3_CookieMin, Albedo_T3_CookieMax]);
-    Zhongli_Ex.noUiSlider.set([Zhongli_Ex_CookieMin, Zhongli_Ex_CookieMax]);
-    Zhongli_Pr.noUiSlider.set([Zhongli_Pr_CookieMin, Zhongli_Pr_CookieMax]);
-    Zhongli_T1.noUiSlider.set([Zhongli_T1_CookieMin, Zhongli_T1_CookieMax]);
-    Zhongli_T2.noUiSlider.set([Zhongli_T2_CookieMin, Zhongli_T2_CookieMax]);
-    Zhongli_T3.noUiSlider.set([Zhongli_T3_CookieMin, Zhongli_T3_CookieMax]);
-    Xinyan_Ex.noUiSlider.set([Xinyan_Ex_CookieMin, Xinyan_Ex_CookieMax]);
-    Xinyan_Pr.noUiSlider.set([Xinyan_Pr_CookieMin, Xinyan_Pr_CookieMax]);
-    Xinyan_T1.noUiSlider.set([Xinyan_T1_CookieMin, Xinyan_T1_CookieMax]);
-    Xinyan_T2.noUiSlider.set([Xinyan_T2_CookieMin, Xinyan_T2_CookieMax]);
-    Xinyan_T3.noUiSlider.set([Xinyan_T3_CookieMin, Xinyan_T3_CookieMax]);
-    Tartaglia_Ex.noUiSlider.set([Tartaglia_Ex_CookieMin, Tartaglia_Ex_CookieMax]);
-    Tartaglia_Pr.noUiSlider.set([Tartaglia_Pr_CookieMin, Tartaglia_Pr_CookieMax]);
-    Tartaglia_T1.noUiSlider.set([Tartaglia_T1_CookieMin, Tartaglia_T1_CookieMax]);
-    Tartaglia_T2.noUiSlider.set([Tartaglia_T2_CookieMin, Tartaglia_T2_CookieMax]);
-    Tartaglia_T3.noUiSlider.set([Tartaglia_T3_CookieMin, Tartaglia_T3_CookieMax]);
-    Diona_Ex.noUiSlider.set([Diona_Ex_CookieMin, Diona_Ex_CookieMax]);
-    Diona_Pr.noUiSlider.set([Diona_Pr_CookieMin, Diona_Pr_CookieMax]);
-    Diona_T1.noUiSlider.set([Diona_T1_CookieMin, Diona_T1_CookieMax]);
-    Diona_T2.noUiSlider.set([Diona_T2_CookieMin, Diona_T2_CookieMax]);
-    Diona_T3.noUiSlider.set([Diona_T3_CookieMin, Diona_T3_CookieMax]);
-    Klee_Ex.noUiSlider.set([Klee_Ex_CookieMin, Klee_Ex_CookieMax]);
-    Klee_Pr.noUiSlider.set([Klee_Pr_CookieMin, Klee_Pr_CookieMax]);
-    Klee_T1.noUiSlider.set([Klee_T1_CookieMin, Klee_T1_CookieMax]);
-    Klee_T2.noUiSlider.set([Klee_T2_CookieMin, Klee_T2_CookieMax]);
-    Klee_T3.noUiSlider.set([Klee_T3_CookieMin, Klee_T3_CookieMax]);
-    Venti_Ex.noUiSlider.set([Venti_Ex_CookieMin, Venti_Ex_CookieMax]);
-    Venti_Pr.noUiSlider.set([Venti_Pr_CookieMin, Venti_Pr_CookieMax]);
-    Venti_T1.noUiSlider.set([Venti_T1_CookieMin, Venti_T1_CookieMax]);
-    Venti_T2.noUiSlider.set([Venti_T2_CookieMin, Venti_T2_CookieMax]);
-    Venti_T3.noUiSlider.set([Venti_T3_CookieMin, Venti_T3_CookieMax]);
-    Keqing_Ex.noUiSlider.set([Keqing_Ex_CookieMin, Keqing_Ex_CookieMax]);
-    Keqing_Pr.noUiSlider.set([Keqing_Pr_CookieMin, Keqing_Pr_CookieMax]);
-    Keqing_T1.noUiSlider.set([Keqing_T1_CookieMin, Keqing_T1_CookieMax]);
-    Keqing_T2.noUiSlider.set([Keqing_T2_CookieMin, Keqing_T2_CookieMax]);
-    Keqing_T3.noUiSlider.set([Keqing_T3_CookieMin, Keqing_T3_CookieMax]);
-    Mona_Ex.noUiSlider.set([Mona_Ex_CookieMin, Mona_Ex_CookieMax]);
-    Mona_Pr.noUiSlider.set([Mona_Pr_CookieMin, Mona_Pr_CookieMax]);
-    Mona_T1.noUiSlider.set([Mona_T1_CookieMin, Mona_T1_CookieMax]);
-    Mona_T2.noUiSlider.set([Mona_T2_CookieMin, Mona_T2_CookieMax]);
-    Mona_T3.noUiSlider.set([Mona_T3_CookieMin, Mona_T3_CookieMax]);
-    Qiqi_Ex.noUiSlider.set([Qiqi_Ex_CookieMin, Qiqi_Ex_CookieMax]);
-    Qiqi_Pr.noUiSlider.set([Qiqi_Pr_CookieMin, Qiqi_Pr_CookieMax]);
-    Qiqi_T1.noUiSlider.set([Qiqi_T1_CookieMin, Qiqi_T1_CookieMax]);
-    Qiqi_T2.noUiSlider.set([Qiqi_T2_CookieMin, Qiqi_T2_CookieMax]);
-    Qiqi_T3.noUiSlider.set([Qiqi_T3_CookieMin, Qiqi_T3_CookieMax]);
-    Diluc_Ex.noUiSlider.set([Diluc_Ex_CookieMin, Diluc_Ex_CookieMax]);
-    Diluc_Pr.noUiSlider.set([Diluc_Pr_CookieMin, Diluc_Pr_CookieMax]);
-    Diluc_T1.noUiSlider.set([Diluc_T1_CookieMin, Diluc_T1_CookieMax]);
-    Diluc_T2.noUiSlider.set([Diluc_T2_CookieMin, Diluc_T2_CookieMax]);
-    Diluc_T3.noUiSlider.set([Diluc_T3_CookieMin, Diluc_T3_CookieMax]);
-    Jean_Ex.noUiSlider.set([Jean_Ex_CookieMin, Jean_Ex_CookieMax]);
-    Jean_Pr.noUiSlider.set([Jean_Pr_CookieMin, Jean_Pr_CookieMax]);
-    Jean_T1.noUiSlider.set([Jean_T1_CookieMin, Jean_T1_CookieMax]);
-    Jean_T2.noUiSlider.set([Jean_T2_CookieMin, Jean_T2_CookieMax]);
-    Jean_T3.noUiSlider.set([Jean_T3_CookieMin, Jean_T3_CookieMax]);
-    Sucrose_Ex.noUiSlider.set([Sucrose_Ex_CookieMin, Sucrose_Ex_CookieMax]);
-    Sucrose_Pr.noUiSlider.set([Sucrose_Pr_CookieMin, Sucrose_Pr_CookieMax]);
-    Sucrose_T1.noUiSlider.set([Sucrose_T1_CookieMin, Sucrose_T1_CookieMax]);
-    Sucrose_T2.noUiSlider.set([Sucrose_T2_CookieMin, Sucrose_T2_CookieMax]);
-    Sucrose_T3.noUiSlider.set([Sucrose_T3_CookieMin, Sucrose_T3_CookieMax]);
-    Chongyun_Ex.noUiSlider.set([Chongyun_Ex_CookieMin, Chongyun_Ex_CookieMax]);
-    Chongyun_Pr.noUiSlider.set([Chongyun_Pr_CookieMin, Chongyun_Pr_CookieMax]);
-    Chongyun_T1.noUiSlider.set([Chongyun_T1_CookieMin, Chongyun_T1_CookieMax]);
-    Chongyun_T2.noUiSlider.set([Chongyun_T2_CookieMin, Chongyun_T2_CookieMax]);
-    Chongyun_T3.noUiSlider.set([Chongyun_T3_CookieMin, Chongyun_T3_CookieMax]);
-    Noelle_Ex.noUiSlider.set([Noelle_Ex_CookieMin, Noelle_Ex_CookieMax]);
-    Noelle_Pr.noUiSlider.set([Noelle_Pr_CookieMin, Noelle_Pr_CookieMax]);
-    Noelle_T1.noUiSlider.set([Noelle_T1_CookieMin, Noelle_T1_CookieMax]);
-    Noelle_T2.noUiSlider.set([Noelle_T2_CookieMin, Noelle_T2_CookieMax]);
-    Noelle_T3.noUiSlider.set([Noelle_T3_CookieMin, Noelle_T3_CookieMax]);
-    Bennett_Ex.noUiSlider.set([Bennett_Ex_CookieMin, Bennett_Ex_CookieMax]);
-    Bennett_Pr.noUiSlider.set([Bennett_Pr_CookieMin, Bennett_Pr_CookieMax]);
-    Bennett_T1.noUiSlider.set([Bennett_T1_CookieMin, Bennett_T1_CookieMax]);
-    Bennett_T2.noUiSlider.set([Bennett_T2_CookieMin, Bennett_T2_CookieMax]);
-    Bennett_T3.noUiSlider.set([Bennett_T3_CookieMin, Bennett_T3_CookieMax]);
-    Fischl_Ex.noUiSlider.set([Fischl_Ex_CookieMin, Fischl_Ex_CookieMax]);
-    Fischl_Pr.noUiSlider.set([Fischl_Pr_CookieMin, Fischl_Pr_CookieMax]);
-    Fischl_T1.noUiSlider.set([Fischl_T1_CookieMin, Fischl_T1_CookieMax]);
-    Fischl_T2.noUiSlider.set([Fischl_T2_CookieMin, Fischl_T2_CookieMax]);
-    Fischl_T3.noUiSlider.set([Fischl_T3_CookieMin, Fischl_T3_CookieMax]);
-    Ningguang_Ex.noUiSlider.set([Ningguang_Ex_CookieMin, Ningguang_Ex_CookieMax]);
-    Ningguang_Pr.noUiSlider.set([Ningguang_Pr_CookieMin, Ningguang_Pr_CookieMax]);
-    Ningguang_T1.noUiSlider.set([Ningguang_T1_CookieMin, Ningguang_T1_CookieMax]);
-    Ningguang_T2.noUiSlider.set([Ningguang_T2_CookieMin, Ningguang_T2_CookieMax]);
-    Ningguang_T3.noUiSlider.set([Ningguang_T3_CookieMin, Ningguang_T3_CookieMax]);
-    Xingqiu_Ex.noUiSlider.set([Xingqiu_Ex_CookieMin, Xingqiu_Ex_CookieMax]);
-    Xingqiu_Pr.noUiSlider.set([Xingqiu_Pr_CookieMin, Xingqiu_Pr_CookieMax]);
-    Xingqiu_T1.noUiSlider.set([Xingqiu_T1_CookieMin, Xingqiu_T1_CookieMax]);
-    Xingqiu_T2.noUiSlider.set([Xingqiu_T2_CookieMin, Xingqiu_T2_CookieMax]);
-    Xingqiu_T3.noUiSlider.set([Xingqiu_T3_CookieMin, Xingqiu_T3_CookieMax]);
-    Beidou_Ex.noUiSlider.set([Beidou_Ex_CookieMin, Beidou_Ex_CookieMax]);
-    Beidou_Pr.noUiSlider.set([Beidou_Pr_CookieMin, Beidou_Pr_CookieMax]);
-    Beidou_T1.noUiSlider.set([Beidou_T1_CookieMin, Beidou_T1_CookieMax]);
-    Beidou_T2.noUiSlider.set([Beidou_T2_CookieMin, Beidou_T2_CookieMax]);
-    Beidou_T3.noUiSlider.set([Beidou_T3_CookieMin, Beidou_T3_CookieMax]);
-    Xiangling_Ex.noUiSlider.set([Xiangling_Ex_CookieMin, Xiangling_Ex_CookieMax]);
-    Xiangling_Pr.noUiSlider.set([Xiangling_Pr_CookieMin, Xiangling_Pr_CookieMax]);
-    Xiangling_T1.noUiSlider.set([Xiangling_T1_CookieMin, Xiangling_T1_CookieMax]);
-    Xiangling_T2.noUiSlider.set([Xiangling_T2_CookieMin, Xiangling_T2_CookieMax]);
-    Xiangling_T3.noUiSlider.set([Xiangling_T3_CookieMin, Xiangling_T3_CookieMax]);
-    Razor_Ex.noUiSlider.set([Razor_Ex_CookieMin, Razor_Ex_CookieMax]);
-    Razor_Pr.noUiSlider.set([Razor_Pr_CookieMin, Razor_Pr_CookieMax]);
-    Razor_T1.noUiSlider.set([Razor_T1_CookieMin, Razor_T1_CookieMax]);
-    Razor_T2.noUiSlider.set([Razor_T2_CookieMin, Razor_T2_CookieMax]);
-    Razor_T3.noUiSlider.set([Razor_T3_CookieMin, Razor_T3_CookieMax]);
-    Barbara_Ex.noUiSlider.set([Barbara_Ex_CookieMin, Barbara_Ex_CookieMax]);
-    Barbara_Pr.noUiSlider.set([Barbara_Pr_CookieMin, Barbara_Pr_CookieMax]);
-    Barbara_T1.noUiSlider.set([Barbara_T1_CookieMin, Barbara_T1_CookieMax]);
-    Barbara_T2.noUiSlider.set([Barbara_T2_CookieMin, Barbara_T2_CookieMax]);
-    Barbara_T3.noUiSlider.set([Barbara_T3_CookieMin, Barbara_T3_CookieMax]);
-    Lisa_Ex.noUiSlider.set([Lisa_Ex_CookieMin, Lisa_Ex_CookieMax]);
-    Lisa_Pr.noUiSlider.set([Lisa_Pr_CookieMin, Lisa_Pr_CookieMax]);
-    Lisa_T1.noUiSlider.set([Lisa_T1_CookieMin, Lisa_T1_CookieMax]);
-    Lisa_T2.noUiSlider.set([Lisa_T2_CookieMin, Lisa_T2_CookieMax]);
-    Lisa_T3.noUiSlider.set([Lisa_T3_CookieMin, Lisa_T3_CookieMax]);
-    Kaeya_Ex.noUiSlider.set([Kaeya_Ex_CookieMin, Kaeya_Ex_CookieMax]);
-    Kaeya_Pr.noUiSlider.set([Kaeya_Pr_CookieMin, Kaeya_Pr_CookieMax]);
-    Kaeya_T1.noUiSlider.set([Kaeya_T1_CookieMin, Kaeya_T1_CookieMax]);
-    Kaeya_T2.noUiSlider.set([Kaeya_T2_CookieMin, Kaeya_T2_CookieMax]);
-    Kaeya_T3.noUiSlider.set([Kaeya_T3_CookieMin, Kaeya_T3_CookieMax]);
-    Amber_Ex.noUiSlider.set([Amber_Ex_CookieMin, Amber_Ex_CookieMax]);
-    Amber_Pr.noUiSlider.set([Amber_Pr_CookieMin, Amber_Pr_CookieMax]);
-    Amber_T1.noUiSlider.set([Amber_T1_CookieMin, Amber_T1_CookieMax]);
-    Amber_T2.noUiSlider.set([Amber_T2_CookieMin, Amber_T2_CookieMax]);
-    Amber_T3.noUiSlider.set([Amber_T3_CookieMin, Amber_T3_CookieMax]);
-  } catch(e){
+function CharacterLoad() {
+  var Character_Cookies = document.cookie.replace(/.*?;?\s?Character\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*)\//i, '$1$2$3$4');
+  var Character_CookieLoad = Character_Cookies.split( '/' )
+  for (var i = 0; i < Character_CookieLoad.length; i++) {
+    var Character_CookieLoading = Character_CookieLoad[i].split( '=' );
+    var Character_CookieName = Character_CookieLoading[0];
+    window[Character_CookieName] = Character_CookieLoading[1];
   }
-  try{
-    var Character_Cookies = document.cookie.replace(/.*?;?\s?Inventory\d=(.*);\sInventory\d=(.*);\sInventory\d=(.*)\//i, '$1$2$3');
-    var Character_CookieLoad = Character_Cookies.split( '/' )
-    for (var i = 0; i < Character_CookieLoad.length; i++) {
-      var Character_CookieLoading = Character_CookieLoad[i].split( '=' );
-      var Character_CookieName = Character_CookieLoading[0];
-      window[Character_CookieName] = Character_CookieLoading[1];
-    }
-    document.getElementById("Heros_Wit").value = Heros_Wit_Cookie
-    document.getElementById("Adventurers_Experience").value = Adventurers_Experience_Cookie
-    document.getElementById("Wanderers_Advice").value = Wanderers_Advice_Cookie
-    document.getElementById("Slime_Concentrate").value = Slime_Concentrate_Cookie
-    document.getElementById("Slime_Secretions").value = Slime_Secretions_Cookie
-    document.getElementById("Slime_Condensate").value = Slime_Condensate_Cookie
-    document.getElementById("Ominous_Mask").value = Ominous_Mask_Cookie
-    document.getElementById("Stained_Mask").value = Stained_Mask_Cookie
-    document.getElementById("Damaged_Mask").value = Damaged_Mask_Cookie
-    document.getElementById("Forbidden_Curse_Scroll").value = Forbidden_Curse_Scroll_Cookie
-    document.getElementById("Sealed_Scroll").value = Sealed_Scroll_Cookie
-    document.getElementById("Divining_Scroll").value = Divining_Scroll_Cookie
-    document.getElementById("Weathered_Arrowhead").value = Weathered_Arrowhead_Cookie
-    document.getElementById("Sharp_Arrowhead").value = Sharp_Arrowhead_Cookie
-    document.getElementById("Firm_Arrowhead").value = Firm_Arrowhead_Cookie
-    document.getElementById("Lieutenants_Insignia").value = Lieutenants_Insignia_Cookie
-    document.getElementById("Sergeants_Insignia").value = Sergeants_Insignia_Cookie
-    document.getElementById("Recruits_Insignia").value = Recruits_Insignia_Cookie
-    document.getElementById("Golden_Raven_Insignia").value = Golden_Raven_Insignia_Cookie
-    document.getElementById("Silver_Raven_Insignia").value = Silver_Raven_Insignia_Cookie
-    document.getElementById("Treasure_Hoarder_Insignia").value = Treasure_Hoarder_Insignia_Cookie
-    document.getElementById("Energy_Nectar").value = Energy_Nectar_Cookie
-    document.getElementById("Shimmering_Nectar").value = Shimmering_Nectar_Cookie
-    document.getElementById("Whopperflower_Nectar").value = Whopperflower_Nectar_Cookie
-    document.getElementById("Famed_Handguard").value = Famed_Handguard_Cookie
-    document.getElementById("Kageuchi_Handguard").value = Kageuchi_Handguard_Cookie
-    document.getElementById("Old_Handguard").value = Old_Handguard_Cookie
-    document.getElementById("Spectral_Nucleus").value = Spectral_Nucleus_Cookie
-    document.getElementById("Spectral_Heart").value = Spectral_Heart_Cookie
-    document.getElementById("Spectral_Husk").value = Spectral_Husk_Cookie
-    document.getElementById("Dvalins_Plume").value = Dvalins_Plume_Cookie
-    document.getElementById("Dvalins_Claw").value = Dvalins_Claw_Cookie
-    document.getElementById("Dvalins_Sigh").value = Dvalins_Sigh_Cookie
-    document.getElementById("Tail_of_Boreas").value = Tail_of_Boreas_Cookie
-    document.getElementById("Ring_of_Boreas").value = Ring_of_Boreas_Cookie
-    document.getElementById("Spirit_Locket_of_Boreas").value = Spirit_Locket_of_Boreas_Cookie
-    document.getElementById("Tusk_of_Monoceros_Caeli").value = Tusk_of_Monoceros_Caeli_Cookie
-    document.getElementById("Shard_of_a_Foul_Legacy").value = Shard_of_a_Foul_Legacy_Cookie
-    document.getElementById("Shadow_of_the_Warrior").value = Shadow_of_the_Warrior_Cookie
-    document.getElementById("Dragon_Lords_Crown").value = Dragon_Lords_Crown_Cookie
-    document.getElementById("Bloodjade_Branch").value = Bloodjade_Branch_Cookie
-    document.getElementById("Gilded_Scale").value = Gilded_Scale_Cookie
-    document.getElementById("Molten_Moment").value = Molten_Moment_Cookie
-    document.getElementById("Hellfire_Butterfly").value = Hellfire_Butterfly_Cookie
-    document.getElementById("Ashen_Heart").value = Ashen_Heart_Cookie
-    document.getElementById("Hurricane_Seed").value = Hurricane_Seed_Cookie
-    document.getElementById("Lightning_Prism").value = Lightning_Prism_Cookie
-    document.getElementById("Basalt_Pillar").value = Basalt_Pillar_Cookie
-    document.getElementById("Hoarfrost_Core").value = Hoarfrost_Core_Cookie
-    document.getElementById("Everflame_Seed").value = Everflame_Seed_Cookie
-    document.getElementById("Cleansing_Heart").value = Cleansing_Heart_Cookie
-    document.getElementById("Juvenile_Jade").value = Juvenile_Jade_Cookie
-    document.getElementById("Crystalline_Bloom").value = Crystalline_Bloom_Cookie
-    document.getElementById("Marionette_Core").value = Marionette_Core_Cookie
-    document.getElementById("Perpetual_Heart").value = Perpetual_Heart_Cookie
-    document.getElementById("Smoldering_Pearl").value = Smoldering_Pearl_Cookie
-    document.getElementById("Dew_of_Repudiation").value = Dew_of_Repudiation_Cookie
-    document.getElementById("Storm_Beads").value = Storm_Beads_Cookie
-    document.getElementById("Agate_Gemstone").value = Agate_Gemstone_Cookie
-    document.getElementById("Agate_Chunk").value = Agate_Chunk_Cookie
-    document.getElementById("Agate_Fragment").value = Agate_Fragment_Cookie
-    document.getElementById("Agate_Sliver").value = Agate_Sliver_Cookie
-    document.getElementById("Lazurite_Gemstone").value = Lazurite_Gemstone_Cookie
-    document.getElementById("Lazurite_Chunk").value = Lazurite_Chunk_Cookie
-    document.getElementById("Lazurite_Fragment").value = Lazurite_Fragment_Cookie
-    document.getElementById("Lazurite_Sliver").value = Lazurite_Sliver_Cookie
-    document.getElementById("Amethyst_Gemstone").value = Amethyst_Gemstone_Cookie
-    document.getElementById("Amethyst_Chunk").value = Amethyst_Chunk_Cookie
-    document.getElementById("Amethyst_Fragment").value = Amethyst_Fragment_Cookie
-    document.getElementById("Amethyst_Sliver").value = Amethyst_Sliver_Cookie
-    document.getElementById("Turquoise_Gemstone").value = Turquoise_Gemstone_Cookie
-    document.getElementById("Turquoise_Chunk").value = Turquoise_Chunk_Cookie
-    document.getElementById("Turquoise_Fragment").value = Turquoise_Fragment_Cookie
-    document.getElementById("Turquoise_Sliver").value = Turquoise_Sliver_Cookie
-    document.getElementById("Jade_Gemstone").value = Jade_Gemstone_Cookie
-    document.getElementById("Jade_Chunk").value = Jade_Chunk_Cookie
-    document.getElementById("Jade_Fragment").value = Jade_Fragment_Cookie
-    document.getElementById("Jade_Sliver").value = Jade_Sliver_Cookie
-    document.getElementById("Topaz_Gemstone").value = Topaz_Gemstone_Cookie
-    document.getElementById("Topaz_Chunk").value = Topaz_Chunk_Cookie
-    document.getElementById("Topaz_Fragment").value = Topaz_Fragment_Cookie
-    document.getElementById("Topaz_Sliver").value = Topaz_Sliver_Cookie
-    document.getElementById("Emerald_Gemstone").value = Emerald_Gemstone_Cookie
-    document.getElementById("Emerald_Chunk").value = Emerald_Chunk_Cookie
-    document.getElementById("Emerald_Fragment").value = Emerald_Fragment_Cookie
-    document.getElementById("Emerald_Sliver").value = Emerald_Sliver_Cookie
-    document.getElementById("Philosophies_of_Freedom").value = Philosophies_of_Freedom_Cookie
-    document.getElementById("Guide_to_Freedom").value = Guide_to_Freedom_Cookie
-    document.getElementById("Teachings_of_Freedom").value = Teachings_of_Freedom_Cookie
-    document.getElementById("Philosophies_of_Ballad").value = Philosophies_of_Ballad_Cookie
-    document.getElementById("Guide_to_Ballad").value = Guide_to_Ballad_Cookie
-    document.getElementById("Teachings_of_Ballad").value = Teachings_of_Ballad_Cookie
-    document.getElementById("Philosophies_of_Resistance").value = Philosophies_of_Resistance_Cookie
-    document.getElementById("Guide_to_Resistance").value = Guide_to_Resistance_Cookie
-    document.getElementById("Teachings_of_Resistance").value = Teachings_of_Resistance_Cookie
-    document.getElementById("Philosophies_of_Prosperity").value = Philosophies_of_Prosperity_Cookie
-    document.getElementById("Guide_to_Prosperity").value = Guide_to_Prosperity_Cookie
-    document.getElementById("Teachings_of_Prosperity").value = Teachings_of_Prosperity_Cookie
-    document.getElementById("Philosophies_of_Diligence").value = Philosophies_of_Diligence_Cookie
-    document.getElementById("Guide_to_Diligence").value = Guide_to_Diligence_Cookie
-    document.getElementById("Teachings_of_Diligence").value = Teachings_of_Diligence_Cookie
-    document.getElementById("Philosophies_of_Gold").value = Philosophies_of_Gold_Cookie
-    document.getElementById("Guide_to_Gold").value = Guide_to_Gold_Cookie
-    document.getElementById("Teachings_of_Gold").value = Teachings_of_Gold_Cookie
-    document.getElementById("Philosophies_of_Transience").value = Philosophies_of_Transience_Cookie
-    document.getElementById("Guide_to_Transience").value = Guide_to_Transience_Cookie
-    document.getElementById("Teachings_of_Transience").value = Teachings_of_Transience_Cookie
-    document.getElementById("Philosophies_of_Elegance").value = Philosophies_of_Elegance_Cookie
-    document.getElementById("Guide_to_Elegance").value = Guide_to_Elegance_Cookie
-    document.getElementById("Teachings_of_Elegance").value = Teachings_of_Elegance_Cookie
-    document.getElementById("Philosophies_of_Light").value = Philosophies_of_Light_Cookie
-    document.getElementById("Guide_to_Light").value = Guide_to_Light_Cookie
-    document.getElementById("Teachings_of_Light").value = Teachings_of_Light_Cookie
-    document.getElementById("Calla_Lily").value = Calla_Lily_Cookie
-    document.getElementById("Wolfhook").value = Wolfhook_Cookie
-    document.getElementById("Valberry").value = Valberry_Cookie
-    document.getElementById("Cecilia").value = Cecilia_Cookie
-    document.getElementById("Windwheel_Aster").value = Windwheel_Aster_Cookie
-    document.getElementById("Philanemo_Mushroom").value = Philanemo_Mushroom_Cookie
-    document.getElementById("Jueyun_Chili").value = Jueyun_Chili_Cookie
-    document.getElementById("Noctilucous_Jade").value = Noctilucous_Jade_Cookie
-    document.getElementById("Silk_Flower").value = Silk_Flower_Cookie
-    document.getElementById("Glaze_Lily").value = Glaze_Lily_Cookie
-    document.getElementById("Qingxin").value = Qingxin_Cookie
-    document.getElementById("Starconch").value = Starconch_Cookie
-    document.getElementById("Violetgrass").value = Violetgrass_Cookie
-    document.getElementById("Small_Lamp_Grass").value = Small_Lamp_Grass_Cookie
-    document.getElementById("Dandelion_Seed").value = Dandelion_Seed_Cookie
-    document.getElementById("Cor_Lapis").value = Cor_Lapis_Cookie
-    document.getElementById("Onikabuto").value = Onikabuto_Cookie
-    document.getElementById("Sakura_Bloom").value = Sakura_Bloom_Cookie
-    document.getElementById("Crystal_Marrow").value = Crystal_Marrow_Cookie
-    document.getElementById("Dendrobium").value = Dendrobium_Cookie
-    document.getElementById("Naku_Weed").value = Naku_Weed_Cookie
-    document.getElementById("Sea_Ganoderma").value = Sea_Ganoderma_Cookie
-    document.getElementById("Sango_Pearl").value = Sango_Pearl_Cookie
-    document.getElementById("Amakumo_Fruit").value = Amakumo_Fruit_Cookie
-  } catch(e){
-  }
+  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([Sangonomiya_Kokomi_Ex_CookieMin, Sangonomiya_Kokomi_Ex_CookieMax]);} catch(e){}
+  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([Sangonomiya_Kokomi_Ex_CookieMin, Sangonomiya_Kokomi_Ex_CookieMax]);} catch(e){}
+  try{Sangonomiya_Kokomi_Pr.noUiSlider.set([Sangonomiya_Kokomi_Pr_CookieMin, Sangonomiya_Kokomi_Pr_CookieMax]);} catch(e){}
+  try{Sangonomiya_Kokomi_T1.noUiSlider.set([Sangonomiya_Kokomi_T1_CookieMin, Sangonomiya_Kokomi_T1_CookieMax]);} catch(e){}
+  try{Sangonomiya_Kokomi_T2.noUiSlider.set([Sangonomiya_Kokomi_T2_CookieMin, Sangonomiya_Kokomi_T2_CookieMax]);} catch(e){}
+  try{Sangonomiya_Kokomi_T3.noUiSlider.set([Sangonomiya_Kokomi_T3_CookieMin, Sangonomiya_Kokomi_T3_CookieMax]);} catch(e){}
+  try{Raiden_Shogun_Ex.noUiSlider.set([Raiden_Shogun_Ex_CookieMin, Raiden_Shogun_Ex_CookieMax]);} catch(e){}
+  try{Raiden_Shogun_Pr.noUiSlider.set([Raiden_Shogun_Pr_CookieMin, Raiden_Shogun_Pr_CookieMax]);} catch(e){}
+  try{Raiden_Shogun_T1.noUiSlider.set([Raiden_Shogun_T1_CookieMin, Raiden_Shogun_T1_CookieMax]);} catch(e){}
+  try{Raiden_Shogun_T2.noUiSlider.set([Raiden_Shogun_T2_CookieMin, Raiden_Shogun_T2_CookieMax]);} catch(e){}
+  try{Raiden_Shogun_T3.noUiSlider.set([Raiden_Shogun_T3_CookieMin, Raiden_Shogun_T3_CookieMax]);} catch(e){}
+  try{Kujou_Sara_Ex.noUiSlider.set([Kujou_Sara_Ex_CookieMin, Kujou_Sara_Ex_CookieMax]);} catch(e){}
+  try{Kujou_Sara_Pr.noUiSlider.set([Kujou_Sara_Pr_CookieMin, Kujou_Sara_Pr_CookieMax]);} catch(e){}
+  try{Kujou_Sara_T1.noUiSlider.set([Kujou_Sara_T1_CookieMin, Kujou_Sara_T1_CookieMax]);} catch(e){}
+  try{Kujou_Sara_T2.noUiSlider.set([Kujou_Sara_T2_CookieMin, Kujou_Sara_T2_CookieMax]);} catch(e){}
+  try{Kujou_Sara_T3.noUiSlider.set([Kujou_Sara_T3_CookieMin, Kujou_Sara_T3_CookieMax]);} catch(e){}
+  try{Yoimiya_Ex.noUiSlider.set([Yoimiya_Ex_CookieMin, Yoimiya_Ex_CookieMax]);} catch(e){}
+  try{Yoimiya_Pr.noUiSlider.set([Yoimiya_Pr_CookieMin, Yoimiya_Pr_CookieMax]);} catch(e){}
+  try{Yoimiya_T1.noUiSlider.set([Yoimiya_T1_CookieMin, Yoimiya_T1_CookieMax]);} catch(e){}
+  try{Yoimiya_T2.noUiSlider.set([Yoimiya_T2_CookieMin, Yoimiya_T2_CookieMax]);} catch(e){}
+  try{Yoimiya_T3.noUiSlider.set([Yoimiya_T3_CookieMin, Yoimiya_T3_CookieMax]);} catch(e){}
+  try{Sayu_Ex.noUiSlider.set([Sayu_Ex_CookieMin, Sayu_Ex_CookieMax]);} catch(e){}
+  try{Sayu_Pr.noUiSlider.set([Sayu_Pr_CookieMin, Sayu_Pr_CookieMax]);} catch(e){}
+  try{Sayu_T1.noUiSlider.set([Sayu_T1_CookieMin, Sayu_T1_CookieMax]);} catch(e){}
+  try{Sayu_T2.noUiSlider.set([Sayu_T2_CookieMin, Sayu_T2_CookieMax]);} catch(e){}
+  try{Sayu_T3.noUiSlider.set([Sayu_T3_CookieMin, Sayu_T3_CookieMax]);} catch(e){}
+  try{Kamisato_Ayaka_Ex.noUiSlider.set([Kamisato_Ayaka_Ex_CookieMin, Kamisato_Ayaka_Ex_CookieMax]);} catch(e){}
+  try{Kamisato_Ayaka_Pr.noUiSlider.set([Kamisato_Ayaka_Pr_CookieMin, Kamisato_Ayaka_Pr_CookieMax]);} catch(e){}
+  try{Kamisato_Ayaka_T1.noUiSlider.set([Kamisato_Ayaka_T1_CookieMin, Kamisato_Ayaka_T1_CookieMax]);} catch(e){}
+  try{Kamisato_Ayaka_T2.noUiSlider.set([Kamisato_Ayaka_T2_CookieMin, Kamisato_Ayaka_T2_CookieMax]);} catch(e){}
+  try{Kamisato_Ayaka_T3.noUiSlider.set([Kamisato_Ayaka_T3_CookieMin, Kamisato_Ayaka_T3_CookieMax]);} catch(e){}
+  try{Kaedehara_Kazuha_Ex.noUiSlider.set([Kaedehara_Kazuha_Ex_CookieMin, Kaedehara_Kazuha_Ex_CookieMax]);} catch(e){}
+  try{Kaedehara_Kazuha_Pr.noUiSlider.set([Kaedehara_Kazuha_Pr_CookieMin, Kaedehara_Kazuha_Pr_CookieMax]);} catch(e){}
+  try{Kaedehara_Kazuha_T1.noUiSlider.set([Kaedehara_Kazuha_T1_CookieMin, Kaedehara_Kazuha_T1_CookieMax]);} catch(e){}
+  try{Kaedehara_Kazuha_T2.noUiSlider.set([Kaedehara_Kazuha_T2_CookieMin, Kaedehara_Kazuha_T2_CookieMax]);} catch(e){}
+  try{Kaedehara_Kazuha_T3.noUiSlider.set([Kaedehara_Kazuha_T3_CookieMin, Kaedehara_Kazuha_T3_CookieMax]);} catch(e){}
+  try{Eula_Ex.noUiSlider.set([Eula_Ex_CookieMin, Eula_Ex_CookieMax]);} catch(e){}
+  try{Eula_Pr.noUiSlider.set([Eula_Pr_CookieMin, Eula_Pr_CookieMax]);} catch(e){}
+  try{Eula_T1.noUiSlider.set([Eula_T1_CookieMin, Eula_T1_CookieMax]);} catch(e){}
+  try{Eula_T2.noUiSlider.set([Eula_T2_CookieMin, Eula_T2_CookieMax]);} catch(e){}
+  try{Eula_T3.noUiSlider.set([Eula_T3_CookieMin, Eula_T3_CookieMax]);} catch(e){}
+  try{Yanfei_Ex.noUiSlider.set([Yanfei_Ex_CookieMin, Yanfei_Ex_CookieMax]);} catch(e){}
+  try{Yanfei_Pr.noUiSlider.set([Yanfei_Pr_CookieMin, Yanfei_Pr_CookieMax]);} catch(e){}
+  try{Yanfei_T1.noUiSlider.set([Yanfei_T1_CookieMin, Yanfei_T1_CookieMax]);} catch(e){}
+  try{Yanfei_T2.noUiSlider.set([Yanfei_T2_CookieMin, Yanfei_T2_CookieMax]);} catch(e){}
+  try{Yanfei_T3.noUiSlider.set([Yanfei_T3_CookieMin, Yanfei_T3_CookieMax]);} catch(e){}
+  try{Rosaria_Ex.noUiSlider.set([Rosaria_Ex_CookieMin, Rosaria_Ex_CookieMax]);} catch(e){}
+  try{Rosaria_Pr.noUiSlider.set([Rosaria_Pr_CookieMin, Rosaria_Pr_CookieMax]);} catch(e){}
+  try{Rosaria_T1.noUiSlider.set([Rosaria_T1_CookieMin, Rosaria_T1_CookieMax]);} catch(e){}
+  try{Rosaria_T2.noUiSlider.set([Rosaria_T2_CookieMin, Rosaria_T2_CookieMax]);} catch(e){}
+  try{Rosaria_T3.noUiSlider.set([Rosaria_T3_CookieMin, Rosaria_T3_CookieMax]);} catch(e){}
+  try{HuTao_Ex.noUiSlider.set([HuTao_Ex_CookieMin, HuTao_Ex_CookieMax]);} catch(e){}
+  try{HuTao_Pr.noUiSlider.set([HuTao_Pr_CookieMin, HuTao_Pr_CookieMax]);} catch(e){}
+  try{HuTao_T1.noUiSlider.set([HuTao_T1_CookieMin, HuTao_T1_CookieMax]);} catch(e){}
+  try{HuTao_T2.noUiSlider.set([HuTao_T2_CookieMin, HuTao_T2_CookieMax]);} catch(e){}
+  try{HuTao_T3.noUiSlider.set([HuTao_T3_CookieMin, HuTao_T3_CookieMax]);} catch(e){}
+  try{Xiao_Ex.noUiSlider.set([Xiao_Ex_CookieMin, Xiao_Ex_CookieMax]);} catch(e){}
+  try{Xiao_Pr.noUiSlider.set([Xiao_Pr_CookieMin, Xiao_Pr_CookieMax]);} catch(e){}
+  try{Xiao_T1.noUiSlider.set([Xiao_T1_CookieMin, Xiao_T1_CookieMax]);} catch(e){}
+  try{Xiao_T2.noUiSlider.set([Xiao_T2_CookieMin, Xiao_T2_CookieMax]);} catch(e){}
+  try{Xiao_T3.noUiSlider.set([Xiao_T3_CookieMin, Xiao_T3_CookieMax]);} catch(e){}
+  try{Ganyu_Ex.noUiSlider.set([Ganyu_Ex_CookieMin, Ganyu_Ex_CookieMax]);} catch(e){}
+  try{Ganyu_Pr.noUiSlider.set([Ganyu_Pr_CookieMin, Ganyu_Pr_CookieMax]);} catch(e){}
+  try{Ganyu_T1.noUiSlider.set([Ganyu_T1_CookieMin, Ganyu_T1_CookieMax]);} catch(e){}
+  try{Ganyu_T2.noUiSlider.set([Ganyu_T2_CookieMin, Ganyu_T2_CookieMax]);} catch(e){}
+  try{Ganyu_T3.noUiSlider.set([Ganyu_T3_CookieMin, Ganyu_T3_CookieMax]);} catch(e){}
+  try{Albedo_Ex.noUiSlider.set([Albedo_Ex_CookieMin, Albedo_Ex_CookieMax]);} catch(e){}
+  try{Albedo_Pr.noUiSlider.set([Albedo_Pr_CookieMin, Albedo_Pr_CookieMax]);} catch(e){}
+  try{Albedo_T1.noUiSlider.set([Albedo_T1_CookieMin, Albedo_T1_CookieMax]);} catch(e){}
+  try{Albedo_T2.noUiSlider.set([Albedo_T2_CookieMin, Albedo_T2_CookieMax]);} catch(e){}
+  try{Albedo_T3.noUiSlider.set([Albedo_T3_CookieMin, Albedo_T3_CookieMax]);} catch(e){}
+  try{Zhongli_Ex.noUiSlider.set([Zhongli_Ex_CookieMin, Zhongli_Ex_CookieMax]);} catch(e){}
+  try{Zhongli_Pr.noUiSlider.set([Zhongli_Pr_CookieMin, Zhongli_Pr_CookieMax]);} catch(e){}
+  try{Zhongli_T1.noUiSlider.set([Zhongli_T1_CookieMin, Zhongli_T1_CookieMax]);} catch(e){}
+  try{Zhongli_T2.noUiSlider.set([Zhongli_T2_CookieMin, Zhongli_T2_CookieMax]);} catch(e){}
+  try{Zhongli_T3.noUiSlider.set([Zhongli_T3_CookieMin, Zhongli_T3_CookieMax]);} catch(e){}
+  try{Xinyan_Ex.noUiSlider.set([Xinyan_Ex_CookieMin, Xinyan_Ex_CookieMax]);} catch(e){}
+  try{Xinyan_Pr.noUiSlider.set([Xinyan_Pr_CookieMin, Xinyan_Pr_CookieMax]);} catch(e){}
+  try{Xinyan_T1.noUiSlider.set([Xinyan_T1_CookieMin, Xinyan_T1_CookieMax]);} catch(e){}
+  try{Xinyan_T2.noUiSlider.set([Xinyan_T2_CookieMin, Xinyan_T2_CookieMax]);} catch(e){}
+  try{Xinyan_T3.noUiSlider.set([Xinyan_T3_CookieMin, Xinyan_T3_CookieMax]);} catch(e){}
+  try{Tartaglia_Ex.noUiSlider.set([Tartaglia_Ex_CookieMin, Tartaglia_Ex_CookieMax]);} catch(e){}
+  try{Tartaglia_Pr.noUiSlider.set([Tartaglia_Pr_CookieMin, Tartaglia_Pr_CookieMax]);} catch(e){}
+  try{Tartaglia_T1.noUiSlider.set([Tartaglia_T1_CookieMin, Tartaglia_T1_CookieMax]);} catch(e){}
+  try{Tartaglia_T2.noUiSlider.set([Tartaglia_T2_CookieMin, Tartaglia_T2_CookieMax]);} catch(e){}
+  try{Tartaglia_T3.noUiSlider.set([Tartaglia_T3_CookieMin, Tartaglia_T3_CookieMax]);} catch(e){}
+  try{Diona_Ex.noUiSlider.set([Diona_Ex_CookieMin, Diona_Ex_CookieMax]);} catch(e){}
+  try{Diona_Pr.noUiSlider.set([Diona_Pr_CookieMin, Diona_Pr_CookieMax]);} catch(e){}
+  try{Diona_T1.noUiSlider.set([Diona_T1_CookieMin, Diona_T1_CookieMax]);} catch(e){}
+  try{Diona_T2.noUiSlider.set([Diona_T2_CookieMin, Diona_T2_CookieMax]);} catch(e){}
+  try{Diona_T3.noUiSlider.set([Diona_T3_CookieMin, Diona_T3_CookieMax]);} catch(e){}
+  try{Klee_Ex.noUiSlider.set([Klee_Ex_CookieMin, Klee_Ex_CookieMax]);} catch(e){}
+  try{Klee_Pr.noUiSlider.set([Klee_Pr_CookieMin, Klee_Pr_CookieMax]);} catch(e){}
+  try{Klee_T1.noUiSlider.set([Klee_T1_CookieMin, Klee_T1_CookieMax]);} catch(e){}
+  try{Klee_T2.noUiSlider.set([Klee_T2_CookieMin, Klee_T2_CookieMax]);} catch(e){}
+  try{Klee_T3.noUiSlider.set([Klee_T3_CookieMin, Klee_T3_CookieMax]);} catch(e){}
+  try{Venti_Ex.noUiSlider.set([Venti_Ex_CookieMin, Venti_Ex_CookieMax]);} catch(e){}
+  try{Venti_Pr.noUiSlider.set([Venti_Pr_CookieMin, Venti_Pr_CookieMax]);} catch(e){}
+  try{Venti_T1.noUiSlider.set([Venti_T1_CookieMin, Venti_T1_CookieMax]);} catch(e){}
+  try{Venti_T2.noUiSlider.set([Venti_T2_CookieMin, Venti_T2_CookieMax]);} catch(e){}
+  try{Venti_T3.noUiSlider.set([Venti_T3_CookieMin, Venti_T3_CookieMax]);} catch(e){}
+  try{Keqing_Ex.noUiSlider.set([Keqing_Ex_CookieMin, Keqing_Ex_CookieMax]);} catch(e){}
+  try{Keqing_Pr.noUiSlider.set([Keqing_Pr_CookieMin, Keqing_Pr_CookieMax]);} catch(e){}
+  try{Keqing_T1.noUiSlider.set([Keqing_T1_CookieMin, Keqing_T1_CookieMax]);} catch(e){}
+  try{Keqing_T2.noUiSlider.set([Keqing_T2_CookieMin, Keqing_T2_CookieMax]);} catch(e){}
+  try{Keqing_T3.noUiSlider.set([Keqing_T3_CookieMin, Keqing_T3_CookieMax]);} catch(e){}
+  try{Mona_Ex.noUiSlider.set([Mona_Ex_CookieMin, Mona_Ex_CookieMax]);} catch(e){}
+  try{Mona_Pr.noUiSlider.set([Mona_Pr_CookieMin, Mona_Pr_CookieMax]);} catch(e){}
+  try{Mona_T1.noUiSlider.set([Mona_T1_CookieMin, Mona_T1_CookieMax]);} catch(e){}
+  try{Mona_T2.noUiSlider.set([Mona_T2_CookieMin, Mona_T2_CookieMax]);} catch(e){}
+  try{Mona_T3.noUiSlider.set([Mona_T3_CookieMin, Mona_T3_CookieMax]);} catch(e){}
+  try{Qiqi_Ex.noUiSlider.set([Qiqi_Ex_CookieMin, Qiqi_Ex_CookieMax]);} catch(e){}
+  try{Qiqi_Pr.noUiSlider.set([Qiqi_Pr_CookieMin, Qiqi_Pr_CookieMax]);} catch(e){}
+  try{Qiqi_T1.noUiSlider.set([Qiqi_T1_CookieMin, Qiqi_T1_CookieMax]);} catch(e){}
+  try{Qiqi_T2.noUiSlider.set([Qiqi_T2_CookieMin, Qiqi_T2_CookieMax]);} catch(e){}
+  try{Qiqi_T3.noUiSlider.set([Qiqi_T3_CookieMin, Qiqi_T3_CookieMax]);} catch(e){}
+  try{Diluc_Ex.noUiSlider.set([Diluc_Ex_CookieMin, Diluc_Ex_CookieMax]);} catch(e){}
+  try{Diluc_Pr.noUiSlider.set([Diluc_Pr_CookieMin, Diluc_Pr_CookieMax]);} catch(e){}
+  try{Diluc_T1.noUiSlider.set([Diluc_T1_CookieMin, Diluc_T1_CookieMax]);} catch(e){}
+  try{Diluc_T2.noUiSlider.set([Diluc_T2_CookieMin, Diluc_T2_CookieMax]);} catch(e){}
+  try{Diluc_T3.noUiSlider.set([Diluc_T3_CookieMin, Diluc_T3_CookieMax]);} catch(e){}
+  try{Jean_Ex.noUiSlider.set([Jean_Ex_CookieMin, Jean_Ex_CookieMax]);} catch(e){}
+  try{Jean_Pr.noUiSlider.set([Jean_Pr_CookieMin, Jean_Pr_CookieMax]);} catch(e){}
+  try{Jean_T1.noUiSlider.set([Jean_T1_CookieMin, Jean_T1_CookieMax]);} catch(e){}
+  try{Jean_T2.noUiSlider.set([Jean_T2_CookieMin, Jean_T2_CookieMax]);} catch(e){}
+  try{Jean_T3.noUiSlider.set([Jean_T3_CookieMin, Jean_T3_CookieMax]);} catch(e){}
+  try{Sucrose_Ex.noUiSlider.set([Sucrose_Ex_CookieMin, Sucrose_Ex_CookieMax]);} catch(e){}
+  try{Sucrose_Pr.noUiSlider.set([Sucrose_Pr_CookieMin, Sucrose_Pr_CookieMax]);} catch(e){}
+  try{Sucrose_T1.noUiSlider.set([Sucrose_T1_CookieMin, Sucrose_T1_CookieMax]);} catch(e){}
+  try{Sucrose_T2.noUiSlider.set([Sucrose_T2_CookieMin, Sucrose_T2_CookieMax]);} catch(e){}
+  try{Sucrose_T3.noUiSlider.set([Sucrose_T3_CookieMin, Sucrose_T3_CookieMax]);} catch(e){}
+  try{Chongyun_Ex.noUiSlider.set([Chongyun_Ex_CookieMin, Chongyun_Ex_CookieMax]);} catch(e){}
+  try{Chongyun_Pr.noUiSlider.set([Chongyun_Pr_CookieMin, Chongyun_Pr_CookieMax]);} catch(e){}
+  try{Chongyun_T1.noUiSlider.set([Chongyun_T1_CookieMin, Chongyun_T1_CookieMax]);} catch(e){}
+  try{Chongyun_T2.noUiSlider.set([Chongyun_T2_CookieMin, Chongyun_T2_CookieMax]);} catch(e){}
+  try{Chongyun_T3.noUiSlider.set([Chongyun_T3_CookieMin, Chongyun_T3_CookieMax]);} catch(e){}
+  try{Noelle_Ex.noUiSlider.set([Noelle_Ex_CookieMin, Noelle_Ex_CookieMax]);} catch(e){}
+  try{Noelle_Pr.noUiSlider.set([Noelle_Pr_CookieMin, Noelle_Pr_CookieMax]);} catch(e){}
+  try{Noelle_T1.noUiSlider.set([Noelle_T1_CookieMin, Noelle_T1_CookieMax]);} catch(e){}
+  try{Noelle_T2.noUiSlider.set([Noelle_T2_CookieMin, Noelle_T2_CookieMax]);} catch(e){}
+  try{Noelle_T3.noUiSlider.set([Noelle_T3_CookieMin, Noelle_T3_CookieMax]);} catch(e){}
+  try{Bennett_Ex.noUiSlider.set([Bennett_Ex_CookieMin, Bennett_Ex_CookieMax]);} catch(e){}
+  try{Bennett_Pr.noUiSlider.set([Bennett_Pr_CookieMin, Bennett_Pr_CookieMax]);} catch(e){}
+  try{Bennett_T1.noUiSlider.set([Bennett_T1_CookieMin, Bennett_T1_CookieMax]);} catch(e){}
+  try{Bennett_T2.noUiSlider.set([Bennett_T2_CookieMin, Bennett_T2_CookieMax]);} catch(e){}
+  try{Bennett_T3.noUiSlider.set([Bennett_T3_CookieMin, Bennett_T3_CookieMax]);} catch(e){}
+  try{Fischl_Ex.noUiSlider.set([Fischl_Ex_CookieMin, Fischl_Ex_CookieMax]);} catch(e){}
+  try{Fischl_Pr.noUiSlider.set([Fischl_Pr_CookieMin, Fischl_Pr_CookieMax]);} catch(e){}
+  try{Fischl_T1.noUiSlider.set([Fischl_T1_CookieMin, Fischl_T1_CookieMax]);} catch(e){}
+  try{Fischl_T2.noUiSlider.set([Fischl_T2_CookieMin, Fischl_T2_CookieMax]);} catch(e){}
+  try{Fischl_T3.noUiSlider.set([Fischl_T3_CookieMin, Fischl_T3_CookieMax]);} catch(e){}
+  try{Ningguang_Ex.noUiSlider.set([Ningguang_Ex_CookieMin, Ningguang_Ex_CookieMax]);} catch(e){}
+  try{Ningguang_Pr.noUiSlider.set([Ningguang_Pr_CookieMin, Ningguang_Pr_CookieMax]);} catch(e){}
+  try{Ningguang_T1.noUiSlider.set([Ningguang_T1_CookieMin, Ningguang_T1_CookieMax]);} catch(e){}
+  try{Ningguang_T2.noUiSlider.set([Ningguang_T2_CookieMin, Ningguang_T2_CookieMax]);} catch(e){}
+  try{Ningguang_T3.noUiSlider.set([Ningguang_T3_CookieMin, Ningguang_T3_CookieMax]);} catch(e){}
+  try{Xingqiu_Ex.noUiSlider.set([Xingqiu_Ex_CookieMin, Xingqiu_Ex_CookieMax]);} catch(e){}
+  try{Xingqiu_Pr.noUiSlider.set([Xingqiu_Pr_CookieMin, Xingqiu_Pr_CookieMax]);} catch(e){}
+  try{Xingqiu_T1.noUiSlider.set([Xingqiu_T1_CookieMin, Xingqiu_T1_CookieMax]);} catch(e){}
+  try{Xingqiu_T2.noUiSlider.set([Xingqiu_T2_CookieMin, Xingqiu_T2_CookieMax]);} catch(e){}
+  try{Xingqiu_T3.noUiSlider.set([Xingqiu_T3_CookieMin, Xingqiu_T3_CookieMax]);} catch(e){}
+  try{Beidou_Ex.noUiSlider.set([Beidou_Ex_CookieMin, Beidou_Ex_CookieMax]);} catch(e){}
+  try{Beidou_Pr.noUiSlider.set([Beidou_Pr_CookieMin, Beidou_Pr_CookieMax]);} catch(e){}
+  try{Beidou_T1.noUiSlider.set([Beidou_T1_CookieMin, Beidou_T1_CookieMax]);} catch(e){}
+  try{Beidou_T2.noUiSlider.set([Beidou_T2_CookieMin, Beidou_T2_CookieMax]);} catch(e){}
+  try{Beidou_T3.noUiSlider.set([Beidou_T3_CookieMin, Beidou_T3_CookieMax]);} catch(e){}
+  try{Xiangling_Ex.noUiSlider.set([Xiangling_Ex_CookieMin, Xiangling_Ex_CookieMax]);} catch(e){}
+  try{Xiangling_Pr.noUiSlider.set([Xiangling_Pr_CookieMin, Xiangling_Pr_CookieMax]);} catch(e){}
+  try{Xiangling_T1.noUiSlider.set([Xiangling_T1_CookieMin, Xiangling_T1_CookieMax]);} catch(e){}
+  try{Xiangling_T2.noUiSlider.set([Xiangling_T2_CookieMin, Xiangling_T2_CookieMax]);} catch(e){}
+  try{Xiangling_T3.noUiSlider.set([Xiangling_T3_CookieMin, Xiangling_T3_CookieMax]);} catch(e){}
+  try{Razor_Ex.noUiSlider.set([Razor_Ex_CookieMin, Razor_Ex_CookieMax]);} catch(e){}
+  try{Razor_Pr.noUiSlider.set([Razor_Pr_CookieMin, Razor_Pr_CookieMax]);} catch(e){}
+  try{Razor_T1.noUiSlider.set([Razor_T1_CookieMin, Razor_T1_CookieMax]);} catch(e){}
+  try{Razor_T2.noUiSlider.set([Razor_T2_CookieMin, Razor_T2_CookieMax]);} catch(e){}
+  try{Razor_T3.noUiSlider.set([Razor_T3_CookieMin, Razor_T3_CookieMax]);} catch(e){}
+  try{Barbara_Ex.noUiSlider.set([Barbara_Ex_CookieMin, Barbara_Ex_CookieMax]);} catch(e){}
+  try{Barbara_Pr.noUiSlider.set([Barbara_Pr_CookieMin, Barbara_Pr_CookieMax]);} catch(e){}
+  try{Barbara_T1.noUiSlider.set([Barbara_T1_CookieMin, Barbara_T1_CookieMax]);} catch(e){}
+  try{Barbara_T2.noUiSlider.set([Barbara_T2_CookieMin, Barbara_T2_CookieMax]);} catch(e){}
+  try{Barbara_T3.noUiSlider.set([Barbara_T3_CookieMin, Barbara_T3_CookieMax]);} catch(e){}
+  try{Lisa_Ex.noUiSlider.set([Lisa_Ex_CookieMin, Lisa_Ex_CookieMax]);} catch(e){}
+  try{Lisa_Pr.noUiSlider.set([Lisa_Pr_CookieMin, Lisa_Pr_CookieMax]);} catch(e){}
+  try{Lisa_T1.noUiSlider.set([Lisa_T1_CookieMin, Lisa_T1_CookieMax]);} catch(e){}
+  try{Lisa_T2.noUiSlider.set([Lisa_T2_CookieMin, Lisa_T2_CookieMax]);} catch(e){}
+  try{Lisa_T3.noUiSlider.set([Lisa_T3_CookieMin, Lisa_T3_CookieMax]);} catch(e){}
+  try{Kaeya_Ex.noUiSlider.set([Kaeya_Ex_CookieMin, Kaeya_Ex_CookieMax]);} catch(e){}
+  try{Kaeya_Pr.noUiSlider.set([Kaeya_Pr_CookieMin, Kaeya_Pr_CookieMax]);} catch(e){}
+  try{Kaeya_T1.noUiSlider.set([Kaeya_T1_CookieMin, Kaeya_T1_CookieMax]);} catch(e){}
+  try{Kaeya_T2.noUiSlider.set([Kaeya_T2_CookieMin, Kaeya_T2_CookieMax]);} catch(e){}
+  try{Kaeya_T3.noUiSlider.set([Kaeya_T3_CookieMin, Kaeya_T3_CookieMax]);} catch(e){}
+  try{Amber_Ex.noUiSlider.set([Amber_Ex_CookieMin, Amber_Ex_CookieMax]);} catch(e){}
+  try{Amber_Pr.noUiSlider.set([Amber_Pr_CookieMin, Amber_Pr_CookieMax]);} catch(e){}
+  try{Amber_T1.noUiSlider.set([Amber_T1_CookieMin, Amber_T1_CookieMax]);} catch(e){}
+  try{Amber_T2.noUiSlider.set([Amber_T2_CookieMin, Amber_T2_CookieMax]);} catch(e){}
+  try{Amber_T3.noUiSlider.set([Amber_T3_CookieMin, Amber_T3_CookieMax]);} catch(e){}
 }
-Load();
+function InventoryLoad() {
+  var Character_Cookies = document.cookie.replace(/.*?;?\s?Inventory\d=(.*);\sInventory\d=(.*);\sInventory\d=(.*)\//i, '$1$2$3');
+  var Character_CookieLoad = Character_Cookies.split( '/' )
+  for (var i = 0; i < Character_CookieLoad.length; i++) {
+    var Character_CookieLoading = Character_CookieLoad[i].split( '=' );
+    var Character_CookieName = Character_CookieLoading[0];
+    window[Character_CookieName] = Character_CookieLoading[1];
+  }
+  try{document.getElementById("Heros_Wit").value = Heros_Wit_Cookie} catch(e){}
+  try{document.getElementById("Adventurers_Experience").value = Adventurers_Experience_Cookie} catch(e){}
+  try{document.getElementById("Wanderers_Advice").value = Wanderers_Advice_Cookie} catch(e){}
+  try{document.getElementById("Slime_Concentrate").value = Slime_Concentrate_Cookie} catch(e){}
+  try{document.getElementById("Slime_Secretions").value = Slime_Secretions_Cookie} catch(e){}
+  try{document.getElementById("Slime_Condensate").value = Slime_Condensate_Cookie} catch(e){}
+  try{document.getElementById("Ominous_Mask").value = Ominous_Mask_Cookie} catch(e){}
+  try{document.getElementById("Stained_Mask").value = Stained_Mask_Cookie} catch(e){}
+  try{document.getElementById("Damaged_Mask").value = Damaged_Mask_Cookie} catch(e){}
+  try{document.getElementById("Forbidden_Curse_Scroll").value = Forbidden_Curse_Scroll_Cookie} catch(e){}
+  try{document.getElementById("Sealed_Scroll").value = Sealed_Scroll_Cookie} catch(e){}
+  try{document.getElementById("Divining_Scroll").value = Divining_Scroll_Cookie} catch(e){}
+  try{document.getElementById("Weathered_Arrowhead").value = Weathered_Arrowhead_Cookie} catch(e){}
+  try{document.getElementById("Sharp_Arrowhead").value = Sharp_Arrowhead_Cookie} catch(e){}
+  try{document.getElementById("Firm_Arrowhead").value = Firm_Arrowhead_Cookie} catch(e){}
+  try{document.getElementById("Lieutenants_Insignia").value = Lieutenants_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Sergeants_Insignia").value = Sergeants_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Recruits_Insignia").value = Recruits_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Golden_Raven_Insignia").value = Golden_Raven_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Silver_Raven_Insignia").value = Silver_Raven_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Treasure_Hoarder_Insignia").value = Treasure_Hoarder_Insignia_Cookie} catch(e){}
+  try{document.getElementById("Energy_Nectar").value = Energy_Nectar_Cookie} catch(e){}
+  try{document.getElementById("Shimmering_Nectar").value = Shimmering_Nectar_Cookie} catch(e){}
+  try{document.getElementById("Whopperflower_Nectar").value = Whopperflower_Nectar_Cookie} catch(e){}
+  try{document.getElementById("Famed_Handguard").value = Famed_Handguard_Cookie} catch(e){}
+  try{document.getElementById("Kageuchi_Handguard").value = Kageuchi_Handguard_Cookie} catch(e){}
+  try{document.getElementById("Old_Handguard").value = Old_Handguard_Cookie} catch(e){}
+  try{document.getElementById("Spectral_Nucleus").value = Spectral_Nucleus_Cookie} catch(e){}
+  try{document.getElementById("Spectral_Heart").value = Spectral_Heart_Cookie} catch(e){}
+  try{document.getElementById("Spectral_Husk").value = Spectral_Husk_Cookie} catch(e){}
+  try{document.getElementById("Dvalins_Plume").value = Dvalins_Plume_Cookie} catch(e){}
+  try{document.getElementById("Dvalins_Claw").value = Dvalins_Claw_Cookie} catch(e){}
+  try{document.getElementById("Dvalins_Sigh").value = Dvalins_Sigh_Cookie} catch(e){}
+  try{document.getElementById("Tail_of_Boreas").value = Tail_of_Boreas_Cookie} catch(e){}
+  try{document.getElementById("Ring_of_Boreas").value = Ring_of_Boreas_Cookie} catch(e){}
+  try{document.getElementById("Spirit_Locket_of_Boreas").value = Spirit_Locket_of_Boreas_Cookie} catch(e){}
+  try{document.getElementById("Tusk_of_Monoceros_Caeli").value = Tusk_of_Monoceros_Caeli_Cookie} catch(e){}
+  try{document.getElementById("Shard_of_a_Foul_Legacy").value = Shard_of_a_Foul_Legacy_Cookie} catch(e){}
+  try{document.getElementById("Shadow_of_the_Warrior").value = Shadow_of_the_Warrior_Cookie} catch(e){}
+  try{document.getElementById("Dragon_Lords_Crown").value = Dragon_Lords_Crown_Cookie} catch(e){}
+  try{document.getElementById("Bloodjade_Branch").value = Bloodjade_Branch_Cookie} catch(e){}
+  try{document.getElementById("Gilded_Scale").value = Gilded_Scale_Cookie} catch(e){}
+  try{document.getElementById("Molten_Moment").value = Molten_Moment_Cookie} catch(e){}
+  try{document.getElementById("Hellfire_Butterfly").value = Hellfire_Butterfly_Cookie} catch(e){}
+  try{document.getElementById("Ashen_Heart").value = Ashen_Heart_Cookie} catch(e){}
+  try{document.getElementById("Hurricane_Seed").value = Hurricane_Seed_Cookie} catch(e){}
+  try{document.getElementById("Lightning_Prism").value = Lightning_Prism_Cookie} catch(e){}
+  try{document.getElementById("Basalt_Pillar").value = Basalt_Pillar_Cookie} catch(e){}
+  try{document.getElementById("Hoarfrost_Core").value = Hoarfrost_Core_Cookie} catch(e){}
+  try{document.getElementById("Everflame_Seed").value = Everflame_Seed_Cookie} catch(e){}
+  try{document.getElementById("Cleansing_Heart").value = Cleansing_Heart_Cookie} catch(e){}
+  try{document.getElementById("Juvenile_Jade").value = Juvenile_Jade_Cookie} catch(e){}
+  try{document.getElementById("Crystalline_Bloom").value = Crystalline_Bloom_Cookie} catch(e){}
+  try{document.getElementById("Marionette_Core").value = Marionette_Core_Cookie} catch(e){}
+  try{document.getElementById("Perpetual_Heart").value = Perpetual_Heart_Cookie} catch(e){}
+  try{document.getElementById("Smoldering_Pearl").value = Smoldering_Pearl_Cookie} catch(e){}
+  try{document.getElementById("Dew_of_Repudiation").value = Dew_of_Repudiation_Cookie} catch(e){}
+  try{document.getElementById("Storm_Beads").value = Storm_Beads_Cookie} catch(e){}
+  try{document.getElementById("Agate_Gemstone").value = Agate_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Agate_Chunk").value = Agate_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Agate_Fragment").value = Agate_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Agate_Sliver").value = Agate_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Lazurite_Gemstone").value = Lazurite_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Lazurite_Chunk").value = Lazurite_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Lazurite_Fragment").value = Lazurite_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Lazurite_Sliver").value = Lazurite_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Amethyst_Gemstone").value = Amethyst_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Amethyst_Chunk").value = Amethyst_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Amethyst_Fragment").value = Amethyst_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Amethyst_Sliver").value = Amethyst_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Turquoise_Gemstone").value = Turquoise_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Turquoise_Chunk").value = Turquoise_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Turquoise_Fragment").value = Turquoise_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Turquoise_Sliver").value = Turquoise_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Jade_Gemstone").value = Jade_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Jade_Chunk").value = Jade_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Jade_Fragment").value = Jade_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Jade_Sliver").value = Jade_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Topaz_Gemstone").value = Topaz_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Topaz_Chunk").value = Topaz_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Topaz_Fragment").value = Topaz_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Topaz_Sliver").value = Topaz_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Emerald_Gemstone").value = Emerald_Gemstone_Cookie} catch(e){}
+  try{document.getElementById("Emerald_Chunk").value = Emerald_Chunk_Cookie} catch(e){}
+  try{document.getElementById("Emerald_Fragment").value = Emerald_Fragment_Cookie} catch(e){}
+  try{document.getElementById("Emerald_Sliver").value = Emerald_Sliver_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Freedom").value = Philosophies_of_Freedom_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Freedom").value = Guide_to_Freedom_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Freedom").value = Teachings_of_Freedom_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Ballad").value = Philosophies_of_Ballad_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Ballad").value = Guide_to_Ballad_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Ballad").value = Teachings_of_Ballad_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Resistance").value = Philosophies_of_Resistance_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Resistance").value = Guide_to_Resistance_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Resistance").value = Teachings_of_Resistance_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Prosperity").value = Philosophies_of_Prosperity_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Prosperity").value = Guide_to_Prosperity_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Prosperity").value = Teachings_of_Prosperity_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Diligence").value = Philosophies_of_Diligence_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Diligence").value = Guide_to_Diligence_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Diligence").value = Teachings_of_Diligence_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Gold").value = Philosophies_of_Gold_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Gold").value = Guide_to_Gold_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Gold").value = Teachings_of_Gold_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Transience").value = Philosophies_of_Transience_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Transience").value = Guide_to_Transience_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Transience").value = Teachings_of_Transience_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Elegance").value = Philosophies_of_Elegance_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Elegance").value = Guide_to_Elegance_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Elegance").value = Teachings_of_Elegance_Cookie} catch(e){}
+  try{document.getElementById("Philosophies_of_Light").value = Philosophies_of_Light_Cookie} catch(e){}
+  try{document.getElementById("Guide_to_Light").value = Guide_to_Light_Cookie} catch(e){}
+  try{document.getElementById("Teachings_of_Light").value = Teachings_of_Light_Cookie} catch(e){}
+  try{document.getElementById("Calla_Lily").value = Calla_Lily_Cookie} catch(e){}
+  try{document.getElementById("Wolfhook").value = Wolfhook_Cookie} catch(e){}
+  try{document.getElementById("Valberry").value = Valberry_Cookie} catch(e){}
+  try{document.getElementById("Cecilia").value = Cecilia_Cookie} catch(e){}
+  try{document.getElementById("Windwheel_Aster").value = Windwheel_Aster_Cookie} catch(e){}
+  try{document.getElementById("Philanemo_Mushroom").value = Philanemo_Mushroom_Cookie} catch(e){}
+  try{document.getElementById("Jueyun_Chili").value = Jueyun_Chili_Cookie} catch(e){}
+  try{document.getElementById("Noctilucous_Jade").value = Noctilucous_Jade_Cookie} catch(e){}
+  try{document.getElementById("Silk_Flower").value = Silk_Flower_Cookie} catch(e){}
+  try{document.getElementById("Glaze_Lily").value = Glaze_Lily_Cookie} catch(e){}
+  try{document.getElementById("Qingxin").value = Qingxin_Cookie} catch(e){}
+  try{document.getElementById("Starconch").value = Starconch_Cookie} catch(e){}
+  try{document.getElementById("Violetgrass").value = Violetgrass_Cookie} catch(e){}
+  try{document.getElementById("Small_Lamp_Grass").value = Small_Lamp_Grass_Cookie} catch(e){}
+  try{document.getElementById("Dandelion_Seed").value = Dandelion_Seed_Cookie} catch(e){}
+  try{document.getElementById("Cor_Lapis").value = Cor_Lapis_Cookie} catch(e){}
+  try{document.getElementById("Onikabuto").value = Onikabuto_Cookie} catch(e){}
+  try{document.getElementById("Sakura_Bloom").value = Sakura_Bloom_Cookie} catch(e){}
+  try{document.getElementById("Crystal_Marrow").value = Crystal_Marrow_Cookie} catch(e){}
+  try{document.getElementById("Dendrobium").value = Dendrobium_Cookie} catch(e){}
+  try{document.getElementById("Naku_Weed").value = Naku_Weed_Cookie} catch(e){}
+  try{document.getElementById("Sea_Ganoderma").value = Sea_Ganoderma_Cookie} catch(e){}
+  try{document.getElementById("Sango_Pearl").value = Sango_Pearl_Cookie} catch(e){}
+  try{document.getElementById("Amakumo_Fruit").value = Amakumo_Fruit_Cookie} catch(e){}
+}
+CharacterLoad();
+InventoryLoad();
 
 document.getElementById('Load').onclick = function changeContent() {
-  Load();
+  CharacterLoad();
+  InventoryLoad();
   Calculator();
   M.toast({
     html: 'Loaded',
