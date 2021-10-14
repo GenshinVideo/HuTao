@@ -64,13 +64,9 @@ function Sangonomiya_KokomiLoad() {
     var Sangonomiya_Kokomi_Ex_Volume = Sangonomiya_Kokomi_Ex_1toMax_Volume - Sangonomiya_Kokomi_Ex_1toMin_Volume
     var Sangonomiya_Kokomi_Ex_Book_Volume = Sangonomiya_Kokomi_Ex_Volume / 1000
     var Sangonomiya_Kokomi_Ex_Mora_Volume = Sangonomiya_Kokomi_Ex_Volume * 0.2
-    var Sangonomiya_Kokomi_Ex_Volume_Comma = Sangonomiya_Kokomi_Ex_Volume.toLocaleString();
-    var Sangonomiya_Kokomi_Ex_Book_Volume_Comma = Sangonomiya_Kokomi_Ex_Book_Volume.toLocaleString();
-    var Sangonomiya_Kokomi_Ex_Mora_Volume_Comma = Sangonomiya_Kokomi_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Sangonomiya_Kokomi_Ex_Volume_Html').innerHTML = Sangonomiya_Kokomi_Ex_Volume_Comma;
-    document.getElementById('Sangonomiya_Kokomi_Ex_Volume_NoComma').innerHTML = Sangonomiya_Kokomi_Ex_Volume;
-    document.getElementById('Sangonomiya_Kokomi_Ex_Book_Volume_Html').innerHTML = Sangonomiya_Kokomi_Ex_Book_Volume_Comma;
-    document.getElementById('Sangonomiya_Kokomi_Ex_Mora_Volume_Html').innerHTML = Sangonomiya_Kokomi_Ex_Mora_Volume_Comma;
+    document.getElementById('Sangonomiya_Kokomi_Ex_Volume').innerHTML = Sangonomiya_Kokomi_Ex_Volume.toLocaleString();
+    document.getElementById('Sangonomiya_Kokomi_Ex_Book_Volume').innerHTML = Sangonomiya_Kokomi_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Sangonomiya_Kokomi_Ex_Mora_Volume').innerHTML = Sangonomiya_Kokomi_Ex_Mora_Volume.toLocaleString();
   });
   Sangonomiya_Kokomi_Pr.noUiSlider.on('update', function (values, handle) {
     var Sangonomiya_Kokomi_Pr_Min_Volume = "L1toL" + Sangonomiya_Kokomi_Pr.noUiSlider.get()[0];
@@ -90,12 +86,11 @@ function Sangonomiya_KokomiLoad() {
     var Sangonomiya_Kokomi_Pr_P3 = Sangonomiya_Kokomi_Pr_P3_1toMax_Volume - Sangonomiya_Kokomi_Pr_P3_1toMin_Volume
     var Sangonomiya_Kokomi_Pr_P4 = Sangonomiya_Kokomi_Pr_P4_1toMax_Volume - Sangonomiya_Kokomi_Pr_P4_1toMin_Volume
     var Sangonomiya_Kokomi_Pr_P5 = Sangonomiya_Kokomi_Pr_P5_1toMax_Volume - Sangonomiya_Kokomi_Pr_P5_1toMin_Volume
-    var Sangonomiya_Kokomi_Pr_P5_Comma = Sangonomiya_Kokomi_Pr_P5.toLocaleString();
     document.getElementById('Sangonomiya_Kokomi_Pr_P1_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P1;
     document.getElementById('Sangonomiya_Kokomi_Pr_P2_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P2;
     document.getElementById('Sangonomiya_Kokomi_Pr_P3_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P3;
     document.getElementById('Sangonomiya_Kokomi_Pr_P4_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P4;
-    document.getElementById('Sangonomiya_Kokomi_Pr_P5_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P5_Comma;
+    document.getElementById('Sangonomiya_Kokomi_Pr_P5_Volume').innerHTML = Sangonomiya_Kokomi_Pr_P5.toLocaleString();
   });
   Sangonomiya_Kokomi_T1.noUiSlider.on('update', function (values, handle) {
     var Sangonomiya_Kokomi_T1_Min_Volume = "L1toL" + Sangonomiya_Kokomi_T1.noUiSlider.get()[0];
@@ -115,12 +110,11 @@ function Sangonomiya_KokomiLoad() {
     var Sangonomiya_Kokomi_T1_T3 = Sangonomiya_Kokomi_T1_T3_1toMax_Volume - Sangonomiya_Kokomi_T1_T3_1toMin_Volume
     var Sangonomiya_Kokomi_T1_T4 = Sangonomiya_Kokomi_T1_T4_1toMax_Volume - Sangonomiya_Kokomi_T1_T4_1toMin_Volume
     var Sangonomiya_Kokomi_T1_T5 = Sangonomiya_Kokomi_T1_T5_1toMax_Volume - Sangonomiya_Kokomi_T1_T5_1toMin_Volume
-    var Sangonomiya_Kokomi_T1_T5_Comma = Sangonomiya_Kokomi_T1_T5.toLocaleString();
     document.getElementById('Sangonomiya_Kokomi_T1_T1_Volume').innerHTML = Sangonomiya_Kokomi_T1_T1;
     document.getElementById('Sangonomiya_Kokomi_T1_T2_Volume').innerHTML = Sangonomiya_Kokomi_T1_T2;
     document.getElementById('Sangonomiya_Kokomi_T1_T3_Volume').innerHTML = Sangonomiya_Kokomi_T1_T3;
     document.getElementById('Sangonomiya_Kokomi_T1_T4_Volume').innerHTML = Sangonomiya_Kokomi_T1_T4;
-    document.getElementById('Sangonomiya_Kokomi_T1_T5_Volume').innerHTML = Sangonomiya_Kokomi_T1_T5_Comma;
+    document.getElementById('Sangonomiya_Kokomi_T1_T5_Volume').innerHTML = Sangonomiya_Kokomi_T1_T5.toLocaleString();
   });
   Sangonomiya_Kokomi_T2.noUiSlider.on('update', function (values, handle) {
     var Sangonomiya_Kokomi_T2_Min_Volume = "L1toL" + Sangonomiya_Kokomi_T2.noUiSlider.get()[0];
@@ -140,12 +134,11 @@ function Sangonomiya_KokomiLoad() {
     var Sangonomiya_Kokomi_T2_T3 = Sangonomiya_Kokomi_T2_T3_1toMax_Volume - Sangonomiya_Kokomi_T2_T3_1toMin_Volume
     var Sangonomiya_Kokomi_T2_T4 = Sangonomiya_Kokomi_T2_T4_1toMax_Volume - Sangonomiya_Kokomi_T2_T4_1toMin_Volume
     var Sangonomiya_Kokomi_T2_T5 = Sangonomiya_Kokomi_T2_T5_1toMax_Volume - Sangonomiya_Kokomi_T2_T5_1toMin_Volume
-    var Sangonomiya_Kokomi_T2_T5_Comma = Sangonomiya_Kokomi_T2_T5.toLocaleString();
     document.getElementById('Sangonomiya_Kokomi_T2_T1_Volume').innerHTML = Sangonomiya_Kokomi_T2_T1;
     document.getElementById('Sangonomiya_Kokomi_T2_T2_Volume').innerHTML = Sangonomiya_Kokomi_T2_T2;
     document.getElementById('Sangonomiya_Kokomi_T2_T3_Volume').innerHTML = Sangonomiya_Kokomi_T2_T3;
     document.getElementById('Sangonomiya_Kokomi_T2_T4_Volume').innerHTML = Sangonomiya_Kokomi_T2_T4;
-    document.getElementById('Sangonomiya_Kokomi_T2_T5_Volume').innerHTML = Sangonomiya_Kokomi_T2_T5_Comma;
+    document.getElementById('Sangonomiya_Kokomi_T2_T5_Volume').innerHTML = Sangonomiya_Kokomi_T2_T5.toLocaleString();
   });
   Sangonomiya_Kokomi_T3.noUiSlider.on('update', function (values, handle) {
     var Sangonomiya_Kokomi_T3_Min_Volume = "L1toL" + Sangonomiya_Kokomi_T3.noUiSlider.get()[0];
@@ -165,12 +158,11 @@ function Sangonomiya_KokomiLoad() {
     var Sangonomiya_Kokomi_T3_T3 = Sangonomiya_Kokomi_T3_T3_1toMax_Volume - Sangonomiya_Kokomi_T3_T3_1toMin_Volume
     var Sangonomiya_Kokomi_T3_T4 = Sangonomiya_Kokomi_T3_T4_1toMax_Volume - Sangonomiya_Kokomi_T3_T4_1toMin_Volume
     var Sangonomiya_Kokomi_T3_T5 = Sangonomiya_Kokomi_T3_T5_1toMax_Volume - Sangonomiya_Kokomi_T3_T5_1toMin_Volume
-    var Sangonomiya_Kokomi_T3_T5_Comma = Sangonomiya_Kokomi_T3_T5.toLocaleString();
     document.getElementById('Sangonomiya_Kokomi_T3_T1_Volume').innerHTML = Sangonomiya_Kokomi_T3_T1;
     document.getElementById('Sangonomiya_Kokomi_T3_T2_Volume').innerHTML = Sangonomiya_Kokomi_T3_T2;
     document.getElementById('Sangonomiya_Kokomi_T3_T3_Volume').innerHTML = Sangonomiya_Kokomi_T3_T3;
     document.getElementById('Sangonomiya_Kokomi_T3_T4_Volume').innerHTML = Sangonomiya_Kokomi_T3_T4;
-    document.getElementById('Sangonomiya_Kokomi_T3_T5_Volume').innerHTML = Sangonomiya_Kokomi_T3_T5_Comma;
+    document.getElementById('Sangonomiya_Kokomi_T3_T5_Volume').innerHTML = Sangonomiya_Kokomi_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Sangonomiya_Kokomi  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -190,13 +182,9 @@ function Raiden_ShogunLoad() {
     var Raiden_Shogun_Ex_Volume = Raiden_Shogun_Ex_1toMax_Volume - Raiden_Shogun_Ex_1toMin_Volume
     var Raiden_Shogun_Ex_Book_Volume = Raiden_Shogun_Ex_Volume / 1000
     var Raiden_Shogun_Ex_Mora_Volume = Raiden_Shogun_Ex_Volume * 0.2
-    var Raiden_Shogun_Ex_Volume_Comma = Raiden_Shogun_Ex_Volume.toLocaleString();
-    var Raiden_Shogun_Ex_Book_Volume_Comma = Raiden_Shogun_Ex_Book_Volume.toLocaleString();
-    var Raiden_Shogun_Ex_Mora_Volume_Comma = Raiden_Shogun_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Raiden_Shogun_Ex_Volume_Html').innerHTML = Raiden_Shogun_Ex_Volume_Comma;
-    document.getElementById('Raiden_Shogun_Ex_Volume_NoComma').innerHTML = Raiden_Shogun_Ex_Volume;
-    document.getElementById('Raiden_Shogun_Ex_Book_Volume_Html').innerHTML = Raiden_Shogun_Ex_Book_Volume_Comma;
-    document.getElementById('Raiden_Shogun_Ex_Mora_Volume_Html').innerHTML = Raiden_Shogun_Ex_Mora_Volume_Comma;
+    document.getElementById('Raiden_Shogun_Ex_Volume').innerHTML = Raiden_Shogun_Ex_Volume.toLocaleString();
+    document.getElementById('Raiden_Shogun_Ex_Book_Volume').innerHTML = Raiden_Shogun_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Raiden_Shogun_Ex_Mora_Volume').innerHTML = Raiden_Shogun_Ex_Mora_Volume.toLocaleString();
   });
   Raiden_Shogun_Pr.noUiSlider.on('update', function (values, handle) {
     var Raiden_Shogun_Pr_Min_Volume = "L1toL" + Raiden_Shogun_Pr.noUiSlider.get()[0];
@@ -216,12 +204,11 @@ function Raiden_ShogunLoad() {
     var Raiden_Shogun_Pr_P3 = Raiden_Shogun_Pr_P3_1toMax_Volume - Raiden_Shogun_Pr_P3_1toMin_Volume
     var Raiden_Shogun_Pr_P4 = Raiden_Shogun_Pr_P4_1toMax_Volume - Raiden_Shogun_Pr_P4_1toMin_Volume
     var Raiden_Shogun_Pr_P5 = Raiden_Shogun_Pr_P5_1toMax_Volume - Raiden_Shogun_Pr_P5_1toMin_Volume
-    var Raiden_Shogun_Pr_P5_Comma = Raiden_Shogun_Pr_P5.toLocaleString();
     document.getElementById('Raiden_Shogun_Pr_P1_Volume').innerHTML = Raiden_Shogun_Pr_P1;
     document.getElementById('Raiden_Shogun_Pr_P2_Volume').innerHTML = Raiden_Shogun_Pr_P2;
     document.getElementById('Raiden_Shogun_Pr_P3_Volume').innerHTML = Raiden_Shogun_Pr_P3;
     document.getElementById('Raiden_Shogun_Pr_P4_Volume').innerHTML = Raiden_Shogun_Pr_P4;
-    document.getElementById('Raiden_Shogun_Pr_P5_Volume').innerHTML = Raiden_Shogun_Pr_P5_Comma;
+    document.getElementById('Raiden_Shogun_Pr_P5_Volume').innerHTML = Raiden_Shogun_Pr_P5.toLocaleString();
   });
   Raiden_Shogun_T1.noUiSlider.on('update', function (values, handle) {
     var Raiden_Shogun_T1_Min_Volume = "L1toL" + Raiden_Shogun_T1.noUiSlider.get()[0];
@@ -241,12 +228,11 @@ function Raiden_ShogunLoad() {
     var Raiden_Shogun_T1_T3 = Raiden_Shogun_T1_T3_1toMax_Volume - Raiden_Shogun_T1_T3_1toMin_Volume
     var Raiden_Shogun_T1_T4 = Raiden_Shogun_T1_T4_1toMax_Volume - Raiden_Shogun_T1_T4_1toMin_Volume
     var Raiden_Shogun_T1_T5 = Raiden_Shogun_T1_T5_1toMax_Volume - Raiden_Shogun_T1_T5_1toMin_Volume
-    var Raiden_Shogun_T1_T5_Comma = Raiden_Shogun_T1_T5.toLocaleString();
     document.getElementById('Raiden_Shogun_T1_T1_Volume').innerHTML = Raiden_Shogun_T1_T1;
     document.getElementById('Raiden_Shogun_T1_T2_Volume').innerHTML = Raiden_Shogun_T1_T2;
     document.getElementById('Raiden_Shogun_T1_T3_Volume').innerHTML = Raiden_Shogun_T1_T3;
     document.getElementById('Raiden_Shogun_T1_T4_Volume').innerHTML = Raiden_Shogun_T1_T4;
-    document.getElementById('Raiden_Shogun_T1_T5_Volume').innerHTML = Raiden_Shogun_T1_T5_Comma;
+    document.getElementById('Raiden_Shogun_T1_T5_Volume').innerHTML = Raiden_Shogun_T1_T5.toLocaleString();
   });
   Raiden_Shogun_T2.noUiSlider.on('update', function (values, handle) {
     var Raiden_Shogun_T2_Min_Volume = "L1toL" + Raiden_Shogun_T2.noUiSlider.get()[0];
@@ -266,12 +252,11 @@ function Raiden_ShogunLoad() {
     var Raiden_Shogun_T2_T3 = Raiden_Shogun_T2_T3_1toMax_Volume - Raiden_Shogun_T2_T3_1toMin_Volume
     var Raiden_Shogun_T2_T4 = Raiden_Shogun_T2_T4_1toMax_Volume - Raiden_Shogun_T2_T4_1toMin_Volume
     var Raiden_Shogun_T2_T5 = Raiden_Shogun_T2_T5_1toMax_Volume - Raiden_Shogun_T2_T5_1toMin_Volume
-    var Raiden_Shogun_T2_T5_Comma = Raiden_Shogun_T2_T5.toLocaleString();
     document.getElementById('Raiden_Shogun_T2_T1_Volume').innerHTML = Raiden_Shogun_T2_T1;
     document.getElementById('Raiden_Shogun_T2_T2_Volume').innerHTML = Raiden_Shogun_T2_T2;
     document.getElementById('Raiden_Shogun_T2_T3_Volume').innerHTML = Raiden_Shogun_T2_T3;
     document.getElementById('Raiden_Shogun_T2_T4_Volume').innerHTML = Raiden_Shogun_T2_T4;
-    document.getElementById('Raiden_Shogun_T2_T5_Volume').innerHTML = Raiden_Shogun_T2_T5_Comma;
+    document.getElementById('Raiden_Shogun_T2_T5_Volume').innerHTML = Raiden_Shogun_T2_T5.toLocaleString();
   });
   Raiden_Shogun_T3.noUiSlider.on('update', function (values, handle) {
     var Raiden_Shogun_T3_Min_Volume = "L1toL" + Raiden_Shogun_T3.noUiSlider.get()[0];
@@ -291,12 +276,11 @@ function Raiden_ShogunLoad() {
     var Raiden_Shogun_T3_T3 = Raiden_Shogun_T3_T3_1toMax_Volume - Raiden_Shogun_T3_T3_1toMin_Volume
     var Raiden_Shogun_T3_T4 = Raiden_Shogun_T3_T4_1toMax_Volume - Raiden_Shogun_T3_T4_1toMin_Volume
     var Raiden_Shogun_T3_T5 = Raiden_Shogun_T3_T5_1toMax_Volume - Raiden_Shogun_T3_T5_1toMin_Volume
-    var Raiden_Shogun_T3_T5_Comma = Raiden_Shogun_T3_T5.toLocaleString();
     document.getElementById('Raiden_Shogun_T3_T1_Volume').innerHTML = Raiden_Shogun_T3_T1;
     document.getElementById('Raiden_Shogun_T3_T2_Volume').innerHTML = Raiden_Shogun_T3_T2;
     document.getElementById('Raiden_Shogun_T3_T3_Volume').innerHTML = Raiden_Shogun_T3_T3;
     document.getElementById('Raiden_Shogun_T3_T4_Volume').innerHTML = Raiden_Shogun_T3_T4;
-    document.getElementById('Raiden_Shogun_T3_T5_Volume').innerHTML = Raiden_Shogun_T3_T5_Comma;
+    document.getElementById('Raiden_Shogun_T3_T5_Volume').innerHTML = Raiden_Shogun_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Raiden_Shogun  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -316,13 +300,9 @@ function Kujou_SaraLoad() {
     var Kujou_Sara_Ex_Volume = Kujou_Sara_Ex_1toMax_Volume - Kujou_Sara_Ex_1toMin_Volume
     var Kujou_Sara_Ex_Book_Volume = Kujou_Sara_Ex_Volume / 1000
     var Kujou_Sara_Ex_Mora_Volume = Kujou_Sara_Ex_Volume * 0.2
-    var Kujou_Sara_Ex_Volume_Comma = Kujou_Sara_Ex_Volume.toLocaleString();
-    var Kujou_Sara_Ex_Book_Volume_Comma = Kujou_Sara_Ex_Book_Volume.toLocaleString();
-    var Kujou_Sara_Ex_Mora_Volume_Comma = Kujou_Sara_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Kujou_Sara_Ex_Volume_Html').innerHTML = Kujou_Sara_Ex_Volume_Comma;
-    document.getElementById('Kujou_Sara_Ex_Volume_NoComma').innerHTML = Kujou_Sara_Ex_Volume;
-    document.getElementById('Kujou_Sara_Ex_Book_Volume_Html').innerHTML = Kujou_Sara_Ex_Book_Volume_Comma;
-    document.getElementById('Kujou_Sara_Ex_Mora_Volume_Html').innerHTML = Kujou_Sara_Ex_Mora_Volume_Comma;
+    document.getElementById('Kujou_Sara_Ex_Volume').innerHTML = Kujou_Sara_Ex_Volume.toLocaleString();
+    document.getElementById('Kujou_Sara_Ex_Book_Volume').innerHTML = Kujou_Sara_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Kujou_Sara_Ex_Mora_Volume').innerHTML = Kujou_Sara_Ex_Mora_Volume.toLocaleString();
   });
   Kujou_Sara_Pr.noUiSlider.on('update', function (values, handle) {
     var Kujou_Sara_Pr_Min_Volume = "L1toL" + Kujou_Sara_Pr.noUiSlider.get()[0];
@@ -342,12 +322,11 @@ function Kujou_SaraLoad() {
     var Kujou_Sara_Pr_P3 = Kujou_Sara_Pr_P3_1toMax_Volume - Kujou_Sara_Pr_P3_1toMin_Volume
     var Kujou_Sara_Pr_P4 = Kujou_Sara_Pr_P4_1toMax_Volume - Kujou_Sara_Pr_P4_1toMin_Volume
     var Kujou_Sara_Pr_P5 = Kujou_Sara_Pr_P5_1toMax_Volume - Kujou_Sara_Pr_P5_1toMin_Volume
-    var Kujou_Sara_Pr_P5_Comma = Kujou_Sara_Pr_P5.toLocaleString();
     document.getElementById('Kujou_Sara_Pr_P1_Volume').innerHTML = Kujou_Sara_Pr_P1;
     document.getElementById('Kujou_Sara_Pr_P2_Volume').innerHTML = Kujou_Sara_Pr_P2;
     document.getElementById('Kujou_Sara_Pr_P3_Volume').innerHTML = Kujou_Sara_Pr_P3;
     document.getElementById('Kujou_Sara_Pr_P4_Volume').innerHTML = Kujou_Sara_Pr_P4;
-    document.getElementById('Kujou_Sara_Pr_P5_Volume').innerHTML = Kujou_Sara_Pr_P5_Comma;
+    document.getElementById('Kujou_Sara_Pr_P5_Volume').innerHTML = Kujou_Sara_Pr_P5.toLocaleString();
   });
   Kujou_Sara_T1.noUiSlider.on('update', function (values, handle) {
     var Kujou_Sara_T1_Min_Volume = "L1toL" + Kujou_Sara_T1.noUiSlider.get()[0];
@@ -367,12 +346,11 @@ function Kujou_SaraLoad() {
     var Kujou_Sara_T1_T3 = Kujou_Sara_T1_T3_1toMax_Volume - Kujou_Sara_T1_T3_1toMin_Volume
     var Kujou_Sara_T1_T4 = Kujou_Sara_T1_T4_1toMax_Volume - Kujou_Sara_T1_T4_1toMin_Volume
     var Kujou_Sara_T1_T5 = Kujou_Sara_T1_T5_1toMax_Volume - Kujou_Sara_T1_T5_1toMin_Volume
-    var Kujou_Sara_T1_T5_Comma = Kujou_Sara_T1_T5.toLocaleString();
     document.getElementById('Kujou_Sara_T1_T1_Volume').innerHTML = Kujou_Sara_T1_T1;
     document.getElementById('Kujou_Sara_T1_T2_Volume').innerHTML = Kujou_Sara_T1_T2;
     document.getElementById('Kujou_Sara_T1_T3_Volume').innerHTML = Kujou_Sara_T1_T3;
     document.getElementById('Kujou_Sara_T1_T4_Volume').innerHTML = Kujou_Sara_T1_T4;
-    document.getElementById('Kujou_Sara_T1_T5_Volume').innerHTML = Kujou_Sara_T1_T5_Comma;
+    document.getElementById('Kujou_Sara_T1_T5_Volume').innerHTML = Kujou_Sara_T1_T5.toLocaleString();
   });
   Kujou_Sara_T2.noUiSlider.on('update', function (values, handle) {
     var Kujou_Sara_T2_Min_Volume = "L1toL" + Kujou_Sara_T2.noUiSlider.get()[0];
@@ -392,12 +370,11 @@ function Kujou_SaraLoad() {
     var Kujou_Sara_T2_T3 = Kujou_Sara_T2_T3_1toMax_Volume - Kujou_Sara_T2_T3_1toMin_Volume
     var Kujou_Sara_T2_T4 = Kujou_Sara_T2_T4_1toMax_Volume - Kujou_Sara_T2_T4_1toMin_Volume
     var Kujou_Sara_T2_T5 = Kujou_Sara_T2_T5_1toMax_Volume - Kujou_Sara_T2_T5_1toMin_Volume
-    var Kujou_Sara_T2_T5_Comma = Kujou_Sara_T2_T5.toLocaleString();
     document.getElementById('Kujou_Sara_T2_T1_Volume').innerHTML = Kujou_Sara_T2_T1;
     document.getElementById('Kujou_Sara_T2_T2_Volume').innerHTML = Kujou_Sara_T2_T2;
     document.getElementById('Kujou_Sara_T2_T3_Volume').innerHTML = Kujou_Sara_T2_T3;
     document.getElementById('Kujou_Sara_T2_T4_Volume').innerHTML = Kujou_Sara_T2_T4;
-    document.getElementById('Kujou_Sara_T2_T5_Volume').innerHTML = Kujou_Sara_T2_T5_Comma;
+    document.getElementById('Kujou_Sara_T2_T5_Volume').innerHTML = Kujou_Sara_T2_T5.toLocaleString();
   });
   Kujou_Sara_T3.noUiSlider.on('update', function (values, handle) {
     var Kujou_Sara_T3_Min_Volume = "L1toL" + Kujou_Sara_T3.noUiSlider.get()[0];
@@ -417,12 +394,11 @@ function Kujou_SaraLoad() {
     var Kujou_Sara_T3_T3 = Kujou_Sara_T3_T3_1toMax_Volume - Kujou_Sara_T3_T3_1toMin_Volume
     var Kujou_Sara_T3_T4 = Kujou_Sara_T3_T4_1toMax_Volume - Kujou_Sara_T3_T4_1toMin_Volume
     var Kujou_Sara_T3_T5 = Kujou_Sara_T3_T5_1toMax_Volume - Kujou_Sara_T3_T5_1toMin_Volume
-    var Kujou_Sara_T3_T5_Comma = Kujou_Sara_T3_T5.toLocaleString();
     document.getElementById('Kujou_Sara_T3_T1_Volume').innerHTML = Kujou_Sara_T3_T1;
     document.getElementById('Kujou_Sara_T3_T2_Volume').innerHTML = Kujou_Sara_T3_T2;
     document.getElementById('Kujou_Sara_T3_T3_Volume').innerHTML = Kujou_Sara_T3_T3;
     document.getElementById('Kujou_Sara_T3_T4_Volume').innerHTML = Kujou_Sara_T3_T4;
-    document.getElementById('Kujou_Sara_T3_T5_Volume').innerHTML = Kujou_Sara_T3_T5_Comma;
+    document.getElementById('Kujou_Sara_T3_T5_Volume').innerHTML = Kujou_Sara_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kujou_Sara  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -442,13 +418,9 @@ function YoimiyaLoad() {
     var Yoimiya_Ex_Volume = Yoimiya_Ex_1toMax_Volume - Yoimiya_Ex_1toMin_Volume
     var Yoimiya_Ex_Book_Volume = Yoimiya_Ex_Volume / 1000
     var Yoimiya_Ex_Mora_Volume = Yoimiya_Ex_Volume * 0.2
-    var Yoimiya_Ex_Volume_Comma = Yoimiya_Ex_Volume.toLocaleString();
-    var Yoimiya_Ex_Book_Volume_Comma = Yoimiya_Ex_Book_Volume.toLocaleString();
-    var Yoimiya_Ex_Mora_Volume_Comma = Yoimiya_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Yoimiya_Ex_Volume_Html').innerHTML = Yoimiya_Ex_Volume_Comma;
-    document.getElementById('Yoimiya_Ex_Volume_NoComma').innerHTML = Yoimiya_Ex_Volume;
-    document.getElementById('Yoimiya_Ex_Book_Volume_Html').innerHTML = Yoimiya_Ex_Book_Volume_Comma;
-    document.getElementById('Yoimiya_Ex_Mora_Volume_Html').innerHTML = Yoimiya_Ex_Mora_Volume_Comma;
+    document.getElementById('Yoimiya_Ex_Volume').innerHTML = Yoimiya_Ex_Volume.toLocaleString();
+    document.getElementById('Yoimiya_Ex_Book_Volume').innerHTML = Yoimiya_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Yoimiya_Ex_Mora_Volume').innerHTML = Yoimiya_Ex_Mora_Volume.toLocaleString();
   });
   Yoimiya_Pr.noUiSlider.on('update', function (values, handle) {
     var Yoimiya_Pr_Min_Volume = "L1toL" + Yoimiya_Pr.noUiSlider.get()[0];
@@ -468,12 +440,11 @@ function YoimiyaLoad() {
     var Yoimiya_Pr_P3 = Yoimiya_Pr_P3_1toMax_Volume - Yoimiya_Pr_P3_1toMin_Volume
     var Yoimiya_Pr_P4 = Yoimiya_Pr_P4_1toMax_Volume - Yoimiya_Pr_P4_1toMin_Volume
     var Yoimiya_Pr_P5 = Yoimiya_Pr_P5_1toMax_Volume - Yoimiya_Pr_P5_1toMin_Volume
-    var Yoimiya_Pr_P5_Comma = Yoimiya_Pr_P5.toLocaleString();
     document.getElementById('Yoimiya_Pr_P1_Volume').innerHTML = Yoimiya_Pr_P1;
     document.getElementById('Yoimiya_Pr_P2_Volume').innerHTML = Yoimiya_Pr_P2;
     document.getElementById('Yoimiya_Pr_P3_Volume').innerHTML = Yoimiya_Pr_P3;
     document.getElementById('Yoimiya_Pr_P4_Volume').innerHTML = Yoimiya_Pr_P4;
-    document.getElementById('Yoimiya_Pr_P5_Volume').innerHTML = Yoimiya_Pr_P5_Comma;
+    document.getElementById('Yoimiya_Pr_P5_Volume').innerHTML = Yoimiya_Pr_P5.toLocaleString();
   });
   Yoimiya_T1.noUiSlider.on('update', function (values, handle) {
     var Yoimiya_T1_Min_Volume = "L1toL" + Yoimiya_T1.noUiSlider.get()[0];
@@ -493,12 +464,11 @@ function YoimiyaLoad() {
     var Yoimiya_T1_T3 = Yoimiya_T1_T3_1toMax_Volume - Yoimiya_T1_T3_1toMin_Volume
     var Yoimiya_T1_T4 = Yoimiya_T1_T4_1toMax_Volume - Yoimiya_T1_T4_1toMin_Volume
     var Yoimiya_T1_T5 = Yoimiya_T1_T5_1toMax_Volume - Yoimiya_T1_T5_1toMin_Volume
-    var Yoimiya_T1_T5_Comma = Yoimiya_T1_T5.toLocaleString();
     document.getElementById('Yoimiya_T1_T1_Volume').innerHTML = Yoimiya_T1_T1;
     document.getElementById('Yoimiya_T1_T2_Volume').innerHTML = Yoimiya_T1_T2;
     document.getElementById('Yoimiya_T1_T3_Volume').innerHTML = Yoimiya_T1_T3;
     document.getElementById('Yoimiya_T1_T4_Volume').innerHTML = Yoimiya_T1_T4;
-    document.getElementById('Yoimiya_T1_T5_Volume').innerHTML = Yoimiya_T1_T5_Comma;
+    document.getElementById('Yoimiya_T1_T5_Volume').innerHTML = Yoimiya_T1_T5.toLocaleString();
   });
   Yoimiya_T2.noUiSlider.on('update', function (values, handle) {
     var Yoimiya_T2_Min_Volume = "L1toL" + Yoimiya_T2.noUiSlider.get()[0];
@@ -518,12 +488,11 @@ function YoimiyaLoad() {
     var Yoimiya_T2_T3 = Yoimiya_T2_T3_1toMax_Volume - Yoimiya_T2_T3_1toMin_Volume
     var Yoimiya_T2_T4 = Yoimiya_T2_T4_1toMax_Volume - Yoimiya_T2_T4_1toMin_Volume
     var Yoimiya_T2_T5 = Yoimiya_T2_T5_1toMax_Volume - Yoimiya_T2_T5_1toMin_Volume
-    var Yoimiya_T2_T5_Comma = Yoimiya_T2_T5.toLocaleString();
     document.getElementById('Yoimiya_T2_T1_Volume').innerHTML = Yoimiya_T2_T1;
     document.getElementById('Yoimiya_T2_T2_Volume').innerHTML = Yoimiya_T2_T2;
     document.getElementById('Yoimiya_T2_T3_Volume').innerHTML = Yoimiya_T2_T3;
     document.getElementById('Yoimiya_T2_T4_Volume').innerHTML = Yoimiya_T2_T4;
-    document.getElementById('Yoimiya_T2_T5_Volume').innerHTML = Yoimiya_T2_T5_Comma;
+    document.getElementById('Yoimiya_T2_T5_Volume').innerHTML = Yoimiya_T2_T5.toLocaleString();
   });
   Yoimiya_T3.noUiSlider.on('update', function (values, handle) {
     var Yoimiya_T3_Min_Volume = "L1toL" + Yoimiya_T3.noUiSlider.get()[0];
@@ -543,12 +512,11 @@ function YoimiyaLoad() {
     var Yoimiya_T3_T3 = Yoimiya_T3_T3_1toMax_Volume - Yoimiya_T3_T3_1toMin_Volume
     var Yoimiya_T3_T4 = Yoimiya_T3_T4_1toMax_Volume - Yoimiya_T3_T4_1toMin_Volume
     var Yoimiya_T3_T5 = Yoimiya_T3_T5_1toMax_Volume - Yoimiya_T3_T5_1toMin_Volume
-    var Yoimiya_T3_T5_Comma = Yoimiya_T3_T5.toLocaleString();
     document.getElementById('Yoimiya_T3_T1_Volume').innerHTML = Yoimiya_T3_T1;
     document.getElementById('Yoimiya_T3_T2_Volume').innerHTML = Yoimiya_T3_T2;
     document.getElementById('Yoimiya_T3_T3_Volume').innerHTML = Yoimiya_T3_T3;
     document.getElementById('Yoimiya_T3_T4_Volume').innerHTML = Yoimiya_T3_T4;
-    document.getElementById('Yoimiya_T3_T5_Volume').innerHTML = Yoimiya_T3_T5_Comma;
+    document.getElementById('Yoimiya_T3_T5_Volume').innerHTML = Yoimiya_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yoimiya  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -568,13 +536,9 @@ function SayuLoad() {
     var Sayu_Ex_Volume = Sayu_Ex_1toMax_Volume - Sayu_Ex_1toMin_Volume
     var Sayu_Ex_Book_Volume = Sayu_Ex_Volume / 1000
     var Sayu_Ex_Mora_Volume = Sayu_Ex_Volume * 0.2
-    var Sayu_Ex_Volume_Comma = Sayu_Ex_Volume.toLocaleString();
-    var Sayu_Ex_Book_Volume_Comma = Sayu_Ex_Book_Volume.toLocaleString();
-    var Sayu_Ex_Mora_Volume_Comma = Sayu_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Sayu_Ex_Volume_Html').innerHTML = Sayu_Ex_Volume_Comma;
-    document.getElementById('Sayu_Ex_Volume_NoComma').innerHTML = Sayu_Ex_Volume;
-    document.getElementById('Sayu_Ex_Book_Volume_Html').innerHTML = Sayu_Ex_Book_Volume_Comma;
-    document.getElementById('Sayu_Ex_Mora_Volume_Html').innerHTML = Sayu_Ex_Mora_Volume_Comma;
+    document.getElementById('Sayu_Ex_Volume').innerHTML = Sayu_Ex_Volume.toLocaleString();
+    document.getElementById('Sayu_Ex_Book_Volume').innerHTML = Sayu_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Sayu_Ex_Mora_Volume').innerHTML = Sayu_Ex_Mora_Volume.toLocaleString();
   });
   Sayu_Pr.noUiSlider.on('update', function (values, handle) {
     var Sayu_Pr_Min_Volume = "L1toL" + Sayu_Pr.noUiSlider.get()[0];
@@ -594,12 +558,11 @@ function SayuLoad() {
     var Sayu_Pr_P3 = Sayu_Pr_P3_1toMax_Volume - Sayu_Pr_P3_1toMin_Volume
     var Sayu_Pr_P4 = Sayu_Pr_P4_1toMax_Volume - Sayu_Pr_P4_1toMin_Volume
     var Sayu_Pr_P5 = Sayu_Pr_P5_1toMax_Volume - Sayu_Pr_P5_1toMin_Volume
-    var Sayu_Pr_P5_Comma = Sayu_Pr_P5.toLocaleString();
     document.getElementById('Sayu_Pr_P1_Volume').innerHTML = Sayu_Pr_P1;
     document.getElementById('Sayu_Pr_P2_Volume').innerHTML = Sayu_Pr_P2;
     document.getElementById('Sayu_Pr_P3_Volume').innerHTML = Sayu_Pr_P3;
     document.getElementById('Sayu_Pr_P4_Volume').innerHTML = Sayu_Pr_P4;
-    document.getElementById('Sayu_Pr_P5_Volume').innerHTML = Sayu_Pr_P5_Comma;
+    document.getElementById('Sayu_Pr_P5_Volume').innerHTML = Sayu_Pr_P5.toLocaleString();
   });
   Sayu_T1.noUiSlider.on('update', function (values, handle) {
     var Sayu_T1_Min_Volume = "L1toL" + Sayu_T1.noUiSlider.get()[0];
@@ -619,12 +582,11 @@ function SayuLoad() {
     var Sayu_T1_T3 = Sayu_T1_T3_1toMax_Volume - Sayu_T1_T3_1toMin_Volume
     var Sayu_T1_T4 = Sayu_T1_T4_1toMax_Volume - Sayu_T1_T4_1toMin_Volume
     var Sayu_T1_T5 = Sayu_T1_T5_1toMax_Volume - Sayu_T1_T5_1toMin_Volume
-    var Sayu_T1_T5_Comma = Sayu_T1_T5.toLocaleString();
     document.getElementById('Sayu_T1_T1_Volume').innerHTML = Sayu_T1_T1;
     document.getElementById('Sayu_T1_T2_Volume').innerHTML = Sayu_T1_T2;
     document.getElementById('Sayu_T1_T3_Volume').innerHTML = Sayu_T1_T3;
     document.getElementById('Sayu_T1_T4_Volume').innerHTML = Sayu_T1_T4;
-    document.getElementById('Sayu_T1_T5_Volume').innerHTML = Sayu_T1_T5_Comma;
+    document.getElementById('Sayu_T1_T5_Volume').innerHTML = Sayu_T1_T5.toLocaleString();
   });
   Sayu_T2.noUiSlider.on('update', function (values, handle) {
     var Sayu_T2_Min_Volume = "L1toL" + Sayu_T2.noUiSlider.get()[0];
@@ -644,12 +606,11 @@ function SayuLoad() {
     var Sayu_T2_T3 = Sayu_T2_T3_1toMax_Volume - Sayu_T2_T3_1toMin_Volume
     var Sayu_T2_T4 = Sayu_T2_T4_1toMax_Volume - Sayu_T2_T4_1toMin_Volume
     var Sayu_T2_T5 = Sayu_T2_T5_1toMax_Volume - Sayu_T2_T5_1toMin_Volume
-    var Sayu_T2_T5_Comma = Sayu_T2_T5.toLocaleString();
     document.getElementById('Sayu_T2_T1_Volume').innerHTML = Sayu_T2_T1;
     document.getElementById('Sayu_T2_T2_Volume').innerHTML = Sayu_T2_T2;
     document.getElementById('Sayu_T2_T3_Volume').innerHTML = Sayu_T2_T3;
     document.getElementById('Sayu_T2_T4_Volume').innerHTML = Sayu_T2_T4;
-    document.getElementById('Sayu_T2_T5_Volume').innerHTML = Sayu_T2_T5_Comma;
+    document.getElementById('Sayu_T2_T5_Volume').innerHTML = Sayu_T2_T5.toLocaleString();
   });
   Sayu_T3.noUiSlider.on('update', function (values, handle) {
     var Sayu_T3_Min_Volume = "L1toL" + Sayu_T3.noUiSlider.get()[0];
@@ -669,12 +630,11 @@ function SayuLoad() {
     var Sayu_T3_T3 = Sayu_T3_T3_1toMax_Volume - Sayu_T3_T3_1toMin_Volume
     var Sayu_T3_T4 = Sayu_T3_T4_1toMax_Volume - Sayu_T3_T4_1toMin_Volume
     var Sayu_T3_T5 = Sayu_T3_T5_1toMax_Volume - Sayu_T3_T5_1toMin_Volume
-    var Sayu_T3_T5_Comma = Sayu_T3_T5.toLocaleString();
     document.getElementById('Sayu_T3_T1_Volume').innerHTML = Sayu_T3_T1;
     document.getElementById('Sayu_T3_T2_Volume').innerHTML = Sayu_T3_T2;
     document.getElementById('Sayu_T3_T3_Volume').innerHTML = Sayu_T3_T3;
     document.getElementById('Sayu_T3_T4_Volume').innerHTML = Sayu_T3_T4;
-    document.getElementById('Sayu_T3_T5_Volume').innerHTML = Sayu_T3_T5_Comma;
+    document.getElementById('Sayu_T3_T5_Volume').innerHTML = Sayu_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Sayu  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -694,13 +654,9 @@ function Kamisato_AyakaLoad() {
     var Kamisato_Ayaka_Ex_Volume = Kamisato_Ayaka_Ex_1toMax_Volume - Kamisato_Ayaka_Ex_1toMin_Volume
     var Kamisato_Ayaka_Ex_Book_Volume = Kamisato_Ayaka_Ex_Volume / 1000
     var Kamisato_Ayaka_Ex_Mora_Volume = Kamisato_Ayaka_Ex_Volume * 0.2
-    var Kamisato_Ayaka_Ex_Volume_Comma = Kamisato_Ayaka_Ex_Volume.toLocaleString();
-    var Kamisato_Ayaka_Ex_Book_Volume_Comma = Kamisato_Ayaka_Ex_Book_Volume.toLocaleString();
-    var Kamisato_Ayaka_Ex_Mora_Volume_Comma = Kamisato_Ayaka_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Kamisato_Ayaka_Ex_Volume_Html').innerHTML = Kamisato_Ayaka_Ex_Volume_Comma;
-    document.getElementById('Kamisato_Ayaka_Ex_Volume_NoComma').innerHTML = Kamisato_Ayaka_Ex_Volume;
-    document.getElementById('Kamisato_Ayaka_Ex_Book_Volume_Html').innerHTML = Kamisato_Ayaka_Ex_Book_Volume_Comma;
-    document.getElementById('Kamisato_Ayaka_Ex_Mora_Volume_Html').innerHTML = Kamisato_Ayaka_Ex_Mora_Volume_Comma;
+    document.getElementById('Kamisato_Ayaka_Ex_Volume').innerHTML = Kamisato_Ayaka_Ex_Volume.toLocaleString();
+    document.getElementById('Kamisato_Ayaka_Ex_Book_Volume').innerHTML = Kamisato_Ayaka_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Kamisato_Ayaka_Ex_Mora_Volume').innerHTML = Kamisato_Ayaka_Ex_Mora_Volume.toLocaleString();
   });
   Kamisato_Ayaka_Pr.noUiSlider.on('update', function (values, handle) {
     var Kamisato_Ayaka_Pr_Min_Volume = "L1toL" + Kamisato_Ayaka_Pr.noUiSlider.get()[0];
@@ -720,12 +676,11 @@ function Kamisato_AyakaLoad() {
     var Kamisato_Ayaka_Pr_P3 = Kamisato_Ayaka_Pr_P3_1toMax_Volume - Kamisato_Ayaka_Pr_P3_1toMin_Volume
     var Kamisato_Ayaka_Pr_P4 = Kamisato_Ayaka_Pr_P4_1toMax_Volume - Kamisato_Ayaka_Pr_P4_1toMin_Volume
     var Kamisato_Ayaka_Pr_P5 = Kamisato_Ayaka_Pr_P5_1toMax_Volume - Kamisato_Ayaka_Pr_P5_1toMin_Volume
-    var Kamisato_Ayaka_Pr_P5_Comma = Kamisato_Ayaka_Pr_P5.toLocaleString();
     document.getElementById('Kamisato_Ayaka_Pr_P1_Volume').innerHTML = Kamisato_Ayaka_Pr_P1;
     document.getElementById('Kamisato_Ayaka_Pr_P2_Volume').innerHTML = Kamisato_Ayaka_Pr_P2;
     document.getElementById('Kamisato_Ayaka_Pr_P3_Volume').innerHTML = Kamisato_Ayaka_Pr_P3;
     document.getElementById('Kamisato_Ayaka_Pr_P4_Volume').innerHTML = Kamisato_Ayaka_Pr_P4;
-    document.getElementById('Kamisato_Ayaka_Pr_P5_Volume').innerHTML = Kamisato_Ayaka_Pr_P5_Comma;
+    document.getElementById('Kamisato_Ayaka_Pr_P5_Volume').innerHTML = Kamisato_Ayaka_Pr_P5.toLocaleString();
   });
   Kamisato_Ayaka_T1.noUiSlider.on('update', function (values, handle) {
     var Kamisato_Ayaka_T1_Min_Volume = "L1toL" + Kamisato_Ayaka_T1.noUiSlider.get()[0];
@@ -745,12 +700,11 @@ function Kamisato_AyakaLoad() {
     var Kamisato_Ayaka_T1_T3 = Kamisato_Ayaka_T1_T3_1toMax_Volume - Kamisato_Ayaka_T1_T3_1toMin_Volume
     var Kamisato_Ayaka_T1_T4 = Kamisato_Ayaka_T1_T4_1toMax_Volume - Kamisato_Ayaka_T1_T4_1toMin_Volume
     var Kamisato_Ayaka_T1_T5 = Kamisato_Ayaka_T1_T5_1toMax_Volume - Kamisato_Ayaka_T1_T5_1toMin_Volume
-    var Kamisato_Ayaka_T1_T5_Comma = Kamisato_Ayaka_T1_T5.toLocaleString();
     document.getElementById('Kamisato_Ayaka_T1_T1_Volume').innerHTML = Kamisato_Ayaka_T1_T1;
     document.getElementById('Kamisato_Ayaka_T1_T2_Volume').innerHTML = Kamisato_Ayaka_T1_T2;
     document.getElementById('Kamisato_Ayaka_T1_T3_Volume').innerHTML = Kamisato_Ayaka_T1_T3;
     document.getElementById('Kamisato_Ayaka_T1_T4_Volume').innerHTML = Kamisato_Ayaka_T1_T4;
-    document.getElementById('Kamisato_Ayaka_T1_T5_Volume').innerHTML = Kamisato_Ayaka_T1_T5_Comma;
+    document.getElementById('Kamisato_Ayaka_T1_T5_Volume').innerHTML = Kamisato_Ayaka_T1_T5.toLocaleString();
   });
   Kamisato_Ayaka_T2.noUiSlider.on('update', function (values, handle) {
     var Kamisato_Ayaka_T2_Min_Volume = "L1toL" + Kamisato_Ayaka_T2.noUiSlider.get()[0];
@@ -770,12 +724,11 @@ function Kamisato_AyakaLoad() {
     var Kamisato_Ayaka_T2_T3 = Kamisato_Ayaka_T2_T3_1toMax_Volume - Kamisato_Ayaka_T2_T3_1toMin_Volume
     var Kamisato_Ayaka_T2_T4 = Kamisato_Ayaka_T2_T4_1toMax_Volume - Kamisato_Ayaka_T2_T4_1toMin_Volume
     var Kamisato_Ayaka_T2_T5 = Kamisato_Ayaka_T2_T5_1toMax_Volume - Kamisato_Ayaka_T2_T5_1toMin_Volume
-    var Kamisato_Ayaka_T2_T5_Comma = Kamisato_Ayaka_T2_T5.toLocaleString();
     document.getElementById('Kamisato_Ayaka_T2_T1_Volume').innerHTML = Kamisato_Ayaka_T2_T1;
     document.getElementById('Kamisato_Ayaka_T2_T2_Volume').innerHTML = Kamisato_Ayaka_T2_T2;
     document.getElementById('Kamisato_Ayaka_T2_T3_Volume').innerHTML = Kamisato_Ayaka_T2_T3;
     document.getElementById('Kamisato_Ayaka_T2_T4_Volume').innerHTML = Kamisato_Ayaka_T2_T4;
-    document.getElementById('Kamisato_Ayaka_T2_T5_Volume').innerHTML = Kamisato_Ayaka_T2_T5_Comma;
+    document.getElementById('Kamisato_Ayaka_T2_T5_Volume').innerHTML = Kamisato_Ayaka_T2_T5.toLocaleString();
   });
   Kamisato_Ayaka_T3.noUiSlider.on('update', function (values, handle) {
     var Kamisato_Ayaka_T3_Min_Volume = "L1toL" + Kamisato_Ayaka_T3.noUiSlider.get()[0];
@@ -795,12 +748,11 @@ function Kamisato_AyakaLoad() {
     var Kamisato_Ayaka_T3_T3 = Kamisato_Ayaka_T3_T3_1toMax_Volume - Kamisato_Ayaka_T3_T3_1toMin_Volume
     var Kamisato_Ayaka_T3_T4 = Kamisato_Ayaka_T3_T4_1toMax_Volume - Kamisato_Ayaka_T3_T4_1toMin_Volume
     var Kamisato_Ayaka_T3_T5 = Kamisato_Ayaka_T3_T5_1toMax_Volume - Kamisato_Ayaka_T3_T5_1toMin_Volume
-    var Kamisato_Ayaka_T3_T5_Comma = Kamisato_Ayaka_T3_T5.toLocaleString();
     document.getElementById('Kamisato_Ayaka_T3_T1_Volume').innerHTML = Kamisato_Ayaka_T3_T1;
     document.getElementById('Kamisato_Ayaka_T3_T2_Volume').innerHTML = Kamisato_Ayaka_T3_T2;
     document.getElementById('Kamisato_Ayaka_T3_T3_Volume').innerHTML = Kamisato_Ayaka_T3_T3;
     document.getElementById('Kamisato_Ayaka_T3_T4_Volume').innerHTML = Kamisato_Ayaka_T3_T4;
-    document.getElementById('Kamisato_Ayaka_T3_T5_Volume').innerHTML = Kamisato_Ayaka_T3_T5_Comma;
+    document.getElementById('Kamisato_Ayaka_T3_T5_Volume').innerHTML = Kamisato_Ayaka_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kamisato_Ayaka  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -820,13 +772,9 @@ function Kaedehara_KazuhaLoad() {
     var Kaedehara_Kazuha_Ex_Volume = Kaedehara_Kazuha_Ex_1toMax_Volume - Kaedehara_Kazuha_Ex_1toMin_Volume
     var Kaedehara_Kazuha_Ex_Book_Volume = Kaedehara_Kazuha_Ex_Volume / 1000
     var Kaedehara_Kazuha_Ex_Mora_Volume = Kaedehara_Kazuha_Ex_Volume * 0.2
-    var Kaedehara_Kazuha_Ex_Volume_Comma = Kaedehara_Kazuha_Ex_Volume.toLocaleString();
-    var Kaedehara_Kazuha_Ex_Book_Volume_Comma = Kaedehara_Kazuha_Ex_Book_Volume.toLocaleString();
-    var Kaedehara_Kazuha_Ex_Mora_Volume_Comma = Kaedehara_Kazuha_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Kaedehara_Kazuha_Ex_Volume_Html').innerHTML = Kaedehara_Kazuha_Ex_Volume_Comma;
-    document.getElementById('Kaedehara_Kazuha_Ex_Volume_NoComma').innerHTML = Kaedehara_Kazuha_Ex_Volume;
-    document.getElementById('Kaedehara_Kazuha_Ex_Book_Volume_Html').innerHTML = Kaedehara_Kazuha_Ex_Book_Volume_Comma;
-    document.getElementById('Kaedehara_Kazuha_Ex_Mora_Volume_Html').innerHTML = Kaedehara_Kazuha_Ex_Mora_Volume_Comma;
+    document.getElementById('Kaedehara_Kazuha_Ex_Volume').innerHTML = Kaedehara_Kazuha_Ex_Volume.toLocaleString();
+    document.getElementById('Kaedehara_Kazuha_Ex_Book_Volume').innerHTML = Kaedehara_Kazuha_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Kaedehara_Kazuha_Ex_Mora_Volume').innerHTML = Kaedehara_Kazuha_Ex_Mora_Volume.toLocaleString();
   });
   Kaedehara_Kazuha_Pr.noUiSlider.on('update', function (values, handle) {
     var Kaedehara_Kazuha_Pr_Min_Volume = "L1toL" + Kaedehara_Kazuha_Pr.noUiSlider.get()[0];
@@ -846,12 +794,11 @@ function Kaedehara_KazuhaLoad() {
     var Kaedehara_Kazuha_Pr_P3 = Kaedehara_Kazuha_Pr_P3_1toMax_Volume - Kaedehara_Kazuha_Pr_P3_1toMin_Volume
     var Kaedehara_Kazuha_Pr_P4 = Kaedehara_Kazuha_Pr_P4_1toMax_Volume - Kaedehara_Kazuha_Pr_P4_1toMin_Volume
     var Kaedehara_Kazuha_Pr_P5 = Kaedehara_Kazuha_Pr_P5_1toMax_Volume - Kaedehara_Kazuha_Pr_P5_1toMin_Volume
-    var Kaedehara_Kazuha_Pr_P5_Comma = Kaedehara_Kazuha_Pr_P5.toLocaleString();
     document.getElementById('Kaedehara_Kazuha_Pr_P1_Volume').innerHTML = Kaedehara_Kazuha_Pr_P1;
     document.getElementById('Kaedehara_Kazuha_Pr_P2_Volume').innerHTML = Kaedehara_Kazuha_Pr_P2;
     document.getElementById('Kaedehara_Kazuha_Pr_P3_Volume').innerHTML = Kaedehara_Kazuha_Pr_P3;
     document.getElementById('Kaedehara_Kazuha_Pr_P4_Volume').innerHTML = Kaedehara_Kazuha_Pr_P4;
-    document.getElementById('Kaedehara_Kazuha_Pr_P5_Volume').innerHTML = Kaedehara_Kazuha_Pr_P5_Comma;
+    document.getElementById('Kaedehara_Kazuha_Pr_P5_Volume').innerHTML = Kaedehara_Kazuha_Pr_P5.toLocaleString();
   });
   Kaedehara_Kazuha_T1.noUiSlider.on('update', function (values, handle) {
     var Kaedehara_Kazuha_T1_Min_Volume = "L1toL" + Kaedehara_Kazuha_T1.noUiSlider.get()[0];
@@ -871,12 +818,11 @@ function Kaedehara_KazuhaLoad() {
     var Kaedehara_Kazuha_T1_T3 = Kaedehara_Kazuha_T1_T3_1toMax_Volume - Kaedehara_Kazuha_T1_T3_1toMin_Volume
     var Kaedehara_Kazuha_T1_T4 = Kaedehara_Kazuha_T1_T4_1toMax_Volume - Kaedehara_Kazuha_T1_T4_1toMin_Volume
     var Kaedehara_Kazuha_T1_T5 = Kaedehara_Kazuha_T1_T5_1toMax_Volume - Kaedehara_Kazuha_T1_T5_1toMin_Volume
-    var Kaedehara_Kazuha_T1_T5_Comma = Kaedehara_Kazuha_T1_T5.toLocaleString();
     document.getElementById('Kaedehara_Kazuha_T1_T1_Volume').innerHTML = Kaedehara_Kazuha_T1_T1;
     document.getElementById('Kaedehara_Kazuha_T1_T2_Volume').innerHTML = Kaedehara_Kazuha_T1_T2;
     document.getElementById('Kaedehara_Kazuha_T1_T3_Volume').innerHTML = Kaedehara_Kazuha_T1_T3;
     document.getElementById('Kaedehara_Kazuha_T1_T4_Volume').innerHTML = Kaedehara_Kazuha_T1_T4;
-    document.getElementById('Kaedehara_Kazuha_T1_T5_Volume').innerHTML = Kaedehara_Kazuha_T1_T5_Comma;
+    document.getElementById('Kaedehara_Kazuha_T1_T5_Volume').innerHTML = Kaedehara_Kazuha_T1_T5.toLocaleString();
   });
   Kaedehara_Kazuha_T2.noUiSlider.on('update', function (values, handle) {
     var Kaedehara_Kazuha_T2_Min_Volume = "L1toL" + Kaedehara_Kazuha_T2.noUiSlider.get()[0];
@@ -896,12 +842,11 @@ function Kaedehara_KazuhaLoad() {
     var Kaedehara_Kazuha_T2_T3 = Kaedehara_Kazuha_T2_T3_1toMax_Volume - Kaedehara_Kazuha_T2_T3_1toMin_Volume
     var Kaedehara_Kazuha_T2_T4 = Kaedehara_Kazuha_T2_T4_1toMax_Volume - Kaedehara_Kazuha_T2_T4_1toMin_Volume
     var Kaedehara_Kazuha_T2_T5 = Kaedehara_Kazuha_T2_T5_1toMax_Volume - Kaedehara_Kazuha_T2_T5_1toMin_Volume
-    var Kaedehara_Kazuha_T2_T5_Comma = Kaedehara_Kazuha_T2_T5.toLocaleString();
     document.getElementById('Kaedehara_Kazuha_T2_T1_Volume').innerHTML = Kaedehara_Kazuha_T2_T1;
     document.getElementById('Kaedehara_Kazuha_T2_T2_Volume').innerHTML = Kaedehara_Kazuha_T2_T2;
     document.getElementById('Kaedehara_Kazuha_T2_T3_Volume').innerHTML = Kaedehara_Kazuha_T2_T3;
     document.getElementById('Kaedehara_Kazuha_T2_T4_Volume').innerHTML = Kaedehara_Kazuha_T2_T4;
-    document.getElementById('Kaedehara_Kazuha_T2_T5_Volume').innerHTML = Kaedehara_Kazuha_T2_T5_Comma;
+    document.getElementById('Kaedehara_Kazuha_T2_T5_Volume').innerHTML = Kaedehara_Kazuha_T2_T5.toLocaleString();
   });
   Kaedehara_Kazuha_T3.noUiSlider.on('update', function (values, handle) {
     var Kaedehara_Kazuha_T3_Min_Volume = "L1toL" + Kaedehara_Kazuha_T3.noUiSlider.get()[0];
@@ -921,12 +866,11 @@ function Kaedehara_KazuhaLoad() {
     var Kaedehara_Kazuha_T3_T3 = Kaedehara_Kazuha_T3_T3_1toMax_Volume - Kaedehara_Kazuha_T3_T3_1toMin_Volume
     var Kaedehara_Kazuha_T3_T4 = Kaedehara_Kazuha_T3_T4_1toMax_Volume - Kaedehara_Kazuha_T3_T4_1toMin_Volume
     var Kaedehara_Kazuha_T3_T5 = Kaedehara_Kazuha_T3_T5_1toMax_Volume - Kaedehara_Kazuha_T3_T5_1toMin_Volume
-    var Kaedehara_Kazuha_T3_T5_Comma = Kaedehara_Kazuha_T3_T5.toLocaleString();
     document.getElementById('Kaedehara_Kazuha_T3_T1_Volume').innerHTML = Kaedehara_Kazuha_T3_T1;
     document.getElementById('Kaedehara_Kazuha_T3_T2_Volume').innerHTML = Kaedehara_Kazuha_T3_T2;
     document.getElementById('Kaedehara_Kazuha_T3_T3_Volume').innerHTML = Kaedehara_Kazuha_T3_T3;
     document.getElementById('Kaedehara_Kazuha_T3_T4_Volume').innerHTML = Kaedehara_Kazuha_T3_T4;
-    document.getElementById('Kaedehara_Kazuha_T3_T5_Volume').innerHTML = Kaedehara_Kazuha_T3_T5_Comma;
+    document.getElementById('Kaedehara_Kazuha_T3_T5_Volume').innerHTML = Kaedehara_Kazuha_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kaedehara_Kazuha  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -946,13 +890,9 @@ function EulaLoad() {
     var Eula_Ex_Volume = Eula_Ex_1toMax_Volume - Eula_Ex_1toMin_Volume
     var Eula_Ex_Book_Volume = Eula_Ex_Volume / 1000
     var Eula_Ex_Mora_Volume = Eula_Ex_Volume * 0.2
-    var Eula_Ex_Volume_Comma = Eula_Ex_Volume.toLocaleString();
-    var Eula_Ex_Book_Volume_Comma = Eula_Ex_Book_Volume.toLocaleString();
-    var Eula_Ex_Mora_Volume_Comma = Eula_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Eula_Ex_Volume_Html').innerHTML = Eula_Ex_Volume_Comma;
-    document.getElementById('Eula_Ex_Volume_NoComma').innerHTML = Eula_Ex_Volume;
-    document.getElementById('Eula_Ex_Book_Volume_Html').innerHTML = Eula_Ex_Book_Volume_Comma;
-    document.getElementById('Eula_Ex_Mora_Volume_Html').innerHTML = Eula_Ex_Mora_Volume_Comma;
+    document.getElementById('Eula_Ex_Volume').innerHTML = Eula_Ex_Volume.toLocaleString();
+    document.getElementById('Eula_Ex_Book_Volume').innerHTML = Eula_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Eula_Ex_Mora_Volume').innerHTML = Eula_Ex_Mora_Volume.toLocaleString();
   });
   Eula_Pr.noUiSlider.on('update', function (values, handle) {
     var Eula_Pr_Min_Volume = "L1toL" + Eula_Pr.noUiSlider.get()[0];
@@ -972,12 +912,11 @@ function EulaLoad() {
     var Eula_Pr_P3 = Eula_Pr_P3_1toMax_Volume - Eula_Pr_P3_1toMin_Volume
     var Eula_Pr_P4 = Eula_Pr_P4_1toMax_Volume - Eula_Pr_P4_1toMin_Volume
     var Eula_Pr_P5 = Eula_Pr_P5_1toMax_Volume - Eula_Pr_P5_1toMin_Volume
-    var Eula_Pr_P5_Comma = Eula_Pr_P5.toLocaleString();
     document.getElementById('Eula_Pr_P1_Volume').innerHTML = Eula_Pr_P1;
     document.getElementById('Eula_Pr_P2_Volume').innerHTML = Eula_Pr_P2;
     document.getElementById('Eula_Pr_P3_Volume').innerHTML = Eula_Pr_P3;
     document.getElementById('Eula_Pr_P4_Volume').innerHTML = Eula_Pr_P4;
-    document.getElementById('Eula_Pr_P5_Volume').innerHTML = Eula_Pr_P5_Comma;
+    document.getElementById('Eula_Pr_P5_Volume').innerHTML = Eula_Pr_P5.toLocaleString();
   });
   Eula_T1.noUiSlider.on('update', function (values, handle) {
     var Eula_T1_Min_Volume = "L1toL" + Eula_T1.noUiSlider.get()[0];
@@ -997,12 +936,11 @@ function EulaLoad() {
     var Eula_T1_T3 = Eula_T1_T3_1toMax_Volume - Eula_T1_T3_1toMin_Volume
     var Eula_T1_T4 = Eula_T1_T4_1toMax_Volume - Eula_T1_T4_1toMin_Volume
     var Eula_T1_T5 = Eula_T1_T5_1toMax_Volume - Eula_T1_T5_1toMin_Volume
-    var Eula_T1_T5_Comma = Eula_T1_T5.toLocaleString();
     document.getElementById('Eula_T1_T1_Volume').innerHTML = Eula_T1_T1;
     document.getElementById('Eula_T1_T2_Volume').innerHTML = Eula_T1_T2;
     document.getElementById('Eula_T1_T3_Volume').innerHTML = Eula_T1_T3;
     document.getElementById('Eula_T1_T4_Volume').innerHTML = Eula_T1_T4;
-    document.getElementById('Eula_T1_T5_Volume').innerHTML = Eula_T1_T5_Comma;
+    document.getElementById('Eula_T1_T5_Volume').innerHTML = Eula_T1_T5.toLocaleString();
   });
   Eula_T2.noUiSlider.on('update', function (values, handle) {
     var Eula_T2_Min_Volume = "L1toL" + Eula_T2.noUiSlider.get()[0];
@@ -1022,12 +960,11 @@ function EulaLoad() {
     var Eula_T2_T3 = Eula_T2_T3_1toMax_Volume - Eula_T2_T3_1toMin_Volume
     var Eula_T2_T4 = Eula_T2_T4_1toMax_Volume - Eula_T2_T4_1toMin_Volume
     var Eula_T2_T5 = Eula_T2_T5_1toMax_Volume - Eula_T2_T5_1toMin_Volume
-    var Eula_T2_T5_Comma = Eula_T2_T5.toLocaleString();
     document.getElementById('Eula_T2_T1_Volume').innerHTML = Eula_T2_T1;
     document.getElementById('Eula_T2_T2_Volume').innerHTML = Eula_T2_T2;
     document.getElementById('Eula_T2_T3_Volume').innerHTML = Eula_T2_T3;
     document.getElementById('Eula_T2_T4_Volume').innerHTML = Eula_T2_T4;
-    document.getElementById('Eula_T2_T5_Volume').innerHTML = Eula_T2_T5_Comma;
+    document.getElementById('Eula_T2_T5_Volume').innerHTML = Eula_T2_T5.toLocaleString();
   });
   Eula_T3.noUiSlider.on('update', function (values, handle) {
     var Eula_T3_Min_Volume = "L1toL" + Eula_T3.noUiSlider.get()[0];
@@ -1047,12 +984,11 @@ function EulaLoad() {
     var Eula_T3_T3 = Eula_T3_T3_1toMax_Volume - Eula_T3_T3_1toMin_Volume
     var Eula_T3_T4 = Eula_T3_T4_1toMax_Volume - Eula_T3_T4_1toMin_Volume
     var Eula_T3_T5 = Eula_T3_T5_1toMax_Volume - Eula_T3_T5_1toMin_Volume
-    var Eula_T3_T5_Comma = Eula_T3_T5.toLocaleString();
     document.getElementById('Eula_T3_T1_Volume').innerHTML = Eula_T3_T1;
     document.getElementById('Eula_T3_T2_Volume').innerHTML = Eula_T3_T2;
     document.getElementById('Eula_T3_T3_Volume').innerHTML = Eula_T3_T3;
     document.getElementById('Eula_T3_T4_Volume').innerHTML = Eula_T3_T4;
-    document.getElementById('Eula_T3_T5_Volume').innerHTML = Eula_T3_T5_Comma;
+    document.getElementById('Eula_T3_T5_Volume').innerHTML = Eula_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Eula  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1072,13 +1008,9 @@ function YanfeiLoad() {
     var Yanfei_Ex_Volume = Yanfei_Ex_1toMax_Volume - Yanfei_Ex_1toMin_Volume
     var Yanfei_Ex_Book_Volume = Yanfei_Ex_Volume / 1000
     var Yanfei_Ex_Mora_Volume = Yanfei_Ex_Volume * 0.2
-    var Yanfei_Ex_Volume_Comma = Yanfei_Ex_Volume.toLocaleString();
-    var Yanfei_Ex_Book_Volume_Comma = Yanfei_Ex_Book_Volume.toLocaleString();
-    var Yanfei_Ex_Mora_Volume_Comma = Yanfei_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Yanfei_Ex_Volume_Html').innerHTML = Yanfei_Ex_Volume_Comma;
-    document.getElementById('Yanfei_Ex_Volume_NoComma').innerHTML = Yanfei_Ex_Volume;
-    document.getElementById('Yanfei_Ex_Book_Volume_Html').innerHTML = Yanfei_Ex_Book_Volume_Comma;
-    document.getElementById('Yanfei_Ex_Mora_Volume_Html').innerHTML = Yanfei_Ex_Mora_Volume_Comma;
+    document.getElementById('Yanfei_Ex_Volume').innerHTML = Yanfei_Ex_Volume.toLocaleString();
+    document.getElementById('Yanfei_Ex_Book_Volume').innerHTML = Yanfei_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Yanfei_Ex_Mora_Volume').innerHTML = Yanfei_Ex_Mora_Volume.toLocaleString();
   });
   Yanfei_Pr.noUiSlider.on('update', function (values, handle) {
     var Yanfei_Pr_Min_Volume = "L1toL" + Yanfei_Pr.noUiSlider.get()[0];
@@ -1098,12 +1030,11 @@ function YanfeiLoad() {
     var Yanfei_Pr_P3 = Yanfei_Pr_P3_1toMax_Volume - Yanfei_Pr_P3_1toMin_Volume
     var Yanfei_Pr_P4 = Yanfei_Pr_P4_1toMax_Volume - Yanfei_Pr_P4_1toMin_Volume
     var Yanfei_Pr_P5 = Yanfei_Pr_P5_1toMax_Volume - Yanfei_Pr_P5_1toMin_Volume
-    var Yanfei_Pr_P5_Comma = Yanfei_Pr_P5.toLocaleString();
     document.getElementById('Yanfei_Pr_P1_Volume').innerHTML = Yanfei_Pr_P1;
     document.getElementById('Yanfei_Pr_P2_Volume').innerHTML = Yanfei_Pr_P2;
     document.getElementById('Yanfei_Pr_P3_Volume').innerHTML = Yanfei_Pr_P3;
     document.getElementById('Yanfei_Pr_P4_Volume').innerHTML = Yanfei_Pr_P4;
-    document.getElementById('Yanfei_Pr_P5_Volume').innerHTML = Yanfei_Pr_P5_Comma;
+    document.getElementById('Yanfei_Pr_P5_Volume').innerHTML = Yanfei_Pr_P5.toLocaleString();
   });
   Yanfei_T1.noUiSlider.on('update', function (values, handle) {
     var Yanfei_T1_Min_Volume = "L1toL" + Yanfei_T1.noUiSlider.get()[0];
@@ -1123,12 +1054,11 @@ function YanfeiLoad() {
     var Yanfei_T1_T3 = Yanfei_T1_T3_1toMax_Volume - Yanfei_T1_T3_1toMin_Volume
     var Yanfei_T1_T4 = Yanfei_T1_T4_1toMax_Volume - Yanfei_T1_T4_1toMin_Volume
     var Yanfei_T1_T5 = Yanfei_T1_T5_1toMax_Volume - Yanfei_T1_T5_1toMin_Volume
-    var Yanfei_T1_T5_Comma = Yanfei_T1_T5.toLocaleString();
     document.getElementById('Yanfei_T1_T1_Volume').innerHTML = Yanfei_T1_T1;
     document.getElementById('Yanfei_T1_T2_Volume').innerHTML = Yanfei_T1_T2;
     document.getElementById('Yanfei_T1_T3_Volume').innerHTML = Yanfei_T1_T3;
     document.getElementById('Yanfei_T1_T4_Volume').innerHTML = Yanfei_T1_T4;
-    document.getElementById('Yanfei_T1_T5_Volume').innerHTML = Yanfei_T1_T5_Comma;
+    document.getElementById('Yanfei_T1_T5_Volume').innerHTML = Yanfei_T1_T5.toLocaleString();
   });
   Yanfei_T2.noUiSlider.on('update', function (values, handle) {
     var Yanfei_T2_Min_Volume = "L1toL" + Yanfei_T2.noUiSlider.get()[0];
@@ -1148,12 +1078,11 @@ function YanfeiLoad() {
     var Yanfei_T2_T3 = Yanfei_T2_T3_1toMax_Volume - Yanfei_T2_T3_1toMin_Volume
     var Yanfei_T2_T4 = Yanfei_T2_T4_1toMax_Volume - Yanfei_T2_T4_1toMin_Volume
     var Yanfei_T2_T5 = Yanfei_T2_T5_1toMax_Volume - Yanfei_T2_T5_1toMin_Volume
-    var Yanfei_T2_T5_Comma = Yanfei_T2_T5.toLocaleString();
     document.getElementById('Yanfei_T2_T1_Volume').innerHTML = Yanfei_T2_T1;
     document.getElementById('Yanfei_T2_T2_Volume').innerHTML = Yanfei_T2_T2;
     document.getElementById('Yanfei_T2_T3_Volume').innerHTML = Yanfei_T2_T3;
     document.getElementById('Yanfei_T2_T4_Volume').innerHTML = Yanfei_T2_T4;
-    document.getElementById('Yanfei_T2_T5_Volume').innerHTML = Yanfei_T2_T5_Comma;
+    document.getElementById('Yanfei_T2_T5_Volume').innerHTML = Yanfei_T2_T5.toLocaleString();
   });
   Yanfei_T3.noUiSlider.on('update', function (values, handle) {
     var Yanfei_T3_Min_Volume = "L1toL" + Yanfei_T3.noUiSlider.get()[0];
@@ -1173,12 +1102,11 @@ function YanfeiLoad() {
     var Yanfei_T3_T3 = Yanfei_T3_T3_1toMax_Volume - Yanfei_T3_T3_1toMin_Volume
     var Yanfei_T3_T4 = Yanfei_T3_T4_1toMax_Volume - Yanfei_T3_T4_1toMin_Volume
     var Yanfei_T3_T5 = Yanfei_T3_T5_1toMax_Volume - Yanfei_T3_T5_1toMin_Volume
-    var Yanfei_T3_T5_Comma = Yanfei_T3_T5.toLocaleString();
     document.getElementById('Yanfei_T3_T1_Volume').innerHTML = Yanfei_T3_T1;
     document.getElementById('Yanfei_T3_T2_Volume').innerHTML = Yanfei_T3_T2;
     document.getElementById('Yanfei_T3_T3_Volume').innerHTML = Yanfei_T3_T3;
     document.getElementById('Yanfei_T3_T4_Volume').innerHTML = Yanfei_T3_T4;
-    document.getElementById('Yanfei_T3_T5_Volume').innerHTML = Yanfei_T3_T5_Comma;
+    document.getElementById('Yanfei_T3_T5_Volume').innerHTML = Yanfei_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yanfei  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1198,13 +1126,9 @@ function RosariaLoad() {
     var Rosaria_Ex_Volume = Rosaria_Ex_1toMax_Volume - Rosaria_Ex_1toMin_Volume
     var Rosaria_Ex_Book_Volume = Rosaria_Ex_Volume / 1000
     var Rosaria_Ex_Mora_Volume = Rosaria_Ex_Volume * 0.2
-    var Rosaria_Ex_Volume_Comma = Rosaria_Ex_Volume.toLocaleString();
-    var Rosaria_Ex_Book_Volume_Comma = Rosaria_Ex_Book_Volume.toLocaleString();
-    var Rosaria_Ex_Mora_Volume_Comma = Rosaria_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Rosaria_Ex_Volume_Html').innerHTML = Rosaria_Ex_Volume_Comma;
-    document.getElementById('Rosaria_Ex_Volume_NoComma').innerHTML = Rosaria_Ex_Volume;
-    document.getElementById('Rosaria_Ex_Book_Volume_Html').innerHTML = Rosaria_Ex_Book_Volume_Comma;
-    document.getElementById('Rosaria_Ex_Mora_Volume_Html').innerHTML = Rosaria_Ex_Mora_Volume_Comma;
+    document.getElementById('Rosaria_Ex_Volume').innerHTML = Rosaria_Ex_Volume.toLocaleString();
+    document.getElementById('Rosaria_Ex_Book_Volume').innerHTML = Rosaria_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Rosaria_Ex_Mora_Volume').innerHTML = Rosaria_Ex_Mora_Volume.toLocaleString();
   });
   Rosaria_Pr.noUiSlider.on('update', function (values, handle) {
     var Rosaria_Pr_Min_Volume = "L1toL" + Rosaria_Pr.noUiSlider.get()[0];
@@ -1224,12 +1148,11 @@ function RosariaLoad() {
     var Rosaria_Pr_P3 = Rosaria_Pr_P3_1toMax_Volume - Rosaria_Pr_P3_1toMin_Volume
     var Rosaria_Pr_P4 = Rosaria_Pr_P4_1toMax_Volume - Rosaria_Pr_P4_1toMin_Volume
     var Rosaria_Pr_P5 = Rosaria_Pr_P5_1toMax_Volume - Rosaria_Pr_P5_1toMin_Volume
-    var Rosaria_Pr_P5_Comma = Rosaria_Pr_P5.toLocaleString();
     document.getElementById('Rosaria_Pr_P1_Volume').innerHTML = Rosaria_Pr_P1;
     document.getElementById('Rosaria_Pr_P2_Volume').innerHTML = Rosaria_Pr_P2;
     document.getElementById('Rosaria_Pr_P3_Volume').innerHTML = Rosaria_Pr_P3;
     document.getElementById('Rosaria_Pr_P4_Volume').innerHTML = Rosaria_Pr_P4;
-    document.getElementById('Rosaria_Pr_P5_Volume').innerHTML = Rosaria_Pr_P5_Comma;
+    document.getElementById('Rosaria_Pr_P5_Volume').innerHTML = Rosaria_Pr_P5.toLocaleString();
   });
   Rosaria_T1.noUiSlider.on('update', function (values, handle) {
     var Rosaria_T1_Min_Volume = "L1toL" + Rosaria_T1.noUiSlider.get()[0];
@@ -1249,12 +1172,11 @@ function RosariaLoad() {
     var Rosaria_T1_T3 = Rosaria_T1_T3_1toMax_Volume - Rosaria_T1_T3_1toMin_Volume
     var Rosaria_T1_T4 = Rosaria_T1_T4_1toMax_Volume - Rosaria_T1_T4_1toMin_Volume
     var Rosaria_T1_T5 = Rosaria_T1_T5_1toMax_Volume - Rosaria_T1_T5_1toMin_Volume
-    var Rosaria_T1_T5_Comma = Rosaria_T1_T5.toLocaleString();
     document.getElementById('Rosaria_T1_T1_Volume').innerHTML = Rosaria_T1_T1;
     document.getElementById('Rosaria_T1_T2_Volume').innerHTML = Rosaria_T1_T2;
     document.getElementById('Rosaria_T1_T3_Volume').innerHTML = Rosaria_T1_T3;
     document.getElementById('Rosaria_T1_T4_Volume').innerHTML = Rosaria_T1_T4;
-    document.getElementById('Rosaria_T1_T5_Volume').innerHTML = Rosaria_T1_T5_Comma;
+    document.getElementById('Rosaria_T1_T5_Volume').innerHTML = Rosaria_T1_T5.toLocaleString();
   });
   Rosaria_T2.noUiSlider.on('update', function (values, handle) {
     var Rosaria_T2_Min_Volume = "L1toL" + Rosaria_T2.noUiSlider.get()[0];
@@ -1274,12 +1196,11 @@ function RosariaLoad() {
     var Rosaria_T2_T3 = Rosaria_T2_T3_1toMax_Volume - Rosaria_T2_T3_1toMin_Volume
     var Rosaria_T2_T4 = Rosaria_T2_T4_1toMax_Volume - Rosaria_T2_T4_1toMin_Volume
     var Rosaria_T2_T5 = Rosaria_T2_T5_1toMax_Volume - Rosaria_T2_T5_1toMin_Volume
-    var Rosaria_T2_T5_Comma = Rosaria_T2_T5.toLocaleString();
     document.getElementById('Rosaria_T2_T1_Volume').innerHTML = Rosaria_T2_T1;
     document.getElementById('Rosaria_T2_T2_Volume').innerHTML = Rosaria_T2_T2;
     document.getElementById('Rosaria_T2_T3_Volume').innerHTML = Rosaria_T2_T3;
     document.getElementById('Rosaria_T2_T4_Volume').innerHTML = Rosaria_T2_T4;
-    document.getElementById('Rosaria_T2_T5_Volume').innerHTML = Rosaria_T2_T5_Comma;
+    document.getElementById('Rosaria_T2_T5_Volume').innerHTML = Rosaria_T2_T5.toLocaleString();
   });
   Rosaria_T3.noUiSlider.on('update', function (values, handle) {
     var Rosaria_T3_Min_Volume = "L1toL" + Rosaria_T3.noUiSlider.get()[0];
@@ -1299,12 +1220,11 @@ function RosariaLoad() {
     var Rosaria_T3_T3 = Rosaria_T3_T3_1toMax_Volume - Rosaria_T3_T3_1toMin_Volume
     var Rosaria_T3_T4 = Rosaria_T3_T4_1toMax_Volume - Rosaria_T3_T4_1toMin_Volume
     var Rosaria_T3_T5 = Rosaria_T3_T5_1toMax_Volume - Rosaria_T3_T5_1toMin_Volume
-    var Rosaria_T3_T5_Comma = Rosaria_T3_T5.toLocaleString();
     document.getElementById('Rosaria_T3_T1_Volume').innerHTML = Rosaria_T3_T1;
     document.getElementById('Rosaria_T3_T2_Volume').innerHTML = Rosaria_T3_T2;
     document.getElementById('Rosaria_T3_T3_Volume').innerHTML = Rosaria_T3_T3;
     document.getElementById('Rosaria_T3_T4_Volume').innerHTML = Rosaria_T3_T4;
-    document.getElementById('Rosaria_T3_T5_Volume').innerHTML = Rosaria_T3_T5_Comma;
+    document.getElementById('Rosaria_T3_T5_Volume').innerHTML = Rosaria_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Rosaria  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1324,13 +1244,9 @@ function HuTaoLoad() {
     var HuTao_Ex_Volume = HuTao_Ex_1toMax_Volume - HuTao_Ex_1toMin_Volume
     var HuTao_Ex_Book_Volume = HuTao_Ex_Volume / 1000
     var HuTao_Ex_Mora_Volume = HuTao_Ex_Volume * 0.2
-    var HuTao_Ex_Volume_Comma = HuTao_Ex_Volume.toLocaleString();
-    var HuTao_Ex_Book_Volume_Comma = HuTao_Ex_Book_Volume.toLocaleString();
-    var HuTao_Ex_Mora_Volume_Comma = HuTao_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('HuTao_Ex_Volume_Html').innerHTML = HuTao_Ex_Volume_Comma;
-    document.getElementById('HuTao_Ex_Volume_NoComma').innerHTML = HuTao_Ex_Volume;
-    document.getElementById('HuTao_Ex_Book_Volume_Html').innerHTML = HuTao_Ex_Book_Volume_Comma;
-    document.getElementById('HuTao_Ex_Mora_Volume_Html').innerHTML = HuTao_Ex_Mora_Volume_Comma;
+    document.getElementById('HuTao_Ex_Volume').innerHTML = HuTao_Ex_Volume.toLocaleString();
+    document.getElementById('HuTao_Ex_Book_Volume').innerHTML = HuTao_Ex_Book_Volume.toLocaleString();
+    document.getElementById('HuTao_Ex_Mora_Volume').innerHTML = HuTao_Ex_Mora_Volume.toLocaleString();
   });
   HuTao_Pr.noUiSlider.on('update', function (values, handle) {
     var HuTao_Pr_Min_Volume = "L1toL" + HuTao_Pr.noUiSlider.get()[0];
@@ -1350,12 +1266,11 @@ function HuTaoLoad() {
     var HuTao_Pr_P3 = HuTao_Pr_P3_1toMax_Volume - HuTao_Pr_P3_1toMin_Volume
     var HuTao_Pr_P4 = HuTao_Pr_P4_1toMax_Volume - HuTao_Pr_P4_1toMin_Volume
     var HuTao_Pr_P5 = HuTao_Pr_P5_1toMax_Volume - HuTao_Pr_P5_1toMin_Volume
-    var HuTao_Pr_P5_Comma = HuTao_Pr_P5.toLocaleString();
     document.getElementById('HuTao_Pr_P1_Volume').innerHTML = HuTao_Pr_P1;
     document.getElementById('HuTao_Pr_P2_Volume').innerHTML = HuTao_Pr_P2;
     document.getElementById('HuTao_Pr_P3_Volume').innerHTML = HuTao_Pr_P3;
     document.getElementById('HuTao_Pr_P4_Volume').innerHTML = HuTao_Pr_P4;
-    document.getElementById('HuTao_Pr_P5_Volume').innerHTML = HuTao_Pr_P5_Comma;
+    document.getElementById('HuTao_Pr_P5_Volume').innerHTML = HuTao_Pr_P5.toLocaleString();
   });
   HuTao_T1.noUiSlider.on('update', function (values, handle) {
     var HuTao_T1_Min_Volume = "L1toL" + HuTao_T1.noUiSlider.get()[0];
@@ -1375,12 +1290,11 @@ function HuTaoLoad() {
     var HuTao_T1_T3 = HuTao_T1_T3_1toMax_Volume - HuTao_T1_T3_1toMin_Volume
     var HuTao_T1_T4 = HuTao_T1_T4_1toMax_Volume - HuTao_T1_T4_1toMin_Volume
     var HuTao_T1_T5 = HuTao_T1_T5_1toMax_Volume - HuTao_T1_T5_1toMin_Volume
-    var HuTao_T1_T5_Comma = HuTao_T1_T5.toLocaleString();
     document.getElementById('HuTao_T1_T1_Volume').innerHTML = HuTao_T1_T1;
     document.getElementById('HuTao_T1_T2_Volume').innerHTML = HuTao_T1_T2;
     document.getElementById('HuTao_T1_T3_Volume').innerHTML = HuTao_T1_T3;
     document.getElementById('HuTao_T1_T4_Volume').innerHTML = HuTao_T1_T4;
-    document.getElementById('HuTao_T1_T5_Volume').innerHTML = HuTao_T1_T5_Comma;
+    document.getElementById('HuTao_T1_T5_Volume').innerHTML = HuTao_T1_T5.toLocaleString();
   });
   HuTao_T2.noUiSlider.on('update', function (values, handle) {
     var HuTao_T2_Min_Volume = "L1toL" + HuTao_T2.noUiSlider.get()[0];
@@ -1400,12 +1314,11 @@ function HuTaoLoad() {
     var HuTao_T2_T3 = HuTao_T2_T3_1toMax_Volume - HuTao_T2_T3_1toMin_Volume
     var HuTao_T2_T4 = HuTao_T2_T4_1toMax_Volume - HuTao_T2_T4_1toMin_Volume
     var HuTao_T2_T5 = HuTao_T2_T5_1toMax_Volume - HuTao_T2_T5_1toMin_Volume
-    var HuTao_T2_T5_Comma = HuTao_T2_T5.toLocaleString();
     document.getElementById('HuTao_T2_T1_Volume').innerHTML = HuTao_T2_T1;
     document.getElementById('HuTao_T2_T2_Volume').innerHTML = HuTao_T2_T2;
     document.getElementById('HuTao_T2_T3_Volume').innerHTML = HuTao_T2_T3;
     document.getElementById('HuTao_T2_T4_Volume').innerHTML = HuTao_T2_T4;
-    document.getElementById('HuTao_T2_T5_Volume').innerHTML = HuTao_T2_T5_Comma;
+    document.getElementById('HuTao_T2_T5_Volume').innerHTML = HuTao_T2_T5.toLocaleString();
   });
   HuTao_T3.noUiSlider.on('update', function (values, handle) {
     var HuTao_T3_Min_Volume = "L1toL" + HuTao_T3.noUiSlider.get()[0];
@@ -1425,12 +1338,11 @@ function HuTaoLoad() {
     var HuTao_T3_T3 = HuTao_T3_T3_1toMax_Volume - HuTao_T3_T3_1toMin_Volume
     var HuTao_T3_T4 = HuTao_T3_T4_1toMax_Volume - HuTao_T3_T4_1toMin_Volume
     var HuTao_T3_T5 = HuTao_T3_T5_1toMax_Volume - HuTao_T3_T5_1toMin_Volume
-    var HuTao_T3_T5_Comma = HuTao_T3_T5.toLocaleString();
     document.getElementById('HuTao_T3_T1_Volume').innerHTML = HuTao_T3_T1;
     document.getElementById('HuTao_T3_T2_Volume').innerHTML = HuTao_T3_T2;
     document.getElementById('HuTao_T3_T3_Volume').innerHTML = HuTao_T3_T3;
     document.getElementById('HuTao_T3_T4_Volume').innerHTML = HuTao_T3_T4;
-    document.getElementById('HuTao_T3_T5_Volume').innerHTML = HuTao_T3_T5_Comma;
+    document.getElementById('HuTao_T3_T5_Volume').innerHTML = HuTao_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  HuTao  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1450,13 +1362,9 @@ function XiaoLoad() {
     var Xiao_Ex_Volume = Xiao_Ex_1toMax_Volume - Xiao_Ex_1toMin_Volume
     var Xiao_Ex_Book_Volume = Xiao_Ex_Volume / 1000
     var Xiao_Ex_Mora_Volume = Xiao_Ex_Volume * 0.2
-    var Xiao_Ex_Volume_Comma = Xiao_Ex_Volume.toLocaleString();
-    var Xiao_Ex_Book_Volume_Comma = Xiao_Ex_Book_Volume.toLocaleString();
-    var Xiao_Ex_Mora_Volume_Comma = Xiao_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Xiao_Ex_Volume_Html').innerHTML = Xiao_Ex_Volume_Comma;
-    document.getElementById('Xiao_Ex_Volume_NoComma').innerHTML = Xiao_Ex_Volume;
-    document.getElementById('Xiao_Ex_Book_Volume_Html').innerHTML = Xiao_Ex_Book_Volume_Comma;
-    document.getElementById('Xiao_Ex_Mora_Volume_Html').innerHTML = Xiao_Ex_Mora_Volume_Comma;
+    document.getElementById('Xiao_Ex_Volume').innerHTML = Xiao_Ex_Volume.toLocaleString();
+    document.getElementById('Xiao_Ex_Book_Volume').innerHTML = Xiao_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Xiao_Ex_Mora_Volume').innerHTML = Xiao_Ex_Mora_Volume.toLocaleString();
   });
   Xiao_Pr.noUiSlider.on('update', function (values, handle) {
     var Xiao_Pr_Min_Volume = "L1toL" + Xiao_Pr.noUiSlider.get()[0];
@@ -1476,12 +1384,11 @@ function XiaoLoad() {
     var Xiao_Pr_P3 = Xiao_Pr_P3_1toMax_Volume - Xiao_Pr_P3_1toMin_Volume
     var Xiao_Pr_P4 = Xiao_Pr_P4_1toMax_Volume - Xiao_Pr_P4_1toMin_Volume
     var Xiao_Pr_P5 = Xiao_Pr_P5_1toMax_Volume - Xiao_Pr_P5_1toMin_Volume
-    var Xiao_Pr_P5_Comma = Xiao_Pr_P5.toLocaleString();
     document.getElementById('Xiao_Pr_P1_Volume').innerHTML = Xiao_Pr_P1;
     document.getElementById('Xiao_Pr_P2_Volume').innerHTML = Xiao_Pr_P2;
     document.getElementById('Xiao_Pr_P3_Volume').innerHTML = Xiao_Pr_P3;
     document.getElementById('Xiao_Pr_P4_Volume').innerHTML = Xiao_Pr_P4;
-    document.getElementById('Xiao_Pr_P5_Volume').innerHTML = Xiao_Pr_P5_Comma;
+    document.getElementById('Xiao_Pr_P5_Volume').innerHTML = Xiao_Pr_P5.toLocaleString();
   });
   Xiao_T1.noUiSlider.on('update', function (values, handle) {
     var Xiao_T1_Min_Volume = "L1toL" + Xiao_T1.noUiSlider.get()[0];
@@ -1501,12 +1408,11 @@ function XiaoLoad() {
     var Xiao_T1_T3 = Xiao_T1_T3_1toMax_Volume - Xiao_T1_T3_1toMin_Volume
     var Xiao_T1_T4 = Xiao_T1_T4_1toMax_Volume - Xiao_T1_T4_1toMin_Volume
     var Xiao_T1_T5 = Xiao_T1_T5_1toMax_Volume - Xiao_T1_T5_1toMin_Volume
-    var Xiao_T1_T5_Comma = Xiao_T1_T5.toLocaleString();
     document.getElementById('Xiao_T1_T1_Volume').innerHTML = Xiao_T1_T1;
     document.getElementById('Xiao_T1_T2_Volume').innerHTML = Xiao_T1_T2;
     document.getElementById('Xiao_T1_T3_Volume').innerHTML = Xiao_T1_T3;
     document.getElementById('Xiao_T1_T4_Volume').innerHTML = Xiao_T1_T4;
-    document.getElementById('Xiao_T1_T5_Volume').innerHTML = Xiao_T1_T5_Comma;
+    document.getElementById('Xiao_T1_T5_Volume').innerHTML = Xiao_T1_T5.toLocaleString();
   });
   Xiao_T2.noUiSlider.on('update', function (values, handle) {
     var Xiao_T2_Min_Volume = "L1toL" + Xiao_T2.noUiSlider.get()[0];
@@ -1526,12 +1432,11 @@ function XiaoLoad() {
     var Xiao_T2_T3 = Xiao_T2_T3_1toMax_Volume - Xiao_T2_T3_1toMin_Volume
     var Xiao_T2_T4 = Xiao_T2_T4_1toMax_Volume - Xiao_T2_T4_1toMin_Volume
     var Xiao_T2_T5 = Xiao_T2_T5_1toMax_Volume - Xiao_T2_T5_1toMin_Volume
-    var Xiao_T2_T5_Comma = Xiao_T2_T5.toLocaleString();
     document.getElementById('Xiao_T2_T1_Volume').innerHTML = Xiao_T2_T1;
     document.getElementById('Xiao_T2_T2_Volume').innerHTML = Xiao_T2_T2;
     document.getElementById('Xiao_T2_T3_Volume').innerHTML = Xiao_T2_T3;
     document.getElementById('Xiao_T2_T4_Volume').innerHTML = Xiao_T2_T4;
-    document.getElementById('Xiao_T2_T5_Volume').innerHTML = Xiao_T2_T5_Comma;
+    document.getElementById('Xiao_T2_T5_Volume').innerHTML = Xiao_T2_T5.toLocaleString();
   });
   Xiao_T3.noUiSlider.on('update', function (values, handle) {
     var Xiao_T3_Min_Volume = "L1toL" + Xiao_T3.noUiSlider.get()[0];
@@ -1551,12 +1456,11 @@ function XiaoLoad() {
     var Xiao_T3_T3 = Xiao_T3_T3_1toMax_Volume - Xiao_T3_T3_1toMin_Volume
     var Xiao_T3_T4 = Xiao_T3_T4_1toMax_Volume - Xiao_T3_T4_1toMin_Volume
     var Xiao_T3_T5 = Xiao_T3_T5_1toMax_Volume - Xiao_T3_T5_1toMin_Volume
-    var Xiao_T3_T5_Comma = Xiao_T3_T5.toLocaleString();
     document.getElementById('Xiao_T3_T1_Volume').innerHTML = Xiao_T3_T1;
     document.getElementById('Xiao_T3_T2_Volume').innerHTML = Xiao_T3_T2;
     document.getElementById('Xiao_T3_T3_Volume').innerHTML = Xiao_T3_T3;
     document.getElementById('Xiao_T3_T4_Volume').innerHTML = Xiao_T3_T4;
-    document.getElementById('Xiao_T3_T5_Volume').innerHTML = Xiao_T3_T5_Comma;
+    document.getElementById('Xiao_T3_T5_Volume').innerHTML = Xiao_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Xiao  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1576,13 +1480,9 @@ function GanyuLoad() {
     var Ganyu_Ex_Volume = Ganyu_Ex_1toMax_Volume - Ganyu_Ex_1toMin_Volume
     var Ganyu_Ex_Book_Volume = Ganyu_Ex_Volume / 1000
     var Ganyu_Ex_Mora_Volume = Ganyu_Ex_Volume * 0.2
-    var Ganyu_Ex_Volume_Comma = Ganyu_Ex_Volume.toLocaleString();
-    var Ganyu_Ex_Book_Volume_Comma = Ganyu_Ex_Book_Volume.toLocaleString();
-    var Ganyu_Ex_Mora_Volume_Comma = Ganyu_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Ganyu_Ex_Volume_Html').innerHTML = Ganyu_Ex_Volume_Comma;
-    document.getElementById('Ganyu_Ex_Volume_NoComma').innerHTML = Ganyu_Ex_Volume;
-    document.getElementById('Ganyu_Ex_Book_Volume_Html').innerHTML = Ganyu_Ex_Book_Volume_Comma;
-    document.getElementById('Ganyu_Ex_Mora_Volume_Html').innerHTML = Ganyu_Ex_Mora_Volume_Comma;
+    document.getElementById('Ganyu_Ex_Volume').innerHTML = Ganyu_Ex_Volume.toLocaleString();
+    document.getElementById('Ganyu_Ex_Book_Volume').innerHTML = Ganyu_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Ganyu_Ex_Mora_Volume').innerHTML = Ganyu_Ex_Mora_Volume.toLocaleString();
   });
   Ganyu_Pr.noUiSlider.on('update', function (values, handle) {
     var Ganyu_Pr_Min_Volume = "L1toL" + Ganyu_Pr.noUiSlider.get()[0];
@@ -1602,12 +1502,11 @@ function GanyuLoad() {
     var Ganyu_Pr_P3 = Ganyu_Pr_P3_1toMax_Volume - Ganyu_Pr_P3_1toMin_Volume
     var Ganyu_Pr_P4 = Ganyu_Pr_P4_1toMax_Volume - Ganyu_Pr_P4_1toMin_Volume
     var Ganyu_Pr_P5 = Ganyu_Pr_P5_1toMax_Volume - Ganyu_Pr_P5_1toMin_Volume
-    var Ganyu_Pr_P5_Comma = Ganyu_Pr_P5.toLocaleString();
     document.getElementById('Ganyu_Pr_P1_Volume').innerHTML = Ganyu_Pr_P1;
     document.getElementById('Ganyu_Pr_P2_Volume').innerHTML = Ganyu_Pr_P2;
     document.getElementById('Ganyu_Pr_P3_Volume').innerHTML = Ganyu_Pr_P3;
     document.getElementById('Ganyu_Pr_P4_Volume').innerHTML = Ganyu_Pr_P4;
-    document.getElementById('Ganyu_Pr_P5_Volume').innerHTML = Ganyu_Pr_P5_Comma;
+    document.getElementById('Ganyu_Pr_P5_Volume').innerHTML = Ganyu_Pr_P5.toLocaleString();
   });
   Ganyu_T1.noUiSlider.on('update', function (values, handle) {
     var Ganyu_T1_Min_Volume = "L1toL" + Ganyu_T1.noUiSlider.get()[0];
@@ -1627,12 +1526,11 @@ function GanyuLoad() {
     var Ganyu_T1_T3 = Ganyu_T1_T3_1toMax_Volume - Ganyu_T1_T3_1toMin_Volume
     var Ganyu_T1_T4 = Ganyu_T1_T4_1toMax_Volume - Ganyu_T1_T4_1toMin_Volume
     var Ganyu_T1_T5 = Ganyu_T1_T5_1toMax_Volume - Ganyu_T1_T5_1toMin_Volume
-    var Ganyu_T1_T5_Comma = Ganyu_T1_T5.toLocaleString();
     document.getElementById('Ganyu_T1_T1_Volume').innerHTML = Ganyu_T1_T1;
     document.getElementById('Ganyu_T1_T2_Volume').innerHTML = Ganyu_T1_T2;
     document.getElementById('Ganyu_T1_T3_Volume').innerHTML = Ganyu_T1_T3;
     document.getElementById('Ganyu_T1_T4_Volume').innerHTML = Ganyu_T1_T4;
-    document.getElementById('Ganyu_T1_T5_Volume').innerHTML = Ganyu_T1_T5_Comma;
+    document.getElementById('Ganyu_T1_T5_Volume').innerHTML = Ganyu_T1_T5.toLocaleString();
   });
   Ganyu_T2.noUiSlider.on('update', function (values, handle) {
     var Ganyu_T2_Min_Volume = "L1toL" + Ganyu_T2.noUiSlider.get()[0];
@@ -1652,12 +1550,11 @@ function GanyuLoad() {
     var Ganyu_T2_T3 = Ganyu_T2_T3_1toMax_Volume - Ganyu_T2_T3_1toMin_Volume
     var Ganyu_T2_T4 = Ganyu_T2_T4_1toMax_Volume - Ganyu_T2_T4_1toMin_Volume
     var Ganyu_T2_T5 = Ganyu_T2_T5_1toMax_Volume - Ganyu_T2_T5_1toMin_Volume
-    var Ganyu_T2_T5_Comma = Ganyu_T2_T5.toLocaleString();
     document.getElementById('Ganyu_T2_T1_Volume').innerHTML = Ganyu_T2_T1;
     document.getElementById('Ganyu_T2_T2_Volume').innerHTML = Ganyu_T2_T2;
     document.getElementById('Ganyu_T2_T3_Volume').innerHTML = Ganyu_T2_T3;
     document.getElementById('Ganyu_T2_T4_Volume').innerHTML = Ganyu_T2_T4;
-    document.getElementById('Ganyu_T2_T5_Volume').innerHTML = Ganyu_T2_T5_Comma;
+    document.getElementById('Ganyu_T2_T5_Volume').innerHTML = Ganyu_T2_T5.toLocaleString();
   });
   Ganyu_T3.noUiSlider.on('update', function (values, handle) {
     var Ganyu_T3_Min_Volume = "L1toL" + Ganyu_T3.noUiSlider.get()[0];
@@ -1677,12 +1574,11 @@ function GanyuLoad() {
     var Ganyu_T3_T3 = Ganyu_T3_T3_1toMax_Volume - Ganyu_T3_T3_1toMin_Volume
     var Ganyu_T3_T4 = Ganyu_T3_T4_1toMax_Volume - Ganyu_T3_T4_1toMin_Volume
     var Ganyu_T3_T5 = Ganyu_T3_T5_1toMax_Volume - Ganyu_T3_T5_1toMin_Volume
-    var Ganyu_T3_T5_Comma = Ganyu_T3_T5.toLocaleString();
     document.getElementById('Ganyu_T3_T1_Volume').innerHTML = Ganyu_T3_T1;
     document.getElementById('Ganyu_T3_T2_Volume').innerHTML = Ganyu_T3_T2;
     document.getElementById('Ganyu_T3_T3_Volume').innerHTML = Ganyu_T3_T3;
     document.getElementById('Ganyu_T3_T4_Volume').innerHTML = Ganyu_T3_T4;
-    document.getElementById('Ganyu_T3_T5_Volume').innerHTML = Ganyu_T3_T5_Comma;
+    document.getElementById('Ganyu_T3_T5_Volume').innerHTML = Ganyu_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Ganyu  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1702,13 +1598,9 @@ function AlbedoLoad() {
     var Albedo_Ex_Volume = Albedo_Ex_1toMax_Volume - Albedo_Ex_1toMin_Volume
     var Albedo_Ex_Book_Volume = Albedo_Ex_Volume / 1000
     var Albedo_Ex_Mora_Volume = Albedo_Ex_Volume * 0.2
-    var Albedo_Ex_Volume_Comma = Albedo_Ex_Volume.toLocaleString();
-    var Albedo_Ex_Book_Volume_Comma = Albedo_Ex_Book_Volume.toLocaleString();
-    var Albedo_Ex_Mora_Volume_Comma = Albedo_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Albedo_Ex_Volume_Html').innerHTML = Albedo_Ex_Volume_Comma;
-    document.getElementById('Albedo_Ex_Volume_NoComma').innerHTML = Albedo_Ex_Volume;
-    document.getElementById('Albedo_Ex_Book_Volume_Html').innerHTML = Albedo_Ex_Book_Volume_Comma;
-    document.getElementById('Albedo_Ex_Mora_Volume_Html').innerHTML = Albedo_Ex_Mora_Volume_Comma;
+    document.getElementById('Albedo_Ex_Volume').innerHTML = Albedo_Ex_Volume.toLocaleString();
+    document.getElementById('Albedo_Ex_Book_Volume').innerHTML = Albedo_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Albedo_Ex_Mora_Volume').innerHTML = Albedo_Ex_Mora_Volume.toLocaleString();
   });
   Albedo_Pr.noUiSlider.on('update', function (values, handle) {
     var Albedo_Pr_Min_Volume = "L1toL" + Albedo_Pr.noUiSlider.get()[0];
@@ -1728,12 +1620,11 @@ function AlbedoLoad() {
     var Albedo_Pr_P3 = Albedo_Pr_P3_1toMax_Volume - Albedo_Pr_P3_1toMin_Volume
     var Albedo_Pr_P4 = Albedo_Pr_P4_1toMax_Volume - Albedo_Pr_P4_1toMin_Volume
     var Albedo_Pr_P5 = Albedo_Pr_P5_1toMax_Volume - Albedo_Pr_P5_1toMin_Volume
-    var Albedo_Pr_P5_Comma = Albedo_Pr_P5.toLocaleString();
     document.getElementById('Albedo_Pr_P1_Volume').innerHTML = Albedo_Pr_P1;
     document.getElementById('Albedo_Pr_P2_Volume').innerHTML = Albedo_Pr_P2;
     document.getElementById('Albedo_Pr_P3_Volume').innerHTML = Albedo_Pr_P3;
     document.getElementById('Albedo_Pr_P4_Volume').innerHTML = Albedo_Pr_P4;
-    document.getElementById('Albedo_Pr_P5_Volume').innerHTML = Albedo_Pr_P5_Comma;
+    document.getElementById('Albedo_Pr_P5_Volume').innerHTML = Albedo_Pr_P5.toLocaleString();
   });
   Albedo_T1.noUiSlider.on('update', function (values, handle) {
     var Albedo_T1_Min_Volume = "L1toL" + Albedo_T1.noUiSlider.get()[0];
@@ -1753,12 +1644,11 @@ function AlbedoLoad() {
     var Albedo_T1_T3 = Albedo_T1_T3_1toMax_Volume - Albedo_T1_T3_1toMin_Volume
     var Albedo_T1_T4 = Albedo_T1_T4_1toMax_Volume - Albedo_T1_T4_1toMin_Volume
     var Albedo_T1_T5 = Albedo_T1_T5_1toMax_Volume - Albedo_T1_T5_1toMin_Volume
-    var Albedo_T1_T5_Comma = Albedo_T1_T5.toLocaleString();
     document.getElementById('Albedo_T1_T1_Volume').innerHTML = Albedo_T1_T1;
     document.getElementById('Albedo_T1_T2_Volume').innerHTML = Albedo_T1_T2;
     document.getElementById('Albedo_T1_T3_Volume').innerHTML = Albedo_T1_T3;
     document.getElementById('Albedo_T1_T4_Volume').innerHTML = Albedo_T1_T4;
-    document.getElementById('Albedo_T1_T5_Volume').innerHTML = Albedo_T1_T5_Comma;
+    document.getElementById('Albedo_T1_T5_Volume').innerHTML = Albedo_T1_T5.toLocaleString();
   });
   Albedo_T2.noUiSlider.on('update', function (values, handle) {
     var Albedo_T2_Min_Volume = "L1toL" + Albedo_T2.noUiSlider.get()[0];
@@ -1778,12 +1668,11 @@ function AlbedoLoad() {
     var Albedo_T2_T3 = Albedo_T2_T3_1toMax_Volume - Albedo_T2_T3_1toMin_Volume
     var Albedo_T2_T4 = Albedo_T2_T4_1toMax_Volume - Albedo_T2_T4_1toMin_Volume
     var Albedo_T2_T5 = Albedo_T2_T5_1toMax_Volume - Albedo_T2_T5_1toMin_Volume
-    var Albedo_T2_T5_Comma = Albedo_T2_T5.toLocaleString();
     document.getElementById('Albedo_T2_T1_Volume').innerHTML = Albedo_T2_T1;
     document.getElementById('Albedo_T2_T2_Volume').innerHTML = Albedo_T2_T2;
     document.getElementById('Albedo_T2_T3_Volume').innerHTML = Albedo_T2_T3;
     document.getElementById('Albedo_T2_T4_Volume').innerHTML = Albedo_T2_T4;
-    document.getElementById('Albedo_T2_T5_Volume').innerHTML = Albedo_T2_T5_Comma;
+    document.getElementById('Albedo_T2_T5_Volume').innerHTML = Albedo_T2_T5.toLocaleString();
   });
   Albedo_T3.noUiSlider.on('update', function (values, handle) {
     var Albedo_T3_Min_Volume = "L1toL" + Albedo_T3.noUiSlider.get()[0];
@@ -1803,12 +1692,11 @@ function AlbedoLoad() {
     var Albedo_T3_T3 = Albedo_T3_T3_1toMax_Volume - Albedo_T3_T3_1toMin_Volume
     var Albedo_T3_T4 = Albedo_T3_T4_1toMax_Volume - Albedo_T3_T4_1toMin_Volume
     var Albedo_T3_T5 = Albedo_T3_T5_1toMax_Volume - Albedo_T3_T5_1toMin_Volume
-    var Albedo_T3_T5_Comma = Albedo_T3_T5.toLocaleString();
     document.getElementById('Albedo_T3_T1_Volume').innerHTML = Albedo_T3_T1;
     document.getElementById('Albedo_T3_T2_Volume').innerHTML = Albedo_T3_T2;
     document.getElementById('Albedo_T3_T3_Volume').innerHTML = Albedo_T3_T3;
     document.getElementById('Albedo_T3_T4_Volume').innerHTML = Albedo_T3_T4;
-    document.getElementById('Albedo_T3_T5_Volume').innerHTML = Albedo_T3_T5_Comma;
+    document.getElementById('Albedo_T3_T5_Volume').innerHTML = Albedo_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Albedo  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1828,13 +1716,9 @@ function ZhongliLoad() {
     var Zhongli_Ex_Volume = Zhongli_Ex_1toMax_Volume - Zhongli_Ex_1toMin_Volume
     var Zhongli_Ex_Book_Volume = Zhongli_Ex_Volume / 1000
     var Zhongli_Ex_Mora_Volume = Zhongli_Ex_Volume * 0.2
-    var Zhongli_Ex_Volume_Comma = Zhongli_Ex_Volume.toLocaleString();
-    var Zhongli_Ex_Book_Volume_Comma = Zhongli_Ex_Book_Volume.toLocaleString();
-    var Zhongli_Ex_Mora_Volume_Comma = Zhongli_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Zhongli_Ex_Volume_Html').innerHTML = Zhongli_Ex_Volume_Comma;
-    document.getElementById('Zhongli_Ex_Volume_NoComma').innerHTML = Zhongli_Ex_Volume;
-    document.getElementById('Zhongli_Ex_Book_Volume_Html').innerHTML = Zhongli_Ex_Book_Volume_Comma;
-    document.getElementById('Zhongli_Ex_Mora_Volume_Html').innerHTML = Zhongli_Ex_Mora_Volume_Comma;
+    document.getElementById('Zhongli_Ex_Volume').innerHTML = Zhongli_Ex_Volume.toLocaleString();
+    document.getElementById('Zhongli_Ex_Book_Volume').innerHTML = Zhongli_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Zhongli_Ex_Mora_Volume').innerHTML = Zhongli_Ex_Mora_Volume.toLocaleString();
   });
   Zhongli_Pr.noUiSlider.on('update', function (values, handle) {
     var Zhongli_Pr_Min_Volume = "L1toL" + Zhongli_Pr.noUiSlider.get()[0];
@@ -1854,12 +1738,11 @@ function ZhongliLoad() {
     var Zhongli_Pr_P3 = Zhongli_Pr_P3_1toMax_Volume - Zhongli_Pr_P3_1toMin_Volume
     var Zhongli_Pr_P4 = Zhongli_Pr_P4_1toMax_Volume - Zhongli_Pr_P4_1toMin_Volume
     var Zhongli_Pr_P5 = Zhongli_Pr_P5_1toMax_Volume - Zhongli_Pr_P5_1toMin_Volume
-    var Zhongli_Pr_P5_Comma = Zhongli_Pr_P5.toLocaleString();
     document.getElementById('Zhongli_Pr_P1_Volume').innerHTML = Zhongli_Pr_P1;
     document.getElementById('Zhongli_Pr_P2_Volume').innerHTML = Zhongli_Pr_P2;
     document.getElementById('Zhongli_Pr_P3_Volume').innerHTML = Zhongli_Pr_P3;
     document.getElementById('Zhongli_Pr_P4_Volume').innerHTML = Zhongli_Pr_P4;
-    document.getElementById('Zhongli_Pr_P5_Volume').innerHTML = Zhongli_Pr_P5_Comma;
+    document.getElementById('Zhongli_Pr_P5_Volume').innerHTML = Zhongli_Pr_P5.toLocaleString();
   });
   Zhongli_T1.noUiSlider.on('update', function (values, handle) {
     var Zhongli_T1_Min_Volume = "L1toL" + Zhongli_T1.noUiSlider.get()[0];
@@ -1879,12 +1762,11 @@ function ZhongliLoad() {
     var Zhongli_T1_T3 = Zhongli_T1_T3_1toMax_Volume - Zhongli_T1_T3_1toMin_Volume
     var Zhongli_T1_T4 = Zhongli_T1_T4_1toMax_Volume - Zhongli_T1_T4_1toMin_Volume
     var Zhongli_T1_T5 = Zhongli_T1_T5_1toMax_Volume - Zhongli_T1_T5_1toMin_Volume
-    var Zhongli_T1_T5_Comma = Zhongli_T1_T5.toLocaleString();
     document.getElementById('Zhongli_T1_T1_Volume').innerHTML = Zhongli_T1_T1;
     document.getElementById('Zhongli_T1_T2_Volume').innerHTML = Zhongli_T1_T2;
     document.getElementById('Zhongli_T1_T3_Volume').innerHTML = Zhongli_T1_T3;
     document.getElementById('Zhongli_T1_T4_Volume').innerHTML = Zhongli_T1_T4;
-    document.getElementById('Zhongli_T1_T5_Volume').innerHTML = Zhongli_T1_T5_Comma;
+    document.getElementById('Zhongli_T1_T5_Volume').innerHTML = Zhongli_T1_T5.toLocaleString();
   });
   Zhongli_T2.noUiSlider.on('update', function (values, handle) {
     var Zhongli_T2_Min_Volume = "L1toL" + Zhongli_T2.noUiSlider.get()[0];
@@ -1904,12 +1786,11 @@ function ZhongliLoad() {
     var Zhongli_T2_T3 = Zhongli_T2_T3_1toMax_Volume - Zhongli_T2_T3_1toMin_Volume
     var Zhongli_T2_T4 = Zhongli_T2_T4_1toMax_Volume - Zhongli_T2_T4_1toMin_Volume
     var Zhongli_T2_T5 = Zhongli_T2_T5_1toMax_Volume - Zhongli_T2_T5_1toMin_Volume
-    var Zhongli_T2_T5_Comma = Zhongli_T2_T5.toLocaleString();
     document.getElementById('Zhongli_T2_T1_Volume').innerHTML = Zhongli_T2_T1;
     document.getElementById('Zhongli_T2_T2_Volume').innerHTML = Zhongli_T2_T2;
     document.getElementById('Zhongli_T2_T3_Volume').innerHTML = Zhongli_T2_T3;
     document.getElementById('Zhongli_T2_T4_Volume').innerHTML = Zhongli_T2_T4;
-    document.getElementById('Zhongli_T2_T5_Volume').innerHTML = Zhongli_T2_T5_Comma;
+    document.getElementById('Zhongli_T2_T5_Volume').innerHTML = Zhongli_T2_T5.toLocaleString();
   });
   Zhongli_T3.noUiSlider.on('update', function (values, handle) {
     var Zhongli_T3_Min_Volume = "L1toL" + Zhongli_T3.noUiSlider.get()[0];
@@ -1929,12 +1810,11 @@ function ZhongliLoad() {
     var Zhongli_T3_T3 = Zhongli_T3_T3_1toMax_Volume - Zhongli_T3_T3_1toMin_Volume
     var Zhongli_T3_T4 = Zhongli_T3_T4_1toMax_Volume - Zhongli_T3_T4_1toMin_Volume
     var Zhongli_T3_T5 = Zhongli_T3_T5_1toMax_Volume - Zhongli_T3_T5_1toMin_Volume
-    var Zhongli_T3_T5_Comma = Zhongli_T3_T5.toLocaleString();
     document.getElementById('Zhongli_T3_T1_Volume').innerHTML = Zhongli_T3_T1;
     document.getElementById('Zhongli_T3_T2_Volume').innerHTML = Zhongli_T3_T2;
     document.getElementById('Zhongli_T3_T3_Volume').innerHTML = Zhongli_T3_T3;
     document.getElementById('Zhongli_T3_T4_Volume').innerHTML = Zhongli_T3_T4;
-    document.getElementById('Zhongli_T3_T5_Volume').innerHTML = Zhongli_T3_T5_Comma;
+    document.getElementById('Zhongli_T3_T5_Volume').innerHTML = Zhongli_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Zhongli  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -1954,13 +1834,9 @@ function XinyanLoad() {
     var Xinyan_Ex_Volume = Xinyan_Ex_1toMax_Volume - Xinyan_Ex_1toMin_Volume
     var Xinyan_Ex_Book_Volume = Xinyan_Ex_Volume / 1000
     var Xinyan_Ex_Mora_Volume = Xinyan_Ex_Volume * 0.2
-    var Xinyan_Ex_Volume_Comma = Xinyan_Ex_Volume.toLocaleString();
-    var Xinyan_Ex_Book_Volume_Comma = Xinyan_Ex_Book_Volume.toLocaleString();
-    var Xinyan_Ex_Mora_Volume_Comma = Xinyan_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Xinyan_Ex_Volume_Html').innerHTML = Xinyan_Ex_Volume_Comma;
-    document.getElementById('Xinyan_Ex_Volume_NoComma').innerHTML = Xinyan_Ex_Volume;
-    document.getElementById('Xinyan_Ex_Book_Volume_Html').innerHTML = Xinyan_Ex_Book_Volume_Comma;
-    document.getElementById('Xinyan_Ex_Mora_Volume_Html').innerHTML = Xinyan_Ex_Mora_Volume_Comma;
+    document.getElementById('Xinyan_Ex_Volume').innerHTML = Xinyan_Ex_Volume.toLocaleString();
+    document.getElementById('Xinyan_Ex_Book_Volume').innerHTML = Xinyan_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Xinyan_Ex_Mora_Volume').innerHTML = Xinyan_Ex_Mora_Volume.toLocaleString();
   });
   Xinyan_Pr.noUiSlider.on('update', function (values, handle) {
     var Xinyan_Pr_Min_Volume = "L1toL" + Xinyan_Pr.noUiSlider.get()[0];
@@ -1980,12 +1856,11 @@ function XinyanLoad() {
     var Xinyan_Pr_P3 = Xinyan_Pr_P3_1toMax_Volume - Xinyan_Pr_P3_1toMin_Volume
     var Xinyan_Pr_P4 = Xinyan_Pr_P4_1toMax_Volume - Xinyan_Pr_P4_1toMin_Volume
     var Xinyan_Pr_P5 = Xinyan_Pr_P5_1toMax_Volume - Xinyan_Pr_P5_1toMin_Volume
-    var Xinyan_Pr_P5_Comma = Xinyan_Pr_P5.toLocaleString();
     document.getElementById('Xinyan_Pr_P1_Volume').innerHTML = Xinyan_Pr_P1;
     document.getElementById('Xinyan_Pr_P2_Volume').innerHTML = Xinyan_Pr_P2;
     document.getElementById('Xinyan_Pr_P3_Volume').innerHTML = Xinyan_Pr_P3;
     document.getElementById('Xinyan_Pr_P4_Volume').innerHTML = Xinyan_Pr_P4;
-    document.getElementById('Xinyan_Pr_P5_Volume').innerHTML = Xinyan_Pr_P5_Comma;
+    document.getElementById('Xinyan_Pr_P5_Volume').innerHTML = Xinyan_Pr_P5.toLocaleString();
   });
   Xinyan_T1.noUiSlider.on('update', function (values, handle) {
     var Xinyan_T1_Min_Volume = "L1toL" + Xinyan_T1.noUiSlider.get()[0];
@@ -2005,12 +1880,11 @@ function XinyanLoad() {
     var Xinyan_T1_T3 = Xinyan_T1_T3_1toMax_Volume - Xinyan_T1_T3_1toMin_Volume
     var Xinyan_T1_T4 = Xinyan_T1_T4_1toMax_Volume - Xinyan_T1_T4_1toMin_Volume
     var Xinyan_T1_T5 = Xinyan_T1_T5_1toMax_Volume - Xinyan_T1_T5_1toMin_Volume
-    var Xinyan_T1_T5_Comma = Xinyan_T1_T5.toLocaleString();
     document.getElementById('Xinyan_T1_T1_Volume').innerHTML = Xinyan_T1_T1;
     document.getElementById('Xinyan_T1_T2_Volume').innerHTML = Xinyan_T1_T2;
     document.getElementById('Xinyan_T1_T3_Volume').innerHTML = Xinyan_T1_T3;
     document.getElementById('Xinyan_T1_T4_Volume').innerHTML = Xinyan_T1_T4;
-    document.getElementById('Xinyan_T1_T5_Volume').innerHTML = Xinyan_T1_T5_Comma;
+    document.getElementById('Xinyan_T1_T5_Volume').innerHTML = Xinyan_T1_T5.toLocaleString();
   });
   Xinyan_T2.noUiSlider.on('update', function (values, handle) {
     var Xinyan_T2_Min_Volume = "L1toL" + Xinyan_T2.noUiSlider.get()[0];
@@ -2030,12 +1904,11 @@ function XinyanLoad() {
     var Xinyan_T2_T3 = Xinyan_T2_T3_1toMax_Volume - Xinyan_T2_T3_1toMin_Volume
     var Xinyan_T2_T4 = Xinyan_T2_T4_1toMax_Volume - Xinyan_T2_T4_1toMin_Volume
     var Xinyan_T2_T5 = Xinyan_T2_T5_1toMax_Volume - Xinyan_T2_T5_1toMin_Volume
-    var Xinyan_T2_T5_Comma = Xinyan_T2_T5.toLocaleString();
     document.getElementById('Xinyan_T2_T1_Volume').innerHTML = Xinyan_T2_T1;
     document.getElementById('Xinyan_T2_T2_Volume').innerHTML = Xinyan_T2_T2;
     document.getElementById('Xinyan_T2_T3_Volume').innerHTML = Xinyan_T2_T3;
     document.getElementById('Xinyan_T2_T4_Volume').innerHTML = Xinyan_T2_T4;
-    document.getElementById('Xinyan_T2_T5_Volume').innerHTML = Xinyan_T2_T5_Comma;
+    document.getElementById('Xinyan_T2_T5_Volume').innerHTML = Xinyan_T2_T5.toLocaleString();
   });
   Xinyan_T3.noUiSlider.on('update', function (values, handle) {
     var Xinyan_T3_Min_Volume = "L1toL" + Xinyan_T3.noUiSlider.get()[0];
@@ -2055,12 +1928,11 @@ function XinyanLoad() {
     var Xinyan_T3_T3 = Xinyan_T3_T3_1toMax_Volume - Xinyan_T3_T3_1toMin_Volume
     var Xinyan_T3_T4 = Xinyan_T3_T4_1toMax_Volume - Xinyan_T3_T4_1toMin_Volume
     var Xinyan_T3_T5 = Xinyan_T3_T5_1toMax_Volume - Xinyan_T3_T5_1toMin_Volume
-    var Xinyan_T3_T5_Comma = Xinyan_T3_T5.toLocaleString();
     document.getElementById('Xinyan_T3_T1_Volume').innerHTML = Xinyan_T3_T1;
     document.getElementById('Xinyan_T3_T2_Volume').innerHTML = Xinyan_T3_T2;
     document.getElementById('Xinyan_T3_T3_Volume').innerHTML = Xinyan_T3_T3;
     document.getElementById('Xinyan_T3_T4_Volume').innerHTML = Xinyan_T3_T4;
-    document.getElementById('Xinyan_T3_T5_Volume').innerHTML = Xinyan_T3_T5_Comma;
+    document.getElementById('Xinyan_T3_T5_Volume').innerHTML = Xinyan_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Xinyan  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2080,13 +1952,9 @@ function TartagliaLoad() {
     var Tartaglia_Ex_Volume = Tartaglia_Ex_1toMax_Volume - Tartaglia_Ex_1toMin_Volume
     var Tartaglia_Ex_Book_Volume = Tartaglia_Ex_Volume / 1000
     var Tartaglia_Ex_Mora_Volume = Tartaglia_Ex_Volume * 0.2
-    var Tartaglia_Ex_Volume_Comma = Tartaglia_Ex_Volume.toLocaleString();
-    var Tartaglia_Ex_Book_Volume_Comma = Tartaglia_Ex_Book_Volume.toLocaleString();
-    var Tartaglia_Ex_Mora_Volume_Comma = Tartaglia_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Tartaglia_Ex_Volume_Html').innerHTML = Tartaglia_Ex_Volume_Comma;
-    document.getElementById('Tartaglia_Ex_Volume_NoComma').innerHTML = Tartaglia_Ex_Volume;
-    document.getElementById('Tartaglia_Ex_Book_Volume_Html').innerHTML = Tartaglia_Ex_Book_Volume_Comma;
-    document.getElementById('Tartaglia_Ex_Mora_Volume_Html').innerHTML = Tartaglia_Ex_Mora_Volume_Comma;
+    document.getElementById('Tartaglia_Ex_Volume').innerHTML = Tartaglia_Ex_Volume.toLocaleString();
+    document.getElementById('Tartaglia_Ex_Book_Volume').innerHTML = Tartaglia_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Tartaglia_Ex_Mora_Volume').innerHTML = Tartaglia_Ex_Mora_Volume.toLocaleString();
   });
   Tartaglia_Pr.noUiSlider.on('update', function (values, handle) {
     var Tartaglia_Pr_Min_Volume = "L1toL" + Tartaglia_Pr.noUiSlider.get()[0];
@@ -2106,12 +1974,11 @@ function TartagliaLoad() {
     var Tartaglia_Pr_P3 = Tartaglia_Pr_P3_1toMax_Volume - Tartaglia_Pr_P3_1toMin_Volume
     var Tartaglia_Pr_P4 = Tartaglia_Pr_P4_1toMax_Volume - Tartaglia_Pr_P4_1toMin_Volume
     var Tartaglia_Pr_P5 = Tartaglia_Pr_P5_1toMax_Volume - Tartaglia_Pr_P5_1toMin_Volume
-    var Tartaglia_Pr_P5_Comma = Tartaglia_Pr_P5.toLocaleString();
     document.getElementById('Tartaglia_Pr_P1_Volume').innerHTML = Tartaglia_Pr_P1;
     document.getElementById('Tartaglia_Pr_P2_Volume').innerHTML = Tartaglia_Pr_P2;
     document.getElementById('Tartaglia_Pr_P3_Volume').innerHTML = Tartaglia_Pr_P3;
     document.getElementById('Tartaglia_Pr_P4_Volume').innerHTML = Tartaglia_Pr_P4;
-    document.getElementById('Tartaglia_Pr_P5_Volume').innerHTML = Tartaglia_Pr_P5_Comma;
+    document.getElementById('Tartaglia_Pr_P5_Volume').innerHTML = Tartaglia_Pr_P5.toLocaleString();
   });
   Tartaglia_T1.noUiSlider.on('update', function (values, handle) {
     var Tartaglia_T1_Min_Volume = "L1toL" + Tartaglia_T1.noUiSlider.get()[0];
@@ -2131,12 +1998,11 @@ function TartagliaLoad() {
     var Tartaglia_T1_T3 = Tartaglia_T1_T3_1toMax_Volume - Tartaglia_T1_T3_1toMin_Volume
     var Tartaglia_T1_T4 = Tartaglia_T1_T4_1toMax_Volume - Tartaglia_T1_T4_1toMin_Volume
     var Tartaglia_T1_T5 = Tartaglia_T1_T5_1toMax_Volume - Tartaglia_T1_T5_1toMin_Volume
-    var Tartaglia_T1_T5_Comma = Tartaglia_T1_T5.toLocaleString();
     document.getElementById('Tartaglia_T1_T1_Volume').innerHTML = Tartaglia_T1_T1;
     document.getElementById('Tartaglia_T1_T2_Volume').innerHTML = Tartaglia_T1_T2;
     document.getElementById('Tartaglia_T1_T3_Volume').innerHTML = Tartaglia_T1_T3;
     document.getElementById('Tartaglia_T1_T4_Volume').innerHTML = Tartaglia_T1_T4;
-    document.getElementById('Tartaglia_T1_T5_Volume').innerHTML = Tartaglia_T1_T5_Comma;
+    document.getElementById('Tartaglia_T1_T5_Volume').innerHTML = Tartaglia_T1_T5.toLocaleString();
   });
   Tartaglia_T2.noUiSlider.on('update', function (values, handle) {
     var Tartaglia_T2_Min_Volume = "L1toL" + Tartaglia_T2.noUiSlider.get()[0];
@@ -2156,12 +2022,11 @@ function TartagliaLoad() {
     var Tartaglia_T2_T3 = Tartaglia_T2_T3_1toMax_Volume - Tartaglia_T2_T3_1toMin_Volume
     var Tartaglia_T2_T4 = Tartaglia_T2_T4_1toMax_Volume - Tartaglia_T2_T4_1toMin_Volume
     var Tartaglia_T2_T5 = Tartaglia_T2_T5_1toMax_Volume - Tartaglia_T2_T5_1toMin_Volume
-    var Tartaglia_T2_T5_Comma = Tartaglia_T2_T5.toLocaleString();
     document.getElementById('Tartaglia_T2_T1_Volume').innerHTML = Tartaglia_T2_T1;
     document.getElementById('Tartaglia_T2_T2_Volume').innerHTML = Tartaglia_T2_T2;
     document.getElementById('Tartaglia_T2_T3_Volume').innerHTML = Tartaglia_T2_T3;
     document.getElementById('Tartaglia_T2_T4_Volume').innerHTML = Tartaglia_T2_T4;
-    document.getElementById('Tartaglia_T2_T5_Volume').innerHTML = Tartaglia_T2_T5_Comma;
+    document.getElementById('Tartaglia_T2_T5_Volume').innerHTML = Tartaglia_T2_T5.toLocaleString();
   });
   Tartaglia_T3.noUiSlider.on('update', function (values, handle) {
     var Tartaglia_T3_Min_Volume = "L1toL" + Tartaglia_T3.noUiSlider.get()[0];
@@ -2181,12 +2046,11 @@ function TartagliaLoad() {
     var Tartaglia_T3_T3 = Tartaglia_T3_T3_1toMax_Volume - Tartaglia_T3_T3_1toMin_Volume
     var Tartaglia_T3_T4 = Tartaglia_T3_T4_1toMax_Volume - Tartaglia_T3_T4_1toMin_Volume
     var Tartaglia_T3_T5 = Tartaglia_T3_T5_1toMax_Volume - Tartaglia_T3_T5_1toMin_Volume
-    var Tartaglia_T3_T5_Comma = Tartaglia_T3_T5.toLocaleString();
     document.getElementById('Tartaglia_T3_T1_Volume').innerHTML = Tartaglia_T3_T1;
     document.getElementById('Tartaglia_T3_T2_Volume').innerHTML = Tartaglia_T3_T2;
     document.getElementById('Tartaglia_T3_T3_Volume').innerHTML = Tartaglia_T3_T3;
     document.getElementById('Tartaglia_T3_T4_Volume').innerHTML = Tartaglia_T3_T4;
-    document.getElementById('Tartaglia_T3_T5_Volume').innerHTML = Tartaglia_T3_T5_Comma;
+    document.getElementById('Tartaglia_T3_T5_Volume').innerHTML = Tartaglia_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Tartaglia  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2206,13 +2070,9 @@ function DionaLoad() {
     var Diona_Ex_Volume = Diona_Ex_1toMax_Volume - Diona_Ex_1toMin_Volume
     var Diona_Ex_Book_Volume = Diona_Ex_Volume / 1000
     var Diona_Ex_Mora_Volume = Diona_Ex_Volume * 0.2
-    var Diona_Ex_Volume_Comma = Diona_Ex_Volume.toLocaleString();
-    var Diona_Ex_Book_Volume_Comma = Diona_Ex_Book_Volume.toLocaleString();
-    var Diona_Ex_Mora_Volume_Comma = Diona_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Diona_Ex_Volume_Html').innerHTML = Diona_Ex_Volume_Comma;
-    document.getElementById('Diona_Ex_Volume_NoComma').innerHTML = Diona_Ex_Volume;
-    document.getElementById('Diona_Ex_Book_Volume_Html').innerHTML = Diona_Ex_Book_Volume_Comma;
-    document.getElementById('Diona_Ex_Mora_Volume_Html').innerHTML = Diona_Ex_Mora_Volume_Comma;
+    document.getElementById('Diona_Ex_Volume').innerHTML = Diona_Ex_Volume.toLocaleString();
+    document.getElementById('Diona_Ex_Book_Volume').innerHTML = Diona_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Diona_Ex_Mora_Volume').innerHTML = Diona_Ex_Mora_Volume.toLocaleString();
   });
   Diona_Pr.noUiSlider.on('update', function (values, handle) {
     var Diona_Pr_Min_Volume = "L1toL" + Diona_Pr.noUiSlider.get()[0];
@@ -2232,12 +2092,11 @@ function DionaLoad() {
     var Diona_Pr_P3 = Diona_Pr_P3_1toMax_Volume - Diona_Pr_P3_1toMin_Volume
     var Diona_Pr_P4 = Diona_Pr_P4_1toMax_Volume - Diona_Pr_P4_1toMin_Volume
     var Diona_Pr_P5 = Diona_Pr_P5_1toMax_Volume - Diona_Pr_P5_1toMin_Volume
-    var Diona_Pr_P5_Comma = Diona_Pr_P5.toLocaleString();
     document.getElementById('Diona_Pr_P1_Volume').innerHTML = Diona_Pr_P1;
     document.getElementById('Diona_Pr_P2_Volume').innerHTML = Diona_Pr_P2;
     document.getElementById('Diona_Pr_P3_Volume').innerHTML = Diona_Pr_P3;
     document.getElementById('Diona_Pr_P4_Volume').innerHTML = Diona_Pr_P4;
-    document.getElementById('Diona_Pr_P5_Volume').innerHTML = Diona_Pr_P5_Comma;
+    document.getElementById('Diona_Pr_P5_Volume').innerHTML = Diona_Pr_P5.toLocaleString();
   });
   Diona_T1.noUiSlider.on('update', function (values, handle) {
     var Diona_T1_Min_Volume = "L1toL" + Diona_T1.noUiSlider.get()[0];
@@ -2257,12 +2116,11 @@ function DionaLoad() {
     var Diona_T1_T3 = Diona_T1_T3_1toMax_Volume - Diona_T1_T3_1toMin_Volume
     var Diona_T1_T4 = Diona_T1_T4_1toMax_Volume - Diona_T1_T4_1toMin_Volume
     var Diona_T1_T5 = Diona_T1_T5_1toMax_Volume - Diona_T1_T5_1toMin_Volume
-    var Diona_T1_T5_Comma = Diona_T1_T5.toLocaleString();
     document.getElementById('Diona_T1_T1_Volume').innerHTML = Diona_T1_T1;
     document.getElementById('Diona_T1_T2_Volume').innerHTML = Diona_T1_T2;
     document.getElementById('Diona_T1_T3_Volume').innerHTML = Diona_T1_T3;
     document.getElementById('Diona_T1_T4_Volume').innerHTML = Diona_T1_T4;
-    document.getElementById('Diona_T1_T5_Volume').innerHTML = Diona_T1_T5_Comma;
+    document.getElementById('Diona_T1_T5_Volume').innerHTML = Diona_T1_T5.toLocaleString();
   });
   Diona_T2.noUiSlider.on('update', function (values, handle) {
     var Diona_T2_Min_Volume = "L1toL" + Diona_T2.noUiSlider.get()[0];
@@ -2282,12 +2140,11 @@ function DionaLoad() {
     var Diona_T2_T3 = Diona_T2_T3_1toMax_Volume - Diona_T2_T3_1toMin_Volume
     var Diona_T2_T4 = Diona_T2_T4_1toMax_Volume - Diona_T2_T4_1toMin_Volume
     var Diona_T2_T5 = Diona_T2_T5_1toMax_Volume - Diona_T2_T5_1toMin_Volume
-    var Diona_T2_T5_Comma = Diona_T2_T5.toLocaleString();
     document.getElementById('Diona_T2_T1_Volume').innerHTML = Diona_T2_T1;
     document.getElementById('Diona_T2_T2_Volume').innerHTML = Diona_T2_T2;
     document.getElementById('Diona_T2_T3_Volume').innerHTML = Diona_T2_T3;
     document.getElementById('Diona_T2_T4_Volume').innerHTML = Diona_T2_T4;
-    document.getElementById('Diona_T2_T5_Volume').innerHTML = Diona_T2_T5_Comma;
+    document.getElementById('Diona_T2_T5_Volume').innerHTML = Diona_T2_T5.toLocaleString();
   });
   Diona_T3.noUiSlider.on('update', function (values, handle) {
     var Diona_T3_Min_Volume = "L1toL" + Diona_T3.noUiSlider.get()[0];
@@ -2307,12 +2164,11 @@ function DionaLoad() {
     var Diona_T3_T3 = Diona_T3_T3_1toMax_Volume - Diona_T3_T3_1toMin_Volume
     var Diona_T3_T4 = Diona_T3_T4_1toMax_Volume - Diona_T3_T4_1toMin_Volume
     var Diona_T3_T5 = Diona_T3_T5_1toMax_Volume - Diona_T3_T5_1toMin_Volume
-    var Diona_T3_T5_Comma = Diona_T3_T5.toLocaleString();
     document.getElementById('Diona_T3_T1_Volume').innerHTML = Diona_T3_T1;
     document.getElementById('Diona_T3_T2_Volume').innerHTML = Diona_T3_T2;
     document.getElementById('Diona_T3_T3_Volume').innerHTML = Diona_T3_T3;
     document.getElementById('Diona_T3_T4_Volume').innerHTML = Diona_T3_T4;
-    document.getElementById('Diona_T3_T5_Volume').innerHTML = Diona_T3_T5_Comma;
+    document.getElementById('Diona_T3_T5_Volume').innerHTML = Diona_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Diona  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2332,13 +2188,9 @@ function KleeLoad() {
     var Klee_Ex_Volume = Klee_Ex_1toMax_Volume - Klee_Ex_1toMin_Volume
     var Klee_Ex_Book_Volume = Klee_Ex_Volume / 1000
     var Klee_Ex_Mora_Volume = Klee_Ex_Volume * 0.2
-    var Klee_Ex_Volume_Comma = Klee_Ex_Volume.toLocaleString();
-    var Klee_Ex_Book_Volume_Comma = Klee_Ex_Book_Volume.toLocaleString();
-    var Klee_Ex_Mora_Volume_Comma = Klee_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Klee_Ex_Volume_Html').innerHTML = Klee_Ex_Volume_Comma;
-    document.getElementById('Klee_Ex_Volume_NoComma').innerHTML = Klee_Ex_Volume;
-    document.getElementById('Klee_Ex_Book_Volume_Html').innerHTML = Klee_Ex_Book_Volume_Comma;
-    document.getElementById('Klee_Ex_Mora_Volume_Html').innerHTML = Klee_Ex_Mora_Volume_Comma;
+    document.getElementById('Klee_Ex_Volume').innerHTML = Klee_Ex_Volume.toLocaleString();
+    document.getElementById('Klee_Ex_Book_Volume').innerHTML = Klee_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Klee_Ex_Mora_Volume').innerHTML = Klee_Ex_Mora_Volume.toLocaleString();
   });
   Klee_Pr.noUiSlider.on('update', function (values, handle) {
     var Klee_Pr_Min_Volume = "L1toL" + Klee_Pr.noUiSlider.get()[0];
@@ -2358,12 +2210,11 @@ function KleeLoad() {
     var Klee_Pr_P3 = Klee_Pr_P3_1toMax_Volume - Klee_Pr_P3_1toMin_Volume
     var Klee_Pr_P4 = Klee_Pr_P4_1toMax_Volume - Klee_Pr_P4_1toMin_Volume
     var Klee_Pr_P5 = Klee_Pr_P5_1toMax_Volume - Klee_Pr_P5_1toMin_Volume
-    var Klee_Pr_P5_Comma = Klee_Pr_P5.toLocaleString();
     document.getElementById('Klee_Pr_P1_Volume').innerHTML = Klee_Pr_P1;
     document.getElementById('Klee_Pr_P2_Volume').innerHTML = Klee_Pr_P2;
     document.getElementById('Klee_Pr_P3_Volume').innerHTML = Klee_Pr_P3;
     document.getElementById('Klee_Pr_P4_Volume').innerHTML = Klee_Pr_P4;
-    document.getElementById('Klee_Pr_P5_Volume').innerHTML = Klee_Pr_P5_Comma;
+    document.getElementById('Klee_Pr_P5_Volume').innerHTML = Klee_Pr_P5.toLocaleString();
   });
   Klee_T1.noUiSlider.on('update', function (values, handle) {
     var Klee_T1_Min_Volume = "L1toL" + Klee_T1.noUiSlider.get()[0];
@@ -2383,12 +2234,11 @@ function KleeLoad() {
     var Klee_T1_T3 = Klee_T1_T3_1toMax_Volume - Klee_T1_T3_1toMin_Volume
     var Klee_T1_T4 = Klee_T1_T4_1toMax_Volume - Klee_T1_T4_1toMin_Volume
     var Klee_T1_T5 = Klee_T1_T5_1toMax_Volume - Klee_T1_T5_1toMin_Volume
-    var Klee_T1_T5_Comma = Klee_T1_T5.toLocaleString();
     document.getElementById('Klee_T1_T1_Volume').innerHTML = Klee_T1_T1;
     document.getElementById('Klee_T1_T2_Volume').innerHTML = Klee_T1_T2;
     document.getElementById('Klee_T1_T3_Volume').innerHTML = Klee_T1_T3;
     document.getElementById('Klee_T1_T4_Volume').innerHTML = Klee_T1_T4;
-    document.getElementById('Klee_T1_T5_Volume').innerHTML = Klee_T1_T5_Comma;
+    document.getElementById('Klee_T1_T5_Volume').innerHTML = Klee_T1_T5.toLocaleString();
   });
   Klee_T2.noUiSlider.on('update', function (values, handle) {
     var Klee_T2_Min_Volume = "L1toL" + Klee_T2.noUiSlider.get()[0];
@@ -2408,12 +2258,11 @@ function KleeLoad() {
     var Klee_T2_T3 = Klee_T2_T3_1toMax_Volume - Klee_T2_T3_1toMin_Volume
     var Klee_T2_T4 = Klee_T2_T4_1toMax_Volume - Klee_T2_T4_1toMin_Volume
     var Klee_T2_T5 = Klee_T2_T5_1toMax_Volume - Klee_T2_T5_1toMin_Volume
-    var Klee_T2_T5_Comma = Klee_T2_T5.toLocaleString();
     document.getElementById('Klee_T2_T1_Volume').innerHTML = Klee_T2_T1;
     document.getElementById('Klee_T2_T2_Volume').innerHTML = Klee_T2_T2;
     document.getElementById('Klee_T2_T3_Volume').innerHTML = Klee_T2_T3;
     document.getElementById('Klee_T2_T4_Volume').innerHTML = Klee_T2_T4;
-    document.getElementById('Klee_T2_T5_Volume').innerHTML = Klee_T2_T5_Comma;
+    document.getElementById('Klee_T2_T5_Volume').innerHTML = Klee_T2_T5.toLocaleString();
   });
   Klee_T3.noUiSlider.on('update', function (values, handle) {
     var Klee_T3_Min_Volume = "L1toL" + Klee_T3.noUiSlider.get()[0];
@@ -2433,12 +2282,11 @@ function KleeLoad() {
     var Klee_T3_T3 = Klee_T3_T3_1toMax_Volume - Klee_T3_T3_1toMin_Volume
     var Klee_T3_T4 = Klee_T3_T4_1toMax_Volume - Klee_T3_T4_1toMin_Volume
     var Klee_T3_T5 = Klee_T3_T5_1toMax_Volume - Klee_T3_T5_1toMin_Volume
-    var Klee_T3_T5_Comma = Klee_T3_T5.toLocaleString();
     document.getElementById('Klee_T3_T1_Volume').innerHTML = Klee_T3_T1;
     document.getElementById('Klee_T3_T2_Volume').innerHTML = Klee_T3_T2;
     document.getElementById('Klee_T3_T3_Volume').innerHTML = Klee_T3_T3;
     document.getElementById('Klee_T3_T4_Volume').innerHTML = Klee_T3_T4;
-    document.getElementById('Klee_T3_T5_Volume').innerHTML = Klee_T3_T5_Comma;
+    document.getElementById('Klee_T3_T5_Volume').innerHTML = Klee_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Klee  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2458,13 +2306,9 @@ function VentiLoad() {
     var Venti_Ex_Volume = Venti_Ex_1toMax_Volume - Venti_Ex_1toMin_Volume
     var Venti_Ex_Book_Volume = Venti_Ex_Volume / 1000
     var Venti_Ex_Mora_Volume = Venti_Ex_Volume * 0.2
-    var Venti_Ex_Volume_Comma = Venti_Ex_Volume.toLocaleString();
-    var Venti_Ex_Book_Volume_Comma = Venti_Ex_Book_Volume.toLocaleString();
-    var Venti_Ex_Mora_Volume_Comma = Venti_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Venti_Ex_Volume_Html').innerHTML = Venti_Ex_Volume_Comma;
-    document.getElementById('Venti_Ex_Volume_NoComma').innerHTML = Venti_Ex_Volume;
-    document.getElementById('Venti_Ex_Book_Volume_Html').innerHTML = Venti_Ex_Book_Volume_Comma;
-    document.getElementById('Venti_Ex_Mora_Volume_Html').innerHTML = Venti_Ex_Mora_Volume_Comma;
+    document.getElementById('Venti_Ex_Volume').innerHTML = Venti_Ex_Volume.toLocaleString();
+    document.getElementById('Venti_Ex_Book_Volume').innerHTML = Venti_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Venti_Ex_Mora_Volume').innerHTML = Venti_Ex_Mora_Volume.toLocaleString();
   });
   Venti_Pr.noUiSlider.on('update', function (values, handle) {
     var Venti_Pr_Min_Volume = "L1toL" + Venti_Pr.noUiSlider.get()[0];
@@ -2484,12 +2328,11 @@ function VentiLoad() {
     var Venti_Pr_P3 = Venti_Pr_P3_1toMax_Volume - Venti_Pr_P3_1toMin_Volume
     var Venti_Pr_P4 = Venti_Pr_P4_1toMax_Volume - Venti_Pr_P4_1toMin_Volume
     var Venti_Pr_P5 = Venti_Pr_P5_1toMax_Volume - Venti_Pr_P5_1toMin_Volume
-    var Venti_Pr_P5_Comma = Venti_Pr_P5.toLocaleString();
     document.getElementById('Venti_Pr_P1_Volume').innerHTML = Venti_Pr_P1;
     document.getElementById('Venti_Pr_P2_Volume').innerHTML = Venti_Pr_P2;
     document.getElementById('Venti_Pr_P3_Volume').innerHTML = Venti_Pr_P3;
     document.getElementById('Venti_Pr_P4_Volume').innerHTML = Venti_Pr_P4;
-    document.getElementById('Venti_Pr_P5_Volume').innerHTML = Venti_Pr_P5_Comma;
+    document.getElementById('Venti_Pr_P5_Volume').innerHTML = Venti_Pr_P5.toLocaleString();
   });
   Venti_T1.noUiSlider.on('update', function (values, handle) {
     var Venti_T1_Min_Volume = "L1toL" + Venti_T1.noUiSlider.get()[0];
@@ -2509,12 +2352,11 @@ function VentiLoad() {
     var Venti_T1_T3 = Venti_T1_T3_1toMax_Volume - Venti_T1_T3_1toMin_Volume
     var Venti_T1_T4 = Venti_T1_T4_1toMax_Volume - Venti_T1_T4_1toMin_Volume
     var Venti_T1_T5 = Venti_T1_T5_1toMax_Volume - Venti_T1_T5_1toMin_Volume
-    var Venti_T1_T5_Comma = Venti_T1_T5.toLocaleString();
     document.getElementById('Venti_T1_T1_Volume').innerHTML = Venti_T1_T1;
     document.getElementById('Venti_T1_T2_Volume').innerHTML = Venti_T1_T2;
     document.getElementById('Venti_T1_T3_Volume').innerHTML = Venti_T1_T3;
     document.getElementById('Venti_T1_T4_Volume').innerHTML = Venti_T1_T4;
-    document.getElementById('Venti_T1_T5_Volume').innerHTML = Venti_T1_T5_Comma;
+    document.getElementById('Venti_T1_T5_Volume').innerHTML = Venti_T1_T5.toLocaleString();
   });
   Venti_T2.noUiSlider.on('update', function (values, handle) {
     var Venti_T2_Min_Volume = "L1toL" + Venti_T2.noUiSlider.get()[0];
@@ -2534,12 +2376,11 @@ function VentiLoad() {
     var Venti_T2_T3 = Venti_T2_T3_1toMax_Volume - Venti_T2_T3_1toMin_Volume
     var Venti_T2_T4 = Venti_T2_T4_1toMax_Volume - Venti_T2_T4_1toMin_Volume
     var Venti_T2_T5 = Venti_T2_T5_1toMax_Volume - Venti_T2_T5_1toMin_Volume
-    var Venti_T2_T5_Comma = Venti_T2_T5.toLocaleString();
     document.getElementById('Venti_T2_T1_Volume').innerHTML = Venti_T2_T1;
     document.getElementById('Venti_T2_T2_Volume').innerHTML = Venti_T2_T2;
     document.getElementById('Venti_T2_T3_Volume').innerHTML = Venti_T2_T3;
     document.getElementById('Venti_T2_T4_Volume').innerHTML = Venti_T2_T4;
-    document.getElementById('Venti_T2_T5_Volume').innerHTML = Venti_T2_T5_Comma;
+    document.getElementById('Venti_T2_T5_Volume').innerHTML = Venti_T2_T5.toLocaleString();
   });
   Venti_T3.noUiSlider.on('update', function (values, handle) {
     var Venti_T3_Min_Volume = "L1toL" + Venti_T3.noUiSlider.get()[0];
@@ -2559,12 +2400,11 @@ function VentiLoad() {
     var Venti_T3_T3 = Venti_T3_T3_1toMax_Volume - Venti_T3_T3_1toMin_Volume
     var Venti_T3_T4 = Venti_T3_T4_1toMax_Volume - Venti_T3_T4_1toMin_Volume
     var Venti_T3_T5 = Venti_T3_T5_1toMax_Volume - Venti_T3_T5_1toMin_Volume
-    var Venti_T3_T5_Comma = Venti_T3_T5.toLocaleString();
     document.getElementById('Venti_T3_T1_Volume').innerHTML = Venti_T3_T1;
     document.getElementById('Venti_T3_T2_Volume').innerHTML = Venti_T3_T2;
     document.getElementById('Venti_T3_T3_Volume').innerHTML = Venti_T3_T3;
     document.getElementById('Venti_T3_T4_Volume').innerHTML = Venti_T3_T4;
-    document.getElementById('Venti_T3_T5_Volume').innerHTML = Venti_T3_T5_Comma;
+    document.getElementById('Venti_T3_T5_Volume').innerHTML = Venti_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Venti  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2584,13 +2424,9 @@ function KeqingLoad() {
     var Keqing_Ex_Volume = Keqing_Ex_1toMax_Volume - Keqing_Ex_1toMin_Volume
     var Keqing_Ex_Book_Volume = Keqing_Ex_Volume / 1000
     var Keqing_Ex_Mora_Volume = Keqing_Ex_Volume * 0.2
-    var Keqing_Ex_Volume_Comma = Keqing_Ex_Volume.toLocaleString();
-    var Keqing_Ex_Book_Volume_Comma = Keqing_Ex_Book_Volume.toLocaleString();
-    var Keqing_Ex_Mora_Volume_Comma = Keqing_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Keqing_Ex_Volume_Html').innerHTML = Keqing_Ex_Volume_Comma;
-    document.getElementById('Keqing_Ex_Volume_NoComma').innerHTML = Keqing_Ex_Volume;
-    document.getElementById('Keqing_Ex_Book_Volume_Html').innerHTML = Keqing_Ex_Book_Volume_Comma;
-    document.getElementById('Keqing_Ex_Mora_Volume_Html').innerHTML = Keqing_Ex_Mora_Volume_Comma;
+    document.getElementById('Keqing_Ex_Volume').innerHTML = Keqing_Ex_Volume.toLocaleString();
+    document.getElementById('Keqing_Ex_Book_Volume').innerHTML = Keqing_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Keqing_Ex_Mora_Volume').innerHTML = Keqing_Ex_Mora_Volume.toLocaleString();
   });
   Keqing_Pr.noUiSlider.on('update', function (values, handle) {
     var Keqing_Pr_Min_Volume = "L1toL" + Keqing_Pr.noUiSlider.get()[0];
@@ -2610,12 +2446,11 @@ function KeqingLoad() {
     var Keqing_Pr_P3 = Keqing_Pr_P3_1toMax_Volume - Keqing_Pr_P3_1toMin_Volume
     var Keqing_Pr_P4 = Keqing_Pr_P4_1toMax_Volume - Keqing_Pr_P4_1toMin_Volume
     var Keqing_Pr_P5 = Keqing_Pr_P5_1toMax_Volume - Keqing_Pr_P5_1toMin_Volume
-    var Keqing_Pr_P5_Comma = Keqing_Pr_P5.toLocaleString();
     document.getElementById('Keqing_Pr_P1_Volume').innerHTML = Keqing_Pr_P1;
     document.getElementById('Keqing_Pr_P2_Volume').innerHTML = Keqing_Pr_P2;
     document.getElementById('Keqing_Pr_P3_Volume').innerHTML = Keqing_Pr_P3;
     document.getElementById('Keqing_Pr_P4_Volume').innerHTML = Keqing_Pr_P4;
-    document.getElementById('Keqing_Pr_P5_Volume').innerHTML = Keqing_Pr_P5_Comma;
+    document.getElementById('Keqing_Pr_P5_Volume').innerHTML = Keqing_Pr_P5.toLocaleString();
   });
   Keqing_T1.noUiSlider.on('update', function (values, handle) {
     var Keqing_T1_Min_Volume = "L1toL" + Keqing_T1.noUiSlider.get()[0];
@@ -2635,12 +2470,11 @@ function KeqingLoad() {
     var Keqing_T1_T3 = Keqing_T1_T3_1toMax_Volume - Keqing_T1_T3_1toMin_Volume
     var Keqing_T1_T4 = Keqing_T1_T4_1toMax_Volume - Keqing_T1_T4_1toMin_Volume
     var Keqing_T1_T5 = Keqing_T1_T5_1toMax_Volume - Keqing_T1_T5_1toMin_Volume
-    var Keqing_T1_T5_Comma = Keqing_T1_T5.toLocaleString();
     document.getElementById('Keqing_T1_T1_Volume').innerHTML = Keqing_T1_T1;
     document.getElementById('Keqing_T1_T2_Volume').innerHTML = Keqing_T1_T2;
     document.getElementById('Keqing_T1_T3_Volume').innerHTML = Keqing_T1_T3;
     document.getElementById('Keqing_T1_T4_Volume').innerHTML = Keqing_T1_T4;
-    document.getElementById('Keqing_T1_T5_Volume').innerHTML = Keqing_T1_T5_Comma;
+    document.getElementById('Keqing_T1_T5_Volume').innerHTML = Keqing_T1_T5.toLocaleString();
   });
   Keqing_T2.noUiSlider.on('update', function (values, handle) {
     var Keqing_T2_Min_Volume = "L1toL" + Keqing_T2.noUiSlider.get()[0];
@@ -2660,12 +2494,11 @@ function KeqingLoad() {
     var Keqing_T2_T3 = Keqing_T2_T3_1toMax_Volume - Keqing_T2_T3_1toMin_Volume
     var Keqing_T2_T4 = Keqing_T2_T4_1toMax_Volume - Keqing_T2_T4_1toMin_Volume
     var Keqing_T2_T5 = Keqing_T2_T5_1toMax_Volume - Keqing_T2_T5_1toMin_Volume
-    var Keqing_T2_T5_Comma = Keqing_T2_T5.toLocaleString();
     document.getElementById('Keqing_T2_T1_Volume').innerHTML = Keqing_T2_T1;
     document.getElementById('Keqing_T2_T2_Volume').innerHTML = Keqing_T2_T2;
     document.getElementById('Keqing_T2_T3_Volume').innerHTML = Keqing_T2_T3;
     document.getElementById('Keqing_T2_T4_Volume').innerHTML = Keqing_T2_T4;
-    document.getElementById('Keqing_T2_T5_Volume').innerHTML = Keqing_T2_T5_Comma;
+    document.getElementById('Keqing_T2_T5_Volume').innerHTML = Keqing_T2_T5.toLocaleString();
   });
   Keqing_T3.noUiSlider.on('update', function (values, handle) {
     var Keqing_T3_Min_Volume = "L1toL" + Keqing_T3.noUiSlider.get()[0];
@@ -2685,12 +2518,11 @@ function KeqingLoad() {
     var Keqing_T3_T3 = Keqing_T3_T3_1toMax_Volume - Keqing_T3_T3_1toMin_Volume
     var Keqing_T3_T4 = Keqing_T3_T4_1toMax_Volume - Keqing_T3_T4_1toMin_Volume
     var Keqing_T3_T5 = Keqing_T3_T5_1toMax_Volume - Keqing_T3_T5_1toMin_Volume
-    var Keqing_T3_T5_Comma = Keqing_T3_T5.toLocaleString();
     document.getElementById('Keqing_T3_T1_Volume').innerHTML = Keqing_T3_T1;
     document.getElementById('Keqing_T3_T2_Volume').innerHTML = Keqing_T3_T2;
     document.getElementById('Keqing_T3_T3_Volume').innerHTML = Keqing_T3_T3;
     document.getElementById('Keqing_T3_T4_Volume').innerHTML = Keqing_T3_T4;
-    document.getElementById('Keqing_T3_T5_Volume').innerHTML = Keqing_T3_T5_Comma;
+    document.getElementById('Keqing_T3_T5_Volume').innerHTML = Keqing_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Keqing  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2710,13 +2542,9 @@ function MonaLoad() {
     var Mona_Ex_Volume = Mona_Ex_1toMax_Volume - Mona_Ex_1toMin_Volume
     var Mona_Ex_Book_Volume = Mona_Ex_Volume / 1000
     var Mona_Ex_Mora_Volume = Mona_Ex_Volume * 0.2
-    var Mona_Ex_Volume_Comma = Mona_Ex_Volume.toLocaleString();
-    var Mona_Ex_Book_Volume_Comma = Mona_Ex_Book_Volume.toLocaleString();
-    var Mona_Ex_Mora_Volume_Comma = Mona_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Mona_Ex_Volume_Html').innerHTML = Mona_Ex_Volume_Comma;
-    document.getElementById('Mona_Ex_Volume_NoComma').innerHTML = Mona_Ex_Volume;
-    document.getElementById('Mona_Ex_Book_Volume_Html').innerHTML = Mona_Ex_Book_Volume_Comma;
-    document.getElementById('Mona_Ex_Mora_Volume_Html').innerHTML = Mona_Ex_Mora_Volume_Comma;
+    document.getElementById('Mona_Ex_Volume').innerHTML = Mona_Ex_Volume.toLocaleString();
+    document.getElementById('Mona_Ex_Book_Volume').innerHTML = Mona_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Mona_Ex_Mora_Volume').innerHTML = Mona_Ex_Mora_Volume.toLocaleString();
   });
   Mona_Pr.noUiSlider.on('update', function (values, handle) {
     var Mona_Pr_Min_Volume = "L1toL" + Mona_Pr.noUiSlider.get()[0];
@@ -2736,12 +2564,11 @@ function MonaLoad() {
     var Mona_Pr_P3 = Mona_Pr_P3_1toMax_Volume - Mona_Pr_P3_1toMin_Volume
     var Mona_Pr_P4 = Mona_Pr_P4_1toMax_Volume - Mona_Pr_P4_1toMin_Volume
     var Mona_Pr_P5 = Mona_Pr_P5_1toMax_Volume - Mona_Pr_P5_1toMin_Volume
-    var Mona_Pr_P5_Comma = Mona_Pr_P5.toLocaleString();
     document.getElementById('Mona_Pr_P1_Volume').innerHTML = Mona_Pr_P1;
     document.getElementById('Mona_Pr_P2_Volume').innerHTML = Mona_Pr_P2;
     document.getElementById('Mona_Pr_P3_Volume').innerHTML = Mona_Pr_P3;
     document.getElementById('Mona_Pr_P4_Volume').innerHTML = Mona_Pr_P4;
-    document.getElementById('Mona_Pr_P5_Volume').innerHTML = Mona_Pr_P5_Comma;
+    document.getElementById('Mona_Pr_P5_Volume').innerHTML = Mona_Pr_P5.toLocaleString();
   });
   Mona_T1.noUiSlider.on('update', function (values, handle) {
     var Mona_T1_Min_Volume = "L1toL" + Mona_T1.noUiSlider.get()[0];
@@ -2761,12 +2588,11 @@ function MonaLoad() {
     var Mona_T1_T3 = Mona_T1_T3_1toMax_Volume - Mona_T1_T3_1toMin_Volume
     var Mona_T1_T4 = Mona_T1_T4_1toMax_Volume - Mona_T1_T4_1toMin_Volume
     var Mona_T1_T5 = Mona_T1_T5_1toMax_Volume - Mona_T1_T5_1toMin_Volume
-    var Mona_T1_T5_Comma = Mona_T1_T5.toLocaleString();
     document.getElementById('Mona_T1_T1_Volume').innerHTML = Mona_T1_T1;
     document.getElementById('Mona_T1_T2_Volume').innerHTML = Mona_T1_T2;
     document.getElementById('Mona_T1_T3_Volume').innerHTML = Mona_T1_T3;
     document.getElementById('Mona_T1_T4_Volume').innerHTML = Mona_T1_T4;
-    document.getElementById('Mona_T1_T5_Volume').innerHTML = Mona_T1_T5_Comma;
+    document.getElementById('Mona_T1_T5_Volume').innerHTML = Mona_T1_T5.toLocaleString();
   });
   Mona_T2.noUiSlider.on('update', function (values, handle) {
     var Mona_T2_Min_Volume = "L1toL" + Mona_T2.noUiSlider.get()[0];
@@ -2786,12 +2612,11 @@ function MonaLoad() {
     var Mona_T2_T3 = Mona_T2_T3_1toMax_Volume - Mona_T2_T3_1toMin_Volume
     var Mona_T2_T4 = Mona_T2_T4_1toMax_Volume - Mona_T2_T4_1toMin_Volume
     var Mona_T2_T5 = Mona_T2_T5_1toMax_Volume - Mona_T2_T5_1toMin_Volume
-    var Mona_T2_T5_Comma = Mona_T2_T5.toLocaleString();
     document.getElementById('Mona_T2_T1_Volume').innerHTML = Mona_T2_T1;
     document.getElementById('Mona_T2_T2_Volume').innerHTML = Mona_T2_T2;
     document.getElementById('Mona_T2_T3_Volume').innerHTML = Mona_T2_T3;
     document.getElementById('Mona_T2_T4_Volume').innerHTML = Mona_T2_T4;
-    document.getElementById('Mona_T2_T5_Volume').innerHTML = Mona_T2_T5_Comma;
+    document.getElementById('Mona_T2_T5_Volume').innerHTML = Mona_T2_T5.toLocaleString();
   });
   Mona_T3.noUiSlider.on('update', function (values, handle) {
     var Mona_T3_Min_Volume = "L1toL" + Mona_T3.noUiSlider.get()[0];
@@ -2811,12 +2636,11 @@ function MonaLoad() {
     var Mona_T3_T3 = Mona_T3_T3_1toMax_Volume - Mona_T3_T3_1toMin_Volume
     var Mona_T3_T4 = Mona_T3_T4_1toMax_Volume - Mona_T3_T4_1toMin_Volume
     var Mona_T3_T5 = Mona_T3_T5_1toMax_Volume - Mona_T3_T5_1toMin_Volume
-    var Mona_T3_T5_Comma = Mona_T3_T5.toLocaleString();
     document.getElementById('Mona_T3_T1_Volume').innerHTML = Mona_T3_T1;
     document.getElementById('Mona_T3_T2_Volume').innerHTML = Mona_T3_T2;
     document.getElementById('Mona_T3_T3_Volume').innerHTML = Mona_T3_T3;
     document.getElementById('Mona_T3_T4_Volume').innerHTML = Mona_T3_T4;
-    document.getElementById('Mona_T3_T5_Volume').innerHTML = Mona_T3_T5_Comma;
+    document.getElementById('Mona_T3_T5_Volume').innerHTML = Mona_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Mona  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2836,13 +2660,9 @@ function QiqiLoad() {
     var Qiqi_Ex_Volume = Qiqi_Ex_1toMax_Volume - Qiqi_Ex_1toMin_Volume
     var Qiqi_Ex_Book_Volume = Qiqi_Ex_Volume / 1000
     var Qiqi_Ex_Mora_Volume = Qiqi_Ex_Volume * 0.2
-    var Qiqi_Ex_Volume_Comma = Qiqi_Ex_Volume.toLocaleString();
-    var Qiqi_Ex_Book_Volume_Comma = Qiqi_Ex_Book_Volume.toLocaleString();
-    var Qiqi_Ex_Mora_Volume_Comma = Qiqi_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Qiqi_Ex_Volume_Html').innerHTML = Qiqi_Ex_Volume_Comma;
-    document.getElementById('Qiqi_Ex_Volume_NoComma').innerHTML = Qiqi_Ex_Volume;
-    document.getElementById('Qiqi_Ex_Book_Volume_Html').innerHTML = Qiqi_Ex_Book_Volume_Comma;
-    document.getElementById('Qiqi_Ex_Mora_Volume_Html').innerHTML = Qiqi_Ex_Mora_Volume_Comma;
+    document.getElementById('Qiqi_Ex_Volume').innerHTML = Qiqi_Ex_Volume.toLocaleString();
+    document.getElementById('Qiqi_Ex_Book_Volume').innerHTML = Qiqi_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Qiqi_Ex_Mora_Volume').innerHTML = Qiqi_Ex_Mora_Volume.toLocaleString();
   });
   Qiqi_Pr.noUiSlider.on('update', function (values, handle) {
     var Qiqi_Pr_Min_Volume = "L1toL" + Qiqi_Pr.noUiSlider.get()[0];
@@ -2862,12 +2682,11 @@ function QiqiLoad() {
     var Qiqi_Pr_P3 = Qiqi_Pr_P3_1toMax_Volume - Qiqi_Pr_P3_1toMin_Volume
     var Qiqi_Pr_P4 = Qiqi_Pr_P4_1toMax_Volume - Qiqi_Pr_P4_1toMin_Volume
     var Qiqi_Pr_P5 = Qiqi_Pr_P5_1toMax_Volume - Qiqi_Pr_P5_1toMin_Volume
-    var Qiqi_Pr_P5_Comma = Qiqi_Pr_P5.toLocaleString();
     document.getElementById('Qiqi_Pr_P1_Volume').innerHTML = Qiqi_Pr_P1;
     document.getElementById('Qiqi_Pr_P2_Volume').innerHTML = Qiqi_Pr_P2;
     document.getElementById('Qiqi_Pr_P3_Volume').innerHTML = Qiqi_Pr_P3;
     document.getElementById('Qiqi_Pr_P4_Volume').innerHTML = Qiqi_Pr_P4;
-    document.getElementById('Qiqi_Pr_P5_Volume').innerHTML = Qiqi_Pr_P5_Comma;
+    document.getElementById('Qiqi_Pr_P5_Volume').innerHTML = Qiqi_Pr_P5.toLocaleString();
   });
   Qiqi_T1.noUiSlider.on('update', function (values, handle) {
     var Qiqi_T1_Min_Volume = "L1toL" + Qiqi_T1.noUiSlider.get()[0];
@@ -2887,12 +2706,11 @@ function QiqiLoad() {
     var Qiqi_T1_T3 = Qiqi_T1_T3_1toMax_Volume - Qiqi_T1_T3_1toMin_Volume
     var Qiqi_T1_T4 = Qiqi_T1_T4_1toMax_Volume - Qiqi_T1_T4_1toMin_Volume
     var Qiqi_T1_T5 = Qiqi_T1_T5_1toMax_Volume - Qiqi_T1_T5_1toMin_Volume
-    var Qiqi_T1_T5_Comma = Qiqi_T1_T5.toLocaleString();
     document.getElementById('Qiqi_T1_T1_Volume').innerHTML = Qiqi_T1_T1;
     document.getElementById('Qiqi_T1_T2_Volume').innerHTML = Qiqi_T1_T2;
     document.getElementById('Qiqi_T1_T3_Volume').innerHTML = Qiqi_T1_T3;
     document.getElementById('Qiqi_T1_T4_Volume').innerHTML = Qiqi_T1_T4;
-    document.getElementById('Qiqi_T1_T5_Volume').innerHTML = Qiqi_T1_T5_Comma;
+    document.getElementById('Qiqi_T1_T5_Volume').innerHTML = Qiqi_T1_T5.toLocaleString();
   });
   Qiqi_T2.noUiSlider.on('update', function (values, handle) {
     var Qiqi_T2_Min_Volume = "L1toL" + Qiqi_T2.noUiSlider.get()[0];
@@ -2912,12 +2730,11 @@ function QiqiLoad() {
     var Qiqi_T2_T3 = Qiqi_T2_T3_1toMax_Volume - Qiqi_T2_T3_1toMin_Volume
     var Qiqi_T2_T4 = Qiqi_T2_T4_1toMax_Volume - Qiqi_T2_T4_1toMin_Volume
     var Qiqi_T2_T5 = Qiqi_T2_T5_1toMax_Volume - Qiqi_T2_T5_1toMin_Volume
-    var Qiqi_T2_T5_Comma = Qiqi_T2_T5.toLocaleString();
     document.getElementById('Qiqi_T2_T1_Volume').innerHTML = Qiqi_T2_T1;
     document.getElementById('Qiqi_T2_T2_Volume').innerHTML = Qiqi_T2_T2;
     document.getElementById('Qiqi_T2_T3_Volume').innerHTML = Qiqi_T2_T3;
     document.getElementById('Qiqi_T2_T4_Volume').innerHTML = Qiqi_T2_T4;
-    document.getElementById('Qiqi_T2_T5_Volume').innerHTML = Qiqi_T2_T5_Comma;
+    document.getElementById('Qiqi_T2_T5_Volume').innerHTML = Qiqi_T2_T5.toLocaleString();
   });
   Qiqi_T3.noUiSlider.on('update', function (values, handle) {
     var Qiqi_T3_Min_Volume = "L1toL" + Qiqi_T3.noUiSlider.get()[0];
@@ -2937,12 +2754,11 @@ function QiqiLoad() {
     var Qiqi_T3_T3 = Qiqi_T3_T3_1toMax_Volume - Qiqi_T3_T3_1toMin_Volume
     var Qiqi_T3_T4 = Qiqi_T3_T4_1toMax_Volume - Qiqi_T3_T4_1toMin_Volume
     var Qiqi_T3_T5 = Qiqi_T3_T5_1toMax_Volume - Qiqi_T3_T5_1toMin_Volume
-    var Qiqi_T3_T5_Comma = Qiqi_T3_T5.toLocaleString();
     document.getElementById('Qiqi_T3_T1_Volume').innerHTML = Qiqi_T3_T1;
     document.getElementById('Qiqi_T3_T2_Volume').innerHTML = Qiqi_T3_T2;
     document.getElementById('Qiqi_T3_T3_Volume').innerHTML = Qiqi_T3_T3;
     document.getElementById('Qiqi_T3_T4_Volume').innerHTML = Qiqi_T3_T4;
-    document.getElementById('Qiqi_T3_T5_Volume').innerHTML = Qiqi_T3_T5_Comma;
+    document.getElementById('Qiqi_T3_T5_Volume').innerHTML = Qiqi_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Qiqi  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -2962,13 +2778,9 @@ function DilucLoad() {
     var Diluc_Ex_Volume = Diluc_Ex_1toMax_Volume - Diluc_Ex_1toMin_Volume
     var Diluc_Ex_Book_Volume = Diluc_Ex_Volume / 1000
     var Diluc_Ex_Mora_Volume = Diluc_Ex_Volume * 0.2
-    var Diluc_Ex_Volume_Comma = Diluc_Ex_Volume.toLocaleString();
-    var Diluc_Ex_Book_Volume_Comma = Diluc_Ex_Book_Volume.toLocaleString();
-    var Diluc_Ex_Mora_Volume_Comma = Diluc_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Diluc_Ex_Volume_Html').innerHTML = Diluc_Ex_Volume_Comma;
-    document.getElementById('Diluc_Ex_Volume_NoComma').innerHTML = Diluc_Ex_Volume;
-    document.getElementById('Diluc_Ex_Book_Volume_Html').innerHTML = Diluc_Ex_Book_Volume_Comma;
-    document.getElementById('Diluc_Ex_Mora_Volume_Html').innerHTML = Diluc_Ex_Mora_Volume_Comma;
+    document.getElementById('Diluc_Ex_Volume').innerHTML = Diluc_Ex_Volume.toLocaleString();
+    document.getElementById('Diluc_Ex_Book_Volume').innerHTML = Diluc_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Diluc_Ex_Mora_Volume').innerHTML = Diluc_Ex_Mora_Volume.toLocaleString();
   });
   Diluc_Pr.noUiSlider.on('update', function (values, handle) {
     var Diluc_Pr_Min_Volume = "L1toL" + Diluc_Pr.noUiSlider.get()[0];
@@ -2988,12 +2800,11 @@ function DilucLoad() {
     var Diluc_Pr_P3 = Diluc_Pr_P3_1toMax_Volume - Diluc_Pr_P3_1toMin_Volume
     var Diluc_Pr_P4 = Diluc_Pr_P4_1toMax_Volume - Diluc_Pr_P4_1toMin_Volume
     var Diluc_Pr_P5 = Diluc_Pr_P5_1toMax_Volume - Diluc_Pr_P5_1toMin_Volume
-    var Diluc_Pr_P5_Comma = Diluc_Pr_P5.toLocaleString();
     document.getElementById('Diluc_Pr_P1_Volume').innerHTML = Diluc_Pr_P1;
     document.getElementById('Diluc_Pr_P2_Volume').innerHTML = Diluc_Pr_P2;
     document.getElementById('Diluc_Pr_P3_Volume').innerHTML = Diluc_Pr_P3;
     document.getElementById('Diluc_Pr_P4_Volume').innerHTML = Diluc_Pr_P4;
-    document.getElementById('Diluc_Pr_P5_Volume').innerHTML = Diluc_Pr_P5_Comma;
+    document.getElementById('Diluc_Pr_P5_Volume').innerHTML = Diluc_Pr_P5.toLocaleString();
   });
   Diluc_T1.noUiSlider.on('update', function (values, handle) {
     var Diluc_T1_Min_Volume = "L1toL" + Diluc_T1.noUiSlider.get()[0];
@@ -3013,12 +2824,11 @@ function DilucLoad() {
     var Diluc_T1_T3 = Diluc_T1_T3_1toMax_Volume - Diluc_T1_T3_1toMin_Volume
     var Diluc_T1_T4 = Diluc_T1_T4_1toMax_Volume - Diluc_T1_T4_1toMin_Volume
     var Diluc_T1_T5 = Diluc_T1_T5_1toMax_Volume - Diluc_T1_T5_1toMin_Volume
-    var Diluc_T1_T5_Comma = Diluc_T1_T5.toLocaleString();
     document.getElementById('Diluc_T1_T1_Volume').innerHTML = Diluc_T1_T1;
     document.getElementById('Diluc_T1_T2_Volume').innerHTML = Diluc_T1_T2;
     document.getElementById('Diluc_T1_T3_Volume').innerHTML = Diluc_T1_T3;
     document.getElementById('Diluc_T1_T4_Volume').innerHTML = Diluc_T1_T4;
-    document.getElementById('Diluc_T1_T5_Volume').innerHTML = Diluc_T1_T5_Comma;
+    document.getElementById('Diluc_T1_T5_Volume').innerHTML = Diluc_T1_T5.toLocaleString();
   });
   Diluc_T2.noUiSlider.on('update', function (values, handle) {
     var Diluc_T2_Min_Volume = "L1toL" + Diluc_T2.noUiSlider.get()[0];
@@ -3038,12 +2848,11 @@ function DilucLoad() {
     var Diluc_T2_T3 = Diluc_T2_T3_1toMax_Volume - Diluc_T2_T3_1toMin_Volume
     var Diluc_T2_T4 = Diluc_T2_T4_1toMax_Volume - Diluc_T2_T4_1toMin_Volume
     var Diluc_T2_T5 = Diluc_T2_T5_1toMax_Volume - Diluc_T2_T5_1toMin_Volume
-    var Diluc_T2_T5_Comma = Diluc_T2_T5.toLocaleString();
     document.getElementById('Diluc_T2_T1_Volume').innerHTML = Diluc_T2_T1;
     document.getElementById('Diluc_T2_T2_Volume').innerHTML = Diluc_T2_T2;
     document.getElementById('Diluc_T2_T3_Volume').innerHTML = Diluc_T2_T3;
     document.getElementById('Diluc_T2_T4_Volume').innerHTML = Diluc_T2_T4;
-    document.getElementById('Diluc_T2_T5_Volume').innerHTML = Diluc_T2_T5_Comma;
+    document.getElementById('Diluc_T2_T5_Volume').innerHTML = Diluc_T2_T5.toLocaleString();
   });
   Diluc_T3.noUiSlider.on('update', function (values, handle) {
     var Diluc_T3_Min_Volume = "L1toL" + Diluc_T3.noUiSlider.get()[0];
@@ -3063,12 +2872,11 @@ function DilucLoad() {
     var Diluc_T3_T3 = Diluc_T3_T3_1toMax_Volume - Diluc_T3_T3_1toMin_Volume
     var Diluc_T3_T4 = Diluc_T3_T4_1toMax_Volume - Diluc_T3_T4_1toMin_Volume
     var Diluc_T3_T5 = Diluc_T3_T5_1toMax_Volume - Diluc_T3_T5_1toMin_Volume
-    var Diluc_T3_T5_Comma = Diluc_T3_T5.toLocaleString();
     document.getElementById('Diluc_T3_T1_Volume').innerHTML = Diluc_T3_T1;
     document.getElementById('Diluc_T3_T2_Volume').innerHTML = Diluc_T3_T2;
     document.getElementById('Diluc_T3_T3_Volume').innerHTML = Diluc_T3_T3;
     document.getElementById('Diluc_T3_T4_Volume').innerHTML = Diluc_T3_T4;
-    document.getElementById('Diluc_T3_T5_Volume').innerHTML = Diluc_T3_T5_Comma;
+    document.getElementById('Diluc_T3_T5_Volume').innerHTML = Diluc_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Diluc  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3088,13 +2896,9 @@ function JeanLoad() {
     var Jean_Ex_Volume = Jean_Ex_1toMax_Volume - Jean_Ex_1toMin_Volume
     var Jean_Ex_Book_Volume = Jean_Ex_Volume / 1000
     var Jean_Ex_Mora_Volume = Jean_Ex_Volume * 0.2
-    var Jean_Ex_Volume_Comma = Jean_Ex_Volume.toLocaleString();
-    var Jean_Ex_Book_Volume_Comma = Jean_Ex_Book_Volume.toLocaleString();
-    var Jean_Ex_Mora_Volume_Comma = Jean_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Jean_Ex_Volume_Html').innerHTML = Jean_Ex_Volume_Comma;
-    document.getElementById('Jean_Ex_Volume_NoComma').innerHTML = Jean_Ex_Volume;
-    document.getElementById('Jean_Ex_Book_Volume_Html').innerHTML = Jean_Ex_Book_Volume_Comma;
-    document.getElementById('Jean_Ex_Mora_Volume_Html').innerHTML = Jean_Ex_Mora_Volume_Comma;
+    document.getElementById('Jean_Ex_Volume').innerHTML = Jean_Ex_Volume.toLocaleString();
+    document.getElementById('Jean_Ex_Book_Volume').innerHTML = Jean_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Jean_Ex_Mora_Volume').innerHTML = Jean_Ex_Mora_Volume.toLocaleString();
   });
   Jean_Pr.noUiSlider.on('update', function (values, handle) {
     var Jean_Pr_Min_Volume = "L1toL" + Jean_Pr.noUiSlider.get()[0];
@@ -3114,12 +2918,11 @@ function JeanLoad() {
     var Jean_Pr_P3 = Jean_Pr_P3_1toMax_Volume - Jean_Pr_P3_1toMin_Volume
     var Jean_Pr_P4 = Jean_Pr_P4_1toMax_Volume - Jean_Pr_P4_1toMin_Volume
     var Jean_Pr_P5 = Jean_Pr_P5_1toMax_Volume - Jean_Pr_P5_1toMin_Volume
-    var Jean_Pr_P5_Comma = Jean_Pr_P5.toLocaleString();
     document.getElementById('Jean_Pr_P1_Volume').innerHTML = Jean_Pr_P1;
     document.getElementById('Jean_Pr_P2_Volume').innerHTML = Jean_Pr_P2;
     document.getElementById('Jean_Pr_P3_Volume').innerHTML = Jean_Pr_P3;
     document.getElementById('Jean_Pr_P4_Volume').innerHTML = Jean_Pr_P4;
-    document.getElementById('Jean_Pr_P5_Volume').innerHTML = Jean_Pr_P5_Comma;
+    document.getElementById('Jean_Pr_P5_Volume').innerHTML = Jean_Pr_P5.toLocaleString();
   });
   Jean_T1.noUiSlider.on('update', function (values, handle) {
     var Jean_T1_Min_Volume = "L1toL" + Jean_T1.noUiSlider.get()[0];
@@ -3139,12 +2942,11 @@ function JeanLoad() {
     var Jean_T1_T3 = Jean_T1_T3_1toMax_Volume - Jean_T1_T3_1toMin_Volume
     var Jean_T1_T4 = Jean_T1_T4_1toMax_Volume - Jean_T1_T4_1toMin_Volume
     var Jean_T1_T5 = Jean_T1_T5_1toMax_Volume - Jean_T1_T5_1toMin_Volume
-    var Jean_T1_T5_Comma = Jean_T1_T5.toLocaleString();
     document.getElementById('Jean_T1_T1_Volume').innerHTML = Jean_T1_T1;
     document.getElementById('Jean_T1_T2_Volume').innerHTML = Jean_T1_T2;
     document.getElementById('Jean_T1_T3_Volume').innerHTML = Jean_T1_T3;
     document.getElementById('Jean_T1_T4_Volume').innerHTML = Jean_T1_T4;
-    document.getElementById('Jean_T1_T5_Volume').innerHTML = Jean_T1_T5_Comma;
+    document.getElementById('Jean_T1_T5_Volume').innerHTML = Jean_T1_T5.toLocaleString();
   });
   Jean_T2.noUiSlider.on('update', function (values, handle) {
     var Jean_T2_Min_Volume = "L1toL" + Jean_T2.noUiSlider.get()[0];
@@ -3164,12 +2966,11 @@ function JeanLoad() {
     var Jean_T2_T3 = Jean_T2_T3_1toMax_Volume - Jean_T2_T3_1toMin_Volume
     var Jean_T2_T4 = Jean_T2_T4_1toMax_Volume - Jean_T2_T4_1toMin_Volume
     var Jean_T2_T5 = Jean_T2_T5_1toMax_Volume - Jean_T2_T5_1toMin_Volume
-    var Jean_T2_T5_Comma = Jean_T2_T5.toLocaleString();
     document.getElementById('Jean_T2_T1_Volume').innerHTML = Jean_T2_T1;
     document.getElementById('Jean_T2_T2_Volume').innerHTML = Jean_T2_T2;
     document.getElementById('Jean_T2_T3_Volume').innerHTML = Jean_T2_T3;
     document.getElementById('Jean_T2_T4_Volume').innerHTML = Jean_T2_T4;
-    document.getElementById('Jean_T2_T5_Volume').innerHTML = Jean_T2_T5_Comma;
+    document.getElementById('Jean_T2_T5_Volume').innerHTML = Jean_T2_T5.toLocaleString();
   });
   Jean_T3.noUiSlider.on('update', function (values, handle) {
     var Jean_T3_Min_Volume = "L1toL" + Jean_T3.noUiSlider.get()[0];
@@ -3189,12 +2990,11 @@ function JeanLoad() {
     var Jean_T3_T3 = Jean_T3_T3_1toMax_Volume - Jean_T3_T3_1toMin_Volume
     var Jean_T3_T4 = Jean_T3_T4_1toMax_Volume - Jean_T3_T4_1toMin_Volume
     var Jean_T3_T5 = Jean_T3_T5_1toMax_Volume - Jean_T3_T5_1toMin_Volume
-    var Jean_T3_T5_Comma = Jean_T3_T5.toLocaleString();
     document.getElementById('Jean_T3_T1_Volume').innerHTML = Jean_T3_T1;
     document.getElementById('Jean_T3_T2_Volume').innerHTML = Jean_T3_T2;
     document.getElementById('Jean_T3_T3_Volume').innerHTML = Jean_T3_T3;
     document.getElementById('Jean_T3_T4_Volume').innerHTML = Jean_T3_T4;
-    document.getElementById('Jean_T3_T5_Volume').innerHTML = Jean_T3_T5_Comma;
+    document.getElementById('Jean_T3_T5_Volume').innerHTML = Jean_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Jean  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3214,13 +3014,9 @@ function SucroseLoad() {
     var Sucrose_Ex_Volume = Sucrose_Ex_1toMax_Volume - Sucrose_Ex_1toMin_Volume
     var Sucrose_Ex_Book_Volume = Sucrose_Ex_Volume / 1000
     var Sucrose_Ex_Mora_Volume = Sucrose_Ex_Volume * 0.2
-    var Sucrose_Ex_Volume_Comma = Sucrose_Ex_Volume.toLocaleString();
-    var Sucrose_Ex_Book_Volume_Comma = Sucrose_Ex_Book_Volume.toLocaleString();
-    var Sucrose_Ex_Mora_Volume_Comma = Sucrose_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Sucrose_Ex_Volume_Html').innerHTML = Sucrose_Ex_Volume_Comma;
-    document.getElementById('Sucrose_Ex_Volume_NoComma').innerHTML = Sucrose_Ex_Volume;
-    document.getElementById('Sucrose_Ex_Book_Volume_Html').innerHTML = Sucrose_Ex_Book_Volume_Comma;
-    document.getElementById('Sucrose_Ex_Mora_Volume_Html').innerHTML = Sucrose_Ex_Mora_Volume_Comma;
+    document.getElementById('Sucrose_Ex_Volume').innerHTML = Sucrose_Ex_Volume.toLocaleString();
+    document.getElementById('Sucrose_Ex_Book_Volume').innerHTML = Sucrose_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Sucrose_Ex_Mora_Volume').innerHTML = Sucrose_Ex_Mora_Volume.toLocaleString();
   });
   Sucrose_Pr.noUiSlider.on('update', function (values, handle) {
     var Sucrose_Pr_Min_Volume = "L1toL" + Sucrose_Pr.noUiSlider.get()[0];
@@ -3240,12 +3036,11 @@ function SucroseLoad() {
     var Sucrose_Pr_P3 = Sucrose_Pr_P3_1toMax_Volume - Sucrose_Pr_P3_1toMin_Volume
     var Sucrose_Pr_P4 = Sucrose_Pr_P4_1toMax_Volume - Sucrose_Pr_P4_1toMin_Volume
     var Sucrose_Pr_P5 = Sucrose_Pr_P5_1toMax_Volume - Sucrose_Pr_P5_1toMin_Volume
-    var Sucrose_Pr_P5_Comma = Sucrose_Pr_P5.toLocaleString();
     document.getElementById('Sucrose_Pr_P1_Volume').innerHTML = Sucrose_Pr_P1;
     document.getElementById('Sucrose_Pr_P2_Volume').innerHTML = Sucrose_Pr_P2;
     document.getElementById('Sucrose_Pr_P3_Volume').innerHTML = Sucrose_Pr_P3;
     document.getElementById('Sucrose_Pr_P4_Volume').innerHTML = Sucrose_Pr_P4;
-    document.getElementById('Sucrose_Pr_P5_Volume').innerHTML = Sucrose_Pr_P5_Comma;
+    document.getElementById('Sucrose_Pr_P5_Volume').innerHTML = Sucrose_Pr_P5.toLocaleString();
   });
   Sucrose_T1.noUiSlider.on('update', function (values, handle) {
     var Sucrose_T1_Min_Volume = "L1toL" + Sucrose_T1.noUiSlider.get()[0];
@@ -3265,12 +3060,11 @@ function SucroseLoad() {
     var Sucrose_T1_T3 = Sucrose_T1_T3_1toMax_Volume - Sucrose_T1_T3_1toMin_Volume
     var Sucrose_T1_T4 = Sucrose_T1_T4_1toMax_Volume - Sucrose_T1_T4_1toMin_Volume
     var Sucrose_T1_T5 = Sucrose_T1_T5_1toMax_Volume - Sucrose_T1_T5_1toMin_Volume
-    var Sucrose_T1_T5_Comma = Sucrose_T1_T5.toLocaleString();
     document.getElementById('Sucrose_T1_T1_Volume').innerHTML = Sucrose_T1_T1;
     document.getElementById('Sucrose_T1_T2_Volume').innerHTML = Sucrose_T1_T2;
     document.getElementById('Sucrose_T1_T3_Volume').innerHTML = Sucrose_T1_T3;
     document.getElementById('Sucrose_T1_T4_Volume').innerHTML = Sucrose_T1_T4;
-    document.getElementById('Sucrose_T1_T5_Volume').innerHTML = Sucrose_T1_T5_Comma;
+    document.getElementById('Sucrose_T1_T5_Volume').innerHTML = Sucrose_T1_T5.toLocaleString();
   });
   Sucrose_T2.noUiSlider.on('update', function (values, handle) {
     var Sucrose_T2_Min_Volume = "L1toL" + Sucrose_T2.noUiSlider.get()[0];
@@ -3290,12 +3084,11 @@ function SucroseLoad() {
     var Sucrose_T2_T3 = Sucrose_T2_T3_1toMax_Volume - Sucrose_T2_T3_1toMin_Volume
     var Sucrose_T2_T4 = Sucrose_T2_T4_1toMax_Volume - Sucrose_T2_T4_1toMin_Volume
     var Sucrose_T2_T5 = Sucrose_T2_T5_1toMax_Volume - Sucrose_T2_T5_1toMin_Volume
-    var Sucrose_T2_T5_Comma = Sucrose_T2_T5.toLocaleString();
     document.getElementById('Sucrose_T2_T1_Volume').innerHTML = Sucrose_T2_T1;
     document.getElementById('Sucrose_T2_T2_Volume').innerHTML = Sucrose_T2_T2;
     document.getElementById('Sucrose_T2_T3_Volume').innerHTML = Sucrose_T2_T3;
     document.getElementById('Sucrose_T2_T4_Volume').innerHTML = Sucrose_T2_T4;
-    document.getElementById('Sucrose_T2_T5_Volume').innerHTML = Sucrose_T2_T5_Comma;
+    document.getElementById('Sucrose_T2_T5_Volume').innerHTML = Sucrose_T2_T5.toLocaleString();
   });
   Sucrose_T3.noUiSlider.on('update', function (values, handle) {
     var Sucrose_T3_Min_Volume = "L1toL" + Sucrose_T3.noUiSlider.get()[0];
@@ -3315,12 +3108,11 @@ function SucroseLoad() {
     var Sucrose_T3_T3 = Sucrose_T3_T3_1toMax_Volume - Sucrose_T3_T3_1toMin_Volume
     var Sucrose_T3_T4 = Sucrose_T3_T4_1toMax_Volume - Sucrose_T3_T4_1toMin_Volume
     var Sucrose_T3_T5 = Sucrose_T3_T5_1toMax_Volume - Sucrose_T3_T5_1toMin_Volume
-    var Sucrose_T3_T5_Comma = Sucrose_T3_T5.toLocaleString();
     document.getElementById('Sucrose_T3_T1_Volume').innerHTML = Sucrose_T3_T1;
     document.getElementById('Sucrose_T3_T2_Volume').innerHTML = Sucrose_T3_T2;
     document.getElementById('Sucrose_T3_T3_Volume').innerHTML = Sucrose_T3_T3;
     document.getElementById('Sucrose_T3_T4_Volume').innerHTML = Sucrose_T3_T4;
-    document.getElementById('Sucrose_T3_T5_Volume').innerHTML = Sucrose_T3_T5_Comma;
+    document.getElementById('Sucrose_T3_T5_Volume').innerHTML = Sucrose_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Sucrose  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3340,13 +3132,9 @@ function ChongyunLoad() {
     var Chongyun_Ex_Volume = Chongyun_Ex_1toMax_Volume - Chongyun_Ex_1toMin_Volume
     var Chongyun_Ex_Book_Volume = Chongyun_Ex_Volume / 1000
     var Chongyun_Ex_Mora_Volume = Chongyun_Ex_Volume * 0.2
-    var Chongyun_Ex_Volume_Comma = Chongyun_Ex_Volume.toLocaleString();
-    var Chongyun_Ex_Book_Volume_Comma = Chongyun_Ex_Book_Volume.toLocaleString();
-    var Chongyun_Ex_Mora_Volume_Comma = Chongyun_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Chongyun_Ex_Volume_Html').innerHTML = Chongyun_Ex_Volume_Comma;
-    document.getElementById('Chongyun_Ex_Volume_NoComma').innerHTML = Chongyun_Ex_Volume;
-    document.getElementById('Chongyun_Ex_Book_Volume_Html').innerHTML = Chongyun_Ex_Book_Volume_Comma;
-    document.getElementById('Chongyun_Ex_Mora_Volume_Html').innerHTML = Chongyun_Ex_Mora_Volume_Comma;
+    document.getElementById('Chongyun_Ex_Volume').innerHTML = Chongyun_Ex_Volume.toLocaleString();
+    document.getElementById('Chongyun_Ex_Book_Volume').innerHTML = Chongyun_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Chongyun_Ex_Mora_Volume').innerHTML = Chongyun_Ex_Mora_Volume.toLocaleString();
   });
   Chongyun_Pr.noUiSlider.on('update', function (values, handle) {
     var Chongyun_Pr_Min_Volume = "L1toL" + Chongyun_Pr.noUiSlider.get()[0];
@@ -3366,12 +3154,11 @@ function ChongyunLoad() {
     var Chongyun_Pr_P3 = Chongyun_Pr_P3_1toMax_Volume - Chongyun_Pr_P3_1toMin_Volume
     var Chongyun_Pr_P4 = Chongyun_Pr_P4_1toMax_Volume - Chongyun_Pr_P4_1toMin_Volume
     var Chongyun_Pr_P5 = Chongyun_Pr_P5_1toMax_Volume - Chongyun_Pr_P5_1toMin_Volume
-    var Chongyun_Pr_P5_Comma = Chongyun_Pr_P5.toLocaleString();
     document.getElementById('Chongyun_Pr_P1_Volume').innerHTML = Chongyun_Pr_P1;
     document.getElementById('Chongyun_Pr_P2_Volume').innerHTML = Chongyun_Pr_P2;
     document.getElementById('Chongyun_Pr_P3_Volume').innerHTML = Chongyun_Pr_P3;
     document.getElementById('Chongyun_Pr_P4_Volume').innerHTML = Chongyun_Pr_P4;
-    document.getElementById('Chongyun_Pr_P5_Volume').innerHTML = Chongyun_Pr_P5_Comma;
+    document.getElementById('Chongyun_Pr_P5_Volume').innerHTML = Chongyun_Pr_P5.toLocaleString();
   });
   Chongyun_T1.noUiSlider.on('update', function (values, handle) {
     var Chongyun_T1_Min_Volume = "L1toL" + Chongyun_T1.noUiSlider.get()[0];
@@ -3391,12 +3178,11 @@ function ChongyunLoad() {
     var Chongyun_T1_T3 = Chongyun_T1_T3_1toMax_Volume - Chongyun_T1_T3_1toMin_Volume
     var Chongyun_T1_T4 = Chongyun_T1_T4_1toMax_Volume - Chongyun_T1_T4_1toMin_Volume
     var Chongyun_T1_T5 = Chongyun_T1_T5_1toMax_Volume - Chongyun_T1_T5_1toMin_Volume
-    var Chongyun_T1_T5_Comma = Chongyun_T1_T5.toLocaleString();
     document.getElementById('Chongyun_T1_T1_Volume').innerHTML = Chongyun_T1_T1;
     document.getElementById('Chongyun_T1_T2_Volume').innerHTML = Chongyun_T1_T2;
     document.getElementById('Chongyun_T1_T3_Volume').innerHTML = Chongyun_T1_T3;
     document.getElementById('Chongyun_T1_T4_Volume').innerHTML = Chongyun_T1_T4;
-    document.getElementById('Chongyun_T1_T5_Volume').innerHTML = Chongyun_T1_T5_Comma;
+    document.getElementById('Chongyun_T1_T5_Volume').innerHTML = Chongyun_T1_T5.toLocaleString();
   });
   Chongyun_T2.noUiSlider.on('update', function (values, handle) {
     var Chongyun_T2_Min_Volume = "L1toL" + Chongyun_T2.noUiSlider.get()[0];
@@ -3416,12 +3202,11 @@ function ChongyunLoad() {
     var Chongyun_T2_T3 = Chongyun_T2_T3_1toMax_Volume - Chongyun_T2_T3_1toMin_Volume
     var Chongyun_T2_T4 = Chongyun_T2_T4_1toMax_Volume - Chongyun_T2_T4_1toMin_Volume
     var Chongyun_T2_T5 = Chongyun_T2_T5_1toMax_Volume - Chongyun_T2_T5_1toMin_Volume
-    var Chongyun_T2_T5_Comma = Chongyun_T2_T5.toLocaleString();
     document.getElementById('Chongyun_T2_T1_Volume').innerHTML = Chongyun_T2_T1;
     document.getElementById('Chongyun_T2_T2_Volume').innerHTML = Chongyun_T2_T2;
     document.getElementById('Chongyun_T2_T3_Volume').innerHTML = Chongyun_T2_T3;
     document.getElementById('Chongyun_T2_T4_Volume').innerHTML = Chongyun_T2_T4;
-    document.getElementById('Chongyun_T2_T5_Volume').innerHTML = Chongyun_T2_T5_Comma;
+    document.getElementById('Chongyun_T2_T5_Volume').innerHTML = Chongyun_T2_T5.toLocaleString();
   });
   Chongyun_T3.noUiSlider.on('update', function (values, handle) {
     var Chongyun_T3_Min_Volume = "L1toL" + Chongyun_T3.noUiSlider.get()[0];
@@ -3441,12 +3226,11 @@ function ChongyunLoad() {
     var Chongyun_T3_T3 = Chongyun_T3_T3_1toMax_Volume - Chongyun_T3_T3_1toMin_Volume
     var Chongyun_T3_T4 = Chongyun_T3_T4_1toMax_Volume - Chongyun_T3_T4_1toMin_Volume
     var Chongyun_T3_T5 = Chongyun_T3_T5_1toMax_Volume - Chongyun_T3_T5_1toMin_Volume
-    var Chongyun_T3_T5_Comma = Chongyun_T3_T5.toLocaleString();
     document.getElementById('Chongyun_T3_T1_Volume').innerHTML = Chongyun_T3_T1;
     document.getElementById('Chongyun_T3_T2_Volume').innerHTML = Chongyun_T3_T2;
     document.getElementById('Chongyun_T3_T3_Volume').innerHTML = Chongyun_T3_T3;
     document.getElementById('Chongyun_T3_T4_Volume').innerHTML = Chongyun_T3_T4;
-    document.getElementById('Chongyun_T3_T5_Volume').innerHTML = Chongyun_T3_T5_Comma;
+    document.getElementById('Chongyun_T3_T5_Volume').innerHTML = Chongyun_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Chongyun  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3466,13 +3250,9 @@ function NoelleLoad() {
     var Noelle_Ex_Volume = Noelle_Ex_1toMax_Volume - Noelle_Ex_1toMin_Volume
     var Noelle_Ex_Book_Volume = Noelle_Ex_Volume / 1000
     var Noelle_Ex_Mora_Volume = Noelle_Ex_Volume * 0.2
-    var Noelle_Ex_Volume_Comma = Noelle_Ex_Volume.toLocaleString();
-    var Noelle_Ex_Book_Volume_Comma = Noelle_Ex_Book_Volume.toLocaleString();
-    var Noelle_Ex_Mora_Volume_Comma = Noelle_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Noelle_Ex_Volume_Html').innerHTML = Noelle_Ex_Volume_Comma;
-    document.getElementById('Noelle_Ex_Volume_NoComma').innerHTML = Noelle_Ex_Volume;
-    document.getElementById('Noelle_Ex_Book_Volume_Html').innerHTML = Noelle_Ex_Book_Volume_Comma;
-    document.getElementById('Noelle_Ex_Mora_Volume_Html').innerHTML = Noelle_Ex_Mora_Volume_Comma;
+    document.getElementById('Noelle_Ex_Volume').innerHTML = Noelle_Ex_Volume.toLocaleString();
+    document.getElementById('Noelle_Ex_Book_Volume').innerHTML = Noelle_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Noelle_Ex_Mora_Volume').innerHTML = Noelle_Ex_Mora_Volume.toLocaleString();
   });
   Noelle_Pr.noUiSlider.on('update', function (values, handle) {
     var Noelle_Pr_Min_Volume = "L1toL" + Noelle_Pr.noUiSlider.get()[0];
@@ -3492,12 +3272,11 @@ function NoelleLoad() {
     var Noelle_Pr_P3 = Noelle_Pr_P3_1toMax_Volume - Noelle_Pr_P3_1toMin_Volume
     var Noelle_Pr_P4 = Noelle_Pr_P4_1toMax_Volume - Noelle_Pr_P4_1toMin_Volume
     var Noelle_Pr_P5 = Noelle_Pr_P5_1toMax_Volume - Noelle_Pr_P5_1toMin_Volume
-    var Noelle_Pr_P5_Comma = Noelle_Pr_P5.toLocaleString();
     document.getElementById('Noelle_Pr_P1_Volume').innerHTML = Noelle_Pr_P1;
     document.getElementById('Noelle_Pr_P2_Volume').innerHTML = Noelle_Pr_P2;
     document.getElementById('Noelle_Pr_P3_Volume').innerHTML = Noelle_Pr_P3;
     document.getElementById('Noelle_Pr_P4_Volume').innerHTML = Noelle_Pr_P4;
-    document.getElementById('Noelle_Pr_P5_Volume').innerHTML = Noelle_Pr_P5_Comma;
+    document.getElementById('Noelle_Pr_P5_Volume').innerHTML = Noelle_Pr_P5.toLocaleString();
   });
   Noelle_T1.noUiSlider.on('update', function (values, handle) {
     var Noelle_T1_Min_Volume = "L1toL" + Noelle_T1.noUiSlider.get()[0];
@@ -3517,12 +3296,11 @@ function NoelleLoad() {
     var Noelle_T1_T3 = Noelle_T1_T3_1toMax_Volume - Noelle_T1_T3_1toMin_Volume
     var Noelle_T1_T4 = Noelle_T1_T4_1toMax_Volume - Noelle_T1_T4_1toMin_Volume
     var Noelle_T1_T5 = Noelle_T1_T5_1toMax_Volume - Noelle_T1_T5_1toMin_Volume
-    var Noelle_T1_T5_Comma = Noelle_T1_T5.toLocaleString();
     document.getElementById('Noelle_T1_T1_Volume').innerHTML = Noelle_T1_T1;
     document.getElementById('Noelle_T1_T2_Volume').innerHTML = Noelle_T1_T2;
     document.getElementById('Noelle_T1_T3_Volume').innerHTML = Noelle_T1_T3;
     document.getElementById('Noelle_T1_T4_Volume').innerHTML = Noelle_T1_T4;
-    document.getElementById('Noelle_T1_T5_Volume').innerHTML = Noelle_T1_T5_Comma;
+    document.getElementById('Noelle_T1_T5_Volume').innerHTML = Noelle_T1_T5.toLocaleString();
   });
   Noelle_T2.noUiSlider.on('update', function (values, handle) {
     var Noelle_T2_Min_Volume = "L1toL" + Noelle_T2.noUiSlider.get()[0];
@@ -3542,12 +3320,11 @@ function NoelleLoad() {
     var Noelle_T2_T3 = Noelle_T2_T3_1toMax_Volume - Noelle_T2_T3_1toMin_Volume
     var Noelle_T2_T4 = Noelle_T2_T4_1toMax_Volume - Noelle_T2_T4_1toMin_Volume
     var Noelle_T2_T5 = Noelle_T2_T5_1toMax_Volume - Noelle_T2_T5_1toMin_Volume
-    var Noelle_T2_T5_Comma = Noelle_T2_T5.toLocaleString();
     document.getElementById('Noelle_T2_T1_Volume').innerHTML = Noelle_T2_T1;
     document.getElementById('Noelle_T2_T2_Volume').innerHTML = Noelle_T2_T2;
     document.getElementById('Noelle_T2_T3_Volume').innerHTML = Noelle_T2_T3;
     document.getElementById('Noelle_T2_T4_Volume').innerHTML = Noelle_T2_T4;
-    document.getElementById('Noelle_T2_T5_Volume').innerHTML = Noelle_T2_T5_Comma;
+    document.getElementById('Noelle_T2_T5_Volume').innerHTML = Noelle_T2_T5.toLocaleString();
   });
   Noelle_T3.noUiSlider.on('update', function (values, handle) {
     var Noelle_T3_Min_Volume = "L1toL" + Noelle_T3.noUiSlider.get()[0];
@@ -3567,12 +3344,11 @@ function NoelleLoad() {
     var Noelle_T3_T3 = Noelle_T3_T3_1toMax_Volume - Noelle_T3_T3_1toMin_Volume
     var Noelle_T3_T4 = Noelle_T3_T4_1toMax_Volume - Noelle_T3_T4_1toMin_Volume
     var Noelle_T3_T5 = Noelle_T3_T5_1toMax_Volume - Noelle_T3_T5_1toMin_Volume
-    var Noelle_T3_T5_Comma = Noelle_T3_T5.toLocaleString();
     document.getElementById('Noelle_T3_T1_Volume').innerHTML = Noelle_T3_T1;
     document.getElementById('Noelle_T3_T2_Volume').innerHTML = Noelle_T3_T2;
     document.getElementById('Noelle_T3_T3_Volume').innerHTML = Noelle_T3_T3;
     document.getElementById('Noelle_T3_T4_Volume').innerHTML = Noelle_T3_T4;
-    document.getElementById('Noelle_T3_T5_Volume').innerHTML = Noelle_T3_T5_Comma;
+    document.getElementById('Noelle_T3_T5_Volume').innerHTML = Noelle_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Noelle  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3592,13 +3368,9 @@ function BennettLoad() {
     var Bennett_Ex_Volume = Bennett_Ex_1toMax_Volume - Bennett_Ex_1toMin_Volume
     var Bennett_Ex_Book_Volume = Bennett_Ex_Volume / 1000
     var Bennett_Ex_Mora_Volume = Bennett_Ex_Volume * 0.2
-    var Bennett_Ex_Volume_Comma = Bennett_Ex_Volume.toLocaleString();
-    var Bennett_Ex_Book_Volume_Comma = Bennett_Ex_Book_Volume.toLocaleString();
-    var Bennett_Ex_Mora_Volume_Comma = Bennett_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Bennett_Ex_Volume_Html').innerHTML = Bennett_Ex_Volume_Comma;
-    document.getElementById('Bennett_Ex_Volume_NoComma').innerHTML = Bennett_Ex_Volume;
-    document.getElementById('Bennett_Ex_Book_Volume_Html').innerHTML = Bennett_Ex_Book_Volume_Comma;
-    document.getElementById('Bennett_Ex_Mora_Volume_Html').innerHTML = Bennett_Ex_Mora_Volume_Comma;
+    document.getElementById('Bennett_Ex_Volume').innerHTML = Bennett_Ex_Volume.toLocaleString();
+    document.getElementById('Bennett_Ex_Book_Volume').innerHTML = Bennett_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Bennett_Ex_Mora_Volume').innerHTML = Bennett_Ex_Mora_Volume.toLocaleString();
   });
   Bennett_Pr.noUiSlider.on('update', function (values, handle) {
     var Bennett_Pr_Min_Volume = "L1toL" + Bennett_Pr.noUiSlider.get()[0];
@@ -3618,12 +3390,11 @@ function BennettLoad() {
     var Bennett_Pr_P3 = Bennett_Pr_P3_1toMax_Volume - Bennett_Pr_P3_1toMin_Volume
     var Bennett_Pr_P4 = Bennett_Pr_P4_1toMax_Volume - Bennett_Pr_P4_1toMin_Volume
     var Bennett_Pr_P5 = Bennett_Pr_P5_1toMax_Volume - Bennett_Pr_P5_1toMin_Volume
-    var Bennett_Pr_P5_Comma = Bennett_Pr_P5.toLocaleString();
     document.getElementById('Bennett_Pr_P1_Volume').innerHTML = Bennett_Pr_P1;
     document.getElementById('Bennett_Pr_P2_Volume').innerHTML = Bennett_Pr_P2;
     document.getElementById('Bennett_Pr_P3_Volume').innerHTML = Bennett_Pr_P3;
     document.getElementById('Bennett_Pr_P4_Volume').innerHTML = Bennett_Pr_P4;
-    document.getElementById('Bennett_Pr_P5_Volume').innerHTML = Bennett_Pr_P5_Comma;
+    document.getElementById('Bennett_Pr_P5_Volume').innerHTML = Bennett_Pr_P5.toLocaleString();
   });
   Bennett_T1.noUiSlider.on('update', function (values, handle) {
     var Bennett_T1_Min_Volume = "L1toL" + Bennett_T1.noUiSlider.get()[0];
@@ -3643,12 +3414,11 @@ function BennettLoad() {
     var Bennett_T1_T3 = Bennett_T1_T3_1toMax_Volume - Bennett_T1_T3_1toMin_Volume
     var Bennett_T1_T4 = Bennett_T1_T4_1toMax_Volume - Bennett_T1_T4_1toMin_Volume
     var Bennett_T1_T5 = Bennett_T1_T5_1toMax_Volume - Bennett_T1_T5_1toMin_Volume
-    var Bennett_T1_T5_Comma = Bennett_T1_T5.toLocaleString();
     document.getElementById('Bennett_T1_T1_Volume').innerHTML = Bennett_T1_T1;
     document.getElementById('Bennett_T1_T2_Volume').innerHTML = Bennett_T1_T2;
     document.getElementById('Bennett_T1_T3_Volume').innerHTML = Bennett_T1_T3;
     document.getElementById('Bennett_T1_T4_Volume').innerHTML = Bennett_T1_T4;
-    document.getElementById('Bennett_T1_T5_Volume').innerHTML = Bennett_T1_T5_Comma;
+    document.getElementById('Bennett_T1_T5_Volume').innerHTML = Bennett_T1_T5.toLocaleString();
   });
   Bennett_T2.noUiSlider.on('update', function (values, handle) {
     var Bennett_T2_Min_Volume = "L1toL" + Bennett_T2.noUiSlider.get()[0];
@@ -3668,12 +3438,11 @@ function BennettLoad() {
     var Bennett_T2_T3 = Bennett_T2_T3_1toMax_Volume - Bennett_T2_T3_1toMin_Volume
     var Bennett_T2_T4 = Bennett_T2_T4_1toMax_Volume - Bennett_T2_T4_1toMin_Volume
     var Bennett_T2_T5 = Bennett_T2_T5_1toMax_Volume - Bennett_T2_T5_1toMin_Volume
-    var Bennett_T2_T5_Comma = Bennett_T2_T5.toLocaleString();
     document.getElementById('Bennett_T2_T1_Volume').innerHTML = Bennett_T2_T1;
     document.getElementById('Bennett_T2_T2_Volume').innerHTML = Bennett_T2_T2;
     document.getElementById('Bennett_T2_T3_Volume').innerHTML = Bennett_T2_T3;
     document.getElementById('Bennett_T2_T4_Volume').innerHTML = Bennett_T2_T4;
-    document.getElementById('Bennett_T2_T5_Volume').innerHTML = Bennett_T2_T5_Comma;
+    document.getElementById('Bennett_T2_T5_Volume').innerHTML = Bennett_T2_T5.toLocaleString();
   });
   Bennett_T3.noUiSlider.on('update', function (values, handle) {
     var Bennett_T3_Min_Volume = "L1toL" + Bennett_T3.noUiSlider.get()[0];
@@ -3693,12 +3462,11 @@ function BennettLoad() {
     var Bennett_T3_T3 = Bennett_T3_T3_1toMax_Volume - Bennett_T3_T3_1toMin_Volume
     var Bennett_T3_T4 = Bennett_T3_T4_1toMax_Volume - Bennett_T3_T4_1toMin_Volume
     var Bennett_T3_T5 = Bennett_T3_T5_1toMax_Volume - Bennett_T3_T5_1toMin_Volume
-    var Bennett_T3_T5_Comma = Bennett_T3_T5.toLocaleString();
     document.getElementById('Bennett_T3_T1_Volume').innerHTML = Bennett_T3_T1;
     document.getElementById('Bennett_T3_T2_Volume').innerHTML = Bennett_T3_T2;
     document.getElementById('Bennett_T3_T3_Volume').innerHTML = Bennett_T3_T3;
     document.getElementById('Bennett_T3_T4_Volume').innerHTML = Bennett_T3_T4;
-    document.getElementById('Bennett_T3_T5_Volume').innerHTML = Bennett_T3_T5_Comma;
+    document.getElementById('Bennett_T3_T5_Volume').innerHTML = Bennett_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Bennett  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3718,13 +3486,9 @@ function FischlLoad() {
     var Fischl_Ex_Volume = Fischl_Ex_1toMax_Volume - Fischl_Ex_1toMin_Volume
     var Fischl_Ex_Book_Volume = Fischl_Ex_Volume / 1000
     var Fischl_Ex_Mora_Volume = Fischl_Ex_Volume * 0.2
-    var Fischl_Ex_Volume_Comma = Fischl_Ex_Volume.toLocaleString();
-    var Fischl_Ex_Book_Volume_Comma = Fischl_Ex_Book_Volume.toLocaleString();
-    var Fischl_Ex_Mora_Volume_Comma = Fischl_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Fischl_Ex_Volume_Html').innerHTML = Fischl_Ex_Volume_Comma;
-    document.getElementById('Fischl_Ex_Volume_NoComma').innerHTML = Fischl_Ex_Volume;
-    document.getElementById('Fischl_Ex_Book_Volume_Html').innerHTML = Fischl_Ex_Book_Volume_Comma;
-    document.getElementById('Fischl_Ex_Mora_Volume_Html').innerHTML = Fischl_Ex_Mora_Volume_Comma;
+    document.getElementById('Fischl_Ex_Volume').innerHTML = Fischl_Ex_Volume.toLocaleString();
+    document.getElementById('Fischl_Ex_Book_Volume').innerHTML = Fischl_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Fischl_Ex_Mora_Volume').innerHTML = Fischl_Ex_Mora_Volume.toLocaleString();
   });
   Fischl_Pr.noUiSlider.on('update', function (values, handle) {
     var Fischl_Pr_Min_Volume = "L1toL" + Fischl_Pr.noUiSlider.get()[0];
@@ -3744,12 +3508,11 @@ function FischlLoad() {
     var Fischl_Pr_P3 = Fischl_Pr_P3_1toMax_Volume - Fischl_Pr_P3_1toMin_Volume
     var Fischl_Pr_P4 = Fischl_Pr_P4_1toMax_Volume - Fischl_Pr_P4_1toMin_Volume
     var Fischl_Pr_P5 = Fischl_Pr_P5_1toMax_Volume - Fischl_Pr_P5_1toMin_Volume
-    var Fischl_Pr_P5_Comma = Fischl_Pr_P5.toLocaleString();
     document.getElementById('Fischl_Pr_P1_Volume').innerHTML = Fischl_Pr_P1;
     document.getElementById('Fischl_Pr_P2_Volume').innerHTML = Fischl_Pr_P2;
     document.getElementById('Fischl_Pr_P3_Volume').innerHTML = Fischl_Pr_P3;
     document.getElementById('Fischl_Pr_P4_Volume').innerHTML = Fischl_Pr_P4;
-    document.getElementById('Fischl_Pr_P5_Volume').innerHTML = Fischl_Pr_P5_Comma;
+    document.getElementById('Fischl_Pr_P5_Volume').innerHTML = Fischl_Pr_P5.toLocaleString();
   });
   Fischl_T1.noUiSlider.on('update', function (values, handle) {
     var Fischl_T1_Min_Volume = "L1toL" + Fischl_T1.noUiSlider.get()[0];
@@ -3769,12 +3532,11 @@ function FischlLoad() {
     var Fischl_T1_T3 = Fischl_T1_T3_1toMax_Volume - Fischl_T1_T3_1toMin_Volume
     var Fischl_T1_T4 = Fischl_T1_T4_1toMax_Volume - Fischl_T1_T4_1toMin_Volume
     var Fischl_T1_T5 = Fischl_T1_T5_1toMax_Volume - Fischl_T1_T5_1toMin_Volume
-    var Fischl_T1_T5_Comma = Fischl_T1_T5.toLocaleString();
     document.getElementById('Fischl_T1_T1_Volume').innerHTML = Fischl_T1_T1;
     document.getElementById('Fischl_T1_T2_Volume').innerHTML = Fischl_T1_T2;
     document.getElementById('Fischl_T1_T3_Volume').innerHTML = Fischl_T1_T3;
     document.getElementById('Fischl_T1_T4_Volume').innerHTML = Fischl_T1_T4;
-    document.getElementById('Fischl_T1_T5_Volume').innerHTML = Fischl_T1_T5_Comma;
+    document.getElementById('Fischl_T1_T5_Volume').innerHTML = Fischl_T1_T5.toLocaleString();
   });
   Fischl_T2.noUiSlider.on('update', function (values, handle) {
     var Fischl_T2_Min_Volume = "L1toL" + Fischl_T2.noUiSlider.get()[0];
@@ -3794,12 +3556,11 @@ function FischlLoad() {
     var Fischl_T2_T3 = Fischl_T2_T3_1toMax_Volume - Fischl_T2_T3_1toMin_Volume
     var Fischl_T2_T4 = Fischl_T2_T4_1toMax_Volume - Fischl_T2_T4_1toMin_Volume
     var Fischl_T2_T5 = Fischl_T2_T5_1toMax_Volume - Fischl_T2_T5_1toMin_Volume
-    var Fischl_T2_T5_Comma = Fischl_T2_T5.toLocaleString();
     document.getElementById('Fischl_T2_T1_Volume').innerHTML = Fischl_T2_T1;
     document.getElementById('Fischl_T2_T2_Volume').innerHTML = Fischl_T2_T2;
     document.getElementById('Fischl_T2_T3_Volume').innerHTML = Fischl_T2_T3;
     document.getElementById('Fischl_T2_T4_Volume').innerHTML = Fischl_T2_T4;
-    document.getElementById('Fischl_T2_T5_Volume').innerHTML = Fischl_T2_T5_Comma;
+    document.getElementById('Fischl_T2_T5_Volume').innerHTML = Fischl_T2_T5.toLocaleString();
   });
   Fischl_T3.noUiSlider.on('update', function (values, handle) {
     var Fischl_T3_Min_Volume = "L1toL" + Fischl_T3.noUiSlider.get()[0];
@@ -3819,12 +3580,11 @@ function FischlLoad() {
     var Fischl_T3_T3 = Fischl_T3_T3_1toMax_Volume - Fischl_T3_T3_1toMin_Volume
     var Fischl_T3_T4 = Fischl_T3_T4_1toMax_Volume - Fischl_T3_T4_1toMin_Volume
     var Fischl_T3_T5 = Fischl_T3_T5_1toMax_Volume - Fischl_T3_T5_1toMin_Volume
-    var Fischl_T3_T5_Comma = Fischl_T3_T5.toLocaleString();
     document.getElementById('Fischl_T3_T1_Volume').innerHTML = Fischl_T3_T1;
     document.getElementById('Fischl_T3_T2_Volume').innerHTML = Fischl_T3_T2;
     document.getElementById('Fischl_T3_T3_Volume').innerHTML = Fischl_T3_T3;
     document.getElementById('Fischl_T3_T4_Volume').innerHTML = Fischl_T3_T4;
-    document.getElementById('Fischl_T3_T5_Volume').innerHTML = Fischl_T3_T5_Comma;
+    document.getElementById('Fischl_T3_T5_Volume').innerHTML = Fischl_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Fischl  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3844,13 +3604,9 @@ function NingguangLoad() {
     var Ningguang_Ex_Volume = Ningguang_Ex_1toMax_Volume - Ningguang_Ex_1toMin_Volume
     var Ningguang_Ex_Book_Volume = Ningguang_Ex_Volume / 1000
     var Ningguang_Ex_Mora_Volume = Ningguang_Ex_Volume * 0.2
-    var Ningguang_Ex_Volume_Comma = Ningguang_Ex_Volume.toLocaleString();
-    var Ningguang_Ex_Book_Volume_Comma = Ningguang_Ex_Book_Volume.toLocaleString();
-    var Ningguang_Ex_Mora_Volume_Comma = Ningguang_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Ningguang_Ex_Volume_Html').innerHTML = Ningguang_Ex_Volume_Comma;
-    document.getElementById('Ningguang_Ex_Volume_NoComma').innerHTML = Ningguang_Ex_Volume;
-    document.getElementById('Ningguang_Ex_Book_Volume_Html').innerHTML = Ningguang_Ex_Book_Volume_Comma;
-    document.getElementById('Ningguang_Ex_Mora_Volume_Html').innerHTML = Ningguang_Ex_Mora_Volume_Comma;
+    document.getElementById('Ningguang_Ex_Volume').innerHTML = Ningguang_Ex_Volume.toLocaleString();
+    document.getElementById('Ningguang_Ex_Book_Volume').innerHTML = Ningguang_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Ningguang_Ex_Mora_Volume').innerHTML = Ningguang_Ex_Mora_Volume.toLocaleString();
   });
   Ningguang_Pr.noUiSlider.on('update', function (values, handle) {
     var Ningguang_Pr_Min_Volume = "L1toL" + Ningguang_Pr.noUiSlider.get()[0];
@@ -3870,12 +3626,11 @@ function NingguangLoad() {
     var Ningguang_Pr_P3 = Ningguang_Pr_P3_1toMax_Volume - Ningguang_Pr_P3_1toMin_Volume
     var Ningguang_Pr_P4 = Ningguang_Pr_P4_1toMax_Volume - Ningguang_Pr_P4_1toMin_Volume
     var Ningguang_Pr_P5 = Ningguang_Pr_P5_1toMax_Volume - Ningguang_Pr_P5_1toMin_Volume
-    var Ningguang_Pr_P5_Comma = Ningguang_Pr_P5.toLocaleString();
     document.getElementById('Ningguang_Pr_P1_Volume').innerHTML = Ningguang_Pr_P1;
     document.getElementById('Ningguang_Pr_P2_Volume').innerHTML = Ningguang_Pr_P2;
     document.getElementById('Ningguang_Pr_P3_Volume').innerHTML = Ningguang_Pr_P3;
     document.getElementById('Ningguang_Pr_P4_Volume').innerHTML = Ningguang_Pr_P4;
-    document.getElementById('Ningguang_Pr_P5_Volume').innerHTML = Ningguang_Pr_P5_Comma;
+    document.getElementById('Ningguang_Pr_P5_Volume').innerHTML = Ningguang_Pr_P5.toLocaleString();
   });
   Ningguang_T1.noUiSlider.on('update', function (values, handle) {
     var Ningguang_T1_Min_Volume = "L1toL" + Ningguang_T1.noUiSlider.get()[0];
@@ -3895,12 +3650,11 @@ function NingguangLoad() {
     var Ningguang_T1_T3 = Ningguang_T1_T3_1toMax_Volume - Ningguang_T1_T3_1toMin_Volume
     var Ningguang_T1_T4 = Ningguang_T1_T4_1toMax_Volume - Ningguang_T1_T4_1toMin_Volume
     var Ningguang_T1_T5 = Ningguang_T1_T5_1toMax_Volume - Ningguang_T1_T5_1toMin_Volume
-    var Ningguang_T1_T5_Comma = Ningguang_T1_T5.toLocaleString();
     document.getElementById('Ningguang_T1_T1_Volume').innerHTML = Ningguang_T1_T1;
     document.getElementById('Ningguang_T1_T2_Volume').innerHTML = Ningguang_T1_T2;
     document.getElementById('Ningguang_T1_T3_Volume').innerHTML = Ningguang_T1_T3;
     document.getElementById('Ningguang_T1_T4_Volume').innerHTML = Ningguang_T1_T4;
-    document.getElementById('Ningguang_T1_T5_Volume').innerHTML = Ningguang_T1_T5_Comma;
+    document.getElementById('Ningguang_T1_T5_Volume').innerHTML = Ningguang_T1_T5.toLocaleString();
   });
   Ningguang_T2.noUiSlider.on('update', function (values, handle) {
     var Ningguang_T2_Min_Volume = "L1toL" + Ningguang_T2.noUiSlider.get()[0];
@@ -3920,12 +3674,11 @@ function NingguangLoad() {
     var Ningguang_T2_T3 = Ningguang_T2_T3_1toMax_Volume - Ningguang_T2_T3_1toMin_Volume
     var Ningguang_T2_T4 = Ningguang_T2_T4_1toMax_Volume - Ningguang_T2_T4_1toMin_Volume
     var Ningguang_T2_T5 = Ningguang_T2_T5_1toMax_Volume - Ningguang_T2_T5_1toMin_Volume
-    var Ningguang_T2_T5_Comma = Ningguang_T2_T5.toLocaleString();
     document.getElementById('Ningguang_T2_T1_Volume').innerHTML = Ningguang_T2_T1;
     document.getElementById('Ningguang_T2_T2_Volume').innerHTML = Ningguang_T2_T2;
     document.getElementById('Ningguang_T2_T3_Volume').innerHTML = Ningguang_T2_T3;
     document.getElementById('Ningguang_T2_T4_Volume').innerHTML = Ningguang_T2_T4;
-    document.getElementById('Ningguang_T2_T5_Volume').innerHTML = Ningguang_T2_T5_Comma;
+    document.getElementById('Ningguang_T2_T5_Volume').innerHTML = Ningguang_T2_T5.toLocaleString();
   });
   Ningguang_T3.noUiSlider.on('update', function (values, handle) {
     var Ningguang_T3_Min_Volume = "L1toL" + Ningguang_T3.noUiSlider.get()[0];
@@ -3945,12 +3698,11 @@ function NingguangLoad() {
     var Ningguang_T3_T3 = Ningguang_T3_T3_1toMax_Volume - Ningguang_T3_T3_1toMin_Volume
     var Ningguang_T3_T4 = Ningguang_T3_T4_1toMax_Volume - Ningguang_T3_T4_1toMin_Volume
     var Ningguang_T3_T5 = Ningguang_T3_T5_1toMax_Volume - Ningguang_T3_T5_1toMin_Volume
-    var Ningguang_T3_T5_Comma = Ningguang_T3_T5.toLocaleString();
     document.getElementById('Ningguang_T3_T1_Volume').innerHTML = Ningguang_T3_T1;
     document.getElementById('Ningguang_T3_T2_Volume').innerHTML = Ningguang_T3_T2;
     document.getElementById('Ningguang_T3_T3_Volume').innerHTML = Ningguang_T3_T3;
     document.getElementById('Ningguang_T3_T4_Volume').innerHTML = Ningguang_T3_T4;
-    document.getElementById('Ningguang_T3_T5_Volume').innerHTML = Ningguang_T3_T5_Comma;
+    document.getElementById('Ningguang_T3_T5_Volume').innerHTML = Ningguang_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Ningguang  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -3970,13 +3722,9 @@ function XingqiuLoad() {
     var Xingqiu_Ex_Volume = Xingqiu_Ex_1toMax_Volume - Xingqiu_Ex_1toMin_Volume
     var Xingqiu_Ex_Book_Volume = Xingqiu_Ex_Volume / 1000
     var Xingqiu_Ex_Mora_Volume = Xingqiu_Ex_Volume * 0.2
-    var Xingqiu_Ex_Volume_Comma = Xingqiu_Ex_Volume.toLocaleString();
-    var Xingqiu_Ex_Book_Volume_Comma = Xingqiu_Ex_Book_Volume.toLocaleString();
-    var Xingqiu_Ex_Mora_Volume_Comma = Xingqiu_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Xingqiu_Ex_Volume_Html').innerHTML = Xingqiu_Ex_Volume_Comma;
-    document.getElementById('Xingqiu_Ex_Volume_NoComma').innerHTML = Xingqiu_Ex_Volume;
-    document.getElementById('Xingqiu_Ex_Book_Volume_Html').innerHTML = Xingqiu_Ex_Book_Volume_Comma;
-    document.getElementById('Xingqiu_Ex_Mora_Volume_Html').innerHTML = Xingqiu_Ex_Mora_Volume_Comma;
+    document.getElementById('Xingqiu_Ex_Volume').innerHTML = Xingqiu_Ex_Volume.toLocaleString();
+    document.getElementById('Xingqiu_Ex_Book_Volume').innerHTML = Xingqiu_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Xingqiu_Ex_Mora_Volume').innerHTML = Xingqiu_Ex_Mora_Volume.toLocaleString();
   });
   Xingqiu_Pr.noUiSlider.on('update', function (values, handle) {
     var Xingqiu_Pr_Min_Volume = "L1toL" + Xingqiu_Pr.noUiSlider.get()[0];
@@ -3996,12 +3744,11 @@ function XingqiuLoad() {
     var Xingqiu_Pr_P3 = Xingqiu_Pr_P3_1toMax_Volume - Xingqiu_Pr_P3_1toMin_Volume
     var Xingqiu_Pr_P4 = Xingqiu_Pr_P4_1toMax_Volume - Xingqiu_Pr_P4_1toMin_Volume
     var Xingqiu_Pr_P5 = Xingqiu_Pr_P5_1toMax_Volume - Xingqiu_Pr_P5_1toMin_Volume
-    var Xingqiu_Pr_P5_Comma = Xingqiu_Pr_P5.toLocaleString();
     document.getElementById('Xingqiu_Pr_P1_Volume').innerHTML = Xingqiu_Pr_P1;
     document.getElementById('Xingqiu_Pr_P2_Volume').innerHTML = Xingqiu_Pr_P2;
     document.getElementById('Xingqiu_Pr_P3_Volume').innerHTML = Xingqiu_Pr_P3;
     document.getElementById('Xingqiu_Pr_P4_Volume').innerHTML = Xingqiu_Pr_P4;
-    document.getElementById('Xingqiu_Pr_P5_Volume').innerHTML = Xingqiu_Pr_P5_Comma;
+    document.getElementById('Xingqiu_Pr_P5_Volume').innerHTML = Xingqiu_Pr_P5.toLocaleString();
   });
   Xingqiu_T1.noUiSlider.on('update', function (values, handle) {
     var Xingqiu_T1_Min_Volume = "L1toL" + Xingqiu_T1.noUiSlider.get()[0];
@@ -4021,12 +3768,11 @@ function XingqiuLoad() {
     var Xingqiu_T1_T3 = Xingqiu_T1_T3_1toMax_Volume - Xingqiu_T1_T3_1toMin_Volume
     var Xingqiu_T1_T4 = Xingqiu_T1_T4_1toMax_Volume - Xingqiu_T1_T4_1toMin_Volume
     var Xingqiu_T1_T5 = Xingqiu_T1_T5_1toMax_Volume - Xingqiu_T1_T5_1toMin_Volume
-    var Xingqiu_T1_T5_Comma = Xingqiu_T1_T5.toLocaleString();
     document.getElementById('Xingqiu_T1_T1_Volume').innerHTML = Xingqiu_T1_T1;
     document.getElementById('Xingqiu_T1_T2_Volume').innerHTML = Xingqiu_T1_T2;
     document.getElementById('Xingqiu_T1_T3_Volume').innerHTML = Xingqiu_T1_T3;
     document.getElementById('Xingqiu_T1_T4_Volume').innerHTML = Xingqiu_T1_T4;
-    document.getElementById('Xingqiu_T1_T5_Volume').innerHTML = Xingqiu_T1_T5_Comma;
+    document.getElementById('Xingqiu_T1_T5_Volume').innerHTML = Xingqiu_T1_T5.toLocaleString();
   });
   Xingqiu_T2.noUiSlider.on('update', function (values, handle) {
     var Xingqiu_T2_Min_Volume = "L1toL" + Xingqiu_T2.noUiSlider.get()[0];
@@ -4046,12 +3792,11 @@ function XingqiuLoad() {
     var Xingqiu_T2_T3 = Xingqiu_T2_T3_1toMax_Volume - Xingqiu_T2_T3_1toMin_Volume
     var Xingqiu_T2_T4 = Xingqiu_T2_T4_1toMax_Volume - Xingqiu_T2_T4_1toMin_Volume
     var Xingqiu_T2_T5 = Xingqiu_T2_T5_1toMax_Volume - Xingqiu_T2_T5_1toMin_Volume
-    var Xingqiu_T2_T5_Comma = Xingqiu_T2_T5.toLocaleString();
     document.getElementById('Xingqiu_T2_T1_Volume').innerHTML = Xingqiu_T2_T1;
     document.getElementById('Xingqiu_T2_T2_Volume').innerHTML = Xingqiu_T2_T2;
     document.getElementById('Xingqiu_T2_T3_Volume').innerHTML = Xingqiu_T2_T3;
     document.getElementById('Xingqiu_T2_T4_Volume').innerHTML = Xingqiu_T2_T4;
-    document.getElementById('Xingqiu_T2_T5_Volume').innerHTML = Xingqiu_T2_T5_Comma;
+    document.getElementById('Xingqiu_T2_T5_Volume').innerHTML = Xingqiu_T2_T5.toLocaleString();
   });
   Xingqiu_T3.noUiSlider.on('update', function (values, handle) {
     var Xingqiu_T3_Min_Volume = "L1toL" + Xingqiu_T3.noUiSlider.get()[0];
@@ -4071,12 +3816,11 @@ function XingqiuLoad() {
     var Xingqiu_T3_T3 = Xingqiu_T3_T3_1toMax_Volume - Xingqiu_T3_T3_1toMin_Volume
     var Xingqiu_T3_T4 = Xingqiu_T3_T4_1toMax_Volume - Xingqiu_T3_T4_1toMin_Volume
     var Xingqiu_T3_T5 = Xingqiu_T3_T5_1toMax_Volume - Xingqiu_T3_T5_1toMin_Volume
-    var Xingqiu_T3_T5_Comma = Xingqiu_T3_T5.toLocaleString();
     document.getElementById('Xingqiu_T3_T1_Volume').innerHTML = Xingqiu_T3_T1;
     document.getElementById('Xingqiu_T3_T2_Volume').innerHTML = Xingqiu_T3_T2;
     document.getElementById('Xingqiu_T3_T3_Volume').innerHTML = Xingqiu_T3_T3;
     document.getElementById('Xingqiu_T3_T4_Volume').innerHTML = Xingqiu_T3_T4;
-    document.getElementById('Xingqiu_T3_T5_Volume').innerHTML = Xingqiu_T3_T5_Comma;
+    document.getElementById('Xingqiu_T3_T5_Volume').innerHTML = Xingqiu_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Xingqiu  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4096,13 +3840,9 @@ function BeidouLoad() {
     var Beidou_Ex_Volume = Beidou_Ex_1toMax_Volume - Beidou_Ex_1toMin_Volume
     var Beidou_Ex_Book_Volume = Beidou_Ex_Volume / 1000
     var Beidou_Ex_Mora_Volume = Beidou_Ex_Volume * 0.2
-    var Beidou_Ex_Volume_Comma = Beidou_Ex_Volume.toLocaleString();
-    var Beidou_Ex_Book_Volume_Comma = Beidou_Ex_Book_Volume.toLocaleString();
-    var Beidou_Ex_Mora_Volume_Comma = Beidou_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Beidou_Ex_Volume_Html').innerHTML = Beidou_Ex_Volume_Comma;
-    document.getElementById('Beidou_Ex_Volume_NoComma').innerHTML = Beidou_Ex_Volume;
-    document.getElementById('Beidou_Ex_Book_Volume_Html').innerHTML = Beidou_Ex_Book_Volume_Comma;
-    document.getElementById('Beidou_Ex_Mora_Volume_Html').innerHTML = Beidou_Ex_Mora_Volume_Comma;
+    document.getElementById('Beidou_Ex_Volume').innerHTML = Beidou_Ex_Volume.toLocaleString();
+    document.getElementById('Beidou_Ex_Book_Volume').innerHTML = Beidou_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Beidou_Ex_Mora_Volume').innerHTML = Beidou_Ex_Mora_Volume.toLocaleString();
   });
   Beidou_Pr.noUiSlider.on('update', function (values, handle) {
     var Beidou_Pr_Min_Volume = "L1toL" + Beidou_Pr.noUiSlider.get()[0];
@@ -4122,12 +3862,11 @@ function BeidouLoad() {
     var Beidou_Pr_P3 = Beidou_Pr_P3_1toMax_Volume - Beidou_Pr_P3_1toMin_Volume
     var Beidou_Pr_P4 = Beidou_Pr_P4_1toMax_Volume - Beidou_Pr_P4_1toMin_Volume
     var Beidou_Pr_P5 = Beidou_Pr_P5_1toMax_Volume - Beidou_Pr_P5_1toMin_Volume
-    var Beidou_Pr_P5_Comma = Beidou_Pr_P5.toLocaleString();
     document.getElementById('Beidou_Pr_P1_Volume').innerHTML = Beidou_Pr_P1;
     document.getElementById('Beidou_Pr_P2_Volume').innerHTML = Beidou_Pr_P2;
     document.getElementById('Beidou_Pr_P3_Volume').innerHTML = Beidou_Pr_P3;
     document.getElementById('Beidou_Pr_P4_Volume').innerHTML = Beidou_Pr_P4;
-    document.getElementById('Beidou_Pr_P5_Volume').innerHTML = Beidou_Pr_P5_Comma;
+    document.getElementById('Beidou_Pr_P5_Volume').innerHTML = Beidou_Pr_P5.toLocaleString();
   });
   Beidou_T1.noUiSlider.on('update', function (values, handle) {
     var Beidou_T1_Min_Volume = "L1toL" + Beidou_T1.noUiSlider.get()[0];
@@ -4147,12 +3886,11 @@ function BeidouLoad() {
     var Beidou_T1_T3 = Beidou_T1_T3_1toMax_Volume - Beidou_T1_T3_1toMin_Volume
     var Beidou_T1_T4 = Beidou_T1_T4_1toMax_Volume - Beidou_T1_T4_1toMin_Volume
     var Beidou_T1_T5 = Beidou_T1_T5_1toMax_Volume - Beidou_T1_T5_1toMin_Volume
-    var Beidou_T1_T5_Comma = Beidou_T1_T5.toLocaleString();
     document.getElementById('Beidou_T1_T1_Volume').innerHTML = Beidou_T1_T1;
     document.getElementById('Beidou_T1_T2_Volume').innerHTML = Beidou_T1_T2;
     document.getElementById('Beidou_T1_T3_Volume').innerHTML = Beidou_T1_T3;
     document.getElementById('Beidou_T1_T4_Volume').innerHTML = Beidou_T1_T4;
-    document.getElementById('Beidou_T1_T5_Volume').innerHTML = Beidou_T1_T5_Comma;
+    document.getElementById('Beidou_T1_T5_Volume').innerHTML = Beidou_T1_T5.toLocaleString();
   });
   Beidou_T2.noUiSlider.on('update', function (values, handle) {
     var Beidou_T2_Min_Volume = "L1toL" + Beidou_T2.noUiSlider.get()[0];
@@ -4172,12 +3910,11 @@ function BeidouLoad() {
     var Beidou_T2_T3 = Beidou_T2_T3_1toMax_Volume - Beidou_T2_T3_1toMin_Volume
     var Beidou_T2_T4 = Beidou_T2_T4_1toMax_Volume - Beidou_T2_T4_1toMin_Volume
     var Beidou_T2_T5 = Beidou_T2_T5_1toMax_Volume - Beidou_T2_T5_1toMin_Volume
-    var Beidou_T2_T5_Comma = Beidou_T2_T5.toLocaleString();
     document.getElementById('Beidou_T2_T1_Volume').innerHTML = Beidou_T2_T1;
     document.getElementById('Beidou_T2_T2_Volume').innerHTML = Beidou_T2_T2;
     document.getElementById('Beidou_T2_T3_Volume').innerHTML = Beidou_T2_T3;
     document.getElementById('Beidou_T2_T4_Volume').innerHTML = Beidou_T2_T4;
-    document.getElementById('Beidou_T2_T5_Volume').innerHTML = Beidou_T2_T5_Comma;
+    document.getElementById('Beidou_T2_T5_Volume').innerHTML = Beidou_T2_T5.toLocaleString();
   });
   Beidou_T3.noUiSlider.on('update', function (values, handle) {
     var Beidou_T3_Min_Volume = "L1toL" + Beidou_T3.noUiSlider.get()[0];
@@ -4197,12 +3934,11 @@ function BeidouLoad() {
     var Beidou_T3_T3 = Beidou_T3_T3_1toMax_Volume - Beidou_T3_T3_1toMin_Volume
     var Beidou_T3_T4 = Beidou_T3_T4_1toMax_Volume - Beidou_T3_T4_1toMin_Volume
     var Beidou_T3_T5 = Beidou_T3_T5_1toMax_Volume - Beidou_T3_T5_1toMin_Volume
-    var Beidou_T3_T5_Comma = Beidou_T3_T5.toLocaleString();
     document.getElementById('Beidou_T3_T1_Volume').innerHTML = Beidou_T3_T1;
     document.getElementById('Beidou_T3_T2_Volume').innerHTML = Beidou_T3_T2;
     document.getElementById('Beidou_T3_T3_Volume').innerHTML = Beidou_T3_T3;
     document.getElementById('Beidou_T3_T4_Volume').innerHTML = Beidou_T3_T4;
-    document.getElementById('Beidou_T3_T5_Volume').innerHTML = Beidou_T3_T5_Comma;
+    document.getElementById('Beidou_T3_T5_Volume').innerHTML = Beidou_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Beidou  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4222,13 +3958,9 @@ function XianglingLoad() {
     var Xiangling_Ex_Volume = Xiangling_Ex_1toMax_Volume - Xiangling_Ex_1toMin_Volume
     var Xiangling_Ex_Book_Volume = Xiangling_Ex_Volume / 1000
     var Xiangling_Ex_Mora_Volume = Xiangling_Ex_Volume * 0.2
-    var Xiangling_Ex_Volume_Comma = Xiangling_Ex_Volume.toLocaleString();
-    var Xiangling_Ex_Book_Volume_Comma = Xiangling_Ex_Book_Volume.toLocaleString();
-    var Xiangling_Ex_Mora_Volume_Comma = Xiangling_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Xiangling_Ex_Volume_Html').innerHTML = Xiangling_Ex_Volume_Comma;
-    document.getElementById('Xiangling_Ex_Volume_NoComma').innerHTML = Xiangling_Ex_Volume;
-    document.getElementById('Xiangling_Ex_Book_Volume_Html').innerHTML = Xiangling_Ex_Book_Volume_Comma;
-    document.getElementById('Xiangling_Ex_Mora_Volume_Html').innerHTML = Xiangling_Ex_Mora_Volume_Comma;
+    document.getElementById('Xiangling_Ex_Volume').innerHTML = Xiangling_Ex_Volume.toLocaleString();
+    document.getElementById('Xiangling_Ex_Book_Volume').innerHTML = Xiangling_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Xiangling_Ex_Mora_Volume').innerHTML = Xiangling_Ex_Mora_Volume.toLocaleString();
   });
   Xiangling_Pr.noUiSlider.on('update', function (values, handle) {
     var Xiangling_Pr_Min_Volume = "L1toL" + Xiangling_Pr.noUiSlider.get()[0];
@@ -4248,12 +3980,11 @@ function XianglingLoad() {
     var Xiangling_Pr_P3 = Xiangling_Pr_P3_1toMax_Volume - Xiangling_Pr_P3_1toMin_Volume
     var Xiangling_Pr_P4 = Xiangling_Pr_P4_1toMax_Volume - Xiangling_Pr_P4_1toMin_Volume
     var Xiangling_Pr_P5 = Xiangling_Pr_P5_1toMax_Volume - Xiangling_Pr_P5_1toMin_Volume
-    var Xiangling_Pr_P5_Comma = Xiangling_Pr_P5.toLocaleString();
     document.getElementById('Xiangling_Pr_P1_Volume').innerHTML = Xiangling_Pr_P1;
     document.getElementById('Xiangling_Pr_P2_Volume').innerHTML = Xiangling_Pr_P2;
     document.getElementById('Xiangling_Pr_P3_Volume').innerHTML = Xiangling_Pr_P3;
     document.getElementById('Xiangling_Pr_P4_Volume').innerHTML = Xiangling_Pr_P4;
-    document.getElementById('Xiangling_Pr_P5_Volume').innerHTML = Xiangling_Pr_P5_Comma;
+    document.getElementById('Xiangling_Pr_P5_Volume').innerHTML = Xiangling_Pr_P5.toLocaleString();
   });
   Xiangling_T1.noUiSlider.on('update', function (values, handle) {
     var Xiangling_T1_Min_Volume = "L1toL" + Xiangling_T1.noUiSlider.get()[0];
@@ -4273,12 +4004,11 @@ function XianglingLoad() {
     var Xiangling_T1_T3 = Xiangling_T1_T3_1toMax_Volume - Xiangling_T1_T3_1toMin_Volume
     var Xiangling_T1_T4 = Xiangling_T1_T4_1toMax_Volume - Xiangling_T1_T4_1toMin_Volume
     var Xiangling_T1_T5 = Xiangling_T1_T5_1toMax_Volume - Xiangling_T1_T5_1toMin_Volume
-    var Xiangling_T1_T5_Comma = Xiangling_T1_T5.toLocaleString();
     document.getElementById('Xiangling_T1_T1_Volume').innerHTML = Xiangling_T1_T1;
     document.getElementById('Xiangling_T1_T2_Volume').innerHTML = Xiangling_T1_T2;
     document.getElementById('Xiangling_T1_T3_Volume').innerHTML = Xiangling_T1_T3;
     document.getElementById('Xiangling_T1_T4_Volume').innerHTML = Xiangling_T1_T4;
-    document.getElementById('Xiangling_T1_T5_Volume').innerHTML = Xiangling_T1_T5_Comma;
+    document.getElementById('Xiangling_T1_T5_Volume').innerHTML = Xiangling_T1_T5.toLocaleString();
   });
   Xiangling_T2.noUiSlider.on('update', function (values, handle) {
     var Xiangling_T2_Min_Volume = "L1toL" + Xiangling_T2.noUiSlider.get()[0];
@@ -4298,12 +4028,11 @@ function XianglingLoad() {
     var Xiangling_T2_T3 = Xiangling_T2_T3_1toMax_Volume - Xiangling_T2_T3_1toMin_Volume
     var Xiangling_T2_T4 = Xiangling_T2_T4_1toMax_Volume - Xiangling_T2_T4_1toMin_Volume
     var Xiangling_T2_T5 = Xiangling_T2_T5_1toMax_Volume - Xiangling_T2_T5_1toMin_Volume
-    var Xiangling_T2_T5_Comma = Xiangling_T2_T5.toLocaleString();
     document.getElementById('Xiangling_T2_T1_Volume').innerHTML = Xiangling_T2_T1;
     document.getElementById('Xiangling_T2_T2_Volume').innerHTML = Xiangling_T2_T2;
     document.getElementById('Xiangling_T2_T3_Volume').innerHTML = Xiangling_T2_T3;
     document.getElementById('Xiangling_T2_T4_Volume').innerHTML = Xiangling_T2_T4;
-    document.getElementById('Xiangling_T2_T5_Volume').innerHTML = Xiangling_T2_T5_Comma;
+    document.getElementById('Xiangling_T2_T5_Volume').innerHTML = Xiangling_T2_T5.toLocaleString();
   });
   Xiangling_T3.noUiSlider.on('update', function (values, handle) {
     var Xiangling_T3_Min_Volume = "L1toL" + Xiangling_T3.noUiSlider.get()[0];
@@ -4323,12 +4052,11 @@ function XianglingLoad() {
     var Xiangling_T3_T3 = Xiangling_T3_T3_1toMax_Volume - Xiangling_T3_T3_1toMin_Volume
     var Xiangling_T3_T4 = Xiangling_T3_T4_1toMax_Volume - Xiangling_T3_T4_1toMin_Volume
     var Xiangling_T3_T5 = Xiangling_T3_T5_1toMax_Volume - Xiangling_T3_T5_1toMin_Volume
-    var Xiangling_T3_T5_Comma = Xiangling_T3_T5.toLocaleString();
     document.getElementById('Xiangling_T3_T1_Volume').innerHTML = Xiangling_T3_T1;
     document.getElementById('Xiangling_T3_T2_Volume').innerHTML = Xiangling_T3_T2;
     document.getElementById('Xiangling_T3_T3_Volume').innerHTML = Xiangling_T3_T3;
     document.getElementById('Xiangling_T3_T4_Volume').innerHTML = Xiangling_T3_T4;
-    document.getElementById('Xiangling_T3_T5_Volume').innerHTML = Xiangling_T3_T5_Comma;
+    document.getElementById('Xiangling_T3_T5_Volume').innerHTML = Xiangling_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Xiangling  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4348,13 +4076,9 @@ function RazorLoad() {
     var Razor_Ex_Volume = Razor_Ex_1toMax_Volume - Razor_Ex_1toMin_Volume
     var Razor_Ex_Book_Volume = Razor_Ex_Volume / 1000
     var Razor_Ex_Mora_Volume = Razor_Ex_Volume * 0.2
-    var Razor_Ex_Volume_Comma = Razor_Ex_Volume.toLocaleString();
-    var Razor_Ex_Book_Volume_Comma = Razor_Ex_Book_Volume.toLocaleString();
-    var Razor_Ex_Mora_Volume_Comma = Razor_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Razor_Ex_Volume_Html').innerHTML = Razor_Ex_Volume_Comma;
-    document.getElementById('Razor_Ex_Volume_NoComma').innerHTML = Razor_Ex_Volume;
-    document.getElementById('Razor_Ex_Book_Volume_Html').innerHTML = Razor_Ex_Book_Volume_Comma;
-    document.getElementById('Razor_Ex_Mora_Volume_Html').innerHTML = Razor_Ex_Mora_Volume_Comma;
+    document.getElementById('Razor_Ex_Volume').innerHTML = Razor_Ex_Volume.toLocaleString();
+    document.getElementById('Razor_Ex_Book_Volume').innerHTML = Razor_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Razor_Ex_Mora_Volume').innerHTML = Razor_Ex_Mora_Volume.toLocaleString();
   });
   Razor_Pr.noUiSlider.on('update', function (values, handle) {
     var Razor_Pr_Min_Volume = "L1toL" + Razor_Pr.noUiSlider.get()[0];
@@ -4374,12 +4098,11 @@ function RazorLoad() {
     var Razor_Pr_P3 = Razor_Pr_P3_1toMax_Volume - Razor_Pr_P3_1toMin_Volume
     var Razor_Pr_P4 = Razor_Pr_P4_1toMax_Volume - Razor_Pr_P4_1toMin_Volume
     var Razor_Pr_P5 = Razor_Pr_P5_1toMax_Volume - Razor_Pr_P5_1toMin_Volume
-    var Razor_Pr_P5_Comma = Razor_Pr_P5.toLocaleString();
     document.getElementById('Razor_Pr_P1_Volume').innerHTML = Razor_Pr_P1;
     document.getElementById('Razor_Pr_P2_Volume').innerHTML = Razor_Pr_P2;
     document.getElementById('Razor_Pr_P3_Volume').innerHTML = Razor_Pr_P3;
     document.getElementById('Razor_Pr_P4_Volume').innerHTML = Razor_Pr_P4;
-    document.getElementById('Razor_Pr_P5_Volume').innerHTML = Razor_Pr_P5_Comma;
+    document.getElementById('Razor_Pr_P5_Volume').innerHTML = Razor_Pr_P5.toLocaleString();
   });
   Razor_T1.noUiSlider.on('update', function (values, handle) {
     var Razor_T1_Min_Volume = "L1toL" + Razor_T1.noUiSlider.get()[0];
@@ -4399,12 +4122,11 @@ function RazorLoad() {
     var Razor_T1_T3 = Razor_T1_T3_1toMax_Volume - Razor_T1_T3_1toMin_Volume
     var Razor_T1_T4 = Razor_T1_T4_1toMax_Volume - Razor_T1_T4_1toMin_Volume
     var Razor_T1_T5 = Razor_T1_T5_1toMax_Volume - Razor_T1_T5_1toMin_Volume
-    var Razor_T1_T5_Comma = Razor_T1_T5.toLocaleString();
     document.getElementById('Razor_T1_T1_Volume').innerHTML = Razor_T1_T1;
     document.getElementById('Razor_T1_T2_Volume').innerHTML = Razor_T1_T2;
     document.getElementById('Razor_T1_T3_Volume').innerHTML = Razor_T1_T3;
     document.getElementById('Razor_T1_T4_Volume').innerHTML = Razor_T1_T4;
-    document.getElementById('Razor_T1_T5_Volume').innerHTML = Razor_T1_T5_Comma;
+    document.getElementById('Razor_T1_T5_Volume').innerHTML = Razor_T1_T5.toLocaleString();
   });
   Razor_T2.noUiSlider.on('update', function (values, handle) {
     var Razor_T2_Min_Volume = "L1toL" + Razor_T2.noUiSlider.get()[0];
@@ -4424,12 +4146,11 @@ function RazorLoad() {
     var Razor_T2_T3 = Razor_T2_T3_1toMax_Volume - Razor_T2_T3_1toMin_Volume
     var Razor_T2_T4 = Razor_T2_T4_1toMax_Volume - Razor_T2_T4_1toMin_Volume
     var Razor_T2_T5 = Razor_T2_T5_1toMax_Volume - Razor_T2_T5_1toMin_Volume
-    var Razor_T2_T5_Comma = Razor_T2_T5.toLocaleString();
     document.getElementById('Razor_T2_T1_Volume').innerHTML = Razor_T2_T1;
     document.getElementById('Razor_T2_T2_Volume').innerHTML = Razor_T2_T2;
     document.getElementById('Razor_T2_T3_Volume').innerHTML = Razor_T2_T3;
     document.getElementById('Razor_T2_T4_Volume').innerHTML = Razor_T2_T4;
-    document.getElementById('Razor_T2_T5_Volume').innerHTML = Razor_T2_T5_Comma;
+    document.getElementById('Razor_T2_T5_Volume').innerHTML = Razor_T2_T5.toLocaleString();
   });
   Razor_T3.noUiSlider.on('update', function (values, handle) {
     var Razor_T3_Min_Volume = "L1toL" + Razor_T3.noUiSlider.get()[0];
@@ -4449,12 +4170,11 @@ function RazorLoad() {
     var Razor_T3_T3 = Razor_T3_T3_1toMax_Volume - Razor_T3_T3_1toMin_Volume
     var Razor_T3_T4 = Razor_T3_T4_1toMax_Volume - Razor_T3_T4_1toMin_Volume
     var Razor_T3_T5 = Razor_T3_T5_1toMax_Volume - Razor_T3_T5_1toMin_Volume
-    var Razor_T3_T5_Comma = Razor_T3_T5.toLocaleString();
     document.getElementById('Razor_T3_T1_Volume').innerHTML = Razor_T3_T1;
     document.getElementById('Razor_T3_T2_Volume').innerHTML = Razor_T3_T2;
     document.getElementById('Razor_T3_T3_Volume').innerHTML = Razor_T3_T3;
     document.getElementById('Razor_T3_T4_Volume').innerHTML = Razor_T3_T4;
-    document.getElementById('Razor_T3_T5_Volume').innerHTML = Razor_T3_T5_Comma;
+    document.getElementById('Razor_T3_T5_Volume').innerHTML = Razor_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Razor  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4474,13 +4194,9 @@ function BarbaraLoad() {
     var Barbara_Ex_Volume = Barbara_Ex_1toMax_Volume - Barbara_Ex_1toMin_Volume
     var Barbara_Ex_Book_Volume = Barbara_Ex_Volume / 1000
     var Barbara_Ex_Mora_Volume = Barbara_Ex_Volume * 0.2
-    var Barbara_Ex_Volume_Comma = Barbara_Ex_Volume.toLocaleString();
-    var Barbara_Ex_Book_Volume_Comma = Barbara_Ex_Book_Volume.toLocaleString();
-    var Barbara_Ex_Mora_Volume_Comma = Barbara_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Barbara_Ex_Volume_Html').innerHTML = Barbara_Ex_Volume_Comma;
-    document.getElementById('Barbara_Ex_Volume_NoComma').innerHTML = Barbara_Ex_Volume;
-    document.getElementById('Barbara_Ex_Book_Volume_Html').innerHTML = Barbara_Ex_Book_Volume_Comma;
-    document.getElementById('Barbara_Ex_Mora_Volume_Html').innerHTML = Barbara_Ex_Mora_Volume_Comma;
+    document.getElementById('Barbara_Ex_Volume').innerHTML = Barbara_Ex_Volume.toLocaleString();
+    document.getElementById('Barbara_Ex_Book_Volume').innerHTML = Barbara_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Barbara_Ex_Mora_Volume').innerHTML = Barbara_Ex_Mora_Volume.toLocaleString();
   });
   Barbara_Pr.noUiSlider.on('update', function (values, handle) {
     var Barbara_Pr_Min_Volume = "L1toL" + Barbara_Pr.noUiSlider.get()[0];
@@ -4500,12 +4216,11 @@ function BarbaraLoad() {
     var Barbara_Pr_P3 = Barbara_Pr_P3_1toMax_Volume - Barbara_Pr_P3_1toMin_Volume
     var Barbara_Pr_P4 = Barbara_Pr_P4_1toMax_Volume - Barbara_Pr_P4_1toMin_Volume
     var Barbara_Pr_P5 = Barbara_Pr_P5_1toMax_Volume - Barbara_Pr_P5_1toMin_Volume
-    var Barbara_Pr_P5_Comma = Barbara_Pr_P5.toLocaleString();
     document.getElementById('Barbara_Pr_P1_Volume').innerHTML = Barbara_Pr_P1;
     document.getElementById('Barbara_Pr_P2_Volume').innerHTML = Barbara_Pr_P2;
     document.getElementById('Barbara_Pr_P3_Volume').innerHTML = Barbara_Pr_P3;
     document.getElementById('Barbara_Pr_P4_Volume').innerHTML = Barbara_Pr_P4;
-    document.getElementById('Barbara_Pr_P5_Volume').innerHTML = Barbara_Pr_P5_Comma;
+    document.getElementById('Barbara_Pr_P5_Volume').innerHTML = Barbara_Pr_P5.toLocaleString();
   });
   Barbara_T1.noUiSlider.on('update', function (values, handle) {
     var Barbara_T1_Min_Volume = "L1toL" + Barbara_T1.noUiSlider.get()[0];
@@ -4525,12 +4240,11 @@ function BarbaraLoad() {
     var Barbara_T1_T3 = Barbara_T1_T3_1toMax_Volume - Barbara_T1_T3_1toMin_Volume
     var Barbara_T1_T4 = Barbara_T1_T4_1toMax_Volume - Barbara_T1_T4_1toMin_Volume
     var Barbara_T1_T5 = Barbara_T1_T5_1toMax_Volume - Barbara_T1_T5_1toMin_Volume
-    var Barbara_T1_T5_Comma = Barbara_T1_T5.toLocaleString();
     document.getElementById('Barbara_T1_T1_Volume').innerHTML = Barbara_T1_T1;
     document.getElementById('Barbara_T1_T2_Volume').innerHTML = Barbara_T1_T2;
     document.getElementById('Barbara_T1_T3_Volume').innerHTML = Barbara_T1_T3;
     document.getElementById('Barbara_T1_T4_Volume').innerHTML = Barbara_T1_T4;
-    document.getElementById('Barbara_T1_T5_Volume').innerHTML = Barbara_T1_T5_Comma;
+    document.getElementById('Barbara_T1_T5_Volume').innerHTML = Barbara_T1_T5.toLocaleString();
   });
   Barbara_T2.noUiSlider.on('update', function (values, handle) {
     var Barbara_T2_Min_Volume = "L1toL" + Barbara_T2.noUiSlider.get()[0];
@@ -4550,12 +4264,11 @@ function BarbaraLoad() {
     var Barbara_T2_T3 = Barbara_T2_T3_1toMax_Volume - Barbara_T2_T3_1toMin_Volume
     var Barbara_T2_T4 = Barbara_T2_T4_1toMax_Volume - Barbara_T2_T4_1toMin_Volume
     var Barbara_T2_T5 = Barbara_T2_T5_1toMax_Volume - Barbara_T2_T5_1toMin_Volume
-    var Barbara_T2_T5_Comma = Barbara_T2_T5.toLocaleString();
     document.getElementById('Barbara_T2_T1_Volume').innerHTML = Barbara_T2_T1;
     document.getElementById('Barbara_T2_T2_Volume').innerHTML = Barbara_T2_T2;
     document.getElementById('Barbara_T2_T3_Volume').innerHTML = Barbara_T2_T3;
     document.getElementById('Barbara_T2_T4_Volume').innerHTML = Barbara_T2_T4;
-    document.getElementById('Barbara_T2_T5_Volume').innerHTML = Barbara_T2_T5_Comma;
+    document.getElementById('Barbara_T2_T5_Volume').innerHTML = Barbara_T2_T5.toLocaleString();
   });
   Barbara_T3.noUiSlider.on('update', function (values, handle) {
     var Barbara_T3_Min_Volume = "L1toL" + Barbara_T3.noUiSlider.get()[0];
@@ -4575,12 +4288,11 @@ function BarbaraLoad() {
     var Barbara_T3_T3 = Barbara_T3_T3_1toMax_Volume - Barbara_T3_T3_1toMin_Volume
     var Barbara_T3_T4 = Barbara_T3_T4_1toMax_Volume - Barbara_T3_T4_1toMin_Volume
     var Barbara_T3_T5 = Barbara_T3_T5_1toMax_Volume - Barbara_T3_T5_1toMin_Volume
-    var Barbara_T3_T5_Comma = Barbara_T3_T5.toLocaleString();
     document.getElementById('Barbara_T3_T1_Volume').innerHTML = Barbara_T3_T1;
     document.getElementById('Barbara_T3_T2_Volume').innerHTML = Barbara_T3_T2;
     document.getElementById('Barbara_T3_T3_Volume').innerHTML = Barbara_T3_T3;
     document.getElementById('Barbara_T3_T4_Volume').innerHTML = Barbara_T3_T4;
-    document.getElementById('Barbara_T3_T5_Volume').innerHTML = Barbara_T3_T5_Comma;
+    document.getElementById('Barbara_T3_T5_Volume').innerHTML = Barbara_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Barbara  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4600,13 +4312,9 @@ function LisaLoad() {
     var Lisa_Ex_Volume = Lisa_Ex_1toMax_Volume - Lisa_Ex_1toMin_Volume
     var Lisa_Ex_Book_Volume = Lisa_Ex_Volume / 1000
     var Lisa_Ex_Mora_Volume = Lisa_Ex_Volume * 0.2
-    var Lisa_Ex_Volume_Comma = Lisa_Ex_Volume.toLocaleString();
-    var Lisa_Ex_Book_Volume_Comma = Lisa_Ex_Book_Volume.toLocaleString();
-    var Lisa_Ex_Mora_Volume_Comma = Lisa_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Lisa_Ex_Volume_Html').innerHTML = Lisa_Ex_Volume_Comma;
-    document.getElementById('Lisa_Ex_Volume_NoComma').innerHTML = Lisa_Ex_Volume;
-    document.getElementById('Lisa_Ex_Book_Volume_Html').innerHTML = Lisa_Ex_Book_Volume_Comma;
-    document.getElementById('Lisa_Ex_Mora_Volume_Html').innerHTML = Lisa_Ex_Mora_Volume_Comma;
+    document.getElementById('Lisa_Ex_Volume').innerHTML = Lisa_Ex_Volume.toLocaleString();
+    document.getElementById('Lisa_Ex_Book_Volume').innerHTML = Lisa_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Lisa_Ex_Mora_Volume').innerHTML = Lisa_Ex_Mora_Volume.toLocaleString();
   });
   Lisa_Pr.noUiSlider.on('update', function (values, handle) {
     var Lisa_Pr_Min_Volume = "L1toL" + Lisa_Pr.noUiSlider.get()[0];
@@ -4626,12 +4334,11 @@ function LisaLoad() {
     var Lisa_Pr_P3 = Lisa_Pr_P3_1toMax_Volume - Lisa_Pr_P3_1toMin_Volume
     var Lisa_Pr_P4 = Lisa_Pr_P4_1toMax_Volume - Lisa_Pr_P4_1toMin_Volume
     var Lisa_Pr_P5 = Lisa_Pr_P5_1toMax_Volume - Lisa_Pr_P5_1toMin_Volume
-    var Lisa_Pr_P5_Comma = Lisa_Pr_P5.toLocaleString();
     document.getElementById('Lisa_Pr_P1_Volume').innerHTML = Lisa_Pr_P1;
     document.getElementById('Lisa_Pr_P2_Volume').innerHTML = Lisa_Pr_P2;
     document.getElementById('Lisa_Pr_P3_Volume').innerHTML = Lisa_Pr_P3;
     document.getElementById('Lisa_Pr_P4_Volume').innerHTML = Lisa_Pr_P4;
-    document.getElementById('Lisa_Pr_P5_Volume').innerHTML = Lisa_Pr_P5_Comma;
+    document.getElementById('Lisa_Pr_P5_Volume').innerHTML = Lisa_Pr_P5.toLocaleString();
   });
   Lisa_T1.noUiSlider.on('update', function (values, handle) {
     var Lisa_T1_Min_Volume = "L1toL" + Lisa_T1.noUiSlider.get()[0];
@@ -4651,12 +4358,11 @@ function LisaLoad() {
     var Lisa_T1_T3 = Lisa_T1_T3_1toMax_Volume - Lisa_T1_T3_1toMin_Volume
     var Lisa_T1_T4 = Lisa_T1_T4_1toMax_Volume - Lisa_T1_T4_1toMin_Volume
     var Lisa_T1_T5 = Lisa_T1_T5_1toMax_Volume - Lisa_T1_T5_1toMin_Volume
-    var Lisa_T1_T5_Comma = Lisa_T1_T5.toLocaleString();
     document.getElementById('Lisa_T1_T1_Volume').innerHTML = Lisa_T1_T1;
     document.getElementById('Lisa_T1_T2_Volume').innerHTML = Lisa_T1_T2;
     document.getElementById('Lisa_T1_T3_Volume').innerHTML = Lisa_T1_T3;
     document.getElementById('Lisa_T1_T4_Volume').innerHTML = Lisa_T1_T4;
-    document.getElementById('Lisa_T1_T5_Volume').innerHTML = Lisa_T1_T5_Comma;
+    document.getElementById('Lisa_T1_T5_Volume').innerHTML = Lisa_T1_T5.toLocaleString();
   });
   Lisa_T2.noUiSlider.on('update', function (values, handle) {
     var Lisa_T2_Min_Volume = "L1toL" + Lisa_T2.noUiSlider.get()[0];
@@ -4676,12 +4382,11 @@ function LisaLoad() {
     var Lisa_T2_T3 = Lisa_T2_T3_1toMax_Volume - Lisa_T2_T3_1toMin_Volume
     var Lisa_T2_T4 = Lisa_T2_T4_1toMax_Volume - Lisa_T2_T4_1toMin_Volume
     var Lisa_T2_T5 = Lisa_T2_T5_1toMax_Volume - Lisa_T2_T5_1toMin_Volume
-    var Lisa_T2_T5_Comma = Lisa_T2_T5.toLocaleString();
     document.getElementById('Lisa_T2_T1_Volume').innerHTML = Lisa_T2_T1;
     document.getElementById('Lisa_T2_T2_Volume').innerHTML = Lisa_T2_T2;
     document.getElementById('Lisa_T2_T3_Volume').innerHTML = Lisa_T2_T3;
     document.getElementById('Lisa_T2_T4_Volume').innerHTML = Lisa_T2_T4;
-    document.getElementById('Lisa_T2_T5_Volume').innerHTML = Lisa_T2_T5_Comma;
+    document.getElementById('Lisa_T2_T5_Volume').innerHTML = Lisa_T2_T5.toLocaleString();
   });
   Lisa_T3.noUiSlider.on('update', function (values, handle) {
     var Lisa_T3_Min_Volume = "L1toL" + Lisa_T3.noUiSlider.get()[0];
@@ -4701,12 +4406,11 @@ function LisaLoad() {
     var Lisa_T3_T3 = Lisa_T3_T3_1toMax_Volume - Lisa_T3_T3_1toMin_Volume
     var Lisa_T3_T4 = Lisa_T3_T4_1toMax_Volume - Lisa_T3_T4_1toMin_Volume
     var Lisa_T3_T5 = Lisa_T3_T5_1toMax_Volume - Lisa_T3_T5_1toMin_Volume
-    var Lisa_T3_T5_Comma = Lisa_T3_T5.toLocaleString();
     document.getElementById('Lisa_T3_T1_Volume').innerHTML = Lisa_T3_T1;
     document.getElementById('Lisa_T3_T2_Volume').innerHTML = Lisa_T3_T2;
     document.getElementById('Lisa_T3_T3_Volume').innerHTML = Lisa_T3_T3;
     document.getElementById('Lisa_T3_T4_Volume').innerHTML = Lisa_T3_T4;
-    document.getElementById('Lisa_T3_T5_Volume').innerHTML = Lisa_T3_T5_Comma;
+    document.getElementById('Lisa_T3_T5_Volume').innerHTML = Lisa_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Lisa  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4726,13 +4430,9 @@ function KaeyaLoad() {
     var Kaeya_Ex_Volume = Kaeya_Ex_1toMax_Volume - Kaeya_Ex_1toMin_Volume
     var Kaeya_Ex_Book_Volume = Kaeya_Ex_Volume / 1000
     var Kaeya_Ex_Mora_Volume = Kaeya_Ex_Volume * 0.2
-    var Kaeya_Ex_Volume_Comma = Kaeya_Ex_Volume.toLocaleString();
-    var Kaeya_Ex_Book_Volume_Comma = Kaeya_Ex_Book_Volume.toLocaleString();
-    var Kaeya_Ex_Mora_Volume_Comma = Kaeya_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Kaeya_Ex_Volume_Html').innerHTML = Kaeya_Ex_Volume_Comma;
-    document.getElementById('Kaeya_Ex_Volume_NoComma').innerHTML = Kaeya_Ex_Volume;
-    document.getElementById('Kaeya_Ex_Book_Volume_Html').innerHTML = Kaeya_Ex_Book_Volume_Comma;
-    document.getElementById('Kaeya_Ex_Mora_Volume_Html').innerHTML = Kaeya_Ex_Mora_Volume_Comma;
+    document.getElementById('Kaeya_Ex_Volume').innerHTML = Kaeya_Ex_Volume.toLocaleString();
+    document.getElementById('Kaeya_Ex_Book_Volume').innerHTML = Kaeya_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Kaeya_Ex_Mora_Volume').innerHTML = Kaeya_Ex_Mora_Volume.toLocaleString();
   });
   Kaeya_Pr.noUiSlider.on('update', function (values, handle) {
     var Kaeya_Pr_Min_Volume = "L1toL" + Kaeya_Pr.noUiSlider.get()[0];
@@ -4752,12 +4452,11 @@ function KaeyaLoad() {
     var Kaeya_Pr_P3 = Kaeya_Pr_P3_1toMax_Volume - Kaeya_Pr_P3_1toMin_Volume
     var Kaeya_Pr_P4 = Kaeya_Pr_P4_1toMax_Volume - Kaeya_Pr_P4_1toMin_Volume
     var Kaeya_Pr_P5 = Kaeya_Pr_P5_1toMax_Volume - Kaeya_Pr_P5_1toMin_Volume
-    var Kaeya_Pr_P5_Comma = Kaeya_Pr_P5.toLocaleString();
     document.getElementById('Kaeya_Pr_P1_Volume').innerHTML = Kaeya_Pr_P1;
     document.getElementById('Kaeya_Pr_P2_Volume').innerHTML = Kaeya_Pr_P2;
     document.getElementById('Kaeya_Pr_P3_Volume').innerHTML = Kaeya_Pr_P3;
     document.getElementById('Kaeya_Pr_P4_Volume').innerHTML = Kaeya_Pr_P4;
-    document.getElementById('Kaeya_Pr_P5_Volume').innerHTML = Kaeya_Pr_P5_Comma;
+    document.getElementById('Kaeya_Pr_P5_Volume').innerHTML = Kaeya_Pr_P5.toLocaleString();
   });
   Kaeya_T1.noUiSlider.on('update', function (values, handle) {
     var Kaeya_T1_Min_Volume = "L1toL" + Kaeya_T1.noUiSlider.get()[0];
@@ -4777,12 +4476,11 @@ function KaeyaLoad() {
     var Kaeya_T1_T3 = Kaeya_T1_T3_1toMax_Volume - Kaeya_T1_T3_1toMin_Volume
     var Kaeya_T1_T4 = Kaeya_T1_T4_1toMax_Volume - Kaeya_T1_T4_1toMin_Volume
     var Kaeya_T1_T5 = Kaeya_T1_T5_1toMax_Volume - Kaeya_T1_T5_1toMin_Volume
-    var Kaeya_T1_T5_Comma = Kaeya_T1_T5.toLocaleString();
     document.getElementById('Kaeya_T1_T1_Volume').innerHTML = Kaeya_T1_T1;
     document.getElementById('Kaeya_T1_T2_Volume').innerHTML = Kaeya_T1_T2;
     document.getElementById('Kaeya_T1_T3_Volume').innerHTML = Kaeya_T1_T3;
     document.getElementById('Kaeya_T1_T4_Volume').innerHTML = Kaeya_T1_T4;
-    document.getElementById('Kaeya_T1_T5_Volume').innerHTML = Kaeya_T1_T5_Comma;
+    document.getElementById('Kaeya_T1_T5_Volume').innerHTML = Kaeya_T1_T5.toLocaleString();
   });
   Kaeya_T2.noUiSlider.on('update', function (values, handle) {
     var Kaeya_T2_Min_Volume = "L1toL" + Kaeya_T2.noUiSlider.get()[0];
@@ -4802,12 +4500,11 @@ function KaeyaLoad() {
     var Kaeya_T2_T3 = Kaeya_T2_T3_1toMax_Volume - Kaeya_T2_T3_1toMin_Volume
     var Kaeya_T2_T4 = Kaeya_T2_T4_1toMax_Volume - Kaeya_T2_T4_1toMin_Volume
     var Kaeya_T2_T5 = Kaeya_T2_T5_1toMax_Volume - Kaeya_T2_T5_1toMin_Volume
-    var Kaeya_T2_T5_Comma = Kaeya_T2_T5.toLocaleString();
     document.getElementById('Kaeya_T2_T1_Volume').innerHTML = Kaeya_T2_T1;
     document.getElementById('Kaeya_T2_T2_Volume').innerHTML = Kaeya_T2_T2;
     document.getElementById('Kaeya_T2_T3_Volume').innerHTML = Kaeya_T2_T3;
     document.getElementById('Kaeya_T2_T4_Volume').innerHTML = Kaeya_T2_T4;
-    document.getElementById('Kaeya_T2_T5_Volume').innerHTML = Kaeya_T2_T5_Comma;
+    document.getElementById('Kaeya_T2_T5_Volume').innerHTML = Kaeya_T2_T5.toLocaleString();
   });
   Kaeya_T3.noUiSlider.on('update', function (values, handle) {
     var Kaeya_T3_Min_Volume = "L1toL" + Kaeya_T3.noUiSlider.get()[0];
@@ -4827,12 +4524,11 @@ function KaeyaLoad() {
     var Kaeya_T3_T3 = Kaeya_T3_T3_1toMax_Volume - Kaeya_T3_T3_1toMin_Volume
     var Kaeya_T3_T4 = Kaeya_T3_T4_1toMax_Volume - Kaeya_T3_T4_1toMin_Volume
     var Kaeya_T3_T5 = Kaeya_T3_T5_1toMax_Volume - Kaeya_T3_T5_1toMin_Volume
-    var Kaeya_T3_T5_Comma = Kaeya_T3_T5.toLocaleString();
     document.getElementById('Kaeya_T3_T1_Volume').innerHTML = Kaeya_T3_T1;
     document.getElementById('Kaeya_T3_T2_Volume').innerHTML = Kaeya_T3_T2;
     document.getElementById('Kaeya_T3_T3_Volume').innerHTML = Kaeya_T3_T3;
     document.getElementById('Kaeya_T3_T4_Volume').innerHTML = Kaeya_T3_T4;
-    document.getElementById('Kaeya_T3_T5_Volume').innerHTML = Kaeya_T3_T5_Comma;
+    document.getElementById('Kaeya_T3_T5_Volume').innerHTML = Kaeya_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kaeya  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4852,13 +4548,9 @@ function AmberLoad() {
     var Amber_Ex_Volume = Amber_Ex_1toMax_Volume - Amber_Ex_1toMin_Volume
     var Amber_Ex_Book_Volume = Amber_Ex_Volume / 1000
     var Amber_Ex_Mora_Volume = Amber_Ex_Volume * 0.2
-    var Amber_Ex_Volume_Comma = Amber_Ex_Volume.toLocaleString();
-    var Amber_Ex_Book_Volume_Comma = Amber_Ex_Book_Volume.toLocaleString();
-    var Amber_Ex_Mora_Volume_Comma = Amber_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Amber_Ex_Volume_Html').innerHTML = Amber_Ex_Volume_Comma;
-    document.getElementById('Amber_Ex_Volume_NoComma').innerHTML = Amber_Ex_Volume;
-    document.getElementById('Amber_Ex_Book_Volume_Html').innerHTML = Amber_Ex_Book_Volume_Comma;
-    document.getElementById('Amber_Ex_Mora_Volume_Html').innerHTML = Amber_Ex_Mora_Volume_Comma;
+    document.getElementById('Amber_Ex_Volume').innerHTML = Amber_Ex_Volume.toLocaleString();
+    document.getElementById('Amber_Ex_Book_Volume').innerHTML = Amber_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Amber_Ex_Mora_Volume').innerHTML = Amber_Ex_Mora_Volume.toLocaleString();
   });
   Amber_Pr.noUiSlider.on('update', function (values, handle) {
     var Amber_Pr_Min_Volume = "L1toL" + Amber_Pr.noUiSlider.get()[0];
@@ -4878,12 +4570,11 @@ function AmberLoad() {
     var Amber_Pr_P3 = Amber_Pr_P3_1toMax_Volume - Amber_Pr_P3_1toMin_Volume
     var Amber_Pr_P4 = Amber_Pr_P4_1toMax_Volume - Amber_Pr_P4_1toMin_Volume
     var Amber_Pr_P5 = Amber_Pr_P5_1toMax_Volume - Amber_Pr_P5_1toMin_Volume
-    var Amber_Pr_P5_Comma = Amber_Pr_P5.toLocaleString();
     document.getElementById('Amber_Pr_P1_Volume').innerHTML = Amber_Pr_P1;
     document.getElementById('Amber_Pr_P2_Volume').innerHTML = Amber_Pr_P2;
     document.getElementById('Amber_Pr_P3_Volume').innerHTML = Amber_Pr_P3;
     document.getElementById('Amber_Pr_P4_Volume').innerHTML = Amber_Pr_P4;
-    document.getElementById('Amber_Pr_P5_Volume').innerHTML = Amber_Pr_P5_Comma;
+    document.getElementById('Amber_Pr_P5_Volume').innerHTML = Amber_Pr_P5.toLocaleString();
   });
   Amber_T1.noUiSlider.on('update', function (values, handle) {
     var Amber_T1_Min_Volume = "L1toL" + Amber_T1.noUiSlider.get()[0];
@@ -4903,12 +4594,11 @@ function AmberLoad() {
     var Amber_T1_T3 = Amber_T1_T3_1toMax_Volume - Amber_T1_T3_1toMin_Volume
     var Amber_T1_T4 = Amber_T1_T4_1toMax_Volume - Amber_T1_T4_1toMin_Volume
     var Amber_T1_T5 = Amber_T1_T5_1toMax_Volume - Amber_T1_T5_1toMin_Volume
-    var Amber_T1_T5_Comma = Amber_T1_T5.toLocaleString();
     document.getElementById('Amber_T1_T1_Volume').innerHTML = Amber_T1_T1;
     document.getElementById('Amber_T1_T2_Volume').innerHTML = Amber_T1_T2;
     document.getElementById('Amber_T1_T3_Volume').innerHTML = Amber_T1_T3;
     document.getElementById('Amber_T1_T4_Volume').innerHTML = Amber_T1_T4;
-    document.getElementById('Amber_T1_T5_Volume').innerHTML = Amber_T1_T5_Comma;
+    document.getElementById('Amber_T1_T5_Volume').innerHTML = Amber_T1_T5.toLocaleString();
   });
   Amber_T2.noUiSlider.on('update', function (values, handle) {
     var Amber_T2_Min_Volume = "L1toL" + Amber_T2.noUiSlider.get()[0];
@@ -4928,12 +4618,11 @@ function AmberLoad() {
     var Amber_T2_T3 = Amber_T2_T3_1toMax_Volume - Amber_T2_T3_1toMin_Volume
     var Amber_T2_T4 = Amber_T2_T4_1toMax_Volume - Amber_T2_T4_1toMin_Volume
     var Amber_T2_T5 = Amber_T2_T5_1toMax_Volume - Amber_T2_T5_1toMin_Volume
-    var Amber_T2_T5_Comma = Amber_T2_T5.toLocaleString();
     document.getElementById('Amber_T2_T1_Volume').innerHTML = Amber_T2_T1;
     document.getElementById('Amber_T2_T2_Volume').innerHTML = Amber_T2_T2;
     document.getElementById('Amber_T2_T3_Volume').innerHTML = Amber_T2_T3;
     document.getElementById('Amber_T2_T4_Volume').innerHTML = Amber_T2_T4;
-    document.getElementById('Amber_T2_T5_Volume').innerHTML = Amber_T2_T5_Comma;
+    document.getElementById('Amber_T2_T5_Volume').innerHTML = Amber_T2_T5.toLocaleString();
   });
   Amber_T3.noUiSlider.on('update', function (values, handle) {
     var Amber_T3_Min_Volume = "L1toL" + Amber_T3.noUiSlider.get()[0];
@@ -4953,12 +4642,11 @@ function AmberLoad() {
     var Amber_T3_T3 = Amber_T3_T3_1toMax_Volume - Amber_T3_T3_1toMin_Volume
     var Amber_T3_T4 = Amber_T3_T4_1toMax_Volume - Amber_T3_T4_1toMin_Volume
     var Amber_T3_T5 = Amber_T3_T5_1toMax_Volume - Amber_T3_T5_1toMin_Volume
-    var Amber_T3_T5_Comma = Amber_T3_T5.toLocaleString();
     document.getElementById('Amber_T3_T1_Volume').innerHTML = Amber_T3_T1;
     document.getElementById('Amber_T3_T2_Volume').innerHTML = Amber_T3_T2;
     document.getElementById('Amber_T3_T3_Volume').innerHTML = Amber_T3_T3;
     document.getElementById('Amber_T3_T4_Volume').innerHTML = Amber_T3_T4;
-    document.getElementById('Amber_T3_T5_Volume').innerHTML = Amber_T3_T5_Comma;
+    document.getElementById('Amber_T3_T5_Volume').innerHTML = Amber_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Amber  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -4978,13 +4666,9 @@ function AloyLoad() {
     var Aloy_Ex_Volume = Aloy_Ex_1toMax_Volume - Aloy_Ex_1toMin_Volume
     var Aloy_Ex_Book_Volume = Aloy_Ex_Volume / 1000
     var Aloy_Ex_Mora_Volume = Aloy_Ex_Volume * 0.2
-    var Aloy_Ex_Volume_Comma = Aloy_Ex_Volume.toLocaleString();
-    var Aloy_Ex_Book_Volume_Comma = Aloy_Ex_Book_Volume.toLocaleString();
-    var Aloy_Ex_Mora_Volume_Comma = Aloy_Ex_Mora_Volume.toLocaleString();
-    document.getElementById('Aloy_Ex_Volume_Html').innerHTML = Aloy_Ex_Volume_Comma;
-    document.getElementById('Aloy_Ex_Volume_NoComma').innerHTML = Aloy_Ex_Volume;
-    document.getElementById('Aloy_Ex_Book_Volume_Html').innerHTML = Aloy_Ex_Book_Volume_Comma;
-    document.getElementById('Aloy_Ex_Mora_Volume_Html').innerHTML = Aloy_Ex_Mora_Volume_Comma;
+    document.getElementById('Aloy_Ex_Volume').innerHTML = Aloy_Ex_Volume.toLocaleString();
+    document.getElementById('Aloy_Ex_Book_Volume').innerHTML = Aloy_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Aloy_Ex_Mora_Volume').innerHTML = Aloy_Ex_Mora_Volume.toLocaleString();
   });
   Aloy_Pr.noUiSlider.on('update', function (values, handle) {
     var Aloy_Pr_Min_Volume = "L1toL" + Aloy_Pr.noUiSlider.get()[0];
@@ -5004,12 +4688,11 @@ function AloyLoad() {
     var Aloy_Pr_P3 = Aloy_Pr_P3_1toMax_Volume - Aloy_Pr_P3_1toMin_Volume
     var Aloy_Pr_P4 = Aloy_Pr_P4_1toMax_Volume - Aloy_Pr_P4_1toMin_Volume
     var Aloy_Pr_P5 = Aloy_Pr_P5_1toMax_Volume - Aloy_Pr_P5_1toMin_Volume
-    var Aloy_Pr_P5_Comma = Aloy_Pr_P5.toLocaleString();
     document.getElementById('Aloy_Pr_P1_Volume').innerHTML = Aloy_Pr_P1;
     document.getElementById('Aloy_Pr_P2_Volume').innerHTML = Aloy_Pr_P2;
     document.getElementById('Aloy_Pr_P3_Volume').innerHTML = Aloy_Pr_P3;
     document.getElementById('Aloy_Pr_P4_Volume').innerHTML = Aloy_Pr_P4;
-    document.getElementById('Aloy_Pr_P5_Volume').innerHTML = Aloy_Pr_P5_Comma;
+    document.getElementById('Aloy_Pr_P5_Volume').innerHTML = Aloy_Pr_P5.toLocaleString();
   });
   Aloy_T1.noUiSlider.on('update', function (values, handle) {
     var Aloy_T1_Min_Volume = "L1toL" + Aloy_T1.noUiSlider.get()[0];
@@ -5029,12 +4712,11 @@ function AloyLoad() {
     var Aloy_T1_T3 = Aloy_T1_T3_1toMax_Volume - Aloy_T1_T3_1toMin_Volume
     var Aloy_T1_T4 = Aloy_T1_T4_1toMax_Volume - Aloy_T1_T4_1toMin_Volume
     var Aloy_T1_T5 = Aloy_T1_T5_1toMax_Volume - Aloy_T1_T5_1toMin_Volume
-    var Aloy_T1_T5_Comma = Aloy_T1_T5.toLocaleString();
     document.getElementById('Aloy_T1_T1_Volume').innerHTML = Aloy_T1_T1;
     document.getElementById('Aloy_T1_T2_Volume').innerHTML = Aloy_T1_T2;
     document.getElementById('Aloy_T1_T3_Volume').innerHTML = Aloy_T1_T3;
     document.getElementById('Aloy_T1_T4_Volume').innerHTML = Aloy_T1_T4;
-    document.getElementById('Aloy_T1_T5_Volume').innerHTML = Aloy_T1_T5_Comma;
+    document.getElementById('Aloy_T1_T5_Volume').innerHTML = Aloy_T1_T5.toLocaleString();
   });
   Aloy_T2.noUiSlider.on('update', function (values, handle) {
     var Aloy_T2_Min_Volume = "L1toL" + Aloy_T2.noUiSlider.get()[0];
@@ -5054,12 +4736,11 @@ function AloyLoad() {
     var Aloy_T2_T3 = Aloy_T2_T3_1toMax_Volume - Aloy_T2_T3_1toMin_Volume
     var Aloy_T2_T4 = Aloy_T2_T4_1toMax_Volume - Aloy_T2_T4_1toMin_Volume
     var Aloy_T2_T5 = Aloy_T2_T5_1toMax_Volume - Aloy_T2_T5_1toMin_Volume
-    var Aloy_T2_T5_Comma = Aloy_T2_T5.toLocaleString();
     document.getElementById('Aloy_T2_T1_Volume').innerHTML = Aloy_T2_T1;
     document.getElementById('Aloy_T2_T2_Volume').innerHTML = Aloy_T2_T2;
     document.getElementById('Aloy_T2_T3_Volume').innerHTML = Aloy_T2_T3;
     document.getElementById('Aloy_T2_T4_Volume').innerHTML = Aloy_T2_T4;
-    document.getElementById('Aloy_T2_T5_Volume').innerHTML = Aloy_T2_T5_Comma;
+    document.getElementById('Aloy_T2_T5_Volume').innerHTML = Aloy_T2_T5.toLocaleString();
   });
   Aloy_T3.noUiSlider.on('update', function (values, handle) {
     var Aloy_T3_Min_Volume = "L1toL" + Aloy_T3.noUiSlider.get()[0];
@@ -5079,12 +4760,11 @@ function AloyLoad() {
     var Aloy_T3_T3 = Aloy_T3_T3_1toMax_Volume - Aloy_T3_T3_1toMin_Volume
     var Aloy_T3_T4 = Aloy_T3_T4_1toMax_Volume - Aloy_T3_T4_1toMin_Volume
     var Aloy_T3_T5 = Aloy_T3_T5_1toMax_Volume - Aloy_T3_T5_1toMin_Volume
-    var Aloy_T3_T5_Comma = Aloy_T3_T5.toLocaleString();
     document.getElementById('Aloy_T3_T1_Volume').innerHTML = Aloy_T3_T1;
     document.getElementById('Aloy_T3_T2_Volume').innerHTML = Aloy_T3_T2;
     document.getElementById('Aloy_T3_T3_Volume').innerHTML = Aloy_T3_T3;
     document.getElementById('Aloy_T3_T4_Volume').innerHTML = Aloy_T3_T4;
-    document.getElementById('Aloy_T3_T5_Volume').innerHTML = Aloy_T3_T5_Comma;
+    document.getElementById('Aloy_T3_T5_Volume').innerHTML = Aloy_T3_T5.toLocaleString();
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Aloy  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -5094,9 +4774,10 @@ function AloyLoad() {
 // [計算] - レベル関連
 function Exp_Calculator() {
   var Ex_Volume = parseInt("0")
-  var Ex_Volume_El = document.getElementsByClassName("Ex_Volume_Hide")
+  var Ex_Volume_El = document.getElementsByClassName("Ex_Volume")
   for (var i = 0; i < Ex_Volume_El.length; i++) {
-    var Ex_Volume = Ex_Volume + parseInt(Ex_Volume_El[i].textContent)
+    var Ex_NoC_Volume = Ex_Volume_El[i].textContent.replace(/,/g, '');
+    var Ex_Volume = Ex_Volume + parseInt(Ex_NoC_Volume)
   }
   var Ex_Volume_Book = (Ex_Volume / 1000).toLocaleString();
   var Ex_Volume_Mora = (Ex_Volume * 0.2).toLocaleString();
@@ -5112,6 +4793,25 @@ function Exp_Calculator() {
   document.getElementById('Ex_Volume_Mora').innerHTML = Ex_Volume_Mora;
   document.getElementById('In_Character_EXP_Material').innerHTML = In_Character_EXP_Material;
   document.getElementById('Ne_Character_EXP_Material').innerHTML = Ne_Character_EXP_Material;
+}
+// [計算] - モラ関連
+function Mora_Calculator() {
+  var As_Mora_Volume= parseInt("0")
+  var As_Mora_El = document.getElementsByClassName("Mora Ascension")
+  for (var i = 0; i < As_Mora_El.length; i++) {
+    var As_Mora_NoC_Volume = As_Mora_El[i].textContent.replace(/,/g, '');
+    var As_Mora_Volume = As_Mora_Volume + parseInt(As_Mora_NoC_Volume)
+  }
+  var As_Mora_Volume = As_Mora_Volume.toLocaleString();
+  var Ta_Mora_Volume= parseInt("0")
+  var Ta_Mora_El = document.getElementsByClassName("Mora Talent")
+  for (var i = 0; i < Ta_Mora_El.length; i++) {
+    var Ta_Mora_NoC_Volume = Ta_Mora_El[i].textContent.replace(/,/g, '');
+    var Ta_Mora_Volume = Ta_Mora_Volume + parseInt(Ta_Mora_NoC_Volume)
+  }
+  var Ta_Mora_Volume = Ta_Mora_Volume.toLocaleString();
+  document.getElementById('As_Mora_Volume').innerHTML = As_Mora_Volume;
+  document.getElementById('Ta_Mora_Volume').innerHTML = Ta_Mora_Volume;
 }
 // [計算] - 宝石
 function Jewels_Calculator() {
@@ -6144,6 +5844,7 @@ function Crown_Calculator() {
 // [計算]
 function Calculator() {
   Exp_Calculator();
+  Mora_Calculator();
   Jewels_Calculator();
   Elemental_Stones_Calculator();
   Common_Material_Calculator();
