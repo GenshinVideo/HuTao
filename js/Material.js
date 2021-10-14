@@ -38,6 +38,7 @@ const Sleep = () => {
   LisaLoad();
   KaeyaLoad();
   AmberLoad();
+  AloyLoad();
 } 
 
 
@@ -4961,6 +4962,132 @@ function AmberLoad() {
   });
 }
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Amber  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Aloy  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Aloy_Ex = document.getElementById('Aloy_Ex');
+noUiSlider.create(Aloy_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Aloy_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Aloy_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Aloy_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Aloy_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function AloyLoad() {
+  Aloy_Ex.noUiSlider.on('update', function (values, handle) {
+    var Aloy_Ex_Min_Volume = "L1toL" + Aloy_Ex.noUiSlider.get()[0];
+    var Aloy_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Aloy_Ex.noUiSlider.get()[0])[Aloy_Ex_Min_Volume]);
+    var Aloy_Ex_Max_Volume = "L1toL" + Aloy_Ex.noUiSlider.get()[1];
+    var Aloy_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Aloy_Ex.noUiSlider.get()[1])[Aloy_Ex_Max_Volume]);
+    var Aloy_Ex_Volume = Aloy_Ex_1toMax_Volume - Aloy_Ex_1toMin_Volume
+    var Aloy_Ex_Book_Volume = Aloy_Ex_Volume / 1000
+    var Aloy_Ex_Mora_Volume = Aloy_Ex_Volume * 0.2
+    var Aloy_Ex_Volume_Comma = Aloy_Ex_Volume.toLocaleString();
+    var Aloy_Ex_Book_Volume_Comma = Aloy_Ex_Book_Volume.toLocaleString();
+    var Aloy_Ex_Mora_Volume_Comma = Aloy_Ex_Mora_Volume.toLocaleString();
+    document.getElementById('Aloy_Ex_Volume_Html').innerHTML = Aloy_Ex_Volume_Comma;
+    document.getElementById('Aloy_Ex_Volume_NoComma').innerHTML = Aloy_Ex_Volume;
+    document.getElementById('Aloy_Ex_Book_Volume_Html').innerHTML = Aloy_Ex_Book_Volume_Comma;
+    document.getElementById('Aloy_Ex_Mora_Volume_Html').innerHTML = Aloy_Ex_Mora_Volume_Comma;
+  });
+  Aloy_Pr.noUiSlider.on('update', function (values, handle) {
+    var Aloy_Pr_Min_Volume = "L1toL" + Aloy_Pr.noUiSlider.get()[0];
+    var Aloy_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[0])["P1_" + [Aloy_Pr_Min_Volume]]);
+    var Aloy_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[0])["P2_" + [Aloy_Pr_Min_Volume]]);
+    var Aloy_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[0])["P3_" + [Aloy_Pr_Min_Volume]]);
+    var Aloy_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[0])["P4_" + [Aloy_Pr_Min_Volume]]);
+    var Aloy_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[0])["P5_" + [Aloy_Pr_Min_Volume]]);
+    var Aloy_Pr_Max_Volume = "L1toL" + Aloy_Pr.noUiSlider.get()[1];
+    var Aloy_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[1])["P1_" + [Aloy_Pr_Max_Volume]]);
+    var Aloy_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[1])["P2_" + [Aloy_Pr_Max_Volume]]);
+    var Aloy_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[1])["P3_" + [Aloy_Pr_Max_Volume]]);
+    var Aloy_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[1])["P4_" + [Aloy_Pr_Max_Volume]]);
+    var Aloy_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Aloy_Pr.noUiSlider.get()[1])["P5_" + [Aloy_Pr_Max_Volume]]);
+    var Aloy_Pr_P1 = Aloy_Pr_P1_1toMax_Volume - Aloy_Pr_P1_1toMin_Volume
+    var Aloy_Pr_P2 = Aloy_Pr_P2_1toMax_Volume - Aloy_Pr_P2_1toMin_Volume
+    var Aloy_Pr_P3 = Aloy_Pr_P3_1toMax_Volume - Aloy_Pr_P3_1toMin_Volume
+    var Aloy_Pr_P4 = Aloy_Pr_P4_1toMax_Volume - Aloy_Pr_P4_1toMin_Volume
+    var Aloy_Pr_P5 = Aloy_Pr_P5_1toMax_Volume - Aloy_Pr_P5_1toMin_Volume
+    var Aloy_Pr_P5_Comma = Aloy_Pr_P5.toLocaleString();
+    document.getElementById('Aloy_Pr_P1_Volume').innerHTML = Aloy_Pr_P1;
+    document.getElementById('Aloy_Pr_P2_Volume').innerHTML = Aloy_Pr_P2;
+    document.getElementById('Aloy_Pr_P3_Volume').innerHTML = Aloy_Pr_P3;
+    document.getElementById('Aloy_Pr_P4_Volume').innerHTML = Aloy_Pr_P4;
+    document.getElementById('Aloy_Pr_P5_Volume').innerHTML = Aloy_Pr_P5_Comma;
+  });
+  Aloy_T1.noUiSlider.on('update', function (values, handle) {
+    var Aloy_T1_Min_Volume = "L1toL" + Aloy_T1.noUiSlider.get()[0];
+    var Aloy_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[0])["T1_" + [Aloy_T1_Min_Volume]]);
+    var Aloy_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[0])["T2_" + [Aloy_T1_Min_Volume]]);
+    var Aloy_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[0])["T3_" + [Aloy_T1_Min_Volume]]);
+    var Aloy_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[0])["T4_" + [Aloy_T1_Min_Volume]]);
+    var Aloy_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[0])["T5_" + [Aloy_T1_Min_Volume]]);
+    var Aloy_T1_Max_Volume = "L1toL" + Aloy_T1.noUiSlider.get()[1];
+    var Aloy_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[1])["T1_" + [Aloy_T1_Max_Volume]]);
+    var Aloy_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[1])["T2_" + [Aloy_T1_Max_Volume]]);
+    var Aloy_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[1])["T3_" + [Aloy_T1_Max_Volume]]);
+    var Aloy_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[1])["T4_" + [Aloy_T1_Max_Volume]]);
+    var Aloy_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T1.noUiSlider.get()[1])["T5_" + [Aloy_T1_Max_Volume]]);
+    var Aloy_T1_T1 = Aloy_T1_T1_1toMax_Volume - Aloy_T1_T1_1toMin_Volume
+    var Aloy_T1_T2 = Aloy_T1_T2_1toMax_Volume - Aloy_T1_T2_1toMin_Volume
+    var Aloy_T1_T3 = Aloy_T1_T3_1toMax_Volume - Aloy_T1_T3_1toMin_Volume
+    var Aloy_T1_T4 = Aloy_T1_T4_1toMax_Volume - Aloy_T1_T4_1toMin_Volume
+    var Aloy_T1_T5 = Aloy_T1_T5_1toMax_Volume - Aloy_T1_T5_1toMin_Volume
+    var Aloy_T1_T5_Comma = Aloy_T1_T5.toLocaleString();
+    document.getElementById('Aloy_T1_T1_Volume').innerHTML = Aloy_T1_T1;
+    document.getElementById('Aloy_T1_T2_Volume').innerHTML = Aloy_T1_T2;
+    document.getElementById('Aloy_T1_T3_Volume').innerHTML = Aloy_T1_T3;
+    document.getElementById('Aloy_T1_T4_Volume').innerHTML = Aloy_T1_T4;
+    document.getElementById('Aloy_T1_T5_Volume').innerHTML = Aloy_T1_T5_Comma;
+  });
+  Aloy_T2.noUiSlider.on('update', function (values, handle) {
+    var Aloy_T2_Min_Volume = "L1toL" + Aloy_T2.noUiSlider.get()[0];
+    var Aloy_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[0])["T1_" + [Aloy_T2_Min_Volume]]);
+    var Aloy_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[0])["T2_" + [Aloy_T2_Min_Volume]]);
+    var Aloy_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[0])["T3_" + [Aloy_T2_Min_Volume]]);
+    var Aloy_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[0])["T4_" + [Aloy_T2_Min_Volume]]);
+    var Aloy_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[0])["T5_" + [Aloy_T2_Min_Volume]]);
+    var Aloy_T2_Max_Volume = "L1toL" + Aloy_T2.noUiSlider.get()[1];
+    var Aloy_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[1])["T1_" + [Aloy_T2_Max_Volume]]);
+    var Aloy_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[1])["T2_" + [Aloy_T2_Max_Volume]]);
+    var Aloy_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[1])["T3_" + [Aloy_T2_Max_Volume]]);
+    var Aloy_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[1])["T4_" + [Aloy_T2_Max_Volume]]);
+    var Aloy_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T2.noUiSlider.get()[1])["T5_" + [Aloy_T2_Max_Volume]]);
+    var Aloy_T2_T1 = Aloy_T2_T1_1toMax_Volume - Aloy_T2_T1_1toMin_Volume
+    var Aloy_T2_T2 = Aloy_T2_T2_1toMax_Volume - Aloy_T2_T2_1toMin_Volume
+    var Aloy_T2_T3 = Aloy_T2_T3_1toMax_Volume - Aloy_T2_T3_1toMin_Volume
+    var Aloy_T2_T4 = Aloy_T2_T4_1toMax_Volume - Aloy_T2_T4_1toMin_Volume
+    var Aloy_T2_T5 = Aloy_T2_T5_1toMax_Volume - Aloy_T2_T5_1toMin_Volume
+    var Aloy_T2_T5_Comma = Aloy_T2_T5.toLocaleString();
+    document.getElementById('Aloy_T2_T1_Volume').innerHTML = Aloy_T2_T1;
+    document.getElementById('Aloy_T2_T2_Volume').innerHTML = Aloy_T2_T2;
+    document.getElementById('Aloy_T2_T3_Volume').innerHTML = Aloy_T2_T3;
+    document.getElementById('Aloy_T2_T4_Volume').innerHTML = Aloy_T2_T4;
+    document.getElementById('Aloy_T2_T5_Volume').innerHTML = Aloy_T2_T5_Comma;
+  });
+  Aloy_T3.noUiSlider.on('update', function (values, handle) {
+    var Aloy_T3_Min_Volume = "L1toL" + Aloy_T3.noUiSlider.get()[0];
+    var Aloy_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[0])["T1_" + [Aloy_T3_Min_Volume]]);
+    var Aloy_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[0])["T2_" + [Aloy_T3_Min_Volume]]);
+    var Aloy_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[0])["T3_" + [Aloy_T3_Min_Volume]]);
+    var Aloy_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[0])["T4_" + [Aloy_T3_Min_Volume]]);
+    var Aloy_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[0])["T5_" + [Aloy_T3_Min_Volume]]);
+    var Aloy_T3_Max_Volume = "L1toL" + Aloy_T3.noUiSlider.get()[1];
+    var Aloy_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[1])["T1_" + [Aloy_T3_Max_Volume]]);
+    var Aloy_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[1])["T2_" + [Aloy_T3_Max_Volume]]);
+    var Aloy_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[1])["T3_" + [Aloy_T3_Max_Volume]]);
+    var Aloy_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[1])["T4_" + [Aloy_T3_Max_Volume]]);
+    var Aloy_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Aloy_T3.noUiSlider.get()[1])["T5_" + [Aloy_T3_Max_Volume]]);
+    var Aloy_T3_T1 = Aloy_T3_T1_1toMax_Volume - Aloy_T3_T1_1toMin_Volume
+    var Aloy_T3_T2 = Aloy_T3_T2_1toMax_Volume - Aloy_T3_T2_1toMin_Volume
+    var Aloy_T3_T3 = Aloy_T3_T3_1toMax_Volume - Aloy_T3_T3_1toMin_Volume
+    var Aloy_T3_T4 = Aloy_T3_T4_1toMax_Volume - Aloy_T3_T4_1toMin_Volume
+    var Aloy_T3_T5 = Aloy_T3_T5_1toMax_Volume - Aloy_T3_T5_1toMin_Volume
+    var Aloy_T3_T5_Comma = Aloy_T3_T5.toLocaleString();
+    document.getElementById('Aloy_T3_T1_Volume').innerHTML = Aloy_T3_T1;
+    document.getElementById('Aloy_T3_T2_Volume').innerHTML = Aloy_T3_T2;
+    document.getElementById('Aloy_T3_T3_Volume').innerHTML = Aloy_T3_T3;
+    document.getElementById('Aloy_T3_T4_Volume').innerHTML = Aloy_T3_T4;
+    document.getElementById('Aloy_T3_T5_Volume').innerHTML = Aloy_T3_T5_Comma;
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Aloy  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
 
 
@@ -6429,6 +6556,16 @@ Amber_T2_CookieMin=" + Amber_T2.noUiSlider.get()[0] + "/\
 Amber_T2_CookieMax=" + Amber_T2.noUiSlider.get()[1] + "/\
 Amber_T3_CookieMin=" + Amber_T3.noUiSlider.get()[0] + "/\
 Amber_T3_CookieMax=" + Amber_T3.noUiSlider.get()[1] + "/\
+Aloy_Ex_CookieMin=" + Aloy_Ex.noUiSlider.get()[0] + "/\
+Aloy_Ex_CookieMax=" + Aloy_Ex.noUiSlider.get()[1] + "/\
+Aloy_Pr_CookieMin=" + Aloy_Pr.noUiSlider.get()[0] + "/\
+Aloy_Pr_CookieMax=" + Aloy_Pr.noUiSlider.get()[1] + "/\
+Aloy_T1_CookieMin=" + Aloy_T1.noUiSlider.get()[0] + "/\
+Aloy_T1_CookieMax=" + Aloy_T1.noUiSlider.get()[1] + "/\
+Aloy_T2_CookieMin=" + Aloy_T2.noUiSlider.get()[0] + "/\
+Aloy_T2_CookieMax=" + Aloy_T2.noUiSlider.get()[1] + "/\
+Aloy_T3_CookieMin=" + Aloy_T3.noUiSlider.get()[0] + "/\
+Aloy_T3_CookieMax=" + Aloy_T3.noUiSlider.get()[1] + "/\
 ; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 
 document.cookie = "Inventory1=\
@@ -6792,6 +6929,11 @@ function CharacterLoad() {
   try{Amber_T1.noUiSlider.set([Amber_T1_CookieMin, Amber_T1_CookieMax]);} catch(e){}
   try{Amber_T2.noUiSlider.set([Amber_T2_CookieMin, Amber_T2_CookieMax]);} catch(e){}
   try{Amber_T3.noUiSlider.set([Amber_T3_CookieMin, Amber_T3_CookieMax]);} catch(e){}
+  try{Aloy_Ex.noUiSlider.set([Aloy_Ex_CookieMin, Aloy_Ex_CookieMax]);} catch(e){}
+  try{Aloy_Pr.noUiSlider.set([Aloy_Pr_CookieMin, Aloy_Pr_CookieMax]);} catch(e){}
+  try{Aloy_T1.noUiSlider.set([Aloy_T1_CookieMin, Aloy_T1_CookieMax]);} catch(e){}
+  try{Aloy_T2.noUiSlider.set([Aloy_T2_CookieMin, Aloy_T2_CookieMax]);} catch(e){}
+  try{Aloy_T3.noUiSlider.set([Aloy_T3_CookieMin, Aloy_T3_CookieMax]);} catch(e){}
 }
 function InventoryLoad() {
   var Character_Cookies = document.cookie.replace(/.*?;?\s?Inventory\d=(.*);\sInventory\d=(.*);\sInventory\d=(.*)\//i, '$1$2$3');
