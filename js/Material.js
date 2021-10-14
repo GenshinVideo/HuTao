@@ -5587,16 +5587,16 @@ function Local_Material_Calculator() {
   document.getElementById('In_Violetgrass_Volume').innerHTML = In_Violetgrass_Volume;
   document.getElementById('Ne_Violetgrass_Volume').innerHTML = Ne_Violetgrass_Volume;
 // [計算] - イグサ
-  var Small_Lamp_Volume = parseInt("0")
-  var Small_Lamp_El = document.getElementsByClassName("Small_Lamp")
-  for (var i = 0; i < Small_Lamp_El.length; i++) {
-    var Small_Lamp_Volume = Small_Lamp_Volume + parseInt(Small_Lamp_El[i].textContent)
+  var Small_Lamp_Grass_Volume = parseInt("0")
+  var Small_Lamp_Grass_El = document.getElementsByClassName("Small_Lamp_Grass")
+  for (var i = 0; i < Small_Lamp_Grass_El.length; i++) {
+    var Small_Lamp_Grass_Volume = Small_Lamp_Grass_Volume + parseInt(Small_Lamp_Grass_El[i].textContent)
   }
-  var In_Small_Lamp_Volume = parseInt(document.getElementById("Small_Lamp").value)
-  var Ne_Small_Lamp_Volume = Small_Lamp_Volume - In_Small_Lamp_Volume
-  document.getElementById('Small_Lamp_Volume').innerHTML = Small_Lamp_Volume;
-  document.getElementById('In_Small_Lamp_Volume').innerHTML = In_Small_Lamp_Volume;
-  document.getElementById('Ne_Small_Lamp_Volume').innerHTML = Ne_Small_Lamp_Volume;
+  var In_Small_Lamp_Grass_Volume = parseInt(document.getElementById("Small_Lamp_Grass").value)
+  var Ne_Small_Lamp_Grass_Volume = Small_Lamp_Grass_Volume - In_Small_Lamp_Grass_Volume
+  document.getElementById('Small_Lamp_Grass_Volume').innerHTML = Small_Lamp_Grass_Volume;
+  document.getElementById('In_Small_Lamp_Grass_Volume').innerHTML = In_Small_Lamp_Grass_Volume;
+  document.getElementById('Ne_Small_Lamp_Grass_Volume').innerHTML = Ne_Small_Lamp_Grass_Volume;
 // [計算] - 蒲公英の種
   var Dandelion_Seed_Volume = parseInt("0")
   var Dandelion_Seed_El = document.getElementsByClassName("Dandelion_Seed")
@@ -6564,7 +6564,7 @@ Glaze_Lily_Cookie=" + document.getElementById("Glaze_Lily").value + "/\
 Qingxin_Cookie=" + document.getElementById("Qingxin").value + "/\
 Starconch_Cookie=" + document.getElementById("Starconch").value + "/\
 Violetgrass_Cookie=" + document.getElementById("Violetgrass").value + "/\
-Small_Lamp_Cookie=" + document.getElementById("Small_Lamp").value + "/\
+Small_Lamp_Grass_Cookie=" + document.getElementById("Small_Lamp_Grass").value + "/\
 Dandelion_Seed_Cookie=" + document.getElementById("Dandelion_Seed").value + "/\
 Cor_Lapis_Cookie=" + document.getElementById("Cor_Lapis").value + "/\
 Onikabuto_Cookie=" + document.getElementById("Onikabuto").value + "/\
@@ -6928,7 +6928,7 @@ function Load() {
     document.getElementById("Qingxin").value = Qingxin_Cookie
     document.getElementById("Starconch").value = Starconch_Cookie
     document.getElementById("Violetgrass").value = Violetgrass_Cookie
-    document.getElementById("Small_Lamp").value = Small_Lamp_Cookie
+    document.getElementById("Small_Lamp_Grass").value = Small_Lamp_Grass_Cookie
     document.getElementById("Dandelion_Seed").value = Dandelion_Seed_Cookie
     document.getElementById("Cor_Lapis").value = Cor_Lapis_Cookie
     document.getElementById("Onikabuto").value = Onikabuto_Cookie
