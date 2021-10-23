@@ -2732,8 +2732,11 @@
               <img class="miniicon" src="../image/Small/Item/Item_Wanderers_Advice.webp"></i><input placeholder="流浪者の経験" id="Wanderers_Advice" value="0" type="number" class="validate">
             </div>
           </td>
-          <td width="8%" colspan="1"></td>
-          <td width="8%" colspan="1"></td>
+          <td width="16%" colspan="2">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Mora.webp"></i><input placeholder="モラ" id="Mora" value="0" type="number" class="validate">
+            </div>
+          </td>
           <td width="8%" colspan="1"></td>
           <td width="8%" colspan="1"></td>
           <td width="8%" colspan="1"></td>
@@ -3321,6 +3324,7 @@
               <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Elegance.webp"></i><input placeholder="「風雅」の教え" id="Teachings_of_Elegance" value="0" type="number" class="validate">
             </div>
           </td>
+        </tr>
         <tr>
           <td width="10%" colspan="1">
             <div class="input-field"><i class="prefix">
@@ -3335,6 +3339,11 @@
           <td width="10%" colspan="1">
             <div class="input-field"><i class="prefix">
               <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Light.webp"></i><input placeholder="「天光」の教え" id="Teachings_of_Light" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></i><input placeholder="知恵の冠" id="Crown_of_Insight" value="0" type="number" class="validate">
             </div>
           </td>
         </tr>
@@ -3462,6 +3471,12 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Fluorescent_Fungus.webp"></i><input placeholder="ユウトウタケ" id="Fluorescent_Fungus" value="0" type="number" class="validate">
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -3481,7 +3496,11 @@
           <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
           <td width="8.6%" colspan="1" class="textright">強化</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ex_Volume_Mora"></span></td>
-          <td width="47.3%" colspan="11"></td>
+          <td width="8.6%" colspan="1" class="textright">累計</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="All_Mora_Volume"></span></td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Crown_of_Insight_Volume"></span></td>
+          <td width="21.5%" colspan="5"></td>
         </tr>
         <tr>
           <td width="6.8%" colspan="2" class="textleft">所持数</td>
@@ -3489,7 +3508,10 @@
           <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Character_EXP_Material"></span> 点</td>
           <td width="6.8%" colspan="1" class="textright">突破</td>
           <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="As_Mora_Volume"></span></td>
-          <td width="47.3%" colspan="11"></td>
+          <td width="6.8%" colspan="1" class="textright">所持</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Crown_of_Insight_Volume"></span></td>
+          <td width="21.5%" colspan="5"></td>
         </tr>
         <tr>
           <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
@@ -3497,7 +3519,10 @@
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Character_EXP_Material"></span> 点</td>
           <td width="8.6%" colspan="1" class="textright">天賦</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Mora_Volume"></span></td>
-          <td width="47.3%" colspan="11"></td>
+          <td width="6.8%" colspan="1" class="textright">残り</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="Ne_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="Ne_Crown_of_Insight_Volume"></span></td>
+          <td width="21.5%" colspan="5"></td>
         </tr>
         <tr>
           <th colspan="23">Jewels</th>
@@ -3826,21 +3851,25 @@
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Sango_Pearl_Volume"></span> 個</td>
           <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Amakumo_Fruit.webp"></td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Amakumo_Fruit_Volume"></span> 個</td>
-          <td width="55.2%" colspan="12"></td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Fluorescent_Fungus.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="38.7%" colspan="9"></td>
         </tr>
         <tr>
           <td width="8.6%" colspan="2" class="textleft">所持数</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Sea_Ganoderma_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Sango_Pearl_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Amakumo_Fruit_Volume"></span> 個</td>
-          <td width="55.2%" colspan="12"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="38.7%" colspan="9"></td>
         </tr>
         <tr>
           <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Sea_Ganoderma_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Sango_Pearl_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Amakumo_Fruit_Volume"></span> 個</td>
-          <td width="55.2%" colspan="12"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="38.7%" colspan="9"></td>
         </tr>
         <tr>
           <th colspan="23">Talent Level-Up Material</th>
@@ -3996,6 +4025,15 @@
     </table><BR>
   </div>
   <div id="Other" class="col s12">
+    <b>2021/10/23</b><BR>
+    更新。<BR>
+    ・王冠の計算を実装<BR>
+    ・ユウトウタケの計算を実装<BR>
+    ・モラの計算を改善<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Naname_Anzu』までお願いします。）<BR>
+    <BR><BR>
     <b>2021/10/15</b><BR>
     更新。<BR>
     ・突破、天賦に必要なモラの計算を追加<BR>
@@ -4003,8 +4041,8 @@
     ・処理の軽量化<BR>
     <BR>
     既知の問題。<BR>
-    ・王冠の計算、突破、天賦時のモラの計算の実装先送り<BR>
-    ・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Naname_Anzu』までお願いします。）<BR>
+    ・王冠の計算実装先送り<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
     <BR><BR>
     <b>2021/10/14</b><BR>
     更新。<BR>
