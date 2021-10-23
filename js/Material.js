@@ -4771,7 +4771,7 @@ function AloyLoad() {
 
 
 
-// [計算] - レベル関連
+// [計算] - レベル関連 / モラ関連
 function Exp_Calculator() {
   var Ex_Volume = parseInt("0")
   var Ex_Volume_El = document.getElementsByClassName("Ex_Volume")
@@ -4779,39 +4779,52 @@ function Exp_Calculator() {
     var Ex_NoC_Volume = Ex_Volume_El[i].textContent.replace(/,/g, '');
     var Ex_Volume = Ex_Volume + parseInt(Ex_NoC_Volume)
   }
-  var Ex_Volume_Book = (Ex_Volume / 1000).toLocaleString();
-  var Ex_Volume_Mora = (Ex_Volume * 0.2).toLocaleString();
+  var Ex_Volume_Book = (Ex_Volume / 1000)
+  var Ex_Volume_Mora = (Ex_Volume * 0.2)
   var In_Character_EXP_Material
   = parseInt(document.getElementById("Heros_Wit").value) * 20000
   + parseInt(document.getElementById("Adventurers_Experience").value) * 5000
   + parseInt(document.getElementById("Wanderers_Advice").value) * 1000
-  var Ne_Character_EXP_Material = ((Ex_Volume - In_Character_EXP_Material) / 1000).toLocaleString();
-  var Ex_Volume = Ex_Volume.toLocaleString();
-  var In_Character_EXP_Material = (In_Character_EXP_Material / 1000).toLocaleString();
-  document.getElementById('Ex_Volume').innerHTML = Ex_Volume;
-  document.getElementById('Ex_Volume_Book').innerHTML = Ex_Volume_Book;
-  document.getElementById('Ex_Volume_Mora').innerHTML = Ex_Volume_Mora;
-  document.getElementById('In_Character_EXP_Material').innerHTML = In_Character_EXP_Material;
-  document.getElementById('Ne_Character_EXP_Material').innerHTML = Ne_Character_EXP_Material;
-}
-// [計算] - モラ関連
-function Mora_Calculator() {
+  var Ne_Character_EXP_Material = ((Ex_Volume - In_Character_EXP_Material) / 1000)
+  var In_Character_EXP_Material = (In_Character_EXP_Material / 1000)
+  document.getElementById('Ex_Volume').innerHTML = Ex_Volume.toLocaleString();
+  document.getElementById('Ex_Volume_Book').innerHTML = Ex_Volume_Book.toLocaleString();
+  document.getElementById('Ex_Volume_Mora').innerHTML = Ex_Volume_Mora.toLocaleString();
+  document.getElementById('In_Character_EXP_Material').innerHTML = In_Character_EXP_Material.toLocaleString();
+  document.getElementById('Ne_Character_EXP_Material').innerHTML = Ne_Character_EXP_Material.toLocaleString();
   var As_Mora_Volume= parseInt("0")
   var As_Mora_El = document.getElementsByClassName("Mora Ascension")
   for (var i = 0; i < As_Mora_El.length; i++) {
     var As_Mora_NoC_Volume = As_Mora_El[i].textContent.replace(/,/g, '');
     var As_Mora_Volume = As_Mora_Volume + parseInt(As_Mora_NoC_Volume)
   }
-  var As_Mora_Volume = As_Mora_Volume.toLocaleString();
   var Ta_Mora_Volume= parseInt("0")
   var Ta_Mora_El = document.getElementsByClassName("Mora Talent")
   for (var i = 0; i < Ta_Mora_El.length; i++) {
     var Ta_Mora_NoC_Volume = Ta_Mora_El[i].textContent.replace(/,/g, '');
     var Ta_Mora_Volume = Ta_Mora_Volume + parseInt(Ta_Mora_NoC_Volume)
   }
-  var Ta_Mora_Volume = Ta_Mora_Volume.toLocaleString();
-  document.getElementById('As_Mora_Volume').innerHTML = As_Mora_Volume;
-  document.getElementById('Ta_Mora_Volume').innerHTML = Ta_Mora_Volume;
+  var All_Mora_Volume = Ex_Volume_Mora + As_Mora_Volume + Ta_Mora_Volume
+  var In_Mora_Volume = parseInt(document.getElementById("Mora").value)
+  var Ne_Mora_Volume = All_Mora_Volume - In_Mora_Volume
+  document.getElementById('As_Mora_Volume').innerHTML = As_Mora_Volume.toLocaleString();
+  document.getElementById('Ta_Mora_Volume').innerHTML = Ta_Mora_Volume.toLocaleString();
+  document.getElementById('All_Mora_Volume').innerHTML = All_Mora_Volume.toLocaleString();
+  document.getElementById('In_Mora_Volume').innerHTML = In_Mora_Volume.toLocaleString();
+  document.getElementById('Ne_Mora_Volume').innerHTML = Ne_Mora_Volume.toLocaleString();
+}
+// [計算] - 王冠
+function Crown_Calculator() {
+  var Crown_of_Insight_Volume = parseInt("0")
+  var Crown_of_Insight_El = document.getElementsByClassName("Crown_of_Insight")
+  for (var i = 0; i < Crown_of_Insight_El.length; i++) {
+    var Crown_of_Insight_Volume = Crown_of_Insight_Volume + parseInt(Crown_of_Insight_El[i].textContent)
+  }
+  var In_Crown_of_Insight_Volume = parseInt(document.getElementById("Crown_of_Insight").value)
+  var Ne_Crown_of_Insight_Volume = Crown_of_Insight_Volume - In_Crown_of_Insight_Volume
+  document.getElementById('Crown_of_Insight_Volume').innerHTML = Crown_of_Insight_Volume;
+  document.getElementById('In_Crown_of_Insight_Volume').innerHTML = In_Crown_of_Insight_Volume;
+  document.getElementById('Ne_Crown_of_Insight_Volume').innerHTML = Ne_Crown_of_Insight_Volume;
 }
 // [計算] - 宝石
 function Jewels_Calculator() {
@@ -5534,6 +5547,17 @@ function Local_Material_Calculator() {
   document.getElementById('Amakumo_Fruit_Volume').innerHTML = Amakumo_Fruit_Volume;
   document.getElementById('In_Amakumo_Fruit_Volume').innerHTML = In_Amakumo_Fruit_Volume;
   document.getElementById('Ne_Amakumo_Fruit_Volume').innerHTML = Ne_Amakumo_Fruit_Volume;
+// [計算] - ユウトウタケ
+  var Fluorescent_Fungus_Volume = parseInt("0")
+  var Fluorescent_Fungus_El = document.getElementsByClassName("Fluorescent_Fungus")
+  for (var i = 0; i < Fluorescent_Fungus_El.length; i++) {
+    var Fluorescent_Fungus_Volume = Fluorescent_Fungus_Volume + parseInt(Fluorescent_Fungus_El[i].textContent)
+  }
+  var In_Fluorescent_Fungus_Volume = parseInt(document.getElementById("Fluorescent_Fungus").value)
+  var Ne_Fluorescent_Fungus_Volume = Fluorescent_Fungus_Volume - In_Fluorescent_Fungus_Volume
+  document.getElementById('Fluorescent_Fungus_Volume').innerHTML = Fluorescent_Fungus_Volume;
+  document.getElementById('In_Fluorescent_Fungus_Volume').innerHTML = In_Fluorescent_Fungus_Volume;
+  document.getElementById('Ne_Fluorescent_Fungus_Volume').innerHTML = Ne_Fluorescent_Fungus_Volume;
 }
 // [計算] - 天賦本
 function Talent_Book_Calculator() {
@@ -5832,19 +5856,11 @@ function Talent_Boss_Calculator() {
   document.getElementById('In_Ashen_Heart_Volume').innerHTML = In_Ashen_Heart_Volume;
   document.getElementById('Ne_Ashen_Heart_Volume').innerHTML = Ne_Ashen_Heart_Volume;
 }
-// [計算] - 王冠
-function Crown_Calculator() {
-  var Crown_of_Insight_Volume = parseInt("0")
-  var Crown_of_Insight_El = document.getElementsByClassName("Crown_of_Insight")
-  for (var i = 0; i < Crown_of_Insight_El.length; i++) {
-    var Crown_of_Insight_Volume = Crown_of_Insight_Volume + parseInt(Crown_of_Insight_El[i].textContent)
-  }
-}
 
 // [計算]
 function Calculator() {
   Exp_Calculator();
-  Mora_Calculator();
+  Crown_Calculator();
   Jewels_Calculator();
   Elemental_Stones_Calculator();
   Common_Material_Calculator();
@@ -6273,6 +6289,7 @@ document.cookie = "Inventory1=\
 Heros_Wit_Cookie=" + document.getElementById("Heros_Wit").value + "/\
 Adventurers_Experience_Cookie=" + document.getElementById("Adventurers_Experience").value + "/\
 Wanderers_Advice_Cookie=" + document.getElementById("Wanderers_Advice").value + "/\
+Mora_Cookie=" + document.getElementById("Mora").value + "/\
 Slime_Concentrate_Cookie=" + document.getElementById("Slime_Concentrate").value + "/\
 Slime_Secretions_Cookie=" + document.getElementById("Slime_Secretions").value + "/\
 Slime_Condensate_Cookie=" + document.getElementById("Slime_Condensate").value + "/\
@@ -6386,6 +6403,7 @@ Teachings_of_Elegance_Cookie=" + document.getElementById("Teachings_of_Elegance"
 Philosophies_of_Light_Cookie=" + document.getElementById("Philosophies_of_Light").value + "/\
 Guide_to_Light_Cookie=" + document.getElementById("Guide_to_Light").value + "/\
 Teachings_of_Light_Cookie=" + document.getElementById("Teachings_of_Light").value + "/\
+Crown_of_Insight_Cookie=" + document.getElementById("Crown_of_Insight").value + "/\
 ; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 
 document.cookie = "Inventory3=\
@@ -6413,6 +6431,7 @@ Naku_Weed_Cookie=" + document.getElementById("Naku_Weed").value + "/\
 Sea_Ganoderma_Cookie=" + document.getElementById("Sea_Ganoderma").value + "/\
 Sango_Pearl_Cookie=" + document.getElementById("Sango_Pearl").value + "/\
 Amakumo_Fruit_Cookie=" + document.getElementById("Amakumo_Fruit").value + "/\
+Fluorescent_Fungus_Cookie=" + document.getElementById("Fluorescent_Fungus").value + "/\
 ; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 }
 
@@ -6647,6 +6666,7 @@ function InventoryLoad() {
   try{document.getElementById("Heros_Wit").value = Heros_Wit_Cookie} catch(e){}
   try{document.getElementById("Adventurers_Experience").value = Adventurers_Experience_Cookie} catch(e){}
   try{document.getElementById("Wanderers_Advice").value = Wanderers_Advice_Cookie} catch(e){}
+  try{document.getElementById("Mora").value = Mora_Cookie} catch(e){}
   try{document.getElementById("Slime_Concentrate").value = Slime_Concentrate_Cookie} catch(e){}
   try{document.getElementById("Slime_Secretions").value = Slime_Secretions_Cookie} catch(e){}
   try{document.getElementById("Slime_Condensate").value = Slime_Condensate_Cookie} catch(e){}
@@ -6757,6 +6777,7 @@ function InventoryLoad() {
   try{document.getElementById("Philosophies_of_Light").value = Philosophies_of_Light_Cookie} catch(e){}
   try{document.getElementById("Guide_to_Light").value = Guide_to_Light_Cookie} catch(e){}
   try{document.getElementById("Teachings_of_Light").value = Teachings_of_Light_Cookie} catch(e){}
+  try{document.getElementById("Crown_of_Insight").value = Crown_of_Insight_Cookie} catch(e){}
   try{document.getElementById("Calla_Lily").value = Calla_Lily_Cookie} catch(e){}
   try{document.getElementById("Wolfhook").value = Wolfhook_Cookie} catch(e){}
   try{document.getElementById("Valberry").value = Valberry_Cookie} catch(e){}
@@ -6781,6 +6802,7 @@ function InventoryLoad() {
   try{document.getElementById("Sea_Ganoderma").value = Sea_Ganoderma_Cookie} catch(e){}
   try{document.getElementById("Sango_Pearl").value = Sango_Pearl_Cookie} catch(e){}
   try{document.getElementById("Amakumo_Fruit").value = Amakumo_Fruit_Cookie} catch(e){}
+  try{document.getElementById("Fluorescent_Fungus").value = Fluorescent_Fungus_Cookie} catch(e){}
 }
 CharacterLoad();
 InventoryLoad();
