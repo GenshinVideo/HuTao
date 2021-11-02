@@ -6574,6 +6574,29 @@ document.getElementById('Save').onclick = function changeContent() {
   })
 }
 
+function Fix() {
+var now = new Date().toUTCString();
+document.cookie = "Character5=\
+Thoma_Ex_CookieMin=" + Thoma_Ex.noUiSlider.get()[0] + "/\
+Thoma_Ex_CookieMax=" + Thoma_Ex.noUiSlider.get()[1] + "/\
+Thoma_Pr_CookieMin=" + Thoma_Pr.noUiSlider.get()[0] + "/\
+Thoma_Pr_CookieMax=" + Thoma_Pr.noUiSlider.get()[1] + "/\
+Thoma_T1_CookieMin=" + Thoma_T1.noUiSlider.get()[0] + "/\
+Thoma_T1_CookieMax=" + Thoma_T1.noUiSlider.get()[1] + "/\
+Thoma_T2_CookieMin=" + Thoma_T2.noUiSlider.get()[0] + "/\
+Thoma_T2_CookieMax=" + Thoma_T2.noUiSlider.get()[1] + "/\
+Thoma_T3_CookieMin=" + Thoma_T3.noUiSlider.get()[0] + "/\
+Thoma_T3_CookieMax=" + Thoma_T3.noUiSlider.get()[1] + "/\
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
+}
+document.getElementById('Fix').onclick = function changeContent() {
+  Fix();
+  M.toast({
+    html: 'Fixd',
+    displayLength: '1000'
+  })
+}
+
 
 // ロード系
 function CharacterLoad() {
