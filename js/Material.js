@@ -1,4 +1,5 @@
 const Sleep = () => {
+  ThomaLoad();
   Sangonomiya_KokomiLoad();
   Raiden_ShogunLoad();
   Kujou_SaraLoad();
@@ -48,6 +49,124 @@ httpObj.onload = function(){}
 httpObj.send(null);
 
 
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Thoma  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Thoma_Ex = document.getElementById('Thoma_Ex');
+noUiSlider.create(Thoma_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Thoma_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Thoma_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Thoma_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Thoma_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function ThomaLoad() {
+  Thoma_Ex.noUiSlider.on('update', function (values, handle) {
+    var Thoma_Ex_Min_Volume = "L1toL" + Thoma_Ex.noUiSlider.get()[0];
+    var Thoma_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Thoma_Ex.noUiSlider.get()[0])[Thoma_Ex_Min_Volume]);
+    var Thoma_Ex_Max_Volume = "L1toL" + Thoma_Ex.noUiSlider.get()[1];
+    var Thoma_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Thoma_Ex.noUiSlider.get()[1])[Thoma_Ex_Max_Volume]);
+    var Thoma_Ex_Volume = Thoma_Ex_1toMax_Volume - Thoma_Ex_1toMin_Volume
+    var Thoma_Ex_Book_Volume = Thoma_Ex_Volume / 1000
+    var Thoma_Ex_Mora_Volume = Thoma_Ex_Volume * 0.2
+    document.getElementById('Thoma_Ex_Volume').innerHTML = Thoma_Ex_Volume.toLocaleString();
+    document.getElementById('Thoma_Ex_Book_Volume').innerHTML = Thoma_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Thoma_Ex_Mora_Volume').innerHTML = Thoma_Ex_Mora_Volume.toLocaleString();
+  });
+  Thoma_Pr.noUiSlider.on('update', function (values, handle) {
+    var Thoma_Pr_Min_Volume = "L1toL" + Thoma_Pr.noUiSlider.get()[0];
+    var Thoma_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[0])["P1_" + [Thoma_Pr_Min_Volume]]);
+    var Thoma_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[0])["P2_" + [Thoma_Pr_Min_Volume]]);
+    var Thoma_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[0])["P3_" + [Thoma_Pr_Min_Volume]]);
+    var Thoma_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[0])["P4_" + [Thoma_Pr_Min_Volume]]);
+    var Thoma_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[0])["P5_" + [Thoma_Pr_Min_Volume]]);
+    var Thoma_Pr_Max_Volume = "L1toL" + Thoma_Pr.noUiSlider.get()[1];
+    var Thoma_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[1])["P1_" + [Thoma_Pr_Max_Volume]]);
+    var Thoma_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[1])["P2_" + [Thoma_Pr_Max_Volume]]);
+    var Thoma_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[1])["P3_" + [Thoma_Pr_Max_Volume]]);
+    var Thoma_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[1])["P4_" + [Thoma_Pr_Max_Volume]]);
+    var Thoma_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Thoma_Pr.noUiSlider.get()[1])["P5_" + [Thoma_Pr_Max_Volume]]);
+    var Thoma_Pr_P1 = Thoma_Pr_P1_1toMax_Volume - Thoma_Pr_P1_1toMin_Volume
+    var Thoma_Pr_P2 = Thoma_Pr_P2_1toMax_Volume - Thoma_Pr_P2_1toMin_Volume
+    var Thoma_Pr_P3 = Thoma_Pr_P3_1toMax_Volume - Thoma_Pr_P3_1toMin_Volume
+    var Thoma_Pr_P4 = Thoma_Pr_P4_1toMax_Volume - Thoma_Pr_P4_1toMin_Volume
+    var Thoma_Pr_P5 = Thoma_Pr_P5_1toMax_Volume - Thoma_Pr_P5_1toMin_Volume
+    document.getElementById('Thoma_Pr_P1_Volume').innerHTML = Thoma_Pr_P1;
+    document.getElementById('Thoma_Pr_P2_Volume').innerHTML = Thoma_Pr_P2;
+    document.getElementById('Thoma_Pr_P3_Volume').innerHTML = Thoma_Pr_P3;
+    document.getElementById('Thoma_Pr_P4_Volume').innerHTML = Thoma_Pr_P4;
+    document.getElementById('Thoma_Pr_P5_Volume').innerHTML = Thoma_Pr_P5.toLocaleString();
+  });
+  Thoma_T1.noUiSlider.on('update', function (values, handle) {
+    var Thoma_T1_Min_Volume = "L1toL" + Thoma_T1.noUiSlider.get()[0];
+    var Thoma_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[0])["T1_" + [Thoma_T1_Min_Volume]]);
+    var Thoma_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[0])["T2_" + [Thoma_T1_Min_Volume]]);
+    var Thoma_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[0])["T3_" + [Thoma_T1_Min_Volume]]);
+    var Thoma_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[0])["T4_" + [Thoma_T1_Min_Volume]]);
+    var Thoma_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[0])["T5_" + [Thoma_T1_Min_Volume]]);
+    var Thoma_T1_Max_Volume = "L1toL" + Thoma_T1.noUiSlider.get()[1];
+    var Thoma_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[1])["T1_" + [Thoma_T1_Max_Volume]]);
+    var Thoma_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[1])["T2_" + [Thoma_T1_Max_Volume]]);
+    var Thoma_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[1])["T3_" + [Thoma_T1_Max_Volume]]);
+    var Thoma_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[1])["T4_" + [Thoma_T1_Max_Volume]]);
+    var Thoma_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T1.noUiSlider.get()[1])["T5_" + [Thoma_T1_Max_Volume]]);
+    var Thoma_T1_T1 = Thoma_T1_T1_1toMax_Volume - Thoma_T1_T1_1toMin_Volume
+    var Thoma_T1_T2 = Thoma_T1_T2_1toMax_Volume - Thoma_T1_T2_1toMin_Volume
+    var Thoma_T1_T3 = Thoma_T1_T3_1toMax_Volume - Thoma_T1_T3_1toMin_Volume
+    var Thoma_T1_T4 = Thoma_T1_T4_1toMax_Volume - Thoma_T1_T4_1toMin_Volume
+    var Thoma_T1_T5 = Thoma_T1_T5_1toMax_Volume - Thoma_T1_T5_1toMin_Volume
+    document.getElementById('Thoma_T1_T1_Volume').innerHTML = Thoma_T1_T1;
+    document.getElementById('Thoma_T1_T2_Volume').innerHTML = Thoma_T1_T2;
+    document.getElementById('Thoma_T1_T3_Volume').innerHTML = Thoma_T1_T3;
+    document.getElementById('Thoma_T1_T4_Volume').innerHTML = Thoma_T1_T4;
+    document.getElementById('Thoma_T1_T5_Volume').innerHTML = Thoma_T1_T5.toLocaleString();
+  });
+  Thoma_T2.noUiSlider.on('update', function (values, handle) {
+    var Thoma_T2_Min_Volume = "L1toL" + Thoma_T2.noUiSlider.get()[0];
+    var Thoma_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[0])["T1_" + [Thoma_T2_Min_Volume]]);
+    var Thoma_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[0])["T2_" + [Thoma_T2_Min_Volume]]);
+    var Thoma_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[0])["T3_" + [Thoma_T2_Min_Volume]]);
+    var Thoma_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[0])["T4_" + [Thoma_T2_Min_Volume]]);
+    var Thoma_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[0])["T5_" + [Thoma_T2_Min_Volume]]);
+    var Thoma_T2_Max_Volume = "L1toL" + Thoma_T2.noUiSlider.get()[1];
+    var Thoma_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[1])["T1_" + [Thoma_T2_Max_Volume]]);
+    var Thoma_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[1])["T2_" + [Thoma_T2_Max_Volume]]);
+    var Thoma_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[1])["T3_" + [Thoma_T2_Max_Volume]]);
+    var Thoma_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[1])["T4_" + [Thoma_T2_Max_Volume]]);
+    var Thoma_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T2.noUiSlider.get()[1])["T5_" + [Thoma_T2_Max_Volume]]);
+    var Thoma_T2_T1 = Thoma_T2_T1_1toMax_Volume - Thoma_T2_T1_1toMin_Volume
+    var Thoma_T2_T2 = Thoma_T2_T2_1toMax_Volume - Thoma_T2_T2_1toMin_Volume
+    var Thoma_T2_T3 = Thoma_T2_T3_1toMax_Volume - Thoma_T2_T3_1toMin_Volume
+    var Thoma_T2_T4 = Thoma_T2_T4_1toMax_Volume - Thoma_T2_T4_1toMin_Volume
+    var Thoma_T2_T5 = Thoma_T2_T5_1toMax_Volume - Thoma_T2_T5_1toMin_Volume
+    document.getElementById('Thoma_T2_T1_Volume').innerHTML = Thoma_T2_T1;
+    document.getElementById('Thoma_T2_T2_Volume').innerHTML = Thoma_T2_T2;
+    document.getElementById('Thoma_T2_T3_Volume').innerHTML = Thoma_T2_T3;
+    document.getElementById('Thoma_T2_T4_Volume').innerHTML = Thoma_T2_T4;
+    document.getElementById('Thoma_T2_T5_Volume').innerHTML = Thoma_T2_T5.toLocaleString();
+  });
+  Thoma_T3.noUiSlider.on('update', function (values, handle) {
+    var Thoma_T3_Min_Volume = "L1toL" + Thoma_T3.noUiSlider.get()[0];
+    var Thoma_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[0])["T1_" + [Thoma_T3_Min_Volume]]);
+    var Thoma_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[0])["T2_" + [Thoma_T3_Min_Volume]]);
+    var Thoma_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[0])["T3_" + [Thoma_T3_Min_Volume]]);
+    var Thoma_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[0])["T4_" + [Thoma_T3_Min_Volume]]);
+    var Thoma_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[0])["T5_" + [Thoma_T3_Min_Volume]]);
+    var Thoma_T3_Max_Volume = "L1toL" + Thoma_T3.noUiSlider.get()[1];
+    var Thoma_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[1])["T1_" + [Thoma_T3_Max_Volume]]);
+    var Thoma_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[1])["T2_" + [Thoma_T3_Max_Volume]]);
+    var Thoma_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[1])["T3_" + [Thoma_T3_Max_Volume]]);
+    var Thoma_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[1])["T4_" + [Thoma_T3_Max_Volume]]);
+    var Thoma_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Thoma_T3.noUiSlider.get()[1])["T5_" + [Thoma_T3_Max_Volume]]);
+    var Thoma_T3_T1 = Thoma_T3_T1_1toMax_Volume - Thoma_T3_T1_1toMin_Volume
+    var Thoma_T3_T2 = Thoma_T3_T2_1toMax_Volume - Thoma_T3_T2_1toMin_Volume
+    var Thoma_T3_T3 = Thoma_T3_T3_1toMax_Volume - Thoma_T3_T3_1toMin_Volume
+    var Thoma_T3_T4 = Thoma_T3_T4_1toMax_Volume - Thoma_T3_T4_1toMin_Volume
+    var Thoma_T3_T5 = Thoma_T3_T5_1toMax_Volume - Thoma_T3_T5_1toMin_Volume
+    document.getElementById('Thoma_T3_T1_Volume').innerHTML = Thoma_T3_T1;
+    document.getElementById('Thoma_T3_T2_Volume').innerHTML = Thoma_T3_T2;
+    document.getElementById('Thoma_T3_T3_Volume').innerHTML = Thoma_T3_T3;
+    document.getElementById('Thoma_T3_T4_Volume').innerHTML = Thoma_T3_T4;
+    document.getElementById('Thoma_T3_T5_Volume').innerHTML = Thoma_T3_T5.toLocaleString();
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Thoma  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Sangonomiya_Kokomi  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // var Sangonomiya_Kokomi_Ex = document.getElementById('Sangonomiya_Kokomi_Ex');
 noUiSlider.create(Sangonomiya_Kokomi_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
@@ -5876,6 +5995,18 @@ document.getElementsByClassName("Calculator")[0].addEventListener("click",() => 
 ``// セーブ系
 function Save() {
 var now = new Date().toUTCString();
+document.cookie = "Character5=\
+Thoma_Ex_CookieMin=" + Thoma_Ex.noUiSlider.get()[0] + "/\
+Thoma_Ex_CookieMax=" + Thoma_Ex.noUiSlider.get()[1] + "/\
+Thoma_Pr_CookieMin=" + Thoma_Pr.noUiSlider.get()[0] + "/\
+Thoma_Pr_CookieMax=" + Thoma_Pr.noUiSlider.get()[1] + "/\
+Thoma_T1_CookieMin=" + Thoma_T1.noUiSlider.get()[0] + "/\
+Thoma_T1_CookieMax=" + Thoma_T1.noUiSlider.get()[1] + "/\
+Thoma_T2_CookieMin=" + Thoma_T2.noUiSlider.get()[0] + "/\
+Thoma_T2_CookieMax=" + Thoma_T2.noUiSlider.get()[1] + "/\
+Thoma_T3_CookieMin=" + Thoma_T3.noUiSlider.get()[0] + "/\
+Thoma_T3_CookieMax=" + Thoma_T3.noUiSlider.get()[1] + "/\
+; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
 document.cookie = "Character4=\
 Sangonomiya_Kokomi_Ex_CookieMin=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[0] + "/\
 Sangonomiya_Kokomi_Ex_CookieMax=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[1] + "/\
@@ -6446,13 +6577,19 @@ document.getElementById('Save').onclick = function changeContent() {
 
 // ロード系
 function CharacterLoad() {
-  var Character_Cookies = document.cookie.replace(/.*?;?\s?Character\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*)\//i, '$1$2$3$4');
+  var Character_Cookies = document.cookie.replace(/.*?;?\s?Character\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*);\sCharacter\d=(.*)\//i, '$1$2$3$4$5');
   var Character_CookieLoad = Character_Cookies.split( '/' )
   for (var i = 0; i < Character_CookieLoad.length; i++) {
     var Character_CookieLoading = Character_CookieLoad[i].split( '=' );
     var Character_CookieName = Character_CookieLoading[0];
     window[Character_CookieName] = Character_CookieLoading[1];
   }
+  try{Thoma_Ex.noUiSlider.set([Thoma_Ex_CookieMin, Thoma_Ex_CookieMax]);} catch(e){}
+  try{Thoma_Ex.noUiSlider.set([Thoma_Ex_CookieMin, Thoma_Ex_CookieMax]);} catch(e){}
+  try{Thoma_Pr.noUiSlider.set([Thoma_Pr_CookieMin, Thoma_Pr_CookieMax]);} catch(e){}
+  try{Thoma_T1.noUiSlider.set([Thoma_T1_CookieMin, Thoma_T1_CookieMax]);} catch(e){}
+  try{Thoma_T2.noUiSlider.set([Thoma_T2_CookieMin, Thoma_T2_CookieMax]);} catch(e){}
+  try{Thoma_T3.noUiSlider.set([Thoma_T3_CookieMin, Thoma_T3_CookieMax]);} catch(e){}
   try{Sangonomiya_Kokomi_Ex.noUiSlider.set([Sangonomiya_Kokomi_Ex_CookieMin, Sangonomiya_Kokomi_Ex_CookieMax]);} catch(e){}
   try{Sangonomiya_Kokomi_Ex.noUiSlider.set([Sangonomiya_Kokomi_Ex_CookieMin, Sangonomiya_Kokomi_Ex_CookieMax]);} catch(e){}
   try{Sangonomiya_Kokomi_Pr.noUiSlider.set([Sangonomiya_Kokomi_Pr_CookieMin, Sangonomiya_Kokomi_Pr_CookieMax]);} catch(e){}
@@ -6818,4 +6955,4 @@ document.getElementById('Load').onclick = function changeContent() {
 }
 
 // 苦肉のエラー回避
-setTimeout(Sleep, 1000);
+setTimeout(Sleep, 1500);
