@@ -15,7 +15,6 @@
 </div>
 
 <div class="SaveAndLoad">
-  <a onclick="M.toast" class="btn" id="Fix">Fix</a>
   <a onclick="M.toast" class="btn" id="Save">Save</a>
   <a onclick="M.toast" class="btn" id="Load">Load</a>
 </div>
@@ -30,13 +29,147 @@
     </ul>
   </div>
   <div id="Character" class="col s12">
+    <table class="Arataki_Itto">
+      <tbody>
+        <tr>
+          <th colspan="25">荒瀧一斗</th>
+        </tr>
+        <tr>
+          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/Original/Character2\itto_gacha_splash.png"></td>
+          <td width="12%" colspan="3" class="textleft">レベル</td>
+          <td width="16%" colspan="4"><div id="Arataki_Itto_Ex" class="noUiSlider"></div></td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Arataki_Itto Ex_Volume" id="Arataki_Itto_Ex_Volume"></span></td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Arataki_Itto" id="Arataki_Itto_Ex_Book_Volume"></span> 点</td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Arataki_Itto" id="Arataki_Itto_Ex_Mora_Volume"></span></td>
+          <td width="4%" colspan="1"></td>
+          <td width="8%" colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="textleft">突破段階</td>
+          <td colspan="4"><div id="Arataki_Itto_Pr" class="noUiSlider"></div></td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Prithiva_Topaz_Gemstone.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Topaz" id="Arataki_Itto_Pr_P1_Volume"></span> 点</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Riftborn_Regalia.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Riftborn_Regalia" id="Arataki_Itto_Pr_P2_Volume"></span> 個</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Onikabuto.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Onikabuto" id="Arataki_Itto_Pr_P3_Volume"></span> 個</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Slime_Concentrate.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Slime_Concentrate Ascension" id="Arataki_Itto_Pr_P4_Volume"></span> 点</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Mora Ascension" id="Arataki_Itto_Pr_P5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="3" class="textleft">天賦</td>
+          <td colspan="2" class="textleft">通常攻撃</td>
+          <td colspan="4"><div id="Arataki_Itto_T1" class="noUiSlider"></div></td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Elegance.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Elegance" id="Arataki_Itto_T1_T1_Volume"></span> 点</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Slime_Concentrate.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Slime_Concentrate Talent" id="Arataki_Itto_T1_T2_Volume"></span> 点</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Ashen_Heart.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Ashen_Heart" id="Arataki_Itto_T1_T3_Volume"></span> 個</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Crown_of_Insight" id="Arataki_Itto_T1_T4_Volume"></span> 個</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Mora Talent" id="Arataki_Itto_T1_T5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="textleft">元素スキル</td>
+          <td colspan="4"><div id="Arataki_Itto_T2" class="noUiSlider"></div></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Elegance" id="Arataki_Itto_T2_T1_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Slime_Concentrate Talent" id="Arataki_Itto_T2_T2_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Ashen_Heart" id="Arataki_Itto_T2_T3_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Crown_of_Insight" id="Arataki_Itto_T2_T4_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Mora Talent" id="Arataki_Itto_T2_T5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="textleft">元素爆発</td>
+          <td colspan="4"><div id="Arataki_Itto_T3" class="noUiSlider"></div></td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Elegance" id="Arataki_Itto_T3_T1_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Slime_Concentrate Talent" id="Arataki_Itto_T3_T2_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Ashen_Heart" id="Arataki_Itto_T3_T3_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Crown_of_Insight" id="Arataki_Itto_T3_T4_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Arataki_Itto Mora Talent" id="Arataki_Itto_T3_T5_Volume"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="Gorou">
+      <tbody>
+        <tr>
+          <th colspan="25">ゴロー</th>
+        </tr>
+        <tr>
+          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/Original/Character2\gorou_gacha_splash.png"></td>
+          <td width="12%" colspan="3" class="textleft">レベル</td>
+          <td width="16%" colspan="4"><div id="Gorou_Ex" class="noUiSlider"></div></td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Gorou Ex_Volume" id="Gorou_Ex_Volume"></span></td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Gorou" id="Gorou_Ex_Book_Volume"></span> 点</td>
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td width="8%" colspan="2" class="textright"><span class="Gorou" id="Gorou_Ex_Mora_Volume"></span></td>
+          <td width="4%" colspan="1"></td>
+          <td width="8%" colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="textleft">突破段階</td>
+          <td colspan="4"><div id="Gorou_Pr" class="noUiSlider"></div></td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Prithiva_Topaz_Gemstone.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Topaz" id="Gorou_Pr_P1_Volume"></span> 点</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Perpetual_Heart.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Perpetual_Heart" id="Gorou_Pr_P2_Volume"></span> 個</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Sango_Pearl.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Sango_Pearl" id="Gorou_Pr_P3_Volume"></span> 個</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Spectral_Nucleus.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Spectral_Nucleus Ascension" id="Gorou_Pr_P4_Volume"></span> 点</td>
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Mora Ascension" id="Gorou_Pr_P5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="3" class="textleft">天賦</td>
+          <td colspan="2" class="textleft">通常攻撃</td>
+          <td colspan="4"><div id="Gorou_T1" class="noUiSlider"></div></td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Light.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Light" id="Gorou_T1_T1_Volume"></span> 点</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Spectral_Nucleus.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Spectral_Nucleus Talent" id="Gorou_T1_T2_Volume"></span> 点</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Molten_Moment.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Molten_Moment" id="Gorou_T1_T3_Volume"></span> 個</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Crown_of_Insight" id="Gorou_T1_T4_Volume"></span> 個</td>
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td colspan="2" class="textright"><span class="Gorou Mora Talent" id="Gorou_T1_T5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="textleft">元素スキル</td>
+          <td colspan="4"><div id="Gorou_T2" class="noUiSlider"></div></td>
+          <td colspan="2" class="textright"><span class="Gorou Light" id="Gorou_T2_T1_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Gorou Spectral_Nucleus Talent" id="Gorou_T2_T2_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Gorou Molten_Moment" id="Gorou_T2_T3_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Gorou Crown_of_Insight" id="Gorou_T2_T4_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Gorou Mora Talent" id="Gorou_T2_T5_Volume"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="textleft">元素爆発</td>
+          <td colspan="4"><div id="Gorou_T3" class="noUiSlider"></div></td>
+          <td colspan="2" class="textright"><span class="Gorou Light" id="Gorou_T3_T1_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Gorou Spectral_Nucleus Talent" id="Gorou_T3_T2_Volume"></span> 点</td>
+          <td colspan="2" class="textright"><span class="Gorou Molten_Moment" id="Gorou_T3_T3_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Gorou Crown_of_Insight" id="Gorou_T3_T4_Volume"></span> 個</td>
+          <td colspan="2" class="textright"><span class="Gorou Mora Talent" id="Gorou_T3_T5_Volume"></span></td>
+        </tr>
+      </tbody>
+    </table>
     <table class="Thoma">
       <tbody>
         <tr>
           <th colspan="25">トーマ</th>
         </tr>
         <tr>
-          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/Original/Character2\thoma_gacha_splash.png"></td>
+          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/Original/Character/Character_Thoma_Portrait.webp"></td>
           <td width="12%" colspan="3" class="textleft">レベル</td>
           <td width="16%" colspan="4"><div id="Thoma_Ex" class="noUiSlider"></div></td>
           <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>
@@ -3110,7 +3243,11 @@
               <img class="miniicon" src="../image/Small/Item/Item_Storm_Beads.webp"></i><input placeholder="雷霆の念珠" id="Storm_Beads" value="0" type="number" class="validate">
             </div>
           </td>
-          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Riftborn_Regalia.webp"></i><input placeholder="獣域王器" id="Riftborn_Regalia" value="0" type="number" class="validate">
+            </div>
+          </td>
           <td width="8%" colspan="1"></td>
           <td width="8%" colspan="1"></td>
           <td width="8%" colspan="1"></td>
@@ -3686,6 +3823,8 @@
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dew_of_Repudiation_Volume"></span> 個</td>
           <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Storm_Beads.webp"></td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Storm_Beads_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Riftborn_Regalia.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Riftborn_Regalia_Volume"></span> 個</td>
         </tr>
         <tr>
           <td width="8.6%" colspan="2" class="textleft">所持数</td>
@@ -3695,6 +3834,7 @@
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Smoldering_Pearl_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dew_of_Repudiation_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Storm_Beads_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Riftborn_Regalia_Volume"></span> 個</td>
         </tr>
         <tr>
           <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
@@ -3704,6 +3844,7 @@
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Smoldering_Pearl_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dew_of_Repudiation_Volume"></span> 個</td>
           <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Storm_Beads_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Riftborn_Regalia_Volume"></span> 個</td>
         </tr>
         <tr>
           <th colspan="23">Common Material</th>
