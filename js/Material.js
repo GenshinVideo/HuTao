@@ -1,3 +1,5 @@
+var Version = "20211130"
+
 const Sleep = () => {
   Arataki_IttoLoad();
   GorouLoad();
@@ -6240,602 +6242,581 @@ document.getElementsByClassName("Calculator")[0].addEventListener("click",() => 
   Calculator();
 }, false);
 
-
-``// セーブ系
+// セーブ系
 function Save() {
-var now = new Date().toUTCString();
-document.cookie = "Character5=\
-Arataki_Itto_Ex_CookieMin=" + Arataki_Itto_Ex.noUiSlider.get()[0] + "/\
-Arataki_Itto_Ex_CookieMax=" + Arataki_Itto_Ex.noUiSlider.get()[1] + "/\
-Arataki_Itto_Pr_CookieMin=" + Arataki_Itto_Pr.noUiSlider.get()[0] + "/\
-Arataki_Itto_Pr_CookieMax=" + Arataki_Itto_Pr.noUiSlider.get()[1] + "/\
-Arataki_Itto_T1_CookieMin=" + Arataki_Itto_T1.noUiSlider.get()[0] + "/\
-Arataki_Itto_T1_CookieMax=" + Arataki_Itto_T1.noUiSlider.get()[1] + "/\
-Arataki_Itto_T2_CookieMin=" + Arataki_Itto_T2.noUiSlider.get()[0] + "/\
-Arataki_Itto_T2_CookieMax=" + Arataki_Itto_T2.noUiSlider.get()[1] + "/\
-Arataki_Itto_T3_CookieMin=" + Arataki_Itto_T3.noUiSlider.get()[0] + "/\
-Arataki_Itto_T3_CookieMax=" + Arataki_Itto_T3.noUiSlider.get()[1] + "/\
-Gorou_Ex_CookieMin=" + Gorou_Ex.noUiSlider.get()[0] + "/\
-Gorou_Ex_CookieMax=" + Gorou_Ex.noUiSlider.get()[1] + "/\
-Gorou_Pr_CookieMin=" + Gorou_Pr.noUiSlider.get()[0] + "/\
-Gorou_Pr_CookieMax=" + Gorou_Pr.noUiSlider.get()[1] + "/\
-Gorou_T1_CookieMin=" + Gorou_T1.noUiSlider.get()[0] + "/\
-Gorou_T1_CookieMax=" + Gorou_T1.noUiSlider.get()[1] + "/\
-Gorou_T2_CookieMin=" + Gorou_T2.noUiSlider.get()[0] + "/\
-Gorou_T2_CookieMax=" + Gorou_T2.noUiSlider.get()[1] + "/\
-Gorou_T3_CookieMin=" + Gorou_T3.noUiSlider.get()[0] + "/\
-Gorou_T3_CookieMax=" + Gorou_T3.noUiSlider.get()[1] + "/\
-Thoma_Ex_CookieMin=" + Thoma_Ex.noUiSlider.get()[0] + "/\
-Thoma_Ex_CookieMax=" + Thoma_Ex.noUiSlider.get()[1] + "/\
-Thoma_Pr_CookieMin=" + Thoma_Pr.noUiSlider.get()[0] + "/\
-Thoma_Pr_CookieMax=" + Thoma_Pr.noUiSlider.get()[1] + "/\
-Thoma_T1_CookieMin=" + Thoma_T1.noUiSlider.get()[0] + "/\
-Thoma_T1_CookieMax=" + Thoma_T1.noUiSlider.get()[1] + "/\
-Thoma_T2_CookieMin=" + Thoma_T2.noUiSlider.get()[0] + "/\
-Thoma_T2_CookieMax=" + Thoma_T2.noUiSlider.get()[1] + "/\
-Thoma_T3_CookieMin=" + Thoma_T3.noUiSlider.get()[0] + "/\
-Thoma_T3_CookieMax=" + Thoma_T3.noUiSlider.get()[1] + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-document.cookie = "Character4=\
-Sangonomiya_Kokomi_Ex_CookieMin=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[0] + "/\
-Sangonomiya_Kokomi_Ex_CookieMax=" + Sangonomiya_Kokomi_Ex.noUiSlider.get()[1] + "/\
-Sangonomiya_Kokomi_Pr_CookieMin=" + Sangonomiya_Kokomi_Pr.noUiSlider.get()[0] + "/\
-Sangonomiya_Kokomi_Pr_CookieMax=" + Sangonomiya_Kokomi_Pr.noUiSlider.get()[1] + "/\
-Sangonomiya_Kokomi_T1_CookieMin=" + Sangonomiya_Kokomi_T1.noUiSlider.get()[0] + "/\
-Sangonomiya_Kokomi_T1_CookieMax=" + Sangonomiya_Kokomi_T1.noUiSlider.get()[1] + "/\
-Sangonomiya_Kokomi_T2_CookieMin=" + Sangonomiya_Kokomi_T2.noUiSlider.get()[0] + "/\
-Sangonomiya_Kokomi_T2_CookieMax=" + Sangonomiya_Kokomi_T2.noUiSlider.get()[1] + "/\
-Sangonomiya_Kokomi_T3_CookieMin=" + Sangonomiya_Kokomi_T3.noUiSlider.get()[0] + "/\
-Sangonomiya_Kokomi_T3_CookieMax=" + Sangonomiya_Kokomi_T3.noUiSlider.get()[1] + "/\
-Raiden_Shogun_Ex_CookieMin=" + Raiden_Shogun_Ex.noUiSlider.get()[0] + "/\
-Raiden_Shogun_Ex_CookieMax=" + Raiden_Shogun_Ex.noUiSlider.get()[1] + "/\
-Raiden_Shogun_Pr_CookieMin=" + Raiden_Shogun_Pr.noUiSlider.get()[0] + "/\
-Raiden_Shogun_Pr_CookieMax=" + Raiden_Shogun_Pr.noUiSlider.get()[1] + "/\
-Raiden_Shogun_T1_CookieMin=" + Raiden_Shogun_T1.noUiSlider.get()[0] + "/\
-Raiden_Shogun_T1_CookieMax=" + Raiden_Shogun_T1.noUiSlider.get()[1] + "/\
-Raiden_Shogun_T2_CookieMin=" + Raiden_Shogun_T2.noUiSlider.get()[0] + "/\
-Raiden_Shogun_T2_CookieMax=" + Raiden_Shogun_T2.noUiSlider.get()[1] + "/\
-Raiden_Shogun_T3_CookieMin=" + Raiden_Shogun_T3.noUiSlider.get()[0] + "/\
-Raiden_Shogun_T3_CookieMax=" + Raiden_Shogun_T3.noUiSlider.get()[1] + "/\
-Kujou_Sara_Ex_CookieMin=" + Kujou_Sara_Ex.noUiSlider.get()[0] + "/\
-Kujou_Sara_Ex_CookieMax=" + Kujou_Sara_Ex.noUiSlider.get()[1] + "/\
-Kujou_Sara_Pr_CookieMin=" + Kujou_Sara_Pr.noUiSlider.get()[0] + "/\
-Kujou_Sara_Pr_CookieMax=" + Kujou_Sara_Pr.noUiSlider.get()[1] + "/\
-Kujou_Sara_T1_CookieMin=" + Kujou_Sara_T1.noUiSlider.get()[0] + "/\
-Kujou_Sara_T1_CookieMax=" + Kujou_Sara_T1.noUiSlider.get()[1] + "/\
-Kujou_Sara_T2_CookieMin=" + Kujou_Sara_T2.noUiSlider.get()[0] + "/\
-Kujou_Sara_T2_CookieMax=" + Kujou_Sara_T2.noUiSlider.get()[1] + "/\
-Kujou_Sara_T3_CookieMin=" + Kujou_Sara_T3.noUiSlider.get()[0] + "/\
-Kujou_Sara_T3_CookieMax=" + Kujou_Sara_T3.noUiSlider.get()[1] + "/\
-Yoimiya_Ex_CookieMin=" + Yoimiya_Ex.noUiSlider.get()[0] + "/\
-Yoimiya_Ex_CookieMax=" + Yoimiya_Ex.noUiSlider.get()[1] + "/\
-Yoimiya_Pr_CookieMin=" + Yoimiya_Pr.noUiSlider.get()[0] + "/\
-Yoimiya_Pr_CookieMax=" + Yoimiya_Pr.noUiSlider.get()[1] + "/\
-Yoimiya_T1_CookieMin=" + Yoimiya_T1.noUiSlider.get()[0] + "/\
-Yoimiya_T1_CookieMax=" + Yoimiya_T1.noUiSlider.get()[1] + "/\
-Yoimiya_T2_CookieMin=" + Yoimiya_T2.noUiSlider.get()[0] + "/\
-Yoimiya_T2_CookieMax=" + Yoimiya_T2.noUiSlider.get()[1] + "/\
-Yoimiya_T3_CookieMin=" + Yoimiya_T3.noUiSlider.get()[0] + "/\
-Yoimiya_T3_CookieMax=" + Yoimiya_T3.noUiSlider.get()[1] + "/\
-Sayu_Ex_CookieMin=" + Sayu_Ex.noUiSlider.get()[0] + "/\
-Sayu_Ex_CookieMax=" + Sayu_Ex.noUiSlider.get()[1] + "/\
-Sayu_Pr_CookieMin=" + Sayu_Pr.noUiSlider.get()[0] + "/\
-Sayu_Pr_CookieMax=" + Sayu_Pr.noUiSlider.get()[1] + "/\
-Sayu_T1_CookieMin=" + Sayu_T1.noUiSlider.get()[0] + "/\
-Sayu_T1_CookieMax=" + Sayu_T1.noUiSlider.get()[1] + "/\
-Sayu_T2_CookieMin=" + Sayu_T2.noUiSlider.get()[0] + "/\
-Sayu_T2_CookieMax=" + Sayu_T2.noUiSlider.get()[1] + "/\
-Sayu_T3_CookieMin=" + Sayu_T3.noUiSlider.get()[0] + "/\
-Sayu_T3_CookieMax=" + Sayu_T3.noUiSlider.get()[1] + "/\
-Kamisato_Ayaka_Ex_CookieMin=" + Kamisato_Ayaka_Ex.noUiSlider.get()[0] + "/\
-Kamisato_Ayaka_Ex_CookieMax=" + Kamisato_Ayaka_Ex.noUiSlider.get()[1] + "/\
-Kamisato_Ayaka_Pr_CookieMin=" + Kamisato_Ayaka_Pr.noUiSlider.get()[0] + "/\
-Kamisato_Ayaka_Pr_CookieMax=" + Kamisato_Ayaka_Pr.noUiSlider.get()[1] + "/\
-Kamisato_Ayaka_T1_CookieMin=" + Kamisato_Ayaka_T1.noUiSlider.get()[0] + "/\
-Kamisato_Ayaka_T1_CookieMax=" + Kamisato_Ayaka_T1.noUiSlider.get()[1] + "/\
-Kamisato_Ayaka_T2_CookieMin=" + Kamisato_Ayaka_T2.noUiSlider.get()[0] + "/\
-Kamisato_Ayaka_T2_CookieMax=" + Kamisato_Ayaka_T2.noUiSlider.get()[1] + "/\
-Kamisato_Ayaka_T3_CookieMin=" + Kamisato_Ayaka_T3.noUiSlider.get()[0] + "/\
-Kamisato_Ayaka_T3_CookieMax=" + Kamisato_Ayaka_T3.noUiSlider.get()[1] + "/\
-Kaedehara_Kazuha_Ex_CookieMin=" + Kaedehara_Kazuha_Ex.noUiSlider.get()[0] + "/\
-Kaedehara_Kazuha_Ex_CookieMax=" + Kaedehara_Kazuha_Ex.noUiSlider.get()[1] + "/\
-Kaedehara_Kazuha_Pr_CookieMin=" + Kaedehara_Kazuha_Pr.noUiSlider.get()[0] + "/\
-Kaedehara_Kazuha_Pr_CookieMax=" + Kaedehara_Kazuha_Pr.noUiSlider.get()[1] + "/\
-Kaedehara_Kazuha_T1_CookieMin=" + Kaedehara_Kazuha_T1.noUiSlider.get()[0] + "/\
-Kaedehara_Kazuha_T1_CookieMax=" + Kaedehara_Kazuha_T1.noUiSlider.get()[1] + "/\
-Kaedehara_Kazuha_T2_CookieMin=" + Kaedehara_Kazuha_T2.noUiSlider.get()[0] + "/\
-Kaedehara_Kazuha_T2_CookieMax=" + Kaedehara_Kazuha_T2.noUiSlider.get()[1] + "/\
-Kaedehara_Kazuha_T3_CookieMin=" + Kaedehara_Kazuha_T3.noUiSlider.get()[0] + "/\
-Kaedehara_Kazuha_T3_CookieMax=" + Kaedehara_Kazuha_T3.noUiSlider.get()[1] + "/\
-Eula_Ex_CookieMin=" + Eula_Ex.noUiSlider.get()[0] + "/\
-Eula_Ex_CookieMax=" + Eula_Ex.noUiSlider.get()[1] + "/\
-Eula_Pr_CookieMin=" + Eula_Pr.noUiSlider.get()[0] + "/\
-Eula_Pr_CookieMax=" + Eula_Pr.noUiSlider.get()[1] + "/\
-Eula_T1_CookieMin=" + Eula_T1.noUiSlider.get()[0] + "/\
-Eula_T1_CookieMax=" + Eula_T1.noUiSlider.get()[1] + "/\
-Eula_T2_CookieMin=" + Eula_T2.noUiSlider.get()[0] + "/\
-Eula_T2_CookieMax=" + Eula_T2.noUiSlider.get()[1] + "/\
-Eula_T3_CookieMin=" + Eula_T3.noUiSlider.get()[0] + "/\
-Eula_T3_CookieMax=" + Eula_T3.noUiSlider.get()[1] + "/\
-Yanfei_Ex_CookieMin=" + Yanfei_Ex.noUiSlider.get()[0] + "/\
-Yanfei_Ex_CookieMax=" + Yanfei_Ex.noUiSlider.get()[1] + "/\
-Yanfei_Pr_CookieMin=" + Yanfei_Pr.noUiSlider.get()[0] + "/\
-Yanfei_Pr_CookieMax=" + Yanfei_Pr.noUiSlider.get()[1] + "/\
-Yanfei_T1_CookieMin=" + Yanfei_T1.noUiSlider.get()[0] + "/\
-Yanfei_T1_CookieMax=" + Yanfei_T1.noUiSlider.get()[1] + "/\
-Yanfei_T2_CookieMin=" + Yanfei_T2.noUiSlider.get()[0] + "/\
-Yanfei_T2_CookieMax=" + Yanfei_T2.noUiSlider.get()[1] + "/\
-Yanfei_T3_CookieMin=" + Yanfei_T3.noUiSlider.get()[0] + "/\
-Yanfei_T3_CookieMax=" + Yanfei_T3.noUiSlider.get()[1] + "/\
-Rosaria_Ex_CookieMin=" + Rosaria_Ex.noUiSlider.get()[0] + "/\
-Rosaria_Ex_CookieMax=" + Rosaria_Ex.noUiSlider.get()[1] + "/\
-Rosaria_Pr_CookieMin=" + Rosaria_Pr.noUiSlider.get()[0] + "/\
-Rosaria_Pr_CookieMax=" + Rosaria_Pr.noUiSlider.get()[1] + "/\
-Rosaria_T1_CookieMin=" + Rosaria_T1.noUiSlider.get()[0] + "/\
-Rosaria_T1_CookieMax=" + Rosaria_T1.noUiSlider.get()[1] + "/\
-Rosaria_T2_CookieMin=" + Rosaria_T2.noUiSlider.get()[0] + "/\
-Rosaria_T2_CookieMax=" + Rosaria_T2.noUiSlider.get()[1] + "/\
-Rosaria_T3_CookieMin=" + Rosaria_T3.noUiSlider.get()[0] + "/\
-Rosaria_T3_CookieMax=" + Rosaria_T3.noUiSlider.get()[1] + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-document.cookie = "Character3=\
-HuTao_Ex_CookieMin=" + HuTao_Ex.noUiSlider.get()[0] + "/\
-HuTao_Ex_CookieMax=" + HuTao_Ex.noUiSlider.get()[1] + "/\
-HuTao_Pr_CookieMin=" + HuTao_Pr.noUiSlider.get()[0] + "/\
-HuTao_Pr_CookieMax=" + HuTao_Pr.noUiSlider.get()[1] + "/\
-HuTao_T1_CookieMin=" + HuTao_T1.noUiSlider.get()[0] + "/\
-HuTao_T1_CookieMax=" + HuTao_T1.noUiSlider.get()[1] + "/\
-HuTao_T2_CookieMin=" + HuTao_T2.noUiSlider.get()[0] + "/\
-HuTao_T2_CookieMax=" + HuTao_T2.noUiSlider.get()[1] + "/\
-HuTao_T3_CookieMin=" + HuTao_T3.noUiSlider.get()[0] + "/\
-HuTao_T3_CookieMax=" + HuTao_T3.noUiSlider.get()[1] + "/\
-Xiao_Ex_CookieMin=" + Xiao_Ex.noUiSlider.get()[0] + "/\
-Xiao_Ex_CookieMax=" + Xiao_Ex.noUiSlider.get()[1] + "/\
-Xiao_Pr_CookieMin=" + Xiao_Pr.noUiSlider.get()[0] + "/\
-Xiao_Pr_CookieMax=" + Xiao_Pr.noUiSlider.get()[1] + "/\
-Xiao_T1_CookieMin=" + Xiao_T1.noUiSlider.get()[0] + "/\
-Xiao_T1_CookieMax=" + Xiao_T1.noUiSlider.get()[1] + "/\
-Xiao_T2_CookieMin=" + Xiao_T2.noUiSlider.get()[0] + "/\
-Xiao_T2_CookieMax=" + Xiao_T2.noUiSlider.get()[1] + "/\
-Xiao_T3_CookieMin=" + Xiao_T3.noUiSlider.get()[0] + "/\
-Xiao_T3_CookieMax=" + Xiao_T3.noUiSlider.get()[1] + "/\
-Ganyu_Ex_CookieMin=" + Ganyu_Ex.noUiSlider.get()[0] + "/\
-Ganyu_Ex_CookieMax=" + Ganyu_Ex.noUiSlider.get()[1] + "/\
-Ganyu_Pr_CookieMin=" + Ganyu_Pr.noUiSlider.get()[0] + "/\
-Ganyu_Pr_CookieMax=" + Ganyu_Pr.noUiSlider.get()[1] + "/\
-Ganyu_T1_CookieMin=" + Ganyu_T1.noUiSlider.get()[0] + "/\
-Ganyu_T1_CookieMax=" + Ganyu_T1.noUiSlider.get()[1] + "/\
-Ganyu_T2_CookieMin=" + Ganyu_T2.noUiSlider.get()[0] + "/\
-Ganyu_T2_CookieMax=" + Ganyu_T2.noUiSlider.get()[1] + "/\
-Ganyu_T3_CookieMin=" + Ganyu_T3.noUiSlider.get()[0] + "/\
-Ganyu_T3_CookieMax=" + Ganyu_T3.noUiSlider.get()[1] + "/\
-Albedo_Ex_CookieMin=" + Albedo_Ex.noUiSlider.get()[0] + "/\
-Albedo_Ex_CookieMax=" + Albedo_Ex.noUiSlider.get()[1] + "/\
-Albedo_Pr_CookieMin=" + Albedo_Pr.noUiSlider.get()[0] + "/\
-Albedo_Pr_CookieMax=" + Albedo_Pr.noUiSlider.get()[1] + "/\
-Albedo_T1_CookieMin=" + Albedo_T1.noUiSlider.get()[0] + "/\
-Albedo_T1_CookieMax=" + Albedo_T1.noUiSlider.get()[1] + "/\
-Albedo_T2_CookieMin=" + Albedo_T2.noUiSlider.get()[0] + "/\
-Albedo_T2_CookieMax=" + Albedo_T2.noUiSlider.get()[1] + "/\
-Albedo_T3_CookieMin=" + Albedo_T3.noUiSlider.get()[0] + "/\
-Albedo_T3_CookieMax=" + Albedo_T3.noUiSlider.get()[1] + "/\
-Zhongli_Ex_CookieMin=" + Zhongli_Ex.noUiSlider.get()[0] + "/\
-Zhongli_Ex_CookieMax=" + Zhongli_Ex.noUiSlider.get()[1] + "/\
-Zhongli_Pr_CookieMin=" + Zhongli_Pr.noUiSlider.get()[0] + "/\
-Zhongli_Pr_CookieMax=" + Zhongli_Pr.noUiSlider.get()[1] + "/\
-Zhongli_T1_CookieMin=" + Zhongli_T1.noUiSlider.get()[0] + "/\
-Zhongli_T1_CookieMax=" + Zhongli_T1.noUiSlider.get()[1] + "/\
-Zhongli_T2_CookieMin=" + Zhongli_T2.noUiSlider.get()[0] + "/\
-Zhongli_T2_CookieMax=" + Zhongli_T2.noUiSlider.get()[1] + "/\
-Zhongli_T3_CookieMin=" + Zhongli_T3.noUiSlider.get()[0] + "/\
-Zhongli_T3_CookieMax=" + Zhongli_T3.noUiSlider.get()[1] + "/\
-Xinyan_Ex_CookieMin=" + Xinyan_Ex.noUiSlider.get()[0] + "/\
-Xinyan_Ex_CookieMax=" + Xinyan_Ex.noUiSlider.get()[1] + "/\
-Xinyan_Pr_CookieMin=" + Xinyan_Pr.noUiSlider.get()[0] + "/\
-Xinyan_Pr_CookieMax=" + Xinyan_Pr.noUiSlider.get()[1] + "/\
-Xinyan_T1_CookieMin=" + Xinyan_T1.noUiSlider.get()[0] + "/\
-Xinyan_T1_CookieMax=" + Xinyan_T1.noUiSlider.get()[1] + "/\
-Xinyan_T2_CookieMin=" + Xinyan_T2.noUiSlider.get()[0] + "/\
-Xinyan_T2_CookieMax=" + Xinyan_T2.noUiSlider.get()[1] + "/\
-Xinyan_T3_CookieMin=" + Xinyan_T3.noUiSlider.get()[0] + "/\
-Xinyan_T3_CookieMax=" + Xinyan_T3.noUiSlider.get()[1] + "/\
-Tartaglia_Ex_CookieMin=" + Tartaglia_Ex.noUiSlider.get()[0] + "/\
-Tartaglia_Ex_CookieMax=" + Tartaglia_Ex.noUiSlider.get()[1] + "/\
-Tartaglia_Pr_CookieMin=" + Tartaglia_Pr.noUiSlider.get()[0] + "/\
-Tartaglia_Pr_CookieMax=" + Tartaglia_Pr.noUiSlider.get()[1] + "/\
-Tartaglia_T1_CookieMin=" + Tartaglia_T1.noUiSlider.get()[0] + "/\
-Tartaglia_T1_CookieMax=" + Tartaglia_T1.noUiSlider.get()[1] + "/\
-Tartaglia_T2_CookieMin=" + Tartaglia_T2.noUiSlider.get()[0] + "/\
-Tartaglia_T2_CookieMax=" + Tartaglia_T2.noUiSlider.get()[1] + "/\
-Tartaglia_T3_CookieMin=" + Tartaglia_T3.noUiSlider.get()[0] + "/\
-Tartaglia_T3_CookieMax=" + Tartaglia_T3.noUiSlider.get()[1] + "/\
-Diona_Ex_CookieMin=" + Diona_Ex.noUiSlider.get()[0] + "/\
-Diona_Ex_CookieMax=" + Diona_Ex.noUiSlider.get()[1] + "/\
-Diona_Pr_CookieMin=" + Diona_Pr.noUiSlider.get()[0] + "/\
-Diona_Pr_CookieMax=" + Diona_Pr.noUiSlider.get()[1] + "/\
-Diona_T1_CookieMin=" + Diona_T1.noUiSlider.get()[0] + "/\
-Diona_T1_CookieMax=" + Diona_T1.noUiSlider.get()[1] + "/\
-Diona_T2_CookieMin=" + Diona_T2.noUiSlider.get()[0] + "/\
-Diona_T2_CookieMax=" + Diona_T2.noUiSlider.get()[1] + "/\
-Diona_T3_CookieMin=" + Diona_T3.noUiSlider.get()[0] + "/\
-Diona_T3_CookieMax=" + Diona_T3.noUiSlider.get()[1] + "/\
-Klee_Ex_CookieMin=" + Klee_Ex.noUiSlider.get()[0] + "/\
-Klee_Ex_CookieMax=" + Klee_Ex.noUiSlider.get()[1] + "/\
-Klee_Pr_CookieMin=" + Klee_Pr.noUiSlider.get()[0] + "/\
-Klee_Pr_CookieMax=" + Klee_Pr.noUiSlider.get()[1] + "/\
-Klee_T1_CookieMin=" + Klee_T1.noUiSlider.get()[0] + "/\
-Klee_T1_CookieMax=" + Klee_T1.noUiSlider.get()[1] + "/\
-Klee_T2_CookieMin=" + Klee_T2.noUiSlider.get()[0] + "/\
-Klee_T2_CookieMax=" + Klee_T2.noUiSlider.get()[1] + "/\
-Klee_T3_CookieMin=" + Klee_T3.noUiSlider.get()[0] + "/\
-Klee_T3_CookieMax=" + Klee_T3.noUiSlider.get()[1] + "/\
-Venti_Ex_CookieMin=" + Venti_Ex.noUiSlider.get()[0] + "/\
-Venti_Ex_CookieMax=" + Venti_Ex.noUiSlider.get()[1] + "/\
-Venti_Pr_CookieMin=" + Venti_Pr.noUiSlider.get()[0] + "/\
-Venti_Pr_CookieMax=" + Venti_Pr.noUiSlider.get()[1] + "/\
-Venti_T1_CookieMin=" + Venti_T1.noUiSlider.get()[0] + "/\
-Venti_T1_CookieMax=" + Venti_T1.noUiSlider.get()[1] + "/\
-Venti_T2_CookieMin=" + Venti_T2.noUiSlider.get()[0] + "/\
-Venti_T2_CookieMax=" + Venti_T2.noUiSlider.get()[1] + "/\
-Venti_T3_CookieMin=" + Venti_T3.noUiSlider.get()[0] + "/\
-Venti_T3_CookieMax=" + Venti_T3.noUiSlider.get()[1] + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-document.cookie = "Character2=\
-Keqing_Ex_CookieMin=" + Keqing_Ex.noUiSlider.get()[0] + "/\
-Keqing_Ex_CookieMax=" + Keqing_Ex.noUiSlider.get()[1] + "/\
-Keqing_Pr_CookieMin=" + Keqing_Pr.noUiSlider.get()[0] + "/\
-Keqing_Pr_CookieMax=" + Keqing_Pr.noUiSlider.get()[1] + "/\
-Keqing_T1_CookieMin=" + Keqing_T1.noUiSlider.get()[0] + "/\
-Keqing_T1_CookieMax=" + Keqing_T1.noUiSlider.get()[1] + "/\
-Keqing_T2_CookieMin=" + Keqing_T2.noUiSlider.get()[0] + "/\
-Keqing_T2_CookieMax=" + Keqing_T2.noUiSlider.get()[1] + "/\
-Keqing_T3_CookieMin=" + Keqing_T3.noUiSlider.get()[0] + "/\
-Keqing_T3_CookieMax=" + Keqing_T3.noUiSlider.get()[1] + "/\
-Mona_Ex_CookieMin=" + Mona_Ex.noUiSlider.get()[0] + "/\
-Mona_Ex_CookieMax=" + Mona_Ex.noUiSlider.get()[1] + "/\
-Mona_Pr_CookieMin=" + Mona_Pr.noUiSlider.get()[0] + "/\
-Mona_Pr_CookieMax=" + Mona_Pr.noUiSlider.get()[1] + "/\
-Mona_T1_CookieMin=" + Mona_T1.noUiSlider.get()[0] + "/\
-Mona_T1_CookieMax=" + Mona_T1.noUiSlider.get()[1] + "/\
-Mona_T2_CookieMin=" + Mona_T2.noUiSlider.get()[0] + "/\
-Mona_T2_CookieMax=" + Mona_T2.noUiSlider.get()[1] + "/\
-Mona_T3_CookieMin=" + Mona_T3.noUiSlider.get()[0] + "/\
-Mona_T3_CookieMax=" + Mona_T3.noUiSlider.get()[1] + "/\
-Qiqi_Ex_CookieMin=" + Qiqi_Ex.noUiSlider.get()[0] + "/\
-Qiqi_Ex_CookieMax=" + Qiqi_Ex.noUiSlider.get()[1] + "/\
-Qiqi_Pr_CookieMin=" + Qiqi_Pr.noUiSlider.get()[0] + "/\
-Qiqi_Pr_CookieMax=" + Qiqi_Pr.noUiSlider.get()[1] + "/\
-Qiqi_T1_CookieMin=" + Qiqi_T1.noUiSlider.get()[0] + "/\
-Qiqi_T1_CookieMax=" + Qiqi_T1.noUiSlider.get()[1] + "/\
-Qiqi_T2_CookieMin=" + Qiqi_T2.noUiSlider.get()[0] + "/\
-Qiqi_T2_CookieMax=" + Qiqi_T2.noUiSlider.get()[1] + "/\
-Qiqi_T3_CookieMin=" + Qiqi_T3.noUiSlider.get()[0] + "/\
-Qiqi_T3_CookieMax=" + Qiqi_T3.noUiSlider.get()[1] + "/\
-Diluc_Ex_CookieMin=" + Diluc_Ex.noUiSlider.get()[0] + "/\
-Diluc_Ex_CookieMax=" + Diluc_Ex.noUiSlider.get()[1] + "/\
-Diluc_Pr_CookieMin=" + Diluc_Pr.noUiSlider.get()[0] + "/\
-Diluc_Pr_CookieMax=" + Diluc_Pr.noUiSlider.get()[1] + "/\
-Diluc_T1_CookieMin=" + Diluc_T1.noUiSlider.get()[0] + "/\
-Diluc_T1_CookieMax=" + Diluc_T1.noUiSlider.get()[1] + "/\
-Diluc_T2_CookieMin=" + Diluc_T2.noUiSlider.get()[0] + "/\
-Diluc_T2_CookieMax=" + Diluc_T2.noUiSlider.get()[1] + "/\
-Diluc_T3_CookieMin=" + Diluc_T3.noUiSlider.get()[0] + "/\
-Diluc_T3_CookieMax=" + Diluc_T3.noUiSlider.get()[1] + "/\
-Jean_Ex_CookieMin=" + Jean_Ex.noUiSlider.get()[0] + "/\
-Jean_Ex_CookieMax=" + Jean_Ex.noUiSlider.get()[1] + "/\
-Jean_Pr_CookieMin=" + Jean_Pr.noUiSlider.get()[0] + "/\
-Jean_Pr_CookieMax=" + Jean_Pr.noUiSlider.get()[1] + "/\
-Jean_T1_CookieMin=" + Jean_T1.noUiSlider.get()[0] + "/\
-Jean_T1_CookieMax=" + Jean_T1.noUiSlider.get()[1] + "/\
-Jean_T2_CookieMin=" + Jean_T2.noUiSlider.get()[0] + "/\
-Jean_T2_CookieMax=" + Jean_T2.noUiSlider.get()[1] + "/\
-Jean_T3_CookieMin=" + Jean_T3.noUiSlider.get()[0] + "/\
-Jean_T3_CookieMax=" + Jean_T3.noUiSlider.get()[1] + "/\
-Sucrose_Ex_CookieMin=" + Sucrose_Ex.noUiSlider.get()[0] + "/\
-Sucrose_Ex_CookieMax=" + Sucrose_Ex.noUiSlider.get()[1] + "/\
-Sucrose_Pr_CookieMin=" + Sucrose_Pr.noUiSlider.get()[0] + "/\
-Sucrose_Pr_CookieMax=" + Sucrose_Pr.noUiSlider.get()[1] + "/\
-Sucrose_T1_CookieMin=" + Sucrose_T1.noUiSlider.get()[0] + "/\
-Sucrose_T1_CookieMax=" + Sucrose_T1.noUiSlider.get()[1] + "/\
-Sucrose_T2_CookieMin=" + Sucrose_T2.noUiSlider.get()[0] + "/\
-Sucrose_T2_CookieMax=" + Sucrose_T2.noUiSlider.get()[1] + "/\
-Sucrose_T3_CookieMin=" + Sucrose_T3.noUiSlider.get()[0] + "/\
-Sucrose_T3_CookieMax=" + Sucrose_T3.noUiSlider.get()[1] + "/\
-Chongyun_Ex_CookieMin=" + Chongyun_Ex.noUiSlider.get()[0] + "/\
-Chongyun_Ex_CookieMax=" + Chongyun_Ex.noUiSlider.get()[1] + "/\
-Chongyun_Pr_CookieMin=" + Chongyun_Pr.noUiSlider.get()[0] + "/\
-Chongyun_Pr_CookieMax=" + Chongyun_Pr.noUiSlider.get()[1] + "/\
-Chongyun_T1_CookieMin=" + Chongyun_T1.noUiSlider.get()[0] + "/\
-Chongyun_T1_CookieMax=" + Chongyun_T1.noUiSlider.get()[1] + "/\
-Chongyun_T2_CookieMin=" + Chongyun_T2.noUiSlider.get()[0] + "/\
-Chongyun_T2_CookieMax=" + Chongyun_T2.noUiSlider.get()[1] + "/\
-Chongyun_T3_CookieMin=" + Chongyun_T3.noUiSlider.get()[0] + "/\
-Chongyun_T3_CookieMax=" + Chongyun_T3.noUiSlider.get()[1] + "/\
-Noelle_Ex_CookieMin=" + Noelle_Ex.noUiSlider.get()[0] + "/\
-Noelle_Ex_CookieMax=" + Noelle_Ex.noUiSlider.get()[1] + "/\
-Noelle_Pr_CookieMin=" + Noelle_Pr.noUiSlider.get()[0] + "/\
-Noelle_Pr_CookieMax=" + Noelle_Pr.noUiSlider.get()[1] + "/\
-Noelle_T1_CookieMin=" + Noelle_T1.noUiSlider.get()[0] + "/\
-Noelle_T1_CookieMax=" + Noelle_T1.noUiSlider.get()[1] + "/\
-Noelle_T2_CookieMin=" + Noelle_T2.noUiSlider.get()[0] + "/\
-Noelle_T2_CookieMax=" + Noelle_T2.noUiSlider.get()[1] + "/\
-Noelle_T3_CookieMin=" + Noelle_T3.noUiSlider.get()[0] + "/\
-Noelle_T3_CookieMax=" + Noelle_T3.noUiSlider.get()[1] + "/\
-Bennett_Ex_CookieMin=" + Bennett_Ex.noUiSlider.get()[0] + "/\
-Bennett_Ex_CookieMax=" + Bennett_Ex.noUiSlider.get()[1] + "/\
-Bennett_Pr_CookieMin=" + Bennett_Pr.noUiSlider.get()[0] + "/\
-Bennett_Pr_CookieMax=" + Bennett_Pr.noUiSlider.get()[1] + "/\
-Bennett_T1_CookieMin=" + Bennett_T1.noUiSlider.get()[0] + "/\
-Bennett_T1_CookieMax=" + Bennett_T1.noUiSlider.get()[1] + "/\
-Bennett_T2_CookieMin=" + Bennett_T2.noUiSlider.get()[0] + "/\
-Bennett_T2_CookieMax=" + Bennett_T2.noUiSlider.get()[1] + "/\
-Bennett_T3_CookieMin=" + Bennett_T3.noUiSlider.get()[0] + "/\
-Bennett_T3_CookieMax=" + Bennett_T3.noUiSlider.get()[1] + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-document.cookie = "Character1=\
-Fischl_Ex_CookieMin=" + Fischl_Ex.noUiSlider.get()[0] + "/\
-Fischl_Ex_CookieMax=" + Fischl_Ex.noUiSlider.get()[1] + "/\
-Fischl_Pr_CookieMin=" + Fischl_Pr.noUiSlider.get()[0] + "/\
-Fischl_Pr_CookieMax=" + Fischl_Pr.noUiSlider.get()[1] + "/\
-Fischl_T1_CookieMin=" + Fischl_T1.noUiSlider.get()[0] + "/\
-Fischl_T1_CookieMax=" + Fischl_T1.noUiSlider.get()[1] + "/\
-Fischl_T2_CookieMin=" + Fischl_T2.noUiSlider.get()[0] + "/\
-Fischl_T2_CookieMax=" + Fischl_T2.noUiSlider.get()[1] + "/\
-Fischl_T3_CookieMin=" + Fischl_T3.noUiSlider.get()[0] + "/\
-Fischl_T3_CookieMax=" + Fischl_T3.noUiSlider.get()[1] + "/\
-Ningguang_Ex_CookieMin=" + Ningguang_Ex.noUiSlider.get()[0] + "/\
-Ningguang_Ex_CookieMax=" + Ningguang_Ex.noUiSlider.get()[1] + "/\
-Ningguang_Pr_CookieMin=" + Ningguang_Pr.noUiSlider.get()[0] + "/\
-Ningguang_Pr_CookieMax=" + Ningguang_Pr.noUiSlider.get()[1] + "/\
-Ningguang_T1_CookieMin=" + Ningguang_T1.noUiSlider.get()[0] + "/\
-Ningguang_T1_CookieMax=" + Ningguang_T1.noUiSlider.get()[1] + "/\
-Ningguang_T2_CookieMin=" + Ningguang_T2.noUiSlider.get()[0] + "/\
-Ningguang_T2_CookieMax=" + Ningguang_T2.noUiSlider.get()[1] + "/\
-Ningguang_T3_CookieMin=" + Ningguang_T3.noUiSlider.get()[0] + "/\
-Ningguang_T3_CookieMax=" + Ningguang_T3.noUiSlider.get()[1] + "/\
-Xingqiu_Ex_CookieMin=" + Xingqiu_Ex.noUiSlider.get()[0] + "/\
-Xingqiu_Ex_CookieMax=" + Xingqiu_Ex.noUiSlider.get()[1] + "/\
-Xingqiu_Pr_CookieMin=" + Xingqiu_Pr.noUiSlider.get()[0] + "/\
-Xingqiu_Pr_CookieMax=" + Xingqiu_Pr.noUiSlider.get()[1] + "/\
-Xingqiu_T1_CookieMin=" + Xingqiu_T1.noUiSlider.get()[0] + "/\
-Xingqiu_T1_CookieMax=" + Xingqiu_T1.noUiSlider.get()[1] + "/\
-Xingqiu_T2_CookieMin=" + Xingqiu_T2.noUiSlider.get()[0] + "/\
-Xingqiu_T2_CookieMax=" + Xingqiu_T2.noUiSlider.get()[1] + "/\
-Xingqiu_T3_CookieMin=" + Xingqiu_T3.noUiSlider.get()[0] + "/\
-Xingqiu_T3_CookieMax=" + Xingqiu_T3.noUiSlider.get()[1] + "/\
-Beidou_Ex_CookieMin=" + Beidou_Ex.noUiSlider.get()[0] + "/\
-Beidou_Ex_CookieMax=" + Beidou_Ex.noUiSlider.get()[1] + "/\
-Beidou_Pr_CookieMin=" + Beidou_Pr.noUiSlider.get()[0] + "/\
-Beidou_Pr_CookieMax=" + Beidou_Pr.noUiSlider.get()[1] + "/\
-Beidou_T1_CookieMin=" + Beidou_T1.noUiSlider.get()[0] + "/\
-Beidou_T1_CookieMax=" + Beidou_T1.noUiSlider.get()[1] + "/\
-Beidou_T2_CookieMin=" + Beidou_T2.noUiSlider.get()[0] + "/\
-Beidou_T2_CookieMax=" + Beidou_T2.noUiSlider.get()[1] + "/\
-Beidou_T3_CookieMin=" + Beidou_T3.noUiSlider.get()[0] + "/\
-Beidou_T3_CookieMax=" + Beidou_T3.noUiSlider.get()[1] + "/\
-Xiangling_Ex_CookieMin=" + Xiangling_Ex.noUiSlider.get()[0] + "/\
-Xiangling_Ex_CookieMax=" + Xiangling_Ex.noUiSlider.get()[1] + "/\
-Xiangling_Pr_CookieMin=" + Xiangling_Pr.noUiSlider.get()[0] + "/\
-Xiangling_Pr_CookieMax=" + Xiangling_Pr.noUiSlider.get()[1] + "/\
-Xiangling_T1_CookieMin=" + Xiangling_T1.noUiSlider.get()[0] + "/\
-Xiangling_T1_CookieMax=" + Xiangling_T1.noUiSlider.get()[1] + "/\
-Xiangling_T2_CookieMin=" + Xiangling_T2.noUiSlider.get()[0] + "/\
-Xiangling_T2_CookieMax=" + Xiangling_T2.noUiSlider.get()[1] + "/\
-Xiangling_T3_CookieMin=" + Xiangling_T3.noUiSlider.get()[0] + "/\
-Xiangling_T3_CookieMax=" + Xiangling_T3.noUiSlider.get()[1] + "/\
-Razor_Ex_CookieMin=" + Razor_Ex.noUiSlider.get()[0] + "/\
-Razor_Ex_CookieMax=" + Razor_Ex.noUiSlider.get()[1] + "/\
-Razor_Pr_CookieMin=" + Razor_Pr.noUiSlider.get()[0] + "/\
-Razor_Pr_CookieMax=" + Razor_Pr.noUiSlider.get()[1] + "/\
-Razor_T1_CookieMin=" + Razor_T1.noUiSlider.get()[0] + "/\
-Razor_T1_CookieMax=" + Razor_T1.noUiSlider.get()[1] + "/\
-Razor_T2_CookieMin=" + Razor_T2.noUiSlider.get()[0] + "/\
-Razor_T2_CookieMax=" + Razor_T2.noUiSlider.get()[1] + "/\
-Razor_T3_CookieMin=" + Razor_T3.noUiSlider.get()[0] + "/\
-Razor_T3_CookieMax=" + Razor_T3.noUiSlider.get()[1] + "/\
-Barbara_Ex_CookieMin=" + Barbara_Ex.noUiSlider.get()[0] + "/\
-Barbara_Ex_CookieMax=" + Barbara_Ex.noUiSlider.get()[1] + "/\
-Barbara_Pr_CookieMin=" + Barbara_Pr.noUiSlider.get()[0] + "/\
-Barbara_Pr_CookieMax=" + Barbara_Pr.noUiSlider.get()[1] + "/\
-Barbara_T1_CookieMin=" + Barbara_T1.noUiSlider.get()[0] + "/\
-Barbara_T1_CookieMax=" + Barbara_T1.noUiSlider.get()[1] + "/\
-Barbara_T2_CookieMin=" + Barbara_T2.noUiSlider.get()[0] + "/\
-Barbara_T2_CookieMax=" + Barbara_T2.noUiSlider.get()[1] + "/\
-Barbara_T3_CookieMin=" + Barbara_T3.noUiSlider.get()[0] + "/\
-Barbara_T3_CookieMax=" + Barbara_T3.noUiSlider.get()[1] + "/\
-Lisa_Ex_CookieMin=" + Lisa_Ex.noUiSlider.get()[0] + "/\
-Lisa_Ex_CookieMax=" + Lisa_Ex.noUiSlider.get()[1] + "/\
-Lisa_Pr_CookieMin=" + Lisa_Pr.noUiSlider.get()[0] + "/\
-Lisa_Pr_CookieMax=" + Lisa_Pr.noUiSlider.get()[1] + "/\
-Lisa_T1_CookieMin=" + Lisa_T1.noUiSlider.get()[0] + "/\
-Lisa_T1_CookieMax=" + Lisa_T1.noUiSlider.get()[1] + "/\
-Lisa_T2_CookieMin=" + Lisa_T2.noUiSlider.get()[0] + "/\
-Lisa_T2_CookieMax=" + Lisa_T2.noUiSlider.get()[1] + "/\
-Lisa_T3_CookieMin=" + Lisa_T3.noUiSlider.get()[0] + "/\
-Lisa_T3_CookieMax=" + Lisa_T3.noUiSlider.get()[1] + "/\
-Kaeya_Ex_CookieMin=" + Kaeya_Ex.noUiSlider.get()[0] + "/\
-Kaeya_Ex_CookieMax=" + Kaeya_Ex.noUiSlider.get()[1] + "/\
-Kaeya_Pr_CookieMin=" + Kaeya_Pr.noUiSlider.get()[0] + "/\
-Kaeya_Pr_CookieMax=" + Kaeya_Pr.noUiSlider.get()[1] + "/\
-Kaeya_T1_CookieMin=" + Kaeya_T1.noUiSlider.get()[0] + "/\
-Kaeya_T1_CookieMax=" + Kaeya_T1.noUiSlider.get()[1] + "/\
-Kaeya_T2_CookieMin=" + Kaeya_T2.noUiSlider.get()[0] + "/\
-Kaeya_T2_CookieMax=" + Kaeya_T2.noUiSlider.get()[1] + "/\
-Kaeya_T3_CookieMin=" + Kaeya_T3.noUiSlider.get()[0] + "/\
-Kaeya_T3_CookieMax=" + Kaeya_T3.noUiSlider.get()[1] + "/\
-Amber_Ex_CookieMin=" + Amber_Ex.noUiSlider.get()[0] + "/\
-Amber_Ex_CookieMax=" + Amber_Ex.noUiSlider.get()[1] + "/\
-Amber_Pr_CookieMin=" + Amber_Pr.noUiSlider.get()[0] + "/\
-Amber_Pr_CookieMax=" + Amber_Pr.noUiSlider.get()[1] + "/\
-Amber_T1_CookieMin=" + Amber_T1.noUiSlider.get()[0] + "/\
-Amber_T1_CookieMax=" + Amber_T1.noUiSlider.get()[1] + "/\
-Amber_T2_CookieMin=" + Amber_T2.noUiSlider.get()[0] + "/\
-Amber_T2_CookieMax=" + Amber_T2.noUiSlider.get()[1] + "/\
-Amber_T3_CookieMin=" + Amber_T3.noUiSlider.get()[0] + "/\
-Amber_T3_CookieMax=" + Amber_T3.noUiSlider.get()[1] + "/\
-Aloy_Ex_CookieMin=" + Aloy_Ex.noUiSlider.get()[0] + "/\
-Aloy_Ex_CookieMax=" + Aloy_Ex.noUiSlider.get()[1] + "/\
-Aloy_Pr_CookieMin=" + Aloy_Pr.noUiSlider.get()[0] + "/\
-Aloy_Pr_CookieMax=" + Aloy_Pr.noUiSlider.get()[1] + "/\
-Aloy_T1_CookieMin=" + Aloy_T1.noUiSlider.get()[0] + "/\
-Aloy_T1_CookieMax=" + Aloy_T1.noUiSlider.get()[1] + "/\
-Aloy_T2_CookieMin=" + Aloy_T2.noUiSlider.get()[0] + "/\
-Aloy_T2_CookieMax=" + Aloy_T2.noUiSlider.get()[1] + "/\
-Aloy_T3_CookieMin=" + Aloy_T3.noUiSlider.get()[0] + "/\
-Aloy_T3_CookieMax=" + Aloy_T3.noUiSlider.get()[1] + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-
-document.cookie = "Inventory1=\
-Heros_Wit_Cookie=" + document.getElementById("Heros_Wit").value + "/\
-Adventurers_Experience_Cookie=" + document.getElementById("Adventurers_Experience").value + "/\
-Wanderers_Advice_Cookie=" + document.getElementById("Wanderers_Advice").value + "/\
-Mora_Cookie=" + document.getElementById("Mora").value + "/\
-Slime_Concentrate_Cookie=" + document.getElementById("Slime_Concentrate").value + "/\
-Slime_Secretions_Cookie=" + document.getElementById("Slime_Secretions").value + "/\
-Slime_Condensate_Cookie=" + document.getElementById("Slime_Condensate").value + "/\
-Ominous_Mask_Cookie=" + document.getElementById("Ominous_Mask").value + "/\
-Stained_Mask_Cookie=" + document.getElementById("Stained_Mask").value + "/\
-Damaged_Mask_Cookie=" + document.getElementById("Damaged_Mask").value + "/\
-Forbidden_Curse_Scroll_Cookie=" + document.getElementById("Forbidden_Curse_Scroll").value + "/\
-Sealed_Scroll_Cookie=" + document.getElementById("Sealed_Scroll").value + "/\
-Divining_Scroll_Cookie=" + document.getElementById("Divining_Scroll").value + "/\
-Weathered_Arrowhead_Cookie=" + document.getElementById("Weathered_Arrowhead").value + "/\
-Sharp_Arrowhead_Cookie=" + document.getElementById("Sharp_Arrowhead").value + "/\
-Firm_Arrowhead_Cookie=" + document.getElementById("Firm_Arrowhead").value + "/\
-Lieutenants_Insignia_Cookie=" + document.getElementById("Lieutenants_Insignia").value + "/\
-Sergeants_Insignia_Cookie=" + document.getElementById("Sergeants_Insignia").value + "/\
-Recruits_Insignia_Cookie=" + document.getElementById("Recruits_Insignia").value + "/\
-Golden_Raven_Insignia_Cookie=" + document.getElementById("Golden_Raven_Insignia").value + "/\
-Silver_Raven_Insignia_Cookie=" + document.getElementById("Silver_Raven_Insignia").value + "/\
-Treasure_Hoarder_Insignia_Cookie=" + document.getElementById("Treasure_Hoarder_Insignia").value + "/\
-Energy_Nectar_Cookie=" + document.getElementById("Energy_Nectar").value + "/\
-Shimmering_Nectar_Cookie=" + document.getElementById("Shimmering_Nectar").value + "/\
-Whopperflower_Nectar_Cookie=" + document.getElementById("Whopperflower_Nectar").value + "/\
-Famed_Handguard_Cookie=" + document.getElementById("Famed_Handguard").value + "/\
-Kageuchi_Handguard_Cookie=" + document.getElementById("Kageuchi_Handguard").value + "/\
-Old_Handguard_Cookie=" + document.getElementById("Old_Handguard").value + "/\
-Spectral_Nucleus_Cookie=" + document.getElementById("Spectral_Nucleus").value + "/\
-Spectral_Heart_Cookie=" + document.getElementById("Spectral_Heart").value + "/\
-Spectral_Husk_Cookie=" + document.getElementById("Spectral_Husk").value + "/\
-Dvalins_Plume_Cookie=" + document.getElementById("Dvalins_Plume").value + "/\
-Dvalins_Claw_Cookie=" + document.getElementById("Dvalins_Claw").value + "/\
-Dvalins_Sigh_Cookie=" + document.getElementById("Dvalins_Sigh").value + "/\
-Tail_of_Boreas_Cookie=" + document.getElementById("Tail_of_Boreas").value + "/\
-Ring_of_Boreas_Cookie=" + document.getElementById("Ring_of_Boreas").value + "/\
-Spirit_Locket_of_Boreas_Cookie=" + document.getElementById("Spirit_Locket_of_Boreas").value + "/\
-Tusk_of_Monoceros_Caeli_Cookie=" + document.getElementById("Tusk_of_Monoceros_Caeli").value + "/\
-Shard_of_a_Foul_Legacy_Cookie=" + document.getElementById("Shard_of_a_Foul_Legacy").value + "/\
-Shadow_of_the_Warrior_Cookie=" + document.getElementById("Shadow_of_the_Warrior").value + "/\
-Dragon_Lords_Crown_Cookie=" + document.getElementById("Dragon_Lords_Crown").value + "/\
-Bloodjade_Branch_Cookie=" + document.getElementById("Bloodjade_Branch").value + "/\
-Gilded_Scale_Cookie=" + document.getElementById("Gilded_Scale").value + "/\
-Molten_Moment_Cookie=" + document.getElementById("Molten_Moment").value + "/\
-Hellfire_Butterfly_Cookie=" + document.getElementById("Hellfire_Butterfly").value + "/\
-Ashen_Heart_Cookie=" + document.getElementById("Ashen_Heart").value + "/\
-Hurricane_Seed_Cookie=" + document.getElementById("Hurricane_Seed").value + "/\
-Lightning_Prism_Cookie=" + document.getElementById("Lightning_Prism").value + "/\
-Basalt_Pillar_Cookie=" + document.getElementById("Basalt_Pillar").value + "/\
-Hoarfrost_Core_Cookie=" + document.getElementById("Hoarfrost_Core").value + "/\
-Everflame_Seed_Cookie=" + document.getElementById("Everflame_Seed").value + "/\
-Cleansing_Heart_Cookie=" + document.getElementById("Cleansing_Heart").value + "/\
-Juvenile_Jade_Cookie=" + document.getElementById("Juvenile_Jade").value + "/\
-Crystalline_Bloom_Cookie=" + document.getElementById("Crystalline_Bloom").value + "/\
-Marionette_Core_Cookie=" + document.getElementById("Marionette_Core").value + "/\
-Perpetual_Heart_Cookie=" + document.getElementById("Perpetual_Heart").value + "/\
-Smoldering_Pearl_Cookie=" + document.getElementById("Smoldering_Pearl").value + "/\
-Dew_of_Repudiation_Cookie=" + document.getElementById("Dew_of_Repudiation").value + "/\
-Storm_Beads_Cookie=" + document.getElementById("Storm_Beads").value + "/\
-Riftborn_Regalia_Cookie=" + document.getElementById("Riftborn_Regalia").value + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-
-document.cookie = "Inventory2=\
-Agate_Gemstone_Cookie=" + document.getElementById("Agate_Gemstone").value + "/\
-Agate_Chunk_Cookie=" + document.getElementById("Agate_Chunk").value + "/\
-Agate_Fragment_Cookie=" + document.getElementById("Agate_Fragment").value + "/\
-Agate_Sliver_Cookie=" + document.getElementById("Agate_Sliver").value + "/\
-Lazurite_Gemstone_Cookie=" + document.getElementById("Lazurite_Gemstone").value + "/\
-Lazurite_Chunk_Cookie=" + document.getElementById("Lazurite_Chunk").value + "/\
-Lazurite_Fragment_Cookie=" + document.getElementById("Lazurite_Fragment").value + "/\
-Lazurite_Sliver_Cookie=" + document.getElementById("Lazurite_Sliver").value + "/\
-Amethyst_Gemstone_Cookie=" + document.getElementById("Amethyst_Gemstone").value + "/\
-Amethyst_Chunk_Cookie=" + document.getElementById("Amethyst_Chunk").value + "/\
-Amethyst_Fragment_Cookie=" + document.getElementById("Amethyst_Fragment").value + "/\
-Amethyst_Sliver_Cookie=" + document.getElementById("Amethyst_Sliver").value + "/\
-Turquoise_Gemstone_Cookie=" + document.getElementById("Turquoise_Gemstone").value + "/\
-Turquoise_Chunk_Cookie=" + document.getElementById("Turquoise_Chunk").value + "/\
-Turquoise_Fragment_Cookie=" + document.getElementById("Turquoise_Fragment").value + "/\
-Turquoise_Sliver_Cookie=" + document.getElementById("Turquoise_Sliver").value + "/\
-Jade_Gemstone_Cookie=" + document.getElementById("Jade_Gemstone").value + "/\
-Jade_Chunk_Cookie=" + document.getElementById("Jade_Chunk").value + "/\
-Jade_Fragment_Cookie=" + document.getElementById("Jade_Fragment").value + "/\
-Jade_Sliver_Cookie=" + document.getElementById("Jade_Sliver").value + "/\
-Topaz_Gemstone_Cookie=" + document.getElementById("Topaz_Gemstone").value + "/\
-Topaz_Chunk_Cookie=" + document.getElementById("Topaz_Chunk").value + "/\
-Topaz_Fragment_Cookie=" + document.getElementById("Topaz_Fragment").value + "/\
-Topaz_Sliver_Cookie=" + document.getElementById("Topaz_Sliver").value + "/\
-Emerald_Gemstone_Cookie=" + document.getElementById("Emerald_Gemstone").value + "/\
-Emerald_Chunk_Cookie=" + document.getElementById("Emerald_Chunk").value + "/\
-Emerald_Fragment_Cookie=" + document.getElementById("Emerald_Fragment").value + "/\
-Emerald_Sliver_Cookie=" + document.getElementById("Emerald_Sliver").value + "/\
-Philosophies_of_Freedom_Cookie=" + document.getElementById("Philosophies_of_Freedom").value + "/\
-Guide_to_Freedom_Cookie=" + document.getElementById("Guide_to_Freedom").value + "/\
-Teachings_of_Freedom_Cookie=" + document.getElementById("Teachings_of_Freedom").value + "/\
-Philosophies_of_Ballad_Cookie=" + document.getElementById("Philosophies_of_Ballad").value + "/\
-Guide_to_Ballad_Cookie=" + document.getElementById("Guide_to_Ballad").value + "/\
-Teachings_of_Ballad_Cookie=" + document.getElementById("Teachings_of_Ballad").value + "/\
-Philosophies_of_Resistance_Cookie=" + document.getElementById("Philosophies_of_Resistance").value + "/\
-Guide_to_Resistance_Cookie=" + document.getElementById("Guide_to_Resistance").value + "/\
-Teachings_of_Resistance_Cookie=" + document.getElementById("Teachings_of_Resistance").value + "/\
-Philosophies_of_Prosperity_Cookie=" + document.getElementById("Philosophies_of_Prosperity").value + "/\
-Guide_to_Prosperity_Cookie=" + document.getElementById("Guide_to_Prosperity").value + "/\
-Teachings_of_Prosperity_Cookie=" + document.getElementById("Teachings_of_Prosperity").value + "/\
-Philosophies_of_Diligence_Cookie=" + document.getElementById("Philosophies_of_Diligence").value + "/\
-Guide_to_Diligence_Cookie=" + document.getElementById("Guide_to_Diligence").value + "/\
-Teachings_of_Diligence_Cookie=" + document.getElementById("Teachings_of_Diligence").value + "/\
-Philosophies_of_Gold_Cookie=" + document.getElementById("Philosophies_of_Gold").value + "/\
-Guide_to_Gold_Cookie=" + document.getElementById("Guide_to_Gold").value + "/\
-Teachings_of_Gold_Cookie=" + document.getElementById("Teachings_of_Gold").value + "/\
-Philosophies_of_Transience_Cookie=" + document.getElementById("Philosophies_of_Transience").value + "/\
-Guide_to_Transience_Cookie=" + document.getElementById("Guide_to_Transience").value + "/\
-Teachings_of_Transience_Cookie=" + document.getElementById("Teachings_of_Transience").value + "/\
-Philosophies_of_Elegance_Cookie=" + document.getElementById("Philosophies_of_Elegance").value + "/\
-Guide_to_Elegance_Cookie=" + document.getElementById("Guide_to_Elegance").value + "/\
-Teachings_of_Elegance_Cookie=" + document.getElementById("Teachings_of_Elegance").value + "/\
-Philosophies_of_Light_Cookie=" + document.getElementById("Philosophies_of_Light").value + "/\
-Guide_to_Light_Cookie=" + document.getElementById("Guide_to_Light").value + "/\
-Teachings_of_Light_Cookie=" + document.getElementById("Teachings_of_Light").value + "/\
-Crown_of_Insight_Cookie=" + document.getElementById("Crown_of_Insight").value + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-
-document.cookie = "Inventory3=\
-Calla_Lily_Cookie=" + document.getElementById("Calla_Lily").value + "/\
-Wolfhook_Cookie=" + document.getElementById("Wolfhook").value + "/\
-Valberry_Cookie=" + document.getElementById("Valberry").value + "/\
-Cecilia_Cookie=" + document.getElementById("Cecilia").value + "/\
-Windwheel_Aster_Cookie=" + document.getElementById("Windwheel_Aster").value + "/\
-Philanemo_Mushroom_Cookie=" + document.getElementById("Philanemo_Mushroom").value + "/\
-Jueyun_Chili_Cookie=" + document.getElementById("Jueyun_Chili").value + "/\
-Noctilucous_Jade_Cookie=" + document.getElementById("Noctilucous_Jade").value + "/\
-Silk_Flower_Cookie=" + document.getElementById("Silk_Flower").value + "/\
-Glaze_Lily_Cookie=" + document.getElementById("Glaze_Lily").value + "/\
-Qingxin_Cookie=" + document.getElementById("Qingxin").value + "/\
-Starconch_Cookie=" + document.getElementById("Starconch").value + "/\
-Violetgrass_Cookie=" + document.getElementById("Violetgrass").value + "/\
-Small_Lamp_Grass_Cookie=" + document.getElementById("Small_Lamp_Grass").value + "/\
-Dandelion_Seed_Cookie=" + document.getElementById("Dandelion_Seed").value + "/\
-Cor_Lapis_Cookie=" + document.getElementById("Cor_Lapis").value + "/\
-Onikabuto_Cookie=" + document.getElementById("Onikabuto").value + "/\
-Sakura_Bloom_Cookie=" + document.getElementById("Sakura_Bloom").value + "/\
-Crystal_Marrow_Cookie=" + document.getElementById("Crystal_Marrow").value + "/\
-Dendrobium_Cookie=" + document.getElementById("Dendrobium").value + "/\
-Naku_Weed_Cookie=" + document.getElementById("Naku_Weed").value + "/\
-Sea_Ganoderma_Cookie=" + document.getElementById("Sea_Ganoderma").value + "/\
-Sango_Pearl_Cookie=" + document.getElementById("Sango_Pearl").value + "/\
-Amakumo_Fruit_Cookie=" + document.getElementById("Amakumo_Fruit").value + "/\
-Fluorescent_Fungus_Cookie=" + document.getElementById("Fluorescent_Fungus").value + "/\
-; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
+  localStorage.setItem("_Version", Version);
+  localStorage.setItem("Arataki_Itto_Ex_Min", Arataki_Itto_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Arataki_Itto_Ex_Max", Arataki_Itto_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Arataki_Itto_Pr_Min", Arataki_Itto_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Arataki_Itto_Pr_Max", Arataki_Itto_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Arataki_Itto_T1_Min", Arataki_Itto_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Arataki_Itto_T1_Max", Arataki_Itto_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Arataki_Itto_T2_Min", Arataki_Itto_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Arataki_Itto_T2_Max", Arataki_Itto_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Arataki_Itto_T3_Min", Arataki_Itto_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Arataki_Itto_T3_Max", Arataki_Itto_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Gorou_Ex_Min", Gorou_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Gorou_Ex_Max", Gorou_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Gorou_Pr_Min", Gorou_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Gorou_Pr_Max", Gorou_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Gorou_T1_Min", Gorou_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Gorou_T1_Max", Gorou_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Gorou_T2_Min", Gorou_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Gorou_T2_Max", Gorou_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Gorou_T3_Min", Gorou_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Gorou_T3_Max", Gorou_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Thoma_Ex_Min", Thoma_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Thoma_Ex_Max", Thoma_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Thoma_Pr_Min", Thoma_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Thoma_Pr_Max", Thoma_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Thoma_T1_Min", Thoma_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Thoma_T1_Max", Thoma_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Thoma_T2_Min", Thoma_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Thoma_T2_Max", Thoma_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Thoma_T3_Min", Thoma_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Thoma_T3_Max", Thoma_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Sangonomiya_Kokomi_Ex_Min", Sangonomiya_Kokomi_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Sangonomiya_Kokomi_Ex_Max", Sangonomiya_Kokomi_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Sangonomiya_Kokomi_Pr_Min", Sangonomiya_Kokomi_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Sangonomiya_Kokomi_Pr_Max", Sangonomiya_Kokomi_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Sangonomiya_Kokomi_T1_Min", Sangonomiya_Kokomi_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Sangonomiya_Kokomi_T1_Max", Sangonomiya_Kokomi_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Sangonomiya_Kokomi_T2_Min", Sangonomiya_Kokomi_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Sangonomiya_Kokomi_T2_Max", Sangonomiya_Kokomi_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Sangonomiya_Kokomi_T3_Min", Sangonomiya_Kokomi_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Sangonomiya_Kokomi_T3_Max", Sangonomiya_Kokomi_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Raiden_Shogun_Ex_Min", Raiden_Shogun_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Raiden_Shogun_Ex_Max", Raiden_Shogun_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Raiden_Shogun_Pr_Min", Raiden_Shogun_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Raiden_Shogun_Pr_Max", Raiden_Shogun_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Raiden_Shogun_T1_Min", Raiden_Shogun_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Raiden_Shogun_T1_Max", Raiden_Shogun_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Raiden_Shogun_T2_Min", Raiden_Shogun_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Raiden_Shogun_T2_Max", Raiden_Shogun_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Raiden_Shogun_T3_Min", Raiden_Shogun_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Raiden_Shogun_T3_Max", Raiden_Shogun_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Kujou_Sara_Ex_Min", Kujou_Sara_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Kujou_Sara_Ex_Max", Kujou_Sara_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Kujou_Sara_Pr_Min", Kujou_Sara_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Kujou_Sara_Pr_Max", Kujou_Sara_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Kujou_Sara_T1_Min", Kujou_Sara_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Kujou_Sara_T1_Max", Kujou_Sara_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Kujou_Sara_T2_Min", Kujou_Sara_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Kujou_Sara_T2_Max", Kujou_Sara_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Kujou_Sara_T3_Min", Kujou_Sara_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Kujou_Sara_T3_Max", Kujou_Sara_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Yoimiya_Ex_Min", Yoimiya_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Yoimiya_Ex_Max", Yoimiya_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Yoimiya_Pr_Min", Yoimiya_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Yoimiya_Pr_Max", Yoimiya_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Yoimiya_T1_Min", Yoimiya_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Yoimiya_T1_Max", Yoimiya_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Yoimiya_T2_Min", Yoimiya_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Yoimiya_T2_Max", Yoimiya_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Yoimiya_T3_Min", Yoimiya_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Yoimiya_T3_Max", Yoimiya_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Sayu_Ex_Min", Sayu_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Sayu_Ex_Max", Sayu_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Sayu_Pr_Min", Sayu_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Sayu_Pr_Max", Sayu_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Sayu_T1_Min", Sayu_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Sayu_T1_Max", Sayu_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Sayu_T2_Min", Sayu_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Sayu_T2_Max", Sayu_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Sayu_T3_Min", Sayu_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Sayu_T3_Max", Sayu_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Kamisato_Ayaka_Ex_Min", Kamisato_Ayaka_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Kamisato_Ayaka_Ex_Max", Kamisato_Ayaka_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Kamisato_Ayaka_Pr_Min", Kamisato_Ayaka_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Kamisato_Ayaka_Pr_Max", Kamisato_Ayaka_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Kamisato_Ayaka_T1_Min", Kamisato_Ayaka_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Kamisato_Ayaka_T1_Max", Kamisato_Ayaka_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Kamisato_Ayaka_T2_Min", Kamisato_Ayaka_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Kamisato_Ayaka_T2_Max", Kamisato_Ayaka_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Kamisato_Ayaka_T3_Min", Kamisato_Ayaka_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Kamisato_Ayaka_T3_Max", Kamisato_Ayaka_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Kaedehara_Kazuha_Ex_Min", Kaedehara_Kazuha_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Kaedehara_Kazuha_Ex_Max", Kaedehara_Kazuha_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Kaedehara_Kazuha_Pr_Min", Kaedehara_Kazuha_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Kaedehara_Kazuha_Pr_Max", Kaedehara_Kazuha_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Kaedehara_Kazuha_T1_Min", Kaedehara_Kazuha_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Kaedehara_Kazuha_T1_Max", Kaedehara_Kazuha_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Kaedehara_Kazuha_T2_Min", Kaedehara_Kazuha_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Kaedehara_Kazuha_T2_Max", Kaedehara_Kazuha_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Kaedehara_Kazuha_T3_Min", Kaedehara_Kazuha_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Kaedehara_Kazuha_T3_Max", Kaedehara_Kazuha_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Eula_Ex_Min", Eula_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Eula_Ex_Max", Eula_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Eula_Pr_Min", Eula_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Eula_Pr_Max", Eula_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Eula_T1_Min", Eula_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Eula_T1_Max", Eula_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Eula_T2_Min", Eula_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Eula_T2_Max", Eula_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Eula_T3_Min", Eula_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Eula_T3_Max", Eula_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Yanfei_Ex_Min", Yanfei_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Yanfei_Ex_Max", Yanfei_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Yanfei_Pr_Min", Yanfei_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Yanfei_Pr_Max", Yanfei_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Yanfei_T1_Min", Yanfei_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Yanfei_T1_Max", Yanfei_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Yanfei_T2_Min", Yanfei_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Yanfei_T2_Max", Yanfei_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Yanfei_T3_Min", Yanfei_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Yanfei_T3_Max", Yanfei_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Rosaria_Ex_Min", Rosaria_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Rosaria_Ex_Max", Rosaria_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Rosaria_Pr_Min", Rosaria_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Rosaria_Pr_Max", Rosaria_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Rosaria_T1_Min", Rosaria_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Rosaria_T1_Max", Rosaria_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Rosaria_T2_Min", Rosaria_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Rosaria_T2_Max", Rosaria_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Rosaria_T3_Min", Rosaria_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Rosaria_T3_Max", Rosaria_T3.noUiSlider.get()[1]);
+  localStorage.setItem("HuTao_Ex_Min", HuTao_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("HuTao_Ex_Max", HuTao_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("HuTao_Pr_Min", HuTao_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("HuTao_Pr_Max", HuTao_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("HuTao_T1_Min", HuTao_T1.noUiSlider.get()[0]);
+  localStorage.setItem("HuTao_T1_Max", HuTao_T1.noUiSlider.get()[1]);
+  localStorage.setItem("HuTao_T2_Min", HuTao_T2.noUiSlider.get()[0]);
+  localStorage.setItem("HuTao_T2_Max", HuTao_T2.noUiSlider.get()[1]);
+  localStorage.setItem("HuTao_T3_Min", HuTao_T3.noUiSlider.get()[0]);
+  localStorage.setItem("HuTao_T3_Max", HuTao_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Xiao_Ex_Min", Xiao_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Xiao_Ex_Max", Xiao_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Xiao_Pr_Min", Xiao_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Xiao_Pr_Max", Xiao_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Xiao_T1_Min", Xiao_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Xiao_T1_Max", Xiao_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Xiao_T2_Min", Xiao_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Xiao_T2_Max", Xiao_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Xiao_T3_Min", Xiao_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Xiao_T3_Max", Xiao_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Ganyu_Ex_Min", Ganyu_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Ganyu_Ex_Max", Ganyu_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Ganyu_Pr_Min", Ganyu_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Ganyu_Pr_Max", Ganyu_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Ganyu_T1_Min", Ganyu_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Ganyu_T1_Max", Ganyu_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Ganyu_T2_Min", Ganyu_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Ganyu_T2_Max", Ganyu_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Ganyu_T3_Min", Ganyu_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Ganyu_T3_Max", Ganyu_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Albedo_Ex_Min", Albedo_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Albedo_Ex_Max", Albedo_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Albedo_Pr_Min", Albedo_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Albedo_Pr_Max", Albedo_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Albedo_T1_Min", Albedo_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Albedo_T1_Max", Albedo_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Albedo_T2_Min", Albedo_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Albedo_T2_Max", Albedo_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Albedo_T3_Min", Albedo_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Albedo_T3_Max", Albedo_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Zhongli_Ex_Min", Zhongli_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Zhongli_Ex_Max", Zhongli_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Zhongli_Pr_Min", Zhongli_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Zhongli_Pr_Max", Zhongli_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Zhongli_T1_Min", Zhongli_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Zhongli_T1_Max", Zhongli_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Zhongli_T2_Min", Zhongli_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Zhongli_T2_Max", Zhongli_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Zhongli_T3_Min", Zhongli_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Zhongli_T3_Max", Zhongli_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Xinyan_Ex_Min", Xinyan_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Xinyan_Ex_Max", Xinyan_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Xinyan_Pr_Min", Xinyan_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Xinyan_Pr_Max", Xinyan_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Xinyan_T1_Min", Xinyan_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Xinyan_T1_Max", Xinyan_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Xinyan_T2_Min", Xinyan_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Xinyan_T2_Max", Xinyan_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Xinyan_T3_Min", Xinyan_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Xinyan_T3_Max", Xinyan_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Tartaglia_Ex_Min", Tartaglia_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Tartaglia_Ex_Max", Tartaglia_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Tartaglia_Pr_Min", Tartaglia_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Tartaglia_Pr_Max", Tartaglia_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Tartaglia_T1_Min", Tartaglia_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Tartaglia_T1_Max", Tartaglia_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Tartaglia_T2_Min", Tartaglia_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Tartaglia_T2_Max", Tartaglia_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Tartaglia_T3_Min", Tartaglia_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Tartaglia_T3_Max", Tartaglia_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Diona_Ex_Min", Diona_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Diona_Ex_Max", Diona_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Diona_Pr_Min", Diona_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Diona_Pr_Max", Diona_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Diona_T1_Min", Diona_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Diona_T1_Max", Diona_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Diona_T2_Min", Diona_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Diona_T2_Max", Diona_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Diona_T3_Min", Diona_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Diona_T3_Max", Diona_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Klee_Ex_Min", Klee_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Klee_Ex_Max", Klee_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Klee_Pr_Min", Klee_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Klee_Pr_Max", Klee_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Klee_T1_Min", Klee_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Klee_T1_Max", Klee_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Klee_T2_Min", Klee_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Klee_T2_Max", Klee_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Klee_T3_Min", Klee_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Klee_T3_Max", Klee_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Venti_Ex_Min", Venti_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Venti_Ex_Max", Venti_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Venti_Pr_Min", Venti_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Venti_Pr_Max", Venti_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Venti_T1_Min", Venti_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Venti_T1_Max", Venti_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Venti_T2_Min", Venti_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Venti_T2_Max", Venti_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Venti_T3_Min", Venti_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Venti_T3_Max", Venti_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Keqing_Ex_Min", Keqing_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Keqing_Ex_Max", Keqing_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Keqing_Pr_Min", Keqing_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Keqing_Pr_Max", Keqing_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Keqing_T1_Min", Keqing_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Keqing_T1_Max", Keqing_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Keqing_T2_Min", Keqing_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Keqing_T2_Max", Keqing_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Keqing_T3_Min", Keqing_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Keqing_T3_Max", Keqing_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Mona_Ex_Min", Mona_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Mona_Ex_Max", Mona_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Mona_Pr_Min", Mona_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Mona_Pr_Max", Mona_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Mona_T1_Min", Mona_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Mona_T1_Max", Mona_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Mona_T2_Min", Mona_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Mona_T2_Max", Mona_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Mona_T3_Min", Mona_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Mona_T3_Max", Mona_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Qiqi_Ex_Min", Qiqi_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Qiqi_Ex_Max", Qiqi_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Qiqi_Pr_Min", Qiqi_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Qiqi_Pr_Max", Qiqi_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Qiqi_T1_Min", Qiqi_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Qiqi_T1_Max", Qiqi_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Qiqi_T2_Min", Qiqi_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Qiqi_T2_Max", Qiqi_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Qiqi_T3_Min", Qiqi_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Qiqi_T3_Max", Qiqi_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Diluc_Ex_Min", Diluc_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Diluc_Ex_Max", Diluc_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Diluc_Pr_Min", Diluc_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Diluc_Pr_Max", Diluc_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Diluc_T1_Min", Diluc_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Diluc_T1_Max", Diluc_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Diluc_T2_Min", Diluc_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Diluc_T2_Max", Diluc_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Diluc_T3_Min", Diluc_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Diluc_T3_Max", Diluc_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Jean_Ex_Min", Jean_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Jean_Ex_Max", Jean_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Jean_Pr_Min", Jean_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Jean_Pr_Max", Jean_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Jean_T1_Min", Jean_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Jean_T1_Max", Jean_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Jean_T2_Min", Jean_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Jean_T2_Max", Jean_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Jean_T3_Min", Jean_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Jean_T3_Max", Jean_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Sucrose_Ex_Min", Sucrose_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Sucrose_Ex_Max", Sucrose_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Sucrose_Pr_Min", Sucrose_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Sucrose_Pr_Max", Sucrose_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Sucrose_T1_Min", Sucrose_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Sucrose_T1_Max", Sucrose_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Sucrose_T2_Min", Sucrose_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Sucrose_T2_Max", Sucrose_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Sucrose_T3_Min", Sucrose_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Sucrose_T3_Max", Sucrose_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Chongyun_Ex_Min", Chongyun_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Chongyun_Ex_Max", Chongyun_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Chongyun_Pr_Min", Chongyun_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Chongyun_Pr_Max", Chongyun_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Chongyun_T1_Min", Chongyun_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Chongyun_T1_Max", Chongyun_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Chongyun_T2_Min", Chongyun_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Chongyun_T2_Max", Chongyun_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Chongyun_T3_Min", Chongyun_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Chongyun_T3_Max", Chongyun_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Noelle_Ex_Min", Noelle_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Noelle_Ex_Max", Noelle_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Noelle_Pr_Min", Noelle_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Noelle_Pr_Max", Noelle_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Noelle_T1_Min", Noelle_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Noelle_T1_Max", Noelle_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Noelle_T2_Min", Noelle_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Noelle_T2_Max", Noelle_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Noelle_T3_Min", Noelle_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Noelle_T3_Max", Noelle_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Bennett_Ex_Min", Bennett_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Bennett_Ex_Max", Bennett_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Bennett_Pr_Min", Bennett_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Bennett_Pr_Max", Bennett_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Bennett_T1_Min", Bennett_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Bennett_T1_Max", Bennett_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Bennett_T2_Min", Bennett_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Bennett_T2_Max", Bennett_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Bennett_T3_Min", Bennett_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Bennett_T3_Max", Bennett_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Fischl_Ex_Min", Fischl_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Fischl_Ex_Max", Fischl_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Fischl_Pr_Min", Fischl_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Fischl_Pr_Max", Fischl_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Fischl_T1_Min", Fischl_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Fischl_T1_Max", Fischl_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Fischl_T2_Min", Fischl_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Fischl_T2_Max", Fischl_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Fischl_T3_Min", Fischl_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Fischl_T3_Max", Fischl_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Ningguang_Ex_Min", Ningguang_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Ningguang_Ex_Max", Ningguang_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Ningguang_Pr_Min", Ningguang_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Ningguang_Pr_Max", Ningguang_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Ningguang_T1_Min", Ningguang_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Ningguang_T1_Max", Ningguang_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Ningguang_T2_Min", Ningguang_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Ningguang_T2_Max", Ningguang_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Ningguang_T3_Min", Ningguang_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Ningguang_T3_Max", Ningguang_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Xingqiu_Ex_Min", Xingqiu_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Xingqiu_Ex_Max", Xingqiu_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Xingqiu_Pr_Min", Xingqiu_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Xingqiu_Pr_Max", Xingqiu_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Xingqiu_T1_Min", Xingqiu_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Xingqiu_T1_Max", Xingqiu_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Xingqiu_T2_Min", Xingqiu_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Xingqiu_T2_Max", Xingqiu_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Xingqiu_T3_Min", Xingqiu_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Xingqiu_T3_Max", Xingqiu_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Beidou_Ex_Min", Beidou_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Beidou_Ex_Max", Beidou_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Beidou_Pr_Min", Beidou_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Beidou_Pr_Max", Beidou_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Beidou_T1_Min", Beidou_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Beidou_T1_Max", Beidou_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Beidou_T2_Min", Beidou_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Beidou_T2_Max", Beidou_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Beidou_T3_Min", Beidou_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Beidou_T3_Max", Beidou_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Xiangling_Ex_Min", Xiangling_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Xiangling_Ex_Max", Xiangling_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Xiangling_Pr_Min", Xiangling_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Xiangling_Pr_Max", Xiangling_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Xiangling_T1_Min", Xiangling_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Xiangling_T1_Max", Xiangling_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Xiangling_T2_Min", Xiangling_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Xiangling_T2_Max", Xiangling_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Xiangling_T3_Min", Xiangling_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Xiangling_T3_Max", Xiangling_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Razor_Ex_Min", Razor_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Razor_Ex_Max", Razor_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Razor_Pr_Min", Razor_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Razor_Pr_Max", Razor_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Razor_T1_Min", Razor_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Razor_T1_Max", Razor_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Razor_T2_Min", Razor_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Razor_T2_Max", Razor_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Razor_T3_Min", Razor_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Razor_T3_Max", Razor_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Barbara_Ex_Min", Barbara_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Barbara_Ex_Max", Barbara_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Barbara_Pr_Min", Barbara_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Barbara_Pr_Max", Barbara_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Barbara_T1_Min", Barbara_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Barbara_T1_Max", Barbara_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Barbara_T2_Min", Barbara_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Barbara_T2_Max", Barbara_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Barbara_T3_Min", Barbara_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Barbara_T3_Max", Barbara_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Lisa_Ex_Min", Lisa_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Lisa_Ex_Max", Lisa_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Lisa_Pr_Min", Lisa_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Lisa_Pr_Max", Lisa_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Lisa_T1_Min", Lisa_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Lisa_T1_Max", Lisa_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Lisa_T2_Min", Lisa_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Lisa_T2_Max", Lisa_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Lisa_T3_Min", Lisa_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Lisa_T3_Max", Lisa_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Kaeya_Ex_Min", Kaeya_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Kaeya_Ex_Max", Kaeya_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Kaeya_Pr_Min", Kaeya_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Kaeya_Pr_Max", Kaeya_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Kaeya_T1_Min", Kaeya_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Kaeya_T1_Max", Kaeya_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Kaeya_T2_Min", Kaeya_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Kaeya_T2_Max", Kaeya_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Kaeya_T3_Min", Kaeya_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Kaeya_T3_Max", Kaeya_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Amber_Ex_Min", Amber_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Amber_Ex_Max", Amber_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Amber_Pr_Min", Amber_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Amber_Pr_Max", Amber_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Amber_T1_Min", Amber_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Amber_T1_Max", Amber_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Amber_T2_Min", Amber_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Amber_T2_Max", Amber_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Amber_T3_Min", Amber_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Amber_T3_Max", Amber_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Aloy_Ex_Min", Aloy_Ex.noUiSlider.get()[0]);
+  localStorage.setItem("Aloy_Ex_Max", Aloy_Ex.noUiSlider.get()[1]);
+  localStorage.setItem("Aloy_Pr_Min", Aloy_Pr.noUiSlider.get()[0]);
+  localStorage.setItem("Aloy_Pr_Max", Aloy_Pr.noUiSlider.get()[1]);
+  localStorage.setItem("Aloy_T1_Min", Aloy_T1.noUiSlider.get()[0]);
+  localStorage.setItem("Aloy_T1_Max", Aloy_T1.noUiSlider.get()[1]);
+  localStorage.setItem("Aloy_T2_Min", Aloy_T2.noUiSlider.get()[0]);
+  localStorage.setItem("Aloy_T2_Max", Aloy_T2.noUiSlider.get()[1]);
+  localStorage.setItem("Aloy_T3_Min", Aloy_T3.noUiSlider.get()[0]);
+  localStorage.setItem("Aloy_T3_Max", Aloy_T3.noUiSlider.get()[1]);
+  localStorage.setItem("Heros_Wit", document.getElementById("Heros_Wit").value);
+  localStorage.setItem("Adventurers_Experience", document.getElementById("Adventurers_Experience").value);
+  localStorage.setItem("Wanderers_Advice", document.getElementById("Wanderers_Advice").value);
+  localStorage.setItem("Mora", document.getElementById("Mora").value);
+  localStorage.setItem("Slime_Concentrate", document.getElementById("Slime_Concentrate").value);
+  localStorage.setItem("Slime_Secretions", document.getElementById("Slime_Secretions").value);
+  localStorage.setItem("Slime_Condensate", document.getElementById("Slime_Condensate").value);
+  localStorage.setItem("Ominous_Mask", document.getElementById("Ominous_Mask").value);
+  localStorage.setItem("Stained_Mask", document.getElementById("Stained_Mask").value);
+  localStorage.setItem("Damaged_Mask", document.getElementById("Damaged_Mask").value);
+  localStorage.setItem("Forbidden_Curse_Scroll", document.getElementById("Forbidden_Curse_Scroll").value);
+  localStorage.setItem("Sealed_Scroll", document.getElementById("Sealed_Scroll").value);
+  localStorage.setItem("Divining_Scroll", document.getElementById("Divining_Scroll").value);
+  localStorage.setItem("Weathered_Arrowhead", document.getElementById("Weathered_Arrowhead").value);
+  localStorage.setItem("Sharp_Arrowhead", document.getElementById("Sharp_Arrowhead").value);
+  localStorage.setItem("Firm_Arrowhead", document.getElementById("Firm_Arrowhead").value);
+  localStorage.setItem("Lieutenants_Insignia", document.getElementById("Lieutenants_Insignia").value);
+  localStorage.setItem("Sergeants_Insignia", document.getElementById("Sergeants_Insignia").value);
+  localStorage.setItem("Recruits_Insignia", document.getElementById("Recruits_Insignia").value);
+  localStorage.setItem("Golden_Raven_Insignia", document.getElementById("Golden_Raven_Insignia").value);
+  localStorage.setItem("Silver_Raven_Insignia", document.getElementById("Silver_Raven_Insignia").value);
+  localStorage.setItem("Treasure_Hoarder_Insignia", document.getElementById("Treasure_Hoarder_Insignia").value);
+  localStorage.setItem("Energy_Nectar", document.getElementById("Energy_Nectar").value);
+  localStorage.setItem("Shimmering_Nectar", document.getElementById("Shimmering_Nectar").value);
+  localStorage.setItem("Whopperflower_Nectar", document.getElementById("Whopperflower_Nectar").value);
+  localStorage.setItem("Famed_Handguard", document.getElementById("Famed_Handguard").value);
+  localStorage.setItem("Kageuchi_Handguard", document.getElementById("Kageuchi_Handguard").value);
+  localStorage.setItem("Old_Handguard", document.getElementById("Old_Handguard").value);
+  localStorage.setItem("Spectral_Nucleus", document.getElementById("Spectral_Nucleus").value);
+  localStorage.setItem("Spectral_Heart", document.getElementById("Spectral_Heart").value);
+  localStorage.setItem("Spectral_Husk", document.getElementById("Spectral_Husk").value);
+  localStorage.setItem("Dvalins_Plume", document.getElementById("Dvalins_Plume").value);
+  localStorage.setItem("Dvalins_Claw", document.getElementById("Dvalins_Claw").value);
+  localStorage.setItem("Dvalins_Sigh", document.getElementById("Dvalins_Sigh").value);
+  localStorage.setItem("Tail_of_Boreas", document.getElementById("Tail_of_Boreas").value);
+  localStorage.setItem("Ring_of_Boreas", document.getElementById("Ring_of_Boreas").value);
+  localStorage.setItem("Spirit_Locket_of_Boreas", document.getElementById("Spirit_Locket_of_Boreas").value);
+  localStorage.setItem("Tusk_of_Monoceros_Caeli", document.getElementById("Tusk_of_Monoceros_Caeli").value);
+  localStorage.setItem("Shard_of_a_Foul_Legacy", document.getElementById("Shard_of_a_Foul_Legacy").value);
+  localStorage.setItem("Shadow_of_the_Warrior", document.getElementById("Shadow_of_the_Warrior").value);
+  localStorage.setItem("Dragon_Lords_Crown", document.getElementById("Dragon_Lords_Crown").value);
+  localStorage.setItem("Bloodjade_Branch", document.getElementById("Bloodjade_Branch").value);
+  localStorage.setItem("Gilded_Scale", document.getElementById("Gilded_Scale").value);
+  localStorage.setItem("Molten_Moment", document.getElementById("Molten_Moment").value);
+  localStorage.setItem("Hellfire_Butterfly", document.getElementById("Hellfire_Butterfly").value);
+  localStorage.setItem("Ashen_Heart", document.getElementById("Ashen_Heart").value);
+  localStorage.setItem("Hurricane_Seed", document.getElementById("Hurricane_Seed").value);
+  localStorage.setItem("Lightning_Prism", document.getElementById("Lightning_Prism").value);
+  localStorage.setItem("Basalt_Pillar", document.getElementById("Basalt_Pillar").value);
+  localStorage.setItem("Hoarfrost_Core", document.getElementById("Hoarfrost_Core").value);
+  localStorage.setItem("Everflame_Seed", document.getElementById("Everflame_Seed").value);
+  localStorage.setItem("Cleansing_Heart", document.getElementById("Cleansing_Heart").value);
+  localStorage.setItem("Juvenile_Jade", document.getElementById("Juvenile_Jade").value);
+  localStorage.setItem("Crystalline_Bloom", document.getElementById("Crystalline_Bloom").value);
+  localStorage.setItem("Marionette_Core", document.getElementById("Marionette_Core").value);
+  localStorage.setItem("Perpetual_Heart", document.getElementById("Perpetual_Heart").value);
+  localStorage.setItem("Smoldering_Pearl", document.getElementById("Smoldering_Pearl").value);
+  localStorage.setItem("Dew_of_Repudiation", document.getElementById("Dew_of_Repudiation").value);
+  localStorage.setItem("Storm_Beads", document.getElementById("Storm_Beads").value);
+  localStorage.setItem("Riftborn_Regalia", document.getElementById("Riftborn_Regalia").value);
+  localStorage.setItem("Agate_Gemstone", document.getElementById("Agate_Gemstone").value);
+  localStorage.setItem("Agate_Chunk", document.getElementById("Agate_Chunk").value);
+  localStorage.setItem("Agate_Fragment", document.getElementById("Agate_Fragment").value);
+  localStorage.setItem("Agate_Sliver", document.getElementById("Agate_Sliver").value);
+  localStorage.setItem("Lazurite_Gemstone", document.getElementById("Lazurite_Gemstone").value);
+  localStorage.setItem("Lazurite_Chunk", document.getElementById("Lazurite_Chunk").value);
+  localStorage.setItem("Lazurite_Fragment", document.getElementById("Lazurite_Fragment").value);
+  localStorage.setItem("Lazurite_Sliver", document.getElementById("Lazurite_Sliver").value);
+  localStorage.setItem("Amethyst_Gemstone", document.getElementById("Amethyst_Gemstone").value);
+  localStorage.setItem("Amethyst_Chunk", document.getElementById("Amethyst_Chunk").value);
+  localStorage.setItem("Amethyst_Fragment", document.getElementById("Amethyst_Fragment").value);
+  localStorage.setItem("Amethyst_Sliver", document.getElementById("Amethyst_Sliver").value);
+  localStorage.setItem("Turquoise_Gemstone", document.getElementById("Turquoise_Gemstone").value);
+  localStorage.setItem("Turquoise_Chunk", document.getElementById("Turquoise_Chunk").value);
+  localStorage.setItem("Turquoise_Fragment", document.getElementById("Turquoise_Fragment").value);
+  localStorage.setItem("Turquoise_Sliver", document.getElementById("Turquoise_Sliver").value);
+  localStorage.setItem("Jade_Gemstone", document.getElementById("Jade_Gemstone").value);
+  localStorage.setItem("Jade_Chunk", document.getElementById("Jade_Chunk").value);
+  localStorage.setItem("Jade_Fragment", document.getElementById("Jade_Fragment").value);
+  localStorage.setItem("Jade_Sliver", document.getElementById("Jade_Sliver").value);
+  localStorage.setItem("Topaz_Gemstone", document.getElementById("Topaz_Gemstone").value);
+  localStorage.setItem("Topaz_Chunk", document.getElementById("Topaz_Chunk").value);
+  localStorage.setItem("Topaz_Fragment", document.getElementById("Topaz_Fragment").value);
+  localStorage.setItem("Topaz_Sliver", document.getElementById("Topaz_Sliver").value);
+  localStorage.setItem("Emerald_Gemstone", document.getElementById("Emerald_Gemstone").value);
+  localStorage.setItem("Emerald_Chunk", document.getElementById("Emerald_Chunk").value);
+  localStorage.setItem("Emerald_Fragment", document.getElementById("Emerald_Fragment").value);
+  localStorage.setItem("Emerald_Sliver", document.getElementById("Emerald_Sliver").value);
+  localStorage.setItem("Philosophies_of_Freedom", document.getElementById("Philosophies_of_Freedom").value);
+  localStorage.setItem("Guide_to_Freedom", document.getElementById("Guide_to_Freedom").value);
+  localStorage.setItem("Teachings_of_Freedom", document.getElementById("Teachings_of_Freedom").value);
+  localStorage.setItem("Philosophies_of_Ballad", document.getElementById("Philosophies_of_Ballad").value);
+  localStorage.setItem("Guide_to_Ballad", document.getElementById("Guide_to_Ballad").value);
+  localStorage.setItem("Teachings_of_Ballad", document.getElementById("Teachings_of_Ballad").value);
+  localStorage.setItem("Philosophies_of_Resistance", document.getElementById("Philosophies_of_Resistance").value);
+  localStorage.setItem("Guide_to_Resistance", document.getElementById("Guide_to_Resistance").value);
+  localStorage.setItem("Teachings_of_Resistance", document.getElementById("Teachings_of_Resistance").value);
+  localStorage.setItem("Philosophies_of_Prosperity", document.getElementById("Philosophies_of_Prosperity").value);
+  localStorage.setItem("Guide_to_Prosperity", document.getElementById("Guide_to_Prosperity").value);
+  localStorage.setItem("Teachings_of_Prosperity", document.getElementById("Teachings_of_Prosperity").value);
+  localStorage.setItem("Philosophies_of_Diligence", document.getElementById("Philosophies_of_Diligence").value);
+  localStorage.setItem("Guide_to_Diligence", document.getElementById("Guide_to_Diligence").value);
+  localStorage.setItem("Teachings_of_Diligence", document.getElementById("Teachings_of_Diligence").value);
+  localStorage.setItem("Philosophies_of_Gold", document.getElementById("Philosophies_of_Gold").value);
+  localStorage.setItem("Guide_to_Gold", document.getElementById("Guide_to_Gold").value);
+  localStorage.setItem("Teachings_of_Gold", document.getElementById("Teachings_of_Gold").value);
+  localStorage.setItem("Philosophies_of_Transience", document.getElementById("Philosophies_of_Transience").value);
+  localStorage.setItem("Guide_to_Transience", document.getElementById("Guide_to_Transience").value);
+  localStorage.setItem("Teachings_of_Transience", document.getElementById("Teachings_of_Transience").value);
+  localStorage.setItem("Philosophies_of_Elegance", document.getElementById("Philosophies_of_Elegance").value);
+  localStorage.setItem("Guide_to_Elegance", document.getElementById("Guide_to_Elegance").value);
+  localStorage.setItem("Teachings_of_Elegance", document.getElementById("Teachings_of_Elegance").value);
+  localStorage.setItem("Philosophies_of_Light", document.getElementById("Philosophies_of_Light").value);
+  localStorage.setItem("Guide_to_Light", document.getElementById("Guide_to_Light").value);
+  localStorage.setItem("Teachings_of_Light", document.getElementById("Teachings_of_Light").value);
+  localStorage.setItem("Crown_of_Insight", document.getElementById("Crown_of_Insight").value);
+  localStorage.setItem("Calla_Lily", document.getElementById("Calla_Lily").value);
+  localStorage.setItem("Wolfhook", document.getElementById("Wolfhook").value);
+  localStorage.setItem("Valberry", document.getElementById("Valberry").value);
+  localStorage.setItem("Cecilia", document.getElementById("Cecilia").value);
+  localStorage.setItem("Windwheel_Aster", document.getElementById("Windwheel_Aster").value);
+  localStorage.setItem("Philanemo_Mushroom", document.getElementById("Philanemo_Mushroom").value);
+  localStorage.setItem("Jueyun_Chili", document.getElementById("Jueyun_Chili").value);
+  localStorage.setItem("Noctilucous_Jade", document.getElementById("Noctilucous_Jade").value);
+  localStorage.setItem("Silk_Flower", document.getElementById("Silk_Flower").value);
+  localStorage.setItem("Glaze_Lily", document.getElementById("Glaze_Lily").value);
+  localStorage.setItem("Qingxin", document.getElementById("Qingxin").value);
+  localStorage.setItem("Starconch", document.getElementById("Starconch").value);
+  localStorage.setItem("Violetgrass", document.getElementById("Violetgrass").value);
+  localStorage.setItem("Small_Lamp_Grass", document.getElementById("Small_Lamp_Grass").value);
+  localStorage.setItem("Dandelion_Seed", document.getElementById("Dandelion_Seed").value);
+  localStorage.setItem("Cor_Lapis", document.getElementById("Cor_Lapis").value);
+  localStorage.setItem("Onikabuto", document.getElementById("Onikabuto").value);
+  localStorage.setItem("Sakura_Bloom", document.getElementById("Sakura_Bloom").value);
+  localStorage.setItem("Crystal_Marrow", document.getElementById("Crystal_Marrow").value);
+  localStorage.setItem("Dendrobium", document.getElementById("Dendrobium").value);
+  localStorage.setItem("Naku_Weed", document.getElementById("Naku_Weed").value);
+  localStorage.setItem("Sea_Ganoderma", document.getElementById("Sea_Ganoderma").value);
+  localStorage.setItem("Sango_Pearl", document.getElementById("Sango_Pearl").value);
+  localStorage.setItem("Amakumo_Fruit", document.getElementById("Amakumo_Fruit").value);
+  localStorage.setItem("Fluorescent_Fungus", document.getElementById("Fluorescent_Fungus").value);
 }
-
 document.getElementById('Save').onclick = function changeContent() {
   Save();
   M.toast({
@@ -6844,29 +6825,377 @@ document.getElementById('Save').onclick = function changeContent() {
   })
 }
 
-// function Fix() {
-// var now = new Date().toUTCString();
-// document.cookie = "Character5=\
-// Thoma_Ex_CookieMin=" + Thoma_Ex.noUiSlider.get()[0] + "/\
-// Thoma_Ex_CookieMax=" + Thoma_Ex.noUiSlider.get()[1] + "/\
-// Thoma_Pr_CookieMin=" + Thoma_Pr.noUiSlider.get()[0] + "/\
-// Thoma_Pr_CookieMax=" + Thoma_Pr.noUiSlider.get()[1] + "/\
-// Thoma_T1_CookieMin=" + Thoma_T1.noUiSlider.get()[0] + "/\
-// Thoma_T1_CookieMax=" + Thoma_T1.noUiSlider.get()[1] + "/\
-// Thoma_T2_CookieMin=" + Thoma_T2.noUiSlider.get()[0] + "/\
-// Thoma_T2_CookieMax=" + Thoma_T2.noUiSlider.get()[1] + "/\
-// Thoma_T3_CookieMin=" + Thoma_T3.noUiSlider.get()[0] + "/\
-// Thoma_T3_CookieMax=" + Thoma_T3.noUiSlider.get()[1] + "/\
-// ; expires=" + now + "; max-age=31536000; path=/; SameSite=Strict;";
-// }
-// document.getElementById('Fix').onclick = function changeContent() {
-//   Fix();
-//   M.toast({
-//     html: 'Fixd',
-//     displayLength: '1000'
-//   })
-// }
-
+function Load() {
+  try{Arataki_Itto_Ex.noUiSlider.set([localStorage.getItem("Arataki_Itto_Ex_Min"), localStorage.getItem("Arataki_Itto_Ex_Max")]);} catch(e){}
+  try{Arataki_Itto_Ex.noUiSlider.set([localStorage.getItem("Arataki_Itto_Ex_Min"), localStorage.getItem("Arataki_Itto_Ex_Max")]);} catch(e){}
+  try{Arataki_Itto_Pr.noUiSlider.set([localStorage.getItem("Arataki_Itto_Pr_Min"), localStorage.getItem("Arataki_Itto_Pr_Max")]);} catch(e){}
+  try{Arataki_Itto_T1.noUiSlider.set([localStorage.getItem("Arataki_Itto_T1_Min"), localStorage.getItem("Arataki_Itto_T1_Max")]);} catch(e){}
+  try{Arataki_Itto_T2.noUiSlider.set([localStorage.getItem("Arataki_Itto_T2_Min"), localStorage.getItem("Arataki_Itto_T2_Max")]);} catch(e){}
+  try{Arataki_Itto_T3.noUiSlider.set([localStorage.getItem("Arataki_Itto_T3_Min"), localStorage.getItem("Arataki_Itto_T3_Max")]);} catch(e){}
+  try{Gorou_Ex.noUiSlider.set([localStorage.getItem("Gorou_Ex_Min"), localStorage.getItem("Gorou_Ex_Max")]);} catch(e){}
+  try{Gorou_Ex.noUiSlider.set([localStorage.getItem("Gorou_Ex_Min"), localStorage.getItem("Gorou_Ex_Max")]);} catch(e){}
+  try{Gorou_Pr.noUiSlider.set([localStorage.getItem("Gorou_Pr_Min"), localStorage.getItem("Gorou_Pr_Max")]);} catch(e){}
+  try{Gorou_T1.noUiSlider.set([localStorage.getItem("Gorou_T1_Min"), localStorage.getItem("Gorou_T1_Max")]);} catch(e){}
+  try{Gorou_T2.noUiSlider.set([localStorage.getItem("Gorou_T2_Min"), localStorage.getItem("Gorou_T2_Max")]);} catch(e){}
+  try{Gorou_T3.noUiSlider.set([localStorage.getItem("Gorou_T3_Min"), localStorage.getItem("Gorou_T3_Max")]);} catch(e){}
+  try{Thoma_Ex.noUiSlider.set([localStorage.getItem("Thoma_Ex_Min"), localStorage.getItem("Thoma_Ex_Max")]);} catch(e){}
+  try{Thoma_Ex.noUiSlider.set([localStorage.getItem("Thoma_Ex_Min"), localStorage.getItem("Thoma_Ex_Max")]);} catch(e){}
+  try{Thoma_Pr.noUiSlider.set([localStorage.getItem("Thoma_Pr_Min"), localStorage.getItem("Thoma_Pr_Max")]);} catch(e){}
+  try{Thoma_T1.noUiSlider.set([localStorage.getItem("Thoma_T1_Min"), localStorage.getItem("Thoma_T1_Max")]);} catch(e){}
+  try{Thoma_T2.noUiSlider.set([localStorage.getItem("Thoma_T2_Min"), localStorage.getItem("Thoma_T2_Max")]);} catch(e){}
+  try{Thoma_T3.noUiSlider.set([localStorage.getItem("Thoma_T3_Min"), localStorage.getItem("Thoma_T3_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Ex_Min"), localStorage.getItem("Sangonomiya_Kokomi_Ex_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Ex_Min"), localStorage.getItem("Sangonomiya_Kokomi_Ex_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_Pr.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Pr_Min"), localStorage.getItem("Sangonomiya_Kokomi_Pr_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_T1.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T1_Min"), localStorage.getItem("Sangonomiya_Kokomi_T1_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_T2.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T2_Min"), localStorage.getItem("Sangonomiya_Kokomi_T2_Max")]);} catch(e){}
+  try{Sangonomiya_Kokomi_T3.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T3_Min"), localStorage.getItem("Sangonomiya_Kokomi_T3_Max")]);} catch(e){}
+  try{Raiden_Shogun_Ex.noUiSlider.set([localStorage.getItem("Raiden_Shogun_Ex_Min"), localStorage.getItem("Raiden_Shogun_Ex_Max")]);} catch(e){}
+  try{Raiden_Shogun_Pr.noUiSlider.set([localStorage.getItem("Raiden_Shogun_Pr_Min"), localStorage.getItem("Raiden_Shogun_Pr_Max")]);} catch(e){}
+  try{Raiden_Shogun_T1.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T1_Min"), localStorage.getItem("Raiden_Shogun_T1_Max")]);} catch(e){}
+  try{Raiden_Shogun_T2.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T2_Min"), localStorage.getItem("Raiden_Shogun_T2_Max")]);} catch(e){}
+  try{Raiden_Shogun_T3.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T3_Min"), localStorage.getItem("Raiden_Shogun_T3_Max")]);} catch(e){}
+  try{Kujou_Sara_Ex.noUiSlider.set([localStorage.getItem("Kujou_Sara_Ex_Min"), localStorage.getItem("Kujou_Sara_Ex_Max")]);} catch(e){}
+  try{Kujou_Sara_Pr.noUiSlider.set([localStorage.getItem("Kujou_Sara_Pr_Min"), localStorage.getItem("Kujou_Sara_Pr_Max")]);} catch(e){}
+  try{Kujou_Sara_T1.noUiSlider.set([localStorage.getItem("Kujou_Sara_T1_Min"), localStorage.getItem("Kujou_Sara_T1_Max")]);} catch(e){}
+  try{Kujou_Sara_T2.noUiSlider.set([localStorage.getItem("Kujou_Sara_T2_Min"), localStorage.getItem("Kujou_Sara_T2_Max")]);} catch(e){}
+  try{Kujou_Sara_T3.noUiSlider.set([localStorage.getItem("Kujou_Sara_T3_Min"), localStorage.getItem("Kujou_Sara_T3_Max")]);} catch(e){}
+  try{Yoimiya_Ex.noUiSlider.set([localStorage.getItem("Yoimiya_Ex_Min"), localStorage.getItem("Yoimiya_Ex_Max")]);} catch(e){}
+  try{Yoimiya_Pr.noUiSlider.set([localStorage.getItem("Yoimiya_Pr_Min"), localStorage.getItem("Yoimiya_Pr_Max")]);} catch(e){}
+  try{Yoimiya_T1.noUiSlider.set([localStorage.getItem("Yoimiya_T1_Min"), localStorage.getItem("Yoimiya_T1_Max")]);} catch(e){}
+  try{Yoimiya_T2.noUiSlider.set([localStorage.getItem("Yoimiya_T2_Min"), localStorage.getItem("Yoimiya_T2_Max")]);} catch(e){}
+  try{Yoimiya_T3.noUiSlider.set([localStorage.getItem("Yoimiya_T3_Min"), localStorage.getItem("Yoimiya_T3_Max")]);} catch(e){}
+  try{Sayu_Ex.noUiSlider.set([localStorage.getItem("Sayu_Ex_Min"), localStorage.getItem("Sayu_Ex_Max")]);} catch(e){}
+  try{Sayu_Pr.noUiSlider.set([localStorage.getItem("Sayu_Pr_Min"), localStorage.getItem("Sayu_Pr_Max")]);} catch(e){}
+  try{Sayu_T1.noUiSlider.set([localStorage.getItem("Sayu_T1_Min"), localStorage.getItem("Sayu_T1_Max")]);} catch(e){}
+  try{Sayu_T2.noUiSlider.set([localStorage.getItem("Sayu_T2_Min"), localStorage.getItem("Sayu_T2_Max")]);} catch(e){}
+  try{Sayu_T3.noUiSlider.set([localStorage.getItem("Sayu_T3_Min"), localStorage.getItem("Sayu_T3_Max")]);} catch(e){}
+  try{Kamisato_Ayaka_Ex.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_Ex_Min"), localStorage.getItem("Kamisato_Ayaka_Ex_Max")]);} catch(e){}
+  try{Kamisato_Ayaka_Pr.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_Pr_Min"), localStorage.getItem("Kamisato_Ayaka_Pr_Max")]);} catch(e){}
+  try{Kamisato_Ayaka_T1.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T1_Min"), localStorage.getItem("Kamisato_Ayaka_T1_Max")]);} catch(e){}
+  try{Kamisato_Ayaka_T2.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T2_Min"), localStorage.getItem("Kamisato_Ayaka_T2_Max")]);} catch(e){}
+  try{Kamisato_Ayaka_T3.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T3_Min"), localStorage.getItem("Kamisato_Ayaka_T3_Max")]);} catch(e){}
+  try{Kaedehara_Kazuha_Ex.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_Ex_Min"), localStorage.getItem("Kaedehara_Kazuha_Ex_Max")]);} catch(e){}
+  try{Kaedehara_Kazuha_Pr.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_Pr_Min"), localStorage.getItem("Kaedehara_Kazuha_Pr_Max")]);} catch(e){}
+  try{Kaedehara_Kazuha_T1.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T1_Min"), localStorage.getItem("Kaedehara_Kazuha_T1_Max")]);} catch(e){}
+  try{Kaedehara_Kazuha_T2.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T2_Min"), localStorage.getItem("Kaedehara_Kazuha_T2_Max")]);} catch(e){}
+  try{Kaedehara_Kazuha_T3.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T3_Min"), localStorage.getItem("Kaedehara_Kazuha_T3_Max")]);} catch(e){}
+  try{Eula_Ex.noUiSlider.set([localStorage.getItem("Eula_Ex_Min"), localStorage.getItem("Eula_Ex_Max")]);} catch(e){}
+  try{Eula_Pr.noUiSlider.set([localStorage.getItem("Eula_Pr_Min"), localStorage.getItem("Eula_Pr_Max")]);} catch(e){}
+  try{Eula_T1.noUiSlider.set([localStorage.getItem("Eula_T1_Min"), localStorage.getItem("Eula_T1_Max")]);} catch(e){}
+  try{Eula_T2.noUiSlider.set([localStorage.getItem("Eula_T2_Min"), localStorage.getItem("Eula_T2_Max")]);} catch(e){}
+  try{Eula_T3.noUiSlider.set([localStorage.getItem("Eula_T3_Min"), localStorage.getItem("Eula_T3_Max")]);} catch(e){}
+  try{Yanfei_Ex.noUiSlider.set([localStorage.getItem("Yanfei_Ex_Min"), localStorage.getItem("Yanfei_Ex_Max")]);} catch(e){}
+  try{Yanfei_Pr.noUiSlider.set([localStorage.getItem("Yanfei_Pr_Min"), localStorage.getItem("Yanfei_Pr_Max")]);} catch(e){}
+  try{Yanfei_T1.noUiSlider.set([localStorage.getItem("Yanfei_T1_Min"), localStorage.getItem("Yanfei_T1_Max")]);} catch(e){}
+  try{Yanfei_T2.noUiSlider.set([localStorage.getItem("Yanfei_T2_Min"), localStorage.getItem("Yanfei_T2_Max")]);} catch(e){}
+  try{Yanfei_T3.noUiSlider.set([localStorage.getItem("Yanfei_T3_Min"), localStorage.getItem("Yanfei_T3_Max")]);} catch(e){}
+  try{Rosaria_Ex.noUiSlider.set([localStorage.getItem("Rosaria_Ex_Min"), localStorage.getItem("Rosaria_Ex_Max")]);} catch(e){}
+  try{Rosaria_Pr.noUiSlider.set([localStorage.getItem("Rosaria_Pr_Min"), localStorage.getItem("Rosaria_Pr_Max")]);} catch(e){}
+  try{Rosaria_T1.noUiSlider.set([localStorage.getItem("Rosaria_T1_Min"), localStorage.getItem("Rosaria_T1_Max")]);} catch(e){}
+  try{Rosaria_T2.noUiSlider.set([localStorage.getItem("Rosaria_T2_Min"), localStorage.getItem("Rosaria_T2_Max")]);} catch(e){}
+  try{Rosaria_T3.noUiSlider.set([localStorage.getItem("Rosaria_T3_Min"), localStorage.getItem("Rosaria_T3_Max")]);} catch(e){}
+  try{HuTao_Ex.noUiSlider.set([localStorage.getItem("HuTao_Ex_Min"), localStorage.getItem("HuTao_Ex_Max")]);} catch(e){}
+  try{HuTao_Pr.noUiSlider.set([localStorage.getItem("HuTao_Pr_Min"), localStorage.getItem("HuTao_Pr_Max")]);} catch(e){}
+  try{HuTao_T1.noUiSlider.set([localStorage.getItem("HuTao_T1_Min"), localStorage.getItem("HuTao_T1_Max")]);} catch(e){}
+  try{HuTao_T2.noUiSlider.set([localStorage.getItem("HuTao_T2_Min"), localStorage.getItem("HuTao_T2_Max")]);} catch(e){}
+  try{HuTao_T3.noUiSlider.set([localStorage.getItem("HuTao_T3_Min"), localStorage.getItem("HuTao_T3_Max")]);} catch(e){}
+  try{Xiao_Ex.noUiSlider.set([localStorage.getItem("Xiao_Ex_Min"), localStorage.getItem("Xiao_Ex_Max")]);} catch(e){}
+  try{Xiao_Pr.noUiSlider.set([localStorage.getItem("Xiao_Pr_Min"), localStorage.getItem("Xiao_Pr_Max")]);} catch(e){}
+  try{Xiao_T1.noUiSlider.set([localStorage.getItem("Xiao_T1_Min"), localStorage.getItem("Xiao_T1_Max")]);} catch(e){}
+  try{Xiao_T2.noUiSlider.set([localStorage.getItem("Xiao_T2_Min"), localStorage.getItem("Xiao_T2_Max")]);} catch(e){}
+  try{Xiao_T3.noUiSlider.set([localStorage.getItem("Xiao_T3_Min"), localStorage.getItem("Xiao_T3_Max")]);} catch(e){}
+  try{Ganyu_Ex.noUiSlider.set([localStorage.getItem("Ganyu_Ex_Min"), localStorage.getItem("Ganyu_Ex_Max")]);} catch(e){}
+  try{Ganyu_Pr.noUiSlider.set([localStorage.getItem("Ganyu_Pr_Min"), localStorage.getItem("Ganyu_Pr_Max")]);} catch(e){}
+  try{Ganyu_T1.noUiSlider.set([localStorage.getItem("Ganyu_T1_Min"), localStorage.getItem("Ganyu_T1_Max")]);} catch(e){}
+  try{Ganyu_T2.noUiSlider.set([localStorage.getItem("Ganyu_T2_Min"), localStorage.getItem("Ganyu_T2_Max")]);} catch(e){}
+  try{Ganyu_T3.noUiSlider.set([localStorage.getItem("Ganyu_T3_Min"), localStorage.getItem("Ganyu_T3_Max")]);} catch(e){}
+  try{Albedo_Ex.noUiSlider.set([localStorage.getItem("Albedo_Ex_Min"), localStorage.getItem("Albedo_Ex_Max")]);} catch(e){}
+  try{Albedo_Pr.noUiSlider.set([localStorage.getItem("Albedo_Pr_Min"), localStorage.getItem("Albedo_Pr_Max")]);} catch(e){}
+  try{Albedo_T1.noUiSlider.set([localStorage.getItem("Albedo_T1_Min"), localStorage.getItem("Albedo_T1_Max")]);} catch(e){}
+  try{Albedo_T2.noUiSlider.set([localStorage.getItem("Albedo_T2_Min"), localStorage.getItem("Albedo_T2_Max")]);} catch(e){}
+  try{Albedo_T3.noUiSlider.set([localStorage.getItem("Albedo_T3_Min"), localStorage.getItem("Albedo_T3_Max")]);} catch(e){}
+  try{Zhongli_Ex.noUiSlider.set([localStorage.getItem("Zhongli_Ex_Min"), localStorage.getItem("Zhongli_Ex_Max")]);} catch(e){}
+  try{Zhongli_Pr.noUiSlider.set([localStorage.getItem("Zhongli_Pr_Min"), localStorage.getItem("Zhongli_Pr_Max")]);} catch(e){}
+  try{Zhongli_T1.noUiSlider.set([localStorage.getItem("Zhongli_T1_Min"), localStorage.getItem("Zhongli_T1_Max")]);} catch(e){}
+  try{Zhongli_T2.noUiSlider.set([localStorage.getItem("Zhongli_T2_Min"), localStorage.getItem("Zhongli_T2_Max")]);} catch(e){}
+  try{Zhongli_T3.noUiSlider.set([localStorage.getItem("Zhongli_T3_Min"), localStorage.getItem("Zhongli_T3_Max")]);} catch(e){}
+  try{Xinyan_Ex.noUiSlider.set([localStorage.getItem("Xinyan_Ex_Min"), localStorage.getItem("Xinyan_Ex_Max")]);} catch(e){}
+  try{Xinyan_Pr.noUiSlider.set([localStorage.getItem("Xinyan_Pr_Min"), localStorage.getItem("Xinyan_Pr_Max")]);} catch(e){}
+  try{Xinyan_T1.noUiSlider.set([localStorage.getItem("Xinyan_T1_Min"), localStorage.getItem("Xinyan_T1_Max")]);} catch(e){}
+  try{Xinyan_T2.noUiSlider.set([localStorage.getItem("Xinyan_T2_Min"), localStorage.getItem("Xinyan_T2_Max")]);} catch(e){}
+  try{Xinyan_T3.noUiSlider.set([localStorage.getItem("Xinyan_T3_Min"), localStorage.getItem("Xinyan_T3_Max")]);} catch(e){}
+  try{Tartaglia_Ex.noUiSlider.set([localStorage.getItem("Tartaglia_Ex_Min"), localStorage.getItem("Tartaglia_Ex_Max")]);} catch(e){}
+  try{Tartaglia_Pr.noUiSlider.set([localStorage.getItem("Tartaglia_Pr_Min"), localStorage.getItem("Tartaglia_Pr_Max")]);} catch(e){}
+  try{Tartaglia_T1.noUiSlider.set([localStorage.getItem("Tartaglia_T1_Min"), localStorage.getItem("Tartaglia_T1_Max")]);} catch(e){}
+  try{Tartaglia_T2.noUiSlider.set([localStorage.getItem("Tartaglia_T2_Min"), localStorage.getItem("Tartaglia_T2_Max")]);} catch(e){}
+  try{Tartaglia_T3.noUiSlider.set([localStorage.getItem("Tartaglia_T3_Min"), localStorage.getItem("Tartaglia_T3_Max")]);} catch(e){}
+  try{Diona_Ex.noUiSlider.set([localStorage.getItem("Diona_Ex_Min"), localStorage.getItem("Diona_Ex_Max")]);} catch(e){}
+  try{Diona_Pr.noUiSlider.set([localStorage.getItem("Diona_Pr_Min"), localStorage.getItem("Diona_Pr_Max")]);} catch(e){}
+  try{Diona_T1.noUiSlider.set([localStorage.getItem("Diona_T1_Min"), localStorage.getItem("Diona_T1_Max")]);} catch(e){}
+  try{Diona_T2.noUiSlider.set([localStorage.getItem("Diona_T2_Min"), localStorage.getItem("Diona_T2_Max")]);} catch(e){}
+  try{Diona_T3.noUiSlider.set([localStorage.getItem("Diona_T3_Min"), localStorage.getItem("Diona_T3_Max")]);} catch(e){}
+  try{Klee_Ex.noUiSlider.set([localStorage.getItem("Klee_Ex_Min"), localStorage.getItem("Klee_Ex_Max")]);} catch(e){}
+  try{Klee_Pr.noUiSlider.set([localStorage.getItem("Klee_Pr_Min"), localStorage.getItem("Klee_Pr_Max")]);} catch(e){}
+  try{Klee_T1.noUiSlider.set([localStorage.getItem("Klee_T1_Min"), localStorage.getItem("Klee_T1_Max")]);} catch(e){}
+  try{Klee_T2.noUiSlider.set([localStorage.getItem("Klee_T2_Min"), localStorage.getItem("Klee_T2_Max")]);} catch(e){}
+  try{Klee_T3.noUiSlider.set([localStorage.getItem("Klee_T3_Min"), localStorage.getItem("Klee_T3_Max")]);} catch(e){}
+  try{Venti_Ex.noUiSlider.set([localStorage.getItem("Venti_Ex_Min"), localStorage.getItem("Venti_Ex_Max")]);} catch(e){}
+  try{Venti_Pr.noUiSlider.set([localStorage.getItem("Venti_Pr_Min"), localStorage.getItem("Venti_Pr_Max")]);} catch(e){}
+  try{Venti_T1.noUiSlider.set([localStorage.getItem("Venti_T1_Min"), localStorage.getItem("Venti_T1_Max")]);} catch(e){}
+  try{Venti_T2.noUiSlider.set([localStorage.getItem("Venti_T2_Min"), localStorage.getItem("Venti_T2_Max")]);} catch(e){}
+  try{Venti_T3.noUiSlider.set([localStorage.getItem("Venti_T3_Min"), localStorage.getItem("Venti_T3_Max")]);} catch(e){}
+  try{Keqing_Ex.noUiSlider.set([localStorage.getItem("Keqing_Ex_Min"), localStorage.getItem("Keqing_Ex_Max")]);} catch(e){}
+  try{Keqing_Pr.noUiSlider.set([localStorage.getItem("Keqing_Pr_Min"), localStorage.getItem("Keqing_Pr_Max")]);} catch(e){}
+  try{Keqing_T1.noUiSlider.set([localStorage.getItem("Keqing_T1_Min"), localStorage.getItem("Keqing_T1_Max")]);} catch(e){}
+  try{Keqing_T2.noUiSlider.set([localStorage.getItem("Keqing_T2_Min"), localStorage.getItem("Keqing_T2_Max")]);} catch(e){}
+  try{Keqing_T3.noUiSlider.set([localStorage.getItem("Keqing_T3_Min"), localStorage.getItem("Keqing_T3_Max")]);} catch(e){}
+  try{Mona_Ex.noUiSlider.set([localStorage.getItem("Mona_Ex_Min"), localStorage.getItem("Mona_Ex_Max")]);} catch(e){}
+  try{Mona_Pr.noUiSlider.set([localStorage.getItem("Mona_Pr_Min"), localStorage.getItem("Mona_Pr_Max")]);} catch(e){}
+  try{Mona_T1.noUiSlider.set([localStorage.getItem("Mona_T1_Min"), localStorage.getItem("Mona_T1_Max")]);} catch(e){}
+  try{Mona_T2.noUiSlider.set([localStorage.getItem("Mona_T2_Min"), localStorage.getItem("Mona_T2_Max")]);} catch(e){}
+  try{Mona_T3.noUiSlider.set([localStorage.getItem("Mona_T3_Min"), localStorage.getItem("Mona_T3_Max")]);} catch(e){}
+  try{Qiqi_Ex.noUiSlider.set([localStorage.getItem("Qiqi_Ex_Min"), localStorage.getItem("Qiqi_Ex_Max")]);} catch(e){}
+  try{Qiqi_Pr.noUiSlider.set([localStorage.getItem("Qiqi_Pr_Min"), localStorage.getItem("Qiqi_Pr_Max")]);} catch(e){}
+  try{Qiqi_T1.noUiSlider.set([localStorage.getItem("Qiqi_T1_Min"), localStorage.getItem("Qiqi_T1_Max")]);} catch(e){}
+  try{Qiqi_T2.noUiSlider.set([localStorage.getItem("Qiqi_T2_Min"), localStorage.getItem("Qiqi_T2_Max")]);} catch(e){}
+  try{Qiqi_T3.noUiSlider.set([localStorage.getItem("Qiqi_T3_Min"), localStorage.getItem("Qiqi_T3_Max")]);} catch(e){}
+  try{Diluc_Ex.noUiSlider.set([localStorage.getItem("Diluc_Ex_Min"), localStorage.getItem("Diluc_Ex_Max")]);} catch(e){}
+  try{Diluc_Pr.noUiSlider.set([localStorage.getItem("Diluc_Pr_Min"), localStorage.getItem("Diluc_Pr_Max")]);} catch(e){}
+  try{Diluc_T1.noUiSlider.set([localStorage.getItem("Diluc_T1_Min"), localStorage.getItem("Diluc_T1_Max")]);} catch(e){}
+  try{Diluc_T2.noUiSlider.set([localStorage.getItem("Diluc_T2_Min"), localStorage.getItem("Diluc_T2_Max")]);} catch(e){}
+  try{Diluc_T3.noUiSlider.set([localStorage.getItem("Diluc_T3_Min"), localStorage.getItem("Diluc_T3_Max")]);} catch(e){}
+  try{Jean_Ex.noUiSlider.set([localStorage.getItem("Jean_Ex_Min"), localStorage.getItem("Jean_Ex_Max")]);} catch(e){}
+  try{Jean_Pr.noUiSlider.set([localStorage.getItem("Jean_Pr_Min"), localStorage.getItem("Jean_Pr_Max")]);} catch(e){}
+  try{Jean_T1.noUiSlider.set([localStorage.getItem("Jean_T1_Min"), localStorage.getItem("Jean_T1_Max")]);} catch(e){}
+  try{Jean_T2.noUiSlider.set([localStorage.getItem("Jean_T2_Min"), localStorage.getItem("Jean_T2_Max")]);} catch(e){}
+  try{Jean_T3.noUiSlider.set([localStorage.getItem("Jean_T3_Min"), localStorage.getItem("Jean_T3_Max")]);} catch(e){}
+  try{Sucrose_Ex.noUiSlider.set([localStorage.getItem("Sucrose_Ex_Min"), localStorage.getItem("Sucrose_Ex_Max")]);} catch(e){}
+  try{Sucrose_Pr.noUiSlider.set([localStorage.getItem("Sucrose_Pr_Min"), localStorage.getItem("Sucrose_Pr_Max")]);} catch(e){}
+  try{Sucrose_T1.noUiSlider.set([localStorage.getItem("Sucrose_T1_Min"), localStorage.getItem("Sucrose_T1_Max")]);} catch(e){}
+  try{Sucrose_T2.noUiSlider.set([localStorage.getItem("Sucrose_T2_Min"), localStorage.getItem("Sucrose_T2_Max")]);} catch(e){}
+  try{Sucrose_T3.noUiSlider.set([localStorage.getItem("Sucrose_T3_Min"), localStorage.getItem("Sucrose_T3_Max")]);} catch(e){}
+  try{Chongyun_Ex.noUiSlider.set([localStorage.getItem("Chongyun_Ex_Min"), localStorage.getItem("Chongyun_Ex_Max")]);} catch(e){}
+  try{Chongyun_Pr.noUiSlider.set([localStorage.getItem("Chongyun_Pr_Min"), localStorage.getItem("Chongyun_Pr_Max")]);} catch(e){}
+  try{Chongyun_T1.noUiSlider.set([localStorage.getItem("Chongyun_T1_Min"), localStorage.getItem("Chongyun_T1_Max")]);} catch(e){}
+  try{Chongyun_T2.noUiSlider.set([localStorage.getItem("Chongyun_T2_Min"), localStorage.getItem("Chongyun_T2_Max")]);} catch(e){}
+  try{Chongyun_T3.noUiSlider.set([localStorage.getItem("Chongyun_T3_Min"), localStorage.getItem("Chongyun_T3_Max")]);} catch(e){}
+  try{Noelle_Ex.noUiSlider.set([localStorage.getItem("Noelle_Ex_Min"), localStorage.getItem("Noelle_Ex_Max")]);} catch(e){}
+  try{Noelle_Pr.noUiSlider.set([localStorage.getItem("Noelle_Pr_Min"), localStorage.getItem("Noelle_Pr_Max")]);} catch(e){}
+  try{Noelle_T1.noUiSlider.set([localStorage.getItem("Noelle_T1_Min"), localStorage.getItem("Noelle_T1_Max")]);} catch(e){}
+  try{Noelle_T2.noUiSlider.set([localStorage.getItem("Noelle_T2_Min"), localStorage.getItem("Noelle_T2_Max")]);} catch(e){}
+  try{Noelle_T3.noUiSlider.set([localStorage.getItem("Noelle_T3_Min"), localStorage.getItem("Noelle_T3_Max")]);} catch(e){}
+  try{Bennett_Ex.noUiSlider.set([localStorage.getItem("Bennett_Ex_Min"), localStorage.getItem("Bennett_Ex_Max")]);} catch(e){}
+  try{Bennett_Pr.noUiSlider.set([localStorage.getItem("Bennett_Pr_Min"), localStorage.getItem("Bennett_Pr_Max")]);} catch(e){}
+  try{Bennett_T1.noUiSlider.set([localStorage.getItem("Bennett_T1_Min"), localStorage.getItem("Bennett_T1_Max")]);} catch(e){}
+  try{Bennett_T2.noUiSlider.set([localStorage.getItem("Bennett_T2_Min"), localStorage.getItem("Bennett_T2_Max")]);} catch(e){}
+  try{Bennett_T3.noUiSlider.set([localStorage.getItem("Bennett_T3_Min"), localStorage.getItem("Bennett_T3_Max")]);} catch(e){}
+  try{Fischl_Ex.noUiSlider.set([localStorage.getItem("Fischl_Ex_Min"), localStorage.getItem("Fischl_Ex_Max")]);} catch(e){}
+  try{Fischl_Pr.noUiSlider.set([localStorage.getItem("Fischl_Pr_Min"), localStorage.getItem("Fischl_Pr_Max")]);} catch(e){}
+  try{Fischl_T1.noUiSlider.set([localStorage.getItem("Fischl_T1_Min"), localStorage.getItem("Fischl_T1_Max")]);} catch(e){}
+  try{Fischl_T2.noUiSlider.set([localStorage.getItem("Fischl_T2_Min"), localStorage.getItem("Fischl_T2_Max")]);} catch(e){}
+  try{Fischl_T3.noUiSlider.set([localStorage.getItem("Fischl_T3_Min"), localStorage.getItem("Fischl_T3_Max")]);} catch(e){}
+  try{Ningguang_Ex.noUiSlider.set([localStorage.getItem("Ningguang_Ex_Min"), localStorage.getItem("Ningguang_Ex_Max")]);} catch(e){}
+  try{Ningguang_Pr.noUiSlider.set([localStorage.getItem("Ningguang_Pr_Min"), localStorage.getItem("Ningguang_Pr_Max")]);} catch(e){}
+  try{Ningguang_T1.noUiSlider.set([localStorage.getItem("Ningguang_T1_Min"), localStorage.getItem("Ningguang_T1_Max")]);} catch(e){}
+  try{Ningguang_T2.noUiSlider.set([localStorage.getItem("Ningguang_T2_Min"), localStorage.getItem("Ningguang_T2_Max")]);} catch(e){}
+  try{Ningguang_T3.noUiSlider.set([localStorage.getItem("Ningguang_T3_Min"), localStorage.getItem("Ningguang_T3_Max")]);} catch(e){}
+  try{Xingqiu_Ex.noUiSlider.set([localStorage.getItem("Xingqiu_Ex_Min"), localStorage.getItem("Xingqiu_Ex_Max")]);} catch(e){}
+  try{Xingqiu_Pr.noUiSlider.set([localStorage.getItem("Xingqiu_Pr_Min"), localStorage.getItem("Xingqiu_Pr_Max")]);} catch(e){}
+  try{Xingqiu_T1.noUiSlider.set([localStorage.getItem("Xingqiu_T1_Min"), localStorage.getItem("Xingqiu_T1_Max")]);} catch(e){}
+  try{Xingqiu_T2.noUiSlider.set([localStorage.getItem("Xingqiu_T2_Min"), localStorage.getItem("Xingqiu_T2_Max")]);} catch(e){}
+  try{Xingqiu_T3.noUiSlider.set([localStorage.getItem("Xingqiu_T3_Min"), localStorage.getItem("Xingqiu_T3_Max")]);} catch(e){}
+  try{Beidou_Ex.noUiSlider.set([localStorage.getItem("Beidou_Ex_Min"), localStorage.getItem("Beidou_Ex_Max")]);} catch(e){}
+  try{Beidou_Pr.noUiSlider.set([localStorage.getItem("Beidou_Pr_Min"), localStorage.getItem("Beidou_Pr_Max")]);} catch(e){}
+  try{Beidou_T1.noUiSlider.set([localStorage.getItem("Beidou_T1_Min"), localStorage.getItem("Beidou_T1_Max")]);} catch(e){}
+  try{Beidou_T2.noUiSlider.set([localStorage.getItem("Beidou_T2_Min"), localStorage.getItem("Beidou_T2_Max")]);} catch(e){}
+  try{Beidou_T3.noUiSlider.set([localStorage.getItem("Beidou_T3_Min"), localStorage.getItem("Beidou_T3_Max")]);} catch(e){}
+  try{Xiangling_Ex.noUiSlider.set([localStorage.getItem("Xiangling_Ex_Min"), localStorage.getItem("Xiangling_Ex_Max")]);} catch(e){}
+  try{Xiangling_Pr.noUiSlider.set([localStorage.getItem("Xiangling_Pr_Min"), localStorage.getItem("Xiangling_Pr_Max")]);} catch(e){}
+  try{Xiangling_T1.noUiSlider.set([localStorage.getItem("Xiangling_T1_Min"), localStorage.getItem("Xiangling_T1_Max")]);} catch(e){}
+  try{Xiangling_T2.noUiSlider.set([localStorage.getItem("Xiangling_T2_Min"), localStorage.getItem("Xiangling_T2_Max")]);} catch(e){}
+  try{Xiangling_T3.noUiSlider.set([localStorage.getItem("Xiangling_T3_Min"), localStorage.getItem("Xiangling_T3_Max")]);} catch(e){}
+  try{Razor_Ex.noUiSlider.set([localStorage.getItem("Razor_Ex_Min"), localStorage.getItem("Razor_Ex_Max")]);} catch(e){}
+  try{Razor_Pr.noUiSlider.set([localStorage.getItem("Razor_Pr_Min"), localStorage.getItem("Razor_Pr_Max")]);} catch(e){}
+  try{Razor_T1.noUiSlider.set([localStorage.getItem("Razor_T1_Min"), localStorage.getItem("Razor_T1_Max")]);} catch(e){}
+  try{Razor_T2.noUiSlider.set([localStorage.getItem("Razor_T2_Min"), localStorage.getItem("Razor_T2_Max")]);} catch(e){}
+  try{Razor_T3.noUiSlider.set([localStorage.getItem("Razor_T3_Min"), localStorage.getItem("Razor_T3_Max")]);} catch(e){}
+  try{Barbara_Ex.noUiSlider.set([localStorage.getItem("Barbara_Ex_Min"), localStorage.getItem("Barbara_Ex_Max")]);} catch(e){}
+  try{Barbara_Pr.noUiSlider.set([localStorage.getItem("Barbara_Pr_Min"), localStorage.getItem("Barbara_Pr_Max")]);} catch(e){}
+  try{Barbara_T1.noUiSlider.set([localStorage.getItem("Barbara_T1_Min"), localStorage.getItem("Barbara_T1_Max")]);} catch(e){}
+  try{Barbara_T2.noUiSlider.set([localStorage.getItem("Barbara_T2_Min"), localStorage.getItem("Barbara_T2_Max")]);} catch(e){}
+  try{Barbara_T3.noUiSlider.set([localStorage.getItem("Barbara_T3_Min"), localStorage.getItem("Barbara_T3_Max")]);} catch(e){}
+  try{Lisa_Ex.noUiSlider.set([localStorage.getItem("Lisa_Ex_Min"), localStorage.getItem("Lisa_Ex_Max")]);} catch(e){}
+  try{Lisa_Pr.noUiSlider.set([localStorage.getItem("Lisa_Pr_Min"), localStorage.getItem("Lisa_Pr_Max")]);} catch(e){}
+  try{Lisa_T1.noUiSlider.set([localStorage.getItem("Lisa_T1_Min"), localStorage.getItem("Lisa_T1_Max")]);} catch(e){}
+  try{Lisa_T2.noUiSlider.set([localStorage.getItem("Lisa_T2_Min"), localStorage.getItem("Lisa_T2_Max")]);} catch(e){}
+  try{Lisa_T3.noUiSlider.set([localStorage.getItem("Lisa_T3_Min"), localStorage.getItem("Lisa_T3_Max")]);} catch(e){}
+  try{Kaeya_Ex.noUiSlider.set([localStorage.getItem("Kaeya_Ex_Min"), localStorage.getItem("Kaeya_Ex_Max")]);} catch(e){}
+  try{Kaeya_Pr.noUiSlider.set([localStorage.getItem("Kaeya_Pr_Min"), localStorage.getItem("Kaeya_Pr_Max")]);} catch(e){}
+  try{Kaeya_T1.noUiSlider.set([localStorage.getItem("Kaeya_T1_Min"), localStorage.getItem("Kaeya_T1_Max")]);} catch(e){}
+  try{Kaeya_T2.noUiSlider.set([localStorage.getItem("Kaeya_T2_Min"), localStorage.getItem("Kaeya_T2_Max")]);} catch(e){}
+  try{Kaeya_T3.noUiSlider.set([localStorage.getItem("Kaeya_T3_Min"), localStorage.getItem("Kaeya_T3_Max")]);} catch(e){}
+  try{Amber_Ex.noUiSlider.set([localStorage.getItem("Amber_Ex_Min"), localStorage.getItem("Amber_Ex_Max")]);} catch(e){}
+  try{Amber_Pr.noUiSlider.set([localStorage.getItem("Amber_Pr_Min"), localStorage.getItem("Amber_Pr_Max")]);} catch(e){}
+  try{Amber_T1.noUiSlider.set([localStorage.getItem("Amber_T1_Min"), localStorage.getItem("Amber_T1_Max")]);} catch(e){}
+  try{Amber_T2.noUiSlider.set([localStorage.getItem("Amber_T2_Min"), localStorage.getItem("Amber_T2_Max")]);} catch(e){}
+  try{Amber_T3.noUiSlider.set([localStorage.getItem("Amber_T3_Min"), localStorage.getItem("Amber_T3_Max")]);} catch(e){}
+  try{Aloy_Ex.noUiSlider.set([localStorage.getItem("Aloy_Ex_Min"), localStorage.getItem("Aloy_Ex_Max")]);} catch(e){}
+  try{Aloy_Pr.noUiSlider.set([localStorage.getItem("Aloy_Pr_Min"), localStorage.getItem("Aloy_Pr_Max")]);} catch(e){}
+  try{Aloy_T1.noUiSlider.set([localStorage.getItem("Aloy_T1_Min"), localStorage.getItem("Aloy_T1_Max")]);} catch(e){}
+  try{Aloy_T2.noUiSlider.set([localStorage.getItem("Aloy_T2_Min"), localStorage.getItem("Aloy_T2_Max")]);} catch(e){}
+  try{Aloy_T3.noUiSlider.set([localStorage.getItem("Aloy_T3_Min"), localStorage.getItem("Aloy_T3_Max")]);} catch(e){}
+  try{document.getElementById("Heros_Wit").value = localStorage.getItem("Heros_Wit")} catch(e){}
+  try{document.getElementById("Adventurers_Experience").value = localStorage.getItem("Adventurers_Experience")} catch(e){}
+  try{document.getElementById("Wanderers_Advice").value = localStorage.getItem("Wanderers_Advice")} catch(e){}
+  try{document.getElementById("Mora").value = localStorage.getItem("Mora")} catch(e){}
+  try{document.getElementById("Slime_Concentrate").value = localStorage.getItem("Slime_Concentrate")} catch(e){}
+  try{document.getElementById("Slime_Secretions").value = localStorage.getItem("Slime_Secretions")} catch(e){}
+  try{document.getElementById("Slime_Condensate").value = localStorage.getItem("Slime_Condensate")} catch(e){}
+  try{document.getElementById("Ominous_Mask").value = localStorage.getItem("Ominous_Mask")} catch(e){}
+  try{document.getElementById("Stained_Mask").value = localStorage.getItem("Stained_Mask")} catch(e){}
+  try{document.getElementById("Damaged_Mask").value = localStorage.getItem("Damaged_Mask")} catch(e){}
+  try{document.getElementById("Forbidden_Curse_Scroll").value = localStorage.getItem("Forbidden_Curse_Scroll")} catch(e){}
+  try{document.getElementById("Sealed_Scroll").value = localStorage.getItem("Sealed_Scroll")} catch(e){}
+  try{document.getElementById("Divining_Scroll").value = localStorage.getItem("Divining_Scroll")} catch(e){}
+  try{document.getElementById("Weathered_Arrowhead").value = localStorage.getItem("Weathered_Arrowhead")} catch(e){}
+  try{document.getElementById("Sharp_Arrowhead").value = localStorage.getItem("Sharp_Arrowhead")} catch(e){}
+  try{document.getElementById("Firm_Arrowhead").value = localStorage.getItem("Firm_Arrowhead")} catch(e){}
+  try{document.getElementById("Lieutenants_Insignia").value = localStorage.getItem("Lieutenants_Insignia")} catch(e){}
+  try{document.getElementById("Sergeants_Insignia").value = localStorage.getItem("Sergeants_Insignia")} catch(e){}
+  try{document.getElementById("Recruits_Insignia").value = localStorage.getItem("Recruits_Insignia")} catch(e){}
+  try{document.getElementById("Golden_Raven_Insignia").value = localStorage.getItem("Golden_Raven_Insignia")} catch(e){}
+  try{document.getElementById("Silver_Raven_Insignia").value = localStorage.getItem("Silver_Raven_Insignia")} catch(e){}
+  try{document.getElementById("Treasure_Hoarder_Insignia").value = localStorage.getItem("Treasure_Hoarder_Insignia")} catch(e){}
+  try{document.getElementById("Energy_Nectar").value = localStorage.getItem("Energy_Nectar")} catch(e){}
+  try{document.getElementById("Shimmering_Nectar").value = localStorage.getItem("Shimmering_Nectar")} catch(e){}
+  try{document.getElementById("Whopperflower_Nectar").value = localStorage.getItem("Whopperflower_Nectar")} catch(e){}
+  try{document.getElementById("Famed_Handguard").value = localStorage.getItem("Famed_Handguard")} catch(e){}
+  try{document.getElementById("Kageuchi_Handguard").value = localStorage.getItem("Kageuchi_Handguard")} catch(e){}
+  try{document.getElementById("Old_Handguard").value = localStorage.getItem("Old_Handguard")} catch(e){}
+  try{document.getElementById("Spectral_Nucleus").value = localStorage.getItem("Spectral_Nucleus")} catch(e){}
+  try{document.getElementById("Spectral_Heart").value = localStorage.getItem("Spectral_Heart")} catch(e){}
+  try{document.getElementById("Spectral_Husk").value = localStorage.getItem("Spectral_Husk")} catch(e){}
+  try{document.getElementById("Dvalins_Plume").value = localStorage.getItem("Dvalins_Plume")} catch(e){}
+  try{document.getElementById("Dvalins_Claw").value = localStorage.getItem("Dvalins_Claw")} catch(e){}
+  try{document.getElementById("Dvalins_Sigh").value = localStorage.getItem("Dvalins_Sigh")} catch(e){}
+  try{document.getElementById("Tail_of_Boreas").value = localStorage.getItem("Tail_of_Boreas")} catch(e){}
+  try{document.getElementById("Ring_of_Boreas").value = localStorage.getItem("Ring_of_Boreas")} catch(e){}
+  try{document.getElementById("Spirit_Locket_of_Boreas").value = localStorage.getItem("Spirit_Locket_of_Boreas")} catch(e){}
+  try{document.getElementById("Tusk_of_Monoceros_Caeli").value = localStorage.getItem("Tusk_of_Monoceros_Caeli")} catch(e){}
+  try{document.getElementById("Shard_of_a_Foul_Legacy").value = localStorage.getItem("Shard_of_a_Foul_Legacy")} catch(e){}
+  try{document.getElementById("Shadow_of_the_Warrior").value = localStorage.getItem("Shadow_of_the_Warrior")} catch(e){}
+  try{document.getElementById("Dragon_Lords_Crown").value = localStorage.getItem("Dragon_Lords_Crown")} catch(e){}
+  try{document.getElementById("Bloodjade_Branch").value = localStorage.getItem("Bloodjade_Branch")} catch(e){}
+  try{document.getElementById("Gilded_Scale").value = localStorage.getItem("Gilded_Scale")} catch(e){}
+  try{document.getElementById("Molten_Moment").value = localStorage.getItem("Molten_Moment")} catch(e){}
+  try{document.getElementById("Hellfire_Butterfly").value = localStorage.getItem("Hellfire_Butterfly")} catch(e){}
+  try{document.getElementById("Ashen_Heart").value = localStorage.getItem("Ashen_Heart")} catch(e){}
+  try{document.getElementById("Hurricane_Seed").value = localStorage.getItem("Hurricane_Seed")} catch(e){}
+  try{document.getElementById("Lightning_Prism").value = localStorage.getItem("Lightning_Prism")} catch(e){}
+  try{document.getElementById("Basalt_Pillar").value = localStorage.getItem("Basalt_Pillar")} catch(e){}
+  try{document.getElementById("Hoarfrost_Core").value = localStorage.getItem("Hoarfrost_Core")} catch(e){}
+  try{document.getElementById("Everflame_Seed").value = localStorage.getItem("Everflame_Seed")} catch(e){}
+  try{document.getElementById("Cleansing_Heart").value = localStorage.getItem("Cleansing_Heart")} catch(e){}
+  try{document.getElementById("Juvenile_Jade").value = localStorage.getItem("Juvenile_Jade")} catch(e){}
+  try{document.getElementById("Crystalline_Bloom").value = localStorage.getItem("Crystalline_Bloom")} catch(e){}
+  try{document.getElementById("Marionette_Core").value = localStorage.getItem("Marionette_Core")} catch(e){}
+  try{document.getElementById("Perpetual_Heart").value = localStorage.getItem("Perpetual_Heart")} catch(e){}
+  try{document.getElementById("Smoldering_Pearl").value = localStorage.getItem("Smoldering_Pearl")} catch(e){}
+  try{document.getElementById("Dew_of_Repudiation").value = localStorage.getItem("Dew_of_Repudiation")} catch(e){}
+  try{document.getElementById("Storm_Beads").value = localStorage.getItem("Storm_Beads")} catch(e){}
+  try{document.getElementById("Riftborn_Regalia").value = localStorage.getItem("Riftborn_Regalia")} catch(e){}
+  try{document.getElementById("Agate_Gemstone").value = localStorage.getItem("Agate_Gemstone")} catch(e){}
+  try{document.getElementById("Agate_Chunk").value = localStorage.getItem("Agate_Chunk")} catch(e){}
+  try{document.getElementById("Agate_Fragment").value = localStorage.getItem("Agate_Fragment")} catch(e){}
+  try{document.getElementById("Agate_Sliver").value = localStorage.getItem("Agate_Sliver")} catch(e){}
+  try{document.getElementById("Lazurite_Gemstone").value = localStorage.getItem("Lazurite_Gemstone")} catch(e){}
+  try{document.getElementById("Lazurite_Chunk").value = localStorage.getItem("Lazurite_Chunk")} catch(e){}
+  try{document.getElementById("Lazurite_Fragment").value = localStorage.getItem("Lazurite_Fragment")} catch(e){}
+  try{document.getElementById("Lazurite_Sliver").value = localStorage.getItem("Lazurite_Sliver")} catch(e){}
+  try{document.getElementById("Amethyst_Gemstone").value = localStorage.getItem("Amethyst_Gemstone")} catch(e){}
+  try{document.getElementById("Amethyst_Chunk").value = localStorage.getItem("Amethyst_Chunk")} catch(e){}
+  try{document.getElementById("Amethyst_Fragment").value = localStorage.getItem("Amethyst_Fragment")} catch(e){}
+  try{document.getElementById("Amethyst_Sliver").value = localStorage.getItem("Amethyst_Sliver")} catch(e){}
+  try{document.getElementById("Turquoise_Gemstone").value = localStorage.getItem("Turquoise_Gemstone")} catch(e){}
+  try{document.getElementById("Turquoise_Chunk").value = localStorage.getItem("Turquoise_Chunk")} catch(e){}
+  try{document.getElementById("Turquoise_Fragment").value = localStorage.getItem("Turquoise_Fragment")} catch(e){}
+  try{document.getElementById("Turquoise_Sliver").value = localStorage.getItem("Turquoise_Sliver")} catch(e){}
+  try{document.getElementById("Jade_Gemstone").value = localStorage.getItem("Jade_Gemstone")} catch(e){}
+  try{document.getElementById("Jade_Chunk").value = localStorage.getItem("Jade_Chunk")} catch(e){}
+  try{document.getElementById("Jade_Fragment").value = localStorage.getItem("Jade_Fragment")} catch(e){}
+  try{document.getElementById("Jade_Sliver").value = localStorage.getItem("Jade_Sliver")} catch(e){}
+  try{document.getElementById("Topaz_Gemstone").value = localStorage.getItem("Topaz_Gemstone")} catch(e){}
+  try{document.getElementById("Topaz_Chunk").value = localStorage.getItem("Topaz_Chunk")} catch(e){}
+  try{document.getElementById("Topaz_Fragment").value = localStorage.getItem("Topaz_Fragment")} catch(e){}
+  try{document.getElementById("Topaz_Sliver").value = localStorage.getItem("Topaz_Sliver")} catch(e){}
+  try{document.getElementById("Emerald_Gemstone").value = localStorage.getItem("Emerald_Gemstone")} catch(e){}
+  try{document.getElementById("Emerald_Chunk").value = localStorage.getItem("Emerald_Chunk")} catch(e){}
+  try{document.getElementById("Emerald_Fragment").value = localStorage.getItem("Emerald_Fragment")} catch(e){}
+  try{document.getElementById("Emerald_Sliver").value = localStorage.getItem("Emerald_Sliver")} catch(e){}
+  try{document.getElementById("Philosophies_of_Freedom").value = localStorage.getItem("Philosophies_of_Freedom")} catch(e){}
+  try{document.getElementById("Guide_to_Freedom").value = localStorage.getItem("Guide_to_Freedom")} catch(e){}
+  try{document.getElementById("Teachings_of_Freedom").value = localStorage.getItem("Teachings_of_Freedom")} catch(e){}
+  try{document.getElementById("Philosophies_of_Ballad").value = localStorage.getItem("Philosophies_of_Ballad")} catch(e){}
+  try{document.getElementById("Guide_to_Ballad").value = localStorage.getItem("Guide_to_Ballad")} catch(e){}
+  try{document.getElementById("Teachings_of_Ballad").value = localStorage.getItem("Teachings_of_Ballad")} catch(e){}
+  try{document.getElementById("Philosophies_of_Resistance").value = localStorage.getItem("Philosophies_of_Resistance")} catch(e){}
+  try{document.getElementById("Guide_to_Resistance").value = localStorage.getItem("Guide_to_Resistance")} catch(e){}
+  try{document.getElementById("Teachings_of_Resistance").value = localStorage.getItem("Teachings_of_Resistance")} catch(e){}
+  try{document.getElementById("Philosophies_of_Prosperity").value = localStorage.getItem("Philosophies_of_Prosperity")} catch(e){}
+  try{document.getElementById("Guide_to_Prosperity").value = localStorage.getItem("Guide_to_Prosperity")} catch(e){}
+  try{document.getElementById("Teachings_of_Prosperity").value = localStorage.getItem("Teachings_of_Prosperity")} catch(e){}
+  try{document.getElementById("Philosophies_of_Diligence").value = localStorage.getItem("Philosophies_of_Diligence")} catch(e){}
+  try{document.getElementById("Guide_to_Diligence").value = localStorage.getItem("Guide_to_Diligence")} catch(e){}
+  try{document.getElementById("Teachings_of_Diligence").value = localStorage.getItem("Teachings_of_Diligence")} catch(e){}
+  try{document.getElementById("Philosophies_of_Gold").value = localStorage.getItem("Philosophies_of_Gold")} catch(e){}
+  try{document.getElementById("Guide_to_Gold").value = localStorage.getItem("Guide_to_Gold")} catch(e){}
+  try{document.getElementById("Teachings_of_Gold").value = localStorage.getItem("Teachings_of_Gold")} catch(e){}
+  try{document.getElementById("Philosophies_of_Transience").value = localStorage.getItem("Philosophies_of_Transience")} catch(e){}
+  try{document.getElementById("Guide_to_Transience").value = localStorage.getItem("Guide_to_Transience")} catch(e){}
+  try{document.getElementById("Teachings_of_Transience").value = localStorage.getItem("Teachings_of_Transience")} catch(e){}
+  try{document.getElementById("Philosophies_of_Elegance").value = localStorage.getItem("Philosophies_of_Elegance")} catch(e){}
+  try{document.getElementById("Guide_to_Elegance").value = localStorage.getItem("Guide_to_Elegance")} catch(e){}
+  try{document.getElementById("Teachings_of_Elegance").value = localStorage.getItem("Teachings_of_Elegance")} catch(e){}
+  try{document.getElementById("Philosophies_of_Light").value = localStorage.getItem("Philosophies_of_Light")} catch(e){}
+  try{document.getElementById("Guide_to_Light").value = localStorage.getItem("Guide_to_Light")} catch(e){}
+  try{document.getElementById("Teachings_of_Light").value = localStorage.getItem("Teachings_of_Light")} catch(e){}
+  try{document.getElementById("Crown_of_Insight").value = localStorage.getItem("Crown_of_Insight")} catch(e){}
+  try{document.getElementById("Calla_Lily").value = localStorage.getItem("Calla_Lily")} catch(e){}
+  try{document.getElementById("Wolfhook").value = localStorage.getItem("Wolfhook")} catch(e){}
+  try{document.getElementById("Valberry").value = localStorage.getItem("Valberry")} catch(e){}
+  try{document.getElementById("Cecilia").value = localStorage.getItem("Cecilia")} catch(e){}
+  try{document.getElementById("Windwheel_Aster").value = localStorage.getItem("Windwheel_Aster")} catch(e){}
+  try{document.getElementById("Philanemo_Mushroom").value = localStorage.getItem("Philanemo_Mushroom")} catch(e){}
+  try{document.getElementById("Jueyun_Chili").value = localStorage.getItem("Jueyun_Chili")} catch(e){}
+  try{document.getElementById("Noctilucous_Jade").value = localStorage.getItem("Noctilucous_Jade")} catch(e){}
+  try{document.getElementById("Silk_Flower").value = localStorage.getItem("Silk_Flower")} catch(e){}
+  try{document.getElementById("Glaze_Lily").value = localStorage.getItem("Glaze_Lily")} catch(e){}
+  try{document.getElementById("Qingxin").value = localStorage.getItem("Qingxin")} catch(e){}
+  try{document.getElementById("Starconch").value = localStorage.getItem("Starconch")} catch(e){}
+  try{document.getElementById("Violetgrass").value = localStorage.getItem("Violetgrass")} catch(e){}
+  try{document.getElementById("Small_Lamp_Grass").value = localStorage.getItem("Small_Lamp_Grass")} catch(e){}
+  try{document.getElementById("Dandelion_Seed").value = localStorage.getItem("Dandelion_Seed")} catch(e){}
+  try{document.getElementById("Cor_Lapis").value = localStorage.getItem("Cor_Lapis")} catch(e){}
+  try{document.getElementById("Onikabuto").value = localStorage.getItem("Onikabuto")} catch(e){}
+  try{document.getElementById("Sakura_Bloom").value = localStorage.getItem("Sakura_Bloom")} catch(e){}
+  try{document.getElementById("Crystal_Marrow").value = localStorage.getItem("Crystal_Marrow")} catch(e){}
+  try{document.getElementById("Dendrobium").value = localStorage.getItem("Dendrobium")} catch(e){}
+  try{document.getElementById("Naku_Weed").value = localStorage.getItem("Naku_Weed")} catch(e){}
+  try{document.getElementById("Sea_Ganoderma").value = localStorage.getItem("Sea_Ganoderma")} catch(e){}
+  try{document.getElementById("Sango_Pearl").value = localStorage.getItem("Sango_Pearl")} catch(e){}
+  try{document.getElementById("Amakumo_Fruit").value = localStorage.getItem("Amakumo_Fruit")} catch(e){}
+  try{document.getElementById("Fluorescent_Fungus").value = localStorage.getItem("Fluorescent_Fungus")} catch(e){}
+}
+Load();
+document.getElementById('Load').onclick = function changeContent() {
+  Load();
+  Calculator();
+  M.toast({
+    html: 'Loaded',
+    displayLength: '1000'
+  })
+}
 
 // ロード系
 function CharacterLoad() {
@@ -7247,13 +7576,10 @@ function InventoryLoad() {
   try{document.getElementById("Amakumo_Fruit").value = Amakumo_Fruit_Cookie} catch(e){}
   try{document.getElementById("Fluorescent_Fungus").value = Fluorescent_Fungus_Cookie} catch(e){}
 }
-CharacterLoad();
-InventoryLoad();
 
-document.getElementById('Load').onclick = function changeContent() {
+document.getElementById('OldLoad').onclick = function changeContent() {
   CharacterLoad();
   InventoryLoad();
-  Calculator();
   M.toast({
     html: 'Loaded',
     displayLength: '1000'
