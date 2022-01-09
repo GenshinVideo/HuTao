@@ -1,4 +1,4 @@
-var Version = "20211208"
+var Version = "20220110"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -11,6 +11,8 @@ function LoadWait() {
     setTimeout( LoadWait, 500 );
     return;
   }
+  ShenheLoad();
+  Yun_JinLoad();
   Arataki_IttoLoad();
   GorouLoad();
   ThomaLoad();
@@ -57,6 +59,242 @@ function LoadWait() {
 }
 LoadWait();
 
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Shenhe  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Shenhe_Ex = document.getElementById('Shenhe_Ex');
+noUiSlider.create(Shenhe_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Shenhe_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Shenhe_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Shenhe_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Shenhe_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function ShenheLoad() {
+  Shenhe_Ex.noUiSlider.on('update', function (values, handle) {
+    var Shenhe_Ex_Min_Volume = "L1toL" + Shenhe_Ex.noUiSlider.get()[0];
+    var Shenhe_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Shenhe_Ex.noUiSlider.get()[0])[Shenhe_Ex_Min_Volume]);
+    var Shenhe_Ex_Max_Volume = "L1toL" + Shenhe_Ex.noUiSlider.get()[1];
+    var Shenhe_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Shenhe_Ex.noUiSlider.get()[1])[Shenhe_Ex_Max_Volume]);
+    var Shenhe_Ex_Volume = Shenhe_Ex_1toMax_Volume - Shenhe_Ex_1toMin_Volume
+    var Shenhe_Ex_Book_Volume = Shenhe_Ex_Volume / 1000
+    var Shenhe_Ex_Mora_Volume = Shenhe_Ex_Volume * 0.2
+    document.getElementById('Shenhe_Ex_Volume').innerHTML = Shenhe_Ex_Volume.toLocaleString();
+    document.getElementById('Shenhe_Ex_Book_Volume').innerHTML = Shenhe_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Shenhe_Ex_Mora_Volume').innerHTML = Shenhe_Ex_Mora_Volume.toLocaleString();
+  });
+  Shenhe_Pr.noUiSlider.on('update', function (values, handle) {
+    var Shenhe_Pr_Min_Volume = "L1toL" + Shenhe_Pr.noUiSlider.get()[0];
+    var Shenhe_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[0])["P1_" + [Shenhe_Pr_Min_Volume]]);
+    var Shenhe_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[0])["P2_" + [Shenhe_Pr_Min_Volume]]);
+    var Shenhe_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[0])["P3_" + [Shenhe_Pr_Min_Volume]]);
+    var Shenhe_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[0])["P4_" + [Shenhe_Pr_Min_Volume]]);
+    var Shenhe_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[0])["P5_" + [Shenhe_Pr_Min_Volume]]);
+    var Shenhe_Pr_Max_Volume = "L1toL" + Shenhe_Pr.noUiSlider.get()[1];
+    var Shenhe_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[1])["P1_" + [Shenhe_Pr_Max_Volume]]);
+    var Shenhe_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[1])["P2_" + [Shenhe_Pr_Max_Volume]]);
+    var Shenhe_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[1])["P3_" + [Shenhe_Pr_Max_Volume]]);
+    var Shenhe_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[1])["P4_" + [Shenhe_Pr_Max_Volume]]);
+    var Shenhe_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Shenhe_Pr.noUiSlider.get()[1])["P5_" + [Shenhe_Pr_Max_Volume]]);
+    var Shenhe_Pr_P1 = Shenhe_Pr_P1_1toMax_Volume - Shenhe_Pr_P1_1toMin_Volume
+    var Shenhe_Pr_P2 = Shenhe_Pr_P2_1toMax_Volume - Shenhe_Pr_P2_1toMin_Volume
+    var Shenhe_Pr_P3 = Shenhe_Pr_P3_1toMax_Volume - Shenhe_Pr_P3_1toMin_Volume
+    var Shenhe_Pr_P4 = Shenhe_Pr_P4_1toMax_Volume - Shenhe_Pr_P4_1toMin_Volume
+    var Shenhe_Pr_P5 = Shenhe_Pr_P5_1toMax_Volume - Shenhe_Pr_P5_1toMin_Volume
+    document.getElementById('Shenhe_Pr_P1_Volume').innerHTML = Shenhe_Pr_P1;
+    document.getElementById('Shenhe_Pr_P2_Volume').innerHTML = Shenhe_Pr_P2;
+    document.getElementById('Shenhe_Pr_P3_Volume').innerHTML = Shenhe_Pr_P3;
+    document.getElementById('Shenhe_Pr_P4_Volume').innerHTML = Shenhe_Pr_P4;
+    document.getElementById('Shenhe_Pr_P5_Volume').innerHTML = Shenhe_Pr_P5.toLocaleString();
+  });
+  Shenhe_T1.noUiSlider.on('update', function (values, handle) {
+    var Shenhe_T1_Min_Volume = "L1toL" + Shenhe_T1.noUiSlider.get()[0];
+    var Shenhe_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[0])["T1_" + [Shenhe_T1_Min_Volume]]);
+    var Shenhe_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[0])["T2_" + [Shenhe_T1_Min_Volume]]);
+    var Shenhe_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[0])["T3_" + [Shenhe_T1_Min_Volume]]);
+    var Shenhe_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[0])["T4_" + [Shenhe_T1_Min_Volume]]);
+    var Shenhe_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[0])["T5_" + [Shenhe_T1_Min_Volume]]);
+    var Shenhe_T1_Max_Volume = "L1toL" + Shenhe_T1.noUiSlider.get()[1];
+    var Shenhe_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[1])["T1_" + [Shenhe_T1_Max_Volume]]);
+    var Shenhe_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[1])["T2_" + [Shenhe_T1_Max_Volume]]);
+    var Shenhe_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[1])["T3_" + [Shenhe_T1_Max_Volume]]);
+    var Shenhe_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[1])["T4_" + [Shenhe_T1_Max_Volume]]);
+    var Shenhe_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T1.noUiSlider.get()[1])["T5_" + [Shenhe_T1_Max_Volume]]);
+    var Shenhe_T1_T1 = Shenhe_T1_T1_1toMax_Volume - Shenhe_T1_T1_1toMin_Volume
+    var Shenhe_T1_T2 = Shenhe_T1_T2_1toMax_Volume - Shenhe_T1_T2_1toMin_Volume
+    var Shenhe_T1_T3 = Shenhe_T1_T3_1toMax_Volume - Shenhe_T1_T3_1toMin_Volume
+    var Shenhe_T1_T4 = Shenhe_T1_T4_1toMax_Volume - Shenhe_T1_T4_1toMin_Volume
+    var Shenhe_T1_T5 = Shenhe_T1_T5_1toMax_Volume - Shenhe_T1_T5_1toMin_Volume
+    document.getElementById('Shenhe_T1_T1_Volume').innerHTML = Shenhe_T1_T1;
+    document.getElementById('Shenhe_T1_T2_Volume').innerHTML = Shenhe_T1_T2;
+    document.getElementById('Shenhe_T1_T3_Volume').innerHTML = Shenhe_T1_T3;
+    document.getElementById('Shenhe_T1_T4_Volume').innerHTML = Shenhe_T1_T4;
+    document.getElementById('Shenhe_T1_T5_Volume').innerHTML = Shenhe_T1_T5.toLocaleString();
+  });
+  Shenhe_T2.noUiSlider.on('update', function (values, handle) {
+    var Shenhe_T2_Min_Volume = "L1toL" + Shenhe_T2.noUiSlider.get()[0];
+    var Shenhe_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[0])["T1_" + [Shenhe_T2_Min_Volume]]);
+    var Shenhe_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[0])["T2_" + [Shenhe_T2_Min_Volume]]);
+    var Shenhe_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[0])["T3_" + [Shenhe_T2_Min_Volume]]);
+    var Shenhe_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[0])["T4_" + [Shenhe_T2_Min_Volume]]);
+    var Shenhe_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[0])["T5_" + [Shenhe_T2_Min_Volume]]);
+    var Shenhe_T2_Max_Volume = "L1toL" + Shenhe_T2.noUiSlider.get()[1];
+    var Shenhe_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[1])["T1_" + [Shenhe_T2_Max_Volume]]);
+    var Shenhe_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[1])["T2_" + [Shenhe_T2_Max_Volume]]);
+    var Shenhe_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[1])["T3_" + [Shenhe_T2_Max_Volume]]);
+    var Shenhe_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[1])["T4_" + [Shenhe_T2_Max_Volume]]);
+    var Shenhe_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T2.noUiSlider.get()[1])["T5_" + [Shenhe_T2_Max_Volume]]);
+    var Shenhe_T2_T1 = Shenhe_T2_T1_1toMax_Volume - Shenhe_T2_T1_1toMin_Volume
+    var Shenhe_T2_T2 = Shenhe_T2_T2_1toMax_Volume - Shenhe_T2_T2_1toMin_Volume
+    var Shenhe_T2_T3 = Shenhe_T2_T3_1toMax_Volume - Shenhe_T2_T3_1toMin_Volume
+    var Shenhe_T2_T4 = Shenhe_T2_T4_1toMax_Volume - Shenhe_T2_T4_1toMin_Volume
+    var Shenhe_T2_T5 = Shenhe_T2_T5_1toMax_Volume - Shenhe_T2_T5_1toMin_Volume
+    document.getElementById('Shenhe_T2_T1_Volume').innerHTML = Shenhe_T2_T1;
+    document.getElementById('Shenhe_T2_T2_Volume').innerHTML = Shenhe_T2_T2;
+    document.getElementById('Shenhe_T2_T3_Volume').innerHTML = Shenhe_T2_T3;
+    document.getElementById('Shenhe_T2_T4_Volume').innerHTML = Shenhe_T2_T4;
+    document.getElementById('Shenhe_T2_T5_Volume').innerHTML = Shenhe_T2_T5.toLocaleString();
+  });
+  Shenhe_T3.noUiSlider.on('update', function (values, handle) {
+    var Shenhe_T3_Min_Volume = "L1toL" + Shenhe_T3.noUiSlider.get()[0];
+    var Shenhe_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[0])["T1_" + [Shenhe_T3_Min_Volume]]);
+    var Shenhe_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[0])["T2_" + [Shenhe_T3_Min_Volume]]);
+    var Shenhe_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[0])["T3_" + [Shenhe_T3_Min_Volume]]);
+    var Shenhe_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[0])["T4_" + [Shenhe_T3_Min_Volume]]);
+    var Shenhe_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[0])["T5_" + [Shenhe_T3_Min_Volume]]);
+    var Shenhe_T3_Max_Volume = "L1toL" + Shenhe_T3.noUiSlider.get()[1];
+    var Shenhe_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[1])["T1_" + [Shenhe_T3_Max_Volume]]);
+    var Shenhe_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[1])["T2_" + [Shenhe_T3_Max_Volume]]);
+    var Shenhe_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[1])["T3_" + [Shenhe_T3_Max_Volume]]);
+    var Shenhe_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[1])["T4_" + [Shenhe_T3_Max_Volume]]);
+    var Shenhe_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Shenhe_T3.noUiSlider.get()[1])["T5_" + [Shenhe_T3_Max_Volume]]);
+    var Shenhe_T3_T1 = Shenhe_T3_T1_1toMax_Volume - Shenhe_T3_T1_1toMin_Volume
+    var Shenhe_T3_T2 = Shenhe_T3_T2_1toMax_Volume - Shenhe_T3_T2_1toMin_Volume
+    var Shenhe_T3_T3 = Shenhe_T3_T3_1toMax_Volume - Shenhe_T3_T3_1toMin_Volume
+    var Shenhe_T3_T4 = Shenhe_T3_T4_1toMax_Volume - Shenhe_T3_T4_1toMin_Volume
+    var Shenhe_T3_T5 = Shenhe_T3_T5_1toMax_Volume - Shenhe_T3_T5_1toMin_Volume
+    document.getElementById('Shenhe_T3_T1_Volume').innerHTML = Shenhe_T3_T1;
+    document.getElementById('Shenhe_T3_T2_Volume').innerHTML = Shenhe_T3_T2;
+    document.getElementById('Shenhe_T3_T3_Volume').innerHTML = Shenhe_T3_T3;
+    document.getElementById('Shenhe_T3_T4_Volume').innerHTML = Shenhe_T3_T4;
+    document.getElementById('Shenhe_T3_T5_Volume').innerHTML = Shenhe_T3_T5.toLocaleString();
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Shenhe  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yun_Jin  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Yun_Jin_Ex = document.getElementById('Yun_Jin_Ex');
+noUiSlider.create(Yun_Jin_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yun_Jin_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yun_Jin_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yun_Jin_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yun_Jin_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function Yun_JinLoad() {
+  Yun_Jin_Ex.noUiSlider.on('update', function (values, handle) {
+    var Yun_Jin_Ex_Min_Volume = "L1toL" + Yun_Jin_Ex.noUiSlider.get()[0];
+    var Yun_Jin_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Yun_Jin_Ex.noUiSlider.get()[0])[Yun_Jin_Ex_Min_Volume]);
+    var Yun_Jin_Ex_Max_Volume = "L1toL" + Yun_Jin_Ex.noUiSlider.get()[1];
+    var Yun_Jin_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Yun_Jin_Ex.noUiSlider.get()[1])[Yun_Jin_Ex_Max_Volume]);
+    var Yun_Jin_Ex_Volume = Yun_Jin_Ex_1toMax_Volume - Yun_Jin_Ex_1toMin_Volume
+    var Yun_Jin_Ex_Book_Volume = Yun_Jin_Ex_Volume / 1000
+    var Yun_Jin_Ex_Mora_Volume = Yun_Jin_Ex_Volume * 0.2
+    document.getElementById('Yun_Jin_Ex_Volume').innerHTML = Yun_Jin_Ex_Volume.toLocaleString();
+    document.getElementById('Yun_Jin_Ex_Book_Volume').innerHTML = Yun_Jin_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Yun_Jin_Ex_Mora_Volume').innerHTML = Yun_Jin_Ex_Mora_Volume.toLocaleString();
+  });
+  Yun_Jin_Pr.noUiSlider.on('update', function (values, handle) {
+    var Yun_Jin_Pr_Min_Volume = "L1toL" + Yun_Jin_Pr.noUiSlider.get()[0];
+    var Yun_Jin_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[0])["P1_" + [Yun_Jin_Pr_Min_Volume]]);
+    var Yun_Jin_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[0])["P2_" + [Yun_Jin_Pr_Min_Volume]]);
+    var Yun_Jin_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[0])["P3_" + [Yun_Jin_Pr_Min_Volume]]);
+    var Yun_Jin_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[0])["P4_" + [Yun_Jin_Pr_Min_Volume]]);
+    var Yun_Jin_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[0])["P5_" + [Yun_Jin_Pr_Min_Volume]]);
+    var Yun_Jin_Pr_Max_Volume = "L1toL" + Yun_Jin_Pr.noUiSlider.get()[1];
+    var Yun_Jin_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[1])["P1_" + [Yun_Jin_Pr_Max_Volume]]);
+    var Yun_Jin_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[1])["P2_" + [Yun_Jin_Pr_Max_Volume]]);
+    var Yun_Jin_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[1])["P3_" + [Yun_Jin_Pr_Max_Volume]]);
+    var Yun_Jin_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[1])["P4_" + [Yun_Jin_Pr_Max_Volume]]);
+    var Yun_Jin_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yun_Jin_Pr.noUiSlider.get()[1])["P5_" + [Yun_Jin_Pr_Max_Volume]]);
+    var Yun_Jin_Pr_P1 = Yun_Jin_Pr_P1_1toMax_Volume - Yun_Jin_Pr_P1_1toMin_Volume
+    var Yun_Jin_Pr_P2 = Yun_Jin_Pr_P2_1toMax_Volume - Yun_Jin_Pr_P2_1toMin_Volume
+    var Yun_Jin_Pr_P3 = Yun_Jin_Pr_P3_1toMax_Volume - Yun_Jin_Pr_P3_1toMin_Volume
+    var Yun_Jin_Pr_P4 = Yun_Jin_Pr_P4_1toMax_Volume - Yun_Jin_Pr_P4_1toMin_Volume
+    var Yun_Jin_Pr_P5 = Yun_Jin_Pr_P5_1toMax_Volume - Yun_Jin_Pr_P5_1toMin_Volume
+    document.getElementById('Yun_Jin_Pr_P1_Volume').innerHTML = Yun_Jin_Pr_P1;
+    document.getElementById('Yun_Jin_Pr_P2_Volume').innerHTML = Yun_Jin_Pr_P2;
+    document.getElementById('Yun_Jin_Pr_P3_Volume').innerHTML = Yun_Jin_Pr_P3;
+    document.getElementById('Yun_Jin_Pr_P4_Volume').innerHTML = Yun_Jin_Pr_P4;
+    document.getElementById('Yun_Jin_Pr_P5_Volume').innerHTML = Yun_Jin_Pr_P5.toLocaleString();
+  });
+  Yun_Jin_T1.noUiSlider.on('update', function (values, handle) {
+    var Yun_Jin_T1_Min_Volume = "L1toL" + Yun_Jin_T1.noUiSlider.get()[0];
+    var Yun_Jin_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[0])["T1_" + [Yun_Jin_T1_Min_Volume]]);
+    var Yun_Jin_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[0])["T2_" + [Yun_Jin_T1_Min_Volume]]);
+    var Yun_Jin_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[0])["T3_" + [Yun_Jin_T1_Min_Volume]]);
+    var Yun_Jin_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[0])["T4_" + [Yun_Jin_T1_Min_Volume]]);
+    var Yun_Jin_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[0])["T5_" + [Yun_Jin_T1_Min_Volume]]);
+    var Yun_Jin_T1_Max_Volume = "L1toL" + Yun_Jin_T1.noUiSlider.get()[1];
+    var Yun_Jin_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[1])["T1_" + [Yun_Jin_T1_Max_Volume]]);
+    var Yun_Jin_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[1])["T2_" + [Yun_Jin_T1_Max_Volume]]);
+    var Yun_Jin_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[1])["T3_" + [Yun_Jin_T1_Max_Volume]]);
+    var Yun_Jin_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[1])["T4_" + [Yun_Jin_T1_Max_Volume]]);
+    var Yun_Jin_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T1.noUiSlider.get()[1])["T5_" + [Yun_Jin_T1_Max_Volume]]);
+    var Yun_Jin_T1_T1 = Yun_Jin_T1_T1_1toMax_Volume - Yun_Jin_T1_T1_1toMin_Volume
+    var Yun_Jin_T1_T2 = Yun_Jin_T1_T2_1toMax_Volume - Yun_Jin_T1_T2_1toMin_Volume
+    var Yun_Jin_T1_T3 = Yun_Jin_T1_T3_1toMax_Volume - Yun_Jin_T1_T3_1toMin_Volume
+    var Yun_Jin_T1_T4 = Yun_Jin_T1_T4_1toMax_Volume - Yun_Jin_T1_T4_1toMin_Volume
+    var Yun_Jin_T1_T5 = Yun_Jin_T1_T5_1toMax_Volume - Yun_Jin_T1_T5_1toMin_Volume
+    document.getElementById('Yun_Jin_T1_T1_Volume').innerHTML = Yun_Jin_T1_T1;
+    document.getElementById('Yun_Jin_T1_T2_Volume').innerHTML = Yun_Jin_T1_T2;
+    document.getElementById('Yun_Jin_T1_T3_Volume').innerHTML = Yun_Jin_T1_T3;
+    document.getElementById('Yun_Jin_T1_T4_Volume').innerHTML = Yun_Jin_T1_T4;
+    document.getElementById('Yun_Jin_T1_T5_Volume').innerHTML = Yun_Jin_T1_T5.toLocaleString();
+  });
+  Yun_Jin_T2.noUiSlider.on('update', function (values, handle) {
+    var Yun_Jin_T2_Min_Volume = "L1toL" + Yun_Jin_T2.noUiSlider.get()[0];
+    var Yun_Jin_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[0])["T1_" + [Yun_Jin_T2_Min_Volume]]);
+    var Yun_Jin_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[0])["T2_" + [Yun_Jin_T2_Min_Volume]]);
+    var Yun_Jin_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[0])["T3_" + [Yun_Jin_T2_Min_Volume]]);
+    var Yun_Jin_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[0])["T4_" + [Yun_Jin_T2_Min_Volume]]);
+    var Yun_Jin_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[0])["T5_" + [Yun_Jin_T2_Min_Volume]]);
+    var Yun_Jin_T2_Max_Volume = "L1toL" + Yun_Jin_T2.noUiSlider.get()[1];
+    var Yun_Jin_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[1])["T1_" + [Yun_Jin_T2_Max_Volume]]);
+    var Yun_Jin_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[1])["T2_" + [Yun_Jin_T2_Max_Volume]]);
+    var Yun_Jin_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[1])["T3_" + [Yun_Jin_T2_Max_Volume]]);
+    var Yun_Jin_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[1])["T4_" + [Yun_Jin_T2_Max_Volume]]);
+    var Yun_Jin_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T2.noUiSlider.get()[1])["T5_" + [Yun_Jin_T2_Max_Volume]]);
+    var Yun_Jin_T2_T1 = Yun_Jin_T2_T1_1toMax_Volume - Yun_Jin_T2_T1_1toMin_Volume
+    var Yun_Jin_T2_T2 = Yun_Jin_T2_T2_1toMax_Volume - Yun_Jin_T2_T2_1toMin_Volume
+    var Yun_Jin_T2_T3 = Yun_Jin_T2_T3_1toMax_Volume - Yun_Jin_T2_T3_1toMin_Volume
+    var Yun_Jin_T2_T4 = Yun_Jin_T2_T4_1toMax_Volume - Yun_Jin_T2_T4_1toMin_Volume
+    var Yun_Jin_T2_T5 = Yun_Jin_T2_T5_1toMax_Volume - Yun_Jin_T2_T5_1toMin_Volume
+    document.getElementById('Yun_Jin_T2_T1_Volume').innerHTML = Yun_Jin_T2_T1;
+    document.getElementById('Yun_Jin_T2_T2_Volume').innerHTML = Yun_Jin_T2_T2;
+    document.getElementById('Yun_Jin_T2_T3_Volume').innerHTML = Yun_Jin_T2_T3;
+    document.getElementById('Yun_Jin_T2_T4_Volume').innerHTML = Yun_Jin_T2_T4;
+    document.getElementById('Yun_Jin_T2_T5_Volume').innerHTML = Yun_Jin_T2_T5.toLocaleString();
+  });
+  Yun_Jin_T3.noUiSlider.on('update', function (values, handle) {
+    var Yun_Jin_T3_Min_Volume = "L1toL" + Yun_Jin_T3.noUiSlider.get()[0];
+    var Yun_Jin_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[0])["T1_" + [Yun_Jin_T3_Min_Volume]]);
+    var Yun_Jin_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[0])["T2_" + [Yun_Jin_T3_Min_Volume]]);
+    var Yun_Jin_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[0])["T3_" + [Yun_Jin_T3_Min_Volume]]);
+    var Yun_Jin_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[0])["T4_" + [Yun_Jin_T3_Min_Volume]]);
+    var Yun_Jin_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[0])["T5_" + [Yun_Jin_T3_Min_Volume]]);
+    var Yun_Jin_T3_Max_Volume = "L1toL" + Yun_Jin_T3.noUiSlider.get()[1];
+    var Yun_Jin_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[1])["T1_" + [Yun_Jin_T3_Max_Volume]]);
+    var Yun_Jin_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[1])["T2_" + [Yun_Jin_T3_Max_Volume]]);
+    var Yun_Jin_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[1])["T3_" + [Yun_Jin_T3_Max_Volume]]);
+    var Yun_Jin_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[1])["T4_" + [Yun_Jin_T3_Max_Volume]]);
+    var Yun_Jin_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yun_Jin_T3.noUiSlider.get()[1])["T5_" + [Yun_Jin_T3_Max_Volume]]);
+    var Yun_Jin_T3_T1 = Yun_Jin_T3_T1_1toMax_Volume - Yun_Jin_T3_T1_1toMin_Volume
+    var Yun_Jin_T3_T2 = Yun_Jin_T3_T2_1toMax_Volume - Yun_Jin_T3_T2_1toMin_Volume
+    var Yun_Jin_T3_T3 = Yun_Jin_T3_T3_1toMax_Volume - Yun_Jin_T3_T3_1toMin_Volume
+    var Yun_Jin_T3_T4 = Yun_Jin_T3_T4_1toMax_Volume - Yun_Jin_T3_T4_1toMin_Volume
+    var Yun_Jin_T3_T5 = Yun_Jin_T3_T5_1toMax_Volume - Yun_Jin_T3_T5_1toMin_Volume
+    document.getElementById('Yun_Jin_T3_T1_Volume').innerHTML = Yun_Jin_T3_T1;
+    document.getElementById('Yun_Jin_T3_T2_Volume').innerHTML = Yun_Jin_T3_T2;
+    document.getElementById('Yun_Jin_T3_T3_Volume').innerHTML = Yun_Jin_T3_T3;
+    document.getElementById('Yun_Jin_T3_T4_Volume').innerHTML = Yun_Jin_T3_T4;
+    document.getElementById('Yun_Jin_T3_T5_Volume').innerHTML = Yun_Jin_T3_T5.toLocaleString();
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yun_Jin  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Arataki_Itto  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // var Arataki_Itto_Ex = document.getElementById('Arataki_Itto_Ex');
 noUiSlider.create(Arataki_Itto_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
@@ -5453,6 +5691,17 @@ function Elemental_Stones_Calculator() {
   document.getElementById('Riftborn_Regalia_Volume').innerHTML = Riftborn_Regalia_Volume;
   document.getElementById('In_Riftborn_Regalia_Volume').innerHTML = In_Riftborn_Regalia_Volume;
   document.getElementById('Ne_Riftborn_Regalia_Volume').innerHTML = Ne_Riftborn_Regalia_Volume;
+// [計算] - ドラゴエアのニセヒレ
+  var Dragonheirs_False_Fin_Volume = parseInt("0")
+  var Dragonheirs_False_Fin_El = document.getElementsByClassName("Dragonheirs_False_Fin")
+  for (var i = 0; i < Dragonheirs_False_Fin_El.length; i++) {
+    var Dragonheirs_False_Fin_Volume = Dragonheirs_False_Fin_Volume + parseInt(Dragonheirs_False_Fin_El[i].textContent)
+  }
+  var In_Dragonheirs_False_Fin_Volume = parseInt(document.getElementById("Dragonheirs_False_Fin").value)
+  var Ne_Dragonheirs_False_Fin_Volume = Dragonheirs_False_Fin_Volume - In_Dragonheirs_False_Fin_Volume
+  document.getElementById('Dragonheirs_False_Fin_Volume').innerHTML = Dragonheirs_False_Fin_Volume;
+  document.getElementById('In_Dragonheirs_False_Fin_Volume').innerHTML = In_Dragonheirs_False_Fin_Volume;
+  document.getElementById('Ne_Dragonheirs_False_Fin_Volume').innerHTML = Ne_Dragonheirs_False_Fin_Volume;
 }
 // [計算] - モブ敵素材
 function Common_Material_Calculator() {
@@ -6303,380 +6552,14 @@ document.getElementById('Load').onclick = function changeContent() {
   }
 }
 
-
-// Version 20211130 ロード
-function OldLoad() {
-  try{Arataki_Itto_Ex.noUiSlider.set([localStorage.getItem("Arataki_Itto_Ex_Min"), localStorage.getItem("Arataki_Itto_Ex_Max")]);} catch(e){}
-  try{Arataki_Itto_Ex.noUiSlider.set([localStorage.getItem("Arataki_Itto_Ex_Min"), localStorage.getItem("Arataki_Itto_Ex_Max")]);} catch(e){}
-  try{Arataki_Itto_Pr.noUiSlider.set([localStorage.getItem("Arataki_Itto_Pr_Min"), localStorage.getItem("Arataki_Itto_Pr_Max")]);} catch(e){}
-  try{Arataki_Itto_T1.noUiSlider.set([localStorage.getItem("Arataki_Itto_T1_Min"), localStorage.getItem("Arataki_Itto_T1_Max")]);} catch(e){}
-  try{Arataki_Itto_T2.noUiSlider.set([localStorage.getItem("Arataki_Itto_T2_Min"), localStorage.getItem("Arataki_Itto_T2_Max")]);} catch(e){}
-  try{Arataki_Itto_T3.noUiSlider.set([localStorage.getItem("Arataki_Itto_T3_Min"), localStorage.getItem("Arataki_Itto_T3_Max")]);} catch(e){}
-  try{Gorou_Ex.noUiSlider.set([localStorage.getItem("Gorou_Ex_Min"), localStorage.getItem("Gorou_Ex_Max")]);} catch(e){}
-  try{Gorou_Ex.noUiSlider.set([localStorage.getItem("Gorou_Ex_Min"), localStorage.getItem("Gorou_Ex_Max")]);} catch(e){}
-  try{Gorou_Pr.noUiSlider.set([localStorage.getItem("Gorou_Pr_Min"), localStorage.getItem("Gorou_Pr_Max")]);} catch(e){}
-  try{Gorou_T1.noUiSlider.set([localStorage.getItem("Gorou_T1_Min"), localStorage.getItem("Gorou_T1_Max")]);} catch(e){}
-  try{Gorou_T2.noUiSlider.set([localStorage.getItem("Gorou_T2_Min"), localStorage.getItem("Gorou_T2_Max")]);} catch(e){}
-  try{Gorou_T3.noUiSlider.set([localStorage.getItem("Gorou_T3_Min"), localStorage.getItem("Gorou_T3_Max")]);} catch(e){}
-  try{Thoma_Ex.noUiSlider.set([localStorage.getItem("Thoma_Ex_Min"), localStorage.getItem("Thoma_Ex_Max")]);} catch(e){}
-  try{Thoma_Ex.noUiSlider.set([localStorage.getItem("Thoma_Ex_Min"), localStorage.getItem("Thoma_Ex_Max")]);} catch(e){}
-  try{Thoma_Pr.noUiSlider.set([localStorage.getItem("Thoma_Pr_Min"), localStorage.getItem("Thoma_Pr_Max")]);} catch(e){}
-  try{Thoma_T1.noUiSlider.set([localStorage.getItem("Thoma_T1_Min"), localStorage.getItem("Thoma_T1_Max")]);} catch(e){}
-  try{Thoma_T2.noUiSlider.set([localStorage.getItem("Thoma_T2_Min"), localStorage.getItem("Thoma_T2_Max")]);} catch(e){}
-  try{Thoma_T3.noUiSlider.set([localStorage.getItem("Thoma_T3_Min"), localStorage.getItem("Thoma_T3_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Ex_Min"), localStorage.getItem("Sangonomiya_Kokomi_Ex_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_Ex.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Ex_Min"), localStorage.getItem("Sangonomiya_Kokomi_Ex_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_Pr.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_Pr_Min"), localStorage.getItem("Sangonomiya_Kokomi_Pr_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_T1.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T1_Min"), localStorage.getItem("Sangonomiya_Kokomi_T1_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_T2.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T2_Min"), localStorage.getItem("Sangonomiya_Kokomi_T2_Max")]);} catch(e){}
-  try{Sangonomiya_Kokomi_T3.noUiSlider.set([localStorage.getItem("Sangonomiya_Kokomi_T3_Min"), localStorage.getItem("Sangonomiya_Kokomi_T3_Max")]);} catch(e){}
-  try{Raiden_Shogun_Ex.noUiSlider.set([localStorage.getItem("Raiden_Shogun_Ex_Min"), localStorage.getItem("Raiden_Shogun_Ex_Max")]);} catch(e){}
-  try{Raiden_Shogun_Pr.noUiSlider.set([localStorage.getItem("Raiden_Shogun_Pr_Min"), localStorage.getItem("Raiden_Shogun_Pr_Max")]);} catch(e){}
-  try{Raiden_Shogun_T1.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T1_Min"), localStorage.getItem("Raiden_Shogun_T1_Max")]);} catch(e){}
-  try{Raiden_Shogun_T2.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T2_Min"), localStorage.getItem("Raiden_Shogun_T2_Max")]);} catch(e){}
-  try{Raiden_Shogun_T3.noUiSlider.set([localStorage.getItem("Raiden_Shogun_T3_Min"), localStorage.getItem("Raiden_Shogun_T3_Max")]);} catch(e){}
-  try{Kujou_Sara_Ex.noUiSlider.set([localStorage.getItem("Kujou_Sara_Ex_Min"), localStorage.getItem("Kujou_Sara_Ex_Max")]);} catch(e){}
-  try{Kujou_Sara_Pr.noUiSlider.set([localStorage.getItem("Kujou_Sara_Pr_Min"), localStorage.getItem("Kujou_Sara_Pr_Max")]);} catch(e){}
-  try{Kujou_Sara_T1.noUiSlider.set([localStorage.getItem("Kujou_Sara_T1_Min"), localStorage.getItem("Kujou_Sara_T1_Max")]);} catch(e){}
-  try{Kujou_Sara_T2.noUiSlider.set([localStorage.getItem("Kujou_Sara_T2_Min"), localStorage.getItem("Kujou_Sara_T2_Max")]);} catch(e){}
-  try{Kujou_Sara_T3.noUiSlider.set([localStorage.getItem("Kujou_Sara_T3_Min"), localStorage.getItem("Kujou_Sara_T3_Max")]);} catch(e){}
-  try{Yoimiya_Ex.noUiSlider.set([localStorage.getItem("Yoimiya_Ex_Min"), localStorage.getItem("Yoimiya_Ex_Max")]);} catch(e){}
-  try{Yoimiya_Pr.noUiSlider.set([localStorage.getItem("Yoimiya_Pr_Min"), localStorage.getItem("Yoimiya_Pr_Max")]);} catch(e){}
-  try{Yoimiya_T1.noUiSlider.set([localStorage.getItem("Yoimiya_T1_Min"), localStorage.getItem("Yoimiya_T1_Max")]);} catch(e){}
-  try{Yoimiya_T2.noUiSlider.set([localStorage.getItem("Yoimiya_T2_Min"), localStorage.getItem("Yoimiya_T2_Max")]);} catch(e){}
-  try{Yoimiya_T3.noUiSlider.set([localStorage.getItem("Yoimiya_T3_Min"), localStorage.getItem("Yoimiya_T3_Max")]);} catch(e){}
-  try{Sayu_Ex.noUiSlider.set([localStorage.getItem("Sayu_Ex_Min"), localStorage.getItem("Sayu_Ex_Max")]);} catch(e){}
-  try{Sayu_Pr.noUiSlider.set([localStorage.getItem("Sayu_Pr_Min"), localStorage.getItem("Sayu_Pr_Max")]);} catch(e){}
-  try{Sayu_T1.noUiSlider.set([localStorage.getItem("Sayu_T1_Min"), localStorage.getItem("Sayu_T1_Max")]);} catch(e){}
-  try{Sayu_T2.noUiSlider.set([localStorage.getItem("Sayu_T2_Min"), localStorage.getItem("Sayu_T2_Max")]);} catch(e){}
-  try{Sayu_T3.noUiSlider.set([localStorage.getItem("Sayu_T3_Min"), localStorage.getItem("Sayu_T3_Max")]);} catch(e){}
-  try{Kamisato_Ayaka_Ex.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_Ex_Min"), localStorage.getItem("Kamisato_Ayaka_Ex_Max")]);} catch(e){}
-  try{Kamisato_Ayaka_Pr.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_Pr_Min"), localStorage.getItem("Kamisato_Ayaka_Pr_Max")]);} catch(e){}
-  try{Kamisato_Ayaka_T1.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T1_Min"), localStorage.getItem("Kamisato_Ayaka_T1_Max")]);} catch(e){}
-  try{Kamisato_Ayaka_T2.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T2_Min"), localStorage.getItem("Kamisato_Ayaka_T2_Max")]);} catch(e){}
-  try{Kamisato_Ayaka_T3.noUiSlider.set([localStorage.getItem("Kamisato_Ayaka_T3_Min"), localStorage.getItem("Kamisato_Ayaka_T3_Max")]);} catch(e){}
-  try{Kaedehara_Kazuha_Ex.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_Ex_Min"), localStorage.getItem("Kaedehara_Kazuha_Ex_Max")]);} catch(e){}
-  try{Kaedehara_Kazuha_Pr.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_Pr_Min"), localStorage.getItem("Kaedehara_Kazuha_Pr_Max")]);} catch(e){}
-  try{Kaedehara_Kazuha_T1.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T1_Min"), localStorage.getItem("Kaedehara_Kazuha_T1_Max")]);} catch(e){}
-  try{Kaedehara_Kazuha_T2.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T2_Min"), localStorage.getItem("Kaedehara_Kazuha_T2_Max")]);} catch(e){}
-  try{Kaedehara_Kazuha_T3.noUiSlider.set([localStorage.getItem("Kaedehara_Kazuha_T3_Min"), localStorage.getItem("Kaedehara_Kazuha_T3_Max")]);} catch(e){}
-  try{Eula_Ex.noUiSlider.set([localStorage.getItem("Eula_Ex_Min"), localStorage.getItem("Eula_Ex_Max")]);} catch(e){}
-  try{Eula_Pr.noUiSlider.set([localStorage.getItem("Eula_Pr_Min"), localStorage.getItem("Eula_Pr_Max")]);} catch(e){}
-  try{Eula_T1.noUiSlider.set([localStorage.getItem("Eula_T1_Min"), localStorage.getItem("Eula_T1_Max")]);} catch(e){}
-  try{Eula_T2.noUiSlider.set([localStorage.getItem("Eula_T2_Min"), localStorage.getItem("Eula_T2_Max")]);} catch(e){}
-  try{Eula_T3.noUiSlider.set([localStorage.getItem("Eula_T3_Min"), localStorage.getItem("Eula_T3_Max")]);} catch(e){}
-  try{Yanfei_Ex.noUiSlider.set([localStorage.getItem("Yanfei_Ex_Min"), localStorage.getItem("Yanfei_Ex_Max")]);} catch(e){}
-  try{Yanfei_Pr.noUiSlider.set([localStorage.getItem("Yanfei_Pr_Min"), localStorage.getItem("Yanfei_Pr_Max")]);} catch(e){}
-  try{Yanfei_T1.noUiSlider.set([localStorage.getItem("Yanfei_T1_Min"), localStorage.getItem("Yanfei_T1_Max")]);} catch(e){}
-  try{Yanfei_T2.noUiSlider.set([localStorage.getItem("Yanfei_T2_Min"), localStorage.getItem("Yanfei_T2_Max")]);} catch(e){}
-  try{Yanfei_T3.noUiSlider.set([localStorage.getItem("Yanfei_T3_Min"), localStorage.getItem("Yanfei_T3_Max")]);} catch(e){}
-  try{Rosaria_Ex.noUiSlider.set([localStorage.getItem("Rosaria_Ex_Min"), localStorage.getItem("Rosaria_Ex_Max")]);} catch(e){}
-  try{Rosaria_Pr.noUiSlider.set([localStorage.getItem("Rosaria_Pr_Min"), localStorage.getItem("Rosaria_Pr_Max")]);} catch(e){}
-  try{Rosaria_T1.noUiSlider.set([localStorage.getItem("Rosaria_T1_Min"), localStorage.getItem("Rosaria_T1_Max")]);} catch(e){}
-  try{Rosaria_T2.noUiSlider.set([localStorage.getItem("Rosaria_T2_Min"), localStorage.getItem("Rosaria_T2_Max")]);} catch(e){}
-  try{Rosaria_T3.noUiSlider.set([localStorage.getItem("Rosaria_T3_Min"), localStorage.getItem("Rosaria_T3_Max")]);} catch(e){}
-  try{HuTao_Ex.noUiSlider.set([localStorage.getItem("HuTao_Ex_Min"), localStorage.getItem("HuTao_Ex_Max")]);} catch(e){}
-  try{HuTao_Pr.noUiSlider.set([localStorage.getItem("HuTao_Pr_Min"), localStorage.getItem("HuTao_Pr_Max")]);} catch(e){}
-  try{HuTao_T1.noUiSlider.set([localStorage.getItem("HuTao_T1_Min"), localStorage.getItem("HuTao_T1_Max")]);} catch(e){}
-  try{HuTao_T2.noUiSlider.set([localStorage.getItem("HuTao_T2_Min"), localStorage.getItem("HuTao_T2_Max")]);} catch(e){}
-  try{HuTao_T3.noUiSlider.set([localStorage.getItem("HuTao_T3_Min"), localStorage.getItem("HuTao_T3_Max")]);} catch(e){}
-  try{Xiao_Ex.noUiSlider.set([localStorage.getItem("Xiao_Ex_Min"), localStorage.getItem("Xiao_Ex_Max")]);} catch(e){}
-  try{Xiao_Pr.noUiSlider.set([localStorage.getItem("Xiao_Pr_Min"), localStorage.getItem("Xiao_Pr_Max")]);} catch(e){}
-  try{Xiao_T1.noUiSlider.set([localStorage.getItem("Xiao_T1_Min"), localStorage.getItem("Xiao_T1_Max")]);} catch(e){}
-  try{Xiao_T2.noUiSlider.set([localStorage.getItem("Xiao_T2_Min"), localStorage.getItem("Xiao_T2_Max")]);} catch(e){}
-  try{Xiao_T3.noUiSlider.set([localStorage.getItem("Xiao_T3_Min"), localStorage.getItem("Xiao_T3_Max")]);} catch(e){}
-  try{Ganyu_Ex.noUiSlider.set([localStorage.getItem("Ganyu_Ex_Min"), localStorage.getItem("Ganyu_Ex_Max")]);} catch(e){}
-  try{Ganyu_Pr.noUiSlider.set([localStorage.getItem("Ganyu_Pr_Min"), localStorage.getItem("Ganyu_Pr_Max")]);} catch(e){}
-  try{Ganyu_T1.noUiSlider.set([localStorage.getItem("Ganyu_T1_Min"), localStorage.getItem("Ganyu_T1_Max")]);} catch(e){}
-  try{Ganyu_T2.noUiSlider.set([localStorage.getItem("Ganyu_T2_Min"), localStorage.getItem("Ganyu_T2_Max")]);} catch(e){}
-  try{Ganyu_T3.noUiSlider.set([localStorage.getItem("Ganyu_T3_Min"), localStorage.getItem("Ganyu_T3_Max")]);} catch(e){}
-  try{Albedo_Ex.noUiSlider.set([localStorage.getItem("Albedo_Ex_Min"), localStorage.getItem("Albedo_Ex_Max")]);} catch(e){}
-  try{Albedo_Pr.noUiSlider.set([localStorage.getItem("Albedo_Pr_Min"), localStorage.getItem("Albedo_Pr_Max")]);} catch(e){}
-  try{Albedo_T1.noUiSlider.set([localStorage.getItem("Albedo_T1_Min"), localStorage.getItem("Albedo_T1_Max")]);} catch(e){}
-  try{Albedo_T2.noUiSlider.set([localStorage.getItem("Albedo_T2_Min"), localStorage.getItem("Albedo_T2_Max")]);} catch(e){}
-  try{Albedo_T3.noUiSlider.set([localStorage.getItem("Albedo_T3_Min"), localStorage.getItem("Albedo_T3_Max")]);} catch(e){}
-  try{Zhongli_Ex.noUiSlider.set([localStorage.getItem("Zhongli_Ex_Min"), localStorage.getItem("Zhongli_Ex_Max")]);} catch(e){}
-  try{Zhongli_Pr.noUiSlider.set([localStorage.getItem("Zhongli_Pr_Min"), localStorage.getItem("Zhongli_Pr_Max")]);} catch(e){}
-  try{Zhongli_T1.noUiSlider.set([localStorage.getItem("Zhongli_T1_Min"), localStorage.getItem("Zhongli_T1_Max")]);} catch(e){}
-  try{Zhongli_T2.noUiSlider.set([localStorage.getItem("Zhongli_T2_Min"), localStorage.getItem("Zhongli_T2_Max")]);} catch(e){}
-  try{Zhongli_T3.noUiSlider.set([localStorage.getItem("Zhongli_T3_Min"), localStorage.getItem("Zhongli_T3_Max")]);} catch(e){}
-  try{Xinyan_Ex.noUiSlider.set([localStorage.getItem("Xinyan_Ex_Min"), localStorage.getItem("Xinyan_Ex_Max")]);} catch(e){}
-  try{Xinyan_Pr.noUiSlider.set([localStorage.getItem("Xinyan_Pr_Min"), localStorage.getItem("Xinyan_Pr_Max")]);} catch(e){}
-  try{Xinyan_T1.noUiSlider.set([localStorage.getItem("Xinyan_T1_Min"), localStorage.getItem("Xinyan_T1_Max")]);} catch(e){}
-  try{Xinyan_T2.noUiSlider.set([localStorage.getItem("Xinyan_T2_Min"), localStorage.getItem("Xinyan_T2_Max")]);} catch(e){}
-  try{Xinyan_T3.noUiSlider.set([localStorage.getItem("Xinyan_T3_Min"), localStorage.getItem("Xinyan_T3_Max")]);} catch(e){}
-  try{Tartaglia_Ex.noUiSlider.set([localStorage.getItem("Tartaglia_Ex_Min"), localStorage.getItem("Tartaglia_Ex_Max")]);} catch(e){}
-  try{Tartaglia_Pr.noUiSlider.set([localStorage.getItem("Tartaglia_Pr_Min"), localStorage.getItem("Tartaglia_Pr_Max")]);} catch(e){}
-  try{Tartaglia_T1.noUiSlider.set([localStorage.getItem("Tartaglia_T1_Min"), localStorage.getItem("Tartaglia_T1_Max")]);} catch(e){}
-  try{Tartaglia_T2.noUiSlider.set([localStorage.getItem("Tartaglia_T2_Min"), localStorage.getItem("Tartaglia_T2_Max")]);} catch(e){}
-  try{Tartaglia_T3.noUiSlider.set([localStorage.getItem("Tartaglia_T3_Min"), localStorage.getItem("Tartaglia_T3_Max")]);} catch(e){}
-  try{Diona_Ex.noUiSlider.set([localStorage.getItem("Diona_Ex_Min"), localStorage.getItem("Diona_Ex_Max")]);} catch(e){}
-  try{Diona_Pr.noUiSlider.set([localStorage.getItem("Diona_Pr_Min"), localStorage.getItem("Diona_Pr_Max")]);} catch(e){}
-  try{Diona_T1.noUiSlider.set([localStorage.getItem("Diona_T1_Min"), localStorage.getItem("Diona_T1_Max")]);} catch(e){}
-  try{Diona_T2.noUiSlider.set([localStorage.getItem("Diona_T2_Min"), localStorage.getItem("Diona_T2_Max")]);} catch(e){}
-  try{Diona_T3.noUiSlider.set([localStorage.getItem("Diona_T3_Min"), localStorage.getItem("Diona_T3_Max")]);} catch(e){}
-  try{Klee_Ex.noUiSlider.set([localStorage.getItem("Klee_Ex_Min"), localStorage.getItem("Klee_Ex_Max")]);} catch(e){}
-  try{Klee_Pr.noUiSlider.set([localStorage.getItem("Klee_Pr_Min"), localStorage.getItem("Klee_Pr_Max")]);} catch(e){}
-  try{Klee_T1.noUiSlider.set([localStorage.getItem("Klee_T1_Min"), localStorage.getItem("Klee_T1_Max")]);} catch(e){}
-  try{Klee_T2.noUiSlider.set([localStorage.getItem("Klee_T2_Min"), localStorage.getItem("Klee_T2_Max")]);} catch(e){}
-  try{Klee_T3.noUiSlider.set([localStorage.getItem("Klee_T3_Min"), localStorage.getItem("Klee_T3_Max")]);} catch(e){}
-  try{Venti_Ex.noUiSlider.set([localStorage.getItem("Venti_Ex_Min"), localStorage.getItem("Venti_Ex_Max")]);} catch(e){}
-  try{Venti_Pr.noUiSlider.set([localStorage.getItem("Venti_Pr_Min"), localStorage.getItem("Venti_Pr_Max")]);} catch(e){}
-  try{Venti_T1.noUiSlider.set([localStorage.getItem("Venti_T1_Min"), localStorage.getItem("Venti_T1_Max")]);} catch(e){}
-  try{Venti_T2.noUiSlider.set([localStorage.getItem("Venti_T2_Min"), localStorage.getItem("Venti_T2_Max")]);} catch(e){}
-  try{Venti_T3.noUiSlider.set([localStorage.getItem("Venti_T3_Min"), localStorage.getItem("Venti_T3_Max")]);} catch(e){}
-  try{Keqing_Ex.noUiSlider.set([localStorage.getItem("Keqing_Ex_Min"), localStorage.getItem("Keqing_Ex_Max")]);} catch(e){}
-  try{Keqing_Pr.noUiSlider.set([localStorage.getItem("Keqing_Pr_Min"), localStorage.getItem("Keqing_Pr_Max")]);} catch(e){}
-  try{Keqing_T1.noUiSlider.set([localStorage.getItem("Keqing_T1_Min"), localStorage.getItem("Keqing_T1_Max")]);} catch(e){}
-  try{Keqing_T2.noUiSlider.set([localStorage.getItem("Keqing_T2_Min"), localStorage.getItem("Keqing_T2_Max")]);} catch(e){}
-  try{Keqing_T3.noUiSlider.set([localStorage.getItem("Keqing_T3_Min"), localStorage.getItem("Keqing_T3_Max")]);} catch(e){}
-  try{Mona_Ex.noUiSlider.set([localStorage.getItem("Mona_Ex_Min"), localStorage.getItem("Mona_Ex_Max")]);} catch(e){}
-  try{Mona_Pr.noUiSlider.set([localStorage.getItem("Mona_Pr_Min"), localStorage.getItem("Mona_Pr_Max")]);} catch(e){}
-  try{Mona_T1.noUiSlider.set([localStorage.getItem("Mona_T1_Min"), localStorage.getItem("Mona_T1_Max")]);} catch(e){}
-  try{Mona_T2.noUiSlider.set([localStorage.getItem("Mona_T2_Min"), localStorage.getItem("Mona_T2_Max")]);} catch(e){}
-  try{Mona_T3.noUiSlider.set([localStorage.getItem("Mona_T3_Min"), localStorage.getItem("Mona_T3_Max")]);} catch(e){}
-  try{Qiqi_Ex.noUiSlider.set([localStorage.getItem("Qiqi_Ex_Min"), localStorage.getItem("Qiqi_Ex_Max")]);} catch(e){}
-  try{Qiqi_Pr.noUiSlider.set([localStorage.getItem("Qiqi_Pr_Min"), localStorage.getItem("Qiqi_Pr_Max")]);} catch(e){}
-  try{Qiqi_T1.noUiSlider.set([localStorage.getItem("Qiqi_T1_Min"), localStorage.getItem("Qiqi_T1_Max")]);} catch(e){}
-  try{Qiqi_T2.noUiSlider.set([localStorage.getItem("Qiqi_T2_Min"), localStorage.getItem("Qiqi_T2_Max")]);} catch(e){}
-  try{Qiqi_T3.noUiSlider.set([localStorage.getItem("Qiqi_T3_Min"), localStorage.getItem("Qiqi_T3_Max")]);} catch(e){}
-  try{Diluc_Ex.noUiSlider.set([localStorage.getItem("Diluc_Ex_Min"), localStorage.getItem("Diluc_Ex_Max")]);} catch(e){}
-  try{Diluc_Pr.noUiSlider.set([localStorage.getItem("Diluc_Pr_Min"), localStorage.getItem("Diluc_Pr_Max")]);} catch(e){}
-  try{Diluc_T1.noUiSlider.set([localStorage.getItem("Diluc_T1_Min"), localStorage.getItem("Diluc_T1_Max")]);} catch(e){}
-  try{Diluc_T2.noUiSlider.set([localStorage.getItem("Diluc_T2_Min"), localStorage.getItem("Diluc_T2_Max")]);} catch(e){}
-  try{Diluc_T3.noUiSlider.set([localStorage.getItem("Diluc_T3_Min"), localStorage.getItem("Diluc_T3_Max")]);} catch(e){}
-  try{Jean_Ex.noUiSlider.set([localStorage.getItem("Jean_Ex_Min"), localStorage.getItem("Jean_Ex_Max")]);} catch(e){}
-  try{Jean_Pr.noUiSlider.set([localStorage.getItem("Jean_Pr_Min"), localStorage.getItem("Jean_Pr_Max")]);} catch(e){}
-  try{Jean_T1.noUiSlider.set([localStorage.getItem("Jean_T1_Min"), localStorage.getItem("Jean_T1_Max")]);} catch(e){}
-  try{Jean_T2.noUiSlider.set([localStorage.getItem("Jean_T2_Min"), localStorage.getItem("Jean_T2_Max")]);} catch(e){}
-  try{Jean_T3.noUiSlider.set([localStorage.getItem("Jean_T3_Min"), localStorage.getItem("Jean_T3_Max")]);} catch(e){}
-  try{Sucrose_Ex.noUiSlider.set([localStorage.getItem("Sucrose_Ex_Min"), localStorage.getItem("Sucrose_Ex_Max")]);} catch(e){}
-  try{Sucrose_Pr.noUiSlider.set([localStorage.getItem("Sucrose_Pr_Min"), localStorage.getItem("Sucrose_Pr_Max")]);} catch(e){}
-  try{Sucrose_T1.noUiSlider.set([localStorage.getItem("Sucrose_T1_Min"), localStorage.getItem("Sucrose_T1_Max")]);} catch(e){}
-  try{Sucrose_T2.noUiSlider.set([localStorage.getItem("Sucrose_T2_Min"), localStorage.getItem("Sucrose_T2_Max")]);} catch(e){}
-  try{Sucrose_T3.noUiSlider.set([localStorage.getItem("Sucrose_T3_Min"), localStorage.getItem("Sucrose_T3_Max")]);} catch(e){}
-  try{Chongyun_Ex.noUiSlider.set([localStorage.getItem("Chongyun_Ex_Min"), localStorage.getItem("Chongyun_Ex_Max")]);} catch(e){}
-  try{Chongyun_Pr.noUiSlider.set([localStorage.getItem("Chongyun_Pr_Min"), localStorage.getItem("Chongyun_Pr_Max")]);} catch(e){}
-  try{Chongyun_T1.noUiSlider.set([localStorage.getItem("Chongyun_T1_Min"), localStorage.getItem("Chongyun_T1_Max")]);} catch(e){}
-  try{Chongyun_T2.noUiSlider.set([localStorage.getItem("Chongyun_T2_Min"), localStorage.getItem("Chongyun_T2_Max")]);} catch(e){}
-  try{Chongyun_T3.noUiSlider.set([localStorage.getItem("Chongyun_T3_Min"), localStorage.getItem("Chongyun_T3_Max")]);} catch(e){}
-  try{Noelle_Ex.noUiSlider.set([localStorage.getItem("Noelle_Ex_Min"), localStorage.getItem("Noelle_Ex_Max")]);} catch(e){}
-  try{Noelle_Pr.noUiSlider.set([localStorage.getItem("Noelle_Pr_Min"), localStorage.getItem("Noelle_Pr_Max")]);} catch(e){}
-  try{Noelle_T1.noUiSlider.set([localStorage.getItem("Noelle_T1_Min"), localStorage.getItem("Noelle_T1_Max")]);} catch(e){}
-  try{Noelle_T2.noUiSlider.set([localStorage.getItem("Noelle_T2_Min"), localStorage.getItem("Noelle_T2_Max")]);} catch(e){}
-  try{Noelle_T3.noUiSlider.set([localStorage.getItem("Noelle_T3_Min"), localStorage.getItem("Noelle_T3_Max")]);} catch(e){}
-  try{Bennett_Ex.noUiSlider.set([localStorage.getItem("Bennett_Ex_Min"), localStorage.getItem("Bennett_Ex_Max")]);} catch(e){}
-  try{Bennett_Pr.noUiSlider.set([localStorage.getItem("Bennett_Pr_Min"), localStorage.getItem("Bennett_Pr_Max")]);} catch(e){}
-  try{Bennett_T1.noUiSlider.set([localStorage.getItem("Bennett_T1_Min"), localStorage.getItem("Bennett_T1_Max")]);} catch(e){}
-  try{Bennett_T2.noUiSlider.set([localStorage.getItem("Bennett_T2_Min"), localStorage.getItem("Bennett_T2_Max")]);} catch(e){}
-  try{Bennett_T3.noUiSlider.set([localStorage.getItem("Bennett_T3_Min"), localStorage.getItem("Bennett_T3_Max")]);} catch(e){}
-  try{Fischl_Ex.noUiSlider.set([localStorage.getItem("Fischl_Ex_Min"), localStorage.getItem("Fischl_Ex_Max")]);} catch(e){}
-  try{Fischl_Pr.noUiSlider.set([localStorage.getItem("Fischl_Pr_Min"), localStorage.getItem("Fischl_Pr_Max")]);} catch(e){}
-  try{Fischl_T1.noUiSlider.set([localStorage.getItem("Fischl_T1_Min"), localStorage.getItem("Fischl_T1_Max")]);} catch(e){}
-  try{Fischl_T2.noUiSlider.set([localStorage.getItem("Fischl_T2_Min"), localStorage.getItem("Fischl_T2_Max")]);} catch(e){}
-  try{Fischl_T3.noUiSlider.set([localStorage.getItem("Fischl_T3_Min"), localStorage.getItem("Fischl_T3_Max")]);} catch(e){}
-  try{Ningguang_Ex.noUiSlider.set([localStorage.getItem("Ningguang_Ex_Min"), localStorage.getItem("Ningguang_Ex_Max")]);} catch(e){}
-  try{Ningguang_Pr.noUiSlider.set([localStorage.getItem("Ningguang_Pr_Min"), localStorage.getItem("Ningguang_Pr_Max")]);} catch(e){}
-  try{Ningguang_T1.noUiSlider.set([localStorage.getItem("Ningguang_T1_Min"), localStorage.getItem("Ningguang_T1_Max")]);} catch(e){}
-  try{Ningguang_T2.noUiSlider.set([localStorage.getItem("Ningguang_T2_Min"), localStorage.getItem("Ningguang_T2_Max")]);} catch(e){}
-  try{Ningguang_T3.noUiSlider.set([localStorage.getItem("Ningguang_T3_Min"), localStorage.getItem("Ningguang_T3_Max")]);} catch(e){}
-  try{Xingqiu_Ex.noUiSlider.set([localStorage.getItem("Xingqiu_Ex_Min"), localStorage.getItem("Xingqiu_Ex_Max")]);} catch(e){}
-  try{Xingqiu_Pr.noUiSlider.set([localStorage.getItem("Xingqiu_Pr_Min"), localStorage.getItem("Xingqiu_Pr_Max")]);} catch(e){}
-  try{Xingqiu_T1.noUiSlider.set([localStorage.getItem("Xingqiu_T1_Min"), localStorage.getItem("Xingqiu_T1_Max")]);} catch(e){}
-  try{Xingqiu_T2.noUiSlider.set([localStorage.getItem("Xingqiu_T2_Min"), localStorage.getItem("Xingqiu_T2_Max")]);} catch(e){}
-  try{Xingqiu_T3.noUiSlider.set([localStorage.getItem("Xingqiu_T3_Min"), localStorage.getItem("Xingqiu_T3_Max")]);} catch(e){}
-  try{Beidou_Ex.noUiSlider.set([localStorage.getItem("Beidou_Ex_Min"), localStorage.getItem("Beidou_Ex_Max")]);} catch(e){}
-  try{Beidou_Pr.noUiSlider.set([localStorage.getItem("Beidou_Pr_Min"), localStorage.getItem("Beidou_Pr_Max")]);} catch(e){}
-  try{Beidou_T1.noUiSlider.set([localStorage.getItem("Beidou_T1_Min"), localStorage.getItem("Beidou_T1_Max")]);} catch(e){}
-  try{Beidou_T2.noUiSlider.set([localStorage.getItem("Beidou_T2_Min"), localStorage.getItem("Beidou_T2_Max")]);} catch(e){}
-  try{Beidou_T3.noUiSlider.set([localStorage.getItem("Beidou_T3_Min"), localStorage.getItem("Beidou_T3_Max")]);} catch(e){}
-  try{Xiangling_Ex.noUiSlider.set([localStorage.getItem("Xiangling_Ex_Min"), localStorage.getItem("Xiangling_Ex_Max")]);} catch(e){}
-  try{Xiangling_Pr.noUiSlider.set([localStorage.getItem("Xiangling_Pr_Min"), localStorage.getItem("Xiangling_Pr_Max")]);} catch(e){}
-  try{Xiangling_T1.noUiSlider.set([localStorage.getItem("Xiangling_T1_Min"), localStorage.getItem("Xiangling_T1_Max")]);} catch(e){}
-  try{Xiangling_T2.noUiSlider.set([localStorage.getItem("Xiangling_T2_Min"), localStorage.getItem("Xiangling_T2_Max")]);} catch(e){}
-  try{Xiangling_T3.noUiSlider.set([localStorage.getItem("Xiangling_T3_Min"), localStorage.getItem("Xiangling_T3_Max")]);} catch(e){}
-  try{Razor_Ex.noUiSlider.set([localStorage.getItem("Razor_Ex_Min"), localStorage.getItem("Razor_Ex_Max")]);} catch(e){}
-  try{Razor_Pr.noUiSlider.set([localStorage.getItem("Razor_Pr_Min"), localStorage.getItem("Razor_Pr_Max")]);} catch(e){}
-  try{Razor_T1.noUiSlider.set([localStorage.getItem("Razor_T1_Min"), localStorage.getItem("Razor_T1_Max")]);} catch(e){}
-  try{Razor_T2.noUiSlider.set([localStorage.getItem("Razor_T2_Min"), localStorage.getItem("Razor_T2_Max")]);} catch(e){}
-  try{Razor_T3.noUiSlider.set([localStorage.getItem("Razor_T3_Min"), localStorage.getItem("Razor_T3_Max")]);} catch(e){}
-  try{Barbara_Ex.noUiSlider.set([localStorage.getItem("Barbara_Ex_Min"), localStorage.getItem("Barbara_Ex_Max")]);} catch(e){}
-  try{Barbara_Pr.noUiSlider.set([localStorage.getItem("Barbara_Pr_Min"), localStorage.getItem("Barbara_Pr_Max")]);} catch(e){}
-  try{Barbara_T1.noUiSlider.set([localStorage.getItem("Barbara_T1_Min"), localStorage.getItem("Barbara_T1_Max")]);} catch(e){}
-  try{Barbara_T2.noUiSlider.set([localStorage.getItem("Barbara_T2_Min"), localStorage.getItem("Barbara_T2_Max")]);} catch(e){}
-  try{Barbara_T3.noUiSlider.set([localStorage.getItem("Barbara_T3_Min"), localStorage.getItem("Barbara_T3_Max")]);} catch(e){}
-  try{Lisa_Ex.noUiSlider.set([localStorage.getItem("Lisa_Ex_Min"), localStorage.getItem("Lisa_Ex_Max")]);} catch(e){}
-  try{Lisa_Pr.noUiSlider.set([localStorage.getItem("Lisa_Pr_Min"), localStorage.getItem("Lisa_Pr_Max")]);} catch(e){}
-  try{Lisa_T1.noUiSlider.set([localStorage.getItem("Lisa_T1_Min"), localStorage.getItem("Lisa_T1_Max")]);} catch(e){}
-  try{Lisa_T2.noUiSlider.set([localStorage.getItem("Lisa_T2_Min"), localStorage.getItem("Lisa_T2_Max")]);} catch(e){}
-  try{Lisa_T3.noUiSlider.set([localStorage.getItem("Lisa_T3_Min"), localStorage.getItem("Lisa_T3_Max")]);} catch(e){}
-  try{Kaeya_Ex.noUiSlider.set([localStorage.getItem("Kaeya_Ex_Min"), localStorage.getItem("Kaeya_Ex_Max")]);} catch(e){}
-  try{Kaeya_Pr.noUiSlider.set([localStorage.getItem("Kaeya_Pr_Min"), localStorage.getItem("Kaeya_Pr_Max")]);} catch(e){}
-  try{Kaeya_T1.noUiSlider.set([localStorage.getItem("Kaeya_T1_Min"), localStorage.getItem("Kaeya_T1_Max")]);} catch(e){}
-  try{Kaeya_T2.noUiSlider.set([localStorage.getItem("Kaeya_T2_Min"), localStorage.getItem("Kaeya_T2_Max")]);} catch(e){}
-  try{Kaeya_T3.noUiSlider.set([localStorage.getItem("Kaeya_T3_Min"), localStorage.getItem("Kaeya_T3_Max")]);} catch(e){}
-  try{Amber_Ex.noUiSlider.set([localStorage.getItem("Amber_Ex_Min"), localStorage.getItem("Amber_Ex_Max")]);} catch(e){}
-  try{Amber_Pr.noUiSlider.set([localStorage.getItem("Amber_Pr_Min"), localStorage.getItem("Amber_Pr_Max")]);} catch(e){}
-  try{Amber_T1.noUiSlider.set([localStorage.getItem("Amber_T1_Min"), localStorage.getItem("Amber_T1_Max")]);} catch(e){}
-  try{Amber_T2.noUiSlider.set([localStorage.getItem("Amber_T2_Min"), localStorage.getItem("Amber_T2_Max")]);} catch(e){}
-  try{Amber_T3.noUiSlider.set([localStorage.getItem("Amber_T3_Min"), localStorage.getItem("Amber_T3_Max")]);} catch(e){}
-  try{Aloy_Ex.noUiSlider.set([localStorage.getItem("Aloy_Ex_Min"), localStorage.getItem("Aloy_Ex_Max")]);} catch(e){}
-  try{Aloy_Pr.noUiSlider.set([localStorage.getItem("Aloy_Pr_Min"), localStorage.getItem("Aloy_Pr_Max")]);} catch(e){}
-  try{Aloy_T1.noUiSlider.set([localStorage.getItem("Aloy_T1_Min"), localStorage.getItem("Aloy_T1_Max")]);} catch(e){}
-  try{Aloy_T2.noUiSlider.set([localStorage.getItem("Aloy_T2_Min"), localStorage.getItem("Aloy_T2_Max")]);} catch(e){}
-  try{Aloy_T3.noUiSlider.set([localStorage.getItem("Aloy_T3_Min"), localStorage.getItem("Aloy_T3_Max")]);} catch(e){}
-  try{document.getElementById("Heros_Wit").value = localStorage.getItem("Heros_Wit")} catch(e){}
-  try{document.getElementById("Adventurers_Experience").value = localStorage.getItem("Adventurers_Experience")} catch(e){}
-  try{document.getElementById("Wanderers_Advice").value = localStorage.getItem("Wanderers_Advice")} catch(e){}
-  try{document.getElementById("Mora").value = localStorage.getItem("Mora")} catch(e){}
-  try{document.getElementById("Slime_Concentrate").value = localStorage.getItem("Slime_Concentrate")} catch(e){}
-  try{document.getElementById("Slime_Secretions").value = localStorage.getItem("Slime_Secretions")} catch(e){}
-  try{document.getElementById("Slime_Condensate").value = localStorage.getItem("Slime_Condensate")} catch(e){}
-  try{document.getElementById("Ominous_Mask").value = localStorage.getItem("Ominous_Mask")} catch(e){}
-  try{document.getElementById("Stained_Mask").value = localStorage.getItem("Stained_Mask")} catch(e){}
-  try{document.getElementById("Damaged_Mask").value = localStorage.getItem("Damaged_Mask")} catch(e){}
-  try{document.getElementById("Forbidden_Curse_Scroll").value = localStorage.getItem("Forbidden_Curse_Scroll")} catch(e){}
-  try{document.getElementById("Sealed_Scroll").value = localStorage.getItem("Sealed_Scroll")} catch(e){}
-  try{document.getElementById("Divining_Scroll").value = localStorage.getItem("Divining_Scroll")} catch(e){}
-  try{document.getElementById("Weathered_Arrowhead").value = localStorage.getItem("Weathered_Arrowhead")} catch(e){}
-  try{document.getElementById("Sharp_Arrowhead").value = localStorage.getItem("Sharp_Arrowhead")} catch(e){}
-  try{document.getElementById("Firm_Arrowhead").value = localStorage.getItem("Firm_Arrowhead")} catch(e){}
-  try{document.getElementById("Lieutenants_Insignia").value = localStorage.getItem("Lieutenants_Insignia")} catch(e){}
-  try{document.getElementById("Sergeants_Insignia").value = localStorage.getItem("Sergeants_Insignia")} catch(e){}
-  try{document.getElementById("Recruits_Insignia").value = localStorage.getItem("Recruits_Insignia")} catch(e){}
-  try{document.getElementById("Golden_Raven_Insignia").value = localStorage.getItem("Golden_Raven_Insignia")} catch(e){}
-  try{document.getElementById("Silver_Raven_Insignia").value = localStorage.getItem("Silver_Raven_Insignia")} catch(e){}
-  try{document.getElementById("Treasure_Hoarder_Insignia").value = localStorage.getItem("Treasure_Hoarder_Insignia")} catch(e){}
-  try{document.getElementById("Energy_Nectar").value = localStorage.getItem("Energy_Nectar")} catch(e){}
-  try{document.getElementById("Shimmering_Nectar").value = localStorage.getItem("Shimmering_Nectar")} catch(e){}
-  try{document.getElementById("Whopperflower_Nectar").value = localStorage.getItem("Whopperflower_Nectar")} catch(e){}
-  try{document.getElementById("Famed_Handguard").value = localStorage.getItem("Famed_Handguard")} catch(e){}
-  try{document.getElementById("Kageuchi_Handguard").value = localStorage.getItem("Kageuchi_Handguard")} catch(e){}
-  try{document.getElementById("Old_Handguard").value = localStorage.getItem("Old_Handguard")} catch(e){}
-  try{document.getElementById("Spectral_Nucleus").value = localStorage.getItem("Spectral_Nucleus")} catch(e){}
-  try{document.getElementById("Spectral_Heart").value = localStorage.getItem("Spectral_Heart")} catch(e){}
-  try{document.getElementById("Spectral_Husk").value = localStorage.getItem("Spectral_Husk")} catch(e){}
-  try{document.getElementById("Dvalins_Plume").value = localStorage.getItem("Dvalins_Plume")} catch(e){}
-  try{document.getElementById("Dvalins_Claw").value = localStorage.getItem("Dvalins_Claw")} catch(e){}
-  try{document.getElementById("Dvalins_Sigh").value = localStorage.getItem("Dvalins_Sigh")} catch(e){}
-  try{document.getElementById("Tail_of_Boreas").value = localStorage.getItem("Tail_of_Boreas")} catch(e){}
-  try{document.getElementById("Ring_of_Boreas").value = localStorage.getItem("Ring_of_Boreas")} catch(e){}
-  try{document.getElementById("Spirit_Locket_of_Boreas").value = localStorage.getItem("Spirit_Locket_of_Boreas")} catch(e){}
-  try{document.getElementById("Tusk_of_Monoceros_Caeli").value = localStorage.getItem("Tusk_of_Monoceros_Caeli")} catch(e){}
-  try{document.getElementById("Shard_of_a_Foul_Legacy").value = localStorage.getItem("Shard_of_a_Foul_Legacy")} catch(e){}
-  try{document.getElementById("Shadow_of_the_Warrior").value = localStorage.getItem("Shadow_of_the_Warrior")} catch(e){}
-  try{document.getElementById("Dragon_Lords_Crown").value = localStorage.getItem("Dragon_Lords_Crown")} catch(e){}
-  try{document.getElementById("Bloodjade_Branch").value = localStorage.getItem("Bloodjade_Branch")} catch(e){}
-  try{document.getElementById("Gilded_Scale").value = localStorage.getItem("Gilded_Scale")} catch(e){}
-  try{document.getElementById("Molten_Moment").value = localStorage.getItem("Molten_Moment")} catch(e){}
-  try{document.getElementById("Hellfire_Butterfly").value = localStorage.getItem("Hellfire_Butterfly")} catch(e){}
-  try{document.getElementById("Ashen_Heart").value = localStorage.getItem("Ashen_Heart")} catch(e){}
-  try{document.getElementById("Hurricane_Seed").value = localStorage.getItem("Hurricane_Seed")} catch(e){}
-  try{document.getElementById("Lightning_Prism").value = localStorage.getItem("Lightning_Prism")} catch(e){}
-  try{document.getElementById("Basalt_Pillar").value = localStorage.getItem("Basalt_Pillar")} catch(e){}
-  try{document.getElementById("Hoarfrost_Core").value = localStorage.getItem("Hoarfrost_Core")} catch(e){}
-  try{document.getElementById("Everflame_Seed").value = localStorage.getItem("Everflame_Seed")} catch(e){}
-  try{document.getElementById("Cleansing_Heart").value = localStorage.getItem("Cleansing_Heart")} catch(e){}
-  try{document.getElementById("Juvenile_Jade").value = localStorage.getItem("Juvenile_Jade")} catch(e){}
-  try{document.getElementById("Crystalline_Bloom").value = localStorage.getItem("Crystalline_Bloom")} catch(e){}
-  try{document.getElementById("Marionette_Core").value = localStorage.getItem("Marionette_Core")} catch(e){}
-  try{document.getElementById("Perpetual_Heart").value = localStorage.getItem("Perpetual_Heart")} catch(e){}
-  try{document.getElementById("Smoldering_Pearl").value = localStorage.getItem("Smoldering_Pearl")} catch(e){}
-  try{document.getElementById("Dew_of_Repudiation").value = localStorage.getItem("Dew_of_Repudiation")} catch(e){}
-  try{document.getElementById("Storm_Beads").value = localStorage.getItem("Storm_Beads")} catch(e){}
-  try{document.getElementById("Riftborn_Regalia").value = localStorage.getItem("Riftborn_Regalia")} catch(e){}
-  try{document.getElementById("Agate_Gemstone").value = localStorage.getItem("Agate_Gemstone")} catch(e){}
-  try{document.getElementById("Agate_Chunk").value = localStorage.getItem("Agate_Chunk")} catch(e){}
-  try{document.getElementById("Agate_Fragment").value = localStorage.getItem("Agate_Fragment")} catch(e){}
-  try{document.getElementById("Agate_Sliver").value = localStorage.getItem("Agate_Sliver")} catch(e){}
-  try{document.getElementById("Lazurite_Gemstone").value = localStorage.getItem("Lazurite_Gemstone")} catch(e){}
-  try{document.getElementById("Lazurite_Chunk").value = localStorage.getItem("Lazurite_Chunk")} catch(e){}
-  try{document.getElementById("Lazurite_Fragment").value = localStorage.getItem("Lazurite_Fragment")} catch(e){}
-  try{document.getElementById("Lazurite_Sliver").value = localStorage.getItem("Lazurite_Sliver")} catch(e){}
-  try{document.getElementById("Amethyst_Gemstone").value = localStorage.getItem("Amethyst_Gemstone")} catch(e){}
-  try{document.getElementById("Amethyst_Chunk").value = localStorage.getItem("Amethyst_Chunk")} catch(e){}
-  try{document.getElementById("Amethyst_Fragment").value = localStorage.getItem("Amethyst_Fragment")} catch(e){}
-  try{document.getElementById("Amethyst_Sliver").value = localStorage.getItem("Amethyst_Sliver")} catch(e){}
-  try{document.getElementById("Turquoise_Gemstone").value = localStorage.getItem("Turquoise_Gemstone")} catch(e){}
-  try{document.getElementById("Turquoise_Chunk").value = localStorage.getItem("Turquoise_Chunk")} catch(e){}
-  try{document.getElementById("Turquoise_Fragment").value = localStorage.getItem("Turquoise_Fragment")} catch(e){}
-  try{document.getElementById("Turquoise_Sliver").value = localStorage.getItem("Turquoise_Sliver")} catch(e){}
-  try{document.getElementById("Jade_Gemstone").value = localStorage.getItem("Jade_Gemstone")} catch(e){}
-  try{document.getElementById("Jade_Chunk").value = localStorage.getItem("Jade_Chunk")} catch(e){}
-  try{document.getElementById("Jade_Fragment").value = localStorage.getItem("Jade_Fragment")} catch(e){}
-  try{document.getElementById("Jade_Sliver").value = localStorage.getItem("Jade_Sliver")} catch(e){}
-  try{document.getElementById("Topaz_Gemstone").value = localStorage.getItem("Topaz_Gemstone")} catch(e){}
-  try{document.getElementById("Topaz_Chunk").value = localStorage.getItem("Topaz_Chunk")} catch(e){}
-  try{document.getElementById("Topaz_Fragment").value = localStorage.getItem("Topaz_Fragment")} catch(e){}
-  try{document.getElementById("Topaz_Sliver").value = localStorage.getItem("Topaz_Sliver")} catch(e){}
-  try{document.getElementById("Emerald_Gemstone").value = localStorage.getItem("Emerald_Gemstone")} catch(e){}
-  try{document.getElementById("Emerald_Chunk").value = localStorage.getItem("Emerald_Chunk")} catch(e){}
-  try{document.getElementById("Emerald_Fragment").value = localStorage.getItem("Emerald_Fragment")} catch(e){}
-  try{document.getElementById("Emerald_Sliver").value = localStorage.getItem("Emerald_Sliver")} catch(e){}
-  try{document.getElementById("Philosophies_of_Freedom").value = localStorage.getItem("Philosophies_of_Freedom")} catch(e){}
-  try{document.getElementById("Guide_to_Freedom").value = localStorage.getItem("Guide_to_Freedom")} catch(e){}
-  try{document.getElementById("Teachings_of_Freedom").value = localStorage.getItem("Teachings_of_Freedom")} catch(e){}
-  try{document.getElementById("Philosophies_of_Ballad").value = localStorage.getItem("Philosophies_of_Ballad")} catch(e){}
-  try{document.getElementById("Guide_to_Ballad").value = localStorage.getItem("Guide_to_Ballad")} catch(e){}
-  try{document.getElementById("Teachings_of_Ballad").value = localStorage.getItem("Teachings_of_Ballad")} catch(e){}
-  try{document.getElementById("Philosophies_of_Resistance").value = localStorage.getItem("Philosophies_of_Resistance")} catch(e){}
-  try{document.getElementById("Guide_to_Resistance").value = localStorage.getItem("Guide_to_Resistance")} catch(e){}
-  try{document.getElementById("Teachings_of_Resistance").value = localStorage.getItem("Teachings_of_Resistance")} catch(e){}
-  try{document.getElementById("Philosophies_of_Prosperity").value = localStorage.getItem("Philosophies_of_Prosperity")} catch(e){}
-  try{document.getElementById("Guide_to_Prosperity").value = localStorage.getItem("Guide_to_Prosperity")} catch(e){}
-  try{document.getElementById("Teachings_of_Prosperity").value = localStorage.getItem("Teachings_of_Prosperity")} catch(e){}
-  try{document.getElementById("Philosophies_of_Diligence").value = localStorage.getItem("Philosophies_of_Diligence")} catch(e){}
-  try{document.getElementById("Guide_to_Diligence").value = localStorage.getItem("Guide_to_Diligence")} catch(e){}
-  try{document.getElementById("Teachings_of_Diligence").value = localStorage.getItem("Teachings_of_Diligence")} catch(e){}
-  try{document.getElementById("Philosophies_of_Gold").value = localStorage.getItem("Philosophies_of_Gold")} catch(e){}
-  try{document.getElementById("Guide_to_Gold").value = localStorage.getItem("Guide_to_Gold")} catch(e){}
-  try{document.getElementById("Teachings_of_Gold").value = localStorage.getItem("Teachings_of_Gold")} catch(e){}
-  try{document.getElementById("Philosophies_of_Transience").value = localStorage.getItem("Philosophies_of_Transience")} catch(e){}
-  try{document.getElementById("Guide_to_Transience").value = localStorage.getItem("Guide_to_Transience")} catch(e){}
-  try{document.getElementById("Teachings_of_Transience").value = localStorage.getItem("Teachings_of_Transience")} catch(e){}
-  try{document.getElementById("Philosophies_of_Elegance").value = localStorage.getItem("Philosophies_of_Elegance")} catch(e){}
-  try{document.getElementById("Guide_to_Elegance").value = localStorage.getItem("Guide_to_Elegance")} catch(e){}
-  try{document.getElementById("Teachings_of_Elegance").value = localStorage.getItem("Teachings_of_Elegance")} catch(e){}
-  try{document.getElementById("Philosophies_of_Light").value = localStorage.getItem("Philosophies_of_Light")} catch(e){}
-  try{document.getElementById("Guide_to_Light").value = localStorage.getItem("Guide_to_Light")} catch(e){}
-  try{document.getElementById("Teachings_of_Light").value = localStorage.getItem("Teachings_of_Light")} catch(e){}
-  try{document.getElementById("Crown_of_Insight").value = localStorage.getItem("Crown_of_Insight")} catch(e){}
-  try{document.getElementById("Calla_Lily").value = localStorage.getItem("Calla_Lily")} catch(e){}
-  try{document.getElementById("Wolfhook").value = localStorage.getItem("Wolfhook")} catch(e){}
-  try{document.getElementById("Valberry").value = localStorage.getItem("Valberry")} catch(e){}
-  try{document.getElementById("Cecilia").value = localStorage.getItem("Cecilia")} catch(e){}
-  try{document.getElementById("Windwheel_Aster").value = localStorage.getItem("Windwheel_Aster")} catch(e){}
-  try{document.getElementById("Philanemo_Mushroom").value = localStorage.getItem("Philanemo_Mushroom")} catch(e){}
-  try{document.getElementById("Jueyun_Chili").value = localStorage.getItem("Jueyun_Chili")} catch(e){}
-  try{document.getElementById("Noctilucous_Jade").value = localStorage.getItem("Noctilucous_Jade")} catch(e){}
-  try{document.getElementById("Silk_Flower").value = localStorage.getItem("Silk_Flower")} catch(e){}
-  try{document.getElementById("Glaze_Lily").value = localStorage.getItem("Glaze_Lily")} catch(e){}
-  try{document.getElementById("Qingxin").value = localStorage.getItem("Qingxin")} catch(e){}
-  try{document.getElementById("Starconch").value = localStorage.getItem("Starconch")} catch(e){}
-  try{document.getElementById("Violetgrass").value = localStorage.getItem("Violetgrass")} catch(e){}
-  try{document.getElementById("Small_Lamp_Grass").value = localStorage.getItem("Small_Lamp_Grass")} catch(e){}
-  try{document.getElementById("Dandelion_Seed").value = localStorage.getItem("Dandelion_Seed")} catch(e){}
-  try{document.getElementById("Cor_Lapis").value = localStorage.getItem("Cor_Lapis")} catch(e){}
-  try{document.getElementById("Onikabuto").value = localStorage.getItem("Onikabuto")} catch(e){}
-  try{document.getElementById("Sakura_Bloom").value = localStorage.getItem("Sakura_Bloom")} catch(e){}
-  try{document.getElementById("Crystal_Marrow").value = localStorage.getItem("Crystal_Marrow")} catch(e){}
-  try{document.getElementById("Dendrobium").value = localStorage.getItem("Dendrobium")} catch(e){}
-  try{document.getElementById("Naku_Weed").value = localStorage.getItem("Naku_Weed")} catch(e){}
-  try{document.getElementById("Sea_Ganoderma").value = localStorage.getItem("Sea_Ganoderma")} catch(e){}
-  try{document.getElementById("Sango_Pearl").value = localStorage.getItem("Sango_Pearl")} catch(e){}
-  try{document.getElementById("Amakumo_Fruit").value = localStorage.getItem("Amakumo_Fruit")} catch(e){}
-  try{document.getElementById("Fluorescent_Fungus").value = localStorage.getItem("Fluorescent_Fungus")} catch(e){}
-}
-
 // ページ読み込み時の処理
 if (!localStorage.getItem("_Version")) {
-  alert("Honey Apricot - Material Calculator\n\n『Material Calculator』へようこそ！\n")
+  alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
 }  else  {
-  if (localStorage.getItem("_Version") === "20211130") {
-    OldLoad();
-    localStorage.clear()
-    Save();
+  if (!(localStorage.getItem("_Version") === "Version")) {
     Load();
+    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20211208 to ver." + Version + "）\n・雲菫、申鶴の実装\n・ドラゴエアのニセヒレの実装\n・一部キャラクター名の修正・変更")
+
   }  else  {
     Load();
   }
