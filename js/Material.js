@@ -6556,7 +6556,7 @@ document.getElementById('Load').onclick = function changeContent() {
 if (!localStorage.getItem("_Version")) {
   alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
 }  else  {
-  if (!(localStorage.getItem("_Version") === "Version")) {
+  if (!(localStorage.getItem("_Version") === Version)) {
     Load();
     alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20211208 to ver." + Version + "）\n・雲菫、申鶴の実装\n・ドラゴエアのニセヒレの実装\n・一部キャラクター名の修正・変更")
 
