@@ -1,4 +1,4 @@
-var Version = "20220110"
+var Version = "20220217"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -11,6 +11,8 @@ function LoadWait() {
     setTimeout( LoadWait, 500 );
     return;
   }
+  Kamisato_AyatoLoad();
+  Yae_MikoLoad();
   ShenheLoad();
   Yun_JinLoad();
   Arataki_IttoLoad();
@@ -59,6 +61,242 @@ function LoadWait() {
 }
 LoadWait();
 
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kamisato_Ayato  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Kamisato_Ayato_Ex = document.getElementById('Kamisato_Ayato_Ex');
+noUiSlider.create(Kamisato_Ayato_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Kamisato_Ayato_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Kamisato_Ayato_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Kamisato_Ayato_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Kamisato_Ayato_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function Kamisato_AyatoLoad() {
+  Kamisato_Ayato_Ex.noUiSlider.on('update', function (values, handle) {
+    var Kamisato_Ayato_Ex_Min_Volume = "L1toL" + Kamisato_Ayato_Ex.noUiSlider.get()[0];
+    var Kamisato_Ayato_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Kamisato_Ayato_Ex.noUiSlider.get()[0])[Kamisato_Ayato_Ex_Min_Volume]);
+    var Kamisato_Ayato_Ex_Max_Volume = "L1toL" + Kamisato_Ayato_Ex.noUiSlider.get()[1];
+    var Kamisato_Ayato_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Kamisato_Ayato_Ex.noUiSlider.get()[1])[Kamisato_Ayato_Ex_Max_Volume]);
+    var Kamisato_Ayato_Ex_Volume = Kamisato_Ayato_Ex_1toMax_Volume - Kamisato_Ayato_Ex_1toMin_Volume
+    var Kamisato_Ayato_Ex_Book_Volume = Kamisato_Ayato_Ex_Volume / 1000
+    var Kamisato_Ayato_Ex_Mora_Volume = Kamisato_Ayato_Ex_Volume * 0.2
+    document.getElementById('Kamisato_Ayato_Ex_Volume').innerHTML = Kamisato_Ayato_Ex_Volume.toLocaleString();
+    document.getElementById('Kamisato_Ayato_Ex_Book_Volume').innerHTML = Kamisato_Ayato_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Kamisato_Ayato_Ex_Mora_Volume').innerHTML = Kamisato_Ayato_Ex_Mora_Volume.toLocaleString();
+  });
+  Kamisato_Ayato_Pr.noUiSlider.on('update', function (values, handle) {
+    var Kamisato_Ayato_Pr_Min_Volume = "L1toL" + Kamisato_Ayato_Pr.noUiSlider.get()[0];
+    var Kamisato_Ayato_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[0])["P1_" + [Kamisato_Ayato_Pr_Min_Volume]]);
+    var Kamisato_Ayato_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[0])["P2_" + [Kamisato_Ayato_Pr_Min_Volume]]);
+    var Kamisato_Ayato_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[0])["P3_" + [Kamisato_Ayato_Pr_Min_Volume]]);
+    var Kamisato_Ayato_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[0])["P4_" + [Kamisato_Ayato_Pr_Min_Volume]]);
+    var Kamisato_Ayato_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[0])["P5_" + [Kamisato_Ayato_Pr_Min_Volume]]);
+    var Kamisato_Ayato_Pr_Max_Volume = "L1toL" + Kamisato_Ayato_Pr.noUiSlider.get()[1];
+    var Kamisato_Ayato_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[1])["P1_" + [Kamisato_Ayato_Pr_Max_Volume]]);
+    var Kamisato_Ayato_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[1])["P2_" + [Kamisato_Ayato_Pr_Max_Volume]]);
+    var Kamisato_Ayato_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[1])["P3_" + [Kamisato_Ayato_Pr_Max_Volume]]);
+    var Kamisato_Ayato_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[1])["P4_" + [Kamisato_Ayato_Pr_Max_Volume]]);
+    var Kamisato_Ayato_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Kamisato_Ayato_Pr.noUiSlider.get()[1])["P5_" + [Kamisato_Ayato_Pr_Max_Volume]]);
+    var Kamisato_Ayato_Pr_P1 = Kamisato_Ayato_Pr_P1_1toMax_Volume - Kamisato_Ayato_Pr_P1_1toMin_Volume
+    var Kamisato_Ayato_Pr_P2 = Kamisato_Ayato_Pr_P2_1toMax_Volume - Kamisato_Ayato_Pr_P2_1toMin_Volume
+    var Kamisato_Ayato_Pr_P3 = Kamisato_Ayato_Pr_P3_1toMax_Volume - Kamisato_Ayato_Pr_P3_1toMin_Volume
+    var Kamisato_Ayato_Pr_P4 = Kamisato_Ayato_Pr_P4_1toMax_Volume - Kamisato_Ayato_Pr_P4_1toMin_Volume
+    var Kamisato_Ayato_Pr_P5 = Kamisato_Ayato_Pr_P5_1toMax_Volume - Kamisato_Ayato_Pr_P5_1toMin_Volume
+    document.getElementById('Kamisato_Ayato_Pr_P1_Volume').innerHTML = Kamisato_Ayato_Pr_P1;
+    document.getElementById('Kamisato_Ayato_Pr_P2_Volume').innerHTML = Kamisato_Ayato_Pr_P2;
+    document.getElementById('Kamisato_Ayato_Pr_P3_Volume').innerHTML = Kamisato_Ayato_Pr_P3;
+    document.getElementById('Kamisato_Ayato_Pr_P4_Volume').innerHTML = Kamisato_Ayato_Pr_P4;
+    document.getElementById('Kamisato_Ayato_Pr_P5_Volume').innerHTML = Kamisato_Ayato_Pr_P5.toLocaleString();
+  });
+  Kamisato_Ayato_T1.noUiSlider.on('update', function (values, handle) {
+    var Kamisato_Ayato_T1_Min_Volume = "L1toL" + Kamisato_Ayato_T1.noUiSlider.get()[0];
+    var Kamisato_Ayato_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[0])["T1_" + [Kamisato_Ayato_T1_Min_Volume]]);
+    var Kamisato_Ayato_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[0])["T2_" + [Kamisato_Ayato_T1_Min_Volume]]);
+    var Kamisato_Ayato_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[0])["T3_" + [Kamisato_Ayato_T1_Min_Volume]]);
+    var Kamisato_Ayato_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[0])["T4_" + [Kamisato_Ayato_T1_Min_Volume]]);
+    var Kamisato_Ayato_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[0])["T5_" + [Kamisato_Ayato_T1_Min_Volume]]);
+    var Kamisato_Ayato_T1_Max_Volume = "L1toL" + Kamisato_Ayato_T1.noUiSlider.get()[1];
+    var Kamisato_Ayato_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[1])["T1_" + [Kamisato_Ayato_T1_Max_Volume]]);
+    var Kamisato_Ayato_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[1])["T2_" + [Kamisato_Ayato_T1_Max_Volume]]);
+    var Kamisato_Ayato_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[1])["T3_" + [Kamisato_Ayato_T1_Max_Volume]]);
+    var Kamisato_Ayato_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[1])["T4_" + [Kamisato_Ayato_T1_Max_Volume]]);
+    var Kamisato_Ayato_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T1.noUiSlider.get()[1])["T5_" + [Kamisato_Ayato_T1_Max_Volume]]);
+    var Kamisato_Ayato_T1_T1 = Kamisato_Ayato_T1_T1_1toMax_Volume - Kamisato_Ayato_T1_T1_1toMin_Volume
+    var Kamisato_Ayato_T1_T2 = Kamisato_Ayato_T1_T2_1toMax_Volume - Kamisato_Ayato_T1_T2_1toMin_Volume
+    var Kamisato_Ayato_T1_T3 = Kamisato_Ayato_T1_T3_1toMax_Volume - Kamisato_Ayato_T1_T3_1toMin_Volume
+    var Kamisato_Ayato_T1_T4 = Kamisato_Ayato_T1_T4_1toMax_Volume - Kamisato_Ayato_T1_T4_1toMin_Volume
+    var Kamisato_Ayato_T1_T5 = Kamisato_Ayato_T1_T5_1toMax_Volume - Kamisato_Ayato_T1_T5_1toMin_Volume
+    document.getElementById('Kamisato_Ayato_T1_T1_Volume').innerHTML = Kamisato_Ayato_T1_T1;
+    document.getElementById('Kamisato_Ayato_T1_T2_Volume').innerHTML = Kamisato_Ayato_T1_T2;
+    document.getElementById('Kamisato_Ayato_T1_T3_Volume').innerHTML = Kamisato_Ayato_T1_T3;
+    document.getElementById('Kamisato_Ayato_T1_T4_Volume').innerHTML = Kamisato_Ayato_T1_T4;
+    document.getElementById('Kamisato_Ayato_T1_T5_Volume').innerHTML = Kamisato_Ayato_T1_T5.toLocaleString();
+  });
+  Kamisato_Ayato_T2.noUiSlider.on('update', function (values, handle) {
+    var Kamisato_Ayato_T2_Min_Volume = "L1toL" + Kamisato_Ayato_T2.noUiSlider.get()[0];
+    var Kamisato_Ayato_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[0])["T1_" + [Kamisato_Ayato_T2_Min_Volume]]);
+    var Kamisato_Ayato_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[0])["T2_" + [Kamisato_Ayato_T2_Min_Volume]]);
+    var Kamisato_Ayato_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[0])["T3_" + [Kamisato_Ayato_T2_Min_Volume]]);
+    var Kamisato_Ayato_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[0])["T4_" + [Kamisato_Ayato_T2_Min_Volume]]);
+    var Kamisato_Ayato_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[0])["T5_" + [Kamisato_Ayato_T2_Min_Volume]]);
+    var Kamisato_Ayato_T2_Max_Volume = "L1toL" + Kamisato_Ayato_T2.noUiSlider.get()[1];
+    var Kamisato_Ayato_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[1])["T1_" + [Kamisato_Ayato_T2_Max_Volume]]);
+    var Kamisato_Ayato_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[1])["T2_" + [Kamisato_Ayato_T2_Max_Volume]]);
+    var Kamisato_Ayato_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[1])["T3_" + [Kamisato_Ayato_T2_Max_Volume]]);
+    var Kamisato_Ayato_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[1])["T4_" + [Kamisato_Ayato_T2_Max_Volume]]);
+    var Kamisato_Ayato_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T2.noUiSlider.get()[1])["T5_" + [Kamisato_Ayato_T2_Max_Volume]]);
+    var Kamisato_Ayato_T2_T1 = Kamisato_Ayato_T2_T1_1toMax_Volume - Kamisato_Ayato_T2_T1_1toMin_Volume
+    var Kamisato_Ayato_T2_T2 = Kamisato_Ayato_T2_T2_1toMax_Volume - Kamisato_Ayato_T2_T2_1toMin_Volume
+    var Kamisato_Ayato_T2_T3 = Kamisato_Ayato_T2_T3_1toMax_Volume - Kamisato_Ayato_T2_T3_1toMin_Volume
+    var Kamisato_Ayato_T2_T4 = Kamisato_Ayato_T2_T4_1toMax_Volume - Kamisato_Ayato_T2_T4_1toMin_Volume
+    var Kamisato_Ayato_T2_T5 = Kamisato_Ayato_T2_T5_1toMax_Volume - Kamisato_Ayato_T2_T5_1toMin_Volume
+    document.getElementById('Kamisato_Ayato_T2_T1_Volume').innerHTML = Kamisato_Ayato_T2_T1;
+    document.getElementById('Kamisato_Ayato_T2_T2_Volume').innerHTML = Kamisato_Ayato_T2_T2;
+    document.getElementById('Kamisato_Ayato_T2_T3_Volume').innerHTML = Kamisato_Ayato_T2_T3;
+    document.getElementById('Kamisato_Ayato_T2_T4_Volume').innerHTML = Kamisato_Ayato_T2_T4;
+    document.getElementById('Kamisato_Ayato_T2_T5_Volume').innerHTML = Kamisato_Ayato_T2_T5.toLocaleString();
+  });
+  Kamisato_Ayato_T3.noUiSlider.on('update', function (values, handle) {
+    var Kamisato_Ayato_T3_Min_Volume = "L1toL" + Kamisato_Ayato_T3.noUiSlider.get()[0];
+    var Kamisato_Ayato_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[0])["T1_" + [Kamisato_Ayato_T3_Min_Volume]]);
+    var Kamisato_Ayato_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[0])["T2_" + [Kamisato_Ayato_T3_Min_Volume]]);
+    var Kamisato_Ayato_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[0])["T3_" + [Kamisato_Ayato_T3_Min_Volume]]);
+    var Kamisato_Ayato_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[0])["T4_" + [Kamisato_Ayato_T3_Min_Volume]]);
+    var Kamisato_Ayato_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[0])["T5_" + [Kamisato_Ayato_T3_Min_Volume]]);
+    var Kamisato_Ayato_T3_Max_Volume = "L1toL" + Kamisato_Ayato_T3.noUiSlider.get()[1];
+    var Kamisato_Ayato_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[1])["T1_" + [Kamisato_Ayato_T3_Max_Volume]]);
+    var Kamisato_Ayato_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[1])["T2_" + [Kamisato_Ayato_T3_Max_Volume]]);
+    var Kamisato_Ayato_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[1])["T3_" + [Kamisato_Ayato_T3_Max_Volume]]);
+    var Kamisato_Ayato_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[1])["T4_" + [Kamisato_Ayato_T3_Max_Volume]]);
+    var Kamisato_Ayato_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Kamisato_Ayato_T3.noUiSlider.get()[1])["T5_" + [Kamisato_Ayato_T3_Max_Volume]]);
+    var Kamisato_Ayato_T3_T1 = Kamisato_Ayato_T3_T1_1toMax_Volume - Kamisato_Ayato_T3_T1_1toMin_Volume
+    var Kamisato_Ayato_T3_T2 = Kamisato_Ayato_T3_T2_1toMax_Volume - Kamisato_Ayato_T3_T2_1toMin_Volume
+    var Kamisato_Ayato_T3_T3 = Kamisato_Ayato_T3_T3_1toMax_Volume - Kamisato_Ayato_T3_T3_1toMin_Volume
+    var Kamisato_Ayato_T3_T4 = Kamisato_Ayato_T3_T4_1toMax_Volume - Kamisato_Ayato_T3_T4_1toMin_Volume
+    var Kamisato_Ayato_T3_T5 = Kamisato_Ayato_T3_T5_1toMax_Volume - Kamisato_Ayato_T3_T5_1toMin_Volume
+    document.getElementById('Kamisato_Ayato_T3_T1_Volume').innerHTML = Kamisato_Ayato_T3_T1;
+    document.getElementById('Kamisato_Ayato_T3_T2_Volume').innerHTML = Kamisato_Ayato_T3_T2;
+    document.getElementById('Kamisato_Ayato_T3_T3_Volume').innerHTML = Kamisato_Ayato_T3_T3;
+    document.getElementById('Kamisato_Ayato_T3_T4_Volume').innerHTML = Kamisato_Ayato_T3_T4;
+    document.getElementById('Kamisato_Ayato_T3_T5_Volume').innerHTML = Kamisato_Ayato_T3_T5.toLocaleString();
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Kamisato_Ayato  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yae_Miko  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// var Yae_Miko_Ex = document.getElementById('Yae_Miko_Ex');
+noUiSlider.create(Yae_Miko_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yae_Miko_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yae_Miko_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yae_Miko_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+noUiSlider.create(Yae_Miko_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+function Yae_MikoLoad() {
+  Yae_Miko_Ex.noUiSlider.on('update', function (values, handle) {
+    var Yae_Miko_Ex_Min_Volume = "L1toL" + Yae_Miko_Ex.noUiSlider.get()[0];
+    var Yae_Miko_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Yae_Miko_Ex.noUiSlider.get()[0])[Yae_Miko_Ex_Min_Volume]);
+    var Yae_Miko_Ex_Max_Volume = "L1toL" + Yae_Miko_Ex.noUiSlider.get()[1];
+    var Yae_Miko_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == Yae_Miko_Ex.noUiSlider.get()[1])[Yae_Miko_Ex_Max_Volume]);
+    var Yae_Miko_Ex_Volume = Yae_Miko_Ex_1toMax_Volume - Yae_Miko_Ex_1toMin_Volume
+    var Yae_Miko_Ex_Book_Volume = Yae_Miko_Ex_Volume / 1000
+    var Yae_Miko_Ex_Mora_Volume = Yae_Miko_Ex_Volume * 0.2
+    document.getElementById('Yae_Miko_Ex_Volume').innerHTML = Yae_Miko_Ex_Volume.toLocaleString();
+    document.getElementById('Yae_Miko_Ex_Book_Volume').innerHTML = Yae_Miko_Ex_Book_Volume.toLocaleString();
+    document.getElementById('Yae_Miko_Ex_Mora_Volume').innerHTML = Yae_Miko_Ex_Mora_Volume.toLocaleString();
+  });
+  Yae_Miko_Pr.noUiSlider.on('update', function (values, handle) {
+    var Yae_Miko_Pr_Min_Volume = "L1toL" + Yae_Miko_Pr.noUiSlider.get()[0];
+    var Yae_Miko_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[0])["P1_" + [Yae_Miko_Pr_Min_Volume]]);
+    var Yae_Miko_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[0])["P2_" + [Yae_Miko_Pr_Min_Volume]]);
+    var Yae_Miko_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[0])["P3_" + [Yae_Miko_Pr_Min_Volume]]);
+    var Yae_Miko_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[0])["P4_" + [Yae_Miko_Pr_Min_Volume]]);
+    var Yae_Miko_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[0])["P5_" + [Yae_Miko_Pr_Min_Volume]]);
+    var Yae_Miko_Pr_Max_Volume = "L1toL" + Yae_Miko_Pr.noUiSlider.get()[1];
+    var Yae_Miko_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[1])["P1_" + [Yae_Miko_Pr_Max_Volume]]);
+    var Yae_Miko_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[1])["P2_" + [Yae_Miko_Pr_Max_Volume]]);
+    var Yae_Miko_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[1])["P3_" + [Yae_Miko_Pr_Max_Volume]]);
+    var Yae_Miko_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[1])["P4_" + [Yae_Miko_Pr_Max_Volume]]);
+    var Yae_Miko_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == Yae_Miko_Pr.noUiSlider.get()[1])["P5_" + [Yae_Miko_Pr_Max_Volume]]);
+    var Yae_Miko_Pr_P1 = Yae_Miko_Pr_P1_1toMax_Volume - Yae_Miko_Pr_P1_1toMin_Volume
+    var Yae_Miko_Pr_P2 = Yae_Miko_Pr_P2_1toMax_Volume - Yae_Miko_Pr_P2_1toMin_Volume
+    var Yae_Miko_Pr_P3 = Yae_Miko_Pr_P3_1toMax_Volume - Yae_Miko_Pr_P3_1toMin_Volume
+    var Yae_Miko_Pr_P4 = Yae_Miko_Pr_P4_1toMax_Volume - Yae_Miko_Pr_P4_1toMin_Volume
+    var Yae_Miko_Pr_P5 = Yae_Miko_Pr_P5_1toMax_Volume - Yae_Miko_Pr_P5_1toMin_Volume
+    document.getElementById('Yae_Miko_Pr_P1_Volume').innerHTML = Yae_Miko_Pr_P1;
+    document.getElementById('Yae_Miko_Pr_P2_Volume').innerHTML = Yae_Miko_Pr_P2;
+    document.getElementById('Yae_Miko_Pr_P3_Volume').innerHTML = Yae_Miko_Pr_P3;
+    document.getElementById('Yae_Miko_Pr_P4_Volume').innerHTML = Yae_Miko_Pr_P4;
+    document.getElementById('Yae_Miko_Pr_P5_Volume').innerHTML = Yae_Miko_Pr_P5.toLocaleString();
+  });
+  Yae_Miko_T1.noUiSlider.on('update', function (values, handle) {
+    var Yae_Miko_T1_Min_Volume = "L1toL" + Yae_Miko_T1.noUiSlider.get()[0];
+    var Yae_Miko_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[0])["T1_" + [Yae_Miko_T1_Min_Volume]]);
+    var Yae_Miko_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[0])["T2_" + [Yae_Miko_T1_Min_Volume]]);
+    var Yae_Miko_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[0])["T3_" + [Yae_Miko_T1_Min_Volume]]);
+    var Yae_Miko_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[0])["T4_" + [Yae_Miko_T1_Min_Volume]]);
+    var Yae_Miko_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[0])["T5_" + [Yae_Miko_T1_Min_Volume]]);
+    var Yae_Miko_T1_Max_Volume = "L1toL" + Yae_Miko_T1.noUiSlider.get()[1];
+    var Yae_Miko_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[1])["T1_" + [Yae_Miko_T1_Max_Volume]]);
+    var Yae_Miko_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[1])["T2_" + [Yae_Miko_T1_Max_Volume]]);
+    var Yae_Miko_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[1])["T3_" + [Yae_Miko_T1_Max_Volume]]);
+    var Yae_Miko_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[1])["T4_" + [Yae_Miko_T1_Max_Volume]]);
+    var Yae_Miko_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T1.noUiSlider.get()[1])["T5_" + [Yae_Miko_T1_Max_Volume]]);
+    var Yae_Miko_T1_T1 = Yae_Miko_T1_T1_1toMax_Volume - Yae_Miko_T1_T1_1toMin_Volume
+    var Yae_Miko_T1_T2 = Yae_Miko_T1_T2_1toMax_Volume - Yae_Miko_T1_T2_1toMin_Volume
+    var Yae_Miko_T1_T3 = Yae_Miko_T1_T3_1toMax_Volume - Yae_Miko_T1_T3_1toMin_Volume
+    var Yae_Miko_T1_T4 = Yae_Miko_T1_T4_1toMax_Volume - Yae_Miko_T1_T4_1toMin_Volume
+    var Yae_Miko_T1_T5 = Yae_Miko_T1_T5_1toMax_Volume - Yae_Miko_T1_T5_1toMin_Volume
+    document.getElementById('Yae_Miko_T1_T1_Volume').innerHTML = Yae_Miko_T1_T1;
+    document.getElementById('Yae_Miko_T1_T2_Volume').innerHTML = Yae_Miko_T1_T2;
+    document.getElementById('Yae_Miko_T1_T3_Volume').innerHTML = Yae_Miko_T1_T3;
+    document.getElementById('Yae_Miko_T1_T4_Volume').innerHTML = Yae_Miko_T1_T4;
+    document.getElementById('Yae_Miko_T1_T5_Volume').innerHTML = Yae_Miko_T1_T5.toLocaleString();
+  });
+  Yae_Miko_T2.noUiSlider.on('update', function (values, handle) {
+    var Yae_Miko_T2_Min_Volume = "L1toL" + Yae_Miko_T2.noUiSlider.get()[0];
+    var Yae_Miko_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[0])["T1_" + [Yae_Miko_T2_Min_Volume]]);
+    var Yae_Miko_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[0])["T2_" + [Yae_Miko_T2_Min_Volume]]);
+    var Yae_Miko_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[0])["T3_" + [Yae_Miko_T2_Min_Volume]]);
+    var Yae_Miko_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[0])["T4_" + [Yae_Miko_T2_Min_Volume]]);
+    var Yae_Miko_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[0])["T5_" + [Yae_Miko_T2_Min_Volume]]);
+    var Yae_Miko_T2_Max_Volume = "L1toL" + Yae_Miko_T2.noUiSlider.get()[1];
+    var Yae_Miko_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[1])["T1_" + [Yae_Miko_T2_Max_Volume]]);
+    var Yae_Miko_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[1])["T2_" + [Yae_Miko_T2_Max_Volume]]);
+    var Yae_Miko_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[1])["T3_" + [Yae_Miko_T2_Max_Volume]]);
+    var Yae_Miko_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[1])["T4_" + [Yae_Miko_T2_Max_Volume]]);
+    var Yae_Miko_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T2.noUiSlider.get()[1])["T5_" + [Yae_Miko_T2_Max_Volume]]);
+    var Yae_Miko_T2_T1 = Yae_Miko_T2_T1_1toMax_Volume - Yae_Miko_T2_T1_1toMin_Volume
+    var Yae_Miko_T2_T2 = Yae_Miko_T2_T2_1toMax_Volume - Yae_Miko_T2_T2_1toMin_Volume
+    var Yae_Miko_T2_T3 = Yae_Miko_T2_T3_1toMax_Volume - Yae_Miko_T2_T3_1toMin_Volume
+    var Yae_Miko_T2_T4 = Yae_Miko_T2_T4_1toMax_Volume - Yae_Miko_T2_T4_1toMin_Volume
+    var Yae_Miko_T2_T5 = Yae_Miko_T2_T5_1toMax_Volume - Yae_Miko_T2_T5_1toMin_Volume
+    document.getElementById('Yae_Miko_T2_T1_Volume').innerHTML = Yae_Miko_T2_T1;
+    document.getElementById('Yae_Miko_T2_T2_Volume').innerHTML = Yae_Miko_T2_T2;
+    document.getElementById('Yae_Miko_T2_T3_Volume').innerHTML = Yae_Miko_T2_T3;
+    document.getElementById('Yae_Miko_T2_T4_Volume').innerHTML = Yae_Miko_T2_T4;
+    document.getElementById('Yae_Miko_T2_T5_Volume').innerHTML = Yae_Miko_T2_T5.toLocaleString();
+  });
+  Yae_Miko_T3.noUiSlider.on('update', function (values, handle) {
+    var Yae_Miko_T3_Min_Volume = "L1toL" + Yae_Miko_T3.noUiSlider.get()[0];
+    var Yae_Miko_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[0])["T1_" + [Yae_Miko_T3_Min_Volume]]);
+    var Yae_Miko_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[0])["T2_" + [Yae_Miko_T3_Min_Volume]]);
+    var Yae_Miko_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[0])["T3_" + [Yae_Miko_T3_Min_Volume]]);
+    var Yae_Miko_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[0])["T4_" + [Yae_Miko_T3_Min_Volume]]);
+    var Yae_Miko_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[0])["T5_" + [Yae_Miko_T3_Min_Volume]]);
+    var Yae_Miko_T3_Max_Volume = "L1toL" + Yae_Miko_T3.noUiSlider.get()[1];
+    var Yae_Miko_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[1])["T1_" + [Yae_Miko_T3_Max_Volume]]);
+    var Yae_Miko_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[1])["T2_" + [Yae_Miko_T3_Max_Volume]]);
+    var Yae_Miko_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[1])["T3_" + [Yae_Miko_T3_Max_Volume]]);
+    var Yae_Miko_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[1])["T4_" + [Yae_Miko_T3_Max_Volume]]);
+    var Yae_Miko_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == Yae_Miko_T3.noUiSlider.get()[1])["T5_" + [Yae_Miko_T3_Max_Volume]]);
+    var Yae_Miko_T3_T1 = Yae_Miko_T3_T1_1toMax_Volume - Yae_Miko_T3_T1_1toMin_Volume
+    var Yae_Miko_T3_T2 = Yae_Miko_T3_T2_1toMax_Volume - Yae_Miko_T3_T2_1toMin_Volume
+    var Yae_Miko_T3_T3 = Yae_Miko_T3_T3_1toMax_Volume - Yae_Miko_T3_T3_1toMin_Volume
+    var Yae_Miko_T3_T4 = Yae_Miko_T3_T4_1toMax_Volume - Yae_Miko_T3_T4_1toMin_Volume
+    var Yae_Miko_T3_T5 = Yae_Miko_T3_T5_1toMax_Volume - Yae_Miko_T3_T5_1toMin_Volume
+    document.getElementById('Yae_Miko_T3_T1_Volume').innerHTML = Yae_Miko_T3_T1;
+    document.getElementById('Yae_Miko_T3_T2_Volume').innerHTML = Yae_Miko_T3_T2;
+    document.getElementById('Yae_Miko_T3_T3_Volume').innerHTML = Yae_Miko_T3_T3;
+    document.getElementById('Yae_Miko_T3_T4_Volume').innerHTML = Yae_Miko_T3_T4;
+    document.getElementById('Yae_Miko_T3_T5_Volume').innerHTML = Yae_Miko_T3_T5.toLocaleString();
+  });
+}
+// /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Yae_Miko  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/  Shenhe  /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // var Shenhe_Ex = document.getElementById('Shenhe_Ex');
 noUiSlider.create(Shenhe_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
@@ -6478,6 +6716,39 @@ function Talent_Boss_Calculator() {
   document.getElementById('Ashen_Heart_Volume').innerHTML = Ashen_Heart_Volume;
   document.getElementById('In_Ashen_Heart_Volume').innerHTML = In_Ashen_Heart_Volume;
   document.getElementById('Ne_Ashen_Heart_Volume').innerHTML = Ne_Ashen_Heart_Volume;
+// [計算] - 凶将の手眼
+  var Mudra_of_the_Malefic_General_Volume = parseInt("0")
+  var Mudra_of_the_Malefic_General_El = document.getElementsByClassName("Mudra_of_the_Malefic_General")
+  for (var i = 0; i < Mudra_of_the_Malefic_General_El.length; i++) {
+    var Mudra_of_the_Malefic_General_Volume = Mudra_of_the_Malefic_General_Volume + parseInt(Mudra_of_the_Malefic_General_El[i].textContent)
+  }
+  var In_Mudra_of_the_Malefic_General_Volume = parseInt(document.getElementById("Mudra_of_the_Malefic_General").value)
+  var Ne_Mudra_of_the_Malefic_General_Volume = Mudra_of_the_Malefic_General_Volume - In_Mudra_of_the_Malefic_General_Volume
+  document.getElementById('Mudra_of_the_Malefic_General_Volume').innerHTML = Mudra_of_the_Malefic_General_Volume;
+  document.getElementById('In_Mudra_of_the_Malefic_General_Volume').innerHTML = In_Mudra_of_the_Malefic_General_Volume;
+  document.getElementById('Ne_Mudra_of_the_Malefic_General_Volume').innerHTML = Ne_Mudra_of_the_Malefic_General_Volume;
+// [計算] - 禍神の禊涙
+  var Tears_of_the_Calamitous_God_Volume = parseInt("0")
+  var Tears_of_the_Calamitous_God_El = document.getElementsByClassName("Tears_of_the_Calamitous_God")
+  for (var i = 0; i < Tears_of_the_Calamitous_God_El.length; i++) {
+    var Tears_of_the_Calamitous_God_Volume = Tears_of_the_Calamitous_God_Volume + parseInt(Tears_of_the_Calamitous_God_El[i].textContent)
+  }
+  var In_Tears_of_the_Calamitous_God_Volume = parseInt(document.getElementById("Tears_of_the_Calamitous_God").value)
+  var Ne_Tears_of_the_Calamitous_God_Volume = Tears_of_the_Calamitous_God_Volume - In_Tears_of_the_Calamitous_God_Volume
+  document.getElementById('Tears_of_the_Calamitous_God_Volume').innerHTML = Tears_of_the_Calamitous_God_Volume;
+  document.getElementById('In_Tears_of_the_Calamitous_God_Volume').innerHTML = In_Tears_of_the_Calamitous_God_Volume;
+  document.getElementById('Ne_Tears_of_the_Calamitous_God_Volume').innerHTML = Ne_Tears_of_the_Calamitous_God_Volume;
+// [計算] - 万劫の真意
+  var The_Meaning_of_Aeons_Volume = parseInt("0")
+  var The_Meaning_of_Aeons_El = document.getElementsByClassName("The_Meaning_of_Aeons")
+  for (var i = 0; i < The_Meaning_of_Aeons_El.length; i++) {
+    var The_Meaning_of_Aeons_Volume = The_Meaning_of_Aeons_Volume + parseInt(The_Meaning_of_Aeons_El[i].textContent)
+  }
+  var In_The_Meaning_of_Aeons_Volume = parseInt(document.getElementById("The_Meaning_of_Aeons").value)
+  var Ne_The_Meaning_of_Aeons_Volume = The_Meaning_of_Aeons_Volume - In_The_Meaning_of_Aeons_Volume
+  document.getElementById('The_Meaning_of_Aeons_Volume').innerHTML = The_Meaning_of_Aeons_Volume;
+  document.getElementById('In_The_Meaning_of_Aeons_Volume').innerHTML = In_The_Meaning_of_Aeons_Volume;
+  document.getElementById('Ne_The_Meaning_of_Aeons_Volume').innerHTML = Ne_The_Meaning_of_Aeons_Volume;
 }
 
 // [計算]
@@ -6558,7 +6829,7 @@ if (!localStorage.getItem("_Version")) {
 }  else  {
   if (!(localStorage.getItem("_Version") === Version)) {
     Load();
-    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20211208 to ver." + Version + "）\n・雲菫、申鶴の実装\n・ドラゴエアのニセヒレの実装\n・一部キャラクター名の修正・変更")
+    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220110 to ver." + Version + "）\n・神里綾人の実装\n・八重神子の実装\n・凶将の手眼の計算を実装\n・禍神の禊涙の計算を実装\n・万劫の真意の計算を実装\n・一部キャラクターの立ち絵画像を変更\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）")
 
   }  else  {
     Load();
