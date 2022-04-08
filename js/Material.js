@@ -1,4 +1,4 @@
-var Version = "20220217"
+var Version = "20220408"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -210,19 +210,18 @@ LoadWait();
 
 // スライダーの作成
 function SliderCreate_Go() {
-  eval(`function ${CharacterName}_Create() {
+  eval(`
     noUiSlider.create(${CharacterName}_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
     noUiSlider.create(${CharacterName}_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
     noUiSlider.create(${CharacterName}_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
     noUiSlider.create(${CharacterName}_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
     noUiSlider.create(${CharacterName}_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
-  }`);
-  eval(`${CharacterName}_Create();`);
+  `);
 }
 
 // スライダーの数値なんかの読み込み
 function Character_Load() {
-  eval(`function ${CharacterName}_Load() {
+  eval(`
     ${CharacterName}_Ex.noUiSlider.on('update', function (values, handle) {
       var ${CharacterName}_Ex_Min_Volume = "L1toL" + ${CharacterName}_Ex.noUiSlider.get()[0];
       var ${CharacterName}_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == ${CharacterName}_Ex.noUiSlider.get()[0])[${CharacterName}_Ex_Min_Volume]);
@@ -331,8 +330,7 @@ function Character_Load() {
       document.getElementById('${CharacterName}_T3_T4_Volume').innerHTML = ${CharacterName}_T3_T4;
       document.getElementById('${CharacterName}_T3_T5_Volume').innerHTML = ${CharacterName}_T3_T5.toLocaleString();
     });
-  }`);
-  eval(`${CharacterName}_Load();`);
+  `);
 }
 
 // [計算] - レベル関連 / モラ関連
@@ -1554,7 +1552,7 @@ if (!localStorage.getItem("_Version")) {
 }  else  {
   if (!(localStorage.getItem("_Version") === Version)) {
     Load();
-    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220110 to ver." + Version + "）\n・神里綾人の実装\n・八重神子の実装\n・凶将の手眼の計算を実装\n・禍神の禊涙の計算を実装\n・万劫の真意の計算を実装\n・一部キャラクターの立ち絵画像を変更\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）")
+    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220217 to ver." + Version + "）\n・特産品の場所の変更\n・一部キャラクターの立ち絵画像を変更\n・JavaScriptの容量軽減\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）")
 
   }  else  {
     Load();
