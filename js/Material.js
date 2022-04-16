@@ -569,30 +569,48 @@ function Elemental_Stones_Calculator_Go() {
 function Common_Material_Calculator() {
 // [計算] - スライム
   Common_Material_Name = "Slime_Concentrate";
+  Common_Material_Name3 = "Slime_Secretions";
+  Common_Material_Name9 = "Slime_Condensate";
   Common_Material_Calculator_Go();
 // [計算] - 仮面
   Common_Material_Name = "Ominous_Mask";
+  Common_Material_Name3 = "Stained_Mask";
+  Common_Material_Name9 = "Damaged_Mask";
   Common_Material_Calculator_Go();
 // [計算] - 絵巻
   Common_Material_Name = "Forbidden_Curse_Scroll";
+  Common_Material_Name3 = "Sealed_Scroll";
+  Common_Material_Name9 = "Divining_Scroll";
   Common_Material_Calculator_Go();
 // [計算] - 矢先
   Common_Material_Name = "Weathered_Arrowhead";
+  Common_Material_Name3 = "Sharp_Arrowhead";
+  Common_Material_Name9 = "Firm_Arrowhead";
   Common_Material_Calculator_Go();
 // [計算] - 記章
   Common_Material_Name = "Lieutenants_Insignia";
+  Common_Material_Name3 = "Sergeants_Insignia";
+  Common_Material_Name9 = "Recruits_Insignia";
   Common_Material_Calculator_Go();
 // [計算] - マーク
   Common_Material_Name = "Golden_Raven_Insignia";
+  Common_Material_Name3 = "Silver_Raven_Insignia";
+  Common_Material_Name9 = "Treasure_Hoarder_Insignia";
   Common_Material_Calculator_Go();
 // [計算] - 蜜
   Common_Material_Name = "Energy_Nectar";
+  Common_Material_Name3 = "Shimmering_Nectar";
+  Common_Material_Name9 = "Whopperflower_Nectar";
   Common_Material_Calculator_Go();
 // [計算] - 鍔
   Common_Material_Name = "Famed_Handguard";
+  Common_Material_Name3 = "Kageuchi_Handguard";
+  Common_Material_Name9 = "Old_Handguard";
   Common_Material_Calculator_Go();
 // [計算] - フライム
   Common_Material_Name = "Spectral_Nucleus";
+  Common_Material_Name3 = "Spectral_Heart";
+  Common_Material_Name9 = "Spectral_Husk";
   Common_Material_Calculator_Go();
 }
 function Common_Material_Calculator_Go() {
@@ -608,9 +626,9 @@ function Common_Material_Calculator_Go() {
     var Ta_${Common_Material_Name}_Volume = Ta_${Common_Material_Name}_Volume + parseInt(Ta_${Common_Material_Name}_El[i].textContent)
   }
   var In_${Common_Material_Name}_Volume
-  = parseInt(document.getElementById("${Common_Material_Name}").value) * 9
-  + parseInt(document.getElementById("Slime_Secretions").value) * 3
-  + parseInt(document.getElementById("Slime_Condensate").value) * 1
+  = parseInt(document.getElementById("${Common_Material_Name9}").value) * 9
+  + parseInt(document.getElementById("${Common_Material_Name3}").value) * 3
+  + parseInt(document.getElementById("${Common_Material_Name}").value) * 1
   var ${Common_Material_Name}_Volume = As_${Common_Material_Name}_Volume + Ta_${Common_Material_Name}_Volume
   var Ne_${Common_Material_Name}_Volume = ${Common_Material_Name}_Volume - In_${Common_Material_Name}_Volume
   document.getElementById('${Common_Material_Name}_Volume').innerHTML = ${Common_Material_Name}_Volume;
