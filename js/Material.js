@@ -626,9 +626,9 @@ function Common_Material_Calculator_Go() {
     var Ta_${Common_Material_Name}_Volume = Ta_${Common_Material_Name}_Volume + parseInt(Ta_${Common_Material_Name}_El[i].textContent)
   }
   var In_${Common_Material_Name}_Volume
-  = parseInt(document.getElementById("${Common_Material_Name9}").value) * 9
+  = parseInt(document.getElementById("${Common_Material_Name}").value) * 9
   + parseInt(document.getElementById("${Common_Material_Name3}").value) * 3
-  + parseInt(document.getElementById("${Common_Material_Name}").value) * 1
+  + parseInt(document.getElementById("${Common_Material_Name9}").value) * 1
   var ${Common_Material_Name}_Volume = As_${Common_Material_Name}_Volume + Ta_${Common_Material_Name}_Volume
   var Ne_${Common_Material_Name}_Volume = ${Common_Material_Name}_Volume - In_${Common_Material_Name}_Volume
   document.getElementById('${Common_Material_Name}_Volume').innerHTML = ${Common_Material_Name}_Volume;
