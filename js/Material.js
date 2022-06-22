@@ -1,4 +1,4 @@
-var Version = "20220416"
+var Version = "20220623"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -7,9 +7,11 @@ httpObj.send(null);
 
 // スライダーの作成
 function SliderCreate() {
-  CharacterName = "Yelan";
+  CharacterName = "Shikanoin_Heizou";
   SliderCreate_Go();
   CharacterName = "Kuki_Shinobu";
+  SliderCreate_Go();
+  CharacterName = "Yelan";
   SliderCreate_Go();
   CharacterName = "Kamisato_Ayato";
   SliderCreate_Go();
@@ -124,9 +126,11 @@ function LoadWait() {
     setTimeout( LoadWait, 500 );
     return;
   }
-  CharacterName = "Yelan";
+  CharacterName = "Shikanoin_Heizou";
   Character_Load();
   CharacterName = "Kuki_Shinobu";
+  Character_Load();
+  CharacterName = "Yelan";
   Character_Load();
   CharacterName = "Kamisato_Ayato";
   Character_Load();
@@ -927,7 +931,7 @@ if (!localStorage.getItem("_Version")) {
 }  else  {
   if (!(localStorage.getItem("_Version") === Version)) {
     Load();
-    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220408 to ver." + Version + "）\n・夜蘭を追加\n・久岐忍を追加\n・符文の歯車の計算を追加\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220416 to ver." + Version + "）\n・鹿野院平蔵を追加\n・久岐忍と夜蘭の並びを修正\n・久岐忍と夜蘭の画像を変更\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
   }  else  {
     Load();
   }
