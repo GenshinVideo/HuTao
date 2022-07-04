@@ -1,345 +1,879 @@
-var Version = "20220623"
+var Version = "20220704"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
 httpObj.onload = function(){}
 httpObj.send(null);
 
-// スライダーの作成
-function SliderCreate() {
-  CharacterName = "Shikanoin_Heizou";
-  SliderCreate_Go();
-  CharacterName = "Kuki_Shinobu";
-  SliderCreate_Go();
-  CharacterName = "Yelan";
-  SliderCreate_Go();
-  CharacterName = "Kamisato_Ayato";
-  SliderCreate_Go();
-  CharacterName = "Yae_Miko";
-  SliderCreate_Go();
-  CharacterName = "Shenhe";
-  SliderCreate_Go();
-  CharacterName = "Yun_Jin";
-  SliderCreate_Go();
-  CharacterName = "Arataki_Itto";
-  SliderCreate_Go();
-  CharacterName = "Gorou";
-  SliderCreate_Go();
-  CharacterName = "Thoma";
-  SliderCreate_Go();
-  CharacterName = "Sangonomiya_Kokomi";
-  SliderCreate_Go();
-  CharacterName = "Raiden_Shogun";
-  SliderCreate_Go();
-  CharacterName = "Kujou_Sara";
-  SliderCreate_Go();
-  CharacterName = "Yoimiya";
-  SliderCreate_Go();
-  CharacterName = "Sayu";
-  SliderCreate_Go();
-  CharacterName = "Kamisato_Ayaka";
-  SliderCreate_Go();
-  CharacterName = "Kaedehara_Kazuha";
-  SliderCreate_Go();
-  CharacterName = "Eula";
-  SliderCreate_Go();
-  CharacterName = "Yanfei";
-  SliderCreate_Go();
-  CharacterName = "Rosaria";
-  SliderCreate_Go();
-  CharacterName = "HuTao";
-  SliderCreate_Go();
-  CharacterName = "Xiao";
-  SliderCreate_Go();
-  CharacterName = "Ganyu";
-  SliderCreate_Go();
-  CharacterName = "Albedo";
-  SliderCreate_Go();
-  CharacterName = "Zhongli";
-  SliderCreate_Go();
-  CharacterName = "Xinyan";
-  SliderCreate_Go();
-  CharacterName = "Tartaglia";
-  SliderCreate_Go();
-  CharacterName = "Diona";
-  SliderCreate_Go();
-  CharacterName = "Klee";
-  SliderCreate_Go();
-  CharacterName = "Venti";
-  SliderCreate_Go();
-  CharacterName = "Keqing";
-  SliderCreate_Go();
-  CharacterName = "Mona";
-  SliderCreate_Go();
-  CharacterName = "Qiqi";
-  SliderCreate_Go();
-  CharacterName = "Diluc";
-  SliderCreate_Go();
-  CharacterName = "Jean";
-  SliderCreate_Go();
-  CharacterName = "Sucrose";
-  SliderCreate_Go();
-  CharacterName = "Chongyun";
-  SliderCreate_Go();
-  CharacterName = "Noelle";
-  SliderCreate_Go();
-  CharacterName = "Bennett";
-  SliderCreate_Go();
-  CharacterName = "Fischl";
-  SliderCreate_Go();
-  CharacterName = "Ningguang";
-  SliderCreate_Go();
-  CharacterName = "Xingqiu";
-  SliderCreate_Go();
-  CharacterName = "Beidou";
-  SliderCreate_Go();
-  CharacterName = "Xiangling";
-  SliderCreate_Go();
-  CharacterName = "Razor";
-  SliderCreate_Go();
-  CharacterName = "Barbara";
-  SliderCreate_Go();
-  CharacterName = "Lisa";
-  SliderCreate_Go();
-  CharacterName = "Kaeya";
-  SliderCreate_Go();
-  CharacterName = "Amber";
-  SliderCreate_Go();
-  CharacterName = "Aloy";
-  SliderCreate_Go();
-}
-function SliderCreate_Go() {
-  eval(`
-    noUiSlider.create(${CharacterName}_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
-    noUiSlider.create(${CharacterName}_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
-    noUiSlider.create(${CharacterName}_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
-    noUiSlider.create(${CharacterName}_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
-    noUiSlider.create(${CharacterName}_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
-  `);
-}
-SliderCreate();
-
-// スライダーの読み込み
-function LoadWait() {
-  if ( !httpObj.response ) {
-    console.log("読み込み中")
-    setTimeout( LoadWait, 500 );
+// キャラクター項目の生成
+function SetCharacterList() {
+  if ( !document.querySelector('div[id="Character"]') ) {
+    console.log("読み込み中1")
+    setTimeout( SetCharacterList, 100 );
     return;
   }
-  CharacterName = "Shikanoin_Heizou";
-  Character_Load();
-  CharacterName = "Kuki_Shinobu";
-  Character_Load();
-  CharacterName = "Yelan";
-  Character_Load();
-  CharacterName = "Kamisato_Ayato";
-  Character_Load();
-  CharacterName = "Yae_Miko";
-  Character_Load();
-  CharacterName = "Shenhe";
-  Character_Load();
-  CharacterName = "Yun_Jin";
-  Character_Load();
-  CharacterName = "Arataki_Itto";
-  Character_Load();
-  CharacterName = "Gorou";
-  Character_Load();
-  CharacterName = "Thoma";
-  Character_Load();
-  CharacterName = "Sangonomiya_Kokomi";
-  Character_Load();
-  CharacterName = "Raiden_Shogun";
-  Character_Load();
-  CharacterName = "Kujou_Sara";
-  Character_Load();
-  CharacterName = "Yoimiya";
-  Character_Load();
-  CharacterName = "Sayu";
-  Character_Load();
-  CharacterName = "Kamisato_Ayaka";
-  Character_Load();
-  CharacterName = "Kaedehara_Kazuha";
-  Character_Load();
-  CharacterName = "Eula";
-  Character_Load();
-  CharacterName = "Yanfei";
-  Character_Load();
-  CharacterName = "Rosaria";
-  Character_Load();
-  CharacterName = "HuTao";
-  Character_Load();
-  CharacterName = "Xiao";
-  Character_Load();
-  CharacterName = "Ganyu";
-  Character_Load();
-  CharacterName = "Albedo";
-  Character_Load();
-  CharacterName = "Zhongli";
-  Character_Load();
-  CharacterName = "Xinyan";
-  Character_Load();
-  CharacterName = "Tartaglia";
-  Character_Load();
-  CharacterName = "Diona";
-  Character_Load();
-  CharacterName = "Klee";
-  Character_Load();
-  CharacterName = "Venti";
-  Character_Load();
-  CharacterName = "Keqing";
-  Character_Load();
-  CharacterName = "Mona";
-  Character_Load();
-  CharacterName = "Qiqi";
-  Character_Load();
-  CharacterName = "Diluc";
-  Character_Load();
-  CharacterName = "Jean";
-  Character_Load();
-  CharacterName = "Sucrose";
-  Character_Load();
-  CharacterName = "Chongyun";
-  Character_Load();
-  CharacterName = "Noelle";
-  Character_Load();
-  CharacterName = "Bennett";
-  Character_Load();
-  CharacterName = "Fischl";
-  Character_Load();
-  CharacterName = "Ningguang";
-  Character_Load();
-  CharacterName = "Xingqiu";
-  Character_Load();
-  CharacterName = "Beidou";
-  Character_Load();
-  CharacterName = "Xiangling";
-  Character_Load();
-  CharacterName = "Razor";
-  Character_Load();
-  CharacterName = "Barbara";
-  Character_Load();
-  CharacterName = "Lisa";
-  Character_Load();
-  CharacterName = "Kaeya";
-  Character_Load();
-  CharacterName = "Amber";
-  Character_Load();
-  CharacterName = "Aloy";
-  Character_Load();
+  if ( !httpObj.response ) {
+    console.log("読み込み中2")
+    setTimeout( SetCharacterList, 100 );
+    return;
+  }
+  ChaEle = document.querySelector('div[id="Character"]');
+
+// 鹿野院平蔵
+  S_Id =          "Shikanoin_Heizou";
+  S_JpName =      "鹿野院平蔵";
+  S_CharaImg =    "Original/Character/Character_Shikanoin_Heizou_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Runic_Fang";
+  S_Local =       "Onikabuto";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Transience";
+  S_Talent2 =     "The_Meaning_of_Aeons";
+  Checkmate();
+
+// 久岐忍
+  S_Id =          "Kuki_Shinobu";
+  S_JpName =      "久岐忍";
+  S_CharaImg =    "Original/Character/Character_Kuki_Shinobu_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Runic_Fang";
+  S_Local =       "Naku_Weed";
+  S_Common =      "Spectral_Nucleus";
+  S_Talent1 =     "Elegance";
+  S_Talent2 =     "Tears_of_the_Calamitous_God";
+  Checkmate();
+
+// 夜蘭
+  S_Id =          "Yelan";
+  S_JpName =      "夜蘭";
+  S_CharaImg =    "Original/Character/Character_Yelan_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Runic_Fang";
+  S_Local =       "Starconch";
+  S_Common =      "Lieutenants_Insignia";
+  S_Talent1 =     "Prosperity";
+  S_Talent2 =     "Gilded_Scale";
+  Checkmate();
+
+// 神里綾人
+  S_Id =          "Kamisato_Ayato";
+  S_JpName =      "神里綾人";
+  S_CharaImg =    "Original/Character/Character_Kamisato_Ayato_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Dew_of_Repudiation";
+  S_Local =       "Sakura_Bloom";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Elegance";
+  S_Talent2 =     "Mudra_of_the_Malefic_General";
+  Checkmate();
+
+// 八重神子
+  S_Id =          "Yae_Miko";
+  S_JpName =      "八重神子";
+  S_CharaImg =    "Original/Character/Character_Yae_Miko_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Dragonheirs_False_Fin";
+  S_Local =       "Sea_Ganoderma";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Light";
+  S_Talent2 =     "The_Meaning_of_Aeons";
+  Checkmate();
+
+// 申鶴
+  S_Id =          "Shenhe";
+  S_JpName =      "申鶴";
+  S_CharaImg =    "Original/Character/Character_Shenhe_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Dragonheirs_False_Fin";
+  S_Local =       "Qingxin";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Hellfire_Butterfly";
+  Checkmate();
+
+// 雲菫
+  S_Id =          "Yun_Jin";
+  S_JpName =      "雲菫";
+  S_CharaImg =    "Original/Character/Character_Yun_Jin_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Riftborn_Regalia";
+  S_Local =       "Glaze_Lily";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Ashen_Heart";
+  Checkmate();
+
+// 荒瀧一斗
+  S_Id =          "Arataki_Itto";
+  S_JpName =      "荒瀧一斗";
+  S_CharaImg =    "Original/Character/Character_Arataki_Itto_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Riftborn_Regalia";
+  S_Local =       "Onikabuto";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Elegance";
+  S_Talent2 =     "Ashen_Heart";
+  Checkmate();
+
+// ゴロー
+  S_Id =          "Gorou";
+  S_JpName =      "ゴロー";
+  S_CharaImg =    "Original/Character/Character_Gorou_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Perpetual_Heart";
+  S_Local =       "Sango_Pearl";
+  S_Common =      "Spectral_Nucleus";
+  S_Talent1 =     "Light";
+  S_Talent2 =     "Molten_Moment";
+  Checkmate();
+
+// トーマ
+  S_Id =          "Thoma";
+  S_JpName =      "トーマ";
+  S_CharaImg =    "Original/Character/Character_Thoma_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Smoldering_Pearl";
+  S_Local =       "Fluorescent_Fungus";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Transience";
+  S_Talent2 =     "Hellfire_Butterfly";
+  Checkmate();
+
+// 珊瑚宮心海
+  S_Id =          "Sangonomiya_Kokomi";
+  S_JpName =      "珊瑚宮心海";
+  S_CharaImg =    "Original/Character/Character_Sangonomiya_Kokomi_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Dew_of_Repudiation";
+  S_Local =       "Sango_Pearl";
+  S_Common =      "Spectral_Nucleus";
+  S_Talent1 =     "Transience";
+  S_Talent2 =     "Hellfire_Butterfly";
+  Checkmate();
+
+// 雷電将軍 / 雷電影
+  S_Id =          "Raiden_Shogun";
+  S_JpName =      "雷電将軍 / 雷電影";
+  S_CharaImg =    "Original/Character/Character_Raiden_Shogun_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Storm_Beads";
+  S_Local =       "Amakumo_Fruit";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Light";
+  S_Talent2 =     "Molten_Moment";
+  Checkmate();
+
+// 九条裟羅
+  S_Id =          "Kujou_Sara";
+  S_JpName =      "九条裟羅";
+  S_CharaImg =    "Original/Character/Character_Kujou_Sara_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Storm_Beads";
+  S_Local =       "Dendrobium";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Elegance";
+  S_Talent2 =     "Ashen_Heart";
+  Checkmate();
+
+// 長野原宵宮
+  S_Id =          "Yoimiya";
+  S_JpName =      "長野原宵宮";
+  S_CharaImg =    "Original/Character/Character_Yoimiya_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Smoldering_Pearl";
+  S_Local =       "Naku_Weed";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Transience";
+  S_Talent2 =     "Dragon_Lords_Crown";
+  Checkmate();
+
+// 早柚
+  S_Id =          "Sayu";
+  S_JpName =      "早柚";
+  S_CharaImg =    "Original/Character/Character_Sayu_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Marionette_Core";
+  S_Local =       "Crystal_Marrow";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Light";
+  S_Talent2 =     "Gilded_Scale";
+  Checkmate();
+
+// 神里綾華
+  S_Id =          "Kamisato_Ayaka";
+  S_JpName =      "神里綾華";
+  S_CharaImg =    "Original/Character/Character_Kamisato_Ayaka_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Perpetual_Heart";
+  S_Local =       "Sakura_Bloom";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Elegance";
+  S_Talent2 =     "Bloodjade_Branch";
+  Checkmate();
+
+// 楓原万葉
+  S_Id =          "Kaedehara_Kazuha";
+  S_JpName =      "楓原万葉";
+  S_CharaImg =    "Original/Character/Character_Kaedehara_Kazuha_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Marionette_Core";
+  S_Local =       "Sea_Ganoderma";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Gilded_Scale";
+  Checkmate();
+
+// エウルア・ローレンス
+  S_Id =          "Eula";
+  S_JpName =      "エウルア・ローレンス";
+  S_CharaImg =    "Original/Character/Character_Eula_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Crystalline_Bloom";
+  S_Local =       "Dandelion_Seed";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dragon_Lords_Crown";
+  Checkmate();
+
+// 煙緋
+  S_Id =          "Yanfei";
+  S_JpName =      "煙緋";
+  S_CharaImg =    "Original/Character/Character_Yanfei_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Juvenile_Jade";
+  S_Local =       "Noctilucous_Jade";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Bloodjade_Branch";
+  Checkmate();
+
+// ロサリア
+  S_Id =          "Rosaria";
+  S_JpName =      "ロサリア";
+  S_CharaImg =    "Original/Character/Character_Rosaria_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Valberry";
+  S_Common =      "Lieutenants_Insignia";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Shadow_of_the_Warrior";
+  Checkmate();
+
+// 胡桃
+  S_Id =          "HuTao";
+  S_JpName =      "胡桃";
+  S_CharaImg =    "Original/Character/Character_Hu_Tao_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Juvenile_Jade";
+  S_Local =       "Silk_Flower";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Shard_of_a_Foul_Legacy";
+  Checkmate();
+
+// 魈
+  S_Id =          "Xiao";
+  S_JpName =      "魈";
+  S_CharaImg =    "Original/Character/Character_Xiao_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Juvenile_Jade";
+  S_Local =       "Qingxin";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Prosperity";
+  S_Talent2 =     "Shadow_of_the_Warrior";
+  Checkmate();
+
+// 甘雨
+  S_Id =          "Ganyu";
+  S_JpName =      "甘雨";
+  S_CharaImg =    "Original/Character/Character_Ganyu_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Qingxin";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Shadow_of_the_Warrior";
+  Checkmate();
+
+// アルベド
+  S_Id =          "Albedo";
+  S_JpName =      "アルベド";
+  S_CharaImg =    "Original/Character/Character_Albedo_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Basalt_Pillar";
+  S_Local =       "Cecilia";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Tusk_of_Monoceros_Caeli";
+  Checkmate();
+
+// 鍾離
+  S_Id =          "Zhongli";
+  S_JpName =      "鍾離";
+  S_CharaImg =    "Original/Character/Character_Zhongli_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Basalt_Pillar";
+  S_Local =       "Cor_Lapis";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Tusk_of_Monoceros_Caeli";
+  Checkmate();
+
+// 辛炎
+  S_Id =          "Xinyan";
+  S_JpName =      "辛炎";
+  S_CharaImg =    "Original/Character/Character_Xinyan_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Violetgrass";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Tusk_of_Monoceros_Caeli";
+  Checkmate();
+
+// タルタリア / アヤックス
+  S_Id =          "Tartaglia";
+  S_JpName =      "タルタリア / アヤックス";
+  S_CharaImg =    "Original/Character/Character_Tartaglia_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Cleansing_Heart";
+  S_Local =       "Starconch";
+  S_Common =      "Lieutenants_Insignia";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Shard_of_a_Foul_Legacy";
+  Checkmate();
+
+// ディオナ・カッツェレイン
+  S_Id =          "Diona";
+  S_JpName =      "ディオナ・カッツェレイン";
+  S_CharaImg =    "Original/Character/Character_Diona_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Calla_Lily";
+  S_Common =      "Weathered_Arrowhead";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Shard_of_a_Foul_Legacy";
+  Checkmate();
+
+// クレー
+  S_Id =          "Klee";
+  S_JpName =      "クレー";
+  S_CharaImg =    "Original/Character/Character_Klee_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Philanemo_Mushroom";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Ring_of_Boreas";
+  Checkmate();
+
+// ウェンティ
+  S_Id =          "Venti";
+  S_JpName =      "ウェンティ";
+  S_CharaImg =    "Original/Character/Character_Venti_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Hurricane_Seed";
+  S_Local =       "Cecilia";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Tail_of_Boreas";
+  Checkmate();
+
+// 刻晴
+  S_Id =          "Keqing";
+  S_JpName =      "刻晴";
+  S_CharaImg =    "Original/Outfit/Outfit_Opulent_Splendor_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Lightning_Prism";
+  S_Local =       "Cor_Lapis";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Prosperity";
+  S_Talent2 =     "Ring_of_Boreas";
+  Checkmate();
+
+// アストローギスト・モナ・メギストス
+  S_Id =          "Mona";
+  S_JpName =      "アストローギスト・モナ・メギストス";
+  S_CharaImg =    "Original/Character/Character_Mona_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Cleansing_Heart";
+  S_Local =       "Philanemo_Mushroom";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Ring_of_Boreas";
+  Checkmate();
+
+// 七七
+  S_Id =          "Qiqi";
+  S_JpName =      "七七";
+  S_CharaImg =    "Original/Character/Character_Qiqi_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Violetgrass";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Prosperity";
+  S_Talent2 =     "Tail_of_Boreas";
+  Checkmate();
+
+// ディルック・ラグヴィンド
+  S_Id =          "Diluc";
+  S_JpName =      "ディルック・ラグヴィンド";
+  S_CharaImg =    "Original/Character/Character_Diluc_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Small_Lamp_Grass";
+  S_Common =      "Lieutenants_Insignia";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dvalins_Plume";
+  Checkmate();
+
+// ジン・グンヒルド
+  S_Id =          "Jean";
+  S_JpName =      "ジン・グンヒルド";
+  S_CharaImg =    "Original/Character/Character_Jean_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Hurricane_Seed";
+  S_Local =       "Dandelion_Seed";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dvalins_Plume";
+  Checkmate();
+
+// スクロース
+  S_Id =          "Sucrose";
+  S_JpName =      "スクロース";
+  S_CharaImg =    "Original/Character/Character_Sucrose_Portrait.webp";
+  S_Element1 =    "Vayuda_Turquoise";
+  S_Element2 =    "Turquoise";
+  S_Boss =        "Hurricane_Seed";
+  S_Local =       "Windwheel_Aster";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Spirit_Locket_of_Boreas";
+  Checkmate();
+
+// 重雲
+  S_Id =          "Chongyun";
+  S_JpName =      "重雲";
+  S_CharaImg =    "Original/Character/Character_Chongyun_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Cor_Lapis";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Dvalins_Sigh";
+  Checkmate();
+
+// ノエル
+  S_Id =          "Noelle";
+  S_JpName =      "ノエル";
+  S_CharaImg =    "Original/Character/Character_Noelle_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Basalt_Pillar";
+  S_Local =       "Valberry";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dvalins_Claw";
+  Checkmate();
+
+// ベネット
+  S_Id =          "Bennett";
+  S_JpName =      "ベネット";
+  S_CharaImg =    "Original/Character/Character_Bennett_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Windwheel_Aster";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dvalins_Plume";
+  Checkmate();
+  
+// フィッシュル・ヴォン・ルフシュロス・ナフィードット / エミ
+  S_Id =          "Fischl";
+  S_JpName =      "フィッシュル・ヴォン・ルフシュロス・ナフィードット / エミ";
+  S_CharaImg =    "Original/Character/Character_Fischl_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Lightning_Prism";
+  S_Local =       "Small_Lamp_Grass";
+  S_Common =      "Weathered_Arrowhead";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Spirit_Locket_of_Boreas";
+  Checkmate();
+  
+// 凝光
+  S_Id =          "Ningguang";
+  S_JpName =      "凝光";
+  S_CharaImg =    "Original/Outfit/Outfit_Orchids_Evening_Gown_Portrait.webp";
+  S_Element1 =    "Prithiva_Topaz";
+  S_Element2 =    "Topaz";
+  S_Boss =        "Basalt_Pillar";
+  S_Local =       "Glaze_Lily";
+  S_Common =      "Lieutenants_Insignia";
+  S_Talent1 =     "Prosperity";
+  S_Talent2 =     "Spirit_Locket_of_Boreas";
+  Checkmate();
+  
+// 行秋
+  S_Id =          "Xingqiu";
+  S_JpName =      "行秋";
+  S_CharaImg =    "Original/Character/Character_Xingqiu_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Cleansing_Heart";
+  S_Local =       "Silk_Flower";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Tail_of_Boreas";
+  Checkmate();
+
+// 北斗
+  S_Id =          "Beidou";
+  S_JpName =      "北斗";
+  S_CharaImg =    "Original/Character/Character_Beidou_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Lightning_Prism";
+  S_Local =       "Noctilucous_Jade";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Dvalins_Sigh";
+  Checkmate();
+
+// 卯香菱
+  S_Id =          "Xiangling";
+  S_JpName =      "卯香菱";
+  S_CharaImg =    "Original/Character/Character_Xiangling_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Jueyun_Chili";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Dvalins_Claw";
+  Checkmate();
+
+// レザー
+  S_Id =          "Razor";
+  S_JpName =      "レザー";
+  S_CharaImg =    "Original/Character/Character_Razor_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Lightning_Prism";
+  S_Local =       "Wolfhook";
+  S_Common =      "Ominous_Mask";
+  S_Talent1 =     "Resistance";
+  S_Talent2 =     "Dvalins_Claw";
+  Checkmate();
+
+// バーバラ・ペッチ
+  S_Id =          "Barbara";
+  S_JpName =      "バーバラ・ペッチ";
+  S_CharaImg =    "Original/Character/Character_Barbara_Portrait.webp";
+  S_Element1 =    "Varunada_Lazurite";
+  S_Element2 =    "Lazurite";
+  S_Boss =        "Cleansing_Heart";
+  S_Local =       "Philanemo_Mushroom";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Ring_of_Boreas";
+  Checkmate();
+
+// リサ・ミンツ
+  S_Id =          "Lisa";
+  S_JpName =      "リサ・ミンツ";
+  S_CharaImg =    "Original/Character/Character_Lisa_Portrait.webp";
+  S_Element1 =    "Vajrada_Amethyst";
+  S_Element2 =    "Amethyst";
+  S_Boss =        "Lightning_Prism";
+  S_Local =       "Valberry";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Dvalins_Claw";
+  Checkmate();
+
+// ガイア・アルベリヒ
+  S_Id =          "Kaeya";
+  S_JpName =      "ガイア・アルベリヒ";
+  S_CharaImg =    "Original/Character/Character_Kaeya_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Hoarfrost_Core";
+  S_Local =       "Calla_Lily";
+  S_Common =      "Golden_Raven_Insignia";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Spirit_Locket_of_Boreas";
+  Checkmate();
+
+// アンバー
+  S_Id =          "Amber";
+  S_JpName =      "アンバー";
+  S_CharaImg =    "Original/Character/Character_Amber_Portrait.webp";
+  S_Element1 =    "Agnidus_Agate";
+  S_Element2 =    "Agate";
+  S_Boss =        "Everflame_Seed";
+  S_Local =       "Small_Lamp_Grass";
+  S_Common =      "Weathered_Arrowhead";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Dvalins_Sigh";
+  Checkmate();
+
+// アーロイ
+  S_Id =          "Aloy";
+  S_JpName =      "アーロイ";
+  S_CharaImg =    "Original/Character/Character_Aloy_Portrait.webp";
+  S_Element1 =    "Shivada_Jade";
+  S_Element2 =    "Jade";
+  S_Boss =        "Crystalline_Bloom";
+  S_Local =       "Crystal_Marrow";
+  S_Common =      "Spectral_Nucleus";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Molten_Moment";
+  Checkmate();
+
+
+  OpenScript();
 }
-function Character_Load() {
+SetCharacterList();
+
+function CharacterSet() {
   eval(`
-    ${CharacterName}_Ex.noUiSlider.on('update', function (values, handle) {
-      var ${CharacterName}_Ex_Min_Volume = "L1toL" + ${CharacterName}_Ex.noUiSlider.get()[0];
-      var ${CharacterName}_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == ${CharacterName}_Ex.noUiSlider.get()[0])[${CharacterName}_Ex_Min_Volume]);
-      var ${CharacterName}_Ex_Max_Volume = "L1toL" + ${CharacterName}_Ex.noUiSlider.get()[1];
-      var ${CharacterName}_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == ${CharacterName}_Ex.noUiSlider.get()[1])[${CharacterName}_Ex_Max_Volume]);
-      var ${CharacterName}_Ex_Volume = ${CharacterName}_Ex_1toMax_Volume - ${CharacterName}_Ex_1toMin_Volume
-      var ${CharacterName}_Ex_Book_Volume = ${CharacterName}_Ex_Volume / 1000
-      var ${CharacterName}_Ex_Mora_Volume = ${CharacterName}_Ex_Volume * 0.2
-      document.getElementById('${CharacterName}_Ex_Volume').innerHTML = ${CharacterName}_Ex_Volume.toLocaleString();
-      document.getElementById('${CharacterName}_Ex_Book_Volume').innerHTML = ${CharacterName}_Ex_Book_Volume.toLocaleString();
-      document.getElementById('${CharacterName}_Ex_Mora_Volume').innerHTML = ${CharacterName}_Ex_Mora_Volume.toLocaleString();
+    ChaEle.insertAdjacentHTML('beforeend', '\
+      <table class="${S_Id}">\
+        <tbody>\
+          <tr>\
+            <th colspan="25">${S_JpName}</th>\
+          </tr>\
+          <tr>\
+            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
+            <td width="12%" colspan="3" class="textleft">レベル</td>\
+            <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
+            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
+            <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
+            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
+            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
+            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
+            <td width="4%" colspan="1"></td>\
+            <td width="8%" colspan="2"></td>\
+          </tr>\
+          <tr>\
+            <td colspan="3" class="textleft">突破段階</td>\
+            <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
+            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element1}_Gemstone.webp"></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Element2}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
+            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
+            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
+            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
+            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
+          </tr>\
+          <tr>\
+          <td colspan="1" rowspan="3" class="textleft">天賦</td>\
+          <td colspan="2" class="textleft">通常攻撃</td>\
+          <td colspan="4"><div id="${S_Id}_T1" class="noUiSlider"></div></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T1_T1_Volume"></span> 点</td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T1_T2_Volume"></span> 点</td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Talent2}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T1_T3_Volume"></span> 個</td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T1_T4_Volume"></span> 個</td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T1_T5_Volume"></span></td>\
+          </tr>\
+          <tr>\
+            <td colspan="2" class="textleft">元素スキル</td>\
+            <td colspan="4"><div id="${S_Id}_T2" class="noUiSlider"></div></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T2_T1_Volume"></span> 点</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T2_T2_Volume"></span> 点</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T2_T3_Volume"></span> 個</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T2_T4_Volume"></span> 個</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T2_T5_Volume"></span></td>\
+          </tr>\
+          <tr>\
+            <td colspan="2" class="textleft">元素爆発</td>\
+            <td colspan="4"><div id="${S_Id}_T3" class="noUiSlider"></div></td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T3_T1_Volume"></span> 点</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T3_T2_Volume"></span> 点</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T3_T3_Volume"></span> 個</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T3_T4_Volume"></span> 個</td>\
+            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T3_T5_Volume"></span></td>\
+          </tr>\
+        <tbody>\
+      </table>\
+    ')
+  `);
+}
+function SliderCreate() {
+  eval(`
+    noUiSlider.create(${S_Id}_Ex,{start:[1,90],connect:true,step:1,orientation:"horizontal",range:{min:1,max:90},format:wNumb({decimals:1,thousand:"."})});
+    noUiSlider.create(${S_Id}_Pr,{start:[0,6],connect:true,step:1,orientation:"horizontal",range:{min:0,max:6},format:wNumb({decimals:1,thousand:"."})});
+    noUiSlider.create(${S_Id}_T1,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+    noUiSlider.create(${S_Id}_T2,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+    noUiSlider.create(${S_Id}_T3,{start:[1,10],connect:true,step:1,orientation:"horizontal",range:{min:1,max:10},format:wNumb({decimals:1,thousand:"."})});
+  `);
+}
+function SliderLoad() {
+  eval(`
+    ${S_Id}_Ex.noUiSlider.on('update', function (values, handle) {
+      var ${S_Id}_Ex_Min_Volume = "L1toL" + ${S_Id}_Ex.noUiSlider.get()[0];
+      var ${S_Id}_Ex_1toMin_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == ${S_Id}_Ex.noUiSlider.get()[0])[${S_Id}_Ex_Min_Volume]);
+      var ${S_Id}_Ex_Max_Volume = "L1toL" + ${S_Id}_Ex.noUiSlider.get()[1];
+      var ${S_Id}_Ex_1toMax_Volume = parseInt(JSON.parse(httpObj.response).CharacterEXP.find((v) => v.Lv == ${S_Id}_Ex.noUiSlider.get()[1])[${S_Id}_Ex_Max_Volume]);
+      var ${S_Id}_Ex_Volume = ${S_Id}_Ex_1toMax_Volume - ${S_Id}_Ex_1toMin_Volume
+      var ${S_Id}_Ex_Book_Volume = ${S_Id}_Ex_Volume / 1000
+      var ${S_Id}_Ex_Mora_Volume = ${S_Id}_Ex_Volume * 0.2
+      document.getElementById('${S_Id}_Ex_Volume').innerHTML = ${S_Id}_Ex_Volume.toLocaleString();
+      document.getElementById('${S_Id}_Ex_Book_Volume').innerHTML = ${S_Id}_Ex_Book_Volume.toLocaleString();
+      document.getElementById('${S_Id}_Ex_Mora_Volume').innerHTML = ${S_Id}_Ex_Mora_Volume.toLocaleString();
     });
-    ${CharacterName}_Pr.noUiSlider.on('update', function (values, handle) {
-      var ${CharacterName}_Pr_Min_Volume = "L1toL" + ${CharacterName}_Pr.noUiSlider.get()[0];
-      var ${CharacterName}_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[0])["P1_" + [${CharacterName}_Pr_Min_Volume]]);
-      var ${CharacterName}_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[0])["P2_" + [${CharacterName}_Pr_Min_Volume]]);
-      var ${CharacterName}_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[0])["P3_" + [${CharacterName}_Pr_Min_Volume]]);
-      var ${CharacterName}_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[0])["P4_" + [${CharacterName}_Pr_Min_Volume]]);
-      var ${CharacterName}_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[0])["P5_" + [${CharacterName}_Pr_Min_Volume]]);
-      var ${CharacterName}_Pr_Max_Volume = "L1toL" + ${CharacterName}_Pr.noUiSlider.get()[1];
-      var ${CharacterName}_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[1])["P1_" + [${CharacterName}_Pr_Max_Volume]]);
-      var ${CharacterName}_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[1])["P2_" + [${CharacterName}_Pr_Max_Volume]]);
-      var ${CharacterName}_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[1])["P3_" + [${CharacterName}_Pr_Max_Volume]]);
-      var ${CharacterName}_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[1])["P4_" + [${CharacterName}_Pr_Max_Volume]]);
-      var ${CharacterName}_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${CharacterName}_Pr.noUiSlider.get()[1])["P5_" + [${CharacterName}_Pr_Max_Volume]]);
-      var ${CharacterName}_Pr_P1 = ${CharacterName}_Pr_P1_1toMax_Volume - ${CharacterName}_Pr_P1_1toMin_Volume
-      var ${CharacterName}_Pr_P2 = ${CharacterName}_Pr_P2_1toMax_Volume - ${CharacterName}_Pr_P2_1toMin_Volume
-      var ${CharacterName}_Pr_P3 = ${CharacterName}_Pr_P3_1toMax_Volume - ${CharacterName}_Pr_P3_1toMin_Volume
-      var ${CharacterName}_Pr_P4 = ${CharacterName}_Pr_P4_1toMax_Volume - ${CharacterName}_Pr_P4_1toMin_Volume
-      var ${CharacterName}_Pr_P5 = ${CharacterName}_Pr_P5_1toMax_Volume - ${CharacterName}_Pr_P5_1toMin_Volume
-      document.getElementById('${CharacterName}_Pr_P1_Volume').innerHTML = ${CharacterName}_Pr_P1;
-      document.getElementById('${CharacterName}_Pr_P2_Volume').innerHTML = ${CharacterName}_Pr_P2;
-      document.getElementById('${CharacterName}_Pr_P3_Volume').innerHTML = ${CharacterName}_Pr_P3;
-      document.getElementById('${CharacterName}_Pr_P4_Volume').innerHTML = ${CharacterName}_Pr_P4;
-      document.getElementById('${CharacterName}_Pr_P5_Volume').innerHTML = ${CharacterName}_Pr_P5.toLocaleString();
+    ${S_Id}_Pr.noUiSlider.on('update', function (values, handle) {
+      var ${S_Id}_Pr_Min_Volume = "L1toL" + ${S_Id}_Pr.noUiSlider.get()[0];
+      var ${S_Id}_Pr_P1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[0])["P1_" + [${S_Id}_Pr_Min_Volume]]);
+      var ${S_Id}_Pr_P2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[0])["P2_" + [${S_Id}_Pr_Min_Volume]]);
+      var ${S_Id}_Pr_P3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[0])["P3_" + [${S_Id}_Pr_Min_Volume]]);
+      var ${S_Id}_Pr_P4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[0])["P4_" + [${S_Id}_Pr_Min_Volume]]);
+      var ${S_Id}_Pr_P5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[0])["P5_" + [${S_Id}_Pr_Min_Volume]]);
+      var ${S_Id}_Pr_Max_Volume = "L1toL" + ${S_Id}_Pr.noUiSlider.get()[1];
+      var ${S_Id}_Pr_P1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[1])["P1_" + [${S_Id}_Pr_Max_Volume]]);
+      var ${S_Id}_Pr_P2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[1])["P2_" + [${S_Id}_Pr_Max_Volume]]);
+      var ${S_Id}_Pr_P3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[1])["P3_" + [${S_Id}_Pr_Max_Volume]]);
+      var ${S_Id}_Pr_P4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[1])["P4_" + [${S_Id}_Pr_Max_Volume]]);
+      var ${S_Id}_Pr_P5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).ProgressionMaterials.find((v) => v.Lv == ${S_Id}_Pr.noUiSlider.get()[1])["P5_" + [${S_Id}_Pr_Max_Volume]]);
+      var ${S_Id}_Pr_P1 = ${S_Id}_Pr_P1_1toMax_Volume - ${S_Id}_Pr_P1_1toMin_Volume
+      var ${S_Id}_Pr_P2 = ${S_Id}_Pr_P2_1toMax_Volume - ${S_Id}_Pr_P2_1toMin_Volume
+      var ${S_Id}_Pr_P3 = ${S_Id}_Pr_P3_1toMax_Volume - ${S_Id}_Pr_P3_1toMin_Volume
+      var ${S_Id}_Pr_P4 = ${S_Id}_Pr_P4_1toMax_Volume - ${S_Id}_Pr_P4_1toMin_Volume
+      var ${S_Id}_Pr_P5 = ${S_Id}_Pr_P5_1toMax_Volume - ${S_Id}_Pr_P5_1toMin_Volume
+      document.getElementById('${S_Id}_Pr_P1_Volume').innerHTML = ${S_Id}_Pr_P1;
+      document.getElementById('${S_Id}_Pr_P2_Volume').innerHTML = ${S_Id}_Pr_P2;
+      document.getElementById('${S_Id}_Pr_P3_Volume').innerHTML = ${S_Id}_Pr_P3;
+      document.getElementById('${S_Id}_Pr_P4_Volume').innerHTML = ${S_Id}_Pr_P4;
+      document.getElementById('${S_Id}_Pr_P5_Volume').innerHTML = ${S_Id}_Pr_P5.toLocaleString();
     });
-    ${CharacterName}_T1.noUiSlider.on('update', function (values, handle) {
-      var ${CharacterName}_T1_Min_Volume = "L1toL" + ${CharacterName}_T1.noUiSlider.get()[0];
-      var ${CharacterName}_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[0])["T1_" + [${CharacterName}_T1_Min_Volume]]);
-      var ${CharacterName}_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[0])["T2_" + [${CharacterName}_T1_Min_Volume]]);
-      var ${CharacterName}_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[0])["T3_" + [${CharacterName}_T1_Min_Volume]]);
-      var ${CharacterName}_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[0])["T4_" + [${CharacterName}_T1_Min_Volume]]);
-      var ${CharacterName}_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[0])["T5_" + [${CharacterName}_T1_Min_Volume]]);
-      var ${CharacterName}_T1_Max_Volume = "L1toL" + ${CharacterName}_T1.noUiSlider.get()[1];
-      var ${CharacterName}_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[1])["T1_" + [${CharacterName}_T1_Max_Volume]]);
-      var ${CharacterName}_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[1])["T2_" + [${CharacterName}_T1_Max_Volume]]);
-      var ${CharacterName}_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[1])["T3_" + [${CharacterName}_T1_Max_Volume]]);
-      var ${CharacterName}_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[1])["T4_" + [${CharacterName}_T1_Max_Volume]]);
-      var ${CharacterName}_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T1.noUiSlider.get()[1])["T5_" + [${CharacterName}_T1_Max_Volume]]);
-      var ${CharacterName}_T1_T1 = ${CharacterName}_T1_T1_1toMax_Volume - ${CharacterName}_T1_T1_1toMin_Volume
-      var ${CharacterName}_T1_T2 = ${CharacterName}_T1_T2_1toMax_Volume - ${CharacterName}_T1_T2_1toMin_Volume
-      var ${CharacterName}_T1_T3 = ${CharacterName}_T1_T3_1toMax_Volume - ${CharacterName}_T1_T3_1toMin_Volume
-      var ${CharacterName}_T1_T4 = ${CharacterName}_T1_T4_1toMax_Volume - ${CharacterName}_T1_T4_1toMin_Volume
-      var ${CharacterName}_T1_T5 = ${CharacterName}_T1_T5_1toMax_Volume - ${CharacterName}_T1_T5_1toMin_Volume
-      document.getElementById('${CharacterName}_T1_T1_Volume').innerHTML = ${CharacterName}_T1_T1;
-      document.getElementById('${CharacterName}_T1_T2_Volume').innerHTML = ${CharacterName}_T1_T2;
-      document.getElementById('${CharacterName}_T1_T3_Volume').innerHTML = ${CharacterName}_T1_T3;
-      document.getElementById('${CharacterName}_T1_T4_Volume').innerHTML = ${CharacterName}_T1_T4;
-      document.getElementById('${CharacterName}_T1_T5_Volume').innerHTML = ${CharacterName}_T1_T5.toLocaleString();
+    ${S_Id}_T1.noUiSlider.on('update', function (values, handle) {
+      var ${S_Id}_T1_Min_Volume = "L1toL" + ${S_Id}_T1.noUiSlider.get()[0];
+      var ${S_Id}_T1_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[0])["T1_" + [${S_Id}_T1_Min_Volume]]);
+      var ${S_Id}_T1_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[0])["T2_" + [${S_Id}_T1_Min_Volume]]);
+      var ${S_Id}_T1_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[0])["T3_" + [${S_Id}_T1_Min_Volume]]);
+      var ${S_Id}_T1_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[0])["T4_" + [${S_Id}_T1_Min_Volume]]);
+      var ${S_Id}_T1_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[0])["T5_" + [${S_Id}_T1_Min_Volume]]);
+      var ${S_Id}_T1_Max_Volume = "L1toL" + ${S_Id}_T1.noUiSlider.get()[1];
+      var ${S_Id}_T1_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[1])["T1_" + [${S_Id}_T1_Max_Volume]]);
+      var ${S_Id}_T1_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[1])["T2_" + [${S_Id}_T1_Max_Volume]]);
+      var ${S_Id}_T1_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[1])["T3_" + [${S_Id}_T1_Max_Volume]]);
+      var ${S_Id}_T1_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[1])["T4_" + [${S_Id}_T1_Max_Volume]]);
+      var ${S_Id}_T1_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T1.noUiSlider.get()[1])["T5_" + [${S_Id}_T1_Max_Volume]]);
+      var ${S_Id}_T1_T1 = ${S_Id}_T1_T1_1toMax_Volume - ${S_Id}_T1_T1_1toMin_Volume
+      var ${S_Id}_T1_T2 = ${S_Id}_T1_T2_1toMax_Volume - ${S_Id}_T1_T2_1toMin_Volume
+      var ${S_Id}_T1_T3 = ${S_Id}_T1_T3_1toMax_Volume - ${S_Id}_T1_T3_1toMin_Volume
+      var ${S_Id}_T1_T4 = ${S_Id}_T1_T4_1toMax_Volume - ${S_Id}_T1_T4_1toMin_Volume
+      var ${S_Id}_T1_T5 = ${S_Id}_T1_T5_1toMax_Volume - ${S_Id}_T1_T5_1toMin_Volume
+      document.getElementById('${S_Id}_T1_T1_Volume').innerHTML = ${S_Id}_T1_T1;
+      document.getElementById('${S_Id}_T1_T2_Volume').innerHTML = ${S_Id}_T1_T2;
+      document.getElementById('${S_Id}_T1_T3_Volume').innerHTML = ${S_Id}_T1_T3;
+      document.getElementById('${S_Id}_T1_T4_Volume').innerHTML = ${S_Id}_T1_T4;
+      document.getElementById('${S_Id}_T1_T5_Volume').innerHTML = ${S_Id}_T1_T5.toLocaleString();
     });
-    ${CharacterName}_T2.noUiSlider.on('update', function (values, handle) {
-      var ${CharacterName}_T2_Min_Volume = "L1toL" + ${CharacterName}_T2.noUiSlider.get()[0];
-      var ${CharacterName}_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[0])["T1_" + [${CharacterName}_T2_Min_Volume]]);
-      var ${CharacterName}_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[0])["T2_" + [${CharacterName}_T2_Min_Volume]]);
-      var ${CharacterName}_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[0])["T3_" + [${CharacterName}_T2_Min_Volume]]);
-      var ${CharacterName}_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[0])["T4_" + [${CharacterName}_T2_Min_Volume]]);
-      var ${CharacterName}_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[0])["T5_" + [${CharacterName}_T2_Min_Volume]]);
-      var ${CharacterName}_T2_Max_Volume = "L1toL" + ${CharacterName}_T2.noUiSlider.get()[1];
-      var ${CharacterName}_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[1])["T1_" + [${CharacterName}_T2_Max_Volume]]);
-      var ${CharacterName}_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[1])["T2_" + [${CharacterName}_T2_Max_Volume]]);
-      var ${CharacterName}_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[1])["T3_" + [${CharacterName}_T2_Max_Volume]]);
-      var ${CharacterName}_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[1])["T4_" + [${CharacterName}_T2_Max_Volume]]);
-      var ${CharacterName}_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T2.noUiSlider.get()[1])["T5_" + [${CharacterName}_T2_Max_Volume]]);
-      var ${CharacterName}_T2_T1 = ${CharacterName}_T2_T1_1toMax_Volume - ${CharacterName}_T2_T1_1toMin_Volume
-      var ${CharacterName}_T2_T2 = ${CharacterName}_T2_T2_1toMax_Volume - ${CharacterName}_T2_T2_1toMin_Volume
-      var ${CharacterName}_T2_T3 = ${CharacterName}_T2_T3_1toMax_Volume - ${CharacterName}_T2_T3_1toMin_Volume
-      var ${CharacterName}_T2_T4 = ${CharacterName}_T2_T4_1toMax_Volume - ${CharacterName}_T2_T4_1toMin_Volume
-      var ${CharacterName}_T2_T5 = ${CharacterName}_T2_T5_1toMax_Volume - ${CharacterName}_T2_T5_1toMin_Volume
-      document.getElementById('${CharacterName}_T2_T1_Volume').innerHTML = ${CharacterName}_T2_T1;
-      document.getElementById('${CharacterName}_T2_T2_Volume').innerHTML = ${CharacterName}_T2_T2;
-      document.getElementById('${CharacterName}_T2_T3_Volume').innerHTML = ${CharacterName}_T2_T3;
-      document.getElementById('${CharacterName}_T2_T4_Volume').innerHTML = ${CharacterName}_T2_T4;
-      document.getElementById('${CharacterName}_T2_T5_Volume').innerHTML = ${CharacterName}_T2_T5.toLocaleString();
+    ${S_Id}_T2.noUiSlider.on('update', function (values, handle) {
+      var ${S_Id}_T2_Min_Volume = "L1toL" + ${S_Id}_T2.noUiSlider.get()[0];
+      var ${S_Id}_T2_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[0])["T1_" + [${S_Id}_T2_Min_Volume]]);
+      var ${S_Id}_T2_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[0])["T2_" + [${S_Id}_T2_Min_Volume]]);
+      var ${S_Id}_T2_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[0])["T3_" + [${S_Id}_T2_Min_Volume]]);
+      var ${S_Id}_T2_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[0])["T4_" + [${S_Id}_T2_Min_Volume]]);
+      var ${S_Id}_T2_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[0])["T5_" + [${S_Id}_T2_Min_Volume]]);
+      var ${S_Id}_T2_Max_Volume = "L1toL" + ${S_Id}_T2.noUiSlider.get()[1];
+      var ${S_Id}_T2_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[1])["T1_" + [${S_Id}_T2_Max_Volume]]);
+      var ${S_Id}_T2_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[1])["T2_" + [${S_Id}_T2_Max_Volume]]);
+      var ${S_Id}_T2_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[1])["T3_" + [${S_Id}_T2_Max_Volume]]);
+      var ${S_Id}_T2_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[1])["T4_" + [${S_Id}_T2_Max_Volume]]);
+      var ${S_Id}_T2_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T2.noUiSlider.get()[1])["T5_" + [${S_Id}_T2_Max_Volume]]);
+      var ${S_Id}_T2_T1 = ${S_Id}_T2_T1_1toMax_Volume - ${S_Id}_T2_T1_1toMin_Volume
+      var ${S_Id}_T2_T2 = ${S_Id}_T2_T2_1toMax_Volume - ${S_Id}_T2_T2_1toMin_Volume
+      var ${S_Id}_T2_T3 = ${S_Id}_T2_T3_1toMax_Volume - ${S_Id}_T2_T3_1toMin_Volume
+      var ${S_Id}_T2_T4 = ${S_Id}_T2_T4_1toMax_Volume - ${S_Id}_T2_T4_1toMin_Volume
+      var ${S_Id}_T2_T5 = ${S_Id}_T2_T5_1toMax_Volume - ${S_Id}_T2_T5_1toMin_Volume
+      document.getElementById('${S_Id}_T2_T1_Volume').innerHTML = ${S_Id}_T2_T1;
+      document.getElementById('${S_Id}_T2_T2_Volume').innerHTML = ${S_Id}_T2_T2;
+      document.getElementById('${S_Id}_T2_T3_Volume').innerHTML = ${S_Id}_T2_T3;
+      document.getElementById('${S_Id}_T2_T4_Volume').innerHTML = ${S_Id}_T2_T4;
+      document.getElementById('${S_Id}_T2_T5_Volume').innerHTML = ${S_Id}_T2_T5.toLocaleString();
     });
-    ${CharacterName}_T3.noUiSlider.on('update', function (values, handle) {
-      var ${CharacterName}_T3_Min_Volume = "L1toL" + ${CharacterName}_T3.noUiSlider.get()[0];
-      var ${CharacterName}_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[0])["T1_" + [${CharacterName}_T3_Min_Volume]]);
-      var ${CharacterName}_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[0])["T2_" + [${CharacterName}_T3_Min_Volume]]);
-      var ${CharacterName}_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[0])["T3_" + [${CharacterName}_T3_Min_Volume]]);
-      var ${CharacterName}_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[0])["T4_" + [${CharacterName}_T3_Min_Volume]]);
-      var ${CharacterName}_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[0])["T5_" + [${CharacterName}_T3_Min_Volume]]);
-      var ${CharacterName}_T3_Max_Volume = "L1toL" + ${CharacterName}_T3.noUiSlider.get()[1];
-      var ${CharacterName}_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[1])["T1_" + [${CharacterName}_T3_Max_Volume]]);
-      var ${CharacterName}_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[1])["T2_" + [${CharacterName}_T3_Max_Volume]]);
-      var ${CharacterName}_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[1])["T3_" + [${CharacterName}_T3_Max_Volume]]);
-      var ${CharacterName}_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[1])["T4_" + [${CharacterName}_T3_Max_Volume]]);
-      var ${CharacterName}_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${CharacterName}_T3.noUiSlider.get()[1])["T5_" + [${CharacterName}_T3_Max_Volume]]);
-      var ${CharacterName}_T3_T1 = ${CharacterName}_T3_T1_1toMax_Volume - ${CharacterName}_T3_T1_1toMin_Volume
-      var ${CharacterName}_T3_T2 = ${CharacterName}_T3_T2_1toMax_Volume - ${CharacterName}_T3_T2_1toMin_Volume
-      var ${CharacterName}_T3_T3 = ${CharacterName}_T3_T3_1toMax_Volume - ${CharacterName}_T3_T3_1toMin_Volume
-      var ${CharacterName}_T3_T4 = ${CharacterName}_T3_T4_1toMax_Volume - ${CharacterName}_T3_T4_1toMin_Volume
-      var ${CharacterName}_T3_T5 = ${CharacterName}_T3_T5_1toMax_Volume - ${CharacterName}_T3_T5_1toMin_Volume
-      document.getElementById('${CharacterName}_T3_T1_Volume').innerHTML = ${CharacterName}_T3_T1;
-      document.getElementById('${CharacterName}_T3_T2_Volume').innerHTML = ${CharacterName}_T3_T2;
-      document.getElementById('${CharacterName}_T3_T3_Volume').innerHTML = ${CharacterName}_T3_T3;
-      document.getElementById('${CharacterName}_T3_T4_Volume').innerHTML = ${CharacterName}_T3_T4;
-      document.getElementById('${CharacterName}_T3_T5_Volume').innerHTML = ${CharacterName}_T3_T5.toLocaleString();
+    ${S_Id}_T3.noUiSlider.on('update', function (values, handle) {
+      var ${S_Id}_T3_Min_Volume = "L1toL" + ${S_Id}_T3.noUiSlider.get()[0];
+      var ${S_Id}_T3_T1_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[0])["T1_" + [${S_Id}_T3_Min_Volume]]);
+      var ${S_Id}_T3_T2_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[0])["T2_" + [${S_Id}_T3_Min_Volume]]);
+      var ${S_Id}_T3_T3_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[0])["T3_" + [${S_Id}_T3_Min_Volume]]);
+      var ${S_Id}_T3_T4_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[0])["T4_" + [${S_Id}_T3_Min_Volume]]);
+      var ${S_Id}_T3_T5_1toMin_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[0])["T5_" + [${S_Id}_T3_Min_Volume]]);
+      var ${S_Id}_T3_Max_Volume = "L1toL" + ${S_Id}_T3.noUiSlider.get()[1];
+      var ${S_Id}_T3_T1_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[1])["T1_" + [${S_Id}_T3_Max_Volume]]);
+      var ${S_Id}_T3_T2_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[1])["T2_" + [${S_Id}_T3_Max_Volume]]);
+      var ${S_Id}_T3_T3_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[1])["T3_" + [${S_Id}_T3_Max_Volume]]);
+      var ${S_Id}_T3_T4_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[1])["T4_" + [${S_Id}_T3_Max_Volume]]);
+      var ${S_Id}_T3_T5_1toMax_Volume = parseInt(JSON.parse(httpObj.response).TalentMaterials.find((v) => v.Lv == ${S_Id}_T3.noUiSlider.get()[1])["T5_" + [${S_Id}_T3_Max_Volume]]);
+      var ${S_Id}_T3_T1 = ${S_Id}_T3_T1_1toMax_Volume - ${S_Id}_T3_T1_1toMin_Volume
+      var ${S_Id}_T3_T2 = ${S_Id}_T3_T2_1toMax_Volume - ${S_Id}_T3_T2_1toMin_Volume
+      var ${S_Id}_T3_T3 = ${S_Id}_T3_T3_1toMax_Volume - ${S_Id}_T3_T3_1toMin_Volume
+      var ${S_Id}_T3_T4 = ${S_Id}_T3_T4_1toMax_Volume - ${S_Id}_T3_T4_1toMin_Volume
+      var ${S_Id}_T3_T5 = ${S_Id}_T3_T5_1toMax_Volume - ${S_Id}_T3_T5_1toMin_Volume
+      document.getElementById('${S_Id}_T3_T1_Volume').innerHTML = ${S_Id}_T3_T1;
+      document.getElementById('${S_Id}_T3_T2_Volume').innerHTML = ${S_Id}_T3_T2;
+      document.getElementById('${S_Id}_T3_T3_Volume').innerHTML = ${S_Id}_T3_T3;
+      document.getElementById('${S_Id}_T3_T4_Volume').innerHTML = ${S_Id}_T3_T4;
+      document.getElementById('${S_Id}_T3_T5_Volume').innerHTML = ${S_Id}_T3_T5.toLocaleString();
     });
   `);
 }
-LoadWait();
+function Checkmate() {
+  CharacterSet();
+  SliderCreate();
+  SliderLoad();
+}
+
 
 // [計算] - レベル関連 / モラ関連
 function Exp_Calculator() {
@@ -925,14 +1459,134 @@ document.getElementById('Load').onclick = function changeContent() {
   }
 }
 
+// エクスポート
+function Export() {
+  var json = "EICharacter" + localStorage.getItem("Character") + "EIInventory" + localStorage.getItem("Inventory");
+  var blob = new Blob([json], { type: 'application/json' });
+  var ExportEl = document.createElement('a');
+  document.body.appendChild(ExportEl);
+  ExportEl.href = window.URL.createObjectURL(blob);
+  ExportEl.download = 'Honey Apricot_genshinvideo.github.io.json';
+  ExportEl.click();
+  document.body.removeChild(ExportEl);
+  M.toast({
+    html: 'Exported',
+    displayLength: '1000'
+  })
+}
+
+// インポート
+function Import() {
+  var ImportEl = document.createElement('input');
+  document.body.appendChild(ImportEl);
+  ImportEl.type = "file";
+  ImportEl.accept = ".json";
+  ImportEl.click();
+  ImportEl.addEventListener("change", e => {
+    var result = e.target.files[0];
+    var reader = new FileReader();
+    reader.readAsText(result);
+    reader.addEventListener("load", () => {
+      var ImportCharacter = reader.result.replace(/.*EICharacter(.*)EIInventory.*/g, '$1');
+      var ImportInventory = reader.result.replace(/.*EIInventory(.*).*/g, '$1');
+      localStorage.setItem("Character", ImportCharacter);
+      localStorage.setItem("Inventory", ImportInventory);
+      Load();
+      Calculator();
+      M.toast({
+        html: 'Imported',
+        displayLength: '1000'
+      })
+    });
+  });
+  document.body.removeChild(ImportEl);
+}
+
+function CML80() {
+  var C_Ex ="_Ex";
+  var CharacterSave = [...document.getElementsByClassName("noUiSlider")].map(CharacterList=>{
+    var [Min,Max] = CharacterList.noUiSlider.get();
+    var C_Id  = `${CharacterList.id}`;
+    if((C_Id.lastIndexOf(C_Ex)+C_Ex.length===C_Id.length)&&(C_Ex.length<=C_Id.length)){
+      if (`${Min}` !== "90") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "80"])`);
+      }
+    }
+  });
+  M.toast({
+    html: 'Max level of character to 80',
+    displayLength: '1000'
+  })
+}
+
+function TML9() {
+  var C_T1 ="_T1";
+  var C_T2 ="_T2";
+  var C_T3 ="_T3";
+  var CharacterSave = [...document.getElementsByClassName("noUiSlider")].map(CharacterList=>{
+    var [Min,Max] = CharacterList.noUiSlider.get();
+    var C_Id  = `${CharacterList.id}`;
+    if((C_Id.lastIndexOf(C_T1)+C_T1.length===C_Id.length)&&(C_T1.length<=C_Id.length)){
+      if (`${Min}` <= "9") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "9"])`);
+      }
+    }
+    if((C_Id.lastIndexOf(C_T2)+C_T2.length===C_Id.length)&&(C_T2.length<=C_Id.length)){
+      if (`${Min}` <= "9") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "9"])`);
+      }
+    }
+    if((C_Id.lastIndexOf(C_T3)+C_T3.length===C_Id.length)&&(C_T3.length<=C_Id.length)){
+      if (`${Min}` <= "9") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "9"])`);
+      }
+    }
+  });
+  M.toast({
+    html: 'Max level of talent to 9',
+    displayLength: '1000'
+  })
+}
+
+function TML6() {
+  var C_T1 ="_T1";
+  var C_T2 ="_T2";
+  var C_T3 ="_T3";
+  var CharacterSave = [...document.getElementsByClassName("noUiSlider")].map(CharacterList=>{
+    var [Min,Max] = CharacterList.noUiSlider.get();
+    var C_Id  = `${CharacterList.id}`;
+    if((C_Id.lastIndexOf(C_T1)+C_T1.length===C_Id.length)&&(C_T1.length<=C_Id.length)){
+      if (`${Min}` <= "6") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
+      }
+    }
+    if((C_Id.lastIndexOf(C_T2)+C_T2.length===C_Id.length)&&(C_T2.length<=C_Id.length)){
+      if (`${Min}` <= "6") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
+      }
+    }
+    if((C_Id.lastIndexOf(C_T3)+C_T3.length===C_Id.length)&&(C_T3.length<=C_Id.length)){
+      if (`${Min}` <= "6") {
+        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
+      }
+    }
+  });
+  M.toast({
+    html: 'Max level of talent to 6',
+    displayLength: '1000'
+  })
+}
+
 // ページ読み込み時の処理
-if (!localStorage.getItem("_Version")) {
-  alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
-}  else  {
-  if (!(localStorage.getItem("_Version") === Version)) {
-    Load();
-    alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220416 to ver." + Version + "）\n・鹿野院平蔵を追加\n・久岐忍と夜蘭の並びを修正\n・久岐忍と夜蘭の画像を変更\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+function OpenScript() {
+  if (!localStorage.getItem("_Version")) {
+    alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
   }  else  {
-    Load();
+    if (!(localStorage.getItem("_Version") === Version)) {
+      Load();
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220623 to ver." + Version + "）\n・処理の大幅な変更\n・セーブデータのエクスポート、インポート機能の実装\n・仮レベル上限のボタン実装\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+    }  else  {
+      Load();
+    }
   }
 }
