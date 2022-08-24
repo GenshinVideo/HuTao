@@ -1,0 +1,1592 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Honey Apricot - Material Calculator</title>
+  <meta charset="UTF-8" name="viewport" content="width=device-width,inisial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/materialize.min.css" rel="stylesheet">
+  <link href="../css/nouislider.css" rel="stylesheet">
+  <link href="../css/Material.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div class="BackGroundMovie">
+  <video src="movie.mp4" loop autoplay muted playsinline></video>
+</div>
+
+<div class="SaveAndLoad">
+  <a onclick="M.toast" class="btn" id="Save">Save</a>
+  <a onclick="M.toast" class="btn" id="Load">Load</a>
+  <a onclick="M.toast, Export();" class="btn">Export</a>
+  <a onclick="M.toast, Import();" class="btn">Import</a>
+  <BR>
+  <a onclick="M.toast, CML80();" class="btn" style="margin: 4px 0px 0px 0px">[C] Lv80</a>
+  <a onclick="M.toast, TML9();" class="btn" style="margin: 4px 0px 0px 0px">[T] Lv9</a>
+  <a onclick="M.toast, TML6();" class="btn" style="margin: 4px 0px 0px 0px">[T] Lv6</a>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs header">
+      <li class="tab col s3"><a href="#Character" class="Character active">Character</a></li>
+      <li class="tab col s3"><a href="#Inventory" class="Inventory">Inventory</a></li>
+      <li class="tab col s3"><a href="#Calculator" class="Calculator">Calculator</a></li>
+      <li class="tab col s3"><a href="#Other" class="Other">Patch Note</a></li>
+    </ul>
+  </div>
+  <div id="Character" class="col s12">
+  </div>
+  <div id="Inventory" class="col s12">
+    <table class="Inventory">
+      <tbody>
+        <tr>
+          <th colspan="12">インベトリ</th>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Heros_Wit.webp"></i><input placeholder="大英雄の経験" id="Heros_Wit" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Adventurers_Experience.webp"></i><input placeholder="冒険家の経験" id="Adventurers_Experience" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Wanderers_Advice.webp"></i><input placeholder="流浪者の経験" id="Wanderers_Advice" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="16%" colspan="2">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Mora.webp"></i><input placeholder="モラ" id="Mora" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Slime_Concentrate.webp"></i><input placeholder="スライムのピュレ" id="Slime_Concentrate" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Slime_Secretions.webp"></i><input placeholder="スライムの分泌物" id="Slime_Secretions" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Slime_Condensate.webp"></i><input placeholder="スライムの液体" id="Slime_Condensate" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Ominous_Mask.webp"></i><input placeholder="不吉な仮面" id="Ominous_Mask" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Stained_Mask.webp"></i><input placeholder="汚れた仮面" id="Stained_Mask" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Damaged_Mask.webp"></i><input placeholder="破損した仮面" id="Damaged_Mask" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Forbidden_Curse_Scroll.webp"></i><input placeholder="禁呪の絵巻" id="Forbidden_Curse_Scroll" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sealed_Scroll.webp"></i><input placeholder="封魔の絵巻" id="Sealed_Scroll" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Divining_Scroll.webp"></i><input placeholder="占いの絵巻" id="Divining_Scroll" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Weathered_Arrowhead.webp"></i><input placeholder="歴戦の矢先" id="Weathered_Arrowhead" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sharp_Arrowhead.webp"></i><input placeholder="鋭利な矢先" id="Sharp_Arrowhead" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Firm_Arrowhead.webp"></i><input placeholder="牢固な矢先" id="Firm_Arrowhead" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Lieutenants_Insignia.webp"></i><input placeholder="尉官の記章" id="Lieutenants_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sergeants_Insignia.webp"></i><input placeholder="士官の記章" id="Sergeants_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Recruits_Insignia.webp"></i><input placeholder="新兵の記章" id="Recruits_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Golden_Raven_Insignia.webp"></i><input placeholder="ゴールドの鴉マーク" id="Golden_Raven_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Silver_Raven_Insignia.webp"></i><input placeholder="シルバーの鴉マーク" id="Silver_Raven_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Treasure_Hoarder_Insignia.webp"></i><input placeholder="宝探しの鴉マーク" id="Treasure_Hoarder_Insignia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Energy_Nectar.webp"></i><input placeholder="原素花の蜜" id="Energy_Nectar" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shimmering_Nectar.webp"></i><input placeholder="微光花の蜜" id="Shimmering_Nectar" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Whopperflower_Nectar.webp"></i><input placeholder="トリックフラワーの蜜" id="Whopperflower_Nectar" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Famed_Handguard.webp"></i><input placeholder="名刀の鍔" id="Famed_Handguard" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Kageuchi_Handguard.webp"></i><input placeholder="影打の鍔" id="Kageuchi_Handguard" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Old_Handguard.webp"></i><input placeholder="古びた鍔" id="Old_Handguard" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Spectral_Nucleus.webp"></i><input placeholder="フライムの晶化核" id="Spectral_Nucleus" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Spectral_Heart.webp"></i><input placeholder="フライムの幽核" id="Spectral_Heart" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Spectral_Husk.webp"></i><input placeholder="フライムの乾核" id="Spectral_Husk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Crystalline_Cyst_Dust.webp"></i><input placeholder="キノコンの晶胞子" id="Crystalline_Cyst_Dust" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Luminescent_Pollen.webp"></i><input placeholder="キノコンの蛍胞子" id="Luminescent_Pollen" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Fungal_Spores.webp"></i><input placeholder="キノコンの胞子" id="Fungal_Spores" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dvalins_Plume.webp"></i><input placeholder="東風の羽根" id="Dvalins_Plume" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dvalins_Claw.webp"></i><input placeholder="東風の爪" id="Dvalins_Claw" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dvalins_Sigh.webp"></i><input placeholder="東風の吐息" id="Dvalins_Sigh" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Tail_of_Boreas.webp"></i><input placeholder="北風のしっぽ" id="Tail_of_Boreas" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Ring_of_Boreas.webp"></i><input placeholder="北風のリング" id="Ring_of_Boreas" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Spirit_Locket_of_Boreas.webp"></i><input placeholder="北風の魂箱" id="Spirit_Locket_of_Boreas" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Tusk_of_Monoceros_Caeli.webp"></i><input placeholder="呑天の鯨・只角" id="Tusk_of_Monoceros_Caeli" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shard_of_a_Foul_Legacy.webp"></i><input placeholder="魔王の刃・残片" id="Shard_of_a_Foul_Legacy" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shadow_of_the_Warrior.webp"></i><input placeholder="武煉の魂・孤影" id="Shadow_of_the_Warrior" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dragon_Lords_Crown.webp"></i><input placeholder="龍王の冠" id="Dragon_Lords_Crown" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Bloodjade_Branch.webp"></i><input placeholder="血玉の枝" id="Bloodjade_Branch" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Gilded_Scale.webp"></i><input placeholder="鍍金の鱗" id="Gilded_Scale" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Molten_Moment.webp"></i><input placeholder="溶滅の刻" id="Molten_Moment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Hellfire_Butterfly.webp"></i><input placeholder="獄炎の蝶" id="Hellfire_Butterfly" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Ashen_Heart.webp"></i><input placeholder="灰燼の心" id="Ashen_Heart" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Mudra_of_the_Malefic_General.webp"></i><input placeholder="凶将の手眼" id="Mudra_of_the_Malefic_General" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Tears_of_the_Calamitous_God.webp"></i><input placeholder="禍神の禊涙" id="Tears_of_the_Calamitous_God" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_The_Meaning_of_Aeons.webp"></i><input placeholder="万劫の真意" id="The_Meaning_of_Aeons" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Hurricane_Seed.webp"></i><input placeholder="暴風の種" id="Hurricane_Seed" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Lightning_Prism.webp"></i><input placeholder="雷光のプリズム" id="Lightning_Prism" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Basalt_Pillar.webp"></i><input placeholder="玄岩の塔" id="Basalt_Pillar" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Hoarfrost_Core.webp"></i><input placeholder="極寒のコア" id="Hoarfrost_Core" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Everflame_Seed.webp"></i><input placeholder="常燃の火種" id="Everflame_Seed" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Cleansing_Heart.webp"></i><input placeholder="浄水の心" id="Cleansing_Heart" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Juvenile_Jade.webp"></i><input placeholder="未熟の玉石" id="Juvenile_Jade" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Crystalline_Bloom.webp"></i><input placeholder="凝結の華" id="Crystalline_Bloom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Marionette_Core.webp"></i><input placeholder="魔偶の芯" id="Marionette_Core" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Perpetual_Heart.webp"></i><input placeholder="恒常からくりの芯" id="Perpetual_Heart" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Smoldering_Pearl.webp"></i><input placeholder="陰燃の珠" id="Smoldering_Pearl" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dew_of_Repudiation.webp"></i><input placeholder="排他の露" id="Dew_of_Repudiation" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Storm_Beads.webp"></i><input placeholder="雷霆の念珠" id="Storm_Beads" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Riftborn_Regalia.webp"></i><input placeholder="獣域王器" id="Riftborn_Regalia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dragonheirs_False_Fin.webp"></i><input placeholder="ドラゴエアのニセヒレ" id="Dragonheirs_False_Fin" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Runic_Fang.webp"></i><input placeholder="符文の歯車" id="Runic_Fang" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+          <td width="8%" colspan="1"></td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Agnidus_Agate_Gemstone.webp"></i><input placeholder="炎願のアゲート" id="Agate_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Agnidus_Agate_Chunk.webp"></i><input placeholder="炎願のアゲート・塊" id="Agate_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Agnidus_Agate_Fragment.webp"></i><input placeholder="炎願のアゲート・欠片" id="Agate_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Agnidus_Agate_Sliver.webp"></i><input placeholder="炎願のアゲート・砕屑" id="Agate_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Varunada_Lazurite_Gemstone.webp"></i><input placeholder="澄明なラピスラズリ" id="Lazurite_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Varunada_Lazurite_Chunk.webp"></i><input placeholder="澄明なラピスラズリ・塊" id="Lazurite_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Varunada_Lazurite_Fragment.webp"></i><input placeholder="澄明なラピスラズリ・欠片" id="Lazurite_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Varunada_Lazurite_Sliver.webp"></i><input placeholder="澄明なラピスラズリ・砕屑" id="Lazurite_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vajrada_Amethyst_Gemstone.webp"></i><input placeholder="最勝のアメシスト" id="Amethyst_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vajrada_Amethyst_Chunk.webp"></i><input placeholder="最勝のアメシスト・塊" id="Amethyst_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vajrada_Amethyst_Fragment.webp"></i><input placeholder="最勝のアメシスト・欠片" id="Amethyst_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vajrada_Amethyst_Sliver.webp"></i><input placeholder="最勝のアメシスト・砕屑" id="Amethyst_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vayuda_Turquoise_Gemstone.webp"></i><input placeholder="堅牢なターコイズ" id="Turquoise_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vayuda_Turquoise_Chunk.webp"></i><input placeholder="堅牢なターコイズ・塊" id="Turquoise_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vayuda_Turquoise_Fragment.webp"></i><input placeholder="堅牢なターコイズ・欠片" id="Turquoise_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Vayuda_Turquoise_Sliver.webp"></i><input placeholder="堅牢なターコイズ・砕屑" id="Turquoise_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shivada_Jade_Gemstone.webp"></i><input placeholder="哀切なアイスクリスタル" id="Jade_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shivada_Jade_Chunk.webp"></i><input placeholder="哀切なアイスクリスタル・塊" id="Jade_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shivada_Jade_Fragment.webp"></i><input placeholder="哀切なアイスクリスタル・欠片" id="Jade_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Shivada_Jade_Sliver.webp"></i><input placeholder="哀切なアイスクリスタル・砕屑" id="Jade_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Prithiva_Topaz_Gemstone.webp"></i><input placeholder="堅牢なトパーズ" id="Topaz_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Prithiva_Topaz_Chunk.webp"></i><input placeholder="堅牢なトパーズ・塊" id="Topaz_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Prithiva_Topaz_Fragment.webp"></i><input placeholder="堅牢なトパーズ・欠片" id="Topaz_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Prithiva_Topaz_Sliver.webp"></i><input placeholder="堅牢なトパーズ・砕屑" id="Topaz_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Nagadus_Emerald_Gemstone.png"></i><input placeholder="成長のエメラルド" id="Emerald_Gemstone" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Nagadus_Emerald_Chunk.png"></i><input placeholder="成長のエメラルド・塊" id="Emerald_Chunk" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Nagadus_Emerald_Fragment.png"></i><input placeholder="成長のエメラルド・欠片" id="Emerald_Fragment" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Nagadus_Emerald_Sliver.png"></i><input placeholder="成長のエメラルド・砕屑" id="Emerald_Sliver" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1"></td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Freedom.webp"></i><input placeholder="「自由」の哲学" id="Philosophies_of_Freedom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Freedom.webp"></i><input placeholder="「自由」の導き" id="Guide_to_Freedom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Freedom.webp"></i><input placeholder="「自由」の教え" id="Teachings_of_Freedom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Resistance.webp"></i><input placeholder="「詩文」の哲学" id="Philosophies_of_Resistance" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Resistance.webp"></i><input placeholder="「詩文」の導き" id="Guide_to_Resistance" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Resistance.webp"></i><input placeholder="「詩文」の教え" id="Teachings_of_Resistance" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Ballad.webp"></i><input placeholder="「抗争」の哲学" id="Philosophies_of_Ballad" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Ballad.webp"></i><input placeholder="「抗争」の導き" id="Guide_to_Ballad" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Ballad.webp"></i><input placeholder="「抗争」の教え" id="Teachings_of_Ballad" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Prosperity.webp"></i><input placeholder="「繁栄」の哲学" id="Philosophies_of_Prosperity" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Prosperity.webp"></i><input placeholder="「繁栄」の導き" id="Guide_to_Prosperity" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Prosperity.webp"></i><input placeholder="「繁栄」の教え" id="Teachings_of_Prosperity" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Diligence.webp"></i><input placeholder="「勤労」の哲学" id="Philosophies_of_Diligence" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Diligence.webp"></i><input placeholder="「勤労」の導き" id="Guide_to_Diligence" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Diligence.webp"></i><input placeholder="「勤労」の教え" id="Teachings_of_Diligence" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Gold.webp"></i><input placeholder="「黄金」の哲学" id="Philosophies_of_Gold" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Gold.webp"></i><input placeholder="「黄金」の導き" id="Guide_to_Gold" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Gold.webp"></i><input placeholder="「黄金」の教え" id="Teachings_of_Gold" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Transience.webp"></i><input placeholder="「浮世」の哲学" id="Philosophies_of_Transience" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Transience.webp"></i><input placeholder="「浮世」の導き" id="Guide_to_Transience" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Transience.webp"></i><input placeholder="「浮世」の教え" id="Teachings_of_Transience" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Elegance.webp"></i><input placeholder="「風雅」の哲学" id="Philosophies_of_Elegance" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Elegance.webp"></i><input placeholder="「風雅」の導き" id="Guide_to_Elegance" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Elegance.webp"></i><input placeholder="「風雅」の教え" id="Teachings_of_Elegance" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philosophies_of_Light.webp"></i><input placeholder="「天光」の哲学" id="Philosophies_of_Light" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Guide_to_Light.webp"></i><input placeholder="「天光」の導き" id="Guide_to_Light" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Teachings_of_Light.webp"></i><input placeholder="「天光」の教え" id="Teachings_of_Light" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></i><input placeholder="知恵の冠" id="Crown_of_Insight" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Wolfhook.webp"></i><input placeholder="ググプラム" id="Wolfhook" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Valberry.webp"></i><input placeholder="ヴァルベリー" id="Valberry" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Cecilia.webp"></i><input placeholder="セシリアの花" id="Cecilia" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Windwheel_Aster.webp"></i><input placeholder="風車アスター" id="Windwheel_Aster" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Philanemo_Mushroom.webp"></i><input placeholder="慕風のマッシュルーム" id="Philanemo_Mushroom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Small_Lamp_Grass.webp"></i><input placeholder="イグサ" id="Small_Lamp_Grass" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Calla_Lily.webp"></i><input placeholder="ドドリアン" id="Calla_Lily" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dandelion_Seed.webp"></i><input placeholder="蒲公英の種" id="Dandelion_Seed" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Cor_Lapis.webp"></i><input placeholder="石珀" id="Cor_Lapis" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Jueyun_Chili.webp"></i><input placeholder="絶雲の唐辛子" id="Jueyun_Chili" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Noctilucous_Jade.webp"></i><input placeholder="夜泊石" id="Noctilucous_Jade" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Silk_Flower.webp"></i><input placeholder="霓裳花" id="Silk_Flower" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Glaze_Lily.webp"></i><input placeholder="琉璃百合" id="Glaze_Lily" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Qingxin.webp"></i><input placeholder="清心" id="Qingxin" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Starconch.webp"></i><input placeholder="星螺" id="Starconch" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Violetgrass.webp"></i><input placeholder="琉璃袋" id="Violetgrass" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Onikabuto.webp"></i><input placeholder="オニカブトムシ" id="Onikabuto" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sakura_Bloom.webp"></i><input placeholder="緋櫻毬" id="Sakura_Bloom" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Crystal_Marrow.webp"></i><input placeholder="晶化骨髄" id="Crystal_Marrow" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Dendrobium.webp"></i><input placeholder="血石華" id="Dendrobium" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Naku_Weed.webp"></i><input placeholder="鳴草" id="Naku_Weed" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sea_Ganoderma.webp"></i><input placeholder="ウミレイシ" id="Sea_Ganoderma" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Sango_Pearl.webp"></i><input placeholder="珊瑚真珠" id="Sango_Pearl" value="0" type="number" class="validate">
+            </div>
+          </td>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Amakumo_Fruit.webp"></i><input placeholder="天雲草の実" id="Amakumo_Fruit" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%" colspan="1">
+            <div class="input-field"><i class="prefix">
+              <img class="miniicon" src="../image/Small/Item/Item_Fluorescent_Fungus.webp"></i><input placeholder="ユウトウタケ" id="Fluorescent_Fungus" value="0" type="number" class="validate">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="Calculator" class="col s12">
+    <table class="Calculator">
+      <tbody>
+        <tr>
+          <th colspan="23">Character</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ex_Volume"></span></td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ex_Volume_Book"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>
+          <td width="8.6%" colspan="1" class="textright">強化</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ex_Volume_Mora"></span></td>
+          <td width="8.6%" colspan="1" class="textright">累計</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="All_Mora_Volume"></span></td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Crown_of_Insight_Volume"></span></td>
+          <td width="18.3%" colspan="5"></td>
+        </tr>
+        <tr>
+          <td width="6.8%" colspan="2" class="textleft">所持数</td>
+          <td width="6.8%" colspan="2" class="textright">-</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Character_EXP_Material"></span> 点</td>
+          <td width="6.8%" colspan="1" class="textright">突破</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="As_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="1" class="textright">所持</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="In_Crown_of_Insight_Volume"></span></td>
+          <td width="18.3%" colspan="5"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright">-</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Character_EXP_Material"></span> 点</td>
+          <td width="8.6%" colspan="1" class="textright">天賦</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="1" class="textright">残り</td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="Ne_Mora_Volume"></span></td>
+          <td width="6.8%" colspan="2" class="textright"><span class="Calculator" id="Ne_Crown_of_Insight_Volume"></span></td>
+          <td width="18.3%" colspan="5"></td>
+        </tr>
+        <tr>
+          <th colspan="23">Jewels</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Agnidus_Agate_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Agate_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Varunada_Lazurite_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Lazurite_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Vajrada_Amethyst_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Amethyst_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Vayuda_Turquoise_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Turquoise_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Shivada_Jade_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Jade_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Prithiva_Topaz_Gemstone.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Topaz_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Nagadus_Emerald_Gemstone.png"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Emerald_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Agate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Lazurite_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Amethyst_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Turquoise_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Jade_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Topaz_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Emerald_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Agate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Lazurite_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Amethyst_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Turquoise_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Jade_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Topaz_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Emerald_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <th colspan="23">Elemental Stones</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Hurricane_Seed.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Hurricane_Seed_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Lightning_Prism.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Lightning_Prism_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Basalt_Pillar.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Basalt_Pillar_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Hoarfrost_Core.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Hoarfrost_Core_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Everflame_Seed.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Everflame_Seed_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Cleansing_Heart.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Cleansing_Heart_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Juvenile_Jade.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Juvenile_Jade_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Hurricane_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Lightning_Prism_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Basalt_Pillar_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Hoarfrost_Core_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Everflame_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Cleansing_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Juvenile_Jade_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Hurricane_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Lightning_Prism_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Basalt_Pillar_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Hoarfrost_Core_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Everflame_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Cleansing_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Juvenile_Jade_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crystalline_Bloom.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Crystalline_Bloom_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Marionette_Core.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Marionette_Core_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Perpetual_Heart.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Perpetual_Heart_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Smoldering_Pearl.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Smoldering_Pearl_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dew_of_Repudiation.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dew_of_Repudiation_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Storm_Beads.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Storm_Beads_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Riftborn_Regalia.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Riftborn_Regalia_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Crystalline_Bloom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Marionette_Core_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Perpetual_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Smoldering_Pearl_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dew_of_Repudiation_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Storm_Beads_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Riftborn_Regalia_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Crystalline_Bloom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Marionette_Core_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Perpetual_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Smoldering_Pearl_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dew_of_Repudiation_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Storm_Beads_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Riftborn_Regalia_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dragonheirs_False_Fin.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dragonheirs_False_Fin_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Runic_Fang.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Runic_Fang_Volume"></span> 個</td>
+          <td width="64.5%" colspan="15"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dragonheirs_False_Fin_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Runic_Fang_Volume"></span> 個</td>
+          <td width="64.5%" colspan="15"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dragonheirs_False_Fin_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Runic_Fang_Volume"></span> 個</td>
+          <td width="64.5%" colspan="15"></td>
+        </tr>
+        <tr>
+          <th colspan="23">Common Material</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Slime_Concentrate.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Slime_Concentrate_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Ominous_Mask.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ominous_Mask_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Forbidden_Curse_Scroll.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Forbidden_Curse_Scroll_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Weathered_Arrowhead.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Weathered_Arrowhead_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Lieutenants_Insignia.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Lieutenants_Insignia_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Golden_Raven_Insignia.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Golden_Raven_Insignia_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Energy_Nectar.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Energy_Nectar_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">突破必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Slime_Concentrate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Ominous_Mask_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Forbidden_Curse_Scroll_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Weathered_Arrowhead_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Lieutenants_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Golden_Raven_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Energy_Nectar_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">天賦必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Slime_Concentrate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Ominous_Mask_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Forbidden_Curse_Scroll_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Weathered_Arrowhead_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Lieutenants_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Golden_Raven_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Energy_Nectar_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Slime_Concentrate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Ominous_Mask_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Forbidden_Curse_Scroll_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Weathered_Arrowhead_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Lieutenants_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Golden_Raven_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Energy_Nectar_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Slime_Concentrate_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Ominous_Mask_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Forbidden_Curse_Scroll_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Weathered_Arrowhead_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Lieutenants_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Golden_Raven_Insignia_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Energy_Nectar_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Famed_Handguard.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Famed_Handguard_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Spectral_Nucleus.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Spectral_Nucleus_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="5"><img class="icon" src="../image/Small/Item/Item_Crystalline_Cyst_Dust.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Crystalline_Cyst_Dust_Volume"></span> 点</td>
+          <td width="65.6%" colspan="16"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">突破必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Famed_Handguard_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Spectral_Nucleus_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_Crystalline_Cyst_Dust_Volume"></span> 点</td>
+          <td width="65.6%" colspan="16"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">天賦必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Famed_Handguard_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Spectral_Nucleus_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_Crystalline_Cyst_Dust_Volume"></span> 点</td>
+          <td width="65.6%" colspan="16"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Famed_Handguard_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Spectral_Nucleus_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Crystalline_Cyst_Dust_Volume"></span> 点</td>
+          <td width="65.6%" colspan="16"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Famed_Handguard_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Spectral_Nucleus_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Crystalline_Cyst_Dust_Volume"></span> 点</td>
+          <td width="65.6%" colspan="16"></td>
+        </tr>
+        <tr>
+          <th colspan="23">Local Material</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Wolfhook.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Wolfhook_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Valberry.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Valberry_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Cecilia.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Cecilia_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Windwheel_Aster.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Windwheel_Aster_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philanemo_Mushroom.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Philanemo_Mushroom_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Small_Lamp_Grass.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Small_Lamp_Grass_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Calla_Lily.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Calla_Lily_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Wolfhook_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Valberry_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Cecilia_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Windwheel_Aster_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Philanemo_Mushroom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Small_Lamp_Grass_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Calla_Lily_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Wolfhook_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Valberry_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Cecilia_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Windwheel_Aster_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Philanemo_Mushroom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Small_Lamp_Grass_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Calla_Lily_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dandelion_Seed.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dandelion_Seed_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Cor_Lapis.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Cor_Lapis_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Jueyun_Chili.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Jueyun_Chili_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Noctilucous_Jade.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Noctilucous_Jade_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Silk_Flower.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Silk_Flower_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Glaze_Lily.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Glaze_Lily_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Qingxin.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Qingxin_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dandelion_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Cor_Lapis_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Jueyun_Chili_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Noctilucous_Jade_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Silk_Flower_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Glaze_Lily_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Qingxin_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dandelion_Seed_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Cor_Lapis_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Jueyun_Chili_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Noctilucous_Jade_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Silk_Flower_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Glaze_Lily_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Qingxin_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Starconch.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Starconch_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Violetgrass.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Violetgrass_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Onikabuto.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Onikabuto_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Sakura_Bloom.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Sakura_Bloom_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crystal_Marrow.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Crystal_Marrow_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dendrobium.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dendrobium_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Naku_Weed.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Naku_Weed_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Starconch_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Violetgrass_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Onikabuto_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Sakura_Bloom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Crystal_Marrow_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dendrobium_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Naku_Weed_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Starconch_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Violetgrass_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Onikabuto_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Sakura_Bloom_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Crystal_Marrow_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dendrobium_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Naku_Weed_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Sea_Ganoderma.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Sea_Ganoderma_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Sango_Pearl.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Sango_Pearl_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Amakumo_Fruit.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Amakumo_Fruit_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Fluorescent_Fungus.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Sea_Ganoderma_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Sango_Pearl_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Amakumo_Fruit_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Sea_Ganoderma_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Sango_Pearl_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Amakumo_Fruit_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Fluorescent_Fungus_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+        <tr>
+          <th colspan="23">Talent Level-Up Material</th>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Freedom.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Freedom_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Resistance.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Resistance_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Ballad.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ballad_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Prosperity.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Prosperity_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Diligence.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Diligence_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Gold.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Gold_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Transience.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Transience_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Freedom_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Resistance_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Ballad_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Prosperity_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Diligence_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Gold_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Transience_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Freedom_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Resistance_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Ballad_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Prosperity_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Diligence_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Gold_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Transience_Volume"></span> 点</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Elegance.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Elegance_Volume"></span> 点</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_Light.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Light_Volume"></span> 点</td>
+          <td width="65.6%" colspan="15"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Elegance_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Light_Volume"></span> 点</td>
+          <td width="65.6%" colspan="15"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Elegance_Volume"></span> 点</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Light_Volume"></span> 点</td>
+          <td width="65.6%" colspan="15"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dvalins_Plume.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dvalins_Plume_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dvalins_Claw.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dvalins_Claw_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dvalins_Sigh.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dvalins_Sigh_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Tail_of_Boreas.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Tail_of_Boreas_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Ring_of_Boreas.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ring_of_Boreas_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Spirit_Locket_of_Boreas.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Spirit_Locket_of_Boreas_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Tusk_of_Monoceros_Caeli.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Tusk_of_Monoceros_Caeli_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dvalins_Plume_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dvalins_Claw_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dvalins_Sigh_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Tail_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Ring_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Spirit_Locket_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Tusk_of_Monoceros_Caeli_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dvalins_Plume_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dvalins_Claw_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dvalins_Sigh_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Tail_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Ring_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Spirit_Locket_of_Boreas_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Tusk_of_Monoceros_Caeli_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Shard_of_a_Foul_Legacy.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Shard_of_a_Foul_Legacy_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Shadow_of_the_Warrior.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Shadow_of_the_Warrior_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Dragon_Lords_Crown.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Dragon_Lords_Crown_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Bloodjade_Branch.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Bloodjade_Branch_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Gilded_Scale.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Gilded_Scale_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Molten_Moment.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Molten_Moment_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Hellfire_Butterfly.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Hellfire_Butterfly_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Shard_of_a_Foul_Legacy_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Shadow_of_the_Warrior_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Dragon_Lords_Crown_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Bloodjade_Branch_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Gilded_Scale_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Molten_Moment_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Hellfire_Butterfly_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Shard_of_a_Foul_Legacy_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Shadow_of_the_Warrior_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Dragon_Lords_Crown_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Bloodjade_Branch_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Gilded_Scale_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Molten_Moment_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Hellfire_Butterfly_Volume"></span> 個</td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Ashen_Heart.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ashen_Heart_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mudra_of_the_Malefic_General.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Mudra_of_the_Malefic_General_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Tears_of_the_Calamitous_God.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Tears_of_the_Calamitous_God_Volume"></span> 個</td>
+          <td width="4.3%" colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_The_Meaning_of_Aeons.webp"></td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="The_Meaning_of_Aeons_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">所持数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Ashen_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Mudra_of_the_Malefic_General_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_Tears_of_the_Calamitous_God_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_The_Meaning_of_Aeons_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+        <tr>
+          <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Ashen_Heart_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Mudra_of_the_Malefic_General_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_Tears_of_the_Calamitous_God_Volume"></span> 個</td>
+          <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_The_Meaning_of_Aeons_Volume"></span> 個</td>
+          <td width="35.5%" colspan="9"></td>
+        </tr>
+      </tbody>
+    </table><BR>
+  </div>
+  <div id="Other" class="col s12">
+    <b>2022/07/04</b><BR>
+    更新。<BR>
+    ・Htmlの容量削減に伴い処理の大幅変更<BR>
+    ・セーブデータのエクスポート、インポート機能の実装<BR>
+    ・キャラクターや天賦のレベル上限を仮設定するボタンの仮実装<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>
+    <BR><BR>
+    <b>2022/06/23</b><BR>
+    更新。<BR>
+    ・鹿野院平蔵を追加<BR>
+    ・久岐忍と夜蘭の並びを修正<BR>
+    ・久岐忍と夜蘭の画像を変更<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2022/04/16</b><BR>
+    更新。<BR>
+    ・夜蘭を追加<BR>
+    ・久岐忍を追加<BR>
+    ・符文の歯車の計算を追加<BR>
+    ・JavaScriptの容量軽減<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2022/04/08</b><BR>
+    更新。<BR>
+    ・特産品の場所の変更<BR>
+    ・一部キャラクターの立ち絵画像を変更<BR>
+    ・JavaScriptの容量軽減<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2022/02/17</b><BR>
+    更新。<BR>
+    ・計算ページの表示のずれの修正<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2022/02/17</b><BR>
+    更新。<BR>
+    ・神里綾人の実装<BR>
+    ・八重神子の実装<BR>
+    ・凶将の手眼の計算を実装<BR>
+    ・禍神の禊涙の計算を実装<BR>
+    ・万劫の真意の計算を実装<BR>
+    ・一部キャラクターの立ち絵画像を変更<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2022/01/10</b><BR>
+    更新。<BR>
+    ・雲菫の実装<BR>
+    ・申鶴の実装<BR>
+    ・一部キャラクター名の修正・変更<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/12/08</b><BR>
+    更新。<BR>
+    ・セーブ形式の変更<BR>
+    ・JavaScriptの軽量化（セーブ、ロード、及び非同期処理に伴う待機方法の改善）<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/11/30</b><BR>
+    更新。<BR>
+    ・セーブ方式の変更（CookieからlocalStrageへ）<BR>
+    <BR>
+    既知の問題。<BR>
+    ・セーブ方式変更に伴うロードエラー<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR>
+    必要なご対応。<BR>
+    ・画面右上のOld Loadボタンを押した後にSaveボタンを押して下さい。（一度だけで大丈夫です。）<BR>
+    <BR><BR>
+    <b>2021/11/28</b><BR>
+    更新。<BR>
+    ・ゴローの実装<BR>
+    ・荒瀧一斗の実装<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/11/03</b><BR>
+    更新。<BR>
+    ・トーマの実装<BR>
+    <BR>
+    既知の問題。<BR>
+    ・新規セーブ項目の実装時のロードエラー問題<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR>
+    必要なご対応。<BR>
+    ・画面右上のFixボタンを押した後にロードして下さい。<BR>
+    <BR><BR>
+    <b>2021/10/23</b><BR>
+    更新。<BR>
+    ・王冠の計算を実装<BR>
+    ・ユウトウタケの計算を実装<BR>
+    ・モラの計算を改善<BR>
+    <BR>
+    既知の問題。<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/10/15</b><BR>
+    更新。<BR>
+    ・突破、天賦に必要なモラの計算を追加<BR>
+    ・画像の軽量化<BR>
+    ・処理の軽量化<BR>
+    <BR>
+    既知の問題。<BR>
+    ・王冠の計算実装先送り<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/10/14</b><BR>
+    更新。<BR>
+    ・アーロイを追加（アンバーの下）<BR>
+    <BR>
+    不具合の修正。<BR>
+    ・データ更新時にロードエラーが発生する可能性を修正<BR>
+    ・イグサの計算が出来ていない問題の修正<BR>
+    ・抗争と詩文の場所が逆になっていた問題の修正<BR>
+    ・胡桃と魈の場所が逆になっていた問題の修正<BR>
+    ・香菱の元素爆発の天賦本計算が間違っていた問題の修正<BR>
+    ・凝光の元素爆発の天賦本計算が間違っていた問題の修正<BR>
+    <BR>
+    必要なご対応。<BR>
+    ・抗争、詩文の所持数の入力に差異が生じている可能性があるので確認をお願いします。<BR>
+    <BR>
+    既知の問題。<BR>
+    ・王冠の計算、突破、天賦時のモラの計算の実装先送り<BR>
+    ・サイトのHtmlやJavaScriptの軽量化問題<BR>
+    <BR><BR>
+    <b>2021/10/13</b><BR>
+    サイトの公開。<BR>
+    ・春の道に踏み出す。<BR>
+    <BR>
+    既知の問題。<BR>
+    ・王冠の計算、突破時や天賦系のモラの計算が面倒なので後送りになってる。<BR>
+    ・サイトのソースとか見れば分かるけど雑なので、誰か助けて下さい。<BR>
+  </div>
+</div>
+
+<script src="../js/nouislider.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/init.js"></script>
+<script src="../js/Material.js"></script>
+</body>
+</html>
