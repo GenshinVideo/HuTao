@@ -1,26 +1,23 @@
-var Version = "20220905";
+var Version = "20220825"
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
-httpObj.onload = function(){};
+httpObj.onload = function(){}
 httpObj.send(null);
-
-var CharaID;
 
 // キャラクター項目の生成
 function SetCharacterList() {
   if ( !document.querySelector('div[id="Character"]') ) {
-    console.log("読み込み中1");
+    console.log("読み込み中1")
     setTimeout( SetCharacterList, 100 );
     return;
   }
   if ( !httpObj.response ) {
-    console.log("読み込み中2");
+    console.log("読み込み中2")
     setTimeout( SetCharacterList, 100 );
     return;
   }
   ChaEle = document.querySelector('div[id="Character"]');
-  Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
 // ドリー
   S_Id =          "dori";
@@ -669,8 +666,7 @@ function CharacterSet() {
       <table class="${S_Id}">\
         <tbody>\
           <tr>\
-            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="3">${S_JpName}</th>\
-            <th class="${S_Id}" colspan="22"></th>\
+            <th colspan="25">${S_JpName}</th>\
           </tr>\
           <tr>\
             <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
@@ -724,80 +720,6 @@ function CharacterSet() {
             <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T2_T5_Volume"></span></td>\
           </tr>\
           <tr>\
-            <td colspan="2" class="textleft">元素爆発</td>\
-            <td colspan="4"><div id="${S_Id}_T3" class="noUiSlider"></div></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T3_T1_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T3_T2_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T3_T3_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T3_T4_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T3_T5_Volume"></span></td>\
-          </tr>\
-        <tbody>\
-      </table>\
-    ')
-  `);
-}
-function HideCharacterSet() {
-  eval(`
-    ChaEle.insertAdjacentHTML('beforeend', '\
-      <table class="${S_Id}">\
-        <tbody>\
-          <tr>\
-            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="3">${S_JpName}</th>\
-            <th class="${S_Id} hides" colspan="22"></th>\
-          </tr>\
-          <tr style="display: none;">\
-            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
-            <td width="12%" colspan="3" class="textleft">レベル</td>\
-            <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
-            <td width="4%" colspan="1"></td>\
-            <td width="8%" colspan="2"></td>\
-          </tr>\
-          <tr style="display: none;">\
-            <td colspan="3" class="textleft">突破段階</td>\
-            <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Element}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
-          <td colspan="1" rowspan="3" class="textleft">天賦</td>\
-          <td colspan="2" class="textleft">通常攻撃</td>\
-          <td colspan="4"><div id="${S_Id}_T1" class="noUiSlider"></div></td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
-          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T1_T1_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
-          <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T1_T2_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Talent2}.webp"></td>\
-          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T1_T3_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>\
-          <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T1_T4_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
-          <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T1_T5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
-            <td colspan="2" class="textleft">元素スキル</td>\
-            <td colspan="4"><div id="${S_Id}_T2" class="noUiSlider"></div></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T2_T1_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T2_T2_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T2_T3_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T2_T4_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T2_T5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
             <td colspan="2" class="textleft">元素爆発</td>\
             <td colspan="4"><div id="${S_Id}_T3" class="noUiSlider"></div></td>\
             <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T3_T1_Volume"></span> 点</td>\
@@ -933,17 +855,7 @@ function SliderLoad() {
   `);
 }
 function Checkmate() {
-  eval(`
-  try{
-    if (Hiders.${S_Id} == "0") {
-      CharacterSet();
-    } else {
-      HideCharacterSet();
-    }
-  } catch(e) {
-    CharacterSet();
-  }
-  `);
+  CharacterSet();
   SliderCreate();
   SliderLoad();
 }
@@ -1048,24 +960,24 @@ function SetInventoryES() {
 // Jewels
 function SetInventoryJewels() {
 // Jewels #3
-  S_ItemName_1 =    "Prithiva_Topaz_Gemstone";
-  S_ItemName_2 =    "Prithiva_Topaz_Chunk";
-  S_ItemName_3 =    "Prithiva_Topaz_Fragment";
-  S_ItemName_4 =    "Prithiva_Topaz_Sliver";
+  S_ItemName_1 =    "Nagadus_Emerald_Gemstone";
+  S_ItemName_2 =    "Nagadus_Emerald_Chunk";
+  S_ItemName_3 =    "Nagadus_Emerald_Fragment";
+  S_ItemName_4 =    "Nagadus_Emerald_Sliver";
   InventorySet4();
 // Jewels #2
-  S_ItemName_1 =    "Vajrada_Amethyst_Gemstone";
-  S_ItemName_2 =    "Vajrada_Amethyst_Chunk";
-  S_ItemName_3 =    "Vajrada_Amethyst_Fragment";
-  S_ItemName_4 =    "Vajrada_Amethyst_Sliver";
-  S_ItemName_5 =    "Vayuda_Turquoise_Gemstone";
-  S_ItemName_6 =    "Vayuda_Turquoise_Chunk";
-  S_ItemName_7 =    "Vayuda_Turquoise_Fragment";
-  S_ItemName_8 =    "Vayuda_Turquoise_Sliver";
-  S_ItemName_9 =    "Shivada_Jade_Gemstone";
-  S_ItemName_10 =   "Shivada_Jade_Chunk";
-  S_ItemName_11 =   "Shivada_Jade_Fragment";
-  S_ItemName_12 =   "Shivada_Jade_Sliver";
+  S_ItemName_1 =    "Vayuda_Turquoise_Gemstone";
+  S_ItemName_2 =    "Vayuda_Turquoise_Chunk";
+  S_ItemName_3 =    "Vayuda_Turquoise_Fragment";
+  S_ItemName_4 =    "Vayuda_Turquoise_Sliver";
+  S_ItemName_5 =    "Shivada_Jade_Gemstone";
+  S_ItemName_6 =    "Shivada_Jade_Chunk";
+  S_ItemName_7 =    "Shivada_Jade_Fragment";
+  S_ItemName_8 =    "Shivada_Jade_Sliver";
+  S_ItemName_9 =    "Prithiva_Topaz_Gemstone";
+  S_ItemName_10 =   "Prithiva_Topaz_Chunk";
+  S_ItemName_11 =   "Prithiva_Topaz_Fragment";
+  S_ItemName_12 =   "Prithiva_Topaz_Sliver";
   InventorySet();
 // Jewels #1
   S_ItemName_1 =    "Agnidus_Agate_Gemstone";
@@ -1076,10 +988,10 @@ function SetInventoryJewels() {
   S_ItemName_6 =    "Varunada_Lazurite_Chunk";
   S_ItemName_7 =    "Varunada_Lazurite_Fragment";
   S_ItemName_8 =    "Varunada_Lazurite_Sliver";
-  S_ItemName_9 =    "Nagadus_Emerald_Gemstone";
-  S_ItemName_10 =   "Nagadus_Emerald_Chunk";
-  S_ItemName_11 =   "Nagadus_Emerald_Fragment";
-  S_ItemName_12 =   "Nagadus_Emerald_Sliver";
+  S_ItemName_9 =    "Vajrada_Amethyst_Gemstone";
+  S_ItemName_10 =   "Vajrada_Amethyst_Chunk";
+  S_ItemName_11 =   "Vajrada_Amethyst_Fragment";
+  S_ItemName_12 =   "Vajrada_Amethyst_Sliver";
   InventorySet();
 }
 // Talent Level-Up Material
@@ -1135,10 +1047,9 @@ function SetInventoryLM() {
 // Local Material #3
   S_ItemName_1 =    "Fluorescent_Fungus";
   S_ItemName_2 =    "Rukkhashava_Mushrooms";
-  S_ItemName_3 =    "Padisarah";
-  S_ItemName_4 =    "Nilotpala_Lotus";
-  S_ItemName_5 =    "Kalpalata_Lotus";
-  InventorySet5();
+  S_ItemName_3 =    "Nilotpala_Lotus";
+  S_ItemName_4 =    "Kalpalata_Lotus";
+  InventorySet4();
 // Local Material #2
   S_ItemName_1 =    "Glaze_Lily";
   S_ItemName_2 =    "Qingxin";
@@ -1312,39 +1223,6 @@ function InventorySet4() {
     ')
   `);
 }
-function InventorySet5() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
 function InventorySet6() {
   eval(`
     CalEle.insertAdjacentHTML('afterend', '\
@@ -1496,20 +1374,20 @@ function SetCalculatorJewel() {
   S_ItemImage2 =   "Small/Item/Item_Varunada_Lazurite_Gemstone.webp";
   S_ItemName_2 =    "Varunada_Lazurite";
   S_ItemUnit_2 =    " 点";
-  S_ItemImage3 =   "Small/Item/Item_Nagadus_Emerald_Gemstone.webp";
-  S_ItemName_3 =    "Nagadus_Emerald";
+  S_ItemImage3 =   "Small/Item/Item_Vajrada_Amethyst_Gemstone.webp";
+  S_ItemName_3 =    "Vajrada_Amethyst";
   S_ItemUnit_3 =    " 点";
-  S_ItemImage4 =   "Small/Item/Item_Vajrada_Amethyst_Gemstone.webp";
-  S_ItemName_4 =    "Vajrada_Amethyst";
+  S_ItemImage4 =   "Small/Item/Item_Vayuda_Turquoise_Gemstone.webp";
+  S_ItemName_4 =    "Vayuda_Turquoise";
   S_ItemUnit_4 =    " 点";
-  S_ItemImage5 =   "Small/Item/Item_Vayuda_Turquoise_Gemstone.webp";
-  S_ItemName_5 =    "Vayuda_Turquoise";
+  S_ItemImage5 =   "Small/Item/Item_Shivada_Jade_Gemstone.webp";
+  S_ItemName_5 =    "Shivada_Jade";
   S_ItemUnit_5 =    " 点";
-  S_ItemImage6 =   "Small/Item/Item_Shivada_Jade_Gemstone.webp";
-  S_ItemName_6 =    "Shivada_Jade";
+  S_ItemImage6 =   "Small/Item/Item_Prithiva_Topaz_Gemstone.webp";
+  S_ItemName_6 =    "Prithiva_Topaz";
   S_ItemUnit_6 =    " 点";
-  S_ItemImage7 =   "Small/Item/Item_Prithiva_Topaz_Gemstone.webp";
-  S_ItemName_7 =    "Prithiva_Topaz";
+  S_ItemImage7 =   "Small/Item/Item_Nagadus_Emerald_Gemstone.png";
+  S_ItemName_7 =    "Nagadus_Emerald";
   S_ItemUnit_7 =    " 点";
   CalculatorSet();
 }
@@ -1621,22 +1499,6 @@ function SetCalculatorCM() {
 function SetCalculatorLM() {
   CalEle = document.querySelector('th[id="C_Local_Material"]').parentElement;
   S_ItemType =   "Local_Material";
-// Local Material #5
-  S_ItemName_1 =    "Kalpalata_Lotus";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    " ";
-  CalculatorSet2();
 // Local Material #4
   S_ItemName_1 =    "Sea_Ganoderma";
   S_ItemUnit_1 =    " 個";
@@ -1648,9 +1510,9 @@ function SetCalculatorLM() {
   S_ItemUnit_4 =    " 個";
   S_ItemName_5 =    "Rukkhashava_Mushrooms";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Padisarah";
+  S_ItemName_6 =    "Nilotpala_Lotus";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Nilotpala_Lotus";
+  S_ItemName_7 =    "Kalpalata_Lotus";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #3
@@ -2005,15 +1867,6 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
-<b>2022/08/31</b><BR>\
-更新。<BR>\
-・キャラクター非表示機能の追加<BR>\
-・パティサラ、カルパラタ蓮の実装に対応<BR>\
-・草元素の宝石の位置を修正<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
 <b>2022/08/25</b><BR>\
 更新。<BR>\
 ・前回に引き続き処理方法の大幅変更<BR>\
@@ -2023,7 +1876,7 @@ function SetPatchNoteList() {
 既知の問題。<BR>\
 ・一部特産品の画像が表示されない（ゲームで実装され次第修正します。）<BR>\
 ・処理方法の変更に伴い、一部セーブデータが正常に読み込めていない可能性があります。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR>\
 必要なご対応。<BR>\
 ・データ確認後、セーブを行って下さい。<BR>\
@@ -2405,6 +2258,7 @@ function Talent_Boss_Calculator_Go() {
   document.getElementById('Ne_${Talent_Boss_Name}_Volume').innerHTML = Ne_${Talent_Boss_Name}_Volume;
   `);
 }
+
 // [計算]
 function Calculator() {
   Exp_Calculator();
@@ -2420,50 +2274,6 @@ document.getElementsByClassName("Calculator")[0].addEventListener("click",() => 
   Calculator();
 }, false);
 
-// キャラクターの非表示処理
-function HideCharacter(CharaID) {
-  eval(`
-  if (!document.querySelector('th[class*="${CharaID}"]').classList.contains("hides")) {
-    document.querySelector('th[class="${CharaID}"]').classList.add("hides");
-    document.querySelector('th[class*="${CharaID}"]').innerText = \
-    "レベル：" + ${CharaID}_Ex.noUiSlider.get()[0] + "/" + ${CharaID}_Ex.noUiSlider.get()[1] + "　\
-    突破段階：" + ${CharaID}_Pr.noUiSlider.get()[0] + "/" + ${CharaID}_Pr.noUiSlider.get()[1] + "　\
-    通常攻撃：" + ${CharaID}_T1.noUiSlider.get()[0] + "/" + ${CharaID}_T1.noUiSlider.get()[1] + "　\
-    元素スキル：" + ${CharaID}_T2.noUiSlider.get()[0] + "/" + ${CharaID}_T2.noUiSlider.get()[1] + "　\
-    元素爆発：" + ${CharaID}_T3.noUiSlider.get()[0] + "/" +${CharaID}_T3.noUiSlider.get()[1] + "";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[3].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[5].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[7].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[9].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[11].style.display = "none";
-  } else {
-    document.querySelector('th[class="${CharaID} hides"]').classList.remove("hides");
-    document.querySelector('th[class="${CharaID}"]').innerText = "";
-    document.querySelector('table[class="${CharaID}"]').childNodes[1].childNodes[3].style.display = "";
-    document.querySelector('table[class="${CharaID}"]').childNodes[1].childNodes[5].style.display = "";
-    document.querySelector('table[class="${CharaID}"]').childNodes[1].childNodes[7].style.display = "";
-    document.querySelector('table[class="${CharaID}"]').childNodes[1].childNodes[9].style.display = "";
-    document.querySelector('table[class="${CharaID}"]').childNodes[1].childNodes[11].style.display = "";
-  }
-  `);
-}
-// キャラクターの非表示処理2
-function HideCharacterLoad(CharaID) {
-  eval(`
-    document.querySelector('th[class*="${CharaID}"]').innerText = \
-    "レベル：" + ${CharaID}_Ex.noUiSlider.get()[0] + "/" + ${CharaID}_Ex.noUiSlider.get()[1] + "　\
-    突破段階：" + ${CharaID}_Pr.noUiSlider.get()[0] + "/" + ${CharaID}_Pr.noUiSlider.get()[1] + "　\
-    通常攻撃：" + ${CharaID}_T1.noUiSlider.get()[0] + "/" + ${CharaID}_T1.noUiSlider.get()[1] + "　\
-    元素スキル：" + ${CharaID}_T2.noUiSlider.get()[0] + "/" + ${CharaID}_T2.noUiSlider.get()[1] + "　\
-    元素爆発：" + ${CharaID}_T3.noUiSlider.get()[0] + "/" +${CharaID}_T3.noUiSlider.get()[1] + "";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[3].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[5].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[7].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[9].style.display = "none";
-    document.querySelector('table[class*="${CharaID}"]').childNodes[1].childNodes[11].style.display = "none";
-  `);
-}
-
 // セーブ系
 function Save() {
   localStorage.setItem("_Version", Version);
@@ -2478,18 +2288,6 @@ function Save() {
     Inventory[`${InventoryList.id}`] = `${Value}`;
     return localStorage.setItem("Inventory", JSON.stringify(Inventory));
   });
-  var HideInfoSave = [...document.querySelectorAll('th[colspan="22"]')].map(Text=>{
-    if (`${Text.classList.contains("hides")}` != "true") {
-      var Value = "0";
-    } else {
-      var Value = "1";
-    }
-    return `${Text.className.split(" ")[0]}` + ":" + `${Value}`;
-  });
-  var HideInfoSave = JSON.stringify(HideInfoSave).replace(/\[/g, '{');
-  var HideInfoSave = HideInfoSave.replace(/\]/g, '}');
-  var HideInfoSave = HideInfoSave.replace(/:/g, '": "');
-  localStorage.setItem("HideCharacter", HideInfoSave);
 }
 document.getElementById('Save').onclick = function changeContent() {
   Save();
@@ -2518,10 +2316,6 @@ function Load() {
   for (var i = 0; i < InventoryData5.length; i++) {
     var InventoryData6 = InventoryData5[i].split( ':' );
     try{document.getElementById(InventoryData6[0]).value = InventoryData6[1]}catch(e){};
-  }
-  var HideCharacterData = document.querySelectorAll('th[class*="hides"]');
-  for (var i = 0; i < HideCharacterData.length; i++) {
-    HideCharacterLoad(HideCharacterData[i].className.split(" ")[0]);
   }
 }
 document.getElementById('Load').onclick = function changeContent() {
@@ -2664,7 +2458,7 @@ function OpenScript() {
     var head, style;
     head = document.getElementsByTagName('head')[0];
     if (!head) {
-        return;
+        return
     }
     style = document.createElement('style');
     style.type = 'text/css';
@@ -2677,10 +2471,38 @@ function OpenScript() {
     alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
-      Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220623 to ver." + Version + "）\n・キャラクター非表示機能の追加\n・パティサラ、カルパラタ蓮の実装に対応\n・草元素の宝石の位置を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      LoadFix();
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220623 to ver." + Version + "）\n・前回に引き続き処理方法の大幅変更\n・それに伴って読み込み時間が長くなってしまったためロード画面を追加\n・ティナリ、コレイ、ドリーの実装に対応\n\n既知の問題。\n・一部特産品の画像が表示されない\n・一部セーブデータが正常に読み込めていない可能性。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
+  }
+}
+
+function LoadFix() {
+  var CharacterData1 = localStorage.getItem("Character");
+  var CharacterData2 = CharacterData1.replace(/\{(.*)?\}/g, '$1');
+  var CharacterData3 = CharacterData2.replace(/\\"/g, '');
+  var CharacterData4 = CharacterData3.replace(/"/g, '');
+  var CharacterData5 = CharacterData4.split( ',' )
+  for (var i = 0; i < CharacterData5.length; i++) {
+    var CharacterData6 = CharacterData5[i].split( ':' );
+    eval(`${CharacterData6[0]}.noUiSlider.set([${CharacterData6[1]}, ${CharacterData6[2]}])`);
+  }
+  var InventoryData1 = localStorage.getItem("Inventory");
+  var InventoryData2 = InventoryData1.replace(/\{(.*)?\}/g, '$1');
+  var InventoryData3 = InventoryData2.replace(/\\"/g, '');
+  var InventoryData4 = InventoryData3.replace(/"/g, '');
+  var InventoryData4 = InventoryData4.replace(/Agate_/g, 'Agnidus_Agate_');
+  var InventoryData4 = InventoryData4.replace(/Lazurite_/g, 'Varunada_Lazurite_');
+  var InventoryData4 = InventoryData4.replace(/Amethyst_/g, 'Vajrada_Amethyst_');
+  var InventoryData4 = InventoryData4.replace(/Turquoise_/g, 'Vayuda_Turquoise_');
+  var InventoryData4 = InventoryData4.replace(/Jade_/g, 'Shivada_Jade_');
+  var InventoryData4 = InventoryData4.replace(/Topaz_/g, 'Prithiva_Topaz_');
+  var InventoryData4 = InventoryData4.replace(/Emerald_/g, 'Nagadus_Emerald_');
+  var InventoryData5 = InventoryData4.split( ',' )
+  for (var i = 0; i < InventoryData5.length; i++) {
+    var InventoryData6 = InventoryData5[i].split( ':' );
+    try{document.getElementById(InventoryData6[0]).value = InventoryData6[1]}catch(e){};
   }
 }
