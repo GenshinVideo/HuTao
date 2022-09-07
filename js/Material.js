@@ -669,8 +669,8 @@ function CharacterSet() {
       <table class="${S_Id}">\
         <tbody>\
           <tr>\
-            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="3">${S_JpName}</th>\
-            <th class="${S_Id}" colspan="22"></th>\
+            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="8">${S_JpName}</th>\
+            <th id="right" class="${S_Id}" colspan="17"></th>\
           </tr>\
           <tr>\
             <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
@@ -743,37 +743,37 @@ function HideCharacterSet() {
       <table class="${S_Id}">\
         <tbody>\
           <tr>\
-            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="3">${S_JpName}</th>\
-            <th class="${S_Id} hides" colspan="22"></th>\
+            <th onclick="HideCharacter(&quot;${S_Id}&quot;);" colspan="8">${S_JpName}</th>\
+            <th id="right" class="${S_Id} hides" colspan="17"></th>\
           </tr>\
           <tr style="display: none;">\
-            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
-            <td width="12%" colspan="3" class="textleft">レベル</td>\
-            <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
-            <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
-            <td width="4%" colspan="1"></td>\
-            <td width="8%" colspan="2"></td>\
-          </tr>\
-          <tr style="display: none;">\
-            <td colspan="3" class="textleft">突破段階</td>\
-            <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Element}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
+          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
+          <td width="12%" colspan="3" class="textleft">レベル</td>\
+          <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
+          <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
+          <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
+          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
+          <td width="4%" colspan="1"></td>\
+          <td width="8%" colspan="2"></td>\
+        </tr>\
+        <tr style="display: none;">\
+          <td colspan="3" class="textleft">突破段階</td>\
+          <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Element}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
+          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
+        </tr>\
+        <tr style="display: none;">\
           <td colspan="1" rowspan="3" class="textleft">天賦</td>\
           <td colspan="2" class="textleft">通常攻撃</td>\
           <td colspan="4"><div id="${S_Id}_T1" class="noUiSlider"></div></td>\
@@ -787,24 +787,24 @@ function HideCharacterSet() {
           <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T1_T4_Volume"></span> 個</td>\
           <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T1_T5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
-            <td colspan="2" class="textleft">元素スキル</td>\
-            <td colspan="4"><div id="${S_Id}_T2" class="noUiSlider"></div></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T2_T1_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T2_T2_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T2_T3_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T2_T4_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T2_T5_Volume"></span></td>\
-          </tr>\
-          <tr style="display: none;">\
-            <td colspan="2" class="textleft">元素爆発</td>\
-            <td colspan="4"><div id="${S_Id}_T3" class="noUiSlider"></div></td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T3_T1_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T3_T2_Volume"></span> 点</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T3_T3_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T3_T4_Volume"></span> 個</td>\
-            <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T3_T5_Volume"></span></td>\
+        </tr>\
+        <tr style="display: none;">\
+          <td colspan="2" class="textleft">元素スキル</td>\
+          <td colspan="4"><div id="${S_Id}_T2" class="noUiSlider"></div></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T2_T1_Volume"></span> 点</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T2_T2_Volume"></span> 点</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T2_T3_Volume"></span> 個</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T2_T4_Volume"></span> 個</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T2_T5_Volume"></span></td>\
+        </tr>\
+        <tr style="display: none;">\
+          <td colspan="2" class="textleft">元素爆発</td>\
+          <td colspan="4"><div id="${S_Id}_T3" class="noUiSlider"></div></td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T3_T1_Volume"></span> 点</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T3_T2_Volume"></span> 点</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T3_T3_Volume"></span> 個</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T3_T4_Volume"></span> 個</td>\
+          <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T3_T5_Volume"></span></td>\
           </tr>\
         <tbody>\
       </table>\
@@ -2478,7 +2478,7 @@ function Save() {
     Inventory[`${InventoryList.id}`] = `${Value}`;
     return localStorage.setItem("Inventory", JSON.stringify(Inventory));
   });
-  var HideInfoSave = [...document.querySelectorAll('th[colspan="22"]')].map(Text=>{
+  var HideInfoSave = [...document.querySelectorAll('th[colspan="17"]')].map(Text=>{
     if (`${Text.classList.contains("hides")}` != "true") {
       var Value = "0";
     } else {
