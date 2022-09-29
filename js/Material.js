@@ -1,4 +1,4 @@
-var Version = "20220905";
+var Version = "20220929";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -21,6 +21,42 @@ function SetCharacterList() {
   }
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
+
+// ニィロウ
+  S_Id =          "nilou";
+  S_JpName =      "ニィロウ";
+  S_CharaImg =    "Original/Character2/nilou_070_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Perpetual_Caliber";
+  S_Local =       "Padisarah";
+  S_Common =      "Crystalline_Cyst_Dust";
+  S_Talent1 =     "Praxis";
+  S_Talent2 =     "Tears_of_the_Calamitous_God";
+  Checkmate();
+
+// セノ
+  S_Id =          "cyno";
+  S_JpName =      "セノ";
+  S_CharaImg =    "Original/Character2/cyno_071_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Thunderclap_Fruitcore";
+  S_Local =       "Scarab";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Admonition";
+  S_Talent2 =     "Mudra_of_the_Malefic_General";
+  Checkmate();
+
+// キャンディス
+  S_Id =          "candace";
+  S_JpName =      "キャンディス";
+  S_CharaImg =    "Original/Character2/candace_072_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Light_Guiding_Tetrahedron";
+  S_Local =       "Redcrest";
+  S_Common =      "Rich_Red_Brocade";
+  S_Talent1 =     "Admonition";
+  S_Talent2 =     "Tears_of_the_Calamitous_God";
+  Checkmate();
 
 // ドリー
   S_Id =          "dori";
@@ -1029,7 +1065,9 @@ function SetInventoryES() {
   S_ItemName_4 =    "Runic_Fang";
   S_ItemName_5 =    "Majestic_Hooked_Beak";
   S_ItemName_6 =    "Thunderclap_Fruitcore";
-  InventorySet6();
+  S_ItemName_7 =    "Perpetual_Caliber";
+  S_ItemName_8 =    "Light_Guiding_Tetrahedron";
+  InventorySet8();
 // Elemental Stones #1
   S_ItemName_1 =    "Hurricane_Seed";
   S_ItemName_2 =    "Lightning_Prism";
@@ -1138,7 +1176,9 @@ function SetInventoryLM() {
   S_ItemName_3 =    "Padisarah";
   S_ItemName_4 =    "Nilotpala_Lotus";
   S_ItemName_5 =    "Kalpalata_Lotus";
-  InventorySet5();
+  S_ItemName_6 =    "Redcrest";
+  S_ItemName_7 =    "Scarab";
+  InventorySet7();
 // Local Material #2
   S_ItemName_1 =    "Glaze_Lily";
   S_ItemName_2 =    "Qingxin";
@@ -1426,6 +1466,54 @@ function InventorySet7() {
     ')
   `);
 }
+function InventorySet8() {
+  eval(`
+    CalEle.insertAdjacentHTML('afterend', '\
+      <tr>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+      </tr>\
+    ')
+  `);
+}
 function InventorySet9() {
   eval(`
     CalEle.insertAdjacentHTML('afterend', '\
@@ -1526,10 +1614,10 @@ function SetCalculatorES() {
   S_ItemUnit_3 =    " 個"
   S_ItemName_4 =    "Thunderclap_Fruitcore";
   S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    ""
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    ""
+  S_ItemName_5 =    "Perpetual_Caliber";
+  S_ItemUnit_5 =    " 個"
+  S_ItemName_6 =    "Light_Guiding_Tetrahedron";
+  S_ItemUnit_6 =    " 個"
   S_ItemName_7 =    "";
   S_ItemUnit_7 =    ""
   CalculatorSet2();
@@ -1624,10 +1712,10 @@ function SetCalculatorLM() {
 // Local Material #5
   S_ItemName_1 =    "Kalpalata_Lotus";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
+  S_ItemName_2 =    "Redcrest";
+  S_ItemUnit_2 =    " 個";
+  S_ItemName_3 =    "Scarab";
+  S_ItemUnit_3 =    " 個";
   S_ItemName_4 =    "";
   S_ItemUnit_4 =    "";
   S_ItemName_5 =    "";
@@ -2005,6 +2093,15 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2022/09/29</b><BR>\
+更新。<BR>\
+・ニィロウ、セノ、キャンディスの実装に対応<BR>\
+・赤念の実、聖金虫の実装に対応<BR>\
+・永続コア、導光四面体の実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2022/08/31</b><BR>\
 更新。<BR>\
 ・キャラクター非表示機能の追加<BR>\
@@ -2012,7 +2109,7 @@ function SetPatchNoteList() {
 ・草元素の宝石の位置を修正<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2022/08/25</b><BR>\
 更新。<BR>\
@@ -2678,7 +2775,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220623 to ver." + Version + "）\n・キャラクター非表示機能の追加\n・パティサラ、カルパラタ蓮の実装に対応\n・草元素の宝石の位置を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220831 to ver." + Version + "）\n・ニィロウ、セノ、キャンディスの実装に対応\n・赤念の実、聖金虫の実装に対応\n・永続コア、導光四面体の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
