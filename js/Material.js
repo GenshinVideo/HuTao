@@ -1180,10 +1180,10 @@ function SetInventoryLM() {
   S_ItemName_7 =    "Scarab";
   InventorySet7();
 // Local Material #2
-  S_ItemName_1 =    "Glaze_Lily";
-  S_ItemName_2 =    "Qingxin";
-  S_ItemName_3 =    "Starconch";
-  S_ItemName_4 =    "Violetgrass";
+  S_ItemName_1 =    "Qingxin";
+  S_ItemName_2 =    "Starconch";
+  S_ItemName_3 =    "Violetgrass";
+  S_ItemName_4 =    "Cor_Lapis";
   S_ItemName_5 =    "Onikabuto";
   S_ItemName_6 =    "Sakura_Bloom";
   S_ItemName_7 =    "Crystal_Marrow";
@@ -1202,10 +1202,10 @@ function SetInventoryLM() {
   S_ItemName_6 =    "Small_Lamp_Grass";
   S_ItemName_7 =    "Calla_Lily";
   S_ItemName_8 =    "Dandelion_Seed";
-  S_ItemName_9 =    "Cor_Lapis";
-  S_ItemName_10 =   "Jueyun_Chili";
-  S_ItemName_11 =   "Noctilucous_Jade";
-  S_ItemName_12 =   "Silk_Flower";
+  S_ItemName_9 =   "Jueyun_Chili";
+  S_ItemName_10 =   "Noctilucous_Jade";
+  S_ItemName_11 =   "Silk_Flower";
+  S_ItemName_12 =    "Glaze_Lily";
   InventorySet();
 }
 
