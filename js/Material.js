@@ -1,4 +1,4 @@
-var Version = "20220929";
+var Version = "20221102";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,10 +22,34 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
+// レイラ
+  S_Id =          "layla";
+  S_JpName =      "レイラ";
+  S_CharaImg =    "Original/Character2/layla_074_gacha_splash.webp";
+  S_Element =     "Shivada_Jade";
+  S_Boss =        "Perpetual_Caliber";
+  S_Local =       "Nilotpala_Lotus";
+  S_Common =      "Forbidden_Curse_Scroll";
+  S_Talent1 =     "Ingenuity";
+  S_Talent2 =     "Mirror_of_Mushin";
+  Checkmate();
+
+// ナヒーダ
+  S_Id =          "nahida";
+  S_JpName =      "ナヒーダ";
+  S_CharaImg =    "Original/Character/Character_Nahida_Portrait.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Quelled_Creeper";
+  S_Local =       "Kalpalata_Lotus";
+  S_Common =      "Crystalline_Cyst_Dust";
+  S_Talent1 =     "Ingenuity";
+  S_Talent2 =     "Puppet_Strings";
+  Checkmate();
+
 // ニィロウ
   S_Id =          "nilou";
   S_JpName =      "ニィロウ";
-  S_CharaImg =    "Original/Character2/nilou_070_gacha_splash.webp";
+  S_CharaImg =    "Original/Character/Character_Nilou_Portrait.webp";
   S_Element =     "Varunada_Lazurite";
   S_Boss =        "Perpetual_Caliber";
   S_Local =       "Padisarah";
@@ -37,7 +61,7 @@ function SetCharacterList() {
 // セノ
   S_Id =          "cyno";
   S_JpName =      "セノ";
-  S_CharaImg =    "Original/Character2/cyno_071_gacha_splash.webp";
+  S_CharaImg =    "Original/Character/Character_Cyno_Portrait.webp";
   S_Element =     "Vajrada_Amethyst";
   S_Boss =        "Thunderclap_Fruitcore";
   S_Local =       "Scarab";
@@ -49,7 +73,7 @@ function SetCharacterList() {
 // キャンディス
   S_Id =          "candace";
   S_JpName =      "キャンディス";
-  S_CharaImg =    "Original/Character2/candace_072_gacha_splash.webp";
+  S_CharaImg =    "Original/Character/Character_Candace_Portrait.webp";
   S_Element =     "Varunada_Lazurite";
   S_Boss =        "Light_Guiding_Tetrahedron";
   S_Local =       "Redcrest";
@@ -1040,7 +1064,10 @@ function SetInventoryTLUM2() {
   S_ItemName_4 =    "Mudra_of_the_Malefic_General";
   S_ItemName_5 =    "Tears_of_the_Calamitous_God";
   S_ItemName_6 =    "The_Meaning_of_Aeons";
-  InventorySet6();
+  S_ItemName_7 =    "Puppet_Strings";
+  S_ItemName_8 =    "Mirror_of_Mushin";
+  S_ItemName_9 =    "Dakas_Bell";
+  InventorySet9();
 // Talent Level-Up Material 2 #1
   S_ItemName_1 =    "Dvalins_Plume";
   S_ItemName_2 =    "Dvalins_Claw";
@@ -1067,7 +1094,8 @@ function SetInventoryES() {
   S_ItemName_6 =    "Thunderclap_Fruitcore";
   S_ItemName_7 =    "Perpetual_Caliber";
   S_ItemName_8 =    "Light_Guiding_Tetrahedron";
-  InventorySet8();
+  S_ItemName_9 =    "Quelled_Creeper";
+  InventorySet9();
 // Elemental Stones #1
   S_ItemName_1 =    "Hurricane_Seed";
   S_ItemName_2 =    "Lightning_Prism";
@@ -1567,6 +1595,64 @@ function InventorySet9() {
     ')
   `);
 }
+function InventorySet10() {
+  eval(`
+    CalEle.insertAdjacentHTML('afterend', '\
+      <tr>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_9}.webp"></i><input id="${S_ItemName_9}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+        <td width="8%" colspan="1">\
+          <div class="input-field"><i class="prefix">\
+            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_10}.webp"></i><input id="${S_ItemName_10}" value="0" type="number" class="validate">\
+          </div>\
+        </td>\
+      </tr>\
+    ')
+  `);
+}
 
 
 
@@ -1618,8 +1704,8 @@ function SetCalculatorES() {
   S_ItemUnit_5 =    " 個"
   S_ItemName_6 =    "Light_Guiding_Tetrahedron";
   S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    ""
+  S_ItemName_7 =    "Quelled_Creeper";
+  S_ItemUnit_7 =    " 個"
   CalculatorSet2();
 // Elemental Stones #2
   S_ItemName_1 =    "Crystalline_Bloom";
@@ -1840,12 +1926,12 @@ function SetCalculatorTLUM2() {
   S_ItemUnit_3 =    " 個";
   S_ItemName_4 =    "The_Meaning_of_Aeons";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
+  S_ItemName_5 =    "Puppet_Strings";
+  S_ItemUnit_5 =    " 個";
+  S_ItemName_6 =    "Mirror_of_Mushin";
+  S_ItemUnit_6 =    " 個";
+  S_ItemName_7 =    "Dakas_Bell";
+  S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Talent Level-Up Material2 #2
   S_ItemName_1 =    "Shard_of_a_Foul_Legacy";
@@ -2093,6 +2179,15 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2022/11/02</b><BR>\
+更新。<BR>\
+・ナヒーダ、レイラの実装に対応<BR>\
+・傀儡の糸、無心の淵鏡、空行の虚鈴の実装に対応<BR>\
+・滅諍の蔓の実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2022/09/29</b><BR>\
 更新。<BR>\
 ・ニィロウ、セノ、キャンディスの実装に対応<BR>\
@@ -2100,7 +2195,7 @@ function SetPatchNoteList() {
 ・永続コア、導光四面体の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2022/08/31</b><BR>\
 更新。<BR>\
@@ -2775,7 +2870,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220831 to ver." + Version + "）\n・ニィロウ、セノ、キャンディスの実装に対応\n・赤念の実、聖金虫の実装に対応\n・永続コア、導光四面体の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220929 to ver." + Version + "）\n・ナヒーダ、レイラの実装に対応\n・傀儡の糸、無心の淵鏡、空行の虚鈴の実装に対応\n・滅諍の蔓の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
