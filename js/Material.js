@@ -27,7 +27,7 @@ function SetCharacterList() {
   S_JpName =      "ファルザン";
   S_CharaImg =    "Original/Character_Faruzan_Card.webp";
   S_Element =     "Vayuda_Turquoise";
-  S_Boss =        "Perpetual_Caliber";
+  S_Boss =        "Light_Guiding_Tetrahedron";
   S_Local =       "Redcrest";
   S_Common =      "Rich_Red_Brocade";
   S_Talent1 =     "Admonition";
