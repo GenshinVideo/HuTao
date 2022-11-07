@@ -22,6 +22,30 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
+// ファルザン
+  S_Id =          "faruzan";
+  S_JpName =      "ファルザン";
+  S_CharaImg =    "Original/Character_Faruzan_Card.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Perpetual_Caliber";
+  S_Local =       "Redcrest";
+  S_Common =      "Rich_Red_Brocade";
+  S_Talent1 =     "Admonition";
+  S_Talent2 =     "Puppet_Strings";
+  Checkmate();
+
+// 放浪者
+  S_Id =          "wanderer";
+  S_JpName =      "放浪者";
+  S_CharaImg =    "Original/Character_Wanderer_Card.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Perpetual_Caliber";
+  S_Local =       "Rukkhashava_Mushrooms";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Praxis";
+  S_Talent2 =     "Dakas_Bell";
+  Checkmate();
+
 // レイラ
   S_Id =          "layla";
   S_JpName =      "レイラ";
