@@ -1,4 +1,4 @@
-var Version = "20221102";
+var Version = "20230118";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,10 +22,34 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
+// アルハイゼン
+  S_Id =          "Alhaitham";
+  S_JpName =      "アルハイゼン";
+  S_CharaImg =    "Original/Character2/alhatham_078_gacha_splash.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Pseudo-Stamens";
+  S_Local =       "Sand_Grease_Pupa";
+  S_Common =      "Rich_Red_Brocade";
+  S_Talent1 =     "Ingenuity";
+  S_Talent2 =     "Mirror_of_Mushin";
+  Checkmate();
+
+// ヨォーヨ
+  S_Id =          "Yaoyao";
+  S_JpName =      "ヨォーヨ";
+  S_CharaImg =    "Original/Character2/yaoyao_077_gacha_splash.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Quelled_Creeper";
+  S_Local =       "Jueyun_Chili";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Dakas_Bell";
+  Checkmate();
+
 // ファルザン
-  S_Id =          "faruzan";
+  S_Id =          "Faruzan";
   S_JpName =      "ファルザン";
-  S_CharaImg =    "Original/Character_Faruzan_Card.webp";
+  S_CharaImg =    "Original/Character/Faruzan_Portrait.webp";
   S_Element =     "Vayuda_Turquoise";
   S_Boss =        "Light_Guiding_Tetrahedron";
   S_Local =       "Redcrest";
@@ -35,9 +59,9 @@ function SetCharacterList() {
   Checkmate();
 
 // 放浪者
-  S_Id =          "wanderer";
+  S_Id =          "Wanderer";
   S_JpName =      "放浪者";
-  S_CharaImg =    "Original/Character_Wanderer_Card.webp";
+  S_CharaImg =    "Original/Character/Wanderer_Portrait.webp";
   S_Element =     "Vayuda_Turquoise";
   S_Boss =        "Perpetual_Caliber";
   S_Local =       "Rukkhashava_Mushrooms";
@@ -47,9 +71,9 @@ function SetCharacterList() {
   Checkmate();
 
 // レイラ
-  S_Id =          "layla";
+  S_Id =          "Layla";
   S_JpName =      "レイラ";
-  S_CharaImg =    "Original/Character2/layla_074_gacha_splash.webp";
+  S_CharaImg =    "Original/Character/Layla_Portrait.webp";
   S_Element =     "Shivada_Jade";
   S_Boss =        "Perpetual_Caliber";
   S_Local =       "Nilotpala_Lotus";
@@ -59,7 +83,7 @@ function SetCharacterList() {
   Checkmate();
 
 // ナヒーダ
-  S_Id =          "nahida";
+  S_Id =          "Nahida";
   S_JpName =      "ナヒーダ";
   S_CharaImg =    "Original/Character/Character_Nahida_Portrait.webp";
   S_Element =     "Nagadus_Emerald";
@@ -71,7 +95,7 @@ function SetCharacterList() {
   Checkmate();
 
 // ニィロウ
-  S_Id =          "nilou";
+  S_Id =          "Nilou";
   S_JpName =      "ニィロウ";
   S_CharaImg =    "Original/Character/Character_Nilou_Portrait.webp";
   S_Element =     "Varunada_Lazurite";
@@ -83,7 +107,7 @@ function SetCharacterList() {
   Checkmate();
 
 // セノ
-  S_Id =          "cyno";
+  S_Id =          "Cyno";
   S_JpName =      "セノ";
   S_CharaImg =    "Original/Character/Character_Cyno_Portrait.webp";
   S_Element =     "Vajrada_Amethyst";
@@ -95,7 +119,7 @@ function SetCharacterList() {
   Checkmate();
 
 // キャンディス
-  S_Id =          "candace";
+  S_Id =          "Candace";
   S_JpName =      "キャンディス";
   S_CharaImg =    "Original/Character/Character_Candace_Portrait.webp";
   S_Element =     "Varunada_Lazurite";
@@ -107,7 +131,7 @@ function SetCharacterList() {
   Checkmate();
 
 // ドリー
-  S_Id =          "dori";
+  S_Id =          "Dori";
   S_JpName =      "ドリー";
   S_CharaImg =    "Original/Character/Character_Dori_Portrait.webp";
   S_Element =     "Vajrada_Amethyst";
@@ -119,7 +143,7 @@ function SetCharacterList() {
   Checkmate();
 
 // ティナリ
-  S_Id =          "tighnari";
+  S_Id =          "Tighnari";
   S_JpName =      "ティナリ";
   S_CharaImg =    "Original/Character/Character_Tighnari_Portrait.webp";
   S_Element =     "Nagadus_Emerald";
@@ -131,7 +155,7 @@ function SetCharacterList() {
   Checkmate();
 
 // コレイ
-  S_Id =          "collei";
+  S_Id =          "Collei";
   S_JpName =      "コレイ";
   S_CharaImg =    "Original/Character/Character_Collei_Portrait.webp";
   S_Element =     "Nagadus_Emerald";
@@ -1119,7 +1143,8 @@ function SetInventoryES() {
   S_ItemName_7 =    "Perpetual_Caliber";
   S_ItemName_8 =    "Light_Guiding_Tetrahedron";
   S_ItemName_9 =    "Quelled_Creeper";
-  InventorySet9();
+  S_ItemName_10 =   "Pseudo-Stamens";
+  InventorySet10();
 // Elemental Stones #1
   S_ItemName_1 =    "Hurricane_Seed";
   S_ItemName_2 =    "Lightning_Prism";
@@ -1230,7 +1255,8 @@ function SetInventoryLM() {
   S_ItemName_5 =    "Kalpalata_Lotus";
   S_ItemName_6 =    "Redcrest";
   S_ItemName_7 =    "Scarab";
-  InventorySet7();
+  S_ItemName_8 =    "Sand_Grease_Pupa";
+  InventorySet8();
 // Local Material #2
   S_ItemName_1 =    "Qingxin";
   S_ItemName_2 =    "Starconch";
@@ -1715,6 +1741,22 @@ function SetCalculatorJewel() {
 function SetCalculatorES() {
   CalEle = document.querySelector('th[id="C_Elemental_Stones"]').parentElement;
   S_ItemType =   "Elemental_Stones";
+// Elemental Stones #4
+  S_ItemName_1 =    "Pseudo-Stamens";
+  S_ItemUnit_1 =    " 個"
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    ""
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    ""
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    ""
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    ""
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    ""
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    " "
+  CalculatorSet2();
 // Elemental Stones #3
   S_ItemName_1 =    "Dragonheirs_False_Fin";
   S_ItemUnit_1 =    " 個"
@@ -1826,8 +1868,8 @@ function SetCalculatorLM() {
   S_ItemUnit_2 =    " 個";
   S_ItemName_3 =    "Scarab";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
+  S_ItemName_4 =    "Sand_Grease_Pupa";
+  S_ItemUnit_4 =    " 個";
   S_ItemName_5 =    "";
   S_ItemUnit_5 =    "";
   S_ItemName_6 =    "";
@@ -2203,6 +2245,16 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2023/01/18</b><BR>\
+更新。<BR>\
+・アルハイゼン、ヨォーヨの実装に対応<BR>\
+・蒼礫蕊羽の実装に対応<BR>\
+・砂脂蛹の実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
+<BR>\
 <b>2022/11/02</b><BR>\
 更新。<BR>\
 ・ナヒーダ、レイラの実装に対応<BR>\
@@ -2210,7 +2262,7 @@ function SetPatchNoteList() {
 ・滅諍の蔓の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2022/09/29</b><BR>\
 更新。<BR>\
@@ -2489,6 +2541,7 @@ function Elemental_Stones_Calculator() {
   var Get_ESList = document.querySelectorAll('span[class="Calculator Elemental_Stones"]');
   for (var i = 0; i < Get_ESList.length; i++) {
     Elemental_Stones_Name = Get_ESList[i].id.slice(0, -7);
+    Elemental_Stones_Name_ = Elemental_Stones_Name.replace(/-/g, '_');
     if (!!Elemental_Stones_Name) {
       Elemental_Stones_Calculator_Go();
     }
@@ -2496,16 +2549,16 @@ function Elemental_Stones_Calculator() {
 }
 function Elemental_Stones_Calculator_Go() {
   eval(`
-  var ${Elemental_Stones_Name}_Volume = parseInt("0")
-  var ${Elemental_Stones_Name}_El = document.getElementsByClassName("${Elemental_Stones_Name}")
-  for (var i = 0; i < ${Elemental_Stones_Name}_El.length; i++) {
-    var ${Elemental_Stones_Name}_Volume = ${Elemental_Stones_Name}_Volume + parseInt(${Elemental_Stones_Name}_El[i].textContent)
+  var ${Elemental_Stones_Name_}_Volume = parseInt("0")
+  var ${Elemental_Stones_Name_}_El = document.getElementsByClassName("${Elemental_Stones_Name}")
+  for (var i = 0; i < ${Elemental_Stones_Name_}_El.length; i++) {
+    var ${Elemental_Stones_Name_}_Volume = ${Elemental_Stones_Name_}_Volume + parseInt(${Elemental_Stones_Name_}_El[i].textContent)
   }
-  var In_${Elemental_Stones_Name}_Volume = parseInt(document.getElementById("${Elemental_Stones_Name}").value)
-  var Ne_${Elemental_Stones_Name}_Volume = ${Elemental_Stones_Name}_Volume - In_${Elemental_Stones_Name}_Volume
-  document.getElementById('${Elemental_Stones_Name}_Volume').innerHTML = ${Elemental_Stones_Name}_Volume;
-  document.getElementById('In_${Elemental_Stones_Name}_Volume').innerHTML = In_${Elemental_Stones_Name}_Volume;
-  document.getElementById('Ne_${Elemental_Stones_Name}_Volume').innerHTML = Ne_${Elemental_Stones_Name}_Volume;
+  var In_${Elemental_Stones_Name_}_Volume = parseInt(document.getElementById("${Elemental_Stones_Name}").value)
+  var Ne_${Elemental_Stones_Name_}_Volume = ${Elemental_Stones_Name_}_Volume - In_${Elemental_Stones_Name_}_Volume
+  document.getElementById('${Elemental_Stones_Name}_Volume').innerHTML = ${Elemental_Stones_Name_}_Volume;
+  document.getElementById('In_${Elemental_Stones_Name}_Volume').innerHTML = In_${Elemental_Stones_Name_}_Volume;
+  document.getElementById('Ne_${Elemental_Stones_Name}_Volume').innerHTML = Ne_${Elemental_Stones_Name_}_Volume;
   `);
 }
 // [計算] - モブ敵素材
@@ -2874,6 +2927,33 @@ function TML6() {
   })
 }
 
+function Fix() {
+  var FixCharacter = localStorage.getItem("Character");
+  var FixCharacter = FixCharacter.replace(/collei/g, 'Collei');
+  var FixCharacter = FixCharacter.replace(/tighnari/g, 'Tighnari');
+  var FixCharacter = FixCharacter.replace(/dori/g, 'Dori');
+  var FixCharacter = FixCharacter.replace(/candace/g, 'Candace');
+  var FixCharacter = FixCharacter.replace(/cyno/g, 'Cyno');
+  var FixCharacter = FixCharacter.replace(/nilou/g, 'Nilou');
+  var FixCharacter = FixCharacter.replace(/nahida/g, 'Nahida');
+  var FixCharacter = FixCharacter.replace(/layla/g, 'Layla');
+  var FixCharacter = FixCharacter.replace(/wanderer/g, 'Wanderer');
+  var FixCharacter = FixCharacter.replace(/faruzan/g, 'Faruzan');
+  var FixHideCharacter = localStorage.getItem("HideCharacter");
+  var FixHideCharacter = FixHideCharacter.replace(/collei/g, 'Collei');
+  var FixHideCharacter = FixHideCharacter.replace(/tighnari/g, 'Tighnari');
+  var FixHideCharacter = FixHideCharacter.replace(/dori/g, 'Dori');
+  var FixHideCharacter = FixHideCharacter.replace(/candace/g, 'Candace');
+  var FixHideCharacter = FixHideCharacter.replace(/cyno/g, 'Cyno');
+  var FixHideCharacter = FixHideCharacter.replace(/nilou/g, 'Nilou');
+  var FixHideCharacter = FixHideCharacter.replace(/nahida/g, 'Nahida');
+  var FixHideCharacter = FixHideCharacter.replace(/layla/g, 'Layla');
+  var FixHideCharacter = FixHideCharacter.replace(/wanderer/g, 'Wanderer');
+  var FixHideCharacter = FixHideCharacter.replace(/faruzan/g, 'Faruzan');
+  localStorage.setItem("Character", FixCharacter);
+  localStorage.setItem("HideCharacter", FixHideCharacter);
+}
+
 // ページ読み込み時の処理
 function OpenScript() {
   function addGlobalStyle(css) {
@@ -2893,8 +2973,9 @@ function OpenScript() {
     alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
+      Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20220929 to ver." + Version + "）\n・ナヒーダ、レイラの実装に対応\n・傀儡の糸、無心の淵鏡、空行の虚鈴の実装に対応\n・滅諍の蔓の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20221102 to ver." + Version + "）\n・アルハイゼン、ヨォーヨの実装に対応\n・蒼礫蕊羽の実装に対応\n・砂脂蛹の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
