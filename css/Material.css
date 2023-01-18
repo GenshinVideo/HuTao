@@ -125,7 +125,12 @@ video {
   min-height: 100vh;
   position: absolute;
 }
-@media (aspect-ratio: 16/9), (min-aspect-ratio: 16/9) {
+@media (aspect-ratio: 16/9) {
+  video {
+    top: 0% !important;
+  }
+}
+@media (min-aspect-ratio: 16/9) {
   video {
     width: 100%;
     top: 50%;

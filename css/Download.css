@@ -1,0 +1,78 @@
+html, body {
+  overflow: hidden;
+  cursor: default;
+  height: 100%;
+}
+
+.BackGroundMovie{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+  overflow: hidden;
+}
+.BackGroundMovie::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+/*  background-color: rgba(255, 255, 255, 0.85);
+  ドットフィルター */
+  background-image: radial-gradient(#111 30%, transparent 31%), radial-gradient(#111 30%, transparent 31%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+}
+video {
+  min-width: 100%;
+  min-height: 100vh;
+  position: absolute;
+}
+@media (aspect-ratio: 16/9), (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+table {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-collapse: collapse;
+  width: 100vw;
+  top: 30%;
+  position: relative;
+}
+th#right {
+  text-align: right;
+}
+
+td {
+  text-align: center;
+  text-shadow: 2px 3px 4px #FFF;
+  padding: 2px 0px 2px 0px;
+  height: 30px;
+}
+td.textright {
+  text-align: right;
+  padding-right: 12px;
+}
+td.textleft {
+  text-align: left;
+  padding-left: 12px;
+}
+
+td img.icon {
+  height: 50px;
+}
