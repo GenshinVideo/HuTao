@@ -2907,22 +2907,16 @@ function TML6() {
     if((C_Id.lastIndexOf(C_T1)+C_T1.length===C_Id.length)&&(C_T1.length<=C_Id.length)){
       if (`${Min}` <= "6") {
         eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
-      } else {
-        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, ${Min}])`);
       }
     }
     if((C_Id.lastIndexOf(C_T2)+C_T2.length===C_Id.length)&&(C_T2.length<=C_Id.length)){
       if (`${Min}` <= "6") {
         eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
-      } else {
-        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, ${Min}])`);
       }
     }
     if((C_Id.lastIndexOf(C_T3)+C_T3.length===C_Id.length)&&(C_T3.length<=C_Id.length)){
       if (`${Min}` <= "6") {
         eval(`${C_Id}.noUiSlider.set([${`${Min}`}, "6"])`);
-      } else {
-        eval(`${C_Id}.noUiSlider.set([${`${Min}`}, ${Min}])`);
       }
     }
   });
