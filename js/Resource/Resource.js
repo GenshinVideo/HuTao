@@ -1,4 +1,4 @@
-let requestURL = '../../Resource/package.json';
+let requestURL = '../Resource/package.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
