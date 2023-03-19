@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+
+  <title>Resource Downloader</title>
+
+  <link rel="stylesheet" href="../css/Resource.css">
+
+  <script type="module" src="../js/Resource/initSite.js"></script>
+  <script defer src="../js/Resource/all.js"></script>
+</head>
+
+<body>
+  <div class="BackGroundMovie">
+    <video src="movie.mp4" loop autoplay muted playsinline></video>
+  </div>
+
+  <nav class="navbar" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-item">
+          <strong>Resource Downloader (Rewrote mHY-dl.)</strong>
+        </span>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="mainNavbar">
+        <div class="navbar-start"></div>
+
+        <div class="navbar-end">
+          <div class="is-hidden navbar-item" id="versionbox">
+            <span>Latest version: <strong id="versiontext"></strong></span>
+          </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-dark" id="settingsbutton">
+                <span class="icon is-small">
+                  <i class="fas fa-cog"></i>
+                </span>
+              </a>
+              <a class="button is-hidden is-dark" id="helpbutton">
+                <span class="icon is-small">
+                  <i class="fas fa-question"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal" id="settingsmodal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <h1 class="title">Settings</h1>
+        <hr class="divider">
+        <article class="message is-danger is-hidden urlfailbox">
+          <div class="message-header">
+            <p>Failed to get update data</p>
+          </div>
+          <div class="message-body urlfailtext"></div>
+        </article>
+        <div class="field">
+          <label class="label">Update data URL</label>
+          <div class="control has-icons-left urlcontrol">
+            <input class="input urlinput" type="url" placeholder="https://sdk-...">
+            <span class="icon is-small is-left">
+              <i class="fas fa-link"></i>
+            </span>
+            <span class="icon is-small is-right is-hidden urlerroricon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" class="predlcheckbox">
+              Show pre-downloads, if available
+            </label>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="field">
+          <div class="control">
+            <button class="button is-success savebutton"><strong>Save</strong></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <div class="modal" id="helpmodal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <div class="content"></div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile is-centered" id="progressbar">
+        <div class="column is-9-mobile is-4-tablet is-3-fullhd">
+          <h1 class="title is-4 has-text-centered">Fetching data...</h1>
+          <progress class="progress" max="100">Loading...</progress>
+        </div>
+      </div>
+
+      <div class="block is-hidden" id="maincolumn">
+        <div class="block is-hidden" id="reccolumn">
+          <h1 class="title">The latest and greatest</h1>
+          <h2 class="subtitle">If you want to update from <span id="lastversiontext"></span> or just (re)installed the game.</h2>
+
+          <div class="columns is-desktop is-multiline" id="recboxes"></div>
+        </div>
+        <div class="block mt-6 is-hidden" id="oldcolumn">
+          <h1 class="title">Update from an older version</h1>
+          <h2 class="subtitle">If you took a nice, long break and might have missed an update or two.</h2>
+
+          <div class="columns is-desktop is-multiline" id="oldboxes"></div>
+        </div>
+        <div class="block mt-6" id="othercolumn">
+          <h1 class="title">Old Resource Data</h1>
+          <h2 class="subtitle">If you need past resources for some reason.</h2>
+          <div class="columns is-desktop is-multiline" id="oldboxes" style="user-select: auto;">
+            <div class="column is-full">
+              <div class="box">
+                <p class="title is-4">Old Data</p>
+                <select id="SelectBoxEins"></select>
+                <select id="SelectBoxZwei"></select>
+                <a id="SelectBoxDrei" href="" class="button">
+                  <span class="icon">
+                    <svg class="svg-inline--fa fa-download fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
+                  </span>
+                  <strong>Download</strong>
+                </a>
+                <p class="mt-3 is-family-monospace" id="urlbox">URL: </p>
+                <p class="mt-3 is-family-monospace" id="md5box">MD5: </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="../js/Resource/Resource.js"></script>
+</body>
+
+</html>
