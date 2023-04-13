@@ -100,6 +100,14 @@
 			"v3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230109135018_10QhExKHwAoa4ecr/GenshinImpact_3.4.0.zip",
 				"md5": "d431470c80f8f12c1381faa7cdc77a53"
+			},
+			"v3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230220120928_iIYV9krGiWL06eeB/GenshinImpact_3.5.0.zip",
+				"md5": "1e6334da5268caf47e17d2fa12e9bef1"
+			},
+			"v3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230331200258_xR748JQdRJ19pQH0/GenshinImpact_3.6.0.zip",
+				"md5": "2686795437c83749e975333216d99edf"
 			}
 		}
 	},
@@ -176,6 +184,14 @@
 			"v3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230109135018_10QhExKHwAoa4ecr/Audio_Chinese_3.4.0.zip",
 				"md5": "df84f79e3fdb63a2516177ef80676965"
+			},
+			"v3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230220120928_iIYV9krGiWL06eeB/Audio_Chinese_3.5.0.zip",
+				"md5": "18f4adccdbffb7d19ff4f077250571"
+			},
+			"v3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230331200258_xR748JQdRJ19pQH0/Audio_Chinese_3.6.0.zip",
+				"md5": "69a082ebb35929d1392318c2c4ec045c"
 			}
 		}
 	},
@@ -252,6 +268,14 @@
 			"v3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230109135018_10QhExKHwAoa4ecr/Audio_English(US)_3.4.0.zip",
 				"md5": "f37bc4ab004b79cfa50ee425cec06f47"
+			},
+			"v3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230220120928_iIYV9krGiWL06eeB/Audio_English(US)_3.5.0.zip",
+				"md5": "04087a83c0a9d588bd4dff665a2aba2"
+			},
+			"v3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230331200258_xR748JQdRJ19pQH0/Audio_English(US)_3.6.0.zip",
+				"md5": "91efd98ed1eb3b39ab93588789d402da"
 			}
 		}
 	},
@@ -328,6 +352,14 @@
 			"v3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230109135018_10QhExKHwAoa4ecr/Audio_Japanese_3.4.0.zip",
 				"md5": "49d4d1abf77180d82039d1206f165045"
+			},
+			"v3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230220120928_iIYV9krGiWL06eeB/Audio_Japanese_3.5.0.zip",
+				"md5": "8b640026a782cba817e59a196a6a747"
+			},
+			"v3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230331200258_xR748JQdRJ19pQH0/Audio_Japanese_3.6.0.zip",
+				"md5": "565cb3fddbe213c49308749b44e9a562"
 			}
 		}
 	},
@@ -404,6 +436,14 @@
 			"v3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230109135018_10QhExKHwAoa4ecr/Audio_Korean_3.4.0.zip",
 				"md5": "ea9e18025ab6f9240e7683933a38098f"
+			},
+			"v3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230220120928_iIYV9krGiWL06eeB/Audio_Korean_3.5.0.zip",
+				"md5": "947fc7b6dac078cc863223827e5c5f0"
+			},
+			"v3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20230331200258_xR748JQdRJ19pQH0/Audio_Korean_3.6.0.zip",
+				"md5": "7fc1859050f138fb13fe4eb6e2fb8573"
 			}
 		}
 	},
@@ -604,6 +644,22 @@
 			"v3_3_0to3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_3.3.0_3.4.0_hdiff_IxKGMXhCLzZAJqUm.zip",
 				"md5": "D88BF205205500A02D677A668ED63DC4"
+			},
+			"v3_3_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_3.3.0_3.5.0_hdiff_jFk1USEdyHepP3uG.zip",
+				"md5": "DA20792BCFCF890583F66EFBC5A6B5E4"
+			},
+			"v3_4_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_3.4.0_3.5.0_hdiff_rXYAZvelstu54E2c.zip",
+				"md5": "50D65CEF9F0EC192725876B7EB2F8650"
+			},
+			"v3_4_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_3.4.0_3.6.0_hdiff_t30d4K7DUnwNcmja.zip",
+				"md5": "69609F7A420B46EBE8DDD256625BED63"
+			},
+			"v3_5_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_3.5.0_3.6.0_hdiff_70c4ojbL1mfTwY3Q.zip",
+				"md5": "CE07ABFA216757B35DA43401868DC65E"
 			}
 		}
 	},
@@ -760,7 +816,24 @@
 			"v3_3_0to3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_3.3.0_3.4.0_hdiff_CwIhpT8VfBUqlSEg.zip",
 				"md5": "AF15A10270F7D9F778240FF00BEA9249"
+			},
+			"v3_3_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_3.3.0_3.5.0_hdiff_DuVQLAq1nkay7Yo4.zip",
+				"md5": "296710D5DEAF87617932F8A609B1EA99"
+			},
+			"v3_4_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_3.4.0_3.5.0_hdiff_9T2Ac7RCKs0651G8.zip",
+				"md5": "9CD6F32E5541ADF1E77A007A681EB24"
+			},
+			"v3_4_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_3.4.0_3.6.0_hdiff_wsQFNvrIdV4qLKCG.zip",
+				"md5": "62780D82AF053E46483B2F7B3F3148C0"
+			},
+			"v3_5_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_3.5.0_3.6.0_hdiff_hJrb6Zzsq0m7GQHK.zip",
+				"md5": "4420603967AAE67451050B5A61C806"
 			}
+
 		}
 	},
 	"VoicePackDiff_English": {
@@ -916,6 +989,22 @@
 			"v3_3_0to3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_3.3.0_3.4.0_hdiff_kXarZuSHnoEYzWiq.zip",
 				"md5": "E2AA4A509F072D82A272FF7638CF7A4B"
+			},
+			"v3_3_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_3.3.0_3.5.0_hdiff_ep1y7wDFiLnjb5rW.zip",
+				"md5": "41A4A77AF6FC62FA0884CB3DF3BAF"
+			},
+			"v3_4_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_3.4.0_3.5.0_hdiff_bCHgs9NcSPI54hK3.zip",
+				"md5": "9490781F902796999B7D290CDC6C6038"
+			},
+			"v3_4_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_3.4.0_3.6.0_hdiff_gmhB8dVWQJRKlyLj.zip",
+				"md5": "146CCE1F94FF0499E582666C066F59AD"
+			},
+			"v3_5_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_3.5.0_3.6.0_hdiff_xS3HAI51ksDQOl8c.zip",
+				"md5": "500FA465149A7DCC6A7A72B859B82302"
 			}
 		}
 	},
@@ -1072,6 +1161,22 @@
 			"v3_3_0to3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_3.3.0_3.4.0_hdiff_4RnJjQLArch3yGOt.zip",
 				"md5": "07E70377F6CAD84996D2A452B2F8D7D7"
+			},
+			"v3_3_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_3.3.0_3.5.0_hdiff_lcO03yi4gv5jhmwG.zip",
+				"md5": "78B460ABDB60A27290384AF109083327"
+			},
+			"v3_4_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_3.4.0_3.5.0_hdiff_7GSo18Z9C2rOiDjp.zip",
+				"md5": "7452317BF85BDA6764AE6006D75950F2"
+			},
+			"v3_4_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_3.4.0_3.6.0_hdiff_akC64FrYKsS3ow5M.zip",
+				"md5": "2BD9BCDAE4185766F3A27AC5E206D9"
+			},
+			"v3_5_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_3.5.0_3.6.0_hdiff_6ewT53aBmuNbdPJE.zip",
+				"md5": "432385E20612038143E664AE6717E16D"
 			}
 		}
 	},
@@ -1228,6 +1333,22 @@
 			"v3_3_0to3_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_3.3.0_3.4.0_hdiff_j3fribpBSCJaMUnE.zip",
 				"md5": "0936886658D10161D8D45FF021DFB90A"
+			},
+			"v3_3_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_3.3.0_3.5.0_hdiff_YVM8xuZhWgNnjHAI.zip",
+				"md5": "7C039CCEABD052E9A29E1C69A5F7CB53"
+			},
+			"v3_4_0to3_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_3.4.0_3.5.0_hdiff_CvwZI7isgHbkAanc.zip",
+				"md5": "0B3129DDBF83F8735231966BE080723A"
+			},
+			"v3_4_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_3.4.0_3.6.0_hdiff_bf2wae6FH7npkOgt.zip",
+				"md5": "9C5A77C7CB77DA697764B5E57EE5D69C"
+			},
+			"v3_5_0to3_6_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_3.5.0_3.6.0_hdiff_GDlPHvUgyXQwje9C.zip",
+				"md5": "30E21B012374F55FD5D123A2840A2E04"
 			}
 		}
 	},
@@ -1264,6 +1385,10 @@
 			"v2_24_1_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/update_20230215211748_a8c6f6791Tz6ckWd.zip",
 				"md5": "37CE2049798F2392744FA767332DD4B0"
+			},
+			"v2_25_2_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/update_20230330171420_ae59c98cYjN2yGJt.zip",
+				"md5": "46393B4803B5EB830BF8F88A882A465A"
 			}
 		}
 	}
