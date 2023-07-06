@@ -1,4 +1,4 @@
-let requestURL = '../Resource/package.json';
+let requestURL = '../../Resource/package.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -95,4 +95,21 @@ function LoadScript() {
   SelectBox2.addEventListener('change', (e) => {
     ChoiceVersion(e.target.value);
   })
+}
+
+function LoadWait() {
+  if ( !document.querySelectorAll('a[class="button is-success"]')[1] ) {
+    setTimeout( LoadWait, 100 );
+    return;
+  } else {
+    FixURL();
+  }
+}
+LoadWait();
+function FixURL() {
+  if (document.querySelectorAll('a[class="button is-success"]')[1].href == location.href) {
+    var FixVersion = document.querySelector('strong[id="versiontext"]').textContent;
+    var FixDlLink = document.querySelectorAll('a[class="button is-success is-outlined"]')[4].href.replace(/(.*?pc_zip\/[^\/]+)\/.*$/g, "$1/GenshinImpact_" + FixVersion + ".zip")
+    document.querySelectorAll('a[class="button is-success"]')[1].href = FixDlLink;
+  }
 }
