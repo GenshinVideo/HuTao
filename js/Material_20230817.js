@@ -1,4 +1,4 @@
-var Version = "20230817";
+var Version = "20230413";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,46 +22,10 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
-// フレミネ
-  S_Id =          "Freminet";
-  S_JpName =      "フレミネ";
-  S_CharaImg =    "Original/Character2/freminet_085_gacha_splash.webp";
-  S_Element =     "Shivada_Jade";
-  S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_Local =       "Rainbow_Rose";
-  S_Common =      "Xenochromatic_Crystal";
-  S_Talent1 =     "Justice";
-  S_Talent2 =     "Worldspan_Fern";
-  Checkmate();
-
-// リネット
-  S_Id =          "Linette";
-  S_JpName =      "リネット";
-  S_CharaImg =    "Original/Character/Lynette_Portrait.webp";
-  S_Element =     "Vayuda_Turquoise";
-  S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  S_Local =       "Lumidouce_Bell";
-  S_Common =      "Artificed_Dynamic_Gear";
-  S_Talent1 =     "Order";
-  S_Talent2 =     "Everamber";
-  Checkmate();
-
-// リネ
-  S_Id =          "Liney";
-  S_JpName =      "リネ";
-  S_CharaImg =    "Original/Character/Lyney_Portrait.webp";
-  S_Element =     "Agnidus_Agate";
-  S_Boss =        "Emperors_Resolution";
-  S_Local =       "Romaritime_Flower";
-  S_Common =      "Lieutenants_Insignia";
-  S_Talent1 =     "Equity";
-  S_Talent2 =     "Primordial_Greenbloom";
-  Checkmate();
-
 // 綺良々
   S_Id =          "Kirara";
   S_JpName =      "綺良々";
-  S_CharaImg =    "Original/Character/Kirara_Portrait.webp";
+  S_CharaImg =    "Original/Character2/kirara_061_gacha_splash.webp";
   S_Element =     "Nagadus_Emerald";
   S_Boss =        "Evergloom_Ring";
   S_Local =       "Amakumo_Fruit";
@@ -73,7 +37,7 @@ function SetCharacterList() {
 // カーヴェ
   S_Id =          "Kaveh";
   S_JpName =      "カーヴェ";
-  S_CharaImg =    "Original/Character/Kaveh_Portrait.webp";
+  S_CharaImg =    "Original/Character2/kaveh_081_gacha_splash.webp";
   S_Element =     "Nagadus_Emerald";
   S_Boss =        "Quelled_Creeper";
   S_Local =       "Mourning_Flower";
@@ -85,7 +49,7 @@ function SetCharacterList() {
 // 白朮
   S_Id =          "Baizhu";
   S_JpName =      "白朮";
-  S_CharaImg =    "Original/Character/Baizhu_Portrait.webp";
+  S_CharaImg =    "Original/Character2/baizhuer_082_gacha_splash.webp";
   S_Element =     "Nagadus_Emerald";
   S_Boss =        "Evergloom_Ring";
   S_Local =       "Violetgrass";
@@ -1159,11 +1123,6 @@ function SetInventoryList() {
   CalEle = document.querySelector('tr[id="I_Inventory"]');
 // Common Material
 function SetInventoryCM() {
-// Common Material #4
-  S_ItemName_1 =    "Meshing_Gear";
-  S_ItemName_2 =    "Mechanical_Spur_Gear";
-  S_ItemName_3 =    "Artificed_Dynamic_Gear";
-  InventorySet3();
 // Common Material #3
   S_ItemName_1 =    "Spectral_Nucleus";
   S_ItemName_2 =    "Spectral_Heart";
@@ -1174,10 +1133,7 @@ function SetInventoryCM() {
   S_ItemName_7 =    "Rich_Red_Brocade";
   S_ItemName_8 =    "Trimmed_Red_Silk";
   S_ItemName_9 =    "Faded_Red_Satin";
-  S_ItemName_10 =   "Transoceanic_Pearl";
-  S_ItemName_11 =   "Transoceanic_Chunk";
-  S_ItemName_12 =   "Xenochromatic_Crystal";
-  InventorySet();
+  InventorySet9();
 // Common Material #2
   S_ItemName_1 =    "Lieutenants_Insignia";
   S_ItemName_2 =    "Sergeants_Insignia";
@@ -1240,10 +1196,6 @@ function SetInventoryTLUM2() {
 }
 // Elemental Stones
 function SetInventoryES() {
-// Elemental Stones #3
-  S_ItemName_1 =    "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_ItemName_2 =    "Emperors_Resolution";
-  InventorySet2();
 // Elemental Stones #2
   S_ItemName_1 =    "Storm_Beads";
   S_ItemName_2 =    "Riftborn_Regalia";
@@ -1256,8 +1208,7 @@ function SetInventoryES() {
   S_ItemName_9 =    "Quelled_Creeper";
   S_ItemName_10 =   "Pseudo-Stamens";
   S_ItemName_11 =   "Evergloom_Ring";
-  S_ItemName_12 =   "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  InventorySet();
+  InventorySet11();
 // Elemental Stones #1
   S_ItemName_1 =    "Hurricane_Seed";
   S_ItemName_2 =    "Lightning_Prism";
@@ -1313,17 +1264,8 @@ function SetInventoryJewels() {
 // Talent Level-Up Material
 function SetInventoryTLUM() {
 // Talent Level-Up Material #4
-  S_ItemName_1 =    "Teachings_of_Equity";
-  S_ItemName_2 =    "Guide_to_Equity";
-  S_ItemName_3 =    "Philosophies_of_Equity";
-  S_ItemName_4 =    "Teachings_of_Justice";
-  S_ItemName_5 =    "Guide_to_Justice";
-  S_ItemName_6 =    "Philosophies_of_Justice";
-  S_ItemName_7 =    "Teachings_of_Order";
-  S_ItemName_8 =    "Guide_to_Order";
-  S_ItemName_9 =    "Philosophies_of_Order";
-  S_ItemName_10 =   "Crown_of_Insight";
-  InventorySet10();
+  S_ItemName_1 =    "Crown_of_Insight";
+  InventorySet1();
 // Talent Level-Up Material #3
   S_ItemName_1 =    "Philosophies_of_Light";
   S_ItemName_2 =    "Guide_to_Light";
@@ -1369,9 +1311,6 @@ function SetInventoryTLUM() {
 }
 // Local Material
 function SetInventoryLM() {
-// Local Material #4
-  S_ItemName_1 =    "Rainbow_Rose";
-  InventorySet1();
 // Local Material #3
   S_ItemName_1 =    "Fluorescent_Fungus";
   S_ItemName_2 =    "Rukkhashava_Mushrooms";
@@ -1383,9 +1322,7 @@ function SetInventoryLM() {
   S_ItemName_8 =    "Mourning_Flower";
   S_ItemName_9 =    "Trishiraite";
   S_ItemName_10 =   "Scarab";
-  S_ItemName_11 =   "Romaritime_Flower";
-  S_ItemName_12 =   "Lumidouce_Bell";
-  InventorySet();
+  InventorySet10();
 // Local Material #2
   S_ItemName_1 =    "Qingxin";
   S_ItemName_2 =    "Starconch";
@@ -1502,24 +1439,6 @@ function InventorySet1() {
         <td width="8%" colspan="1">\
           <div class="input-field"><i class="prefix">\
             <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet2() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
           </div>\
         </td>\
       </tr>\
@@ -1956,16 +1875,16 @@ function SetCalculatorES() {
   S_ItemUnit_1 =    " 個"
   S_ItemName_2 =    "Evergloom_Ring";
   S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Emperors_Resolution";
-  S_ItemUnit_5 =    " 個"
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    ""
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    ""
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    ""
   S_ItemName_6 =    "";
   S_ItemUnit_6 =    ""
   S_ItemName_7 =    "";
-  S_ItemUnit_7 =    ""
+  S_ItemUnit_7 =    " "
   CalculatorSet2();
 // Elemental Stones #3
   S_ItemName_1 =    "Dragonheirs_False_Fin";
@@ -2033,12 +1952,12 @@ function SetCalculatorCM() {
   S_ItemName_4 =    "Rich_Red_Brocade";
   S_ItemIDs__4 =    "Faded_Red_Satin Trimmed_Red_Silk Rich_Red_Brocade";
   S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "Xenochromatic_Crystal";
-  S_ItemIDs__5 =    "Transoceanic_Pearl Transoceanic_Chunk Xenochromatic_Crystal";
-  S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Artificed_Dynamic_Gear";
-  S_ItemIDs__6 =    "Meshing_Gear Mechanical_Spur_Gear Artificed_Dynamic_Gear";
-  S_ItemUnit_6 =    " 点";
+  S_ItemName_5 =    "";
+  S_ItemIDs__5 =    "";
+  S_ItemUnit_5 =    "";
+  S_ItemName_6 =    "";
+  S_ItemIDs__6 =    "";
+  S_ItemUnit_6 =    "";
   S_ItemName_7 =    "";
   S_ItemIDs__7 =    "";
   S_ItemUnit_7 =    "";
@@ -2072,22 +1991,6 @@ function SetCalculatorLM() {
   CalEle = document.querySelector('th[id="C_Local_Material"]').parentElement;
   S_ItemType =   "Local_Material";
 // Local Material #5
-  S_ItemName_1 =    "Lumidouce_Bell";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Rainbow_Rose";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet2();
-// Local Material #5
   S_ItemName_1 =    "Kalpalata_Lotus";
   S_ItemUnit_1 =    " 個";
   S_ItemName_2 =    "Redcrest";
@@ -2100,8 +2003,8 @@ function SetCalculatorLM() {
   S_ItemUnit_5 =    " 個";
   S_ItemName_6 =    "Scarab";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Romaritime_Flower";
-  S_ItemUnit_7 =    " 個";
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    "";
   CalculatorSet2();
 // Local Material #4
   S_ItemName_1 =    "Sea_Ganoderma";
@@ -2172,22 +2075,6 @@ function SetCalculatorLM() {
 function SetCalculatorTLUM() {
   CalEle = document.querySelector('th[id="C_Talent_Level_Up_Material"]').parentElement;
   S_ItemType =   "Talent_Level_Up_Material";
-// Talent Level-Up Material #3
-  S_ItemName_1 =    "Order";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet3();
 // Talent Level-Up Material #2
   S_ItemName_1 =    "Elegance";
   S_ItemUnit_1 =    " 点";
@@ -2199,10 +2086,10 @@ function SetCalculatorTLUM() {
   S_ItemUnit_4 =    " 点";
   S_ItemName_5 =    "Praxis";
   S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Equity";
-  S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Justice";
-  S_ItemUnit_7 =    " 点";
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    "";
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    "";
   CalculatorSet3();
 // Talent Level-Up Material #1
   S_ItemName_1 =    "Freedom";
@@ -2503,21 +2390,13 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
-<b>2023/08/17</b><BR>\
-更新。<BR>\
-・リネ、リネット、フレミネの実装に対応<BR>\
-・新規特産品、天賦素材、強化素材の実装に対応<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
 <b>2023/04/13</b><BR>\
 更新。<BR>\
 ・綺良々の実装に対応<BR>\
 ・新規特産品、天賦素材、強化素材の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR><BR>\
 <b>2023/03/19</b><BR>\
 更新。<BR>\
@@ -3262,7 +3141,7 @@ function OpenScript() {
     if (!(localStorage.getItem("_Version") === Version)) {
       Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20230413 to ver." + Version + "）\n・リネ、リネット、フレミネの実装に対応\n・新規特産品、天賦素材、強化素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20230319 to ver." + Version + "）\n・綺良々の実装に対応\n・新規特産品、天賦素材、強化素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
