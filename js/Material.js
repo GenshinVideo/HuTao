@@ -1160,9 +1160,9 @@ function SetInventoryList() {
 // Common Material
 function SetInventoryCM() {
 // Common Material #4
-  S_ItemName_1 =    "Meshing_Gear";
+  S_ItemName_1 =    "Artificed_Dynamic_Gear";
   S_ItemName_2 =    "Mechanical_Spur_Gear";
-  S_ItemName_3 =    "Artificed_Dynamic_Gear";
+  S_ItemName_3 =    "Meshing_Gear";
   InventorySet3();
 // Common Material #3
   S_ItemName_1 =    "Spectral_Nucleus";
@@ -1174,9 +1174,9 @@ function SetInventoryCM() {
   S_ItemName_7 =    "Rich_Red_Brocade";
   S_ItemName_8 =    "Trimmed_Red_Silk";
   S_ItemName_9 =    "Faded_Red_Satin";
-  S_ItemName_10 =   "Transoceanic_Pearl";
+  S_ItemName_10 =   "Xenochromatic_Crystal";
   S_ItemName_11 =   "Transoceanic_Chunk";
-  S_ItemName_12 =   "Xenochromatic_Crystal";
+  S_ItemName_12 =   "Transoceanic_Pearl";
   InventorySet();
 // Common Material #2
   S_ItemName_1 =    "Lieutenants_Insignia";
@@ -1313,15 +1313,15 @@ function SetInventoryJewels() {
 // Talent Level-Up Material
 function SetInventoryTLUM() {
 // Talent Level-Up Material #4
-  S_ItemName_1 =    "Teachings_of_Equity";
+  S_ItemName_1 =    "Philosophies_of_Equity";
   S_ItemName_2 =    "Guide_to_Equity";
-  S_ItemName_3 =    "Philosophies_of_Equity";
-  S_ItemName_4 =    "Teachings_of_Justice";
+  S_ItemName_3 =    "Teachings_of_Equity";
+  S_ItemName_4 =    "Philosophies_of_Justice";
   S_ItemName_5 =    "Guide_to_Justice";
-  S_ItemName_6 =    "Philosophies_of_Justice";
-  S_ItemName_7 =    "Teachings_of_Order";
+  S_ItemName_6 =    "Teachings_of_Justice";
+  S_ItemName_7 =    "Philosophies_of_Order";
   S_ItemName_8 =    "Guide_to_Order";
-  S_ItemName_9 =    "Philosophies_of_Order";
+  S_ItemName_9 =    "Teachings_of_Order";
   S_ItemName_10 =   "Crown_of_Insight";
   InventorySet10();
 // Talent Level-Up Material #3
