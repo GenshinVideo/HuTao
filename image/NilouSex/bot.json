@@ -1,4 +1,17 @@
 {
-  "name": "ニィロウ",
-  "avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/image/NilouSex/avatar.webp"
+	"data": [
+		{
+			"count": 2
+		}
+	],
+	"list": [
+		{
+			"name": "ニィロウ1",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/image/NilouSex/avatar.webp"
+		},
+		{
+			"name": "ニィロウ2",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/image/NilouSex/avatar.webp"
+		}
+	]
 }
