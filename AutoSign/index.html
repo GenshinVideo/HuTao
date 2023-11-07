@@ -14,7 +14,8 @@
     <video src="movieO.mp4" loop autoplay muted playsinline></video>
   </div>
   <div class="Text">
-    Google Apps Script(GAS)を使用して、原神やスターレイルのログインボーナスを自動的に取得させる<BR><BR>
+    <B>Google Apps Script(GAS)を使用して、原神やスターレイルのログインボーナスを自動的に取得させる</B><BR>
+    <font color="RED">※使用に際して如何なる問題が発生した場合であっても、サイト管理人は一切の責任を負いません。</font><BR><BR>
     <B>概要</B><BR>
     1. 毎日自動でログインボーナスを取得します。<BR>
     <img src="image/explanation/GenshinImpact.png" width="50%"><img src="image/explanation/HonkaiStarRail.png" width="50%"><BR><BR>
@@ -187,11 +188,21 @@ function postWebhook(data) {
 
   UrlFetchApp.fetch(discordWebhook, options);
 }</pre><BR>
-  2. 『<a href="https://www.hoyolab.com/home" rel="nofollow">HoYoLAB</a>』にてログインが行われている状態で、下記JavaScriptを実行します。<BR>
-  　※実行した時点でクリップボードにアカウントのCookie情報が保存されます。
+  2. ［GAS］アカウント情報を書き換えます。（青文字を参考にして下さい。）
+  <pre class="prettyprint lang-css linenums:">const profiles = [
+  { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
+    genshin: true, /** ログインボーナスを取得して欲しい場合は『true』に、そうでない場合は『false』と書き換えます。 **/
+    honkai_star_rail: false,
+    honkai_3: false,
+    token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" }  /** アカウントのCookie情報に書き換えて下さい。 **/
+];</pre><BR>
+  　※『アカウントのCookie情報』は以下の手順から取得することが可能です。<BR>
+  　　『<a href="https://www.hoyolab.com/home" rel="nofollow">HoYoLAB</a>』にてログインが行われている状態で、下記JavaScriptをコンソールから実行することで、アカウントのCookie情報がクリップボードに保存されます。<BR>
+  　　コンソールはショートカットから開くことが可能です。（例：Chrome［Ctrl + Shift + I］）<BR>
+  　※エラーが発生する場合は、再ログインやブラウザの変更を試みて下さい。それでも動作しない場合はCookie-Editorなどのアドオンを利用して必要なCookie情報を取得して下さい。
   <pre class="prettyprint lang-css linenums:">function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
+  var value = `; ${document.cookie}`;
+  var parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 let token = 'Error';
@@ -201,17 +212,10 @@ if (document.cookie.includes('ltoken=')) {
    token = `ltuid_v2=${getCookie('ltuid_v2')}; ltoken_v2=${getCookie('ltoken_v2')};`;
 }
 copy(token);</pre>
-  スマートフォンなど、コンソールからJavaScriptを実行出来ない場合は『<a href='javascript:var value=document.cookie;var token="Error";if(document.cookie.includes("ltoken=")){var ltuid=value.replace(/^.*?(ltuid=[^;]*?);.*?$/,"$1;");var ltoken=value.replace(/^.*?(ltoken=[^;]*?);.*?$/,"$1;");var token=ltuid+" "+ltoken;}else if(document.cookie.includes("ltoken_v2=")){var ltuid_v2=value.replace(/^.*?(ltuid_v2=[^;]*?);.*?$/,"$1;");var ltoken_v2=value.replace(/^.*?(ltoken_v2=[^;]*?);.*?$/,"$1;");var token=ltuid_v2+" "+ltoken_v2;}prompt("%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AECookie%E6%83%85%E5%A0%B1",token);'>ブックマークレット</a>』を利用して下さい。<BR>
+  　スマートフォンなど、コンソールからJavaScriptを実行出来ない場合は『<a href='javascript:var value=document.cookie;var token="Error";if(document.cookie.includes("ltoken=")){var ltuid=value.replace(/^.*?(ltuid=[^;]*?);.*?$/,"$1;");var ltoken=value.replace(/^.*?(ltoken=[^;]*?);.*?$/,"$1;");var token=ltuid+" "+ltoken;}else if(document.cookie.includes("ltoken_v2=")){var ltuid_v2=value.replace(/^.*?(ltuid_v2=[^;]*?);.*?$/,"$1;");var ltoken_v2=value.replace(/^.*?(ltoken_v2=[^;]*?);.*?$/,"$1;");var token=ltuid_v2+" "+ltoken_v2;}prompt("%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AECookie%E6%83%85%E5%A0%B1",token);'>ブックマークレット</a>』を利用して下さい。<BR>
+  　※ブックマークレットとは、リンクをブックマークし、該当ページでそのブックマークを開くことでJavaScriptが実行されるというものです。<BR>
   <BR>
-  3. アカウント情報を書き換えます。（青文字を参考にして下さい。）
-  <pre class="prettyprint lang-css linenums:">const profiles = [
-  { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
-    genshin: true, /** ログインボーナスを取得して欲しい場合は『true』に、そうでない場合は『false』と書き換えます。 **/
-    honkai_star_rail: false,
-    honkai_3: false,
-    token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" }  /** [2]で取得したアカウントのCookie情報に書き換えて下さい。 **/
-];</pre><BR>
-  アカウントが複数ある場合は、行を増やし同じ作業を行って下さい。
+  　アカウントが複数ある場合は、行を増やし同じ作業を行って下さい。
   <pre class="prettyprint lang-css linenums:">const profiles = [
   { accountName: "アカウント名",
     genshin: true,
@@ -224,30 +228,31 @@ copy(token);</pre>
     honkai_3: false,
     token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" }
 ];</pre><BR>
-  4. Discordの通知設定を書き換えます。（青文字を参考にして下さい。）
-  <pre class="prettyprint lang-css linenums:">const discord_notify = true; /** Discordに通知を送信する場合は『true』を、そうでない場合は『false』と書き換えます。 **/
+  4. ［GAS］Discordの通知設定を書き換えます。（青文字を参考にして下さい。）
+  <pre class="prettyprint lang-css linenums:9">const discord_notify = true; /** Discordに通知を送信する場合は『true』を、そうでない場合は『false』と書き換えます。 **/
 const discord_silent = false; /** 通知を行う際に、通知音を鳴らさない場合は『true』を、そうでない場合は『false』と書き換えます。 **/
 const myDiscordID = "000000000"; /** 通知を行う際に、自身にメンションする場合は『ユーザーID』を、そうでない場合は『空（""）』に書き換えます。 **/
 const discordWebhook = "https://discord.com/api/webhooks/000000000/OOOOOOOOO"; /** 通知を行う際に、メッセージを送信するテキストチャンネルのウェブフックURLに書き換えて下さい。 **/</pre>
-  ※【ユーザーID】の取得方法<BR>
-  　『設定』＞『詳細設定』＞『開発者モード』をONにした後、設定を閉じ、左下の自身のアイコンをクリックし、『ユーザーIDをコピー』を選択<BR>
-  ※【テキストチャンネルのウェブフックURL】の取得方法<BR>
-  　送信させたいテキストチャンネルを右クリックし『チャンネルの編集』＞『連携サービス』＞『ウェブフックを作成』＞『Spidey Bot』＞『ウェブフックURLをコピー』を選択<BR>
-  　※スマホアプリからはウェブフックの作成が行えませんので、ブラウザからDiscordを開いて作成します。<BR>
+  　※『ユーザーID』と『ウェブフックURL』はDiscordから取得することが可能です。<BR>
+  　・ユーザーID<BR>
+  　　<font color="#00FFFF">設定</font>≫<font color="#00FFFF">詳細設定</font>≫<font color="#00FFFF">開発者モード</font>をONにした後、設定を閉じ、左下の自身のアイコンをクリックし、<font color="#00FFFF">ユーザーIDをコピー</font>を選択<BR>
+  　・テキストチャンネルのウェブフックURL<BR>
+  　　送信させたいテキストチャンネルを右クリックし<font color="#00FFFF">チャンネルの編集</font>≫<font color="#00FFFF">連携サービス</font>≫<font color="#00FFFF">ウェブフックを作成</font>≫<font color="#00FFFF">＞</font>≫<font color="#00FFFF">ウェブフックURLをコピー</font>を選択<BR>
+  　※スマホアプリからはウェブフックの作成が行えませんので、ブラウザから『<a href="https://discord.com/channels/@me" rel="nofollow">Discord</a>』を開いて作成します。<BR>
   <BR>
-  5. 実行のテストを行います。<BR>
-  　画面上部にある『実行』ボタンをクリックして実際の処理を確認します。<BR>
+  5. ［GAS］実行のテストを行う。<BR>
+  　スクリプトの書き換えが完了したら保存を行い、画面上部にある<font color="#00FFFF">実行</font>ボタンをクリックして実際の処理を確認します。<BR>
   　ログインボーナスの取得或いは、Discordへ通知が送られていれば正常に動作していることを示しています。<BR>
   <BR>
-  6. トリガーを設定する。<BR>
-  　画面左にあるタブから『トリガー』を選択し、『トリガーを追加』をクリック。<BR>
+  6. ［GAS］トリガーを設定する。<BR>
+  　画面左にあるタブから<font color="#00FFFF">トリガー</font>を選択し、<font color="#00FFFF">トリガーを追加</font>をクリック。<BR>
   <blockquote>実行する関数を選択：<font color="#00FFFF">main</font><BR>
   実行するデプロイを選択：<font color="#00FFFF">Head</font><BR>
   イベントのソースを選択：<font color="#00FFFF">時間主導型</font><BR>
   時間ベースのトリガーのタイプを選択：<font color="#00FFFF">日付ベースのタイマー</font><BR>
   時刻を選択：<font color="#00FFFF">午前１時～２時</font><BR>
   エラー通知設定：<font color="#00FFFF">任意</font></blockquote>
-  上記のような設定にして保存することで、毎日指定した時間帯に自動で処理が行われます。
+  　上記のような設定にして保存することで、毎日指定した時間帯に自動で処理が行われます。
 </div>
 </body>
 
