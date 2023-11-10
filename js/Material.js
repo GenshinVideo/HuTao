@@ -1,4 +1,4 @@
-var Version = "20231016";
+var Version = "20231110";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -21,6 +21,54 @@ function SetCharacterList() {
   }
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
+
+// ナヴィア
+  S_Id =          "Navia";
+  S_JpName =      "ナヴィア";
+  S_CharaImg =    "Original/Character2/navia_091_gacha_splash.webp";
+  S_Element =     "Prithiva_Topaz";
+  S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelius";
+  S_Local =       "Spring_of_the_First_Dewdrop";
+  S_Common =      "Xenochromatic_Crystal";
+  S_Talent1 =     "Equity";
+  S_Talent2 =     "Lightless_Silk_String";
+  Checkmate();
+
+// シュヴルーズ
+  S_Id =          "Chevreuse";
+  S_JpName =      "シュヴルーズ";
+  S_CharaImg =    "Original/Character2/chevreuse_090_gacha_splash.webp";
+  S_Element =     "Agnidus_Agate";
+  S_Boss =        "Fontemer_Unihorn";
+  S_Local =       "Lumidouce_Bell";
+  S_Common =      "Artificed_Dynamic_Gear";
+  S_Talent1 =     "Order";
+  S_Talent2 =     "Lightless_Eye_of_the_Maelstrom";
+  Checkmate();
+
+// フリーナ・ドゥ・フォンテーヌ
+  S_Id =          "Furina";
+  S_JpName =      "フリーナ・ドゥ・フォンテーヌ";
+  S_CharaImg =    "Original/Character2/furina_089_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Water_That_Failed_To_Transcend";
+  S_Local =       "Lakelight_Lily";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Justice";
+  S_Talent2 =     "Lightless_Mass";
+  Checkmate();
+
+// シャルロット
+  S_Id =          "Charlotte";
+  S_JpName =      "シャルロット";
+  S_CharaImg =    "Original/Character2/charlotte_088_gacha_splash.webp";
+  S_Element =     "Shivada_Jade";
+  S_Boss =        "Tourbillon_Device";
+  S_Local =       "Beryl_Conch";
+  S_Common =      "Artificed_Dynamic_Gear";
+  S_Talent1 =     "Justice";
+  S_Talent2 =     "Lightless_Silk_String";
+  Checkmate();
 
 // リオセスリ
   S_Id =          "Neuvillette";
@@ -1233,6 +1281,11 @@ function SetInventoryCM() {
 }
 // Talent Level-Up Material 2
 function SetInventoryTLUM2() {
+// Talent Level-Up Material 2 #3
+  S_ItemName_1 =    "Lightless_Silk_String";
+  S_ItemName_2 =    "Lightless_Eye_of_the_Maelstrom";
+  S_ItemName_3 =    "Lightless_Mass";
+  InventorySet3();
 // Talent Level-Up Material 2 #2
   S_ItemName_1 =    "Molten_Moment";
   S_ItemName_2 =    "Hellfire_Butterfly";
@@ -1269,7 +1322,8 @@ function SetInventoryES() {
   S_ItemName_2 =    "Emperors_Resolution";
   S_ItemName_3 =    "Tourbillon_Device";
   S_ItemName_4 =    "Fontemer_Unihorn";
-  InventorySet4();
+  S_ItemName_5 =    "Water_That_Failed_To_Transcend";
+  InventorySet5();
 // Elemental Stones #2
   S_ItemName_1 =    "Storm_Beads";
   S_ItemName_2 =    "Riftborn_Regalia";
@@ -1399,8 +1453,10 @@ function SetInventoryLM() {
   S_ItemName_1 =    "Lumidouce_Bell";
   S_ItemName_2 =    "Rainbow_Rose";
   S_ItemName_3 =    "Lumitoile";
-  S_ItemName_4 =    "Subdetection_Unit";
-  InventorySet4();
+  S_ItemName_4 =    "Lakelight_Lily";
+  S_ItemName_5 =    "Subdetection_Unit";
+  S_ItemName_6 =    "Spring_of_the_First_Dewdrop";
+  InventorySet6();
 // Local Material #3
   S_ItemName_1 =    "Fluorescent_Fungus";
   S_ItemName_2 =    "Rukkhashava_Mushrooms";
@@ -1980,6 +2036,22 @@ function SetCalculatorJewel() {
 function SetCalculatorES() {
   CalEle = document.querySelector('th[id="C_Elemental_Stones"]').parentElement;
   S_ItemType =   "Elemental_Stones";
+// Elemental Stones #5
+  S_ItemName_1 =    "Water_That_Failed_To_Transcend";
+  S_ItemUnit_1 =    " 個"
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    ""
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    ""
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    ""
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    ""
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    ""
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    " "
+  CalculatorSet2();
 // Elemental Stones #4
   S_ItemName_1 =    "Pseudo-Stamens";
   S_ItemUnit_1 =    " 個"
@@ -2109,12 +2181,12 @@ function SetCalculatorLM() {
   S_ItemUnit_3 =    " 個";
   S_ItemName_4 =    "Lumitoile";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Subdetection_Unit";
+  S_ItemName_5 =    "Lakelight_Lily";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
+  S_ItemName_6 =    "Subdetection_Unit";
+  S_ItemUnit_6 =    " 個";
+  S_ItemName_7 =    "Spring_of_the_First_Dewdrop";
+  S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #5
   S_ItemName_1 =    "Kalpalata_Lotus";
@@ -2261,12 +2333,12 @@ function SetCalculatorTLUM2() {
   S_ItemUnit_2 =    " 個";
   S_ItemName_3 =    "Everamber";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
+  S_ItemName_4 =    "Lightless_Silk_String";
+  S_ItemUnit_4 =    " 個";
+  S_ItemName_5 =    "Lightless_Eye_of_the_Maelstrom";
+  S_ItemUnit_5 =    " 個";
+  S_ItemName_6 =    "Lightless_Mass";
+  S_ItemUnit_6 =    " 個";
   S_ItemName_7 =    "";
   S_ItemUnit_7 =    "";
   CalculatorSet2();
@@ -2532,13 +2604,21 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2023/11/10</b><BR>\
+更新。<BR>\
+・フリーナ、シャルロット、ナヴィア、シュヴァルーズの実装に対応<BR>\
+・新規特産品、天賦素材の実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2023/10/16</b><BR>\
 更新。<BR>\
 ・ヌヴィレット、リオセスリの実装に対応<BR>\
 ・新規特産品、天賦素材、強化素材の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題）<BR>\
 <BR><BR>\
 <b>2023/08/17</b><BR>\
 更新。<BR>\
@@ -3299,7 +3379,7 @@ function OpenScript() {
     if (!(localStorage.getItem("_Version") === Version)) {
       Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20230817 to ver." + Version + "）\n・ヌヴィレット、リオセスリの実装に対応\n・新規特産品、天賦素材、強化素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20231016 to ver." + Version + "）\n・フリーナ、シャルロット、ナヴィア、シュヴァルーズの実装に対応\n・新規特産品、天賦素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
