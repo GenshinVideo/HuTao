@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "15"
+			"count": "16"
 		}
 	],
 	"list": [
@@ -36,6 +36,10 @@
 		{
 			"name": "綺良々",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Kirara.png"
+		},
+		{
+			"name": "フリーナ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Furina.png"
 		},
 		{
 			"name": "三月なのか",
