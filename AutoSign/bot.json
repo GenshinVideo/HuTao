@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "16"
+			"count": "17"
 		}
 	],
 	"list": [
@@ -60,6 +60,10 @@
 		{
 			"name": "白露",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Bailu.png"
+		},
+		{
+			"name": "フォフォ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Huohuo.png"
 		},
 		{
 			"name": "猫宮又奈",
