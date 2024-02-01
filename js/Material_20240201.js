@@ -1,4 +1,4 @@
-var Version = "20240201";
+var Version = "20231110";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -21,42 +21,6 @@ function SetCharacterList() {
   }
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
-
-// 千織
-  S_Id =          "Chiori";
-  S_JpName =      "千織";
-  S_CharaImg =    "";
-  S_Element =     "Prithiva_Topaz";
-  S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  S_Local =       "Dendrobium";
-  S_Common =      "Spectral_Nucleus";
-  S_Talent1 =     "Light";
-  S_Talent2 =     "Lightless_Silk_String";
-  Checkmate();
-
-// 閑雲
-  S_Id =          "Xianyun";
-  S_JpName =      "閑雲";
-  S_CharaImg =    "Original/Character2/liuyun_093_gacha_splash.webp";
-  S_Element =     "Vayuda_Turquoise";
-  S_Boss =        "Cloudseam_Scale";
-  S_Local =       "Clearwater_Jade";
-  S_Common =      "Forbidden_Curse_Scroll";
-  S_Talent1 =     "Gold";
-  S_Talent2 =     "Lightless_Eye_of_the_Maelstrom";
-  Checkmate();
-
-// 嘉明
-  S_Id =          "Gaming";
-  S_JpName =      "嘉明";
-  S_CharaImg =    "Original/Character2/gaming_092_gacha_splash.webp";
-  S_Element =     "Agnidus_Agate";
-  S_Boss =        "Emperors_Resolution";
-  S_Local =       "Starconch";
-  S_Common =      "Slime_Concentrate";
-  S_Talent1 =     "Prosperity";
-  S_Talent2 =     "Lightless_Mass";
-  Checkmate();
 
 // ナヴィア
   S_Id =          "Navia";
@@ -334,9 +298,9 @@ function SetCharacterList() {
   S_Talent2 =     "Tears_of_the_Calamitous_God";
   Checkmate();
 
-// ドリー・サングマハベイ
+// ドリー
   S_Id =          "Dori";
-  S_JpName =      "ドリー・サングマハベイ";
+  S_JpName =      "ドリー";
   S_CharaImg =    "Original/Character/Character_Dori_Portrait.webp";
   S_Element =     "Vajrada_Amethyst";
   S_Boss =        "Thunderclap_Fruitcore";
@@ -1359,8 +1323,7 @@ function SetInventoryES() {
   S_ItemName_3 =    "Tourbillon_Device";
   S_ItemName_4 =    "Fontemer_Unihorn";
   S_ItemName_5 =    "Water_That_Failed_To_Transcend";
-  S_ItemName_6 =    "Cloudseam_Scale";
-  InventorySet6();
+  InventorySet5();
 // Elemental Stones #2
   S_ItemName_1 =    "Storm_Beads";
   S_ItemName_2 =    "Riftborn_Regalia";
@@ -1487,41 +1450,40 @@ function SetInventoryTLUM() {
 // Local Material
 function SetInventoryLM() {
 // Local Material #4
-  S_ItemName_1 =   "Romaritime_Flower";
-  S_ItemName_2 =    "Lumidouce_Bell";
-  S_ItemName_3 =    "Rainbow_Rose";
-  S_ItemName_4 =    "Lumitoile";
-  S_ItemName_5 =    "Lakelight_Lily";
-  S_ItemName_6 =    "Subdetection_Unit";
-  S_ItemName_7 =    "Spring_of_the_First_Dewdrop";
-  InventorySet7();
+  S_ItemName_1 =    "Lumidouce_Bell";
+  S_ItemName_2 =    "Rainbow_Rose";
+  S_ItemName_3 =    "Lumitoile";
+  S_ItemName_4 =    "Lakelight_Lily";
+  S_ItemName_5 =    "Subdetection_Unit";
+  S_ItemName_6 =    "Spring_of_the_First_Dewdrop";
+  InventorySet6();
 // Local Material #3
-  S_ItemName_1 =   "Amakumo_Fruit";
-  S_ItemName_2 =    "Fluorescent_Fungus";
-  S_ItemName_3 =    "Rukkhashava_Mushrooms";
-  S_ItemName_4 =    "Padisarah";
-  S_ItemName_5 =    "Nilotpala_Lotus";
-  S_ItemName_6 =    "Kalpalata_Lotus";
-  S_ItemName_7 =    "Redcrest";
-  S_ItemName_8 =    "Sand_Grease_Pupa";
-  S_ItemName_9 =    "Mourning_Flower";
-  S_ItemName_10 =    "Trishiraite";
-  S_ItemName_11 =   "Scarab";
-  S_ItemName_12 =   "Beryl_Conch";
+  S_ItemName_1 =    "Fluorescent_Fungus";
+  S_ItemName_2 =    "Rukkhashava_Mushrooms";
+  S_ItemName_3 =    "Padisarah";
+  S_ItemName_4 =    "Nilotpala_Lotus";
+  S_ItemName_5 =    "Kalpalata_Lotus";
+  S_ItemName_6 =    "Redcrest";
+  S_ItemName_7 =    "Sand_Grease_Pupa";
+  S_ItemName_8 =    "Mourning_Flower";
+  S_ItemName_9 =    "Trishiraite";
+  S_ItemName_10 =   "Scarab";
+  S_ItemName_11 =   "Beryl_Conch";
+  S_ItemName_12 =   "Romaritime_Flower";
   InventorySet();
 // Local Material #2
   S_ItemName_1 =    "Qingxin";
   S_ItemName_2 =    "Starconch";
   S_ItemName_3 =    "Violetgrass";
   S_ItemName_4 =    "Cor_Lapis";
-  S_ItemName_5 =    "Clearwater_Jade";
-  S_ItemName_6 =    "Onikabuto";
-  S_ItemName_7 =    "Sakura_Bloom";
-  S_ItemName_8 =    "Crystal_Marrow";
-  S_ItemName_9 =    "Dendrobium";
-  S_ItemName_10 =    "Naku_Weed";
-  S_ItemName_11 =   "Sea_Ganoderma";
-  S_ItemName_12 =   "Sango_Pearl";
+  S_ItemName_5 =    "Onikabuto";
+  S_ItemName_6 =    "Sakura_Bloom";
+  S_ItemName_7 =    "Crystal_Marrow";
+  S_ItemName_8 =    "Dendrobium";
+  S_ItemName_9 =    "Naku_Weed";
+  S_ItemName_10 =   "Sea_Ganoderma";
+  S_ItemName_11 =   "Sango_Pearl";
+  S_ItemName_12 =   "Amakumo_Fruit";
   InventorySet();
 // Local Material #1
   S_ItemName_1 =    "Wolfhook";
@@ -2077,8 +2039,8 @@ function SetCalculatorES() {
 // Elemental Stones #5
   S_ItemName_1 =    "Water_That_Failed_To_Transcend";
   S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Cloudseam_Scale";
-  S_ItemUnit_2 =    " 個"
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    ""
   S_ItemName_3 =    "";
   S_ItemUnit_3 =    ""
   S_ItemName_4 =    "";
@@ -2210,84 +2172,68 @@ function SetCalculatorCM() {
 function SetCalculatorLM() {
   CalEle = document.querySelector('th[id="C_Local_Material"]').parentElement;
   S_ItemType =   "Local_Material";
-// Local Material #6
-  S_ItemName_1 =    "Spring_of_the_First_Dewdrop";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet2();
 // Local Material #5
-  S_ItemName_1 =    "Beryl_Conch";
+  S_ItemName_1 =    "Romaritime_Flower";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Romaritime_Flower";
+  S_ItemName_2 =    "Lumidouce_Bell";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Lumidouce_Bell";
+  S_ItemName_3 =    "Rainbow_Rose";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Rainbow_Rose";
+  S_ItemName_4 =    "Lumitoile";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Lumitoile";
+  S_ItemName_5 =    "Lakelight_Lily";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Lakelight_Lily";
+  S_ItemName_6 =    "Subdetection_Unit";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Subdetection_Unit";
+  S_ItemName_7 =    "Spring_of_the_First_Dewdrop";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #5
-  S_ItemName_1 =    "Nilotpala_Lotus";
+  S_ItemName_1 =    "Kalpalata_Lotus";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Kalpalata_Lotus";
+  S_ItemName_2 =    "Redcrest";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Redcrest";
+  S_ItemName_3 =    "Sand_Grease_Pupa";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Sand_Grease_Pupa";
+  S_ItemName_4 =    "Mourning_Flower";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Mourning_Flower";
+  S_ItemName_5 =    "Trishiraite";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Trishiraite";
+  S_ItemName_6 =    "Scarab";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Scarab";
+  S_ItemName_7 =    "Beryl_Conch";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #4
-  S_ItemName_1 =    "Naku_Weed";
+  S_ItemName_1 =    "Sea_Ganoderma";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Sea_Ganoderma";
+  S_ItemName_2 =    "Sango_Pearl";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Sango_Pearl";
+  S_ItemName_3 =    "Amakumo_Fruit";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Amakumo_Fruit";
+  S_ItemName_4 =    "Fluorescent_Fungus";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Fluorescent_Fungus";
+  S_ItemName_5 =    "Rukkhashava_Mushrooms";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Rukkhashava_Mushrooms";
+  S_ItemName_6 =    "Padisarah";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Padisarah";
+  S_ItemName_7 =    "Nilotpala_Lotus";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #3
-  S_ItemName_1 =    "Qingxin";
+  S_ItemName_1 =    "Starconch";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Starconch";
+  S_ItemName_2 =    "Violetgrass";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Violetgrass";
+  S_ItemName_3 =    "Onikabuto";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Onikabuto";
+  S_ItemName_4 =    "Sakura_Bloom";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Sakura_Bloom";
+  S_ItemName_5 =    "Crystal_Marrow";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Crystal_Marrow";
+  S_ItemName_6 =    "Dendrobium";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Dendrobium";
+  S_ItemName_7 =    "Naku_Weed";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #2
@@ -2295,15 +2241,15 @@ function SetCalculatorLM() {
   S_ItemUnit_1 =    " 個";
   S_ItemName_2 =    "Cor_Lapis";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Clearwater_Jade";
+  S_ItemName_3 =    "Jueyun_Chili";
   S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Jueyun_Chili";
+  S_ItemName_4 =    "Noctilucous_Jade";
   S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Noctilucous_Jade";
+  S_ItemName_5 =    "Silk_Flower";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Silk_Flower";
+  S_ItemName_6 =    "Glaze_Lily";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Glaze_Lily";
+  S_ItemName_7 =    "Qingxin";
   S_ItemUnit_7 =    " 個";
   CalculatorSet2();
 // Local Material #1
@@ -2660,19 +2606,11 @@ function SetPatchNoteList() {
   CalEle.insertAdjacentHTML('beforeend', '\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
-・閑雲、嘉明、千織の実装に対応<BR>\
-・新規特産品、育成素材の実装に対応<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
-<b>2023/11/10</b><BR>\
-更新。<BR>\
 ・フリーナ、シャルロット、ナヴィア、シュヴァルーズの実装に対応<BR>\
 ・新規特産品、天賦素材の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR><BR>\
 <b>2023/10/16</b><BR>\
 更新。<BR>\
@@ -3441,7 +3379,7 @@ function OpenScript() {
     if (!(localStorage.getItem("_Version") === Version)) {
       Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20231110 to ver." + Version + "）\n・閑雲、嘉明、千織の実装に対応\n・新規特産品、育成素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20231016 to ver." + Version + "）\n・フリーナ、シャルロット、ナヴィア、シュヴァルーズの実装に対応\n・新規特産品、天賦素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
