@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "17"
+			"count": "20"
 		}
 	],
 	"list": [
@@ -42,6 +42,10 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Furina.png"
 		},
 		{
+			"name": "千織",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Chiori.png"
+		},
+		{
 			"name": "三月なのか",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th.png"
 		},
@@ -66,12 +70,20 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Huohuo.png"
 		},
 		{
+			"name": "花火",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparkle.png"
+		},
+		{
 			"name": "猫宮又奈",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nekomiya_Mana.png"
 		},
 		{
 			"name": "カリン・ウィクス",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Corin_Wickes.png"
+		},
+		{
+			"name": "花火",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/花火.png"
 		}
 	]
 }
