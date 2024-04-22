@@ -25,7 +25,7 @@ function SetCharacterList() {
 // 千織
   S_Id =          "Chiori";
   S_JpName =      "千織";
-  S_CharaImg =    "";
+  S_CharaImg =    "Original/Character2/chiori_094_gacha_splash.webp";
   S_Element =     "Prithiva_Topaz";
   S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelia";
   S_Local =       "Dendrobium";
