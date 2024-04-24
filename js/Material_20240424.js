@@ -1,4 +1,4 @@
-var Version = "20240424";
+var Version = "20240201";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,18 +22,6 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
-// アルレッキーノ
-  S_Id =          "Arlecchino";
-  S_JpName =      "アルレッキーノ / ペルヴェーレ";
-  S_CharaImg =    "Original/Character2/arlecchino_096_gacha_splash.webp";
-  S_Element =     "Agnidus_Agate";
-  S_Boss =        "Fragment_of_a_Golden_Melody";
-  S_Local =       "Rainbow_Rose";
-  S_Common =      "Lieutenants_Insignia";
-  S_Talent1 =     "Order";
-  S_Talent2 =     "Fading_Candle";
-  Checkmate();
-
 // 千織
   S_Id =          "Chiori";
   S_JpName =      "千織";
@@ -48,7 +36,7 @@ function SetCharacterList() {
 
 // 閑雲
   S_Id =          "Xianyun";
-  S_JpName =      "閑雲 / 留雲借風真君";
+  S_JpName =      "閑雲";
   S_CharaImg =    "Original/Character2/liuyun_093_gacha_splash.webp";
   S_Element =     "Vayuda_Turquoise";
   S_Boss =        "Cloudseam_Scale";
@@ -60,7 +48,7 @@ function SetCharacterList() {
 
 // 嘉明
   S_Id =          "Gaming";
-  S_JpName =      "叶嘉明";
+  S_JpName =      "嘉明";
   S_CharaImg =    "Original/Character2/gaming_092_gacha_splash.webp";
   S_Element =     "Agnidus_Agate";
   S_Boss =        "Emperors_Resolution";
@@ -72,7 +60,7 @@ function SetCharacterList() {
 
 // ナヴィア
   S_Id =          "Navia";
-  S_JpName =      "ナヴィア・カスパール";
+  S_JpName =      "ナヴィア";
   S_CharaImg =    "Original/Character2/navia_091_gacha_splash.webp";
   S_Element =     "Prithiva_Topaz";
   S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelius";
@@ -148,7 +136,7 @@ function SetCharacterList() {
   S_CharaImg =    "Original/Character2/freminet_085_gacha_splash.webp";
   S_Element =     "Shivada_Jade";
   S_Boss =        "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_Local =       "Romaritime_Flower";
+  S_Local =       "Rainbow_Rose";
   S_Common =      "Xenochromatic_Crystal";
   S_Talent1 =     "Justice";
   S_Talent2 =     "Worldspan_Fern";
@@ -172,7 +160,7 @@ function SetCharacterList() {
   S_CharaImg =    "Original/Character/Lyney_Portrait.webp";
   S_Element =     "Agnidus_Agate";
   S_Boss =        "Emperors_Resolution";
-  S_Local =       "Rainbow_Rose";
+  S_Local =       "Romaritime_Flower";
   S_Common =      "Lieutenants_Insignia";
   S_Talent1 =     "Equity";
   S_Talent2 =     "Primordial_Greenbloom";
@@ -216,7 +204,7 @@ function SetCharacterList() {
 
 // ミカ
   S_Id =          "Mika";
-  S_JpName =      "ミカ・シュミット";
+  S_JpName =      "ミカ";
   S_CharaImg =    "Original/Character/Mika_Portrait.webp";
   S_Element =     "Shivada_Jade";
   S_Boss =        "Pseudo-Stamens";
@@ -1333,10 +1321,7 @@ function SetInventoryTLUM2() {
   S_ItemName_1 =    "Lightless_Silk_String";
   S_ItemName_2 =    "Lightless_Eye_of_the_Maelstrom";
   S_ItemName_3 =    "Lightless_Mass";
-  S_ItemName_4 =    "Fading_Candle";
-  S_ItemName_5 =    "Silken_Feather";
-  S_ItemName_6 =    "Denial_and_Judgment";
-  InventorySet6();
+  InventorySet3();
 // Talent Level-Up Material 2 #2
   S_ItemName_1 =    "Molten_Moment";
   S_ItemName_2 =    "Hellfire_Butterfly";
@@ -1375,8 +1360,7 @@ function SetInventoryES() {
   S_ItemName_4 =    "Fontemer_Unihorn";
   S_ItemName_5 =    "Water_That_Failed_To_Transcend";
   S_ItemName_6 =    "Cloudseam_Scale";
-  S_ItemName_7 =    "Fragment_of_a_Golden_Melody";
-  InventorySet7();
+  InventorySet6();
 // Elemental Stones #2
   S_ItemName_1 =    "Storm_Beads";
   S_ItemName_2 =    "Riftborn_Regalia";
@@ -2095,8 +2079,8 @@ function SetCalculatorES() {
   S_ItemUnit_1 =    " 個"
   S_ItemName_2 =    "Cloudseam_Scale";
   S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Fragment_of_a_Golden_Melody";
-  S_ItemUnit_3 =    " 個"
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    ""
   S_ItemName_4 =    "";
   S_ItemUnit_4 =    ""
   S_ItemName_5 =    "";
@@ -2397,22 +2381,6 @@ function SetCalculatorTLUM2() {
   CalEle = document.querySelector('th[id="C_Talent_Level_Up_Material"]').parentElement;
   S_ItemType =   "Talent_Level_Up_Material_2";
 // Talent Level-Up Material2 #4
-  S_ItemName_1 =    "Silken_Feather";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Denial_and_Judgment";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet2();
-// Talent Level-Up Material2 #4
   S_ItemName_1 =    "Worldspan_Fern";
   S_ItemUnit_1 =    " 個";
   S_ItemName_2 =    "Primordial_Greenbloom";
@@ -2425,8 +2393,8 @@ function SetCalculatorTLUM2() {
   S_ItemUnit_5 =    " 個";
   S_ItemName_6 =    "Lightless_Mass";
   S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Fading_Candle";
-  S_ItemUnit_7 =    " 個";
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    "";
   CalculatorSet2();
 // Talent Level-Up Material2 #3
   S_ItemName_1 =    "Ashen_Heart";
@@ -2692,20 +2660,11 @@ function SetPatchNoteList() {
   CalEle.insertAdjacentHTML('beforeend', '\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
-・アルレッキーノの実装に対応<BR>\
-・新規育成素材の実装に対応<BR>\
-・リネとフレミネの育成素材を修正<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
-<b>2023/11/10</b><BR>\
-更新。<BR>\
 ・閑雲、嘉明、千織の実装に対応<BR>\
 ・新規特産品、育成素材の実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR><BR>\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
@@ -3482,7 +3441,7 @@ function OpenScript() {
     if (!(localStorage.getItem("_Version") === Version)) {
       Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240201 to ver." + Version + "）\n・アルレッキーノの実装に対応\n・新規育成素材の実装に対応\n・リネとフレミネの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20231110 to ver." + Version + "）\n・閑雲、嘉明、千織の実装に対応\n・新規特産品、育成素材の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
