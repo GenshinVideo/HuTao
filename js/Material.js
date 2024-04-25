@@ -22,6 +22,42 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
+// シグウィン
+  S_Id =          "Sigewinne";
+  S_JpName =      "シグウィン";
+  S_CharaImg =    "Original/Character2/sigewinne_095_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Water_That_Failed_To_Transcend";
+  S_Local =       "Rainbow_Rose";
+  S_Common =      "Xenochromatic_Crystal";
+  S_Talent1 =     "Equity";
+  S_Talent2 =     "Lightless_Eye_of_the_Maelstrom";
+  Checkmate();
+
+// セトス
+  S_Id =          "Sethos";
+  S_JpName =      "セトス";
+  S_CharaImg =    "Original/Character2/sethos_097_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Cloudseam_Scale";
+  S_Local =       "Rainbow_Rose";
+  S_Common =      "Rich_Red_Brocade";
+  S_Talent1 =     "Praxis";
+  S_Talent2 =     "Dakas_Bell";
+  Checkmate();
+
+// クロリンデ
+  S_Id =          "Clorinde";
+  S_JpName =      "クロリンデ";
+  S_CharaImg =    "Original/Character2/clorinde_098_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Fontemer_Unihorn";
+  S_Local =       "Rainbow_Rose";
+  S_Common =      "Xenochromatic_Crystal";
+  S_Talent1 =     "Justice";
+  S_Talent2 =     "Everamber";
+  Checkmate();
+
 // アルレッキーノ
   S_Id =          "Arlecchino";
   S_JpName =      "アルレッキーノ / ペルヴェーレ";
@@ -2692,7 +2728,7 @@ function SetPatchNoteList() {
   CalEle.insertAdjacentHTML('beforeend', '\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
-・アルレッキーノの実装に対応<BR>\
+・アルレッキーノ、クロリンデ、セトス、シグウィンの実装に対応<BR>\
 ・新規育成素材の実装に対応<BR>\
 ・リネとフレミネの育成素材を修正<BR>\
 <BR>\
@@ -3482,7 +3518,7 @@ function OpenScript() {
     if (!(localStorage.getItem("_Version") === Version)) {
       Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240201 to ver." + Version + "）\n・アルレッキーノの実装に対応\n・新規育成素材の実装に対応\n・リネとフレミネの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240201 to ver." + Version + "）\n・アルレッキーノ、クロリンデ、セトス、シグウィンの実装に対応\n・新規育成素材の実装に対応\n・リネとフレミネの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
