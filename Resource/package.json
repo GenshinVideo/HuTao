@@ -316,6 +316,34 @@
 					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240412191920_HThGUGlY3Gjy6AXP/GenshinImpact_4.6.0.zip.006",
 					"md5": "6b43dac3616027ce7a980c41092f72fa"
 				}]
+			},
+			"v4_7_0": {
+				"url": "",
+				"md5": "5f8d119b46f74003b5f863eff1207343",
+				"Segments": [{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.001",
+					"md5": "0790ed842a1732fb9e5530a826828440"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.002",
+					"md5": "6ac391b6a3a185bc8ab1e431f67ecd25"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.003",
+					"md5": "36460a467de4901f517f8ed9be6b877c"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.004",
+					"md5": "d1c0d81ab7aff5d5fb490cff20b9b87f"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.005",
+					"md5": "fec57d6f7f78c04309f16dfc2207cd6f"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/GenshinImpact_4.7.0.zip.006",
+					"md5": "84135fa7008156965514a6ec99c55c66"
+				}]
 			}
 		}
 	},
@@ -436,11 +464,14 @@
 			"v4_5_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240301203033_RZSIny3hwJ5nq959/Audio_Chinese_4.5.0.zip",
 				"md5": "53c786603c74b1085cb445a306d75644"
-			}
-,
+			},
 			"v4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240412191920_HThGUGlY3Gjy6AXP/Audio_Chinese_4.6.0.zip",
 				"md5": "974bc5df3f7d96de01b68f1aab0371e5"
+			},
+			"v4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/Audio_Chinese_4.7.0.zip",
+				"md5": "15837d2859a5f1c997bd0a85c8f4d630"
 			}
 		}
 	},
@@ -565,6 +596,10 @@
 			"v4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240412191920_HThGUGlY3Gjy6AXP/Audio_English(US)_4.6.0.zip",
 				"md5": "f577ea4624981b36789e24913d0f3745"
+			},
+			"v4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/Audio_English(US)_4.7.0.zip",
+				"md5": "fe58d4413dd6d1159bb345746a69c3aa"
 			}
 		}
 	},
@@ -689,6 +724,10 @@
 			"v4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240412191920_HThGUGlY3Gjy6AXP/Audio_Japanese_4.6.0.zip",
 				"md5": "f039da619e670259d7e57c4f5e84be9e"
+			},
+			"v4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/Audio_Japanese_4.7.0.zip",
+				"md5": "7fab66b921af85d1065724d196488beb"
 			}
 		}
 	},
@@ -813,6 +852,10 @@
 			"v4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240412191920_HThGUGlY3Gjy6AXP/Audio_Korean_4.6.0.zip",
 				"md5": "58c3fc8782f3d59b324dfd603fa93e6d"
+			},
+			"v4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20240524181522_P7n5afVhY8WeoVZb/Audio_Korean_4.7.0.zip",
+				"md5": "d4423f11472c816b842d95dfd05044dd"
 			}
 		}
 	},
@@ -1117,6 +1160,14 @@
 			"v4_5_0to4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_4.5.0_4.6.0_hdiff_MyQqNZPJWOktACjI.zip",
 				"md5": "2914B6CD5DECB1A1664D0FF2EB24F74E"
+			},
+			"v4_5_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_4.5.0_4.7.0_hdiff_hjfZ1LgT52ceYDOv.zip",
+				"md5": "C137E40DFB506146D05ADB294A5D6316"
+			},
+			"v4_6_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_4.6.0_4.7.0_hdiff_PIM7zBX3lxGjbaNV.zip",
+				"md5": "5E6E400E6F8C9EFC4B0F5B2609EDEAC1"
 			}
 		}
 	},
@@ -1377,6 +1428,14 @@
 			"v4_5_0to4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_4.5.0_4.6.0_hdiff_q8fZULgOsl1SoipB.zip",
 				"md5": "BCC70907AD4B514270283A4CF57CF955"
+			},
+			"v4_5_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_4.5.0_4.7.0_hdiff_TQp5Jwn0FAfIDsE4.zip",
+				"md5": "43949E7BFBE70E61877EDB0B208AB156"
+			},
+			"v4_6_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_4.6.0_4.7.0_hdiff_vGOido1Us5Djnwb8.zip",
+				"md5": "583A7CB93F7D0651AF20DC2CA16F8B24"
 			}
 
 		}
@@ -1638,6 +1697,14 @@
 			"v4_5_0to4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_4.5.0_4.6.0_hdiff_aRk4uMi1H9OALJ7d.zip",
 				"md5": "086A30A2CF1F340EFD70A1E3051CD3DC"
+			},
+			"v4_5_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_4.5.0_4.7.0_hdiff_xEHpcAnqNb48Ff3S.zip",
+				"md5": "C5B4F308BF22C7825C98538D3F774F7A"
+			},
+			"v4_6_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_4.6.0_4.7.0_hdiff_ya8F9GL1ojP4D7nR.zip",
+				"md5": "CB9DCDDC80CF3E336C280C05F67627D2"
 			}
 		}
 	},
@@ -1898,6 +1965,14 @@
 			"v4_5_0to4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_4.5.0_4.6.0_hdiff_dNhr1mUeITOnZ76R.zip",
 				"md5": "EE4E47E80478A378CD78B0467B7AA1BA"
+			},
+			"v4_5_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_4.5.0_4.7.0_hdiff_GCOBxKrAuTwDXqeQ.zip",
+				"md5": "A6316C5733169A4F5B80A40CECC0653A"
+			},
+			"v4_6_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_4.6.0_4.7.0_hdiff_NeDO7m6dnx3cLRpy.zip",
+				"md5": "8406125F361FC533E3B174E749C87B39"
 			}
 		}
 	},
@@ -2158,6 +2233,14 @@
 			"v4_5_0to4_6_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_4.5.0_4.6.0_hdiff_wrnM3Vumg5xSbKEa.zip",
 				"md5": "6AEC8A51B5BBED306251534DA406E505"
+			},
+			"v4_5_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_4.5.0_4.7.0_hdiff_TVIabdjZRsfUn1B9.zip",
+				"md5": "AC8E76C4744DFC9E8CD8CB74BFE3EE44"
+			},
+			"v4_6_0to4_7_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_4.6.0_4.7.0_hdiff_3qryOQWP2YDnKmBA.zip",
+				"md5": "A2C6D59146EC07F05F5A003FF93AA6E0"
 			}
 		}
 	},
@@ -2234,6 +2317,10 @@
 			"v2_33_5_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/update_20240312145157_6b936695Sd7lagwc.zip",
 				"md5": "67b7706471fdf3cdcc4a3729a0283ec2"
+			},
+			"v1_0_5_88": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/launcher/20240521210311_XwwOsIRblw7bwqSn/pcgoogle/GenshinImpact_install_202405212028.exe",
+				"md5": "81fa7390afb87f83027a98ae84317654"
 			}
 		}
 	},
@@ -2274,11 +2361,22 @@
 			"v1_6_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20231215090631_Lj4TDfHZUY5Fy9ie/PC/StarRail_1.6.0.zip",
 				"md5": "6ae2f5b4b65cc512394aa60ab41ada3b"
-			}
-,
+			},
 			"v2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20240126105613_xi8FVxCWfDpjdC2r/PC/StarRail_2.0.0.zip",
 				"md5": "297bf91e252106394ee6f590fe46007d"
+			},
+			"v2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240315112058_ccCKIhL7nSrowkqT/PC/StarRail_2.1.0.zip",
+				"md5": "590dd649fd50f340a4e4bdac7f106956"
+			},
+			"v2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240425223839_3VWucOmMCTBJ9kl2/PC/StarRail_2.2.0.zip",
+				"md5": "9d573ed5ab7c63b921f85b2a39bfe0ea"
+			},
+			"v2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240608160515_WaNfKntJ7dt6k6rt/PC/StarRail_2.3.0.zip",
+				"md5": "4b35f72f69119b19ecf0c4f8dc91d257"
 			}
 		}
 	},
@@ -2295,6 +2393,18 @@
 			"v2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20240126105613_xi8FVxCWfDpjdC2r/PC/Chinese.zip",
 				"md5": "785d6d79fcdaa0cdb847718ad17a4f82"
+			},
+			"v2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240315112058_ccCKIhL7nSrowkqT/PC/Chinese.zip",
+				"md5": "5737ad765fa7b6eac8210ee4f2eeeb39"
+			},
+			"v2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240425223839_3VWucOmMCTBJ9kl2/PC/Chinese.zip",
+				"md5": "df10fae26649d570744d49f6e3d31a20"
+			},
+			"v2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240608160515_WaNfKntJ7dt6k6rt/PC/Chinese.zip",
+				"md5": "a67f7c4729f78d37444ca63bcd29996a"
 			}
 		}
 	},
@@ -2311,6 +2421,18 @@
 			"v2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20240126105613_xi8FVxCWfDpjdC2r/PC/English.zip",
 				"md5": "41eb4b50d668a349fab3cb4b5ac1f75e"
+			},
+			"v2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240315112058_ccCKIhL7nSrowkqT/PC/English.zip",
+				"md5": "1f6a530b341f4b82f612fe6004b1bdbf"
+			},
+			"v2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240425223839_3VWucOmMCTBJ9kl2/PC/English.zip",
+				"md5": "5c1e42dfd9911c2d45eb34d852a79919"
+			},
+			"v2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240608160515_WaNfKntJ7dt6k6rt/PC/English.zip",
+				"md5": "e342e0441786ee64edf3367fe5df8bac"
 			}
 		}
 	},
@@ -2327,6 +2449,18 @@
 			"v2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20240126105613_xi8FVxCWfDpjdC2r/PC/Japanese.zip",
 				"md5": "42bc301b19e51b0ff72fb232b3043137"
+			},
+			"v2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240315112058_ccCKIhL7nSrowkqT/PC/Japanese.zip",
+				"md5": "f9b0c514915369f3b9155127684f8d51"
+			},
+			"v2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240425223839_3VWucOmMCTBJ9kl2/PC/Japanese.zip",
+				"md5": "b2bfda217280526652e04afb4253bcd0"
+			},
+			"v2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240608160515_WaNfKntJ7dt6k6rt/PC/Japanese.zip",
+				"md5": "2a47b18df89fa23075f5ac9305b6ab0c"
 			}
 		}
 	},
@@ -2343,6 +2477,18 @@
 			"v2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20240126105613_xi8FVxCWfDpjdC2r/PC/Korean.zip",
 				"md5": "5d4d3f4829cd69dcee13b11b58310c35"
+			},
+			"v2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240315112058_ccCKIhL7nSrowkqT/PC/Korean.zip",
+				"md5": "5443d68b0a5adb03ab92c8fb4eb7df24"
+			},
+			"v2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240425223839_3VWucOmMCTBJ9kl2/PC/Korean.zip",
+				"md5": "01cf2ac132200323eeaa43d7be7c8456"
+			},
+			"v2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20240608160515_WaNfKntJ7dt6k6rt/PC/Korean.zip",
+				"md5": "4b76f48d141cffb6daf953e7d068afb3"
 			}
 		}
 	},
@@ -2387,6 +2533,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/game_1.6.0_2.0.0_hdiff_xlnMFwQ893VOqgv4.zip",
 				"md5": "6F85B5FE12620EF2187F3DBDA067D8F1"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/game_2.0.0_2.1.0_hdiff_KGdFk3qyvf4eYWCz.zip",
+				"md5": "EF3982BAE5693BAA472A377C00BEA683"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/game_2.1.0_2.2.0_hdiff_oAD65M4PktiBCKp3.zip",
+				"md5": "68F29FF85ADFF63F6EB047B95F8C112D"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/game_2.2.0_2.3.0_hdiff_WwevYToSIVWLRkDA.zip",
+				"md5": "e1131485bba22f1721f0aa6b47af1c0b"
 			}
 		}
 	},
@@ -2399,6 +2557,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-cn_1.6.0_2.0.0_hdiff_1hWT6VLqD8tvIYac.zip",
 				"md5": "BF051B98DA5248C39D9629965E8D76A2"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-cn_2.0.0_2.1.0_hdiff_eaKXmEoGYjADIQwP.zip",
+				"md5": "BF20969DFF36380E940018A0F7AD84BD"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-cn_2.1.0_2.2.0_hdiff_gSVHsvjrLFw8R5Y6.zip",
+				"md5": "21E27164693B881FD249BE8C954C69DC"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-cn_2.2.0_2.3.0_hdiff_LRjKxodieEGIvihp.zip",
+				"md5": "1486ab2fcafe10f6570bd94213350851"
 			}
 		}
 	},
@@ -2411,6 +2581,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-tw_1.6.0_2.0.0_hdiff_W4VSdwA5lIxYgLPK.zip",
 				"md5": "0585968B9580DBF990D06B41FA2388BA"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-tw_2.0.0_2.1.0_hdiff_oBEvD0mikIOdqMK8.zip",
+				"md5": "CFB230C9CE95A53D010F462ABC95521E"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/zh-tw_2.1.0_2.2.0_hdiff_1KkNeHw7psuA6iYr.zip",
+				"md5": "DF4B619F9578788CADFCB083451E58F2"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-tw_2.2.0_2.3.0_hdiff_CwllgevcmHwxhzDo.zip",
+				"md5": "24543e30e1b87513958e23764358e1b1"
 			}
 		}
 	},
@@ -2423,6 +2605,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/en-us_1.6.0_2.0.0_hdiff_lvdjy6tR9LzVxFXk.zip",
 				"md5": "30B3E71CA92A880F836D46A98DD074D3"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/en-us_2.0.0_2.1.0_hdiff_H9An1j0dDBS4MXzZ.zip",
+				"md5": "D981DCA5B2CA7CFA54E337A5C1E3ACCB"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/en-us_2.1.0_2.2.0_hdiff_XHEKJFzq6RamGMO5.zip",
+				"md5": "3CE49160E26F71CCC973F69A24A39A9A"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_en-us_2.2.0_2.3.0_hdiff_IIqIrAnQHWgoHAvv.zip",
+				"md5": "cdfb99e14b9a63517190ffb4e7fed04e"
 			}
 		}
 	},
@@ -2435,6 +2629,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ja-jp_1.6.0_2.0.0_hdiff_FnaulGBjzkOTEPqR.zip",
 				"md5": "8A01CDCE9608D33B57D5AB5C758C020B"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ja-jp_2.0.0_2.1.0_hdiff_m4tcYvbVFShTAyKM.zip",
+				"md5": "A937B81A8B8A5289BD5BD5A2521F7F14"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ja-jp_2.1.0_2.2.0_hdiff_UYopcPQhAblIvFWJ.zip",
+				"md5": "58B3A46FAA2B17BD490C12241A1FFEBB"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ja-jp_2.2.0_2.3.0_hdiff_lLfHxWLEsHrwcKPJ.zip",
+				"md5": "ed935ddcbafa6ddb54a4f0b28cebe0fe"
 			}
 		}
 	},
@@ -2447,6 +2653,18 @@
 			"v1_6_0to2_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ko-kr_1.6.0_2.0.0_hdiff_ap896DJ7mI3XLH1k.zip",
 				"md5": "61F1954D67610E49EBF10DB0C8330B72"
+			},
+			"v2_0_0to2_1_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ko-kr_2.0.0_2.1.0_hdiff_pzIKMLf3JkQiaUYt.zip",
+				"md5": "BE68AED594138817B54F2CE4BEF25AF3"
+			},
+			"v2_1_0to2_2_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/ko-kr_2.1.0_2.2.0_hdiff_KT4xD2nY0ec3ZAip.zip",
+				"md5": "B43969A0902AE8724B3CFC819DFA1ACA"
+			},
+			"v2_2_0to2_3_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ko-kr_2.2.0_2.3.0_hdiff_SuitLwSAzZXXXFLX.zip",
+				"md5": "f56a1ef6ce31eda1a72c730a35007b7d"
 			}
 		}
 	},
@@ -2483,6 +2701,18 @@
 			"v2_31_0_0": {
 				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/update_20231211115809_6d829a84gfQP0I28.zip",
 				"md5": "E0AE15B8BE1E30055131591B07406CAA"
+			},
+			"v2_33_4_0": {
+				"url": "https://download-porter.hoyoverse.com/download-porter/2024/03/21/2.1%20Setup_hoyoverse.exe?trace_key=StarRail_setup_ua_752abc611664",
+				"md5": ""
+			},
+			"v2_33_7_0": {
+				"url": "https://autopatchos.starrails.com/client/hkrpg_global/35/update_20240509122135_fd19fc8374U16DAT.zip",
+				"md5": "8B1F357D4D4A98EA883B9B2C2A863503"
+			},
+			"v1_0_5_88": {
+				"url": "https://autopatchos.starrails.com/client/download/20240510111438_uYehweFmfcfyFkBg/StarRail_setup_1.0.5.exe",
+				"md5": "d738fe9a85acae5633e604ae47f86bbe"
 			}
 		}
 	}
