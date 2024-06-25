@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "20"
+			"count": "23"
 		}
 	],
 	"list": [
@@ -80,6 +80,18 @@
 		{
 			"name": "カリン・ウィクス",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Corin_Wickes.png"
+		},
+		{
+			"name": "ホタル",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Firefly.png"
+		},
+		{
+			"name": "シグウィン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
+		},
+		{
+			"name": "「メッセージ」人形",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Message_Doll.png"
 		},
 		{
 			"name": "はなび",
