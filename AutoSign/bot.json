@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "23"
+			"count": "25"
 		}
 	],
 	"list": [
@@ -88,6 +88,14 @@
 		{
 			"name": "シグウィン",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
+		},
+		{
+			"name": "エレン・ジョー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ellen_Joe.png"
+		},
+		{
+			"name": "ニコ・デマラ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nicole_Demara.png"
 		},
 		{
 			"name": "「メッセージ」人形",
