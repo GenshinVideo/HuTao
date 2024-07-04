@@ -24,7 +24,7 @@
     <BR><BR><BR>
     <B>設定方法</B><BR>
     1. 『<a href="https://script.google.com/home/my" rel="nofollow">Google Apps Script</a>』から『新しいプロジェクト』を選択して、以下のコード(164行)全文を貼り付けます。<BR>
-    <pre class="prettyprint lang-css linenums:">const profiles = [
+    <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     Genshin: true,
     StarRail: false,
@@ -156,8 +156,8 @@ const games = {
   },
   Honkai3rd: {
     name: '崩壊３ｒｄ　　　　',
-    infoUrl: 'https://sg-public-api.hoyolab.com/event/mani/info?lang=ja-jp&act_id=e202110291205111',
-    homeUrl: 'https://sg-public-api.hoyolab.com/event/mani/home?lang=ja-jp&act_id=e202110291205111'
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/info?lang=ja-jp&act_id=e202301011241241',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/home?lang=ja-jp&act_id=e202301011241241'
   }
 };
 
@@ -195,7 +195,7 @@ function postWebhook(data) {
   UrlFetchApp.fetch(discordWebhook, options);
 }</pre><BR>
   2. ［GAS］アカウント情報を書き換えます。（青文字を参考にして下さい。）
-  <pre class="prettyprint lang-css linenums:">const profiles = [
+  <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
     Genshin: true, /** ログインボーナスを取得して欲しい場合は『true』に、そうでない場合は『false』と書き換えます。 **/
     StarRail: false,
@@ -223,7 +223,7 @@ copy(token);</pre>
   　※ブックマークレットとは、リンクをブックマークし、該当ページでそのブックマークを開くことでJavaScriptが実行されるというものです。<BR>
   <BR>
   　アカウントが複数ある場合は、行を増やし同じ作業を行って下さい。
-  <pre class="prettyprint lang-css linenums:">const profiles = [
+  <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     Genshin: true,
     StarRail: false,
