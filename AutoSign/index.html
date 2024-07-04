@@ -26,9 +26,10 @@
     1. 『<a href="https://script.google.com/home/my" rel="nofollow">Google Apps Script</a>』から『新しいプロジェクト』を選択して、以下のコード(164行)全文を貼り付けます。<BR>
     <pre class="prettyprint lang-css linenums:">const profiles = [
   { accountName: "アカウント名",
-    genshin: true,
-    honkai_star_rail: false,
-    honkai_3: false,
+    Genshin: false,
+    StarRail: false,
+    ZenlessZoneZero: true,
+    Honkai3rd: false,
     token: "ltuid_v2=000000000; ltoken_v2=v2_OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO;" }
 ];
 
@@ -45,34 +46,30 @@ const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/OOO
 
 const urlDict = {
   Genshin: 'https://sg-hk4e-api.hoyolab.com/event/sol/sign?lang=ja-jp&act_id=e202102251931481',
-  Star_Rail: 'https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=ja-jp&act_id=e202303301540311',
-  Honkai_3: 'https://sg-public-api.hoyolab.com/event/mani/sign?lang=ja-jp&act_id=e202110291205111'
+  StarRail: 'https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=ja-jp&act_id=e202303301540311',
+  ZZZ: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/sign?lang=ja-jp&act_id=e202406031448091',
+  Honkai3rd: 'https://sg-public-api.hoyolab.com/event/mani/sign?lang=ja-jp&act_id=e202110291205111'
 }
 
 function main() {
-  const messages = profiles.map(autoSignFunction);
-  if(discord_notify == true){
-  const hoyolabResp = `${discordPing()}\`\`\`\n${messages.join('\`\`\`\`\`\`\n')}\`\`\``;
-    if(discordWebhook) {
+  const messages = Accounts.map(autoSignFunction);
+  if (discord_notify) {
+    const hoyolabResp = `${discordPing()}\`\`\`\n${messages.join('\`\`\`\`\`\`\n')}\`\`\``;
+    if (discordWebhook) {
       postWebhook(hoyolabResp);
     }
   }
 }
-
 function discordPing() {
-  if(myDiscordID) {
-    return `<@${myDiscordID}>`;
-  } else {
-    return '';
-  }
+  return myDiscordID ? `<@${myDiscordID}>` : '';
 }
 
-function autoSignFunction({ token, genshin, honkai_star_rail, honkai_3, accountName }) {
-
+function autoSignFunction({ token, Genshin, StarRail, ZenlessZoneZero, Honkai3rd, accountName }) {
   const urls = [];
-  if (genshin) urls.push(urlDict.Genshin);
-  if (honkai_star_rail) urls.push(urlDict.Star_Rail);
-  if (honkai_3) urls.push(urlDict.Honkai_3);
+  if (Genshin) urls.push(urlDict.Genshin);
+  if (StarRail) urls.push(urlDict.StarRail);
+  if (ZenlessZoneZero) urls.push(urlDict.ZZZ);
+  if (Honkai3rd) urls.push(urlDict.Honkai3rd);
 
   const header = {
     'Cookie': token,
@@ -84,14 +81,12 @@ function autoSignFunction({ token, genshin, honkai_star_rail, honkai_3, accountN
     'x-rpc-client_type': '4',
     'Referer': 'https://act.hoyolab.com/',
     'Origin': 'https://act.hoyolab.com'
-  };
-
+  }
   const options = {
     method: 'POST',
     headers: header,
     muteHttpExceptions: true,
   };
-
   const options_ = {
     method: 'GET',
     headers: header,
@@ -101,83 +96,94 @@ function autoSignFunction({ token, genshin, honkai_star_rail, honkai_3, accountN
   let response = `${accountName}\n`;
 
   const httpResponses = UrlFetchApp.fetchAll(urls.map(url => ({ url, ...options })));
-
   for (const [i, hoyolabResponse] of httpResponses.entries()) {
     const checkInResult = JSON.parse(hoyolabResponse).message;
-    const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i])?.replace(/_/g, ' ');
-    switch (enGameName) {
-      case 'Genshin':
-      gameName = '原神　　　　　　　';
-      break;
-      case 'Star Rail':
-      gameName = '崩壊：スターレイル';
-      break;
-      case 'Honkai 3':
-      gameName = '崩壊３ｒｄ　　　　';
-      break;
-    }
-    const isError = checkInResult != "OK";
+    const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
+    const gameName = games[enGameName].name;
     const bannedCheck = JSON.parse(hoyolabResponse).data?.gt_result?.is_risk;
-    if(bannedCheck){
+
+    if (bannedCheck) {
       response += `\n${gameName} ≫ CAPTCHA認証に失敗しました。手動でログインを試みて下さい。`;
+    } else {
+      response = processGameCheckIn(gameName, checkInResult, games[enGameName].infoUrl, games[enGameName].homeUrl, response, options_);
     }
-    else{
-      if (`${gameName}` == "原神　　　　　　　") {
-        if  (`${checkInResult}` == "OK") {
-          const GI_Days = JSON.parse(UrlFetchApp.fetch('https://sg-hk4e-api.hoyolab.com/event/sol/info?lang=ja-jp&act_id=e202102251931481', options_));
-          const GI_Item = JSON.parse(UrlFetchApp.fetch('https://sg-hk4e-api.hoyolab.com/event/sol/home?lang=ja-jp&act_id=e202102251931481', options_));
-          response += `\n${gameName} ≫` + "［" + GI_Days.data.total_sign_day + "日目］" + GI_Item.data.awards[GI_Days.data.total_sign_day - 1].name + " (" + GI_Item.data.awards[GI_Days.data.total_sign_day - 1].cnt + ")";
-        } else {
-          response += `\n${gameName} ≫ ${checkInResult}`;
-        }
-      } else {
-        if (`${gameName}` == "崩壊：スターレイル") {
-          if  (`${checkInResult}` == "OK") {
-            var SR_Days = JSON.parse(UrlFetchApp.fetch('https://sg-public-api.hoyolab.com/event/luna/os/info?lang=ja-jp&act_id=e202303301540311', options_));
-            const SR_Item = JSON.parse(UrlFetchApp.fetch('https://sg-public-api.hoyolab.com/event/luna/os/home?lang=ja-jp&act_id=e202303301540311', options_));
-            response += `\n${gameName} ≫` + "［" + SR_Days.data.total_sign_day + "日目］" + SR_Item.data.awards[SR_Days.data.total_sign_day - 1].name + " (" + SR_Item.data.awards[SR_Days.data.total_sign_day - 1].cnt + ")";
-          } else {
-            response += `\n${gameName} ≫ ${checkInResult}`;
-          }
-        } else {
-          response += `\n${gameName} ≫ ${checkInResult}`;
-        }
-      }
-    }
-  };
+  }
   return response;
 }
+
+
+function fetchData(url, options) {
+  try {
+    return JSON.parse(UrlFetchApp.fetch(url, options));
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    return null;
+  }
+}
+function processGameCheckIn(gameName, checkInResult, infoUrl, homeUrl, response, options_) {
+  if (checkInResult === "OK") {
+    const daysData = fetchData(infoUrl, options_);
+    const itemData = fetchData(homeUrl, options_);
+    if (daysData && itemData) {
+      response += `\n${gameName} ≫［${daysData.data.total_sign_day}日目］` + 
+                  `${itemData.data.awards[daysData.data.total_sign_day - 1].name} ` +
+                  `(${itemData.data.awards[daysData.data.total_sign_day - 1].cnt})`;
+    } else {
+      response += `\n${gameName} ≫ データの取得に失敗しました。`;
+    }
+  } else {
+    response += `\n${gameName} ≫ ${checkInResult}`;
+  }
+  return response;
+}
+
+
+const games = {
+  Genshin: {
+    name: '原神　　　　　　　',
+    infoUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/info?lang=ja-jp&act_id=e202102251931481',
+    homeUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/home?lang=ja-jp&act_id=e202102251931481'
+  },
+  StarRail: {
+    name: '崩壊：スターレイル',
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/os/info?lang=ja-jp&act_id=e202303301540311',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/os/home?lang=ja-jp&act_id=e202303301540311'
+  },
+  ZZZ: {
+    name: 'ゼレンスゼーンゼロ',
+    infoUrl: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/info?lang=ja-jp&act_id=e202406031448091',
+    homeUrl: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/home?lang=ja-jp&act_id=e202406031448091'
+  },
+  Honkai3rd: {
+    name: '崩壊３ｒｄ　　　　',
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/info?lang=ja-jp&act_id=e202301011241241',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/home?lang=ja-jp&act_id=e202301011241241'
+  }
+};
+
 
 function postWebhook(data) {
   try {
     var bot = JSON.parse(UrlFetchApp.fetch('https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/bot.json'));
-    var RandomSelect = Math.floor(Math.random()*bot.data[0].count);
+    var RandomSelect = Math.floor(Math.random() * bot.data[0].count);
   } catch (e) {
     var bot = JSON.parse(JSON.stringify({
-    list: [
-      {
-        "name": "ニィロウ",
-        "avatar": "https://webstatic.hoyoverse.com/upload/contentweb/2022/09/28/a5f2a564298709911b3ceef0289d183c_7626591551165379807.png"
-      }
-    ]
+      list: [
+        {
+          "name": "ニィロウ",
+          "avatar": "https://webstatic.hoyoverse.com/upload/contentweb/2022/09/28/a5f2a564298709911b3ceef0289d183c_7626591551165379807.png"
+        }
+      ]
     }));
     var RandomSelect = 0;
   }
 
-  if(discord_silent != true){
-    var payload = JSON.stringify({
-      'username': bot.list[RandomSelect].name,
-      'avatar_url': bot.list[RandomSelect].avatar,
-      'content': data
-    });
-  } else {
-    var payload = JSON.stringify({
-      'username': bot.list[RandomSelect].name,
-      'avatar_url': bot.list[RandomSelect].avatar,
-      'content': data,
-      'flags': 4096
-    });
-  }
+  const payload = JSON.stringify({
+    'username': bot.list[RandomSelect].name,
+    'avatar_url': bot.list[RandomSelect].avatar,
+    'content': data,
+    ...(discord_silent ? { 'flags': 4096 } : {})
+  });
 
   const options = {
     method: 'POST',
@@ -191,9 +197,10 @@ function postWebhook(data) {
   2. ［GAS］アカウント情報を書き換えます。（青文字を参考にして下さい。）
   <pre class="prettyprint lang-css linenums:">const profiles = [
   { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
-    genshin: true, /** ログインボーナスを取得して欲しい場合は『true』に、そうでない場合は『false』と書き換えます。 **/
-    honkai_star_rail: false,
-    honkai_3: false,
+    Genshin: true, /** ログインボーナスを取得して欲しい場合は『true』に、そうでない場合は『false』と書き換えます。 **/
+    StarRail: false,
+    ZenlessZoneZero: false,
+    Honkai3rd: false,
     token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" }  /** アカウントのCookie情報に書き換えて下さい。 **/
 ];</pre><BR>
   　※『アカウントのCookie情報』は以下の手順から取得することが可能です。<BR>
@@ -218,14 +225,16 @@ copy(token);</pre>
   　アカウントが複数ある場合は、行を増やし同じ作業を行って下さい。
   <pre class="prettyprint lang-css linenums:">const profiles = [
   { accountName: "アカウント名",
-    genshin: true,
-    honkai_star_rail: false,
-    honkai_3: false,
+    Genshin: true,
+    StarRail: false,
+    ZenlessZoneZero: false,
+    Honkai3rd: false,
     token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" },
   { accountName: "アカウント名 2",
-    genshin: true,
-    honkai_star_rail: false,
-    honkai_3: false,
+    Genshin: true,
+    StarRail: false,
+    ZenlessZoneZero: false,
+    Honkai3rd: false,
     token: "ltuid_v2=000000000; ltoken_v2=v2_000000000;" }
 ];</pre><BR>
   4. ［GAS］Discordの通知設定を書き換えます。（青文字を参考にして下さい。）
