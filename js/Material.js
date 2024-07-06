@@ -1,4 +1,4 @@
-var Version = "20240424";
+var Version = "20240707";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,13 +22,25 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
+// エミリエ
+  S_Id =          "Emilie";
+  S_JpName =      "エミリエ";
+  S_CharaImg =    "Original/Character2/emilie_099_gacha_splash.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Fragment_of_a_Golden_Melody";
+  S_Local =       "Lakelight_Lily";
+  S_Common =      "Artificed_Dynamic_Gear";
+  S_Talent1 =     "Order";
+  S_Talent2 =     "Silken_Feather";
+  Checkmate();
+
 // シグウィン
   S_Id =          "Sigewinne";
   S_JpName =      "シグウィン";
   S_CharaImg =    "Original/Character2/sigewinne_095_gacha_splash.webp";
   S_Element =     "Varunada_Lazurite";
   S_Boss =        "Water_That_Failed_To_Transcend";
-  S_Local =       "Rainbow_Rose";
+  S_Local =       "Romaritime_Flower";
   S_Common =      "Xenochromatic_Crystal";
   S_Talent1 =     "Equity";
   S_Talent2 =     "Lightless_Eye_of_the_Maelstrom";
@@ -40,7 +52,7 @@ function SetCharacterList() {
   S_CharaImg =    "Original/Character2/sethos_097_gacha_splash.webp";
   S_Element =     "Vajrada_Amethyst";
   S_Boss =        "Cloudseam_Scale";
-  S_Local =       "Rainbow_Rose";
+  S_Local =       "Trishiraite";
   S_Common =      "Rich_Red_Brocade";
   S_Talent1 =     "Praxis";
   S_Talent2 =     "Dakas_Bell";
@@ -52,7 +64,7 @@ function SetCharacterList() {
   S_CharaImg =    "Original/Character2/clorinde_098_gacha_splash.webp";
   S_Element =     "Vajrada_Amethyst";
   S_Boss =        "Fontemer_Unihorn";
-  S_Local =       "Rainbow_Rose";
+  S_Local =       "Lumitoile";
   S_Common =      "Xenochromatic_Crystal";
   S_Talent1 =     "Justice";
   S_Talent2 =     "Everamber";
@@ -1313,783 +1325,294 @@ function Checkmate() {
 // インベントリー項目の生成
 function SetInventoryList() {
   CalEle = document.querySelector('tr[id="I_Inventory"]');
+
+
 // Common Material
-function SetInventoryCM() {
-// Common Material #4
-  S_ItemName_1 =    "Artificed_Dynamic_Gear";
-  S_ItemName_2 =    "Mechanical_Spur_Gear";
-  S_ItemName_3 =    "Meshing_Gear";
-  InventorySet3();
-// Common Material #3
-  S_ItemName_1 =    "Spectral_Nucleus";
-  S_ItemName_2 =    "Spectral_Heart";
-  S_ItemName_3 =    "Spectral_Husk";
-  S_ItemName_4 =    "Crystalline_Cyst_Dust";
-  S_ItemName_5 =    "Luminescent_Pollen";
-  S_ItemName_6 =    "Fungal_Spores";
-  S_ItemName_7 =    "Rich_Red_Brocade";
-  S_ItemName_8 =    "Trimmed_Red_Silk";
-  S_ItemName_9 =    "Faded_Red_Satin";
-  S_ItemName_10 =   "Xenochromatic_Crystal";
-  S_ItemName_11 =   "Transoceanic_Chunk";
-  S_ItemName_12 =   "Transoceanic_Pearl";
-  InventorySet();
-// Common Material #2
-  S_ItemName_1 =    "Lieutenants_Insignia";
-  S_ItemName_2 =    "Sergeants_Insignia";
-  S_ItemName_3 =    "Recruits_Insignia";
-  S_ItemName_4 =    "Golden_Raven_Insignia";
-  S_ItemName_5 =    "Silver_Raven_Insignia";
-  S_ItemName_6 =    "Treasure_Hoarder_Insignia";
-  S_ItemName_7 =    "Energy_Nectar";
-  S_ItemName_8 =    "Shimmering_Nectar";
-  S_ItemName_9 =    "Whopperflower_Nectar";
-  S_ItemName_10 =   "Famed_Handguard";
-  S_ItemName_11 =   "Kageuchi_Handguard";
-  S_ItemName_12 =   "Old_Handguard";
-  InventorySet();
-// Common Material #1
-  S_ItemName_1 =    "Slime_Concentrate";
-  S_ItemName_2 =    "Slime_Secretions";
-  S_ItemName_3 =    "Slime_Condensate";
-  S_ItemName_4 =    "Ominous_Mask";
-  S_ItemName_5 =    "Stained_Mask";
-  S_ItemName_6 =    "Damaged_Mask";
-  S_ItemName_7 =    "Forbidden_Curse_Scroll";
-  S_ItemName_8 =    "Sealed_Scroll";
-  S_ItemName_9 =    "Divining_Scroll";
-  S_ItemName_10 =   "Weathered_Arrowhead";
-  S_ItemName_11 =   "Sharp_Arrowhead";
-  S_ItemName_12 =   "Firm_Arrowhead";
-  InventorySet();
-}
+ItemNames = [
+  "Slime_Concentrate",
+  "Slime_Secretions",
+  "Slime_Condensate",
+  "Ominous_Mask",
+  "Stained_Mask",
+  "Damaged_Mask",
+  "Forbidden_Curse_Scroll",
+  "Sealed_Scroll",
+  "Divining_Scroll",
+  "Weathered_Arrowhead",
+  "Sharp_Arrowhead",
+  "Firm_Arrowhead",
+  "Lieutenants_Insignia",
+  "Sergeants_Insignia",
+  "Recruits_Insignia",
+  "Golden_Raven_Insignia",
+  "Silver_Raven_Insignia",
+  "Treasure_Hoarder_Insignia",
+  "Energy_Nectar",
+  "Shimmering_Nectar",
+  "Whopperflower_Nectar",
+  "Famed_Handguard",
+  "Kageuchi_Handguard",
+  "Old_Handguard",
+  "Spectral_Nucleus",
+  "Spectral_Heart",
+  "Spectral_Husk",
+  "Crystalline_Cyst_Dust",
+  "Luminescent_Pollen",
+  "Fungal_Spores",
+  "Rich_Red_Brocade",
+  "Trimmed_Red_Silk",
+  "Faded_Red_Satin",
+  "Xenochromatic_Crystal",
+  "Transoceanic_Chunk",
+  "Transoceanic_Pearl",
+  "Artificed_Dynamic_Gear",
+  "Mechanical_Spur_Gear",
+  "Meshing_Gear"
+];
+InventorySet(ItemNames);
+
+
 // Talent Level-Up Material 2
-function SetInventoryTLUM2() {
-// Talent Level-Up Material 2 #3
-  S_ItemName_1 =    "Lightless_Silk_String";
-  S_ItemName_2 =    "Lightless_Eye_of_the_Maelstrom";
-  S_ItemName_3 =    "Lightless_Mass";
-  S_ItemName_4 =    "Fading_Candle";
-  S_ItemName_5 =    "Silken_Feather";
-  S_ItemName_6 =    "Denial_and_Judgment";
-  InventorySet6();
-// Talent Level-Up Material 2 #2
-  S_ItemName_1 =    "Molten_Moment";
-  S_ItemName_2 =    "Hellfire_Butterfly";
-  S_ItemName_3 =    "Ashen_Heart";
-  S_ItemName_4 =    "Mudra_of_the_Malefic_General";
-  S_ItemName_5 =    "Tears_of_the_Calamitous_God";
-  S_ItemName_6 =    "The_Meaning_of_Aeons";
-  S_ItemName_7 =    "Puppet_Strings";
-  S_ItemName_8 =    "Mirror_of_Mushin";
-  S_ItemName_9 =    "Dakas_Bell";
-  S_ItemName_10 =   "Worldspan_Fern";
-  S_ItemName_11 =   "Primordial_Greenbloom";
-  S_ItemName_12 =   "Everamber";
-  InventorySet();
-// Talent Level-Up Material 2 #1
-  S_ItemName_1 =    "Dvalins_Plume";
-  S_ItemName_2 =    "Dvalins_Claw";
-  S_ItemName_3 =    "Dvalins_Sigh";
-  S_ItemName_4 =    "Tail_of_Boreas";
-  S_ItemName_5 =    "Ring_of_Boreas";
-  S_ItemName_6 =    "Spirit_Locket_of_Boreas";
-  S_ItemName_7 =    "Tusk_of_Monoceros_Caeli";
-  S_ItemName_8 =    "Shard_of_a_Foul_Legacy";
-  S_ItemName_9 =    "Shadow_of_the_Warrior";
-  S_ItemName_10 =   "Dragon_Lords_Crown";
-  S_ItemName_11 =   "Bloodjade_Branch";
-  S_ItemName_12 =   "Gilded_Scale";
-  InventorySet();
-}
+ItemNames = [
+  "Dvalins_Plume",
+  "Dvalins_Claw",
+  "Dvalins_Sigh",
+  "Tail_of_Boreas",
+  "Ring_of_Boreas",
+  "Spirit_Locket_of_Boreas",
+  "Tusk_of_Monoceros_Caeli",
+  "Shard_of_a_Foul_Legacy",
+  "Shadow_of_the_Warrior",
+  "Dragon_Lords_Crown",
+  "Bloodjade_Branch",
+  "Gilded_Scale",
+  "Molten_Moment",
+  "Hellfire_Butterfly",
+  "Ashen_Heart",
+  "Mudra_of_the_Malefic_General",
+  "Tears_of_the_Calamitous_God",
+  "The_Meaning_of_Aeons",
+  "Puppet_Strings",
+  "Mirror_of_Mushin",
+  "Dakas_Bell",
+  "Worldspan_Fern",
+  "Primordial_Greenbloom",
+  "Everamber",
+  "Lightless_Silk_String",
+  "Lightless_Eye_of_the_Maelstrom",
+  "Lightless_Mass",
+  "Fading_Candle",
+  "Silken_Feather",
+  "Denial_and_Judgment"
+];
+InventorySet(ItemNames);
+
+
+
 // Elemental Stones
-function SetInventoryES() {
-// Elemental Stones #3
-  S_ItemName_1 =    "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_ItemName_2 =    "Emperors_Resolution";
-  S_ItemName_3 =    "Tourbillon_Device";
-  S_ItemName_4 =    "Fontemer_Unihorn";
-  S_ItemName_5 =    "Water_That_Failed_To_Transcend";
-  S_ItemName_6 =    "Cloudseam_Scale";
-  S_ItemName_7 =    "Fragment_of_a_Golden_Melody";
-  InventorySet7();
-// Elemental Stones #2
-  S_ItemName_1 =    "Storm_Beads";
-  S_ItemName_2 =    "Riftborn_Regalia";
-  S_ItemName_3 =    "Dragonheirs_False_Fin";
-  S_ItemName_4 =    "Runic_Fang";
-  S_ItemName_5 =    "Majestic_Hooked_Beak";
-  S_ItemName_6 =    "Thunderclap_Fruitcore";
-  S_ItemName_7 =    "Perpetual_Caliber";
-  S_ItemName_8 =    "Light_Guiding_Tetrahedron";
-  S_ItemName_9 =    "Quelled_Creeper";
-  S_ItemName_10 =   "Pseudo-Stamens";
-  S_ItemName_11 =   "Evergloom_Ring";
-  S_ItemName_12 =   "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  InventorySet();
-// Elemental Stones #1
-  S_ItemName_1 =    "Hurricane_Seed";
-  S_ItemName_2 =    "Lightning_Prism";
-  S_ItemName_3 =    "Basalt_Pillar";
-  S_ItemName_4 =    "Hoarfrost_Core";
-  S_ItemName_5 =    "Everflame_Seed";
-  S_ItemName_6 =    "Cleansing_Heart";
-  S_ItemName_7 =    "Juvenile_Jade";
-  S_ItemName_8 =    "Crystalline_Bloom";
-  S_ItemName_9 =    "Marionette_Core";
-  S_ItemName_10 =   "Perpetual_Heart";
-  S_ItemName_11 =   "Smoldering_Pearl";
-  S_ItemName_12 =   "Dew_of_Repudiation";
-  InventorySet();
-}
+ItemNames = [
+  "Hurricane_Seed",
+  "Lightning_Prism",
+  "Basalt_Pillar",
+  "Hoarfrost_Core",
+  "Everflame_Seed",
+  "Cleansing_Heart",
+  "Juvenile_Jade",
+  "Crystalline_Bloom",
+  "Marionette_Core",
+  "Perpetual_Heart",
+  "Smoldering_Pearl",
+  "Dew_of_Repudiation",
+  "Storm_Beads",
+  "Riftborn_Regalia",
+  "Dragonheirs_False_Fin",
+  "Runic_Fang",
+  "Majestic_Hooked_Beak",
+  "Thunderclap_Fruitcore",
+  "Perpetual_Caliber",
+  "Light_Guiding_Tetrahedron",
+  "Quelled_Creeper",
+  "Pseudo-Stamens",
+  "Evergloom_Ring",
+  "Artificed_Spare_Clockwork_Component_-_Coppelia",
+  "Artificed_Spare_Clockwork_Component_-_Coppelius",
+  "Emperors_Resolution",
+  "Tourbillon_Device",
+  "Fontemer_Unihorn",
+  "Water_That_Failed_To_Transcend",
+  "Cloudseam_Scale",
+  "Fragment_of_a_Golden_Melody"
+];
+InventorySet(ItemNames);
+
+
 // Jewels
-function SetInventoryJewels() {
-// Jewels #3
-  S_ItemName_1 =    "Prithiva_Topaz_Gemstone";
-  S_ItemName_2 =    "Prithiva_Topaz_Chunk";
-  S_ItemName_3 =    "Prithiva_Topaz_Fragment";
-  S_ItemName_4 =    "Prithiva_Topaz_Sliver";
-  InventorySet4();
-// Jewels #2
-  S_ItemName_1 =    "Vajrada_Amethyst_Gemstone";
-  S_ItemName_2 =    "Vajrada_Amethyst_Chunk";
-  S_ItemName_3 =    "Vajrada_Amethyst_Fragment";
-  S_ItemName_4 =    "Vajrada_Amethyst_Sliver";
-  S_ItemName_5 =    "Vayuda_Turquoise_Gemstone";
-  S_ItemName_6 =    "Vayuda_Turquoise_Chunk";
-  S_ItemName_7 =    "Vayuda_Turquoise_Fragment";
-  S_ItemName_8 =    "Vayuda_Turquoise_Sliver";
-  S_ItemName_9 =    "Shivada_Jade_Gemstone";
-  S_ItemName_10 =   "Shivada_Jade_Chunk";
-  S_ItemName_11 =   "Shivada_Jade_Fragment";
-  S_ItemName_12 =   "Shivada_Jade_Sliver";
-  InventorySet();
-// Jewels #1
-  S_ItemName_1 =    "Agnidus_Agate_Gemstone";
-  S_ItemName_2 =    "Agnidus_Agate_Chunk";
-  S_ItemName_3 =    "Agnidus_Agate_Fragment";
-  S_ItemName_4 =    "Agnidus_Agate_Sliver";
-  S_ItemName_5 =    "Varunada_Lazurite_Gemstone";
-  S_ItemName_6 =    "Varunada_Lazurite_Chunk";
-  S_ItemName_7 =    "Varunada_Lazurite_Fragment";
-  S_ItemName_8 =    "Varunada_Lazurite_Sliver";
-  S_ItemName_9 =    "Nagadus_Emerald_Gemstone";
-  S_ItemName_10 =   "Nagadus_Emerald_Chunk";
-  S_ItemName_11 =   "Nagadus_Emerald_Fragment";
-  S_ItemName_12 =   "Nagadus_Emerald_Sliver";
-  InventorySet();
-}
+ItemNames = [
+  "Agnidus_Agate_Gemstone",
+  "Agnidus_Agate_Chunk",
+  "Agnidus_Agate_Fragment",
+  "Agnidus_Agate_Sliver",
+  "Varunada_Lazurite_Gemstone",
+  "Varunada_Lazurite_Chunk",
+  "Varunada_Lazurite_Fragment",
+  "Varunada_Lazurite_Sliver",
+  "Nagadus_Emerald_Gemstone",
+  "Nagadus_Emerald_Chunk",
+  "Nagadus_Emerald_Fragment",
+  "Nagadus_Emerald_Sliver",
+  "Vajrada_Amethyst_Gemstone",
+  "Vajrada_Amethyst_Chunk",
+  "Vajrada_Amethyst_Fragment",
+  "Vajrada_Amethyst_Sliver",
+  "Vayuda_Turquoise_Gemstone",
+  "Vayuda_Turquoise_Chunk",
+  "Vayuda_Turquoise_Fragment",
+  "Vayuda_Turquoise_Sliver",
+  "Shivada_Jade_Gemstone",
+  "Shivada_Jade_Chunk",
+  "Shivada_Jade_Fragment",
+  "Shivada_Jade_Sliver",
+  "Prithiva_Topaz_Gemstone",
+  "Prithiva_Topaz_Chunk",
+  "Prithiva_Topaz_Fragment",
+  "Prithiva_Topaz_Sliver"
+];
+InventorySet(ItemNames);
+
+
 // Talent Level-Up Material
-function SetInventoryTLUM() {
-// Talent Level-Up Material #4
-  S_ItemName_1 =    "Philosophies_of_Equity";
-  S_ItemName_2 =    "Guide_to_Equity";
-  S_ItemName_3 =    "Teachings_of_Equity";
-  S_ItemName_4 =    "Philosophies_of_Justice";
-  S_ItemName_5 =    "Guide_to_Justice";
-  S_ItemName_6 =    "Teachings_of_Justice";
-  S_ItemName_7 =    "Philosophies_of_Order";
-  S_ItemName_8 =    "Guide_to_Order";
-  S_ItemName_9 =    "Teachings_of_Order";
-  S_ItemName_10 =   "Crown_of_Insight";
-  InventorySet10();
-// Talent Level-Up Material #3
-  S_ItemName_1 =    "Philosophies_of_Light";
-  S_ItemName_2 =    "Guide_to_Light";
-  S_ItemName_3 =    "Teachings_of_Light";
-  S_ItemName_4 =    "Philosophies_of_Admonition";
-  S_ItemName_5 =    "Guide_to_Admonition";
-  S_ItemName_6 =    "Teachings_of_Admonition";
-  S_ItemName_7 =    "Philosophies_of_Ingenuity";
-  S_ItemName_8 =    "Guide_to_Ingenuity";
-  S_ItemName_9 =    "Teachings_of_Ingenuity";
-  S_ItemName_10 =   "Philosophies_of_Praxis";
-  S_ItemName_11 =   "Guide_to_Praxis";
-  S_ItemName_12 =   "Teachings_of_Praxis";
-  InventorySet();
-// Talent Level-Up Material #2
-  S_ItemName_1 =    "Philosophies_of_Diligence";
-  S_ItemName_2 =    "Guide_to_Diligence";
-  S_ItemName_3 =    "Teachings_of_Diligence";
-  S_ItemName_4 =    "Philosophies_of_Gold";
-  S_ItemName_5 =    "Guide_to_Gold";
-  S_ItemName_6 =    "Teachings_of_Gold";
-  S_ItemName_7 =    "Philosophies_of_Transience";
-  S_ItemName_8 =    "Guide_to_Transience";
-  S_ItemName_9 =    "Teachings_of_Transience";
-  S_ItemName_10 =   "Philosophies_of_Elegance";
-  S_ItemName_11 =   "Guide_to_Elegance";
-  S_ItemName_12 =   "Teachings_of_Elegance";
-  InventorySet();
-// Talent Level-Up Material #1
-  S_ItemName_1 =    "Philosophies_of_Freedom";
-  S_ItemName_2 =    "Guide_to_Freedom";
-  S_ItemName_3 =    "Teachings_of_Freedom";
-  S_ItemName_4 =    "Philosophies_of_Resistance";
-  S_ItemName_5 =    "Guide_to_Resistance";
-  S_ItemName_6 =    "Teachings_of_Resistance";
-  S_ItemName_7 =    "Philosophies_of_Ballad";
-  S_ItemName_8 =    "Guide_to_Ballad";
-  S_ItemName_9 =    "Teachings_of_Ballad";
-  S_ItemName_10 =   "Philosophies_of_Prosperity";
-  S_ItemName_11 =   "Guide_to_Prosperity";
-  S_ItemName_12 =   "Teachings_of_Prosperity";
-  InventorySet();
-}
+ItemNames = [
+  "Philosophies_of_Freedom",
+  "Guide_to_Freedom",
+  "Teachings_of_Freedom",
+  "Philosophies_of_Resistance",
+  "Guide_to_Resistance",
+  "Teachings_of_Resistance",
+  "Philosophies_of_Ballad",
+  "Guide_to_Ballad",
+  "Teachings_of_Ballad",
+  "Philosophies_of_Prosperity",
+  "Guide_to_Prosperity",
+  "Teachings_of_Prosperity",
+  "Philosophies_of_Diligence",
+  "Guide_to_Diligence",
+  "Teachings_of_Diligence",
+  "Philosophies_of_Gold",
+  "Guide_to_Gold",
+  "Teachings_of_Gold",
+  "Philosophies_of_Transience",
+  "Guide_to_Transience",
+  "Teachings_of_Transience",
+  "Philosophies_of_Elegance",
+  "Guide_to_Elegance",
+  "Teachings_of_Elegance",
+  "Philosophies_of_Light",
+  "Guide_to_Light",
+  "Teachings_of_Light",
+  "Philosophies_of_Admonition",
+  "Guide_to_Admonition",
+  "Teachings_of_Admonition",
+  "Philosophies_of_Ingenuity",
+  "Guide_to_Ingenuity",
+  "Teachings_of_Ingenuity",
+  "Philosophies_of_Praxis",
+  "Guide_to_Praxis",
+  "Teachings_of_Praxis",
+  "Philosophies_of_Equity",
+  "Guide_to_Equity",
+  "Teachings_of_Equity",
+  "Philosophies_of_Justice",
+  "Guide_to_Justice",
+  "Teachings_of_Justice",
+  "Philosophies_of_Order",
+  "Guide_to_Order",
+  "Teachings_of_Order",
+  "Crown_of_Insight"
+];
+InventorySet(ItemNames);
+
+
 // Local Material
-function SetInventoryLM() {
-// Local Material #4
-  S_ItemName_1 =   "Romaritime_Flower";
-  S_ItemName_2 =    "Lumidouce_Bell";
-  S_ItemName_3 =    "Rainbow_Rose";
-  S_ItemName_4 =    "Lumitoile";
-  S_ItemName_5 =    "Lakelight_Lily";
-  S_ItemName_6 =    "Subdetection_Unit";
-  S_ItemName_7 =    "Spring_of_the_First_Dewdrop";
-  InventorySet7();
-// Local Material #3
-  S_ItemName_1 =   "Amakumo_Fruit";
-  S_ItemName_2 =    "Fluorescent_Fungus";
-  S_ItemName_3 =    "Rukkhashava_Mushrooms";
-  S_ItemName_4 =    "Padisarah";
-  S_ItemName_5 =    "Nilotpala_Lotus";
-  S_ItemName_6 =    "Kalpalata_Lotus";
-  S_ItemName_7 =    "Redcrest";
-  S_ItemName_8 =    "Sand_Grease_Pupa";
-  S_ItemName_9 =    "Mourning_Flower";
-  S_ItemName_10 =    "Trishiraite";
-  S_ItemName_11 =   "Scarab";
-  S_ItemName_12 =   "Beryl_Conch";
-  InventorySet();
-// Local Material #2
-  S_ItemName_1 =    "Qingxin";
-  S_ItemName_2 =    "Starconch";
-  S_ItemName_3 =    "Violetgrass";
-  S_ItemName_4 =    "Cor_Lapis";
-  S_ItemName_5 =    "Clearwater_Jade";
-  S_ItemName_6 =    "Onikabuto";
-  S_ItemName_7 =    "Sakura_Bloom";
-  S_ItemName_8 =    "Crystal_Marrow";
-  S_ItemName_9 =    "Dendrobium";
-  S_ItemName_10 =    "Naku_Weed";
-  S_ItemName_11 =   "Sea_Ganoderma";
-  S_ItemName_12 =   "Sango_Pearl";
-  InventorySet();
-// Local Material #1
-  S_ItemName_1 =    "Wolfhook";
-  S_ItemName_2 =    "Valberry";
-  S_ItemName_3 =    "Cecilia";
-  S_ItemName_4 =    "Windwheel_Aster";
-  S_ItemName_5 =    "Philanemo_Mushroom";
-  S_ItemName_6 =    "Small_Lamp_Grass";
-  S_ItemName_7 =    "Calla_Lily";
-  S_ItemName_8 =    "Dandelion_Seed";
-  S_ItemName_9 =   "Jueyun_Chili";
-  S_ItemName_10 =   "Noctilucous_Jade";
-  S_ItemName_11 =   "Silk_Flower";
-  S_ItemName_12 =    "Glaze_Lily";
-  InventorySet();
-}
-
-  SetInventoryLM();
-  SetInventoryTLUM();
-  SetInventoryJewels();
-  SetInventoryES();
-  SetInventoryTLUM2();
-  SetInventoryCM();
-
+ItemNames = [
+    "Wolfhook",
+    "Valberry",
+    "Cecilia",
+    "Windwheel_Aster",
+    "Philanemo_Mushroom",
+    "Small_Lamp_Grass",
+    "Calla_Lily",
+    "Dandelion_Seed",
+    "Jueyun_Chili",
+    "Noctilucous_Jade",
+    "Silk_Flower",
+    "Glaze_Lily",
+    "Qingxin",
+    "Starconch",
+    "Violetgrass",
+    "Cor_Lapis",
+    "Clearwater_Jade",
+    "Onikabuto",
+    "Sakura_Bloom",
+    "Crystal_Marrow",
+    "Dendrobium",
+    "Naku_Weed",
+    "Sea_Ganoderma",
+    "Sango_Pearl",
+    "Amakumo_Fruit",
+    "Fluorescent_Fungus",
+    "Rukkhashava_Mushrooms",
+    "Padisarah",
+    "Nilotpala_Lotus",
+    "Kalpalata_Lotus",
+    "Redcrest",
+    "Sand_Grease_Pupa",
+    "Mourning_Flower",
+    "Trishiraite",
+    "Scarab",
+    "Beryl_Conch",
+    "Romaritime_Flower",
+    "Lumidouce_Bell",
+    "Rainbow_Rose",
+    "Lumitoile",
+    "Lakelight_Lily",
+    "Subdetection_Unit",
+    "Spring_of_the_First_Dewdrop"
+];
+InventorySet(ItemNames);
 
 
   SetCalculatorList();
 }
-function InventorySet() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_9}.webp"></i><input id="${S_ItemName_9}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_10}.webp"></i><input id="${S_ItemName_10}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_11}.webp"></i><input id="${S_ItemName_11}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_12}.webp"></i><input id="${S_ItemName_12}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet1() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet2() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet3() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet4() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet5() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet6() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet7() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet8() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet9() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_9}.webp"></i><input id="${S_ItemName_9}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet10() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_9}.webp"></i><input id="${S_ItemName_9}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_10}.webp"></i><input id="${S_ItemName_10}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
-}
-function InventorySet11() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></i><input id="${S_ItemName_1}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></i><input id="${S_ItemName_2}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></i><input id="${S_ItemName_3}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></i><input id="${S_ItemName_4}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></i><input id="${S_ItemName_5}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></i><input id="${S_ItemName_6}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></i><input id="${S_ItemName_7}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_8}.webp"></i><input id="${S_ItemName_8}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_9}.webp"></i><input id="${S_ItemName_9}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_10}.webp"></i><input id="${S_ItemName_10}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-        <td width="8%" colspan="1">\
-          <div class="input-field"><i class="prefix">\
-            <img class="miniicon" src="../image/Small/Item/Item_${S_ItemName_11}.webp"></i><input id="${S_ItemName_11}" value="0" type="number" class="validate">\
-          </div>\
-        </td>\
-      </tr>\
-    ')
-  `);
+
+
+
+function CreateInventoryInput(itemName) {
+  return `
+    <td width="8%" colspan="1">
+      <div class="input-field"><i class="prefix">
+        <img class="miniicon" src="../image/Small/Item/Item_${itemName}.webp"></i><input id="${itemName}" value="0" type="number" class="validate">
+      </div>
+   </td>`;
 }
 
 
+function InventorySet(itemNames) {
+  let html = '';
+  const maxColumns = 12;
+  const totalItems = itemNames.length;
+
+  for (let i = 0; i < totalItems; i++) {
+    const itemName = itemNames[i];
+    html += CreateInventoryInput(itemName);
+    
+    if ((i + 1) % maxColumns === 0 || i === totalItems - 1) {
+      const inventoryRow = `<tr>${html}</tr>`;
+      document.querySelector('table[class="Inventory"]').insertAdjacentHTML('beforeend', inventoryRow);
+      html = '';
+      if (i === totalItems - 1) break;
+    }
+  }
+}
 
 
 // カリキュレーター項目の生成
@@ -2523,6 +2046,8 @@ function SetCalculatorTLUM2() {
 
   SetPatchNoteList();
 }
+
+
 // Jewels
 function CalculatorSet() {
   eval(`
@@ -2726,6 +2251,15 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2024/07/07</b><BR>\
+更新。<BR>\
+・エミリエの実装に対応<BR>\
+・新規育成素材の実装に対応<BR>\
+・シグウィン、セトス、クロリンデの育成素材を修正<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
 ・アルレッキーノ、クロリンデ、セトス、シグウィンの実装に対応<BR>\
@@ -2733,7 +2267,7 @@ function SetPatchNoteList() {
 ・リネとフレミネの育成素材を修正<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
@@ -3470,33 +3004,6 @@ function TML6() {
   })
 }
 
-function Fix() {
-  var FixCharacter = localStorage.getItem("Character");
-  var FixCharacter = FixCharacter.replace(/collei/g, 'Collei');
-  var FixCharacter = FixCharacter.replace(/tighnari/g, 'Tighnari');
-  var FixCharacter = FixCharacter.replace(/dori/g, 'Dori');
-  var FixCharacter = FixCharacter.replace(/candace/g, 'Candace');
-  var FixCharacter = FixCharacter.replace(/cyno/g, 'Cyno');
-  var FixCharacter = FixCharacter.replace(/nilou/g, 'Nilou');
-  var FixCharacter = FixCharacter.replace(/nahida/g, 'Nahida');
-  var FixCharacter = FixCharacter.replace(/layla/g, 'Layla');
-  var FixCharacter = FixCharacter.replace(/wanderer/g, 'Wanderer');
-  var FixCharacter = FixCharacter.replace(/faruzan/g, 'Faruzan');
-  var FixHideCharacter = localStorage.getItem("HideCharacter");
-  var FixHideCharacter = FixHideCharacter.replace(/collei/g, 'Collei');
-  var FixHideCharacter = FixHideCharacter.replace(/tighnari/g, 'Tighnari');
-  var FixHideCharacter = FixHideCharacter.replace(/dori/g, 'Dori');
-  var FixHideCharacter = FixHideCharacter.replace(/candace/g, 'Candace');
-  var FixHideCharacter = FixHideCharacter.replace(/cyno/g, 'Cyno');
-  var FixHideCharacter = FixHideCharacter.replace(/nilou/g, 'Nilou');
-  var FixHideCharacter = FixHideCharacter.replace(/nahida/g, 'Nahida');
-  var FixHideCharacter = FixHideCharacter.replace(/layla/g, 'Layla');
-  var FixHideCharacter = FixHideCharacter.replace(/wanderer/g, 'Wanderer');
-  var FixHideCharacter = FixHideCharacter.replace(/faruzan/g, 'Faruzan');
-  localStorage.setItem("Character", FixCharacter);
-  localStorage.setItem("HideCharacter", FixHideCharacter);
-}
-
 // ページ読み込み時の処理
 function OpenScript() {
   function addGlobalStyle(css) {
@@ -3516,9 +3023,8 @@ function OpenScript() {
     alert("Honey Apricot - Material Calculator ver." + Version + "\n\n『Material Calculator』へようこそ！\n")
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
-      Fix();
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240201 to ver." + Version + "）\n・アルレッキーノ、クロリンデ、セトス、シグウィンの実装に対応\n・新規育成素材の実装に対応\n・リネとフレミネの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240424 to ver." + Version + "）\n・エミリエの実装に対応\n・新規育成素材の実装に対応\n・クロリンデ、セトス、シグウィンの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
