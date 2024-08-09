@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "25"
+			"count": "28"
 		}
 	],
 	"list": [
@@ -46,8 +46,16 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Chiori.png"
 		},
 		{
+			"name": "シグウィン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
+		},
+		{
 			"name": "三月なのか",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th.png"
+		},
+		{
+			"name": "三月なのか",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th_2.png"
 		},
 		{
 			"name": "ヘルタ",
@@ -74,6 +82,14 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparkle.png"
 		},
 		{
+			"name": "ホタル",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Firefly.png"
+		},
+		{
+			"name": "雲璃",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Yunli.png"
+		},
+		{
 			"name": "猫宮又奈",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nekomiya_Mana.png"
 		},
@@ -82,20 +98,16 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Corin_Wickes.png"
 		},
 		{
-			"name": "ホタル",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Firefly.png"
-		},
-		{
-			"name": "シグウィン",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
-		},
-		{
 			"name": "エレン・ジョー",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ellen_Joe.png"
 		},
 		{
 			"name": "ニコ・デマラ",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nicole_Demara.png"
+		},
+		{
+			"name": "青衣",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Qingyi.png"
 		},
 		{
 			"name": "「メッセージ」人形",
