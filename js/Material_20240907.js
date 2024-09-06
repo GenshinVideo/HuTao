@@ -1,4 +1,4 @@
-var Version = "20240907";
+var Version = "20240707";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -21,54 +21,6 @@ function SetCharacterList() {
   }
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
-
-// シロネン
-  S_Id =          "Xilonen";
-  S_JpName =      "シロネン";
-  S_CharaImg =    "Original/Character2/xilonen_103_gacha_splash.webp";
-  S_Element =     "Prithiva_Topaz";
-  S_Boss =        "Gold_Inscribed_Secret_Source_Core";
-  S_Local =       "Brilliant_Chrysanthemum";
-  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
-  S_Talent1 =     "Kindling";
-  S_Talent2 =     "Mirror_of_Mushin";
-  Checkmate();
-
-// キィニチ
-  S_Id =          "Kinich";
-  S_JpName =      "キィニチ";
-  S_CharaImg =    "Original/Character2/kinich_101_gacha_splash.webp";
-  S_Element =     "Nagadus_Emerald";
-  S_Boss =        "Overripe_Flamegranate";
-  S_Local =       "Quenepa_Berry";
-  S_Common =      "Tyrants_Fang";
-  S_Talent1 =     "Kindling";
-  S_Talent2 =     "Denial_and_Judgment";
-  Checkmate();
-
-// カチーナ
-  S_Id =          "Kachina";
-  S_JpName =      "カチーナ";
-  S_CharaImg =    "Original/Character2/kachina_100_gacha_splash.webp";
-  S_Element =     "Prithiva_Topaz";
-  S_Boss =        "Overripe_Flamegranate";
-  S_Local =       "Quenepa_Berry";
-  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
-  S_Talent1 =     "Conflict";
-  S_Talent2 =     "Fading_Candle";
-  Checkmate();
-
-// ムアラニ
-  S_Id =          "Mualani";
-  S_JpName =      "ムアラニ";
-  S_CharaImg =    "Original/Character2/mualani_102_gacha_splash.webp";
-  S_Element =     "Varunada_Lazurite";
-  S_Boss =        "Mark_of_the_Binding_Blessing";
-  S_Local =       "Sprayfeather_Gill";
-  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
-  S_Talent1 =     "Contention";
-  S_Talent2 =     "Lightless_Mass";
-  Checkmate();
 
 // エミリエ
   S_Id =          "Emilie";
@@ -1415,13 +1367,7 @@ ItemNames = [
   "Transoceanic_Pearl",
   "Artificed_Dynamic_Gear",
   "Mechanical_Spur_Gear",
-  "Meshing_Gear",
-  "Tyrants_Fang",
-  "Seasoned_Fang",
-  "Juvenile_Fang",
-  "Saurian_Crowned_Warriors_Golden_Whistle",
-  "Warriors_Metal_Whistle",
-  "Sentrys_Wooden_Whistle"
+  "Meshing_Gear"
 ];
 InventorySet(ItemNames);
 
@@ -1495,9 +1441,7 @@ ItemNames = [
   "Fontemer_Unihorn",
   "Water_That_Failed_To_Transcend",
   "Cloudseam_Scale",
-  "Fragment_of_a_Golden_Melody",
-  "Mark_of_the_Binding_Blessing",
-  "Overripe_Flamegranate"
+  "Fragment_of_a_Golden_Melody"
 ];
 InventorySet(ItemNames);
 
@@ -1583,15 +1527,6 @@ ItemNames = [
   "Philosophies_of_Order",
   "Guide_to_Order",
   "Teachings_of_Order",
-  "Philosophies_of_Contention",
-  "Guide_to_Contention",
-  "Teachings_of_Contention",
-  "Philosophies_of_Kindling",
-  "Guide_to_Kindling",
-  "Teachings_of_Kindling",
-  "Philosophies_of_Conflict",
-  "Guide_to_Conflict",
-  "Teachings_of_Conflict",
   "Crown_of_Insight"
 ];
 InventorySet(ItemNames);
@@ -1641,11 +1576,7 @@ ItemNames = [
     "Lumitoile",
     "Lakelight_Lily",
     "Subdetection_Unit",
-    "Spring_of_the_First_Dewdrop",
-    "Sprayfeather_Gill",
-    "Brilliant_Chrysanthemum",
-    "Quenepa_Berry",
-    "Saurian_Claw_Succulent"
+    "Spring_of_the_First_Dewdrop"
 ];
 InventorySet(ItemNames);
 
@@ -1725,10 +1656,10 @@ function SetCalculatorES() {
   S_ItemUnit_2 =    " 個"
   S_ItemName_3 =    "Fragment_of_a_Golden_Melody";
   S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Mark_of_the_Binding_Blessing";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Overripe_Flamegranate";
-  S_ItemUnit_5 =    " 個"
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    ""
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    ""
   S_ItemName_6 =    "";
   S_ItemUnit_6 =    ""
   S_ItemName_7 =    "";
@@ -1803,29 +1734,6 @@ function SetCalculatorES() {
 function SetCalculatorCM() {
   CalEle = document.querySelector('th[id="C_Common_Material"]').parentElement;
   S_ItemType =   "Common_Material";
-// Common Material #3
-  S_ItemName_1 =    "Saurian_Crowned_Warriors_Golden_Whistle";
-  S_ItemIDs__1 =    "Sentrys_Wooden_Whistle Warriors_Metal_Whistle Saurian_Crowned_Warriors_Golden_Whistle";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "";
-  S_ItemIDs__2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemIDs__3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemIDs__4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemIDs__5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemIDs__6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemIDs__7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet4();
 // Common Material #2
   S_ItemName_1 =    "Famed_Handguard";
   S_ItemIDs__1 =    "Old_Handguard Kageuchi_Handguard Famed_Handguard";
@@ -1845,9 +1753,9 @@ function SetCalculatorCM() {
   S_ItemName_6 =    "Artificed_Dynamic_Gear";
   S_ItemIDs__6 =    "Meshing_Gear Mechanical_Spur_Gear Artificed_Dynamic_Gear";
   S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Tyrants_Fang";
-  S_ItemIDs__7 =    "Juvenile_Fang Seasoned_Fang Tyrants_Fang";
-  S_ItemUnit_7 =    " 点";
+  S_ItemName_7 =    "";
+  S_ItemIDs__7 =    "";
+  S_ItemUnit_7 =    "";
   CalculatorSet4();
 // Common Material #1
   S_ItemName_1 =    "Slime_Concentrate";
@@ -1880,14 +1788,14 @@ function SetCalculatorLM() {
 // Local Material #6
   S_ItemName_1 =    "Spring_of_the_First_Dewdrop";
   S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Sprayfeather_Gill";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Brilliant_Chrysanthemum";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Quenepa_Berry";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Saurian_Claw_Succulent";
-  S_ItemUnit_5 =    " 個";
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    "";
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    "";
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    "";
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    "";
   S_ItemName_6 =    "";
   S_ItemUnit_6 =    "";
   S_ItemName_7 =    "";
@@ -1997,12 +1905,12 @@ function SetCalculatorTLUM() {
 // Talent Level-Up Material #3
   S_ItemName_1 =    "Order";
   S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Contention";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Kindling";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Conflict";
-  S_ItemUnit_4 =    " 点";
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    "";
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    "";
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    "";
   S_ItemName_5 =    "";
   S_ItemUnit_5 =    "";
   S_ItemName_6 =    "";
@@ -2345,19 +2253,12 @@ function SetPatchNoteList() {
   CalEle.insertAdjacentHTML('beforeend', '\
 <b>2024/07/07</b><BR>\
 更新。<BR>\
-・ナタの実装に対応<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
-<b>2024/07/07</b><BR>\
-更新。<BR>\
 ・エミリエの実装に対応<BR>\
 ・新規育成素材の実装に対応<BR>\
 ・シグウィン、セトス、クロリンデの育成素材を修正<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR><BR>\
 <b>2023/11/10</b><BR>\
 更新。<BR>\
@@ -3123,7 +3024,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240707 to ver." + Version + "）\n・ナタの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240424 to ver." + Version + "）\n・エミリエの実装に対応\n・新規育成素材の実装に対応\n・クロリンデ、セトス、シグウィンの育成素材を修正\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
