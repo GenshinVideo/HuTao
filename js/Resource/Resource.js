@@ -80,8 +80,22 @@ function LoadScript() {
       SelectBox3.style.pointerEvents = "auto";
       SelectBox3.setAttribute('href', url);
     }
-    document.getElementById("urlbox").innerText = "URL: " + url;
-    document.getElementById("md5box").innerText = "MD5: " + md5;
+    var SegmentsCheck = eval(`json.${SelectBox1.value}.version.v${version}.Segments`);
+    if ( SegmentsCheck ) {
+      document.getElementById("urlbox").innerText = "URL: " + url;
+      document.getElementById("md5box").innerText = "MD5: " + md5;
+    try {document.getElementById("segments").remove();} catch(e) {}
+    document.getElementById("md5box").insertAdjacentHTML('afterend', '<p id="segments" class="is-family-monospace"></p>');
+    for (i = 0; i < eval(`json.${SelectBox1.value}.version.v${version}.Segments`).length; i++) {
+      var SegmentsURL = eval(`json.${SelectBox1.value}.version.v${version}.Segments[i].url`);
+      var SegmentsMD5 = eval(`json.${SelectBox1.value}.version.v${version}.Segments[i].md5`);
+      document.getElementById("segments").insertAdjacentHTML('beforeend', '<BR>URL: <a href="' + SegmentsURL + '">' + SegmentsURL + '</a><BR>MD5: ' + SegmentsMD5);
+    };
+    } else {
+      document.getElementById("urlbox").innerText = "URL: " + url;
+      document.getElementById("md5box").innerText = "MD5: " + md5;
+      try {document.getElementById("segments").remove();} catch(e) {}
+    }
   }
 
   SelectBox1.addEventListener('change', (e) => {
@@ -89,6 +103,7 @@ function LoadScript() {
     SelectBox3.style.pointerEvents = "none";
     document.getElementById("urlbox").innerText = "URL: ";
     document.getElementById("md5box").innerText = "MD5: ";
+    try {document.getElementById("segments").remove();} catch(e) {}
     ChoiceType(e.target.value);
   })
 
