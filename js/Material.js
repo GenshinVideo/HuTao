@@ -40,7 +40,7 @@ function SetCharacterList() {
   S_CharaImg =    "Original/Character2/kinich_101_gacha_splash.webp";
   S_Element =     "Nagadus_Emerald";
   S_Boss =        "Overripe_Flamegranate";
-  S_Local =       "Quenepa_Berry";
+  S_Local =       "Saurian_Claw_Succulent";
   S_Common =      "Tyrants_Fang";
   S_Talent1 =     "Kindling";
   S_Talent2 =     "Denial_and_Judgment";
