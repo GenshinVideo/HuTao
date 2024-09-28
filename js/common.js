@@ -6,7 +6,10 @@ var instance = M.Sidenav.init(elems, options);
 [].slice.call(document.querySelectorAll('.sidenav a[href]')).forEach(function (i) {
   i.addEventListener('click', function () {
     document.querySelector('.progress').style.display = '';
-    document.body.lastElementChild.remove();
+    var existingIframe = document.querySelector('iframe.notice-main');
+    if (existingIframe) {
+      existingIframe.remove();
+    }
     var ifr = document.createElement('iframe');
     ifr.src = this.dataset.link;
     ifr.className = 'notice-main';
