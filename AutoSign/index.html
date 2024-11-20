@@ -23,7 +23,7 @@
     <img src="image/explanation/Discord.png" width="100%"><BR><BR>
     <BR><BR><BR>
     <B>設定方法</B><BR>
-    1. 『<a href="https://script.google.com/home/my" rel="nofollow">Google Apps Script</a>』から『新しいプロジェクト』を選択して、以下のコード(170行)全文を貼り付けます。<BR>
+    1. 『<a href="https://script.google.com/home/my" rel="nofollow">Google Apps Script</a>』から『新しいプロジェクト』を選択して、以下のコード(189行)全文を貼り付けます。<BR>
     <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     Genshin: true,
@@ -40,16 +40,39 @@ const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/OOO
 
 /** /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 ※上記が設定項目になります。設定方法につきましては"Honey Apricot"よりご確認下さい。
-　Honey Apricot（https://genshinvideo.github.io/HuTao/）＞胡蝶の夢と泡沫の夢。＞Hoyoverse AutoSign
+　Honey Apricot（https://genshinvideo.github.io/HuTao/）＞胡蝶の夢と泡沫の夢。＞AutoSign
 ※正常に動作しない可能性がありますので、ここより以下のコードは書き換えないで下さい。
 /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ **/
 
 const urlDict = {
   Genshin: 'https://sg-hk4e-api.hoyolab.com/event/sol/sign?lang=ja-jp&act_id=e202102251931481',
-  StarRail: 'https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=ja-jp&act_id=e202303301540311',
-  ZZZ: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/sign?lang=ja-jp&act_id=e202406031448091',
+  StarRail: 'https://sg-public-api.hoyolab.com/event/luna/hkrpg/os/sign?lang=ja-jp&act_id=e202303301540311',
+  ZZZ: 'https://sg-public-api.hoyolab.com/event/luna/zzz/os/sign?lang=ja-jp&act_id=e202406031448091',
   Honkai3rd: 'https://sg-public-api.hoyolab.com/event/mani/sign?lang=ja-jp&act_id=e202110291205111'
 }
+
+const games = {
+  Genshin: {
+    name: '原神　　　　　　　',
+    infoUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/info?lang=ja-jp&act_id=e202102251931481',
+    homeUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/home?lang=ja-jp&act_id=e202102251931481'
+  },
+  StarRail: {
+    name: '崩壊：スターレイル',
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/hkrpg/os/info?lang=ja-jp&act_id=e202303301540311',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/hkrpg/os/home?lang=ja-jp&act_id=e202303301540311'
+  },
+  ZZZ: {
+    name: 'ゼンレスゾーンゼロ',
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/zzz/os/info?lang=ja-jp&act_id=e202406031448091',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/zzz/os/home?lang=ja-jp&act_id=e202406031448091'
+  },
+  Honkai3rd: {
+    name: '崩壊３ｒｄ　　　　',
+    infoUrl: 'https://sg-public-api.hoyolab.com/event/mani/info?lang=ja-jp&act_id=e202110291205111',
+    homeUrl: 'https://sg-public-api.hoyolab.com/event/mani/home?lang=ja-jp&act_id=e202110291205111'
+  }
+};
 
 function main() {
   const messages = Accounts.map(autoSignFunction);
@@ -64,14 +87,8 @@ function discordPing() {
   return myDiscordID ? `<@${myDiscordID}>` : '';
 }
 
-function autoSignFunction({ token, Genshin, StarRail, ZenlessZoneZero, Honkai3rd, accountName }) {
-  const urls = [];
-  if (Genshin) urls.push(urlDict.Genshin);
-  if (StarRail) urls.push(urlDict.StarRail);
-  if (ZenlessZoneZero) urls.push(urlDict.ZZZ);
-  if (Honkai3rd) urls.push(urlDict.Honkai3rd);
-
-  const header = {
+function createOptions(method, token, extraHeaders = {}) {
+  const headers = {
     'Cookie': token,
     'Accept': 'application/json, text/plain, */*',
     'Accept-Encoding': 'gzip, deflate, br',
@@ -80,24 +97,51 @@ function autoSignFunction({ token, Genshin, StarRail, ZenlessZoneZero, Honkai3rd
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
     'x-rpc-client_type': '4',
     'Referer': 'https://act.hoyolab.com/',
-    'Origin': 'https://act.hoyolab.com'
+    'Origin': 'https://act.hoyolab.com',
+    ...extraHeaders
+  };
+  return {
+    method,
+    headers,
+    muteHttpExceptions: true,
+  };
+}
+
+function autoSignFunction({ token, Genshin, StarRail, ZenlessZoneZero, Honkai3rd, accountName }) {
+  const urls = [];
+  const postOptionsList = [];
+  const getOptionsList = [];
+  if (Genshin) {
+    urls.push(urlDict.Genshin);
+    postOptionsList.push(createOptions('POST', token, {}));
+    getOptionsList.push(createOptions('GET', token, {}));
   }
-  const options = {
-    method: 'POST',
-    headers: header,
-    muteHttpExceptions: true,
-  };
-  const options_ = {
-    method: 'GET',
-    headers: header,
-    muteHttpExceptions: true,
-  };
+  if (StarRail) {
+    urls.push(urlDict.StarRail);
+    postOptionsList.push(createOptions('POST', token, { 'x-rpc-signgame': 'hkrpg' }));
+    getOptionsList.push(createOptions('GET', token, { 'x-rpc-signgame': 'hkrpg' }));
+  }
+  if (ZenlessZoneZero) {
+    urls.push(urlDict.ZZZ);
+    postOptionsList.push(createOptions('POST', token, { 'x-rpc-signgame': 'zzz' }));
+    getOptionsList.push(createOptions('GET', token, { 'x-rpc-signgame': 'zzz' }));
+  }
+  if (Honkai3rd) {
+    urls.push(urlDict.Honkai3rd);
+    postOptionsList.push(createOptions('POST', token, {}));
+    getOptionsList.push(createOptions('GET', token, {}));
+  }
 
   let response = `${accountName}\n`;
 
-  const httpResponses = UrlFetchApp.fetchAll(urls.map(url => ({ url, ...options })));
+  const httpResponses = UrlFetchApp.fetchAll(urls.map((url, i) => ({
+    url,
+    ...postOptionsList[i]
+  })));
   for (const [i, hoyolabResponse] of httpResponses.entries()) {
+    console.log(JSON.parse(hoyolabResponse));
     const checkInResult = JSON.parse(hoyolabResponse).message;
+    console.log(checkInResult);
     const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
     const gameName = games[enGameName].name;
     const bannedCheck = JSON.parse(hoyolabResponse).data?.gt_result?.is_risk;
@@ -105,25 +149,16 @@ function autoSignFunction({ token, Genshin, StarRail, ZenlessZoneZero, Honkai3rd
     if (bannedCheck) {
       response += `\n${gameName} ≫ CAPTCHA認証に失敗しました。手動でログインを試みて下さい。`;
     } else {
-      response = processGameCheckIn(gameName, checkInResult, games[enGameName].infoUrl, games[enGameName].homeUrl, response, options_);
+      response = processGameCheckIn(gameName, checkInResult, games[enGameName].infoUrl, games[enGameName].homeUrl, response, getOptionsList[i]);
     }
   }
   return response;
 }
 
-
-function fetchData(url, options) {
-  try {
-    return JSON.parse(UrlFetchApp.fetch(url, options));
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    return null;
-  }
-}
-function processGameCheckIn(gameName, checkInResult, infoUrl, homeUrl, response, options_) {
+function processGameCheckIn(gameName, checkInResult, infoUrl, homeUrl, response, getOptions) {
   if (checkInResult === "OK") {
-    const daysData = fetchData(infoUrl, options_);
-    const itemData = fetchData(homeUrl, options_);
+    const daysData = fetchData(infoUrl, getOptions);
+    const itemData = fetchData(homeUrl, getOptions);
     if (daysData && itemData) {
       response += `\n${gameName} ≫［${daysData.data.total_sign_day}日目］` + 
                   `${itemData.data.awards[daysData.data.total_sign_day - 1].name} ` +
@@ -137,30 +172,14 @@ function processGameCheckIn(gameName, checkInResult, infoUrl, homeUrl, response,
   return response;
 }
 
-
-const games = {
-  Genshin: {
-    name: '原神　　　　　　　',
-    infoUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/info?lang=ja-jp&act_id=e202102251931481',
-    homeUrl: 'https://sg-hk4e-api.hoyolab.com/event/sol/home?lang=ja-jp&act_id=e202102251931481'
-  },
-  StarRail: {
-    name: '崩壊：スターレイル',
-    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/os/info?lang=ja-jp&act_id=e202303301540311',
-    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/os/home?lang=ja-jp&act_id=e202303301540311'
-  },
-  ZZZ: {
-    name: 'ゼンレスゾーンゼロ',
-    infoUrl: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/info?lang=ja-jp&act_id=e202406031448091',
-    homeUrl: 'https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/home?lang=ja-jp&act_id=e202406031448091'
-  },
-  Honkai3rd: {
-    name: '崩壊３ｒｄ　　　　',
-    infoUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/info?lang=ja-jp&act_id=e202301011241241',
-    homeUrl: 'https://sg-public-api.hoyolab.com/event/luna/honkai3rd/os/home?lang=ja-jp&act_id=e202301011241241'
+function fetchData(url, getOptions) {
+  try {
+    return JSON.parse(UrlFetchApp.fetch(url, getOptions));
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    return null;
   }
-};
-
+}
 
 function postWebhook(data) {
   try {
