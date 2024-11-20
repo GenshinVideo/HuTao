@@ -1,4 +1,4 @@
-var Version = "20241120";
+var Version = "20240907";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -22,36 +22,12 @@ function SetCharacterList() {
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
-// チャスカ
-  S_Id =          "Chasca";
-  S_JpName =      "チャスカ";
-  S_CharaImg =    "Original/Character2/chasca_104_gacha_splash.webp";
-  S_Element =     "Vayuda_Turquoise";
-  S_Boss =        "Ensnaring_Gaze";
-  S_Local =       "Withering_Purpurbloom";
-  S_Common =      "Tyrants_Fang";
-  S_Talent1 =     "Conflict";
-  S_Talent2 =     "Silken_Feather";
-  Checkmate();
-
-// オロルン
-  S_Id =          "Olorun";
-  S_JpName =      "オロルン";
-  S_CharaImg =    "Original/Character2/olorun_105_gacha_splash.webp";
-  S_Element =     "Vajrada_Amethyst";
-  S_Boss =        "Mark_of_the_Binding_Blessing";
-  S_Local =       "Glowing_Hornshroom";
-  S_Common =      "Tyrants_Fang";
-  S_Talent1 =     "Kindling";
-  S_Talent2 =     "Lightless_Silk_String";
-  Checkmate();
-
 // シロネン
   S_Id =          "Xilonen";
   S_JpName =      "シロネン";
   S_CharaImg =    "Original/Character2/xilonen_103_gacha_splash.webp";
   S_Element =     "Prithiva_Topaz";
-  S_Boss =        "Gold-Inscribed_Secret_Source_Core";
+  S_Boss =        "Gold_Inscribed_Secret_Source_Core";
   S_Local =       "Brilliant_Chrysanthemum";
   S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
   S_Talent1 =     "Kindling";
@@ -1521,9 +1497,7 @@ ItemNames = [
   "Cloudseam_Scale",
   "Fragment_of_a_Golden_Melody",
   "Mark_of_the_Binding_Blessing",
-  "Overripe_Flamegranate",
-  "Gold-Inscribed_Secret_Source_Core",
-  "Ensnaring_Gaze"
+  "Overripe_Flamegranate"
 ];
 InventorySet(ItemNames);
 
@@ -1671,9 +1645,7 @@ ItemNames = [
     "Sprayfeather_Gill",
     "Brilliant_Chrysanthemum",
     "Quenepa_Berry",
-    "Saurian_Claw_Succulent",
-    "Glowing_Hornshroom",
-    "Withering_Purpurbloom"
+    "Saurian_Claw_Succulent"
 ];
 InventorySet(ItemNames);
 
@@ -1757,10 +1729,10 @@ function SetCalculatorES() {
   S_ItemUnit_4 =    " 個"
   S_ItemName_5 =    "Overripe_Flamegranate";
   S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Gold-Inscribed_Secret_Source_Core";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Ensnaring_Gaze";
-  S_ItemUnit_7 =    " 個"
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    ""
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    " "
   CalculatorSet2();
 // Elemental Stones #4
   S_ItemName_1 =    "Pseudo-Stamens";
@@ -1916,10 +1888,10 @@ function SetCalculatorLM() {
   S_ItemUnit_4 =    " 個";
   S_ItemName_5 =    "Saurian_Claw_Succulent";
   S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Glowing_Hornshroom";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Withering_Purpurbloom";
-  S_ItemUnit_7 =    " 個";
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    "";
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    "";
   CalculatorSet2();
 // Local Material #5
   S_ItemName_1 =    "Beryl_Conch";
@@ -2371,19 +2343,12 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
-<b>2024/11/20</b><BR>\
-更新。<BR>\
-・チャスカ、オロルンの実装に対応<BR>\
-<BR>\
-既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
-<BR><BR>\
 <b>2024/07/07</b><BR>\
 更新。<BR>\
 ・ナタの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
 <BR><BR>\
 <b>2024/07/07</b><BR>\
 更新。<BR>\
@@ -3158,7 +3123,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240907 to ver." + Version + "）\n・チャスカ、オロルンの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240707 to ver." + Version + "）\n・ナタの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
