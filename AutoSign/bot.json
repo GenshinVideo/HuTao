@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "28"
+			"count": "30"
 		}
 	],
 	"list": [
@@ -48,6 +48,14 @@
 		{
 			"name": "シグウィン",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
+		},
+		{
+			"name": "シトラリ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Citlali.png"
+		},
+		{
+			"name": "藍硯",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Lanyan.png"
 		},
 		{
 			"name": "三月なのか",
