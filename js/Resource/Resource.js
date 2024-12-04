@@ -122,9 +122,26 @@ function LoadWait() {
 }
 LoadWait();
 function FixURL() {
+  var BoxFullHeight = document.querySelectorAll('div[class="box"]')
+  BoxFullHeight[2].style.height = BoxFullHeight[3].offsetHeight + "px"
+
   if (document.querySelectorAll('a[class="button is-success"]')[1].href == location.href) {
     var FixVersion = document.querySelector('strong[id="versiontext"]').textContent;
     var FixDlLink = document.querySelectorAll('a[class="button is-success is-outlined"]')[4].href.replace(/(.*?pc_zip\/[^\/]+)\/.*$/g, "$1/GenshinImpact_" + FixVersion + ".zip")
     document.querySelectorAll('a[class="button is-success"]')[1].href = FixDlLink;
   }
+}
+
+function copyToClipboard(CopyText) {
+    const url = CopyText;
+    const textarea = document.createElement("textarea");
+    textarea.value = url;
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    
+    // コピー完了のアラートや通知（オプション）
+    alert("URL copied to clipboard!");
 }

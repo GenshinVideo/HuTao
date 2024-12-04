@@ -1,4 +1,9 @@
+let errorCount = 0;
 export default async function getUpdateData(updateDataUrl, predl = true) {
+	if (errorCount > 0) {
+		window.location.reload();
+	}
+
 	console.log(`Getting update data with${predl ? '' : 'out'} pre-downloads`);
 
 	if (!updateDataUrl) {
@@ -23,23 +28,40 @@ export default async function getUpdateData(updateDataUrl, predl = true) {
 			};
 		}
 	} catch (error) {
-		return {
-			success: false,
-			data: 'Fetching failed. Check if the entered link contains update data and if you have a working internet connection.'
-		};
+		console.log('Fetching failed. Trying localStorage...');
+		// ローカルストレージからデータを取得
+		const localResourceJson = localStorage.getItem('ResourceJson');
+		if (localResourceJson) {
+			console.log('Using localStorage data');
+			const response = JSON.parse(localResourceJson);
+			const predldata = response.data.game_packages[0].pre_download.major;
+
+			console.log(`Pre-download data${predldata ? '' : ' not'} found`);
+
+			return {
+				success: true,
+				data: predl && predldata ? predldata : response.data.game_packages[0].main
+			};
+		} else {
+			return {
+				success: false,
+				data: 'Fetching failed, and no local data found.'
+			};
+		}
 	}
 
 	try {
 		const response = await responseJson.json();
-		const predldata = response.data.pre_download_game;
+		const predldata = response.data.game_packages[0].pre_download.major;
 
 		console.log(`Pre-download data${predldata ? '' : ' not'} found`);
 
 		return {
 			success: true,
-			data: predl && predldata ? predldata : response.data.game
+			data: predl && predldata ? predldata : response.data.game_packages[0].main
 		};
 	} catch (error) {
+		errorCount++;
 		return {
 			success: false,
 			data: 'JSON parsing failed. Check if the entered link contains update data.'
