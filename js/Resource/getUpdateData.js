@@ -1,8 +1,4 @@
-let errorCount = 0;
 export default async function getUpdateData(updateDataUrl, predl = true) {
-	if (errorCount > 0) {
-		window.location.reload();
-	}
 
 	console.log(`Getting update data with${predl ? '' : 'out'} pre-downloads`);
 
@@ -61,7 +57,6 @@ export default async function getUpdateData(updateDataUrl, predl = true) {
 			data: predl && predldata ? predldata : response.data.game_packages[0].main
 		};
 	} catch (error) {
-		errorCount++;
 		return {
 			success: false,
 			data: 'JSON parsing failed. Check if the entered link contains update data.'
