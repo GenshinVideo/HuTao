@@ -113,7 +113,7 @@ function LoadScript() {
 }
 
 function LoadWait() {
-  if ( !document.querySelectorAll('a[class="button is-success"]')[1] ) {
+  if ( !document.querySelectorAll('a[class="button is-success"]')[0] ) {
     setTimeout( LoadWait, 100 );
     return;
   } else {
@@ -123,7 +123,7 @@ function LoadWait() {
 LoadWait();
 
 function FixURL() {
-  var BoxFullHeight = document.querySelectorAll('div[class="box"]')
+  var BoxFullHeight = document.querySelectorAll('div[class="box"]');
   BoxFullHeight[2].style.height = BoxFullHeight[3].offsetHeight + "px"
 }
 
