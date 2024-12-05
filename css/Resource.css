@@ -7684,7 +7684,7 @@ body > .navbar {
   font-size: 0.9em;         /* 文字サイズを少し小さくする（必要に応じて調整） */
 }
 
-.demo-button {
+.DemoButton {
   padding: 0px 4px;
   border: 1px solid #333;
   background-color: transparent;
@@ -7694,7 +7694,7 @@ body > .navbar {
   margin: 0px 2px;
 }
 
-.copy-button {
+.HTUB {
   padding: 0px 4px;
   border: 1px solid #333;
   background-color: transparent;
@@ -7705,7 +7705,7 @@ body > .navbar {
   margin: 0px 2px;
 }
 
-.copy-button:hover {
+.HTUB:hover {
  background-color: transparent;
  color: #00FFFF;
 }
