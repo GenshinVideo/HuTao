@@ -73,6 +73,7 @@ export default class SettingsModal extends Modal {
 
 	async #saveButtonClicked() {
 		this.#setLoadingState(true);
+		await new Promise(resolve => setTimeout(resolve, 1500));
 
 		const updateData = await getUpdateData(this.#urlInput.value);
 
