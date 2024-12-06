@@ -123,8 +123,11 @@ function LoadWait() {
 LoadWait();
 
 function FixURL() {
-  var BoxFullHeight = document.querySelectorAll('div[class="box"]');
-  BoxFullHeight[2].style.height = BoxFullHeight[3].offsetHeight + "px"
+//  var BoxFullHeight = document.querySelectorAll('div[class="box"]');
+//  BoxFullHeight[2].style.height = BoxFullHeight[3].offsetHeight + "px"
+  try{
+  document.querySelectorAll('hr[class="divider"]')[2].style.marginTop = document.querySelector('ul[class="segment-list"]').offsetHeight - 38 - 23 + 12 + "px";
+  }catch(e){}
 }
 
 function HTUB() {
