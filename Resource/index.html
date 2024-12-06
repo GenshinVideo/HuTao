@@ -9,12 +9,68 @@
   <link rel="stylesheet" href="../css/Resource.css">
   <script type="module" src="../js/Resource/initSite.js"></script>
   <script defer src="../js/Resource/all.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const urlValue = localStorage.getItem("url");
+    const videoElement = document.getElementById("background-video");
+
+    if (videoElement) {
+      const defaultVideos = ["4ziysqXOQ8", "U5hbdsT9W7", "g0mMIvshDb"];
+      const defaultVideo = "videos/Genshin.mp4";
+      let videoSrc = defaultVideo;
+
+      if (urlValue) {
+        if (urlValue.includes(defaultVideos[0])) {
+          videoSrc = "videos/StarRail.mp4";
+        } else if (urlValue.includes(defaultVideos[1])) {
+          videoSrc = "videos/1730873862934_507.mp4";
+        } else if (urlValue.includes(defaultVideos[2])) {
+          videoSrc = "videos/3rd.mp4";
+        }
+      }
+
+      videoElement.src = videoSrc;
+      videoElement.load();
+    }
+  });
+</script>
+
+<!--
+背景をYoutubeの動画にしてみる。
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const urlValue = localStorage.getItem("url");
+  if (urlValue) {
+    const videoElement = document.getElementById("background-video");
+    if (videoElement) {
+      if (urlValue.includes("4ziysqXOQ8")) {
+        videoElement.src = "https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&controls=0&showinfo=0&rel=0&fs=0";
+      } else if (urlValue.includes("U5hbdsT9W7")) {
+        videoElement.src = "https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&controls=0&showinfo=0&rel=0&fs=0";
+      }
+    }
+  }
+});
+</script>
+-->
+
 </head>
 
 <body>
   <div class="BackGroundMovie">
-    <video src="movie.mp4" loop autoplay muted playsinline>
-    </video>
+    <video id="background-video" loop autoplay muted playsinline></video>
+<!--
+背景をYoutubeの動画にしてみる。
+    <iframe 
+      id="background-video"
+      src="https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&modestbranding=1&showinfo=0&rel=0"
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+-->
   </div>
   <nav class="navbar" aria-label="main navigation">
     <div class="container">
