@@ -30,8 +30,10 @@ export default async function getUpdateData(updateDataUrl, predl = true) {
 		if (localResourceJson) {
 			console.log('Using localStorage data');
 			const response = JSON.parse(localResourceJson);
-			const predldata = response.data.game_packages[0].pre_download.major;
+			const predldata = response.data.game_packages[0].pre_download;
 
+console.log("Z");
+console.log(predldata);
 			console.log(`Pre-download data${predldata ? '' : ' not'} found`);
 
 			return {
@@ -47,8 +49,16 @@ export default async function getUpdateData(updateDataUrl, predl = true) {
 	}
 
 	try {
+console.log("Z");
 		const response = await responseJson.json();
+
+console.log("A");
+console.log(response);
 		const predldata = response.data.game_packages[0].pre_download.major;
+console.log("B");
+console.log(predldata)
+console.log("C");
+console.log(response.data.game_packages[0].main)
 
 		console.log(`Pre-download data${predldata ? '' : ' not'} found`);
 
