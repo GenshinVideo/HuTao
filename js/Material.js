@@ -1,4 +1,4 @@
-var Version = "20241120";
+var Version = "20240115";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -19,8 +19,60 @@ function SetCharacterList() {
     setTimeout( SetCharacterList, 100 );
     return;
   }
+
   ChaEle = document.querySelector('div[id="Character"]');
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
+
+  S_VideoBGB = "";
+
+// 夢見月瑞希
+  S_Id =          "Mizuki";
+  S_JpName =      "夢見月瑞希";
+  S_CharaImg =    "Original/Character2/mizuki_109_gacha_splash.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Talisman_of_the_Enigmatic_Land";
+  S_Local =       "Sea_Ganoderma";
+  S_Common =      "Famed_Handguard";
+  S_Talent1 =     "Transience";
+  S_Talent2 =     "Fading_Candle";
+  Checkmate();
+
+// 藍硯
+  S_Id =          "Lanyan";
+  S_JpName =      "藍硯";
+  S_CharaImg =    "Original/Character2/lanyan_108_gacha_splash.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Gold-Inscribed_Secret_Source_Core";
+  S_Local =       "Clearwater_Jade";
+  S_Common =      "Energy_Nectar";
+  S_Talent1 =     "Diligence";
+  S_Talent2 =     "Eroded_Sunfire";
+  Checkmate();
+
+// シトラリ
+  S_Id =          "Citlali";
+  S_JpName =      "シトラリ";
+  S_CharaImg =    "Original/Character2/citlali_107_gacha_splash.webp";
+  S_Element =     "Shivada_Jade";
+  S_Boss =        "Talisman_of_the_Enigmatic_Land";
+  S_Local =       "Quenepa_Berry";
+  S_Common =      "Tyrants_Fang";
+  S_Talent1 =     "Kindling";
+  S_Talent2 =     "Denial_and_Judgment";
+  S_VideoBG =     "LmmfXWOvSU0,z3TtWR7AiWU,W-MBm5kS_A4";
+  Checkmate();
+
+// マーヴィカ
+  S_Id =          "Mavuika";
+  S_JpName =      "マーヴィカ";
+  S_CharaImg =    "Original/Character2/mavuika_106_gacha_splash.webp";
+  S_Element =     "Agnidus_Agate";
+  S_Boss =        "Gold-Inscribed_Secret_Source_Core";
+  S_Local =       "Withering_Purpurbloom";
+  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
+  S_Talent1 =     "Contention";
+  S_Talent2 =     "Eroded_Horn";
+  Checkmate();
 
 // チャスカ
   S_Id =          "Chasca";
@@ -92,6 +144,7 @@ function SetCharacterList() {
   S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
   S_Talent1 =     "Contention";
   S_Talent2 =     "Lightless_Mass";
+  S_VideoBG =     "RbTnCgeyiVY,lQoyQdLEIvk,1ygzwUwHL8w";
   Checkmate();
 
 // エミリエ
@@ -1117,7 +1170,7 @@ function CharacterSet() {
             <th id="right" class="${S_Id}" colspan="17"></th>\
           </tr>\
           <tr>\
-            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
+            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}" class="bgv ${S_VideoBG}"></td>\
             <td width="12%" colspan="3" class="textleft">レベル</td>\
             <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
             <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
@@ -1377,6 +1430,15 @@ function SliderLoad() {
   `);
 }
 function Checkmate() {
+  try {
+    if (S_VideoBG != S_VideoBGB) {
+      S_VideoBGB = S_VideoBG;
+    } else {
+      S_VideoBG = "";
+    }
+  } catch(e) {
+    S_VideoBG = "";
+  }
   eval(`
   try{
     if (Hiders.${S_Id} == "0") {
@@ -1481,7 +1543,10 @@ ItemNames = [
   "Lightless_Mass",
   "Fading_Candle",
   "Silken_Feather",
-  "Denial_and_Judgment"
+  "Denial_and_Judgment",
+  "Eroded_Horn",
+  "Eroded_Sunfire",
+  "Eroded_Scale_Feather"
 ];
 InventorySet(ItemNames);
 
@@ -1523,7 +1588,8 @@ ItemNames = [
   "Mark_of_the_Binding_Blessing",
   "Overripe_Flamegranate",
   "Gold-Inscribed_Secret_Source_Core",
-  "Ensnaring_Gaze"
+  "Ensnaring_Gaze",
+  "Talisman_of_the_Enigmatic_Land"
 ];
 InventorySet(ItemNames);
 
@@ -1746,6 +1812,22 @@ function SetCalculatorJewel() {
 function SetCalculatorES() {
   CalEle = document.querySelector('th[id="C_Elemental_Stones"]').parentElement;
   S_ItemType =   "Elemental_Stones";
+// Elemental Stones #5
+  S_ItemName_1 =    "Talisman_of_the_Enigmatic_Land";
+  S_ItemUnit_1 =    " 個"
+  S_ItemName_2 =    "";
+  S_ItemUnit_2 =    "";
+  S_ItemName_3 =    "";
+  S_ItemUnit_3 =    "";
+  S_ItemName_4 =    "";
+  S_ItemUnit_4 =    "";
+  S_ItemName_5 =    "";
+  S_ItemUnit_5 =    "";
+  S_ItemName_6 =    "";
+  S_ItemUnit_6 =    "";
+  S_ItemName_7 =    "";
+  S_ItemUnit_7 =    "";
+  CalculatorSet2();
 // Elemental Stones #5
   S_ItemName_1 =    "Water_That_Failed_To_Transcend";
   S_ItemUnit_1 =    " 個"
@@ -2080,12 +2162,12 @@ function SetCalculatorTLUM2() {
   S_ItemUnit_1 =    " 個";
   S_ItemName_2 =    "Denial_and_Judgment";
   S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
+  S_ItemName_3 =    "Eroded_Horn";
+  S_ItemUnit_3 =    " 個";
+  S_ItemName_4 =    "Eroded_Sunfire";
+  S_ItemUnit_4 =    " 個";
+  S_ItemName_5 =    "Eroded_Scale_Feather";
+  S_ItemUnit_5 =    " 個";
   S_ItemName_6 =    "";
   S_ItemUnit_6 =    "";
   S_ItemName_7 =    "";
@@ -2371,12 +2453,20 @@ function CalculatorSet4() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2025/01/15</b><BR>\
+更新。<BR>\
+・マーヴィカ、シトラリ、藍硯、夢見月瑞希の実装に対応<BR>\
+・背景動画機能をテスト実装（シトラリの画像をクリックで起動）<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2024/11/20</b><BR>\
 更新。<BR>\
 ・チャスカ、オロルンの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2024/07/07</b><BR>\
 更新。<BR>\
@@ -3138,8 +3228,31 @@ function TML6() {
   })
 }
 
+function BgVC() {
+  const bgvImages = document.querySelectorAll('img.bgv');
+  bgvImages.forEach(bgvImage => {
+    bgvImage.addEventListener("click", () => {
+      const videoId = bgvImage.classList[1];
+      if (videoId) {
+        const existingVideo = document.querySelector('video[class="NfBV"]');
+        if (existingVideo) {
+          existingVideo.remove();
+          document.querySelector(".BackGroundMovie").innerHTML = `<iframe id="background-video" src="https://www.youtube.com/embed/?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&fs=0&start=4&playlist=${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        } else {
+          const videoElement = document.getElementById("background-video");
+          videoElement.src = `https://www.youtube.com/embed/?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&fs=0&start=4&playlist=${videoId}`;
+        }
+      }
+    });
+  });
+  if (bgvImages.length === 0) {
+    console.log("動画読み込みの失敗");
+  }
+}
+
 // ページ読み込み時の処理
 function OpenScript() {
+  BgVC();
   function addGlobalStyle(css) {
     var head, style;
     head = document.getElementsByTagName('head')[0];
@@ -3158,7 +3271,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240907 to ver." + Version + "）\n・チャスカ、オロルンの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20241120 to ver." + Version + "）\n・マーヴィカ、シトラリ、藍硯、夢見月瑞希の実装に対応\n・背景動画機能をテスト実装（シトラリの画像をクリックで起動）\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
