@@ -207,3 +207,37 @@ img.miniicon {
 .Hide {
   display: none;
 }
+
+
+
+iframe {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100vw; /* 横幅に合わせる */
+  height: 56.25vw; /* 16:9のアスペクト比 */
+}
+
+@media (aspect-ratio: 16/9) {
+  iframe {
+    top: 0% !important;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  iframe {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  iframe {
+    width: 100vw;
+    height: 56.25vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
