@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "30"
+			"count": "32"
 		}
 	],
 	"list": [
@@ -66,8 +66,16 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th_2.png"
 		},
 		{
+			"name": "三月なのか",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th_3.png"
+		},
+		{
 			"name": "ヘルタ",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Herta.png"
+		},
+		{
+			"name": "マダム・ヘルタ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/The_Herta.png"
 		},
 		{
 			"name": "符玄",
