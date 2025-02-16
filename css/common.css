@@ -81,7 +81,7 @@ li.active>.collapsible-header .material-icons.iconremove {
 }
 
 svg {
-  opacity: 0 ;
+  opacity: 0.3 ;
 }
 svg:hover {
   opacity: 0.5 ;
