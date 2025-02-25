@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
   // Sidenavの初期化
   var elems = document.querySelector(".sidenav");
   var options = { draggable: false };
   var instance = M.Sidenav.init(elems, options);
+
+
 
   // Sidenav内のリンククリック時の処理
   [].slice.call(document.querySelectorAll(".sidenav a[href]"))
@@ -27,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+
+
   // 初回アクセス、または最後のアクセスから1週間以上経過している場合にメニューを自動で開く
   const sidenavTrigger = document.querySelector(".sidenav-trigger");
   if (sidenavTrigger) {
@@ -43,12 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(storageKey, now);
   }
 
+
+
   // Collapsibleの初期化
   var collapsibleElems = document.querySelectorAll(".collapsible");
   M.Collapsible.init(collapsibleElems, options);
 
   var expandableElem = document.querySelector(".collapsible.expandable");
   M.Collapsible.init(expandableElem, { accordion: false });
+
+
 
   // iframeの初期化
   const GI = "https://webstatic-sea.mihoyo.com/hk4e/announcement/index.html?auth_appid=announcement&bundle_id=hk4e_global&game=hk4e&game_biz=hk4e_global&lang=JA&level=100&platform=pc&region=os_euro&uid=100000000#/";
@@ -70,19 +80,26 @@ document.addEventListener("DOMContentLoaded", function () {
       newSrc = value;
     }
   }
-
-  // クエリを現在のURLに追加する処理
   if (iframe) {
     iframe.src = newSrc;
   }
+
+
+
+  // クエリを現在のURLに追加する処理
   document.querySelectorAll(".Query").forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
 
-      const linkValue = event.target.getAttribute("data-link").replace(/\/+$/, "");
+      const linkValue = event.target.getAttribute("query-link") || event.target.getAttribute("data-link");
+      if (!linkValue) return;
+      const cleanedValue = linkValue.replace(/\/+$/, "");
       const currentUrl = new URL(window.location);
-      currentUrl.searchParams.set(linkValue, "");
-      history.replaceState(null, "", currentUrl.origin + currentUrl.pathname + "?" + linkValue);
+
+      history.replaceState(null, "", currentUrl.origin + currentUrl.pathname + "?" + cleanedValue);
     });
   });
+
+
+
 });
