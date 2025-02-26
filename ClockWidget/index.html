@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Clock Widget Tool - Honey Apricot</title>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="../css/Widget.css">
+  <style type="text/css">
+    .Contents a:link { color: #AFEEEE; }
+    .Contents a:visited { color: #AFEEEE; }
+    .Contents a:hover { color: #00FFFF; }
+    .Contents a:active { color: #FFFFFF; }
+    .Contents img { opacity: 0.5; }
+    .Contents img:hover { opacity: 1.0; }
+
+    /* コード埋め込み用スタイル */
+    pre.prettyprint {
+      display: block;
+      width: calc(100% - 2px);
+      margin: 0;
+      overflow: auto;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    pre .nocode { color: #000; }
+    pre .str, pre .atv { color: #ffa0a0; }
+    pre .kwd, pre .tag { color: #f0e68c; font-weight: bold; }
+    pre .com { color: #87ceeb; }
+    pre .typ, pre .dec { color: #98fb98; }
+    pre .lit { color: #cd5c5c; }
+    pre .pun, pre .pln { color: #fff; }
+    pre .atn { color: #bdb76b; font-weight: bold; }
+    @media print {
+      pre.prettyprint { background: none; }
+      pre .str, code .str { color: #060; }
+      pre .kwd, code .kwd, pre .tag, code .tag { color: #006; font-weight: bold; }
+      pre .com, code .com { color: #600; font-style: italic; }
+      pre .typ, code .typ { color: #404; font-weight: bold; }
+      pre .lit, code .lit { color: #044; }
+      pre .pun, code .pun { color: #440; }
+      pre .pln, code .pln { color: #000; }
+      pre .atn, code .atn { color: #404; }
+      pre .atv, code .atv { color: #060; }
+    }
+    .prettyprint ol.linenums li {
+      list-style-type: decimal;
+      margin: 0;
+      color: #00ffff;
+    }
+    li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+    }
+
+    iframe {
+      pointer-events: none;
+    }
+
+    /* スクロールバーの調整 */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    * {
+      scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.2);
+      scrollbar-width: thin;
+    }
+  </style>
+</head>
+
+<body style="overflow-y: auto;">
+  <div class="SakuraWallpaper">
+    <video src="movie.mp4" loop autoplay muted playsinline></video>
+  </div>
+  <div class="Contents" style="color: #FFFFFF; overflow-y: auto; overflow-x: hidden;">
+    <p>時計と現在の天気を表示するシンプルなウィジェットツールです。<br>
+    配信画面などの空きスペースにブラウザウィンドウとして追加することを想定しています。</p>
+
+    <p>時計のみのウィジェットを追加する場合は、以下のURLを使用してください。</p>
+<pre class="prettyprint lang-css linenums">
+https://genshinvideo.github.io/HuTao/ClockWidget/1/
+</pre>
+    <iframe src="1/" width="100%" height="250px"></iframe>
+
+    <p>さらに天気情報を追加する場合は、以下のようにします。</p>
+<pre class="prettyprint lang-css linenums">
+https://genshinvideo.github.io/HuTao/ClockWidget/1/?location=https://forecast7.com/ja/34d69135d50/osaka/
+</pre>
+    <iframe src="1/?location=https://forecast7.com/ja/34d69135d50/osaka/" width="100%" height="350px"></iframe>
+
+    <p>最大3つの地域に対応しています。複数地域を指定する場合は、以下のようにしてください。</p>
+<pre class="prettyprint lang-css linenums">
+https://genshinvideo.github.io/HuTao/ClockWidget/1/?location=https://forecast7.com/ja/34d69135d50/osaka/&location2=https://forecast7.com/ja/35d69139d69/tokyo/
+</pre>
+    <iframe src="1/?location=https://forecast7.com/ja/34d69135d50/osaka/&location2=https://forecast7.com/ja/35d69139d69/tokyo/" width="100%" height="475px"></iframe>
+
+    <p>このクエリで使用するURLは、<a href="https://weatherwidget.io/" target="_blank">WeatherWidget.io</a>から生成できます。<br>
+    「Select Location」に地域名を入力し、表示されるドロップダウンから該当地域を選択します。<br>
+    その後「Language」を選択し、「GET CODE」をクリックすると必要なURLが取得できます。</p>
+
+    <p>背景動画はカスタムCSSを使用して非表示にできます。例えば、次のようにします。</p>
+<pre class="prettyprint lang-css linenums">
+video {
+  display: none;
+}
+</pre>
+    <iframe src="Sample1.html?location=https://forecast7.com/ja/34d69135d50/osaka/" width="100%" height="350px"></iframe>
+
+    <p>背景色の変更も同じくカスタムCSSを用いることで色の変更が可能です。</p>
+<pre class="prettyprint lang-css linenums">
+video {
+  display: none;
+}
+.Contents {
+  background: rgba(255, 255, 255, 0.4);
+}
+</pre>
+    <iframe src="Sample2.html?location=https://forecast7.com/ja/34d69135d50/osaka/" width="100%" height="350px"></iframe>
+  </div>
+</body>
+</html>
