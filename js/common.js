@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
     HI3: "https://sdk.hoyoverse.com/bh3/announcement/index.html?game_biz=bh3_global&bundle_id=bh3_jp&game=bh3&platform=pc&uid=10000000&level=100&region=jp01&lang=ja#/",
     Material: "Material/",
     Resource: "Resource/",
-    AutoSign: "AutoSign/"
-    AutoSign: "ClockWidget/"
+    AutoSign: "AutoSign/",
+    ClockWidget: "ClockWidget/"
   };
 
   const params = new URLSearchParams(window.location.search);
