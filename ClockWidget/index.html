@@ -89,28 +89,50 @@
     配信画面などの空きスペースにブラウザウィンドウとして追加することを想定しています。</p>
 
     <p>時計のみのウィジェットを追加する場合は、以下のURLを使用してください。</p>
-<pre class="prettyprint lang-css linenums">
-https://genshinvideo.github.io/HuTao/ClockWidget/1/
-</pre>
+    <div style="padding-left: 20px; width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/</span>
+    </div>
     <iframe src="1/" width="100%" height="250px"></iframe>
 
     <p>さらに天気情報を追加する場合は、以下のようにします。</p>
-<pre class="prettyprint lang-css linenums">
-https://genshinvideo.github.io/HuTao/ClockWidget/1/?location=https://forecast7.com/ja/34d69135d50/osaka/
-</pre>
+    <div style="padding-left: 20px; width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/<span style="color: lightgreen">?location=</span><span style="color: pink">https://forecast7.com/ja/34d69135d50/osaka/</span>
+    </div>
     <iframe src="1/?location=https://forecast7.com/ja/34d69135d50/osaka/" width="100%" height="350px"></iframe>
 
     <p>最大3つの地域に対応しています。複数地域を指定する場合は、以下のようにしてください。</p>
-<pre class="prettyprint lang-css linenums">
-https://genshinvideo.github.io/HuTao/ClockWidget/1/?location=https://forecast7.com/ja/34d69135d50/osaka/&location2=https://forecast7.com/ja/35d69139d69/tokyo/
-</pre>
+    <div style="padding-left: 20px; width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/<span style="color: lightgreen">?location=</span><span style="color: pink">https://forecast7.com/ja/34d69135d50/osaka/<span style="color: lightgreen">&location2=</span><span style="color: pink">https://forecast7.com/ja/35d69139d69/tokyo/</span>
+    </div>
     <iframe src="1/?location=https://forecast7.com/ja/34d69135d50/osaka/&location2=https://forecast7.com/ja/35d69139d69/tokyo/" width="100%" height="475px"></iframe>
 
     <p>このクエリで使用するURLは、<a href="https://weatherwidget.io/" target="_blank">WeatherWidget.io</a>から生成できます。<br>
     「Select Location」に地域名を入力し、表示されるドロップダウンから該当地域を選択します。<br>
     その後「Language」を選択し、「GET CODE」をクリックすると必要なURLが取得できます。</p>
+    <img src="image/explanation/6.png" width="100%">
+    <img src="image/explanation/7.png" width="100%">
 
-    <p>背景動画はカスタムCSSを使用して非表示にできます。例えば、次のようにします。</p>
+    <p><BR>作成したURLを元にlocationに指定してウィジェットを作成します。</p>
+    <p style="margin: 0;">①時計のみ</p>
+    <div style="width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/</span>
+    </div>
+    <p style="margin-bottom: 0;">②時計と天気ウィジェット（<span style="color: lightgreen">?location=</span>の後ろに先ほど<span style="color: pink">生成したURL</span>を付け加える。）</p>
+    <div style="width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/<span style="color: lightgreen">?location=</span><span style="color: pink">https://forecast7.com/ja/34d69135d50/osaka/</span>
+    </div>
+    <p style="margin-bottom: 0;">③時計と複数天気ウィジェット（二つなら<span style="color: lightgreen">&location2=</span>を。三つなら<span style="color: lightgreen">&location3=</span>も加える。）</p>
+    <div style="width: 100%; border: 1px solid white; background: rgba(0, 0, 0, 0.4); display: inline-block;">
+      https://genshinvideo.github.io/HuTao/ClockWidget/1/<span style="color: lightgreen">?location=</span><span style="color: pink">https://forecast7.com/ja/34d69135d50/osaka/<span style="color: lightgreen">&location2=</span><span style="color: pink">https://forecast7.com/ja/35d69139d69/tokyo/</span>
+    </div>
+
+    <p><BR>OBSでの使用例です。</p>
+    <img src="image/explanation/2.png" width="50%"><img src="image/explanation/3.png" width="50%">
+    <img src="image/explanation/4.png" width="50%"><img src="image/explanation/5.png" width="50%">
+    <p style="margin-top: 0;">※ソースから【追加】≫【ブラウザ】と進み、URLの欄に一つ上の項目で作成したURLを入力</p>
+
+
+    <p><BR>背景動画はカスタムCSSを使用して非表示にできます。例えば、次のようにします。</p>
 <pre class="prettyprint lang-css linenums">
 video {
   display: none;
@@ -128,10 +150,6 @@ video {
 }
 </pre>
     <iframe src="Sample2.html?location=https://forecast7.com/ja/34d69135d50/osaka/" width="100%" height="350px"></iframe>
-
-    <p>OBSでの使用例です。</p>
-    <img src="image/explanation/2.png" width="50%"><img src="image/explanation/3.png" width="50%">
-    <img src="image/explanation/4.png" width="50%"><img src="image/explanation/5.png" width="50%">
   </div>
 </body>
 </html>
