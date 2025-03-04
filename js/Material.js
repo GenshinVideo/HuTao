@@ -1170,7 +1170,7 @@ function CharacterSet() {
             <th id="right" class="${S_Id}" colspan="17"></th>\
           </tr>\
           <tr>\
-            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}" class="bgv ${S_VideoBG}"></td>\
+            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}" class="bgv ${S_VideoBG}" loading="lazy"></td>\
             <td width="12%" colspan="3" class="textleft">レベル</td>\
             <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
             <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
