@@ -1,0 +1,168 @@
+html, body {
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ↓ 背景動画 ↓ */
+.SakuraWallpaper{
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+  overflow: hidden;
+}
+.SakuraWallpaper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+/* 白く出来る。
+  background-color: rgba(255, 255, 255, 0.85);
+ */
+/* 以下ドットフィルター
+  background-image: radial-gradient(#111 30%, transparent 31%), radial-gradient(#111 30%, transparent 31%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+ */
+}
+.SakuraWallpaper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+}
+video {
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+}
+@media (aspect-ratio: 16/9) {
+  video {
+    top: 0% !important;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
+    height: auto;
+    top: 0;
+    transform: none;
+  }
+}
+/* ↑ 背景動画 ↑ */
+
+/* ↓ コンテンツの設定 ↓ */
+.Contents {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  min-height: calc(100% - 20px);
+  padding: 2%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+.Contents a:link { color: #AFEEEE; }
+.Contents a:visited { color: #AFEEEE; }
+.Contents a:hover { color: #00FFFF; }
+.Contents a:active { color: #FFFFFF; }
+.Contents img { opacity: 1.0; }
+.Contents img:hover { opacity: 0.8; }
+/* ↑ コンテンツの設定 ↑ */
+
+/* ↓ スクロールバー ↓ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+}
+/* ↑ スクロールバー ↑ */
+
+/* ↓ ギャラリー ↓ */
+@font-face {
+  font-family: "lg";
+  src: url("../fonts/lg.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.lg-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.gallery a {
+  width: calc(10% - 3px);
+  box-sizing: border-box;
+  margin-right: 3px;
+  margin-bottom: -5px;
+}
+.gallery a:last-child {
+  margin-right: 0;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+@media (aspect-ratio: 16/9) {
+  .gallery a {
+    width: calc(10% - 3px);
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .gallery a {
+    width: calc(20% - 3px);
+  }
+}
+@media (min-aspect-ratio: 16/9) {
+  .gallery a {
+    width: calc(10% - 3px);
+  }
+}
+/* ↑ ギャラリー ↑ */
