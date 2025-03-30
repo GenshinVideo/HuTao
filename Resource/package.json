@@ -536,6 +536,42 @@
 					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250125201352_EiPmYLKVptWspsHf/GenshinImpact_5.4.0.zip.008",
 					"md5": "0cba1f6ffdc0170d6ed53be045b1038b"
 				}]
+			},
+			"v5_5_0": {
+				"url": "",
+				"md5": "",
+				"Segments": [{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.001",
+					"md5": "e65a66073f10325a384c4d8f01199e21"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.002",
+					"md5": "e262578cc6791c927a77c2a784da84dd"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.003",
+					"md5": "e9dd5ce69e4ee8025c3e3319da8fb95d"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.004",
+					"md5": "c3431ba39643f99bab5af37f03c81139"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.005",
+					"md5": "57e55567b5292f81e3da26636da3124f"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.006",
+					"md5": "1cbc02e908b8a1ad7d421f23e9fe689a"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.007",
+					"md5": "ba292fa02c2ce8887fbef86ae45f6100"
+				},
+				{
+					"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/GenshinImpact_5.5.0.zip.008",
+					"md5": "276e433ab28c35748c6deef72d28d3c2"
+				}]
 			}
 		}
 	},
@@ -688,6 +724,10 @@
 			"v5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250125201352_EiPmYLKVptWspsHf/Audio_Chinese_5.4.0.zip",
 				"md5": "05707a6a95f0812bae18a2ef5b0b164e"
+			},
+			"v5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/Audio_Chinese_5.5.0.zip",
+				"md5": "724eb66fac6c39199faecf8117b036a5"
 			}
 		}
 	},
@@ -840,6 +880,10 @@
 			"v5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250125201352_EiPmYLKVptWspsHf/Audio_English(US)_5.4.0.zip",
 				"md5": "11789d4274d0cbf9d2b59694223ecd0d"
+			},
+			"v5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/Audio_English(US)_5.5.0.zip",
+				"md5": "e14821e9236844f1fae27396f30f094a"
 			}
 		}
 	},
@@ -992,6 +1036,10 @@
 			"v5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250125201352_EiPmYLKVptWspsHf/Audio_Japanese_5.4.0.zip",
 				"md5": "7c989a875bc30a6f9e06e70ac61819f2"
+			},
+			"v5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/Audio_Japanese_5.5.0.zip",
+				"md5": "21117c63e8a55abe0f9a704528bcdb1c"
 			}
 		}
 	},
@@ -1144,6 +1192,10 @@
 			"v5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250125201352_EiPmYLKVptWspsHf/Audio_Korean_5.4.0.zip",
 				"md5": "519f71c38b184ba2a6fe9994ba42dc79"
+			},
+			"v5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20250314110016_HcIQuDGRmsbByeAE/Audio_Korean_5.5.0.zip",
+				"md5": "c52cd0575dfe126a6604fe2b43650dae"
 			}
 		}
 	},
@@ -1504,6 +1556,14 @@
 			"v5_3_0to5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/game_5.3.0_5.4.0_hdiff_vlIbVzLpRIFHZcym.zip",
 				"md5": "87b6570843712191de2c1fd2d0226ea8"
+			},
+			"v5_3_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/game_5.3.0_5.5.0_hdiff_hLjncNZamXTtcKKo.zip",
+				"md5": "9b673560692022ba2147c9557d555e64"
+			},
+			"v5_4_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/game_5.4.0_5.5.0_hdiff_IlvHovyEdpXnwiCH.zip",
+				"md5": "351503a9da9d8c657c7c33e544dd48d8"
 			}
 		}
 	},
@@ -1820,6 +1880,14 @@
 			"v5_3_0to5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_zh-cn_5.3.0_5.4.0_hdiff_juLXEdublvTHwOPL.zip",
 				"md5": "5d6a61771530949e7b4c9e037592b917"
+			},
+			"v5_3_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_zh-cn_5.3.0_5.5.0_hdiff_IjUYCPouJjYnAVzM.zip",
+				"md5": "af73c0e343da127b27afb7cee8d5f828"
+			},
+			"v5_4_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_zh-cn_5.4.0_5.5.0_hdiff_DuzyGAJXDnTEDcDG.zip",
+				"md5": "20f67f06f746f96cd6176eff9ae2491d"
 			}
 		}
 	},
@@ -2136,6 +2204,14 @@
 			"v5_3_0to5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_en-us_5.3.0_5.4.0_hdiff_rUjNMXDApbBRrLtB.zip",
 				"md5": "78b3d7d80d558ff37151e10e562ee8cb"
+			},
+			"v5_3_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_en-us_5.3.0_5.5.0_hdiff_hyPqxqduaCinaiJo.zip",
+				"md5": "c09ff2a7f45a6fdd58046ea7f16db4a3"
+			},
+			"v5_4_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_en-us_5.4.0_5.5.0_hdiff_HveRbpmNrNejbGYL.zip",
+				"md5": "9a922acc8f68bbcab55c06847dcbe37f"
 			}
 		}
 	},
@@ -2452,6 +2528,14 @@
 			"v5_3_0to5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ja-jp_5.3.0_5.4.0_hdiff_GYvLQJtloHewyhAd.zip",
 				"md5": "5cbfe6c148a280bdfd8bea4054667587"
+			},
+			"v5_3_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ja-jp_5.3.0_5.5.0_hdiff_beYoljTPLiGPgFOz.zip",
+				"md5": "28f2866151a4f333bfa27db6a415ca73"
+			},
+			"v5_4_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ja-jp_5.4.0_5.5.0_hdiff_RCsszbNmxZciMvkK.zip",
+				"md5": "471020c4184331a9159b29ed3107804d"
 			}
 		}
 	},
@@ -2768,6 +2852,14 @@
 			"v5_3_0to5_4_0": {
 				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ko-kr_5.3.0_5.4.0_hdiff_bHMaFGHIWezvVoGL.zip",
 				"md5": "3c7bc585055e508af6ac15aa768b16f9"
+			},
+			"v5_3_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ko-kr_5.3.0_5.5.0_hdiff_IuoBNsASjDzeqgNY.zip",
+				"md5": "a62129453431421ddb4fd6d4ee3f9413"
+			},
+			"v5_4_0to5_5_0": {
+				"url": "https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/audio_ko-kr_5.4.0_5.5.0_hdiff_gKGHXRscunFdPzdH.zip",
+				"md5": "afca3b2d11fa6068b59821ec0dfa0948"
 			}
 		}
 	},
@@ -3044,6 +3136,46 @@
 					"url": "https://autopatchos.starrails.com/client/download/20250102101825_HCrZMhsVFjgzlMQj/PC/download/StarRail_3.0.0.7z.009",
 					"md5": "3D5B6FCAC805C2BF55A53791D072DD31"
 				}]
+			},
+			"v3_1_0": {
+				"url": "",
+				"md5": "",
+				"Segments": [{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.001",
+					"md5": "964DCCE3A25A620FA8B1B49976208601"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.002",
+					"md5": "5DF870ED0EE3B9872447919E6A9C3907"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.003",
+					"md5": "F8C6C3A024FEC9A506ED03B18B080BF5"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.004",
+					"md5": "1D3225CE0BFA891362171EC815862CA1"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.005",
+					"md5": "7350B2C9D52D75E2D6EADF1B77E81DC0"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.006",
+					"md5": "B3F42F36B97947636A8C58DC18C17824"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.007",
+					"md5": "8275A6341DFFE7FF3D99860BF17A6464"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.008",
+					"md5": "72E9BADF771A29401F263F953B847887"
+				},
+				{
+					"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/download/StarRail_3.1.0.7z.009",
+					"md5": "A2A1529EFA75085E51FEB9B0AF8E5267"
+				}]
 			}
 		}
 	},
@@ -3092,6 +3224,10 @@
 			"v3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20250102101825_HCrZMhsVFjgzlMQj/PC/Chinese.7z",
 				"md5": "a03ff7c2c5fad0dd23f38b1ea7fde7b9"
+			},
+			"v3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/Chinese.7z",
+				"md5": "2714ee8babece40ca8bbb180a94a2069"
 			}
 		}
 	},
@@ -3140,6 +3276,10 @@
 			"v3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20250102101825_HCrZMhsVFjgzlMQj/PC/English.7z",
 				"md5": "07c71bd4653218640b2fdeab5fc7499f"
+			},
+			"v3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/English.7z",
+				"md5": "6590989fd52a71cb8a7c50836174935f"
 			}
 		}
 	},
@@ -3188,6 +3328,10 @@
 			"v3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20250102101825_HCrZMhsVFjgzlMQj/PC/Japanese.7z",
 				"md5": "fa960bd2930b80684abde2ca9d41bb4b"
+			},
+			"v3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/Japanese.7z",
+				"md5": "ca789d7b92a7958d4089242f2933a210"
 			}
 		}
 	},
@@ -3236,6 +3380,10 @@
 			"v3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/download/20250102101825_HCrZMhsVFjgzlMQj/PC/Korean.7z",
 				"md5": "f29d07a8206b9c8a95c264fc0a423905"
+			},
+			"v3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/download/20250213222029_yggGSkDyveoATToc/PC/Korean.7z",
+				"md5": "9b13080c0b4d92875ed8356c740c4af2"
 			}
 		}
 	},
@@ -3312,6 +3460,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/game_2.7.0_3.0.0_hdiff_IccPVrnPTaCKPnOg.7z",
 				"md5": "78a9403d9e2cc3f35ad8ee7f939ab18c"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/game_3.0.0_3.1.0_hdiff_vOGoBfmLkQqLetkq.7z",
+				"md5": "54373708219c819a7f15b259cea5c07b"
 			}
 		}
 	},
@@ -3356,6 +3508,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-cn_2.7.0_3.0.0_hdiff_xDzLJOjpjdtJjeqf.7z",
 				"md5": "a34b60747ac1c0b7ce0669b3dd406574"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-cn_3.0.0_3.1.0_hdiff_baldQMUdYiGMiedk.7z",
+				"md5": "bfbf0dc54d0ab387bcc92ab6f57ecedb"
 			}
 		}
 	},
@@ -3400,6 +3556,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-tw_2.7.0_3.0.0_hdiff_bqgVaWOgJhlKlrDf.7z",
 				"md5": "f83d37368f74df9bdcafb14c3014a1d1"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_zh-tw_3.0.0_3.1.0_hdiff_tgNpPimpMkBkaeWo.7z",
+				"md5": "907072ac2b9a6b1d24d2edfe4ef7fe3c"
 			}
 		}
 	},
@@ -3444,6 +3604,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_en-us_2.7.0_3.0.0_hdiff_RqzAGCJqEIGoDBor.7z",
 				"md5": "7f8dfbd757c016491738ec0257621140"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_en-us_3.0.0_3.1.0_hdiff_bPvQrSmZRyklzAfl.7z",
+				"md5": "d0aebbfa4d8495f24b57604f34559850"
 			}
 		}
 	},
@@ -3488,6 +3652,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ja-jp_2.7.0_3.0.0_hdiff_PWpEWtkENfpvucDb.7z",
 				"md5": "089795aee382eb3b43314a249174a63e"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ja-jp_3.0.0_3.1.0_hdiff_OuUvtMAowfVEdcHs.7z",
+				"md5": "bd0a0ff53fb939a4544db56ea141b74f"
 			}
 		}
 	},
@@ -3532,6 +3700,10 @@
 			"v2_7_0to3_0_0": {
 				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ko-kr_2.7.0_3.0.0_hdiff_oIbfKWeIfXcaulvL.7z",
 				"md5": "4ea96dbd0af99e6e5c3f9c5526d3798f"
+			},
+			"v3_0_0to3_1_0": {
+				"url": "https://autopatchos.starrails.com/client/diff/hkrpg_global/audio_ko-kr_3.0.0_3.1.0_hdiff_OFXvoXHAovOnGjiH.7z",
+				"md5": "ab029bd2281429fbf0d6226858c495fb"
 			}
 		}
 	},
@@ -3892,6 +4064,50 @@
 					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250108124806_g97lIWR8kCKdhHRd/VolumeZip/ZenlessZoneZero_1.5.0_AS.zip.010",
 					"md5": "BED68E1A05F2A236D22C1A15F1B99B3F"
 				}]
+			},
+			"v1_6_0": {
+				"url": "",
+				"md5": "",
+				"Segments": [{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.001",
+					"md5": "E9FC5E85AFD59C367D141AB894A78BD0"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.002",
+					"md5": "E3AF275D1CFC7368508D20BC13C62D58"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.003",
+					"md5": "B71FC4102FF5B350AA0215BFF6F312C3"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.004",
+					"md5": "8FB0C103772EB22295FB41E0C6853A1F"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.005",
+					"md5": "61E20AD7D6FCAA8CC84946B0082AED02"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.006",
+					"md5": "A0A37E69C27EC4660C96C0492CAB7519"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.007",
+					"md5": "8B8FE8181CC687AC314115F02E814BDC"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.008",
+					"md5": "3EE86F68C4BABDAB77C39650AC3B0301"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.009",
+					"md5": "9200369F9A4573A5DDF4E11CAC5BE1A5"
+				},
+				{
+					"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/VolumeZip/ZenlessZoneZero_1.6.0_AS.zip.010",
+					"md5": "5A9AF6BC708949715C20DA3812A59508"
+				}]
 			}
 		}
 	},
@@ -3916,6 +4132,10 @@
 			"v1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250108124806_g97lIWR8kCKdhHRd/audio_zip_Cn.zip",
 				"md5": "736288c35f595d2d61a4f0c35f38cfc7"
+			},
+			"v1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/audio_zip_Cn.zip",
+				"md5": "317420f4b84a4aefc35f66cd915abcb3"
 			}
 		}
 	},
@@ -3940,6 +4160,10 @@
 			"v1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250108124806_g97lIWR8kCKdhHRd/audio_zip_En.zip",
 				"md5": "6e6e8f9eb2b78fcc9aa8033a51612251"
+			},
+			"v1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/audio_zip_En.zip",
+				"md5": "f98c8e2f36b02fff0bd9ecccdddbf149"
 			}
 		}
 	},
@@ -3964,6 +4188,10 @@
 			"v1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250108124806_g97lIWR8kCKdhHRd/audio_zip_Jp.zip",
 				"md5": "593ad38fae16266dfc08ef414d6e38ff"
+			},
+			"v1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/audio_zip_Jp.zip",
+				"md5": "9022da3318c4092efa8758b66d30a666"
 			}
 		}
 	},
@@ -3988,6 +4216,10 @@
 			"v1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250108124806_g97lIWR8kCKdhHRd/audio_zip_Kr.zip",
 				"md5": "1e2934ecc26bb4812743b60a6698e1f6"
+			},
+			"v1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20250302131501_XPL3MbP0GgnuJoHq/audio_zip_Kr.zip",
+				"md5": "68f7d112000f4b09cd97af72c8bdd905"
 			}
 		}
 	},
@@ -4032,6 +4264,14 @@
 			"v1_4_0to1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/game_1.4.0_1.5.0_hdiff_noDeiKTsVBfFPtQr.zip",
 				"md5": "b913eadabe44f0b88941c03d024cee57"
+			},
+			"v1_4_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/game_1.4.0_1.6.0_hdiff_abQGGIosegcHEzzo.zip",
+				"md5": "1fc3dced63ca55c86472677fd2e877d2"
+			},
+			"v1_5_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/game_1.5.0_1.6.0_hdiff_DSxyLlSUswbKlgdV.zip",
+				"md5": "9cee083f3f4763be98bde9d5aec9ccd2"
 			}
 		}
 	},
@@ -4072,6 +4312,14 @@
 			"v1_4_0to1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_zh-cn_1.4.0_1.5.0_hdiff_MWzJmWjOugrkOEgi.zip",
 				"md5": "836b670d0ff655f98bd99f2a004f2049"
+			},
+			"v1_4_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_zh-cn_1.4.0_1.6.0_hdiff_PcKTbYSYcMapIejm.zip",
+				"md5": "cd3749e220a707ae6bd3c3cf89e61d06"
+			},
+			"v1_5_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_zh-cn_1.5.0_1.6.0_hdiff_MFltGYfcSlRzRFdf.zip",
+				"md5": "f2d853aab72588a4c8497ac29a86abc1"
 			}
 		}
 	},
@@ -4112,6 +4360,14 @@
 			"v1_4_0to1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_en-us_1.4.0_1.5.0_hdiff_ZVncZcSUdyxnyXFZ.zip",
 				"md5": "2b17ed967e8c221b01d7030c74031433"
+			},
+			"v1_4_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_en-us_1.4.0_1.6.0_hdiff_mfHOPjxPwLBbVbED.zip",
+				"md5": "b2f3c1eb58efe719eb62114d713c2757"
+			},
+			"v1_5_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_en-us_1.5.0_1.6.0_hdiff_WkmgnXhJDLneYyLq.zip",
+				"md5": "500d96a1dfcba95b4bea097709790901"
 			}
 		}
 	},
@@ -4152,6 +4408,14 @@
 			"v1_4_0to1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ja-jp_1.4.0_1.5.0_hdiff_FIGcVSXzAEIMrExp.zip",
 				"md5": "8dde47f26f86ff22cb8d5acb01f08c0a"
+			},
+			"v1_4_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ja-jp_1.4.0_1.6.0_hdiff_ftaRuqbtApVenZgy.zip",
+				"md5": "7b704ec84f3a0bcdb12b43080fe1b09d"
+			},
+			"v1_5_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ja-jp_1.5.0_1.6.0_hdiff_HhzOoXwRAmMHsrQN.zip",
+				"md5": "8c570a327fcf06ef1616371073356917"
 			}
 		}
 	},
@@ -4192,6 +4456,14 @@
 			"v1_4_0to1_5_0": {
 				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ko-kr_1.4.0_1.5.0_hdiff_AfzSMohpQLrwkSkz.zip",
 				"md5": "15c2a2bee5715b95dab3ed1c30098a11"
+			},
+			"v1_4_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ko-kr_1.4.0_1.6.0_hdiff_TmfNepRHQldWVqHQ.zip",
+				"md5": "69c40e0ecc930f6d19b6e439a5c98432"
+			},
+			"v1_5_0to1_6_0": {
+				"url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ko-kr_1.5.0_1.6.0_hdiff_JuVqCMVWxYNvxjbz.zip",
+				"md5": "6cde3a28096bf9d204b29516af71f4c6"
 			}
 		}
 	},
