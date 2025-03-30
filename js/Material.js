@@ -25,6 +25,31 @@ function SetCharacterList() {
 
   S_VideoBGB = "";
 
+// ヴァレサ
+  S_Id =          "Varesa";
+  S_JpName =      "ヴァレサ";
+  S_CharaImg =    "Original/Character2/varesa_111_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Sparkless_Statue_Core";
+  S_Local =       "Skysplit_Gembloom";
+  S_Common =      "Tyrants_Fang";
+  S_Talent1 =     "Conflict";
+  S_Talent2 =     "Eroded_Scale_Feather";
+  S_VideoBG =     "HHNrxjMHy7A,NlOrRulSg1M";
+  Checkmate();
+
+// イアンサ
+  S_Id =          "Iansan";
+  S_JpName =      "イアンサ";
+  S_CharaImg =    "Original/Character2/iansan_110_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Ensnaring_Gaze";
+  S_Local =       "Dracolite";
+  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
+  S_Talent1 =     "Contention";
+  S_Talent2 =     "Denial_and_Judgment";
+  Checkmate();
+
 // 夢見月瑞希
   S_Id =          "Mizuki";
   S_JpName =      "夢見月瑞希";
@@ -59,7 +84,7 @@ function SetCharacterList() {
   S_Common =      "Tyrants_Fang";
   S_Talent1 =     "Kindling";
   S_Talent2 =     "Denial_and_Judgment";
-  S_VideoBG =     "LmmfXWOvSU0,z3TtWR7AiWU,W-MBm5kS_A4";
+  S_VideoBG =     "LmmfXWOvSU0,Yz9q5yKhpOM,W-MBm5kS_A4";
   Checkmate();
 
 // マーヴィカ
@@ -1459,8 +1484,6 @@ function Checkmate() {
 // インベントリー項目の生成
 function SetInventoryList() {
   CalEle = document.querySelector('tr[id="I_Inventory"]');
-
-
 // Common Material
 ItemNames = [
   "Slime_Concentrate",
@@ -1510,8 +1533,6 @@ ItemNames = [
   "Sentrys_Wooden_Whistle"
 ];
 InventorySet(ItemNames);
-
-
 // Talent Level-Up Material 2
 ItemNames = [
   "Dvalins_Plume",
@@ -1549,9 +1570,6 @@ ItemNames = [
   "Eroded_Scale_Feather"
 ];
 InventorySet(ItemNames);
-
-
-
 // Elemental Stones
 ItemNames = [
   "Hurricane_Seed",
@@ -1589,11 +1607,10 @@ ItemNames = [
   "Overripe_Flamegranate",
   "Gold-Inscribed_Secret_Source_Core",
   "Ensnaring_Gaze",
-  "Talisman_of_the_Enigmatic_Land"
+  "Talisman_of_the_Enigmatic_Land",
+  "Sparkless_Statue_Core"
 ];
 InventorySet(ItemNames);
-
-
 // Jewels
 ItemNames = [
   "Agnidus_Agate_Gemstone",
@@ -1626,8 +1643,6 @@ ItemNames = [
   "Prithiva_Topaz_Sliver"
 ];
 InventorySet(ItemNames);
-
-
 // Talent Level-Up Material
 ItemNames = [
   "Philosophies_of_Freedom",
@@ -1687,8 +1702,6 @@ ItemNames = [
   "Crown_of_Insight"
 ];
 InventorySet(ItemNames);
-
-
 // Local Material
 ItemNames = [
     "Wolfhook",
@@ -1739,11 +1752,11 @@ ItemNames = [
     "Quenepa_Berry",
     "Saurian_Claw_Succulent",
     "Glowing_Hornshroom",
-    "Withering_Purpurbloom"
+    "Withering_Purpurbloom",
+    "Skysplit_Gembloom",
+    "Dracolite"
 ];
 InventorySet(ItemNames);
-
-
   SetCalculatorList();
 }
 
@@ -1780,463 +1793,350 @@ function InventorySet(itemNames) {
 
 // カリキュレーター項目の生成
 function SetCalculatorList() {
-// Jewels
+// 宝石
 function SetCalculatorJewel() {
   CalEle = document.querySelector('th[id="C_Jewels"]').parentElement;
   S_ItemType =   "Jewels";
-// Jewels #1
-  S_ItemImage1 =   "Small/Item/Item_Agnidus_Agate_Gemstone.webp";
-  S_ItemName_1 =    "Agnidus_Agate";
-  S_ItemUnit_1 =    " 点";
-  S_ItemImage2 =   "Small/Item/Item_Varunada_Lazurite_Gemstone.webp";
-  S_ItemName_2 =    "Varunada_Lazurite";
-  S_ItemUnit_2 =    " 点";
-  S_ItemImage3 =   "Small/Item/Item_Nagadus_Emerald_Gemstone.webp";
-  S_ItemName_3 =    "Nagadus_Emerald";
-  S_ItemUnit_3 =    " 点";
-  S_ItemImage4 =   "Small/Item/Item_Vajrada_Amethyst_Gemstone.webp";
-  S_ItemName_4 =    "Vajrada_Amethyst";
-  S_ItemUnit_4 =    " 点";
-  S_ItemImage5 =   "Small/Item/Item_Vayuda_Turquoise_Gemstone.webp";
-  S_ItemName_5 =    "Vayuda_Turquoise";
-  S_ItemUnit_5 =    " 点";
-  S_ItemImage6 =   "Small/Item/Item_Shivada_Jade_Gemstone.webp";
-  S_ItemName_6 =    "Shivada_Jade";
-  S_ItemUnit_6 =    " 点";
-  S_ItemImage7 =   "Small/Item/Item_Prithiva_Topaz_Gemstone.webp";
-  S_ItemName_7 =    "Prithiva_Topaz";
-  S_ItemUnit_7 =    " 点";
-  CalculatorSet();
+  S_Check_1 = "";
+  S_Check_2 = "_Gemstone";
+  S_Check_3 = "";
+  const allItems = [
+    { name: "Prithiva_Topaz", unit: " 点" },
+    { name: "Shivada_Jade", unit: " 点" },
+    { name: "Vayuda_Turquoise", unit: " 点" },
+    { name: "Vajrada_Amethyst", unit: " 点" },
+    { name: "Nagadus_Emerald", unit: " 点" },
+    { name: "Varunada_Lazurite", unit: " 点" },
+    { name: "Agnidus_Agate", unit: " 点" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
-// Elemental Stones
+// ボス素材
 function SetCalculatorES() {
   CalEle = document.querySelector('th[id="C_Elemental_Stones"]').parentElement;
-  S_ItemType =   "Elemental_Stones";
-// Elemental Stones #5
-  S_ItemName_1 =    "Talisman_of_the_Enigmatic_Land";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet2();
-// Elemental Stones #5
-  S_ItemName_1 =    "Water_That_Failed_To_Transcend";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Cloudseam_Scale";
-  S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Fragment_of_a_Golden_Melody";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Mark_of_the_Binding_Blessing";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Overripe_Flamegranate";
-  S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Gold-Inscribed_Secret_Source_Core";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Ensnaring_Gaze";
-  S_ItemUnit_7 =    " 個"
-  CalculatorSet2();
-// Elemental Stones #4
-  S_ItemName_1 =    "Pseudo-Stamens";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Evergloom_Ring";
-  S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Artificed_Spare_Clockwork_Component_-_Coppelia";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Artificed_Spare_Clockwork_Component_-_Coppelius";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Emperors_Resolution";
-  S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Tourbillon_Device";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Fontemer_Unihorn";
-  S_ItemUnit_7 =    " 個"
-  CalculatorSet2();
-// Elemental Stones #3
-  S_ItemName_1 =    "Dragonheirs_False_Fin";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Runic_Fang";
-  S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Majestic_Hooked_Beak";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Thunderclap_Fruitcore";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Perpetual_Caliber";
-  S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Light_Guiding_Tetrahedron";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Quelled_Creeper";
-  S_ItemUnit_7 =    " 個"
-  CalculatorSet2();
-// Elemental Stones #2
-  S_ItemName_1 =    "Crystalline_Bloom";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Marionette_Core";
-  S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Perpetual_Heart";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Smoldering_Pearl";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Dew_of_Repudiation";
-  S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Storm_Beads";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Riftborn_Regalia";
-  S_ItemUnit_7 =    " 個"
-  CalculatorSet2();
-// Elemental Stones #1
-  S_ItemName_1 =    "Hurricane_Seed";
-  S_ItemUnit_1 =    " 個"
-  S_ItemName_2 =    "Lightning_Prism";
-  S_ItemUnit_2 =    " 個"
-  S_ItemName_3 =    "Basalt_Pillar";
-  S_ItemUnit_3 =    " 個"
-  S_ItemName_4 =    "Hoarfrost_Core";
-  S_ItemUnit_4 =    " 個"
-  S_ItemName_5 =    "Everflame_Seed";
-  S_ItemUnit_5 =    " 個"
-  S_ItemName_6 =    "Cleansing_Heart";
-  S_ItemUnit_6 =    " 個"
-  S_ItemName_7 =    "Juvenile_Jade";
-  S_ItemUnit_7 =    " 個"
-  CalculatorSet2();
+  S_ItemType = "Elemental_Stones";
+  S_Check_1 = "";
+  S_Check_2 = "";
+  S_Check_3 = "";
+  const allItems = [
+    { name: "Sparkless_Statue_Core", unit: " 個" },
+    { name: "Talisman_of_the_Enigmatic_Land", unit: " 個" },
+    { name: "Ensnaring_Gaze", unit: " 個" },
+    { name: "Gold-Inscribed_Secret_Source_Core", unit: " 個" },
+    { name: "Overripe_Flamegranate", unit: " 個" },
+    { name: "Mark_of_the_Binding_Blessing", unit: " 個" },
+    { name: "Fragment_of_a_Golden_Melody", unit: " 個" },
+    { name: "Cloudseam_Scale", unit: " 個" },
+    { name: "Water_That_Failed_To_Transcend", unit: " 個" },
+    { name: "Fontemer_Unihorn", unit: " 個" },
+    { name: "Tourbillon_Device", unit: " 個" },
+    { name: "Emperors_Resolution", unit: " 個" },
+    { name: "Artificed_Spare_Clockwork_Component_-_Coppelius", unit: " 個" },
+    { name: "Artificed_Spare_Clockwork_Component_-_Coppelia", unit: " 個" },
+    { name: "Evergloom_Ring", unit: " 個" },
+    { name: "Pseudo-Stamens", unit: " 個" },
+    { name: "Quelled_Creeper", unit: " 個" },
+    { name: "Light_Guiding_Tetrahedron", unit: " 個" },
+    { name: "Perpetual_Caliber", unit: " 個" },
+    { name: "Thunderclap_Fruitcore", unit: " 個" },
+    { name: "Majestic_Hooked_Beak", unit: " 個" },
+    { name: "Runic_Fang", unit: " 個" },
+    { name: "Dragonheirs_False_Fin", unit: " 個" },
+    { name: "Riftborn_Regalia", unit: " 個" },
+    { name: "Storm_Beads", unit: " 個" },
+    { name: "Dew_of_Repudiation", unit: " 個" },
+    { name: "Smoldering_Pearl", unit: " 個" },
+    { name: "Perpetual_Heart", unit: " 個" },
+    { name: "Marionette_Core", unit: " 個" },
+    { name: "Crystalline_Bloom", unit: " 個" },
+    { name: "Juvenile_Jade", unit: " 個" },
+    { name: "Cleansing_Heart", unit: " 個" },
+    { name: "Everflame_Seed", unit: " 個" },
+    { name: "Hoarfrost_Core", unit: " 個" },
+    { name: "Basalt_Pillar", unit: " 個" },
+    { name: "Lightning_Prism", unit: " 個" },
+    { name: "Hurricane_Seed", unit: " 個" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
-// Common Material
+// モブ敵素材
 function SetCalculatorCM() {
   CalEle = document.querySelector('th[id="C_Common_Material"]').parentElement;
-  S_ItemType =   "Common_Material";
-// Common Material #3
-  S_ItemName_1 =    "Saurian_Crowned_Warriors_Golden_Whistle";
-  S_ItemIDs__1 =    "Sentrys_Wooden_Whistle Warriors_Metal_Whistle Saurian_Crowned_Warriors_Golden_Whistle";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "";
-  S_ItemIDs__2 =    "";
-  S_ItemUnit_2 =    "";
-  S_ItemName_3 =    "";
-  S_ItemIDs__3 =    "";
-  S_ItemUnit_3 =    "";
-  S_ItemName_4 =    "";
-  S_ItemIDs__4 =    "";
-  S_ItemUnit_4 =    "";
-  S_ItemName_5 =    "";
-  S_ItemIDs__5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemIDs__6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemIDs__7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet4();
-// Common Material #2
-  S_ItemName_1 =    "Famed_Handguard";
-  S_ItemIDs__1 =    "Old_Handguard Kageuchi_Handguard Famed_Handguard";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Spectral_Nucleus";
-  S_ItemIDs__2 =    "Spectral_Husk Spectral_Heart Spectral_Nucleus";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Crystalline_Cyst_Dust";
-  S_ItemIDs__3 =    "Fungal_Spores Luminescent_Pollen Crystalline_Cyst_Dust";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Rich_Red_Brocade";
-  S_ItemIDs__4 =    "Faded_Red_Satin Trimmed_Red_Silk Rich_Red_Brocade";
-  S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "Xenochromatic_Crystal";
-  S_ItemIDs__5 =    "Transoceanic_Pearl Transoceanic_Chunk Xenochromatic_Crystal";
-  S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Artificed_Dynamic_Gear";
-  S_ItemIDs__6 =    "Meshing_Gear Mechanical_Spur_Gear Artificed_Dynamic_Gear";
-  S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Tyrants_Fang";
-  S_ItemIDs__7 =    "Juvenile_Fang Seasoned_Fang Tyrants_Fang";
-  S_ItemUnit_7 =    " 点";
-  CalculatorSet4();
-// Common Material #1
-  S_ItemName_1 =    "Slime_Concentrate";
-  S_ItemIDs__1 =    "Slime_Condensate Slime_Secretions Slime_Concentrate";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Ominous_Mask";
-  S_ItemIDs__2 =    "Damaged_Mask Stained_Mask Ominous_Mask";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Forbidden_Curse_Scroll";
-  S_ItemIDs__3 =    "Divining_Scroll Sealed_Scroll Forbidden_Curse_Scroll";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Weathered_Arrowhead";
-  S_ItemIDs__4 =    "Firm_Arrowhead Sharp_Arrowhead Weathered_Arrowhead";
-  S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "Lieutenants_Insignia";
-  S_ItemIDs__5 =    "Recruits_Insignia Sergeants_Insignia Lieutenants_Insignia";
-  S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Golden_Raven_Insignia";
-  S_ItemIDs__6 =    "Treasure_Hoarder_Insignia Silver_Raven_Insignia Golden_Raven_Insignia";
-  S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Energy_Nectar";
-  S_ItemIDs__7 =    "Whopperflower_Nectar Shimmering_Nectar Energy_Nectar";
-  S_ItemUnit_7 =    " 点";
-  CalculatorSet4();
+  S_ItemType = "Common_Material";
+  const allItems = [
+    { name: "Saurian_Crowned_Warriors_Golden_Whistle", ids: "Sentrys_Wooden_Whistle Warriors_Metal_Whistle Saurian_Crowned_Warriors_Golden_Whistle", unit: " 点" },
+    { name: "Tyrants_Fang", ids: "Juvenile_Fang Seasoned_Fang Tyrants_Fang", unit: " 点" },
+    { name: "Artificed_Dynamic_Gear", ids: "Meshing_Gear Mechanical_Spur_Gear Artificed_Dynamic_Gear", unit: " 点" },
+    { name: "Xenochromatic_Crystal", ids: "Transoceanic_Pearl Transoceanic_Chunk Xenochromatic_Crystal", unit: " 点" },
+    { name: "Rich_Red_Brocade", ids: "Faded_Red_Satin Trimmed_Red_Silk Rich_Red_Brocade", unit: " 点" },
+    { name: "Crystalline_Cyst_Dust", ids: "Fungal_Spores Luminescent_Pollen Crystalline_Cyst_Dust", unit: " 点" },
+    { name: "Spectral_Nucleus", ids: "Spectral_Husk Spectral_Heart Spectral_Nucleus", unit: " 点" },
+    { name: "Famed_Handguard", ids: "Old_Handguard Kageuchi_Handguard Famed_Handguard", unit: " 点" },
+    { name: "Energy_Nectar", ids: "Whopperflower_Nectar Shimmering_Nectar Energy_Nectar", unit: " 点" },
+    { name: "Golden_Raven_Insignia", ids: "Treasure_Hoarder_Insignia Silver_Raven_Insignia Golden_Raven_Insignia", unit: " 点" },
+    { name: "Lieutenants_Insignia", ids: "Recruits_Insignia Sergeants_Insignia Lieutenants_Insignia", unit: " 点" },
+    { name: "Weathered_Arrowhead", ids: "Firm_Arrowhead Sharp_Arrowhead Weathered_Arrowhead", unit: " 点" },
+    { name: "Forbidden_Curse_Scroll", ids: "Divining_Scroll Sealed_Scroll Forbidden_Curse_Scroll", unit: " 点" },
+    { name: "Ominous_Mask", ids: "Damaged_Mask Stained_Mask Ominous_Mask", unit: " 点" },
+    { name: "Slime_Concentrate", ids: "Slime_Condensate Slime_Secretions Slime_Concentrate", unit: " 点" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemIDs__1 = allItems[i]?.ids || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemIDs__2 = allItems[i - 1]?.ids || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemIDs__3 = allItems[i - 2]?.ids || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemIDs__4 = allItems[i - 3]?.ids || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemIDs__5 = allItems[i - 4]?.ids || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemIDs__6 = allItems[i - 5]?.ids || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemIDs__7 = allItems[i - 6]?.ids || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet2();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
-// Local Material
+// 特産品
 function SetCalculatorLM() {
   CalEle = document.querySelector('th[id="C_Local_Material"]').parentElement;
-  S_ItemType =   "Local_Material";
-// Local Material #6
-  S_ItemName_1 =    "Spring_of_the_First_Dewdrop";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Sprayfeather_Gill";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Brilliant_Chrysanthemum";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Quenepa_Berry";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Saurian_Claw_Succulent";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Glowing_Hornshroom";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Withering_Purpurbloom";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #5
-  S_ItemName_1 =    "Beryl_Conch";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Romaritime_Flower";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Lumidouce_Bell";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Rainbow_Rose";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Lumitoile";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Lakelight_Lily";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Subdetection_Unit";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #5
-  S_ItemName_1 =    "Nilotpala_Lotus";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Kalpalata_Lotus";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Redcrest";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Sand_Grease_Pupa";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Mourning_Flower";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Trishiraite";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Scarab";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #4
-  S_ItemName_1 =    "Naku_Weed";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Sea_Ganoderma";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Sango_Pearl";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Amakumo_Fruit";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Fluorescent_Fungus";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Rukkhashava_Mushrooms";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Padisarah";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #3
-  S_ItemName_1 =    "Qingxin";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Starconch";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Violetgrass";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Onikabuto";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Sakura_Bloom";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Crystal_Marrow";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Dendrobium";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #2
-  S_ItemName_1 =    "Dandelion_Seed";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Cor_Lapis";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Clearwater_Jade";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Jueyun_Chili";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Noctilucous_Jade";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Silk_Flower";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Glaze_Lily";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Local Material #1
-  S_ItemName_1 =    "Wolfhook";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Valberry";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Cecilia";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Windwheel_Aster";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Philanemo_Mushroom";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Small_Lamp_Grass";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Calla_Lily";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
+  S_ItemType = "Local_Material";
+  S_Check_1 = "";
+  S_Check_2 = "";
+  S_Check_3 = "";
+  const allItems = [
+    { name: "Dracolite", unit: " 個" },
+    { name: "Skysplit_Gembloom", unit: " 個" },
+    { name: "Withering_Purpurbloom", unit: " 個" },
+    { name: "Glowing_Hornshroom", unit: " 個" },
+    { name: "Saurian_Claw_Succulent", unit: " 個" },
+    { name: "Quenepa_Berry", unit: " 個" },
+    { name: "Brilliant_Chrysanthemum", unit: " 個" },
+    { name: "Sprayfeather_Gill", unit: " 個" },
+    { name: "Spring_of_the_First_Dewdrop", unit: " 個" },
+    { name: "Subdetection_Unit", unit: " 個" },
+    { name: "Lakelight_Lily", unit: " 個" },
+    { name: "Lumitoile", unit: " 個" },
+    { name: "Rainbow_Rose", unit: " 個" },
+    { name: "Lumidouce_Bell", unit: " 個" },
+    { name: "Romaritime_Flower", unit: " 個" },
+    { name: "Beryl_Conch", unit: " 個" },
+    { name: "Scarab", unit: " 個" },
+    { name: "Trishiraite", unit: " 個" },
+    { name: "Mourning_Flower", unit: " 個" },
+    { name: "Sand_Grease_Pupa", unit: " 個" },
+    { name: "Redcrest", unit: " 個" },
+    { name: "Kalpalata_Lotus", unit: " 個" },
+    { name: "Nilotpala_Lotus", unit: " 個" },
+    { name: "Padisarah", unit: " 個" },
+    { name: "Rukkhashava_Mushrooms", unit: " 個" },
+    { name: "Fluorescent_Fungus", unit: " 個" },
+    { name: "Amakumo_Fruit", unit: " 個" },
+    { name: "Sango_Pearl", unit: " 個" },
+    { name: "Sea_Ganoderma", unit: " 個" },
+    { name: "Naku_Weed", unit: " 個" },
+    { name: "Dendrobium", unit: " 個" },
+    { name: "Crystal_Marrow", unit: " 個" },
+    { name: "Sakura_Bloom", unit: " 個" },
+    { name: "Onikabuto", unit: " 個" },
+    { name: "Violetgrass", unit: " 個" },
+    { name: "Starconch", unit: " 個" },
+    { name: "Qingxin", unit: " 個" },
+    { name: "Glaze_Lily", unit: " 個" },
+    { name: "Silk_Flower", unit: " 個" },
+    { name: "Noctilucous_Jade", unit: " 個" },
+    { name: "Jueyun_Chili", unit: " 個" },
+    { name: "Clearwater_Jade", unit: " 個" },
+    { name: "Cor_Lapis", unit: " 個" },
+    { name: "Dandelion_Seed", unit: " 個" },
+    { name: "Calla_Lily", unit: " 個" },
+    { name: "Small_Lamp_Grass", unit: " 個" },
+    { name: "Philanemo_Mushroom", unit: " 個" },
+    { name: "Windwheel_Aster", unit: " 個" },
+    { name: "Cecilia", unit: " 個" },
+    { name: "Valberry", unit: " 個" },
+    { name: "Wolfhook", unit: " 個" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
-// Talent Level-Up Material
+// 天賦本
 function SetCalculatorTLUM() {
   CalEle = document.querySelector('th[id="C_Talent_Level_Up_Material"]').parentElement;
-  S_ItemType =   "Talent_Level_Up_Material";
-// Talent Level-Up Material #3
-  S_ItemName_1 =    "Order";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Contention";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Kindling";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Conflict";
-  S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "";
-  S_ItemUnit_5 =    "";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet3();
-// Talent Level-Up Material #2
-  S_ItemName_1 =    "Elegance";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Light";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Admonition";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Ingenuity";
-  S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "Praxis";
-  S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Equity";
-  S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Justice";
-  S_ItemUnit_7 =    " 点";
-  CalculatorSet3();
-// Talent Level-Up Material #1
-  S_ItemName_1 =    "Freedom";
-  S_ItemUnit_1 =    " 点";
-  S_ItemName_2 =    "Resistance";
-  S_ItemUnit_2 =    " 点";
-  S_ItemName_3 =    "Ballad";
-  S_ItemUnit_3 =    " 点";
-  S_ItemName_4 =    "Prosperity";
-  S_ItemUnit_4 =    " 点";
-  S_ItemName_5 =    "Diligence";
-  S_ItemUnit_5 =    " 点";
-  S_ItemName_6 =    "Gold";
-  S_ItemUnit_6 =    " 点";
-  S_ItemName_7 =    "Transience";
-  S_ItemUnit_7 =    " 点";
-  CalculatorSet3();
+  S_ItemType = "Talent_Level_Up_Material";
+  S_Check_1 = "Philosophies_of_";
+  S_Check_2 = "";
+  S_Check_3 = "TLUM_";
+  const allItems = [
+    { name: "Conflict", unit: " 点" },
+    { name: "Kindling", unit: " 点" },
+    { name: "Contention", unit: " 点" },
+    { name: "Order", unit: " 点" },
+    { name: "Justice", unit: " 点" },
+    { name: "Equity", unit: " 点" },
+    { name: "Praxis", unit: " 点" },
+    { name: "Ingenuity", unit: " 点" },
+    { name: "Admonition", unit: " 点" },
+    { name: "Light", unit: " 点" },
+    { name: "Elegance", unit: " 点" },
+    { name: "Transience", unit: " 点" },
+    { name: "Gold", unit: " 点" },
+    { name: "Diligence", unit: " 点" },
+    { name: "Prosperity", unit: " 点" },
+    { name: "Ballad", unit: " 点" },
+    { name: "Resistance", unit: " 点" },
+    { name: "Freedom", unit: " 点" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
-// Talent Level-Up Material 2
+// 週ボス素材
 function SetCalculatorTLUM2() {
   CalEle = document.querySelector('th[id="C_Talent_Level_Up_Material"]').parentElement;
-  S_ItemType =   "Talent_Level_Up_Material_2";
-// Talent Level-Up Material2 #4
-  S_ItemName_1 =    "Silken_Feather";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Denial_and_Judgment";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Eroded_Horn";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Eroded_Sunfire";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Eroded_Scale_Feather";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "";
-  S_ItemUnit_6 =    "";
-  S_ItemName_7 =    "";
-  S_ItemUnit_7 =    "";
-  CalculatorSet2();
-// Talent Level-Up Material2 #4
-  S_ItemName_1 =    "Worldspan_Fern";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Primordial_Greenbloom";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Everamber";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Lightless_Silk_String";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Lightless_Eye_of_the_Maelstrom";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Lightless_Mass";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Fading_Candle";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Talent Level-Up Material2 #3
-  S_ItemName_1 =    "Ashen_Heart";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Mudra_of_the_Malefic_General";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Tears_of_the_Calamitous_God";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "The_Meaning_of_Aeons";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Puppet_Strings";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Mirror_of_Mushin";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Dakas_Bell";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Talent Level-Up Material2 #2
-  S_ItemName_1 =    "Shard_of_a_Foul_Legacy";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Shadow_of_the_Warrior";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Dragon_Lords_Crown";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Bloodjade_Branch";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Gilded_Scale";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Molten_Moment";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Hellfire_Butterfly";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
-// Talent Level-Up Material2 #1
-  S_ItemName_1 =    "Dvalins_Plume";
-  S_ItemUnit_1 =    " 個";
-  S_ItemName_2 =    "Dvalins_Claw";
-  S_ItemUnit_2 =    " 個";
-  S_ItemName_3 =    "Dvalins_Sigh";
-  S_ItemUnit_3 =    " 個";
-  S_ItemName_4 =    "Tail_of_Boreas";
-  S_ItemUnit_4 =    " 個";
-  S_ItemName_5 =    "Ring_of_Boreas";
-  S_ItemUnit_5 =    " 個";
-  S_ItemName_6 =    "Spirit_Locket_of_Boreas";
-  S_ItemUnit_6 =    " 個";
-  S_ItemName_7 =    "Tusk_of_Monoceros_Caeli";
-  S_ItemUnit_7 =    " 個";
-  CalculatorSet2();
+  S_ItemType = "Talent_Level_Up_Material_2";
+  S_Check_1 = "";
+  S_Check_2 = "";
+  S_Check_3 = "";
+  const allItems = [
+    { name: "Eroded_Scale_Feather", unit: " 個" },
+    { name: "Eroded_Sunfire", unit: " 個" },
+    { name: "Eroded_Horn", unit: " 個" },
+    { name: "Denial_and_Judgment", unit: " 個" },
+    { name: "Silken_Feather", unit: " 個" },
+    { name: "Fading_Candle", unit: " 個" },
+    { name: "Lightless_Mass", unit: " 個" },
+    { name: "Lightless_Eye_of_the_Maelstrom", unit: " 個" },
+    { name: "Lightless_Silk_String", unit: " 個" },
+    { name: "Everamber", unit: " 個" },
+    { name: "Primordial_Greenbloom", unit: " 個" },
+    { name: "Worldspan_Fern", unit: " 個" },
+    { name: "Dakas_Bell", unit: " 個" },
+    { name: "Mirror_of_Mushin", unit: " 個" },
+    { name: "Puppet_Strings", unit: " 個" },
+    { name: "The_Meaning_of_Aeons", unit: " 個" },
+    { name: "Tears_of_the_Calamitous_God", unit: " 個" },
+    { name: "Mudra_of_the_Malefic_General", unit: " 個" },
+    { name: "Ashen_Heart", unit: " 個" },
+    { name: "Hellfire_Butterfly", unit: " 個" },
+    { name: "Molten_Moment", unit: " 個" },
+    { name: "Gilded_Scale", unit: " 個" },
+    { name: "Bloodjade_Branch", unit: " 個" },
+    { name: "Dragon_Lords_Crown", unit: " 個" },
+    { name: "Shadow_of_the_Warrior", unit: " 個" },
+    { name: "Shard_of_a_Foul_Legacy", unit: " 個" },
+    { name: "Tusk_of_Monoceros_Caeli", unit: " 個" },
+    { name: "Spirit_Locket_of_Boreas", unit: " 個" },
+    { name: "Ring_of_Boreas", unit: " 個" },
+    { name: "Tail_of_Boreas", unit: " 個" },
+    { name: "Dvalins_Sigh", unit: " 個" },
+    { name: "Dvalins_Claw", unit: " 個" },
+    { name: "Dvalins_Plume", unit: " 個" }
+  ];
+
+  let html = "";
+  for (let i = allItems.length - 1; i >= 0; i -= 7) {
+    S_ItemName_1 = allItems[i]?.name || "";
+    S_ItemUnit_1 = allItems[i]?.unit || "";
+    S_ItemName_2 = allItems[i - 1]?.name || "";
+    S_ItemUnit_2 = allItems[i - 1]?.unit || "";
+    S_ItemName_3 = allItems[i - 2]?.name || "";
+    S_ItemUnit_3 = allItems[i - 2]?.unit || "";
+    S_ItemName_4 = allItems[i - 3]?.name || "";
+    S_ItemUnit_4 = allItems[i - 3]?.unit || "";
+    S_ItemName_5 = allItems[i - 4]?.name || "";
+    S_ItemUnit_5 = allItems[i - 4]?.unit || "";
+    S_ItemName_6 = allItems[i - 5]?.name || "";
+    S_ItemUnit_6 = allItems[i - 5]?.unit || "";
+    S_ItemName_7 = allItems[i - 6]?.name || "";
+    S_ItemUnit_7 = allItems[i - 6]?.unit || "";
+    html += CalculatorSet();
+  }
+  CalEle.insertAdjacentHTML("afterend", html);
 }
   SetCalculatorJewel();
   SetCalculatorES();
@@ -2245,209 +2145,100 @@ function SetCalculatorTLUM2() {
   SetCalculatorTLUM2();
   SetCalculatorTLUM();
 
-
   SetPatchNoteList();
 }
 
 
-// Jewels
+// 宝石、ボス素材、特産品、天賦本、週ボス
 function CalculatorSet() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">合計必要数</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage1}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage2}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage3}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage4}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage5}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage6}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/${S_ItemImage7}"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">所持数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">残り必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-    ')
-  `);
-}
-// Elemental Stones , Local Material , Talent Level-Up Material2
-function CalculatorSet2() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">合計必要数</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">所持数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">残り必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-    ')
-  `);
-}
-// Talent Level-Up Material
-function CalculatorSet3() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">合計必要数</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_1}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_2}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_3}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_4}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_5}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_6}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_Philosophies_of_${S_ItemName_7}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="TLUM_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">所持数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_TLUM_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">残り必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_TLUM_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-    ')
-  `);
+  return `
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_1}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_2}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_3}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_4}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_5}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_6}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_7}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">所持数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_Check_3}${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_Check_3}${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+  `;
 }
 // Common Material
-function CalculatorSet4() {
-  eval(`
-    CalEle.insertAdjacentHTML('afterend', '\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">合計必要数</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">突破必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">天賦必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">所持数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-      <tr>\
-        <td width="8.6%" colspan="2" class="textleft">残り必要数</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>\
-        <td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>\
-      </tr>\
-    ')
-  `);
+function CalculatorSet2() {
+  return `
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
+      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">突破必要数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="As_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">天賦必要数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ta_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">所持数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="In_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+    <tr>
+      <td width="8.6%" colspan="2" class="textleft">残り必要数</td>
+      ${S_ItemName_1 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="8.6%" colspan="2" class="textright"><span class="Calculator" id="Ne_${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+    </tr>
+  `;
 }
-
-
 
 // パッチノート項目の生成
 function SetPatchNoteList() {
