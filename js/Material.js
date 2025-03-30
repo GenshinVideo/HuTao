@@ -1,4 +1,4 @@
-var Version = "20240115";
+var Version = "20250331";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -2244,13 +2244,22 @@ function CalculatorSet2() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
-<b>2025/01/15</b><BR>\
+<b>2025/03/31</b><BR>\
 更新。<BR>\
-・マーヴィカ、シトラリ、藍硯、夢見月瑞希の実装に対応<BR>\
-・背景動画機能をテスト実装（シトラリの画像をクリックで起動）<BR>\
+・ヴァレサ、イアンサの実装に対応<BR>\
+・背景動画機能をテスト実装（シトラリ、ムアラニ、ヴァレサの画像をクリックで起動）<BR>\
+・JavaScriptの軽量化<BR>\
 <BR>\
 既知の問題。<BR>\
 ・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
+<b>2025/01/15</b><BR>\
+更新。<BR>\
+・マーヴィカ、シトラリ、藍硯、夢見月瑞希の実装に対応<BR>\
+・背景動画機能をテスト実装<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2024/11/20</b><BR>\
 更新。<BR>\
@@ -3062,7 +3071,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20241120 to ver." + Version + "）\n・マーヴィカ、シトラリ、藍硯、夢見月瑞希の実装に対応\n・背景動画機能をテスト実装（シトラリの画像をクリックで起動）\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240115 to ver." + Version + "）\n・ヴァレサ、イアンサの実装に対応\n・背景動画機能をテスト実装（ムアラニ、シトラリ、ヴァレサの画像をクリックで起動）\n・JavaScriptの軽量化\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
     }  else  {
       Load();
     }
