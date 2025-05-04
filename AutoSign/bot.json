@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "32"
+			"count": "35"
 		}
 	],
 	"list": [
@@ -54,6 +54,10 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Citlali.png"
 		},
 		{
+			"name": "ヴァレサ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Varesa.png"
+		},
+		{
 			"name": "藍硯",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Lanyan.png"
 		},
@@ -104,6 +108,14 @@
 		{
 			"name": "雲璃",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Yunli.png"
+		},
+		{
+			"name": "サンポ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sampo.png"
+		},
+		{
+			"name": "トリビー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Tribbie.png"
 		},
 		{
 			"name": "猫宮又奈",
