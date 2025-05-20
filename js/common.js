@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Resource: "Resource/",
     AutoSign: "AutoSign/",
     Gallery: "Gallery/",
+    ChronoHook: "ChronoHook/",
     ClockWidget: "ClockWidget/"
   };
 
