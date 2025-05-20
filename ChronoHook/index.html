@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Chrono Hook - Honey Apricot</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="overflow-y: auto;">
+  <div class="SakuraWallpaper">
+    <video src="movie.mp4" loop autoplay muted playsinline></video>
+  </div>
+
+  <div class="Contents">
+    <div class="Content">
+      <div class="TimeInput">
+        <label for="startTime">開始時間:</label>
+        <input type="datetime-local" id="startTime" name="startTime" step="1">
+        <label for="endTime">終了時間:</label>
+        <input type="datetime-local" id="endTime" name="endTime" step="1">
+      </div>
+      <div class="CustomFormatInput">
+        <div class="FormatRow" id="formatFields"></div>
+      </div>
+      <div class="TimestampTable">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>開始時間 (フォーマット)</th>
+              <th>開始時間 (内容)</th>
+              <th>終了時間 (フォーマット)</th>
+              <th>終了時間 (内容)</th>
+            </tr>
+          </thead>
+          <tbody id="timestampTable"></tbody>
+        </table>
+      </div>
+      <div class="CustomTimestampTable">
+        <table border="1">
+          <tbody id="customTimestampTable">
+            <tr><td>内容</td></tr>
+            <tr><td>カスタムフォーマット</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="WebhookInput">
+        <input type="text" id="webhookUrlInput" placeholder="Webhook URL">
+        <button id="sendWebhook">Send</button>
+        <div id="webhookStatus"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/senddiscord.js"></script>
+  
+</body>
+</html>
