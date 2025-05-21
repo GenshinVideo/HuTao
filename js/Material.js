@@ -1,4 +1,4 @@
-var Version = "20250331";
+var Version = "20250522";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -24,6 +24,54 @@ function SetCharacterList() {
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
   S_VideoBGB = "";
+
+// スカーク
+  S_Id =          "Skirk";
+  S_JpName =      "スカーク";
+  S_CharaImg =    "Original/Character2/skirknew_114_gacha_splash.webp";
+  S_Element =     "Shivada_Jade";
+  S_Boss =        "Ensnaring_Gaze";
+  S_Local =       "Skysplit_Gembloom";
+  S_Common =      "Artificed_Dynamic_Gear";
+  S_Talent1 =     "Contention";
+  S_Talent2 =     "Ascended_Sample_Knight";
+  Checkmate();
+
+// ダリア
+  S_Id =          "Dahlia";
+  S_JpName =      "ダリア";
+  S_CharaImg =    "Original/Character2/dahlia_115_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Secret_Source_Airflow_Accumulator";
+  S_Local =       "Calla_Lily";
+  S_Common =      "Weathered_Arrowhead";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Eroded_Scale_Feather";
+  Checkmate();
+
+// エスコフィエ
+  S_Id =          "Escoffier";
+  S_JpName =      "エスコフィエ";
+  S_CharaImg =    "Original/Character2/escoffier_112_gacha_splash.webp";
+  S_Element =     "Shivada_Jade";
+  S_Boss =        "Secret_Source_Airflow_Accumulator";
+  S_Local =       "Beryl_Conch";
+  S_Common =      "Artificed_Dynamic_Gear";
+  S_Talent1 =     "Justice";
+  S_Talent2 =     "Eroded_Horn";
+  Checkmate();
+
+// イファ
+  S_Id =          "Ifa";
+  S_JpName =      "イファ";
+  S_CharaImg =    "Original/Character2/ifa_113_gacha_splash.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Sparkless_Statue_Core";
+  S_Local =       "Saurian_Claw_Succulent";
+  S_Common =      "Tyrants_Fang";
+  S_Talent1 =     "Conflict";
+  S_Talent2 =     "Ascended_Sample_Rook";
+  Checkmate();
 
 // ヴァレサ
   S_Id =          "Varesa";
@@ -1567,7 +1615,10 @@ ItemNames = [
   "Denial_and_Judgment",
   "Eroded_Horn",
   "Eroded_Sunfire",
-  "Eroded_Scale_Feather"
+  "Eroded_Scale_Feather",
+  "Ascended_Sample_Knight",
+  "Ascended_Sample_Rook",
+  "Ascended_Sample_Queen"
 ];
 InventorySet(ItemNames);
 // Elemental Stones
@@ -1608,7 +1659,8 @@ ItemNames = [
   "Gold-Inscribed_Secret_Source_Core",
   "Ensnaring_Gaze",
   "Talisman_of_the_Enigmatic_Land",
-  "Sparkless_Statue_Core"
+  "Sparkless_Statue_Core",
+  "Secret_Source_Airflow_Accumulator"
 ];
 InventorySet(ItemNames);
 // Jewels
@@ -1838,6 +1890,7 @@ function SetCalculatorES() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Secret_Source_Airflow_Accumulator", unit: " 個" },
     { name: "Sparkless_Statue_Core", unit: " 個" },
     { name: "Talisman_of_the_Enigmatic_Land", unit: " 個" },
     { name: "Ensnaring_Gaze", unit: " 個" },
@@ -2083,6 +2136,9 @@ function SetCalculatorTLUM2() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Ascended_Sample_Queen", unit: " 個" },
+    { name: "Ascended_Sample_Rook", unit: " 個" },
+    { name: "Ascended_Sample_Knight", unit: " 個" },
     { name: "Eroded_Scale_Feather", unit: " 個" },
     { name: "Eroded_Sunfire", unit: " 個" },
     { name: "Eroded_Horn", unit: " 個" },
@@ -2244,6 +2300,13 @@ function CalculatorSet2() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2025/05/22</b><BR>\
+更新。<BR>\
+・イファ、エスコフィエ、ダリア、スカークの実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2025/03/31</b><BR>\
 更新。<BR>\
 ・ヴァレサ、イアンサの実装に対応<BR>\
@@ -2251,7 +2314,7 @@ function SetPatchNoteList() {
 ・JavaScriptの軽量化<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2025/01/15</b><BR>\
 更新。<BR>\
@@ -3071,7 +3134,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20240115 to ver." + Version + "）\n・ヴァレサ、イアンサの実装に対応\n・背景動画機能をテスト実装（ムアラニ、シトラリ、ヴァレサの画像をクリックで起動）\n・JavaScriptの軽量化\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題\n（協力者募集中『@Sakura_Kocho』までお願いします。）");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250331 to ver." + Version + "）\n・イファ、エスコフィエ、ダリア、スカークの実装に対応の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
     }  else  {
       Load();
     }
