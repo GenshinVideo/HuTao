@@ -93,7 +93,11 @@
         textE: document.getElementById('textE').value,
         formatE: document.getElementById('formatE').value
       },
-      webhookUrl: document.getElementById('webhookUrlInput').value
+      WebhookUrl: document.getElementById('WebhookUrlInput').value,
+
+      Title: document.getElementById('TitleInput').value,
+      Name: document.getElementById('NameInput').value,
+      Avatar_Url: document.getElementById('Avatar_UrlInput').value
     };
     localStorage.setItem('timestampAppData', JSON.stringify(data));
   }
@@ -140,7 +144,11 @@
     }
 
     // ウェブフックURL
-    document.getElementById('webhookUrlInput').value = data.webhookUrl || '';
+    document.getElementById('WebhookUrlInput').value = data.WebhookUrl || '';
+
+    document.getElementById('TitleInput').value = data.Title || '';
+    document.getElementById('NameInput').value = data.Name || '';
+    document.getElementById('Avatar_UrlInput').value = data.Avatar_Url || '';
   }
 
   function discordTimestampJST(year, month, day, hour, minute, second) {
@@ -358,4 +366,7 @@
     updateTimestamp();
     saveToLocalStorage();
   });
-  document.getElementById('webhookUrlInput').addEventListener('input', saveToLocalStorage);
+  document.getElementById('WebhookUrlInput').addEventListener('input', saveToLocalStorage);
+  document.getElementById('TitleInput').addEventListener('input', saveToLocalStorage);
+  document.getElementById('NameInput').addEventListener('input', saveToLocalStorage);
+  document.getElementById('Avatar_UrlInput').addEventListener('input', saveToLocalStorage);

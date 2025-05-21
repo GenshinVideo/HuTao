@@ -184,11 +184,11 @@ table {
 .WebhookInput button:hover {
   background-color: #4752C4;
 }
-#webhookStatus {
+#webhookStatus, #webhookStatus2 {
   margin-top: 8px;
   font-size: 14px;
   color: green;
 }
-#webhookStatus.error {
+#webhookStatus.error, #webhookStatus2.error {
   color: red;
 }
