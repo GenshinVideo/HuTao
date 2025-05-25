@@ -172,25 +172,72 @@
     };
   }
 
-  function getRelativeTime(unix) {
-    const now = Math.floor(Date.now() / 1000);
-    const diff = unix - now;
-    const isPast = diff < 0;
-    const abs = Math.abs(diff);
-    if (abs < 60) {
-      return `${abs}秒${isPast ? '前' : '後'}`;
-    }
-    const minutes = Math.floor(abs / 60);
-    if (minutes < 60) {
-      return `${minutes}分${isPast ? '前' : '後'}`;
-    }
-    const hours = Math.floor(abs / 3600);
-    if (hours < 24) {
-      return `${hours}時間${isPast ? '前' : '後'}`;
-    }
-    const days = Math.floor(abs / 86400);
-    return `${days}日${isPast ? '前' : '後'}`;
+function getRelativeTime(unix) {
+  const nowSec   = Math.floor(Date.now() / 1000);
+  const diff     = unix - nowSec;
+  const isPast   = diff < 0;
+  const absSec   = Math.abs(diff);
+
+  // --- 秒・分・時間 ---
+  if (absSec < 60) {
+    return `${absSec}秒${isPast ? '前' : '後'}`;
   }
+  const m = Math.floor(absSec / 60);
+  if (m < 60) {
+    return `${m}分${isPast ? '前' : '後'}`;
+  }
+  const h = Math.floor(m / 60);
+  if (h < 24) {
+    return `${h}時間${isPast ? '前' : '後'}`;
+  }
+
+  // --- 日表示（切り上げ）---
+  const daysDisplay = Math.ceil(absSec / 86400);
+  if (daysDisplay <= 25) {
+    return `${daysDisplay}日${isPast ? '前' : '後'}`;
+  }
+
+  // --- 月表示か年表示かの境界は「26日～318日」で月／「319日以上」で年 ---
+  const daysFloor = Math.floor(absSec / 86400);
+  if (daysFloor < 319) {
+    // 30日ごとに切り捨て、1～10ヶ月にクランプ
+    let months = Math.floor(daysFloor / 30);
+    months = Math.max(1, Math.min(months, 10));
+    return `${months}ヶ月${isPast ? '前' : '後'}`;
+  }
+
+  // --- 年表示（カレンダー月差を“半年（6ヶ月）”で繰り上げ）---
+  const now = new Date();
+  const tgt = new Date(unix * 1000);
+
+  // カレンダー月差を算出：年差×12 + 月差 - 日調整
+  let monthDiff =
+    (tgt.getFullYear()  - now.getFullYear())  * 12 +
+    (tgt.getMonth()     - now.getMonth());
+  if (tgt.getDate() < now.getDate()) {
+    monthDiff -= 1;
+  }
+  const absMonthDiff = Math.abs(monthDiff);
+
+  // 年数と余り（月数）
+  let years   = Math.floor(absMonthDiff / 12);
+  const rem   = absMonthDiff % 12;
+  // 余りが6ヶ月以上なら1年繰り上げ
+  if (rem >= 6) {
+    years += 1;
+  }
+  if (years === 0) {
+    // 0年は1年と扱う
+    years = 1;
+  }
+
+  return `${years}年${isPast ? '前' : '後'}`;
+}
+
+
+
+
+
 
   function getTimestampFormat(timestamp, format, isEnd = false) {
     if (format === 'null') return '';
@@ -301,7 +348,11 @@
       const text = document.getElementById(`text${field}`).value;
       const format = document.getElementById(`format${field}`).value;
       if (text) {
-        contentParts.push(text);
+
+        const escapedText = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const modifiedText = escapedText.replace(/\\n/g, '<br>');
+
+        contentParts.push(modifiedText);
         formatParts.push(text);
       }
       if (format !== 'null') {
@@ -316,7 +367,7 @@
       }
     });
 
-    contentCell.textContent = contentParts.join('');
+    contentCell.innerHTML = contentParts.join('');
     formatCell.textContent = formatParts.join('');
     contentRow.appendChild(contentCell);
     formatRow.appendChild(formatCell);

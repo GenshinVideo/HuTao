@@ -131,7 +131,7 @@ async function sendToDiscord(mode) {
   const WebhookUrl = document.getElementById('WebhookUrlInput').value.trim();
   const customTimestampTable = document.getElementById('customTimestampTable');
   const formatRow = customTimestampTable.rows[1]; // 2行目（カスタムフォーマット）
-  const formatContent = formatRow.cells[0].textContent; // カスタムフォーマットの内容
+  const formatContent = formatRow.cells[0].textContent.replace(/\\n/g, '\n'); // カスタムフォーマットの内容
 
   let statusDiv;
   if (mode == 1) {
