@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "35"
+			"count": "38"
 		}
 	],
 	"list": [
@@ -118,6 +118,10 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Tribbie.png"
 		},
 		{
+			"name": "ヒアンシー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hyacine.png"
+		},
+		{
 			"name": "猫宮又奈",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nekomiya_Mana.png"
 		},
@@ -136,6 +140,14 @@
 		{
 			"name": "青衣",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Qingyi.png"
+		},
+		{
+			"name": "橘福福",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ju_Fufu.png"
+		},
+		{
+			"name": "浮波柚葉",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ukinami_Yuzuha.png"
 		},
 		{
 			"name": "「メッセージ」人形",
