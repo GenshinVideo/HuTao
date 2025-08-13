@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "38"
+			"count": "39"
 		}
 	],
 	"list": [
@@ -148,6 +148,10 @@
 		{
 			"name": "浮波柚葉",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ukinami_Yuzuha.png"
+		},
+		{
+			"name": "アリス・タイムフィールド",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Alice.png"
 		},
 		{
 			"name": "「メッセージ」人形",
