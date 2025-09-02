@@ -150,3 +150,19 @@ video {
   }
 }
 /* ↑ ギャラリー ↑ */
+
+
+
+body, .Contents {
+  cursor: url('../../images/cursor/cursor_default.webp'), auto;
+}
+
+/* 指カーソルにしたい全要素にまとめて指定 */
+a:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+[role="button"]:hover,
+[onclick]:hover {
+  cursor: url('../../images/cursor/cursor_pointer.png'), auto !important;
+}
