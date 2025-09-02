@@ -1,4 +1,4 @@
-var Version = "20250522";
+var Version = "20250903";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -24,6 +24,54 @@ function SetCharacterList() {
   Hiders = JSON.parse(localStorage.getItem("HideCharacter"));
 
   S_VideoBGB = "";
+
+// フリンズ
+  S_Id =          "Flins";
+  S_JpName =      "フリンズ";
+  S_CharaImg =    "Original/Character2/flins_120_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Precision_Kuuvahki_Stamping_Die";
+  S_Local =       "Frostlamp_Flower";
+  S_Common =      "Precision_Drive_Shaft";
+  S_Talent1 =     "Vagrancy";
+  S_Talent2 =     "Ascended_Sample_Queen";
+  Checkmate();
+
+// ラウマ
+  S_Id =          "Lauma";
+  S_JpName =      "ラウマ";
+  S_CharaImg =    "Original/Character2/lauma_119_gacha_splash.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Lightbearing_Scale_Feather";
+  S_Local =       "Moonfall_Silver";
+  S_Common =      "Frost_Etched_Warrant";
+  S_Talent1 =     "Moonlight";
+  S_Talent2 =     "Eroded_Scale_Feather";
+  Checkmate();
+
+// アイノ
+  S_Id =          "Aino";
+  S_JpName =      "アイノ";
+  S_CharaImg =    "Original/Character2/aino_121_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Precision_Kuuvahki_Stamping_Die";
+  S_Local =       "Portable_Bearing";
+  S_Common =      "Precision_Drive_Shaft";
+  S_Talent1 =     "Elysium";
+  S_Talent2 =     "Silken_Feather";
+  Checkmate();
+
+// イネファ
+  S_Id =          "Ineffa";
+  S_JpName =      "イネファ";
+  S_CharaImg =    "Original/Character2/ineffa_116_gacha_splash.webp";
+  S_Element =     "Vajrada_Amethyst";
+  S_Boss =        "Secret_Source_Airflow_Accumulator";
+  S_Local =       "Glowing_Hornshroom";
+  S_Common =      "Saurian_Crowned_Warriors_Golden_Whistle";
+  S_Talent1 =     "Conflict";
+  S_Talent2 =     "Eroded_Sunfire";
+  Checkmate();
 
 // スカーク
   S_Id =          "Skirk";
@@ -1578,10 +1626,16 @@ ItemNames = [
   "Juvenile_Fang",
   "Saurian_Crowned_Warriors_Golden_Whistle",
   "Warriors_Metal_Whistle",
-  "Sentrys_Wooden_Whistle"
+  "Sentrys_Wooden_Whistle",
+  "Broken_Drive_Shaft",
+  "Reinforced_Drive_Shaft",
+  "Precision_Drive_Shaft",
+  "Tattered_Warrant",
+  "Immaculate_Warrant",
+  "Frost_Etched_Warrant"
 ];
 InventorySet(ItemNames);
-// Talent Level-Up Material 2
+// 週ボス素材
 ItemNames = [
   "Dvalins_Plume",
   "Dvalins_Claw",
@@ -1621,7 +1675,7 @@ ItemNames = [
   "Ascended_Sample_Queen"
 ];
 InventorySet(ItemNames);
-// Elemental Stones
+// エリアボス素材
 ItemNames = [
   "Hurricane_Seed",
   "Lightning_Prism",
@@ -1660,7 +1714,9 @@ ItemNames = [
   "Ensnaring_Gaze",
   "Talisman_of_the_Enigmatic_Land",
   "Sparkless_Statue_Core",
-  "Secret_Source_Airflow_Accumulator"
+  "Secret_Source_Airflow_Accumulator",
+  "Precision_Kuuvahki_Stamping_Die",
+  "Lightbearing_Scale_Feather"
 ];
 InventorySet(ItemNames);
 // Jewels
@@ -1695,7 +1751,7 @@ ItemNames = [
   "Prithiva_Topaz_Sliver"
 ];
 InventorySet(ItemNames);
-// Talent Level-Up Material
+// 天賦本
 ItemNames = [
   "Philosophies_of_Freedom",
   "Guide_to_Freedom",
@@ -1751,10 +1807,19 @@ ItemNames = [
   "Philosophies_of_Conflict",
   "Guide_to_Conflict",
   "Teachings_of_Conflict",
+  "Teachings_of_Moonlight",
+  "Guide_to_Moonlight",
+  "Philosophies_of_Moonlight",
+  "Teachings_of_Elysium",
+  "Guide_to_Elysium",
+  "Philosophies_of_Elysium",
+  "Teachings_of_Vagrancy",
+  "Guide_to_Vagrancy",
+  "Philosophies_of_Vagrancy",
   "Crown_of_Insight"
 ];
 InventorySet(ItemNames);
-// Local Material
+// 特産品
 ItemNames = [
     "Wolfhook",
     "Valberry",
@@ -1806,7 +1871,10 @@ ItemNames = [
     "Glowing_Hornshroom",
     "Withering_Purpurbloom",
     "Skysplit_Gembloom",
-    "Dracolite"
+    "Dracolite",
+    "Portable_Bearing",
+    "Frostlamp_Flower",
+    "Moonfall_Silver"
 ];
 InventorySet(ItemNames);
   SetCalculatorList();
@@ -1890,6 +1958,8 @@ function SetCalculatorES() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Lightbearing_Scale_Feather", unit: " 個" },
+    { name: "Precision_Kuuvahki_Stamping_Die", unit: " 個" },
     { name: "Secret_Source_Airflow_Accumulator", unit: " 個" },
     { name: "Sparkless_Statue_Core", unit: " 個" },
     { name: "Talisman_of_the_Enigmatic_Land", unit: " 個" },
@@ -1955,6 +2025,8 @@ function SetCalculatorCM() {
   CalEle = document.querySelector('th[id="C_Common_Material"]').parentElement;
   S_ItemType = "Common_Material";
   const allItems = [
+    { name: "Frost_Etched_Warrant", ids: "Tattered_Warrant Immaculate_Warrant Frost_Etched_Warrant", unit: " 点" },
+    { name: "Precision_Drive_Shaft", ids: "Broken_Drive_Shaft Reinforced_Drive_Shaft Precision_Drive_Shaft", unit: " 点" },
     { name: "Saurian_Crowned_Warriors_Golden_Whistle", ids: "Sentrys_Wooden_Whistle Warriors_Metal_Whistle Saurian_Crowned_Warriors_Golden_Whistle", unit: " 点" },
     { name: "Tyrants_Fang", ids: "Juvenile_Fang Seasoned_Fang Tyrants_Fang", unit: " 点" },
     { name: "Artificed_Dynamic_Gear", ids: "Meshing_Gear Mechanical_Spur_Gear Artificed_Dynamic_Gear", unit: " 点" },
@@ -2007,6 +2079,9 @@ function SetCalculatorLM() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Moonfall_Silver", unit: " 個" },
+    { name: "Frostlamp_Flower", unit: " 個" },
+    { name: "Portable_Bearing", unit: " 個" },
     { name: "Dracolite", unit: " 個" },
     { name: "Skysplit_Gembloom", unit: " 個" },
     { name: "Withering_Purpurbloom", unit: " 個" },
@@ -2088,6 +2163,9 @@ function SetCalculatorTLUM() {
   S_Check_2 = "";
   S_Check_3 = "TLUM_";
   const allItems = [
+    { name: "Vagrancy", unit: " 点" },
+    { name: "Elysium", unit: " 点" },
+    { name: "Moonlight", unit: " 点" },
     { name: "Conflict", unit: " 点" },
     { name: "Kindling", unit: " 点" },
     { name: "Contention", unit: " 点" },
@@ -2300,12 +2378,19 @@ function CalculatorSet2() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2025/09/03</b><BR>\
+更新。<BR>\
+・イネファ、アイノ、ラウマ、フリンズの実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2025/05/22</b><BR>\
 更新。<BR>\
 ・イファ、エスコフィエ、ダリア、スカークの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2025/03/31</b><BR>\
 更新。<BR>\
@@ -3134,7 +3219,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250331 to ver." + Version + "）\n・イファ、エスコフィエ、ダリア、スカークの実装に対応の実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250522 to ver." + Version + "）\n・イネファ、アイノ、ラウマ、フリンズの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
     }  else  {
       Load();
     }
