@@ -37,40 +37,11 @@
   });
 </script>
 
-<!--
-背景をYoutubeの動画にしてみる。
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const urlValue = localStorage.getItem("url");
-  if (urlValue) {
-    const videoElement = document.getElementById("background-video");
-    if (videoElement) {
-      if (urlValue.includes("4ziysqXOQ8")) {
-        videoElement.src = "https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&controls=0&showinfo=0&rel=0&fs=0";
-      } else if (urlValue.includes("U5hbdsT9W7")) {
-        videoElement.src = "https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&controls=0&showinfo=0&rel=0&fs=0";
-      }
-    }
-  }
-});
-</script>
--->
-
 </head>
 
 <body>
   <div class="BackGroundMovie">
     <video id="background-video" loop autoplay muted playsinline></video>
-<!--
-背景をYoutubeの動画にしてみる。
-    <iframe 
-      id="background-video"
-      src="https://www.youtube.com/embed/-FrbSYzlqdU?autoplay=1&mute=1&loop=1&playlist=-FrbSYzlqdU&modestbranding=1&showinfo=0&rel=0"
-      frameborder="0" 
-      allow="autoplay; encrypted-media" 
-      allowfullscreen>
-    </iframe>
--->
   </div>
   <nav class="navbar" aria-label="main navigation">
     <div class="container">
@@ -180,12 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         </div>
-        <hr class="divider">
         <div class="field">
-          <font size="3">
-            <b>API URL
-              <br></b>
-          </font>
+          <font size="3"><b>API URL</b><br></font>
           <div class="control">
             <div style="border: 2px solid #FF3399; border-radius: 8px; padding: 10px; margin-bottom: 5px;">
               <font size="2"><b>Genshin Impact</b></font><br>
@@ -205,7 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <div style="border: 2px solid #FF3399; border-radius: 8px; padding: 10px; margin-bottom: 5px;">
               <font size="2"><b>Honkai Impact 3rd</b><br></font>
               <font size="1">https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGamePackages?game_ids[]=g0mMIvshDb&launcher_id=VYTpXlbWo8</font>
-            </div>
             </div>
           </div>
         </div>
@@ -276,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </div>
-      <script src="../js/Resource/Resource.js"></script>
+      //<script src="../js/Resource/Resource.js"></script>
     </div>
   </section>
 </body>
