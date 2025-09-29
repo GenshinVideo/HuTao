@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>なぞり書き練習</title>
+
+  <style>
+    @font-face {
+      font-family: 'MyCustomFont';
+      src: url('myfont.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'MyCustomFont', serif;
+      margin: 0;
+      padding: 1em;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    textarea {
+      width: 100%;
+      height: 6em;
+      font-size: 1.2em;
+      padding: 0.5em;
+      font-family: 'MyCustomFont', serif;
+    }
+
+    #display {
+      margin-top: 2em;
+      padding: 1em;
+      border: 1px solid #ccc;
+      min-height: 200px;
+      font-size: 1.5em;
+      white-space: pre-wrap;
+      background: #fff;
+      line-height: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>TEST</h2>
+  <textarea id="input" placeholder="ここに文字を入力してください...">幾星霜を重ねて今もなお
+笑みに花咲くその歩みに
+やわらかな風がそっと寄り添うような
+穏やかな日々が続きますように</textarea>
+
+  <div id="display"></div>
+
+  <script>
+    const input = document.getElementById('input');
+    const display = document.getElementById('display');
+
+    function updateDisplay() {
+      display.textContent = input.value;
+    }
+
+    input.addEventListener('input', updateDisplay);
+    updateDisplay();
+  </script>
+
+</body>
+</html>
