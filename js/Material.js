@@ -25,9 +25,81 @@ function SetCharacterList() {
 
   S_VideoBGB = "";
 
+// コロンビーナ
+  S_Id =          "Columbina";
+  S_JpName =      "コロンビーナ・ハイポセレニア";
+  S_CharaImg =    "Original/Character2/columbina_125_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Radiant_Antler";
+  S_Local =       "Winter_Icelea";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Moonlight";
+  S_Talent2 =     "";
+  Checkmate();
+
+// 茲白
+  S_Id =          "Zibai";
+  S_JpName =      "茲白";
+  S_CharaImg =    "Original/Character2/zibai_126_gacha_splash.webp";
+  S_Element =     "Prithiva_Topaz";
+  S_Boss =        "Remnant_of_the_Dreadwing";
+  S_Local =       "Glaze_Lily";
+  S_Common =      "Frost_Etched_Warrant";
+  S_Talent1 =     "Gold";
+  S_Talent2 =     "Ascended_Sample_Queen";
+  Checkmate();
+
+// イルーガ
+  S_Id =          "Illuga";
+  S_JpName =      "イルーガ";
+  S_CharaImg =    "Original/Character2/illuga_127_gacha_splash.webp";
+  S_Element =     "Prithiva_Topaz";
+  S_Boss =        "Cyclic_Military_Kuuvahki_Core";
+  S_Local =       "Pine_Amber";
+  S_Common =      "Precision_Drive_Shaft";
+  S_Talent1 =     "Elysium";
+  S_Talent2 =     "Eroded_Horn";
+  Checkmate();
+
+// ドゥリン
+  S_Id =          "Durin";
+  S_JpName =      "ドゥリン";
+  S_CharaImg =    "Original/Character2/durin_123_gacha_splash.webp";
+  S_Element =     "Agnidus_Agate";
+  S_Boss =        "Cyclic_Military_Kuuvahki_Core";
+  S_Local =       "Frostlamp_Flower";
+  S_Common =      "Frost_Etched_Warrant";
+  S_Talent1 =     "Ballad";
+  S_Talent2 =     "Eroded_Sunfire";
+  Checkmate();
+
+// ヤフォダ
+  S_Id =          "Jahoda";
+  S_JpName =      "ヤフォダ";
+  S_CharaImg =    "Original/Character2/jahoda_124_gacha_splash.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Lightbearing_Scale_Feather";
+  S_Local =       "Portable_Bearing";
+  S_Common =      "Precision_Drive_Shaft";
+  S_Talent1 =     "Vagrancy";
+  S_Talent2 =     "Ascended_Sample_Knight";
+  Checkmate();
+
+// ネフェル
+  S_Id =          "Nefer";
+  S_JpName =      "ネフェル";
+  S_CharaImg =    "Original/Character2/nefer_122_gacha_splash.webp";
+  S_Element =     "Nagadus_Emerald";
+  S_Boss =        "Radiant_Antler";
+  S_Local =       "Moonfall_Silver";
+  S_Common =      "Frost_Etched_Warrant";
+  S_Talent1 =     "Elysium";
+  S_Talent2 =     "Ascended_Sample_Rook";
+  Checkmate();
+
 // フリンズ
   S_Id =          "Flins";
-  S_JpName =      "フリンズ";
+  S_JpName =      "キリル・チュードミロヴィッチ・フリンズ";
   S_CharaImg =    "Original/Character2/flins_120_gacha_splash.webp";
   S_Element =     "Vajrada_Amethyst";
   S_Boss =        "Precision_Kuuvahki_Stamping_Die";
@@ -1716,7 +1788,10 @@ ItemNames = [
   "Sparkless_Statue_Core",
   "Secret_Source_Airflow_Accumulator",
   "Precision_Kuuvahki_Stamping_Die",
-  "Lightbearing_Scale_Feather"
+  "Lightbearing_Scale_Feather",
+  "Radiant_Antler",
+  "Cyclic_Military_Kuuvahki_Core",
+  "Remnant_of_the_Dreadwing"
 ];
 InventorySet(ItemNames);
 // Jewels
@@ -1874,12 +1949,13 @@ ItemNames = [
     "Dracolite",
     "Portable_Bearing",
     "Frostlamp_Flower",
-    "Moonfall_Silver"
+    "Moonfall_Silver",
+    "Winter_Icelea",
+    "Pine_Amber"
 ];
 InventorySet(ItemNames);
   SetCalculatorList();
 }
-
 
 
 function CreateInventoryInput(itemName) {
@@ -1958,6 +2034,9 @@ function SetCalculatorES() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Remnant_of_the_Dreadwing", unit: " 個" },
+    { name: "Cyclic_Military_Kuuvahki_Core", unit: " 個" },
+    { name: "Radiant_Antler", unit: " 個" },
     { name: "Lightbearing_Scale_Feather", unit: " 個" },
     { name: "Precision_Kuuvahki_Stamping_Die", unit: " 個" },
     { name: "Secret_Source_Airflow_Accumulator", unit: " 個" },
@@ -2079,6 +2158,8 @@ function SetCalculatorLM() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Pine_Amber", unit: " 個" },
+    { name: "Winter_Icelea", unit: " 個" },
     { name: "Moonfall_Silver", unit: " 個" },
     { name: "Frostlamp_Flower", unit: " 個" },
     { name: "Portable_Bearing", unit: " 個" },
@@ -2378,12 +2459,19 @@ function CalculatorSet2() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
+<b>2025/12/06</b><BR>\
+更新。<BR>\
+・ネフェル・ヤフォダ・ドゥリン・イルーガ・茲白・コロンビーナの実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+<BR><BR>\
 <b>2025/09/03</b><BR>\
 更新。<BR>\
 ・イネファ、アイノ、ラウマ、フリンズの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2025/05/22</b><BR>\
 更新。<BR>\
@@ -3219,7 +3307,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250522 to ver." + Version + "）\n・イネファ、アイノ、ラウマ、フリンズの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250903 to ver." + Version + "）\n・ネフェル・ヤフォダ・ドゥリン・イルーガ・茲白・コロンビーナの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
     }  else  {
       Load();
     }
