@@ -1,0 +1,243 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ↓ 背景動画 ↓ */
+.SakuraWallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.SakuraWallpaper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+/* 
+  background-color: rgba(255, 255, 255, 0.85);
+ */
+  background-image: radial-gradient(#111 30%, transparent 31%), radial-gradient(#111 30%, transparent 31%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+}
+.SakuraWallpaper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.SakuraWallpaper @media (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+.SakuraWallpaper @media (max-aspect-ratio: 16/9) {
+  video {
+    height: 100vh;
+    width: auto;
+    min-width: 100%;
+  }
+}
+/* ↑ 背景動画 ↑ */
+
+
+/* ↓ スクロールバー ↓ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+}
+/* ↑ スクロールバー ↑ */
+
+/* ↓ コンテンツの設定 ↓ */
+.Contents {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  min-height: calc(100% - 20px);
+  padding: 2%;
+  left: 40%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  cursor: default;
+}
+.Contents a:link { color: #AFEEEE; }
+.Contents a:visited { color: #AFEEEE; }
+.Contents a:hover { color: #00FFFF; }
+.Contents a:active { color: #FFFFFF; }
+.Contents img { opacity: 1.0; }
+.Contents img:hover { opacity: 0.8; }
+/* ↑ コンテンツの設定 ↑ */
+
+
+.Content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  color: #FFF;
+}
+.Content a:link {
+  color: #FFFFFF;
+}
+.Content a:visited {
+ color: #FFFFFF;
+}
+.Content a:hover {
+ color: #00FFFF;
+}
+.Content a:active {
+ color: #FFFFFF;
+}
+.Content img {
+  opacity: 0.5;
+}
+.Content img:hover {
+  opacity: 1.0;
+}
+
+
+/* 以下コード埋め込み用 */
+pre.prettyprint {
+  display: block;
+  background: rgba(0, 0, 0, 0);
+}
+
+pre .nocode {
+  background-color: none;
+  color: #000
+}
+
+pre .str {
+  color: #ffa0a0
+}
+
+pre .kwd {
+  color: #f0e68c;
+  font-weight: bold
+}
+
+pre .com {
+  color: #87ceeb
+}
+
+pre .typ {
+  color: #98fb98
+}
+
+pre .lit {
+  color: #cd5c5c
+}
+
+pre .pun {
+  color: #fff
+}
+
+pre .pln {
+  color: #fff
+}
+
+pre .tag {
+  color: #f0e68c;
+  font-weight: bold
+}
+
+pre .atn {
+  color: #bdb76b;
+  font-weight: bold
+}
+
+pre .atv {
+  color: #ffa0a0
+}
+
+pre .dec {
+  color: #98fb98
+}
+
+@media print {
+  pre.prettyprint {
+    background-color: none
+  }
+  pre .str, code .str {
+    color: #060
+  }
+  pre .kwd, code .kwd {
+    color: #006;
+    font-weight: bold
+  }
+  pre .com, code .com {
+    color: #600;
+    font-style: italic
+  }
+  pre .typ, code .typ {
+    color: #404;
+    font-weight: bold
+  }
+  pre .lit, code .lit {
+    color: #044
+  }
+  pre .pun, code .pun {
+    color: #440
+  }
+  pre .pln, code .pln {
+    color: #000
+  }
+  pre .tag, code .tag {
+    color: #006;
+    font-weight: bold
+  }
+  pre .atn, code .atn {
+    color: #404
+  }
+  pre .atv, code .atv {
+    color: #060
+  }
+}
+
+.prettyprint ol.linenums li {
+  list-style-type: decimal;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #00FFFF
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+}
+
+PRE.prettyprint {
+  width: 98%;
+  margin: 0% 1%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0);
+}

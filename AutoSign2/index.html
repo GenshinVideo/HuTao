@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Honey Apricot - Gryphline AutoSign</title>
+  <script src="assets/js/run_prettify.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="SakuraWallpaper">
+    <video src="movieO.mp4" loop autoplay muted playsinline></video>
+  </div>
+  <div class="Contents">
+    <B>Google Apps Script(GAS)を使用して、アークナイツ：エンドフィールドのログインボーナスを自動的に取得させる</B><BR>
+    <font color="lime">※HoYoverse（原神、スターレイル、ゼンゼロ、崩壊3rd）の自動化は<a href="../AutoSign">こちら</a>。</font><BR>
+    <font color="fuchsia">※使用に際して如何なる問題が発生した場合であっても、サイト管理人は一切の責任を負いません。</font><BR><BR>
+    <B>概要</B><BR>
+    毎日自動でログインボーナスを取得でき、設定することで取得時にDiscordへ通知を送ることも可能です。<BR>
+    <img src="assets/img/explanation/001.png" width="50%"><BR><BR>
+    <BR>
+    <B>設定方法</B><BR>
+    1. 「<a href="https://script.google.com/home/my">Google Apps Script</a>」から「新しいプロジェクト」を選択して、以下のコード（146行）全文を貼り付けます。<BR>
+    <pre class="prettyprint lang-css linenums:">const Accounts = [
+  { accountName: "アカウント名",
+    ArknightsEndfield: true,
+    cred: "00000000000000000000000000000000",
+    sk_game_role: "0_0000000000_0"
+  }
+];
+
+const discord_notify = true;
+const discord_silent = false;
+const myDiscordID = "000000000000000000";
+const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
+
+/** /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+※上記が設定項目になります。設定方法につきましては"Honey Apricot"よりご確認下さい。
+　Honey Apricot（https://genshinvideo.github.io/HuTao/）＞胡蝶の夢と泡沫の夢。＞Gryphline AutoSign
+※正常に動作しない可能性がありますので、ここより以下のコードは書き換えないで下さい。
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ **/
+
+const urlDict = {
+  ArknightsEndfield: 'https://zonai.skport.com/web/v1/game/endfield/attendance'
+}
+const games = {
+  ArknightsEndfield: {
+    name: 'エンドフィールド　'
+  }
+};
+
+
+function main() {
+  const messages = Accounts.map(autoSignFunction);
+  if (discord_notify) {
+    const DiscordMessage = `${discordPing()}\`\`\`\n${messages.join('\`\`\`\`\`\`\n')}\`\`\``;
+    if (discordWebhook) {
+      postWebhook(DiscordMessage);
+    }
+  }
+}
+function discordPing() {
+  return myDiscordID ? `<@${myDiscordID}>` : '';
+}
+
+function autoSignFunction({ ArknightsEndfield, accountName, cred, sk_game_role }) {
+  const urls = [];
+  const postOptionsList = [];
+  const getOptionsList = [];
+  if (ArknightsEndfield) {
+    urls.push(urlDict.ArknightsEndfield);
+    postOptionsList.push(createOptions('POST', cred, sk_game_role, {}));
+    getOptionsList.push(createOptions('GET', cred, sk_game_role, {}));
+  }
+  let ResultMessage = `${accountName}\n`;
+  const httpResponses = UrlFetchApp.fetchAll(urls.map((url, i) => ({
+    url,
+    ...postOptionsList[i]
+  })));
+  for (const [i, ResponseRow] of httpResponses.entries()) {
+    // console.log(JSON.parse(ResponseRow));
+    const ResponseJson = JSON.parse(ResponseRow.getContentText());
+    console.log(ResponseJson);
+    const checkInResult = ResponseJson.message;
+    console.log(checkInResult);
+    const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
+    const gameName = games[enGameName].name;
+    ResultMessage = processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptionsList[i]);
+  }
+  return ResultMessage;
+}
+
+function processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptions) {
+  if (checkInResult === "OK") {
+    const awards = ResponseJson?.data?.awardIds;
+    const resourceMap = ResponseJson?.data?.resourceInfoMap;
+    if (!Array.isArray(awards) || awards.length === 0) {
+      return ResultMessage + `\n${gameName} ≫ 報酬情報が存在しません。`;
+    }
+    const rewardId = awards[0].id;
+    const rewardInfo = resourceMap?.[rewardId];
+    if (!rewardInfo) {
+      return ResultMessage + `\n${gameName} ≫ 報酬詳細の取得に失敗しました。`;
+    }
+    ResultMessage += `\n${gameName} ≫ ${rewardInfo.name} (${rewardInfo.count})`;
+  } else {
+    ResultMessage += `\n${gameName} ≫ ${checkInResult}`;
+  }
+  return ResultMessage;
+}
+
+function fetchData(url, getOptions) {
+  try {
+    return JSON.parse(UrlFetchApp.fetch(url, getOptions));
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    return null;
+  }
+}
+function createOptions(method, cred, sk_game_role, extraHeaders = {}) {
+  const headers = {
+    'cred': cred,
+    'sk-game-role': sk_game_role,
+    'sk-platform-role': '3',
+    'sk-language': 'ja',
+    'timestamp': Math.floor(Date.now() / 1000).toString(),
+    'vname': '1.0.0',
+    'Referer': 'https://game.skport.com/',
+    'Origin': 'https://game.skport.com',
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
+    ...extraHeaders
+  };
+  return {
+    method,
+    headers,
+    muteHttpExceptions: true,
+  };
+}
+
+function postWebhook(data) {
+  try {
+    var bot = JSON.parse(UrlFetchApp.fetch('https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/file/bot.json'));
+    var RandomSelect = Math.floor(Math.random() * bot.data[0].count);
+  } catch (e) {
+    var bot = JSON.parse(JSON.stringify({
+      list: [
+        {
+          "name": "管理人",
+          "avatar": "https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/endministrator1.3efd4769.png"
+        }
+      ]
+    }));
+    var RandomSelect = 0;
+  }
+  const payload = JSON.stringify({
+    'username': bot.list[RandomSelect].name,
+    'avatar_url': bot.list[RandomSelect].avatar,
+    'content': data,
+    ...(discord_silent ? { 'flags': 4096 } : {})
+  });
+  const options = {
+    method: 'POST',
+    contentType: 'application/json',
+    payload: payload,
+    muteHttpExceptions: true
+  };
+  UrlFetchApp.fetch(discordWebhook, options);
+}</pre><BR>
+  2. ［GAS］アカウント情報を書き換えます。（青文字を参考にしてください。）
+  <pre class="prettyprint lang-css linenums:">const Accounts = [
+  { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
+    ArknightsEndfield: true, /** ログインボーナスを取得して欲しい場合は「true」に、そうでない場合は「false」と書き換えます。 **/
+    cred: "00000000000000000000000000000000", /** 自身のアカウント情報に書き換えて下さい。 **/
+    sk_game_role: "0_0000000000_0" /** 自身のアカウント情報に書き換えて下さい。 **/
+  }
+];</pre>
+  　※アカウント情報は以下の手順から取得することが可能です。<BR>
+  　　1. 「<a href="https://game.skport.com/endfield/sign-in">SKPort Endfield Portal</a>」にログインします。<BR>
+  　　2. 開発者ツール（F12）を開き「Network」タブを選択します。<BR>
+  　　3. その状態でページを更新し「attendance」でフィルターをかけて、該当するリクエストのヘッダーを表示します。<BR>
+  　　4. リクエストヘッダーからアカウント情報（「cred」「sk_game_role」）を取得します。<BR><BR>
+
+  　アカウントが複数ある場合は、以下のように行を追加し、同様の設定を行ってください。
+  <pre class="prettyprint lang-css linenums:">const Accounts = [
+  { accountName: "アカウント名",
+    ArknightsEndfield: true,
+    cred: "00000000000000000000000000000000",
+    sk_game_role: "0_0000000000_0"
+  },
+  { accountName: "アカウント名 2",
+    ArknightsEndfield: true,
+    cred: "00000000000000000000000000000000",
+    sk_game_role: "0_0000000000_0"
+  }
+];</pre><BR>
+  4. ［GAS］Discordの通知設定を書き換えます。（青文字を参考にして下さい。）
+  <pre class="prettyprint lang-css linenums:9">const discord_notify = true; /** Discordに通知を送信する場合は「true」を、そうでない場合は「false」と書き換えます。 **/
+const discord_silent = false; /** 通知を行う際に、通知音を鳴らさない場合は「true」を、そうでない場合は「false」と書き換えます。 **/
+const myDiscordID = "000000000"; /** 通知を行う際に、自身にメンションする場合は『ユーザーID』を、そうでない場合は『空（""）』に書き換えます。 **/
+const discordWebhook = "https://discord.com/api/webhooks/000000000/OOOOOOOOO"; /** 通知を行う際に、メッセージを送信するテキストチャンネルのウェブフックURLに書き換えて下さい。 **/</pre>
+  　※「ユーザーID」と「ウェブフックURL」は、Discordから取得できます。<BR>
+  　・ユーザーID<BR>
+  　　<font color="#00FFFF">設定</font> ≫ <font color="#00FFFF">詳細設定</font> ≫ <font color="#00FFFF">開発者モード</font>をONにした後、設定を閉じます。<BR>
+  　　左下の自分のアイコンをクリックし、<font color="#00FFFF">ユーザーIDをコピー</font>を選択します。<BR>
+  　・テキストチャンネルのウェブフックURL<BR>
+  　　通知を送信したいテキストチャンネルを右クリックし、<font color="#00FFFF">チャンネルの編集</font> ≫ <font color="#00FFFF">連携サービス</font> ≫ <font color="#00FFFF">ウェブフック</font> ≫ <font color="#00FFFF">新しいウェブフック</font> ≫ <font color="#00FFFF">ウェブフックURLをコピー</font>を選択します。<BR>
+  　※スマホアプリからはウェブフックの作成ができないため、ブラウザから「<a href="https://discord.com/channels/@me" rel="nofollow">Discord</a>」を開いて作成してください。<BR>
+  <BR>
+  5. ［GAS］実行テストを行います。<BR>
+  　スクリプトの書き換えが完了したら保存し、画面上部にある<font color="#00FFFF">実行</font>ボタンをクリックして、実際に処理が行われるか確認します。<BR>
+  　ログインボーナスが取得される、またはDiscordへ通知が送信されていれば、正常に動作しています。<BR>
+  <BR>
+  6. ［GAS］トリガーを設定します。<BR>
+  　画面左側のメニューから<font color="#00FFFF">トリガー</font>を選択し、<font color="#00FFFF">トリガーを追加</font>をクリックします。<BR>
+  <blockquote>
+  実行する関数を選択：<font color="#00FFFF">main</font><BR>
+  実行するデプロイを選択：<font color="#00FFFF">Head</font><BR>
+  イベントのソースを選択：<font color="#00FFFF">時間主導型</font><BR>
+  時間ベースのトリガーのタイプを選択：<font color="#00FFFF">日付ベースのタイマー</font><BR>
+  時刻を選択：<font color="#00FFFF">午前1時～2時</font><BR>
+  エラー通知設定：<font color="#00FFFF">任意</font>
+  </blockquote>
+  　上記の設定で保存すると、毎日指定した時間帯に自動で処理が実行されます。
+  </div>
+</body>
+</html>
