@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Material: "Material/",
     Resource: "Resource/",
     AutoSign: "AutoSign/",
+    AutoSign2: "AutoSign2/",
     Gallery: "Gallery/",
     ChronoHook: "ChronoHook/",
     ClockWidget: "ClockWidget/"
