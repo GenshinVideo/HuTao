@@ -22,7 +22,7 @@
     <img src="assets/img/explanation/001.png" width="50%"><BR><BR>
     <BR>
     <B>設定方法</B><BR>
-    1. 「<a href="https://script.google.com/home/my">Google Apps Script</a>」から「新しいプロジェクト」を選択して、以下のコード（146行）全文を貼り付けます。<BR>
+    1. 「<a href="https://script.google.com/home/my">Google Apps Script</a>」から「新しいプロジェクト」を選択して、以下のコード（165行）全文を貼り付けます。<BR>
     <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     ArknightsEndfield: true,
@@ -32,9 +32,9 @@
 ];
 
 const discord_notify = true;
-const discord_silent = false;
+const discord_silent = true;
 const myDiscordID = "000000000000000000";
-const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
+const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/00000000000000000000000000000000000000000000000000000000000000000000";
 
 /** /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 ※上記が設定項目になります。設定方法につきましては"Honey Apricot"よりご確認下さい。
@@ -65,51 +65,66 @@ function discordPing() {
   return myDiscordID ? `<@${myDiscordID}>` : '';
 }
 
+
 function autoSignFunction({ ArknightsEndfield, accountName, cred, sk_game_role }) {
   const urls = [];
   const postOptionsList = [];
   const getOptionsList = [];
+
   if (ArknightsEndfield) {
     urls.push(urlDict.ArknightsEndfield);
     postOptionsList.push(createOptions('POST', cred, sk_game_role, {}));
     getOptionsList.push(createOptions('GET', cred, sk_game_role, {}));
   }
+
   let ResultMessage = `${accountName}\n`;
   const httpResponses = UrlFetchApp.fetchAll(urls.map((url, i) => ({
     url,
     ...postOptionsList[i]
   })));
+
   for (const [i, ResponseRow] of httpResponses.entries()) {
-    // console.log(JSON.parse(ResponseRow));
-    const ResponseJson = JSON.parse(ResponseRow.getContentText());
+    const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
+    const gameName = games[enGameName].name;
+    let ResponseJson;
+    try {
+      ResponseJson = JSON.parse(ResponseRow.getContentText());
+    } catch {
+      ResultMessage += `\n${gameName} ≫ 取得に失敗しました`;
+      continue;
+    }
     console.log(ResponseJson);
     const checkInResult = ResponseJson.message;
     console.log(checkInResult);
-    const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
-    const gameName = games[enGameName].name;
     ResultMessage = processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptionsList[i]);
   }
   return ResultMessage;
 }
 
+
 function processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptions) {
-  if (checkInResult === "OK") {
-    const awards = ResponseJson?.data?.awardIds;
-    const resourceMap = ResponseJson?.data?.resourceInfoMap;
-    if (!Array.isArray(awards) || awards.length === 0) {
-      return ResultMessage + `\n${gameName} ≫ 報酬情報が存在しません。`;
-    }
-    const rewardId = awards[0].id;
-    const rewardInfo = resourceMap?.[rewardId];
-    if (!rewardInfo) {
-      return ResultMessage + `\n${gameName} ≫ 報酬詳細の取得に失敗しました。`;
-    }
-    ResultMessage += `\n${gameName} ≫ ${rewardInfo.name} (${rewardInfo.count})`;
-  } else {
-    ResultMessage += `\n${gameName} ≫ ${checkInResult}`;
+  if (checkInResult !== "OK") {
+    return ResultMessage + `\n${gameName} ≫ ${checkInResult}`;
   }
+  const awards = ResponseJson?.data?.awardIds;
+  const resourceMap = ResponseJson?.data?.resourceInfoMap;
+  if (!Array.isArray(awards) || awards.length === 0) {
+    return ResultMessage + `\n${gameName} ≫ 報酬情報が存在しません。`;
+  }
+  const rewardTexts = awards
+    .map(a => {
+      const info = resourceMap?.[a.id];
+      if (!info) return null;
+      return `${info.name} (${info.count})`;
+    })
+    .filter(Boolean);
+  if (rewardTexts.length === 0) {
+    return ResultMessage + `\n${gameName} ≫ 報酬詳細の取得に失敗しました。`;
+  }
+  ResultMessage += `\n${gameName} ≫ ${rewardTexts.join(' + ')}`;
   return ResultMessage;
 }
+
 
 function fetchData(url, getOptions) {
   try {
@@ -119,6 +134,8 @@ function fetchData(url, getOptions) {
     return null;
   }
 }
+
+
 function createOptions(method, cred, sk_game_role, extraHeaders = {}) {
   const headers = {
     'cred': cred,
@@ -140,24 +157,26 @@ function createOptions(method, cred, sk_game_role, extraHeaders = {}) {
   };
 }
 
+
 function postWebhook(data) {
+  let BotData;
   try {
-    var bot = JSON.parse(UrlFetchApp.fetch('https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/file/bot.json'));
-    var RandomSelect = Math.floor(Math.random() * bot.data[0].count);
+    const response = UrlFetchApp.fetch('https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/file/bot.json');
+    BotData = JSON.parse(response.getContentText());
   } catch (e) {
-    var bot = JSON.parse(JSON.stringify({
-      list: [
-        {
-          "name": "管理人",
-          "avatar": "https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/endministrator1.3efd4769.png"
-        }
-      ]
-    }));
-    var RandomSelect = 0;
+    BotData = {};
   }
+  let list = Array.isArray(BotData.list) ? BotData.list : [];
+  if (list.length === 0) {
+    list = [{
+      name: "管理人",
+      avatar: "https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/endministrator1.3efd4769.png"
+    }];
+  }
+  const RandomSelect = list[Math.floor(Math.random() * list.length)];
   const payload = JSON.stringify({
-    'username': bot.list[RandomSelect].name,
-    'avatar_url': bot.list[RandomSelect].avatar,
+    'username': RandomSelect.name,
+    'avatar_url': RandomSelect.avatar,
     'content': data,
     ...(discord_silent ? { 'flags': 4096 } : {})
   });
