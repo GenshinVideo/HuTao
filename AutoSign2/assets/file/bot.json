@@ -1,165 +1,73 @@
 {
 	"data": [
 		{
-			"count": "39"
+			"count": "15"
 		}
 	],
 	"list": [
 		{
-			"name": "バーバラ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Barbara.png"
+			"name": "管理人",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Endministrator.png"
 		},
 		{
-			"name": "モナ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Mona.png"
+			"name": "ペリカ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Perlica.png"
 		},
 		{
-			"name": "甘雨",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ganyu.png"
+			"name": "陳 千語",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Chen.png"
 		},
 		{
-			"name": "胡桃",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hu_Tao.png"
+			"name": "レーヴァテイン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Laevatain.png"
 		},
 		{
-			"name": "珊瑚宮心海",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sangonomiya_Kokomi.png"
+			"name": "イヴォンヌ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Yvonne.png"
 		},
 		{
-			"name": "ニィロウ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nilou.png"
+			"name": "ギルベルタ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Gilberta.png"
 		},
 		{
-			"name": "ファルザン",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Faruzan.png"
+			"name": "アルデリア",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Ardelia.png"
 		},
 		{
-			"name": "綺良々",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Kirara.png"
+			"name": "エンバー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Ember.png"
 		},
 		{
-			"name": "フリーナ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Furina.png"
+			"name": "ラストライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Lastrite.png"
 		},
 		{
-			"name": "千織",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Chiori.png"
+			"name": "アークライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Arclight.png"
 		},
 		{
-			"name": "シグウィン",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sigewinne.png"
+			"name": "アイビーエナ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Avywenna.png"
 		},
 		{
-			"name": "シトラリ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Citlali.png"
+			"name": "スノーシャイン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Snowshine.png"
 		},
 		{
-			"name": "ヴァレサ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Varesa.png"
+			"name": "ザイヒ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Xaihi.png"
 		},
 		{
-			"name": "藍硯",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Lanyan.png"
+			"name": "アケクリ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Akekuri.png"
 		},
 		{
-			"name": "三月なのか",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th.png"
+			"name": "エステーラ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Estella.png"
 		},
 		{
-			"name": "三月なのか",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th_2.png"
-		},
-		{
-			"name": "三月なのか",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th_3.png"
-		},
-		{
-			"name": "ヘルタ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Herta.png"
-		},
-		{
-			"name": "マダム・ヘルタ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/The_Herta.png"
-		},
-		{
-			"name": "符玄",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Fu_Xuan.png"
-		},
-		{
-			"name": "青雀",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Qingque.png"
-		},
-		{
-			"name": "白露",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Bailu.png"
-		},
-		{
-			"name": "フォフォ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Huohuo.png"
-		},
-		{
-			"name": "花火",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparkle.png"
-		},
-		{
-			"name": "ホタル",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Firefly.png"
-		},
-		{
-			"name": "雲璃",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Yunli.png"
-		},
-		{
-			"name": "サンポ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sampo.png"
-		},
-		{
-			"name": "トリビー",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Tribbie.png"
-		},
-		{
-			"name": "ヒアンシー",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hyacine.png"
-		},
-		{
-			"name": "猫宮又奈",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nekomiya_Mana.png"
-		},
-		{
-			"name": "カリン・ウィクス",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Corin_Wickes.png"
-		},
-		{
-			"name": "エレン・ジョー",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ellen_Joe.png"
-		},
-		{
-			"name": "ニコ・デマラ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nicole_Demara.png"
-		},
-		{
-			"name": "青衣",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Qingyi.png"
-		},
-		{
-			"name": "橘福福",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ju_Fufu.png"
-		},
-		{
-			"name": "浮波柚葉",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ukinami_Yuzuha.png"
-		},
-		{
-			"name": "アリス・タイムフィールド",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Alice.png"
-		},
-		{
-			"name": "「メッセージ」人形",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Message_Doll.png"
-		},
-		{
-			"name": "はなび",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/%E8%8A%B1%E7%81%AB.png"
+			"name": "フローライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Fluorite.png"
 		}
 	]
 }
