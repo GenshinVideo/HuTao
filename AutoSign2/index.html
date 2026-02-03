@@ -14,7 +14,7 @@
     <video src="movieO.mp4" loop autoplay muted playsinline></video>
   </div>
   <div class="Contents">
-    <B>Google Apps Script(GAS)を使用して、アークナイツ：エンドフィールドのログインボーナスを自動的に取得させる</B><BR>
+    <B>Google Apps Script（GAS）を使用して、アークナイツ：エンドフィールドのログインボーナスを自動的に取得させる</B><BR>
     <font color="lime">※HoYoverse（原神、スターレイル、ゼンゼロ、崩壊3rd）の自動化は<a href="../AutoSign">こちら</a>。</font><BR>
     <font color="fuchsia">※使用に際して如何なる問題が発生した場合であっても、サイト管理人は一切の責任を負いません。</font><BR><BR>
     <B>概要</B><BR>
@@ -22,17 +22,16 @@
     <img src="assets/img/explanation/001.png" width="50%"><BR><BR>
     <BR>
     <B>設定方法</B><BR>
-    1. 「<a href="https://script.google.com/home/my">Google Apps Script</a>」から「新しいプロジェクト」を選択して、以下のコード（165行）全文を貼り付けます。<BR>
+    1. 「<a href="https://script.google.com/home/my">Google Apps Script</a>」から「新しいプロジェクト」を選択して、以下のコード（271行）全文を貼り付けます。<BR>
     <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     ArknightsEndfield: true,
-    cred: "00000000000000000000000000000000",
-    sk_game_role: "0_0000000000_0"
+    ACCOUNT_TOKEN: "000000000000000000000000"
   }
 ];
 
-const discord_notify = true;
-const discord_silent = true;
+const discord_notify = false;
+const discord_silent = false;
 const myDiscordID = "000000000000000000";
 const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/00000000000000000000000000000000000000000000000000000000000000000000";
 
@@ -45,71 +44,92 @@ const discordWebhook = "https://discord.com/api/webhooks/0000000000000000000/000
 const urlDict = {
   ArknightsEndfield: 'https://zonai.skport.com/web/v1/game/endfield/attendance'
 }
+
 const games = {
   ArknightsEndfield: {
     name: 'エンドフィールド　'
   }
 };
 
-
 function main() {
   const messages = Accounts.map(autoSignFunction);
   if (discord_notify) {
-    const DiscordMessage = `${discordPing()}\`\`\`\n${messages.join('\`\`\`\`\`\`\n')}\`\`\``;
+    const DiscordMessage = (myDiscordID ? `<@${myDiscordID}> ` : '') + `\`\`\`\n${messages.join('\`\`\`\`\`\`\n')}\`\`\``;
     if (discordWebhook) {
       postWebhook(DiscordMessage);
     }
   }
 }
-function discordPing() {
-  return myDiscordID ? `<@${myDiscordID}>` : '';
-}
 
-
-function autoSignFunction({ ArknightsEndfield, accountName, cred, sk_game_role }) {
+function autoSignFunction({ ACCOUNT_TOKEN, ArknightsEndfield, accountName }) {
+  let cred, salt;
+  if (ACCOUNT_TOKEN) {
+    const oauth = fetchCred(ACCOUNT_TOKEN);
+    cred = oauth.cred;
+    salt = oauth.salt;
+  } else {
+    throw new Error("Token Error");
+  }
   const urls = [];
   const postOptionsList = [];
   const getOptionsList = [];
 
   if (ArknightsEndfield) {
     urls.push(urlDict.ArknightsEndfield);
-    postOptionsList.push(createOptions('POST', cred, sk_game_role, {}));
-    getOptionsList.push(createOptions('GET', cred, sk_game_role, {}));
+    const timestamp = Math.floor(Date.now() / 1000).toString();
+    const sign = generateSignV2("/web/v1/game/endfield/attendance", timestamp, salt);
+    const sk_game_role = getOrCreateSkGameRole(accountName, ACCOUNT_TOKEN, cred, salt, timestamp);
+    postOptionsList.push(createOptions('POST', {'cred': cred,'sk-game-role': sk_game_role,'timestamp': timestamp,'sign': sign}));
+    getOptionsList.push(createOptions('GET', {'cred': cred,'sk-game-role': sk_game_role,'timestamp': timestamp,'sign': sign}));
   }
 
   let ResultMessage = `${accountName}\n`;
-  const httpResponses = UrlFetchApp.fetchAll(urls.map((url, i) => ({
+  const GetResponses = UrlFetchApp.fetchAll(urls.map((url, i) => ({
     url,
-    ...postOptionsList[i]
+    ...getOptionsList[i]
   })));
-
-  for (const [i, ResponseRow] of httpResponses.entries()) {
+  for (const [i, ResponseRow] of GetResponses.entries()) {
+    // console.log(JSON.parse(ResponseRow));
     const enGameName = Object.keys(urlDict).find(key => urlDict[key] === urls[i]);
     const gameName = games[enGameName].name;
-    let ResponseJson;
+    let GetResponseJson;
     try {
-      ResponseJson = JSON.parse(ResponseRow.getContentText());
+      GetResponseJson = JSON.parse(ResponseRow.getContentText());
     } catch {
-      ResultMessage += `\n${gameName} ≫ 取得に失敗しました`;
+      ResultMessage += `\n${gameName} ≫ アカウント情報の取得に失敗しました`;
       continue;
     }
-    console.log(ResponseJson);
-    const checkInResult = ResponseJson.message;
-    console.log(checkInResult);
-    ResultMessage = processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptionsList[i]);
+    // console.log(GetResponseJson);
+    const LoginCheck = GetResponseJson.data?.hasToday;
+    const LoginCount = GetResponseJson.data?.calendar?.filter(c => c.done).length || 0;
+    if (LoginCheck) {
+      ResultMessage += `\n${gameName} ≫［${LoginCount}日目］ログイン済み`
+      continue;
+    }
+
+    const PostResponse = UrlFetchApp.fetch(urls[i], postOptionsList[i]);
+    let PostResponseJson;
+    try {
+      PostResponseJson = JSON.parse(PostResponse.getContentText());
+    } catch {
+      ResultMessage += `\n${gameName} ≫ ログインに失敗しました`;
+      continue;
+    }
+    console.log(PostResponseJson);
+    const checkInResult = PostResponseJson.message;
+    ResultMessage = processGameCheckIn(gameName, checkInResult, LoginCount, PostResponseJson, ResultMessage, getOptionsList[i]);
   }
   return ResultMessage;
 }
 
-
-function processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage, getOptions) {
+function processGameCheckIn(gameName, checkInResult, LoginCount, PostResponseJson, ResultMessage, getOptions) {
   if (checkInResult !== "OK") {
     return ResultMessage + `\n${gameName} ≫ ${checkInResult}`;
   }
-  const awards = ResponseJson?.data?.awardIds;
-  const resourceMap = ResponseJson?.data?.resourceInfoMap;
+  const awards = PostResponseJson?.data?.awardIds;
+  const resourceMap = PostResponseJson?.data?.resourceInfoMap;
   if (!Array.isArray(awards) || awards.length === 0) {
-    return ResultMessage + `\n${gameName} ≫ 報酬情報が存在しません。`;
+    return ResultMessage + `\n${gameName} ≫［${LoginCount + 1}日目］報酬情報が存在しません。`;
   }
   const rewardTexts = awards
     .map(a => {
@@ -119,35 +139,122 @@ function processGameCheckIn(gameName, checkInResult, ResponseJson, ResultMessage
     })
     .filter(Boolean);
   if (rewardTexts.length === 0) {
-    return ResultMessage + `\n${gameName} ≫ 報酬詳細の取得に失敗しました。`;
+    return ResultMessage + `\n${gameName} ≫［${LoginCount + 1}日目］報酬詳細の取得に失敗しました。`;
   }
-  ResultMessage += `\n${gameName} ≫ ${rewardTexts.join(' + ')}`;
+  ResultMessage += `\n${gameName} ≫［${LoginCount + 1}日目］${rewardTexts.join(' + ')}`;
   return ResultMessage;
 }
 
 
-function fetchData(url, getOptions) {
-  try {
-    return JSON.parse(UrlFetchApp.fetch(url, getOptions));
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    return null;
+function BuildRolePropertyKey(accountName, accountToken) {
+  const head = accountToken.slice(0, 2);
+  const tail = accountToken.slice(-2);
+  return `${accountName}_${head}${tail}`;
+}
+function getOrCreateSkGameRole(accountName, ACCOUNT_TOKEN, cred, salt) {
+  const props = PropertiesService.getScriptProperties();
+  const key = BuildRolePropertyKey(accountName, ACCOUNT_TOKEN);
+  const cached = props.getProperty(key);
+  if (cached) {
+    return cached;
   }
+  const path = "/api/v1/game/endfield/card/detail";
+  const timestamp = Math.floor(Date.now() / 1000).toString();
+  const sign = generateSignV2(path, timestamp, salt);
+  const res = UrlFetchApp.fetch(
+    "https://zonai.skport.com" + path,
+    createOptions("GET", {
+      cred,
+      timestamp,
+      sign
+    })
+  );
+  const json = JSON.parse(res.getContentText());
+  if (json.code !== 0) {
+    throw new Error("Failed to fetch sk_game_role");
+  }
+  const base = json.data.detail.base;
+  const region = base.serverName === "Asia" ? 2 : 3;
+  const sk_game_role = `3_${base.roleId}_${region}`;
+  props.setProperty(key, sk_game_role);
+  return sk_game_role;
 }
 
+function fetchCred(accountToken) {
+  const info = JSON.parse(
+    UrlFetchApp.fetch(
+      `https://as.gryphline.com/user/info/v1/basic?token=${accountToken}`
+    ).getContentText()
+  );
+  if (info.status !== 0) throw new Error("info failed");
+  const grant = JSON.parse(
+    UrlFetchApp.fetch(
+      "https://as.gryphline.com/user/oauth2/v2/grant",
+      {
+        method: "post",
+        contentType: "application/json",
+        payload: JSON.stringify({
+          token: accountToken,
+          appCode: "6eb76d4e13aa36e6",
+          type: 0
+        })
+      }
+    ).getContentText()
+  );
+  if (grant.status !== 0) throw new Error("grant failed");
+  const credRes = JSON.parse(
+    UrlFetchApp.fetch(
+      "https://zonai.skport.com/web/v1/user/auth/generate_cred_by_code",
+      {
+        method: "post",
+        contentType: "application/json",
+        headers: { platform: "3" },
+        payload: JSON.stringify({
+          code: grant.data.code,
+          kind: 1
+        })
+      }
+    ).getContentText()
+  );
+  if (credRes.code !== 0) throw new Error("cred failed");
+  return {
+    cred: credRes.data.cred,
+    salt: credRes.data.token
+  };
+}
 
-function createOptions(method, cred, sk_game_role, extraHeaders = {}) {
+function generateSignV2(path, timestamp, salt) {
+  const headerJson = JSON.stringify({
+    platform: "3",
+    timestamp,
+    dId: "",
+    vName: "1.0.0"
+  });
+  const raw = `${path}${timestamp}${headerJson}`;
+  const hmac = Utilities.computeHmacSignature(
+    Utilities.MacAlgorithm.HMAC_SHA_256,
+    raw,
+    salt
+  );
+  const md5 = Utilities.computeDigest(
+    Utilities.DigestAlgorithm.MD5,
+    toHex(hmac)
+  );
+  return toHex(md5);
+}
+function toHex(bytes) {
+  return bytes.map(b => {
+    const v = b < 0 ? b + 256 : b;
+    return ("0" + v.toString(16)).slice(-2);
+  }).join("");
+}
+
+function createOptions(method, extraHeaders = {}) {
   const headers = {
-    'cred': cred,
-    'sk-game-role': sk_game_role,
-    'sk-platform-role': '3',
+    'platform': '3',
     'sk-language': 'ja',
-    'timestamp': Math.floor(Date.now() / 1000).toString(),
     'vname': '1.0.0',
-    'Referer': 'https://game.skport.com/',
-    'Origin': 'https://game.skport.com',
-    'Content-Type': 'application/json',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
+    'User-Agent': 'Skport/0.7.0 (com.gryphline.skport; build:700089; Android 33; ) Okhttp/5.1.0',
     ...extraHeaders
   };
   return {
@@ -156,7 +263,6 @@ function createOptions(method, cred, sk_game_role, extraHeaders = {}) {
     muteHttpExceptions: true,
   };
 }
-
 
 function postWebhook(data) {
   let BotData;
@@ -192,27 +298,25 @@ function postWebhook(data) {
   <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",  /** 自由に書き換えられます。 **/
     ArknightsEndfield: true, /** ログインボーナスを取得して欲しい場合は「true」に、そうでない場合は「false」と書き換えます。 **/
-    cred: "00000000000000000000000000000000", /** 自身のアカウント情報に書き換えて下さい。 **/
-    sk_game_role: "0_0000000000_0" /** 自身のアカウント情報に書き換えて下さい。 **/
+    ACCOUNT_TOKEN: "000000000000000000000000" /** 自身のアカウント情報に書き換えて下さい。 **/
   }
 ];</pre>
-  　※アカウント情報は以下の手順から取得することが可能です。<BR>
-  　　1. 「<a href="https://game.skport.com/endfield/sign-in">SKPort Endfield Portal</a>」にログインします。<BR>
-  　　2. 開発者ツール（F12）を開き「Network」タブを選択します。<BR>
-  　　3. その状態でページを更新し「attendance」でフィルターをかけて、該当するリクエストのヘッダーを表示します。<BR>
-  　　4. リクエストヘッダーからアカウント情報（「cred」「sk_game_role」）を取得します。<BR><BR>
+  ※アカウント情報（<font color="#00FFFF">ACCOUNT_TOKEN</font>）は以下の手順で取得できます。<BR>
+  　1. 「<a href="https://game.skport.com/endfield/sign-in">SKPort Endfield Portal</a>」にログインします。<BR>
+  　2. 開発者ツール（F12）を開き、Cookies を確認します。<BR>
+  　　　Chrome：Application → Cookies<BR>
+  　　　Firefox：Storage → Cookies<BR>
+  　3. Cookie の中から <code><font color="#00FFFF">ACCOUNT_TOKEN</font></code> を探し、必要に応じて URL デコード（<font color="#00FFFF">%2F</font> を <font color="#00FFFF">/</font> に置換）します。<BR><BR>
 
   　アカウントが複数ある場合は、以下のように行を追加し、同様の設定を行ってください。
   <pre class="prettyprint lang-css linenums:">const Accounts = [
   { accountName: "アカウント名",
     ArknightsEndfield: true,
-    cred: "00000000000000000000000000000000",
-    sk_game_role: "0_0000000000_0"
+    ACCOUNT_TOKEN: "000000000000000000000000"
   },
   { accountName: "アカウント名 2",
     ArknightsEndfield: true,
-    cred: "00000000000000000000000000000000",
-    sk_game_role: "0_0000000000_0"
+    ACCOUNT_TOKEN: "000000000000000000000000"
   }
 ];</pre><BR>
   4. ［GAS］Discordの通知設定を書き換えます。（青文字を参考にして下さい。）
