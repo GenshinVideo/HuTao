@@ -13,9 +13,8 @@ html, body {
 /* ↓ 背景動画 ↓ */
 .SakuraWallpaper {
   position: fixed;
+  inset: 0;
   z-index: -1;
-  width: 100%;
-  height: 100vh;
   overflow: hidden;
 }
 .SakuraWallpaper::after {
@@ -35,24 +34,19 @@ html, body {
   background-position: 0 0, 2px 2px;
  */
 }
-video {
+.SakuraWallpaper video {
   width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
   object-fit: cover;
-  object-position: center;
 }
-@media (min-aspect-ratio: 16/9) {
+.SakuraWallpaper @media (min-aspect-ratio: 16/9) {
   video {
     width: 100%;
     height: auto;
     min-height: 100vh;
   }
 }
-@media (max-aspect-ratio: 16/9) {
+.SakuraWallpaper @media (max-aspect-ratio: 16/9) {
   video {
     height: 100vh;
     width: auto;
