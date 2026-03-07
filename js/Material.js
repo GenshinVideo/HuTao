@@ -25,16 +25,28 @@ function SetCharacterList() {
 
   S_VideoBGB = "";
 
-// コロンビーナ
-  S_Id =          "Columbina";
-  S_JpName =      "コロンビーナ・ハイポセレニア";
-  S_CharaImg =    "Original/Character2/columbina_125_gacha_splash.webp";
-  S_Element =     "Varunada_Lazurite";
-  S_Boss =        "Radiant_Antler";
-  S_Local =       "Winter_Icelea";
-  S_Common =      "Slime_Concentrate";
-  S_Talent1 =     "Moonlight";
-  S_Talent2 =     "";
+// リンネア
+  S_Id =          "Linnea";
+  S_JpName =      "リンネア";
+  S_CharaImg =    "Original/Character2/linnea_130_gacha_splash.webp";
+  S_Element =     "Prithiva_Topaz";
+  S_Boss =        "Plume_of_the_Fallen_Watcher";
+  S_Local =       "Etherwing_Moth";
+  S_Common =      "Frost_Etched_Warrant";
+  S_Talent1 =     "Vagrancy";
+  S_Talent2 =     "Elixir_of_the_Heretic";
+  Checkmate();
+
+// ファルカ
+  S_Id =          "Varka";
+  S_JpName =      "ファルカ";
+  S_CharaImg =    "Original/Character2/varka_128_gacha_splash.webp";
+  S_Element =     "Vayuda_Turquoise";
+  S_Boss =        "Prismatic_Severed_Tail";
+  S_Local =       "Wolfhook";
+  S_Common =      "Precision_Drive_Shaft";
+  S_Talent1 =     "Freedom";
+  S_Talent2 =     "Ascended_Sample_Rook";
   Checkmate();
 
 // 茲白
@@ -59,6 +71,18 @@ function SetCharacterList() {
   S_Common =      "Precision_Drive_Shaft";
   S_Talent1 =     "Elysium";
   S_Talent2 =     "Eroded_Horn";
+  Checkmate();
+
+// コロンビーナ
+  S_Id =          "Columbina";
+  S_JpName =      "コロンビーナ・ハイポセレニア";
+  S_CharaImg =    "Original/Character2/columbina_125_gacha_splash.webp";
+  S_Element =     "Varunada_Lazurite";
+  S_Boss =        "Radiant_Antler";
+  S_Local =       "Winter_Icelea";
+  S_Common =      "Slime_Concentrate";
+  S_Talent1 =     "Moonlight";
+  S_Talent2 =     "Mask_of_the_Virtuous_Doctor";
   Checkmate();
 
 // ドゥリン
@@ -1060,9 +1084,9 @@ function SetCharacterList() {
   S_Talent2 =     "Tusk_of_Monoceros_Caeli";
   Checkmate();
 
-// タルタリア / アヤックス
+// タルタリヤ / アヤックス
   S_Id =          "Tartaglia";
-  S_JpName =      "タルタリア / アヤックス";
+  S_JpName =      "タルタリヤ / アヤックス";
   S_CharaImg =    "Original/Character/Character_Tartaglia_Portrait.webp";
   S_Element =     "Varunada_Lazurite";
   S_Boss =        "Cleansing_Heart";
@@ -1744,7 +1768,10 @@ ItemNames = [
   "Eroded_Scale_Feather",
   "Ascended_Sample_Knight",
   "Ascended_Sample_Rook",
-  "Ascended_Sample_Queen"
+  "Ascended_Sample_Queen",
+  "Mask_of_the_Virtuous_Doctor",
+  "Madmans_Restraint",
+  "Elixir_of_the_Heretic"
 ];
 InventorySet(ItemNames);
 // エリアボス素材
@@ -1791,7 +1818,9 @@ ItemNames = [
   "Lightbearing_Scale_Feather",
   "Radiant_Antler",
   "Cyclic_Military_Kuuvahki_Core",
-  "Remnant_of_the_Dreadwing"
+  "Remnant_of_the_Dreadwing",
+  "Prismatic_Severed_Tail",
+  "Plume_of_the_Fallen_Watcher"
 ];
 InventorySet(ItemNames);
 // Jewels
@@ -1951,7 +1980,8 @@ ItemNames = [
     "Frostlamp_Flower",
     "Moonfall_Silver",
     "Winter_Icelea",
-    "Pine_Amber"
+    "Pine_Amber",
+    "Etherwing_Moth"
 ];
 InventorySet(ItemNames);
   SetCalculatorList();
@@ -2034,6 +2064,8 @@ function SetCalculatorES() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Plume_of_the_Fallen_Watcher", unit: " 個" },
+    { name: "Prismatic_Severed_Tail", unit: " 個" },
     { name: "Remnant_of_the_Dreadwing", unit: " 個" },
     { name: "Cyclic_Military_Kuuvahki_Core", unit: " 個" },
     { name: "Radiant_Antler", unit: " 個" },
@@ -2158,6 +2190,7 @@ function SetCalculatorLM() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Etherwing_Moth", unit: " 個" },
     { name: "Pine_Amber", unit: " 個" },
     { name: "Winter_Icelea", unit: " 個" },
     { name: "Moonfall_Silver", unit: " 個" },
@@ -2295,6 +2328,9 @@ function SetCalculatorTLUM2() {
   S_Check_2 = "";
   S_Check_3 = "";
   const allItems = [
+    { name: "Elixir_of_the_Heretic", unit: " 個" },
+    { name: "Madmans_Restraint", unit: " 個" },
+    { name: "Mask_of_the_Virtuous_Doctor", unit: " 個" },
     { name: "Ascended_Sample_Queen", unit: " 個" },
     { name: "Ascended_Sample_Rook", unit: " 個" },
     { name: "Ascended_Sample_Knight", unit: " 個" },
@@ -2459,12 +2495,19 @@ function CalculatorSet2() {
 function SetPatchNoteList() {
   CalEle = document.querySelector('div[id="Other"]');
   CalEle.insertAdjacentHTML('beforeend', '\
-<b>2025/12/06</b><BR>\
+<b>2026/03/07</b><BR>\
 更新。<BR>\
-・ネフェル・ヤフォダ・ドゥリン・イルーガ・茲白・コロンビーナの実装に対応<BR>\
+・ファルカ、リンネアの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@Sakura_Kocho』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@SlavesAgain』までお願いします。）<BR>\
+<BR><BR>\
+<b>2025/12/06</b><BR>\
+更新。<BR>\
+・ネフェル、ヤフォダ、ドゥリン、イルーガ、茲白、コロンビーナの実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2025/09/03</b><BR>\
 更新。<BR>\
@@ -3307,7 +3350,7 @@ function OpenScript() {
   }  else  {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250903 to ver." + Version + "）\n・ネフェル・ヤフォダ・ドゥリン・イルーガ・茲白・コロンビーナの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250903 to ver." + Version + "）\n・ネフェル・ヤフォダ・ドゥリン・ファルカ、リンネアの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
     }  else  {
       Load();
     }
