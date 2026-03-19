@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "39"
+			"count": "47"
 		}
 	],
 	"list": [
@@ -54,12 +54,16 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Citlali.png"
 		},
 		{
+			"name": "藍硯",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Lanyan.png"
+		},
+		{
 			"name": "ヴァレサ",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Varesa.png"
 		},
 		{
-			"name": "藍硯",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Lanyan.png"
+			"name": "コロンビーナ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Columbina.png"
 		},
 		{
 			"name": "三月なのか",
@@ -78,12 +82,8 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Herta.png"
 		},
 		{
-			"name": "マダム・ヘルタ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/The_Herta.png"
-		},
-		{
-			"name": "符玄",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Fu_Xuan.png"
+			"name": "サンポ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sampo.png"
 		},
 		{
 			"name": "青雀",
@@ -92,6 +92,10 @@
 		{
 			"name": "白露",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Bailu.png"
+		},
+		{
+			"name": "符玄",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Fu_Xuan.png"
 		},
 		{
 			"name": "フォフォ",
@@ -110,8 +114,8 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Yunli.png"
 		},
 		{
-			"name": "サンポ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sampo.png"
+			"name": "マダム・ヘルタ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/The_Herta.png"
 		},
 		{
 			"name": "トリビー",
@@ -120,6 +124,14 @@
 		{
 			"name": "ヒアンシー",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hyacine.png"
+		},
+		{
+			"name": "火花",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparxie.png"
+		},
+		{
+			"name": "ニコ・デマラ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nicole_Demara.png"
 		},
 		{
 			"name": "猫宮又奈",
@@ -134,8 +146,8 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ellen_Joe.png"
 		},
 		{
-			"name": "ニコ・デマラ",
-			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nicole_Demara.png"
+			"name": "エレン・ジョー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ellen_Joe_2.png"
 		},
 		{
 			"name": "青衣",
@@ -152,6 +164,26 @@
 		{
 			"name": "アリス・タイムフィールド",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Alice.png"
+		},
+		{
+			"name": "アリス・タイムフィールド",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Alice_2.png"
+		},
+		{
+			"name": "葉瞬光",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Ye_Shunguang.png"
+		},
+		{
+			"name": "千夏",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sunna.png"
+		},
+		{
+			"name": "アリア",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Aria.png"
+		},
+		{
+			"name": "アリア",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Aria_2.png"
 		},
 		{
 			"name": "「メッセージ」人形",
