@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "15"
+			"count": "18"
 		}
 	],
 	"list": [
@@ -68,6 +68,14 @@
 		{
 			"name": "フローライト",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Fluorite.png"
+		},
+		{
+			"name": "タンタン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Tangtang.png"
+		},
+		{
+			"name": "ロッシ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Rossi.png"
 		}
 	]
 }
