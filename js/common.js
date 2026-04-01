@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     AutoSign: "AutoSign/",
     AutoSign2: "AutoSign2/",
     Gallery: "Gallery/",
-    ChronoHook: "ChronoHook/"
+    ChronoHook: "ChronoHook/",
     ClockWidget: "ClockWidget/",
     FontGenerator: "FontGenerator/"
   };
