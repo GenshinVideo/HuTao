@@ -1,0 +1,215 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ↓ 背景動画 ↓ */
+.SakuraWallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.SakuraWallpaper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0);
+/* 
+  background-image: radial-gradient(#FFF 30%, transparent 31%), radial-gradient(#FFF 30%, transparent 31%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+ */
+}
+.SakuraWallpaper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.SakuraWallpaper @media (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+.SakuraWallpaper @media (max-aspect-ratio: 16/9) {
+  video {
+    height: 100vh;
+    width: auto;
+    min-width: 100%;
+  }
+}
+/* ↑ 背景動画 ↑ */
+
+
+/* ↓ スクロールバー ↓ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+}
+/* ↑ スクロールバー ↑ */
+
+/* ↓ コンテンツの設定 ↓ */
+.Contents {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  min-height: calc(100% - 20px);
+  padding: 2%;
+  left: 40%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: auto;
+  cursor: default;
+}
+.Contents a:link { color: #AFEEEE; }
+.Contents a:visited { color: #AFEEEE; }
+.Contents a:hover { color: #00FFFF; }
+.Contents a:active { color: #FFFFFF; }
+.Contents img { opacity: 1.0; }
+.Contents img:hover { opacity: 0.8; }
+/* ↑ コンテンツの設定 ↑ */
+
+
+.Content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  color: #FFF;
+}
+.Content a:link {
+  color: #FFFFFF;
+}
+.Content a:visited {
+ color: #FFFFFF;
+}
+.Content a:hover {
+ color: #00FFFF;
+}
+.Content a:active {
+ color: #FFFFFF;
+}
+.Content img {
+  opacity: 0.5;
+}
+.Content img:hover {
+  opacity: 1.0;
+}
+
+
+
+
+h1 {
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+textarea, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+textarea {
+  flex: 1;
+}
+
+select {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+#output {
+  display: inline-block;
+}
+
+.char {
+  height: 80px;
+  margin-right: 10px;
+  vertical-align: bottom;
+  transition: transform 0.15s ease;
+}
+
+.char:last-child {
+  margin-right: 0;
+}
+
+.char:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.space {
+  display: inline-block;
+  width: 40px;
+}
+
+.line {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+  white-space: nowrap; /* ← これ追加 */
+}
+
+.line:last-child {
+  margin-bottom: 0;
+}
+
+#saveBtn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#saveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#saveBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
