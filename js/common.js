@@ -71,8 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
     AutoSign: "AutoSign/",
     AutoSign2: "AutoSign2/",
     Gallery: "Gallery/",
-    ChronoHook: "ChronoHook/",
-    ClockWidget: "ClockWidget/"
+    ChronoHook: "ChronoHook/"
+    ClockWidget: "ClockWidget/",
+    FontGenerator: "FontGenerator/"
   };
 
   const params = new URLSearchParams(window.location.search);
