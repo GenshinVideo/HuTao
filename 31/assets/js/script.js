@@ -245,20 +245,20 @@ async function fetchStockData(e) {
   cardContainer.innerHTML = "";
 
   try {
-    // 巨大JSON破損対策 + Worker（プロキシ）経由の安全取得関数
     const safeFetchJson = async (targetUrl) => {
       try {
         const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
         const res = await fetch(proxyApiUrl);
-        if (!res.ok) return [];
         const text = await res.text();
-        if (!text.trim().endsWith("]")) {
-          console.warn("JSONデータが途中で切れています:", targetUrl);
+
+        if (text.trim().startsWith("<")) {
+          console.error("サーバーからXML/HTMLエラーが返されました:", targetUrl, text);
           return [];
         }
+
         return JSON.parse(text);
       } catch (err) {
-        console.error("Fetch/Parse Error:", err);
+        console.error("Fetch/Parse Error:", targetUrl, err);
         return [];
       }
     };
@@ -266,6 +266,11 @@ async function fetchStockData(e) {
     const requests = FOOD_IDS.map((id) => safeFetchJson(`${BASE_URL}/foods_${id}_stocks_pickup_time=${timestamp}.json`));
 
     const [data81790, data81791, data81792] = await Promise.all(requests);
+
+    if (data81790.length === 0 && data81791.length === 0 && data81792.length === 0) {
+      console.warn("すべてのリクエストが空、またはエラーレスポンスでした。指定したタイムスタンプのデータが存在しない可能性があります。");
+    }
+
     const mergedData = mergeShopData(data81790, data81791, data81792);
     const validShops = filterActiveEventShops(mergedData);
 
@@ -284,13 +289,18 @@ async function fetchStockData(e) {
     } else {
       messageContainer.classList.add("hidden");
 
-      tableContainer.classList.remove("hidden");
-      cardContainer.classList.remove("hidden");
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        tableContainer.classList.add("hidden");
+        cardContainer.classList.remove("hidden");
+      } else {
+        tableContainer.classList.remove("hidden");
+        cardContainer.classList.add("hidden");
+      }
 
       filteredByPref.forEach((item) => {
         const cleanName = item.shop.name ? item.shop.name.replace(/サーティワンアイスクリーム\s*/g, "") : "";
 
-        // 1. PC用（テーブル）
         const tr = document.createElement("tr");
         tr.className = "border-b border-[#D9DEEB] hover:bg-gray-50 transition-colors text-center";
         tr.innerHTML = `
@@ -301,7 +311,6 @@ async function fetchStockData(e) {
         `;
         tbody.appendChild(tr);
 
-        // 2. スマホ用（カード）
         const card = document.createElement("div");
         card.className = "bg-white p-4 rounded border border-[#D9DEEB] shadow-sm flex flex-col gap-2.5";
         card.innerHTML = `
