@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原神コラボアイスクリームセット在庫検索｜サーティワン</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F7F7F7] text-gray-800 antialiased font-sans min-h-screen py-8">
+
+  <main class="max-w-[784px] mx-auto px-4">
+    <h1 class="text-lg md:text-3xl font-semibold mb-6">原神コラボアイスクリームセット在庫検索</h1>
+
+    <form id="search-form" class="flex flex-col md:flex-row gap-4 mb-9 relative z-20">
+      
+      <div class="w-full relative custom-dropdown" id="dropdown-region">
+        <button type="button" class="dropdown-btn w-full h-10 px-3 py-2 bg-white border border-gray-300 rounded text-sm text-left flex justify-between items-center focus:outline-none focus:border-pink-500">
+          <span class="selected-text">北海道</span>
+          <span class="text-xs text-gray-400">▼</span>
+        </button>
+        <ul class="dropdown-menu hidden absolute left-0 top-full mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50 text-sm py-1">
+        </ul>
+        <input type="hidden" id="region-input" value="1">
+      </div>
+
+      <div class="w-full relative custom-dropdown" id="dropdown-pref">
+        <button type="button" class="dropdown-btn w-full h-10 px-3 py-2 bg-white border border-gray-300 rounded text-sm text-left flex justify-between items-center focus:outline-none focus:border-pink-500">
+          <span class="selected-text">選択してください</span>
+          <span class="text-xs text-gray-400">▼</span>
+        </button>
+        <ul class="dropdown-menu hidden absolute left-0 top-full mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50 text-sm py-1">
+        </ul>
+        <input type="hidden" id="pref-input" value="">
+      </div>
+
+      <div class="w-full relative custom-dropdown" id="dropdown-date">
+        <button type="button" class="dropdown-btn w-full h-10 px-3 py-2 bg-white border border-gray-300 rounded text-sm text-left flex justify-between items-center focus:outline-none focus:border-pink-500">
+          <span class="selected-text">選択してください</span>
+          <span class="text-xs text-gray-400">▼</span>
+        </button>
+        <ul class="dropdown-menu hidden absolute left-0 top-full mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50 text-sm py-1">
+        </ul>
+        <input type="hidden" id="date-input" value="">
+      </div>
+
+      <button type="submit" class="w-full md:w-[160px] h-10 bg-[#F20C90] text-white font-semibold rounded hover:bg-pink-600 transition-colors shrink-0">
+        検索
+      </button>
+    </form>
+
+    <section class="relative z-10">
+      <h2 class="text-base md:text-lg font-semibold mb-4">対象店舗</h2>
+      
+      <div id="loading" class="hidden text-center py-8 text-pink-600 font-bold">
+        データを読み込み中...
+      </div>
+
+      <div id="message-container" class="text-center py-8 text-gray-500 bg-white rounded border border-[#D9DEEB]">
+        「検索」ボタンを押して情報を取得してください。
+      </div>
+
+      <div id="table-container" class="hidden overflow-x-auto border border-[#D9DEEB] bg-white rounded">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#F9EEF8] border-b border-[#D9DEEB] text-center">
+              <th class="py-3 px-4 text-left font-normal max-w-[250px]">店舗名</th>
+              <th class="py-3 px-2 font-normal">アイスクリームセット<br>（スモール）</th>
+              <th class="py-3 px-2 font-normal">アイスクリームセット<br>（レギュラー）</th>
+              <th class="py-3 px-2 font-normal">フレッシュパック<br>ミニ</th>
+            </tr>
+          </thead>
+          <tbody id="stock-tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="card-container" class="hidden space-y-3"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
