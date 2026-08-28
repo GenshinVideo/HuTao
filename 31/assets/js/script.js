@@ -245,45 +245,21 @@ async function fetchStockData(e) {
   cardContainer.innerHTML = "";
 
   try {
-    // 巨大JSON破損対策 + Worker（プロキシ）経由の安全取得関数
-    const safeFetchJson = async (targetUrl) => {
-      try {
-        const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
-        const res = await fetch(proxyApiUrl);
-        if (!res.ok) return [];
-        const text = await res.text();
-        if (!text.trim().endsWith("]")) {
-          console.warn("JSONデータが途中で切れています:", targetUrl);
-          return [];
-        }
-        return JSON.parse(text);
-      } catch (err) {
-        console.error("Fetch/Parse Error:", err);
-        return [];
-      }
-    };
+    // 軽量化されたWorker APIを1回だけ呼び出す
+    const requestUrl = `${PROXY_URL}?pref=${encodeURIComponent(selectedPref)}&timestamp=${timestamp}`;
+    const res = await fetch(requestUrl);
 
-    const requests = FOOD_IDS.map((id) => safeFetchJson(`${BASE_URL}/foods_${id}_stocks_pickup_time=${timestamp}.json`));
+    if (!res.ok) throw new Error("Network response was not ok");
 
-    const [data81790, data81791, data81792] = await Promise.all(requests);
-    const mergedData = mergeShopData(data81790, data81791, data81792);
-    const validShops = filterActiveEventShops(mergedData);
+    const filteredByPref = await res.json();
 
-    const filteredByPref = validShops.filter((item) => {
-      if (item.shop && item.shop.parsed_address && item.shop.parsed_address.length > 0) {
-        return item.shop.parsed_address[0].indexOf(selectedPref) > -1;
-      }
-      return false;
-    });
-
-    if (filteredByPref.length === 0) {
+    if (!Array.isArray(filteredByPref) || filteredByPref.length === 0) {
       tableContainer.classList.add("hidden");
       cardContainer.classList.add("hidden");
       messageContainer.classList.remove("hidden");
       messageContainer.textContent = "選択した都道府県では選択した受取日で原神コラボ商品を取り扱っていません。";
     } else {
       messageContainer.classList.add("hidden");
-
       tableContainer.classList.remove("hidden");
       cardContainer.classList.remove("hidden");
 
