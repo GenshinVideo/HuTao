@@ -1,0 +1,81 @@
+{
+	"data": [
+		{
+			"count": "18"
+		}
+	],
+	"list": [
+		{
+			"name": "管理人",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Endministrator.png"
+		},
+		{
+			"name": "ペリカ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Perlica.png"
+		},
+		{
+			"name": "陳 千語",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Chen.png"
+		},
+		{
+			"name": "レーヴァテイン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Laevatain.png"
+		},
+		{
+			"name": "イヴォンヌ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Yvonne.png"
+		},
+		{
+			"name": "ギルベルタ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Gilberta.png"
+		},
+		{
+			"name": "アルデリア",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Ardelia.png"
+		},
+		{
+			"name": "エンバー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Ember.png"
+		},
+		{
+			"name": "ラストライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Lastrite.png"
+		},
+		{
+			"name": "アークライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Arclight.png"
+		},
+		{
+			"name": "アイビーエナ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Avywenna.png"
+		},
+		{
+			"name": "スノーシャイン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Snowshine.png"
+		},
+		{
+			"name": "ザイヒ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Xaihi.png"
+		},
+		{
+			"name": "アケクリ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Akekuri.png"
+		},
+		{
+			"name": "エステーラ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Estella.png"
+		},
+		{
+			"name": "フローライト",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Fluorite.png"
+		},
+		{
+			"name": "タンタン",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Tangtang.png"
+		},
+		{
+			"name": "ロッシ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign2/assets/img/icon/Rossi.png"
+		}
+	]
+}
