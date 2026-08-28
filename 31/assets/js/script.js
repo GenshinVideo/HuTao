@@ -1,6 +1,8 @@
 const FOOD_IDS = [81790, 81791, 81792];
 const PROXY_URL = "https://genshin-proxy.genshin31.workers.dev/";
 const BASE_URL = "https://picks-cdn.dirigio.jp/cache";
+const CACHE_TTL_MS = 10 * 60 * 1000;
+const RELOAD_COOLDOWN_MS = 10000;
 
 const PREFECTURES_DATA = [
   { value: "1", label: "北海道", prefectures: [{ value: "1", label: "北海道" }] },
@@ -89,11 +91,65 @@ const PREFECTURES_DATA = [
 ];
 
 const searchForm = document.getElementById("search-form");
+const reloadBtn = document.getElementById("reload-btn");
+const cacheInfoContainer = document.getElementById("cache-info");
 const tbody = document.getElementById("stock-tbody");
 const cardContainer = document.getElementById("card-container");
 const tableContainer = document.getElementById("table-container");
 const messageContainer = document.getElementById("message-container");
 const loading = document.getElementById("loading");
+
+let reloadTimer = null;
+
+const DB_NAME = "GenshinStockDB";
+const DB_VERSION = 1;
+const STORE_NAME = "stock_cache";
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    request.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        db.createObjectStore(STORE_NAME);
+      }
+    };
+    request.onsuccess = (e) => resolve(e.target.result);
+    request.onerror = (e) => reject(e.target.error);
+  });
+}
+
+async function getIDBItem(key) {
+  try {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, "readonly");
+      const store = tx.objectStore(STORE_NAME);
+      const req = store.get(key);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  } catch (e) {
+    console.error("IndexedDB Read Error:", e);
+    return null;
+  }
+}
+
+async function setIDBItem(key, value) {
+  try {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, "readwrite");
+      const store = tx.objectStore(STORE_NAME);
+      const req = store.put(value, key);
+      req.onsuccess = () => resolve(true);
+      req.onerror = () => reject(req.error);
+    });
+  } catch (e) {
+    console.error("IndexedDB Write Error:", e);
+    return false;
+  }
+}
 
 function setupCustomDropdown(containerId, options, onSelectCallback) {
   const container = document.getElementById(containerId);
@@ -161,7 +217,11 @@ function initDropdowns() {
     dateOptions.push({ value: timestamp, label: label });
   }
 
-  setupCustomDropdown("dropdown-date", dateOptions);
+  setupCustomDropdown("dropdown-date", dateOptions, (selectedDate) => {
+    checkAndDisplayCacheStatus(selectedDate.value);
+  });
+
+  checkAndDisplayCacheStatus(dateOptions[0].value);
 }
 
 function updatePrefectures(regionValue) {
@@ -174,6 +234,67 @@ function updatePrefectures(regionValue) {
     prefContainer.querySelector('input[type="hidden"]').value = prefOptions[0].value;
 
     setupCustomDropdown("dropdown-pref", prefOptions);
+  }
+}
+
+async function getCachedStockData(timestamp) {
+  const cachedAt = await getIDBItem(`GI31_${timestamp}_fetched_at`);
+  const cachedAtMs = await getIDBItem(`GI31_${timestamp}_fetched_at_ms`);
+
+  if (!cachedAt || !cachedAtMs) return null;
+
+  const nowMs = Date.now();
+  if (nowMs - cachedAtMs > CACHE_TTL_MS) {
+    console.log(`[Cache Expired] 10分以上経過したため再取得します (${timestamp})`);
+    return null;
+  }
+
+  const resultData = {};
+  for (const foodId of FOOD_IDS) {
+    const key = `GI31_${timestamp}_${foodId}`;
+    const rawData = await getIDBItem(key);
+
+    if (!rawData) {
+      return null;
+    }
+    resultData[foodId] = rawData;
+  }
+
+  return {
+    fetchedAt: cachedAt,
+    dataMap: resultData,
+  };
+}
+
+async function setCachedStockData(timestamp, dataMap) {
+  const now = new Date();
+  const timeString = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
+  const nowMs = now.getTime();
+
+  for (const foodId of FOOD_IDS) {
+    const key = `GI31_${timestamp}_${foodId}`;
+    const dataToSave = dataMap[foodId] || [];
+    await setIDBItem(key, dataToSave);
+  }
+
+  await setIDBItem(`GI31_${timestamp}_fetched_at`, timeString);
+  await setIDBItem(`GI31_${timestamp}_fetched_at_ms`, nowMs);
+  return timeString;
+}
+
+async function checkAndDisplayCacheStatus(timestamp) {
+  const cachedAt = await getIDBItem(`GI31_${timestamp}_fetched_at`);
+  const cachedAtMs = await getIDBItem(`GI31_${timestamp}_fetched_at_ms`);
+
+  if (cachedAt && cachedAtMs) {
+    const isExpired = Date.now() - cachedAtMs > CACHE_TTL_MS;
+    if (isExpired) {
+      cacheInfoContainer.textContent = `保存データは10分以上前です (${cachedAt} 保存 / 検索時に最新化します)`;
+    } else {
+      cacheInfoContainer.textContent = `取得済みデータ (${cachedAt} 保存)`;
+    }
+  } else {
+    cacheInfoContainer.textContent = "未取得のデータです（検索時に自動取得します）";
   }
 }
 
@@ -207,6 +328,7 @@ function renderStockBadge(stockItem) {
 function mergeShopData(e, t, n) {
   const r = new Map();
   [e, t, n].forEach((list) => {
+    if (!Array.isArray(list)) return;
     list.forEach((item) => {
       if (item && item.shop && !r.has(item.shop.id)) {
         r.set(item.shop.id, item.shop);
@@ -217,7 +339,7 @@ function mergeShopData(e, t, n) {
   return Array.from(r.entries()).map(([shopId, shop]) => {
     return {
       shop: shop,
-      stocks: [e.find((item) => item && item.shop && item.shop.id === shopId), t.find((item) => item && item.shop && item.shop.id === shopId), n.find((item) => item && item.shop && item.shop.id === shopId)],
+      stocks: [(e || []).find((item) => item && item.shop && item.shop.id === shopId), (t || []).find((item) => item && item.shop && item.shop.id === shopId), (n || []).find((item) => item && item.shop && item.shop.id === shopId)],
     };
   });
 }
@@ -230,8 +352,31 @@ function filterActiveEventShops(shopList) {
   });
 }
 
-async function fetchStockData(e) {
-  e.preventDefault();
+function startReloadCooldown() {
+  reloadBtn.disabled = true;
+  reloadBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+  let remainingSeconds = RELOAD_COOLDOWN_MS / 1000;
+  const originalText = reloadBtn.textContent;
+  reloadBtn.textContent = `再試行 (${remainingSeconds}s)`;
+
+  if (reloadTimer) clearInterval(reloadTimer);
+
+  reloadTimer = setInterval(() => {
+    remainingSeconds--;
+    if (remainingSeconds <= 0) {
+      clearInterval(reloadTimer);
+      reloadBtn.disabled = false;
+      reloadBtn.classList.remove("opacity-50", "cursor-not-allowed");
+      reloadBtn.textContent = originalText;
+    } else {
+      reloadBtn.textContent = `再試行 (${remainingSeconds}s)`;
+    }
+  }, 1000);
+}
+
+async function fetchStockData(e, isForceReload = false) {
+  if (e) e.preventDefault();
 
   const selectedPref = document.getElementById("pref-input").value;
   const timestamp = document.getElementById("date-input").value;
@@ -245,31 +390,56 @@ async function fetchStockData(e) {
   cardContainer.innerHTML = "";
 
   try {
-    const safeFetchJson = async (targetUrl) => {
-      try {
-        const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
-        const res = await fetch(proxyApiUrl);
-        const text = await res.text();
+    let stockDataMap = {};
+    let fetchedAtStr = "";
 
-        if (text.trim().startsWith("<")) {
-          console.error("サーバーからXML/HTMLエラーが返されました:", targetUrl, text);
+    const cacheResult = !isForceReload ? await getCachedStockData(timestamp) : null;
+
+    if (cacheResult) {
+      console.log(`[Cache Hit] 有効期限内のキャッシュ（IndexedDB）を使用します (${timestamp})`);
+      stockDataMap = cacheResult.dataMap;
+      fetchedAtStr = cacheResult.fetchedAt;
+    } else {
+      console.log(`[Worker Fetch] 最新データを Worker 経由で取得します (${timestamp})`);
+
+      const safeFetchJson = async (targetUrl) => {
+        try {
+          const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
+          const res = await fetch(proxyApiUrl);
+          const text = await res.text();
+
+          if (text.trim().startsWith("<")) {
+            console.error("XML/HTMLエラーが返されました:", targetUrl);
+            return [];
+          }
+
+          return JSON.parse(text);
+        } catch (err) {
+          console.error("Fetch Error:", targetUrl, err);
           return [];
         }
+      };
 
-        return JSON.parse(text);
-      } catch (err) {
-        console.error("Fetch/Parse Error:", targetUrl, err);
-        return [];
+      const results = await Promise.all([safeFetchJson(`${BASE_URL}/foods_81790_stocks_pickup_time=${timestamp}.json`), safeFetchJson(`${BASE_URL}/foods_81791_stocks_pickup_time=${timestamp}.json`), safeFetchJson(`${BASE_URL}/foods_81792_stocks_pickup_time=${timestamp}.json`)]);
+
+      stockDataMap = {
+        81790: results[0],
+        81791: results[1],
+        81792: results[2],
+      };
+
+      fetchedAtStr = await setCachedStockData(timestamp, stockDataMap);
+
+      if (isForceReload) {
+        startReloadCooldown();
       }
-    };
-
-    const requests = FOOD_IDS.map((id) => safeFetchJson(`${BASE_URL}/foods_${id}_stocks_pickup_time=${timestamp}.json`));
-
-    const [data81790, data81791, data81792] = await Promise.all(requests);
-
-    if (data81790.length === 0 && data81791.length === 0 && data81792.length === 0) {
-      console.warn("すべてのリクエストが空、またはエラーレスポンスでした。指定したタイムスタンプのデータが存在しない可能性があります。");
     }
+
+    cacheInfoContainer.textContent = `取得済みデータ (${fetchedAtStr} 保存)`;
+
+    const data81790 = stockDataMap[81790] || [];
+    const data81791 = stockDataMap[81791] || [];
+    const data81792 = stockDataMap[81792] || [];
 
     const mergedData = mergeShopData(data81790, data81791, data81792);
     const validShops = filterActiveEventShops(mergedData);
@@ -340,5 +510,7 @@ async function fetchStockData(e) {
   }
 }
 
-searchForm.addEventListener("submit", fetchStockData);
+searchForm.addEventListener("submit", (e) => fetchStockData(e, false));
+reloadBtn.addEventListener("click", (e) => fetchStockData(e, true));
+
 initDropdowns();
