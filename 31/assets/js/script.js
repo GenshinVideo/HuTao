@@ -1,5 +1,5 @@
 const FOOD_IDS = [81790, 81791, 81792];
-const PROXY_URL = "https://genshin-proxy.genshin31.workers.dev/";
+const PROXY_URL = "https://genshin31.vercel.app/api/proxy";
 const BASE_URL = "https://picks-cdn.dirigio.jp/cache";
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const RELOAD_COOLDOWN_MS = 10000;
