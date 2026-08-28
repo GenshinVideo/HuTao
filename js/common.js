@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     HSR: "https://sdk.hoyoverse.com/hkrpg/announcement/index.html?game_biz=hkrpg_global&bundle_id=hkrpg_global&game=hkrpg&platform=pc&uid=100000000&level=100&region=prod_official_asia&lang=ja#/",
     ZZZ: "https://sdk.hoyoverse.com/nap/announcement/index.html?game_biz=nap_global&bundle_id=nap_global&game=nap&platform=pc&uid=1000000000&level=100&region=prod_gf_jp&lang=ja#/",
     HI3: "https://sdk.hoyoverse.com/bh3/announcement/index.html?game_biz=bh3_global&bundle_id=bh3_jp&game=bh3&platform=pc&uid=10000000&level=100&region=jp01&lang=ja#/",
+    HI3: "https://sdk.hoyoverse.com/bh3/announcement/index.html?game_biz=bh3_global&bundle_id=bh3_jp&game=bh3&platform=pc&uid=10000000&level=100&region=jp01&lang=ja#/",
+    EF: "https://ef-webview.gryphline.com/page/game_bulletin?platform=Windows&channel=6&lang=ja-jp&server=2&subChannel=801",
     Material: "Material/",
     Resource: "Resource/",
     AutoSign: "AutoSign/",
@@ -73,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
     Gallery: "Gallery/",
     ChronoHook: "ChronoHook/",
     ClockWidget: "ClockWidget/",
-    FontGenerator: "FontGenerator/"
+    FontGenerator: "FontGenerator/",
+    31: "31/",
   };
 
   const params = new URLSearchParams(window.location.search);
