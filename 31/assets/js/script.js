@@ -1,6 +1,5 @@
+const PROXY_URL = "https://genshin312.vercel.app/api/proxy";
 const FOOD_IDS = [81790, 81791, 81792];
-const PROXY_URL = "https://genshin31.vercel.app/api/proxy";
-const BASE_URL = "https://picks-cdn.dirigio.jp/cache";
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const RELOAD_COOLDOWN_MS = 10000;
 
@@ -402,25 +401,29 @@ async function fetchStockData(e, isForceReload = false) {
     } else {
       console.log(`[Worker Fetch] 最新データを Worker 経由で取得します (${timestamp})`);
 
-      const safeFetchJson = async (targetUrl) => {
+      const safeFetchJson = async (foodId) => {
         try {
-          const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
+          const proxyApiUrl =
+            `${PROXY_URL}?food=${encodeURIComponent(foodId)}&timestamp=${encodeURIComponent(timestamp)}`;
+
           const res = await fetch(proxyApiUrl);
           const text = await res.text();
 
           if (text.trim().startsWith("<")) {
-            console.error("XML/HTMLエラーが返されました:", targetUrl);
+            console.error("XML/HTMLエラーが返されました:", foodId);
             return [];
           }
 
           return JSON.parse(text);
         } catch (err) {
-          console.error("Fetch Error:", targetUrl, err);
+          console.error("Fetch Error:", foodId, err);
           return [];
         }
       };
 
-      const results = await Promise.all([safeFetchJson(`${BASE_URL}/foods_81790_stocks_pickup_time=${timestamp}.json`), safeFetchJson(`${BASE_URL}/foods_81791_stocks_pickup_time=${timestamp}.json`), safeFetchJson(`${BASE_URL}/foods_81792_stocks_pickup_time=${timestamp}.json`)]);
+      const results = await Promise.all(
+        FOOD_IDS.map((foodId) => safeFetchJson(foodId))
+      );
 
       stockDataMap = {
         81790: results[0],
