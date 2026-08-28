@@ -1,42 +1,119 @@
 const FOOD_IDS = [81790, 81791, 81792];
-const BASE_URL = 'https://picks-cdn.dirigio.jp/cache';
+const PROXY_URL = "https://31.genshin31.workers.dev/";
+const BASE_URL = "https://picks-cdn.dirigio.jp/cache";
 
 const PREFECTURES_DATA = [
   { value: "1", label: "北海道", prefectures: [{ value: "1", label: "北海道" }] },
-  { value: "2", label: "東北", prefectures: [{ value: "2", label: "青森県" }, { value: "3", label: "岩手県" }, { value: "4", label: "宮城県" }, { value: "5", label: "秋田県" }, { value: "6", label: "山形県" }, { value: "7", label: "福島県" }] },
-  { value: "3", label: "関東", prefectures: [{ value: "8", label: "茨城県" }, { value: "9", label: "栃木県" }, { value: "10", label: "群馬県" }, { value: "11", label: "埼玉県" }, { value: "12", label: "千葉県" }, { value: "13", label: "東京都" }, { value: "14", label: "神奈川県" }] },
-  { value: "4", label: "中部", prefectures: [{ value: "15", label: "新潟県" }, { value: "16", label: "富山県" }, { value: "17", label: "石川県" }, { value: "18", label: "福井県" }, { value: "19", label: "山梨県" }, { value: "20", label: "長野県" }, { value: "21", label: "岐阜県" }, { value: "22", label: "静岡県" }, { value: "23", label: "愛知県" }] },
-  { value: "5", label: "近畿", prefectures: [{ value: "24", label: "三重県" }, { value: "25", label: "滋賀県" }, { value: "26", label: "京都府" }, { value: "27", label: "大阪府" }, { value: "28", label: "兵庫県" }, { value: "29", label: "奈良県" }, { value: "30", label: "和歌山県" }] },
-  { value: "6", label: "中国・四国", prefectures: [{ value: "31", label: "鳥取県" }, { value: "32", label: "島根県" }, { value: "33", label: "岡山県" }, { value: "34", label: "広島県" }, { value: "35", label: "山口県" }, { value: "36", label: "徳島県" }, { value: "37", label: "香川県" }, { value: "38", label: "愛媛県" }, { value: "39", label: "高知県" }] },
-  { value: "7", label: "九州・沖縄", prefectures: [{ value: "40", label: "福岡県" }, { value: "41", label: "佐賀県" }, { value: "42", label: "長崎県" }, { value: "43", label: "熊本県" }, { value: "44", label: "大分県" }, { value: "45", label: "宮崎県" }, { value: "46", label: "鹿児島県" }, { value: "47", label: "沖縄県" }] }
+  {
+    value: "2",
+    label: "東北",
+    prefectures: [
+      { value: "2", label: "青森県" },
+      { value: "3", label: "岩手県" },
+      { value: "4", label: "宮城県" },
+      { value: "5", label: "秋田県" },
+      { value: "6", label: "山形県" },
+      { value: "7", label: "福島県" },
+    ],
+  },
+  {
+    value: "3",
+    label: "関東",
+    prefectures: [
+      { value: "8", label: "茨城県" },
+      { value: "9", label: "栃木県" },
+      { value: "10", label: "群馬県" },
+      { value: "11", label: "埼玉県" },
+      { value: "12", label: "千葉県" },
+      { value: "13", label: "東京都" },
+      { value: "14", label: "神奈川県" },
+    ],
+  },
+  {
+    value: "4",
+    label: "中部",
+    prefectures: [
+      { value: "15", label: "新潟県" },
+      { value: "16", label: "富山県" },
+      { value: "17", label: "石川県" },
+      { value: "18", label: "福井県" },
+      { value: "19", label: "山梨県" },
+      { value: "20", label: "長野県" },
+      { value: "21", label: "岐阜県" },
+      { value: "22", label: "静岡県" },
+      { value: "23", label: "愛知県" },
+    ],
+  },
+  {
+    value: "5",
+    label: "近畿",
+    prefectures: [
+      { value: "24", label: "三重県" },
+      { value: "25", label: "滋賀県" },
+      { value: "26", label: "京都府" },
+      { value: "27", label: "大阪府" },
+      { value: "28", label: "兵庫県" },
+      { value: "29", label: "奈良県" },
+      { value: "30", label: "和歌山県" },
+    ],
+  },
+  {
+    value: "6",
+    label: "中国・四国",
+    prefectures: [
+      { value: "31", label: "鳥取県" },
+      { value: "32", label: "島根県" },
+      { value: "33", label: "岡山県" },
+      { value: "34", label: "広島県" },
+      { value: "35", label: "山口県" },
+      { value: "36", label: "徳島県" },
+      { value: "37", label: "香川県" },
+      { value: "38", label: "愛媛県" },
+      { value: "39", label: "高知県" },
+    ],
+  },
+  {
+    value: "7",
+    label: "九州・沖縄",
+    prefectures: [
+      { value: "40", label: "福岡県" },
+      { value: "41", label: "佐賀県" },
+      { value: "42", label: "長崎県" },
+      { value: "43", label: "熊本県" },
+      { value: "44", label: "大分県" },
+      { value: "45", label: "宮崎県" },
+      { value: "46", label: "鹿児島県" },
+      { value: "47", label: "沖縄県" },
+    ],
+  },
 ];
 
-const searchForm = document.getElementById('search-form');
-const tbody = document.getElementById('stock-tbody');
-const cardContainer = document.getElementById('card-container');
-const tableContainer = document.getElementById('table-container');
-const messageContainer = document.getElementById('message-container');
-const loading = document.getElementById('loading');
+const searchForm = document.getElementById("search-form");
+const tbody = document.getElementById("stock-tbody");
+const cardContainer = document.getElementById("card-container");
+const tableContainer = document.getElementById("table-container");
+const messageContainer = document.getElementById("message-container");
+const loading = document.getElementById("loading");
 
 function setupCustomDropdown(containerId, options, onSelectCallback) {
   const container = document.getElementById(containerId);
-  const btn = container.querySelector('.dropdown-btn');
-  const textSpan = container.querySelector('.selected-text');
-  const menu = container.querySelector('.dropdown-menu');
+  const btn = container.querySelector(".dropdown-btn");
+  const textSpan = container.querySelector(".selected-text");
+  const menu = container.querySelector(".dropdown-menu");
   const hiddenInput = container.querySelector('input[type="hidden"]');
 
-  menu.innerHTML = '';
+  menu.innerHTML = "";
   options.forEach((opt, idx) => {
-    const li = document.createElement('li');
-    li.className = 'px-3 py-2 hover:bg-pink-50 cursor-pointer transition-colors';
+    const li = document.createElement("li");
+    li.className = "px-3 py-2 hover:bg-pink-50 cursor-pointer transition-colors";
     li.textContent = opt.label;
     li.dataset.value = opt.value;
 
-    li.addEventListener('click', (e) => {
+    li.addEventListener("click", (e) => {
       e.stopPropagation();
       textSpan.textContent = opt.label;
       hiddenInput.value = opt.value;
-      menu.classList.add('hidden');
+      menu.classList.add("hidden");
       if (onSelectCallback) onSelectCallback(opt);
     });
 
@@ -50,19 +127,19 @@ function setupCustomDropdown(containerId, options, onSelectCallback) {
 
   btn.onclick = (e) => {
     e.stopPropagation();
-    document.querySelectorAll('.dropdown-menu').forEach(m => {
-      if (m !== menu) m.classList.add('hidden');
+    document.querySelectorAll(".dropdown-menu").forEach((m) => {
+      if (m !== menu) m.classList.add("hidden");
     });
-    menu.classList.toggle('hidden');
+    menu.classList.toggle("hidden");
   };
 }
 
-document.addEventListener('click', () => {
-  document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown-menu").forEach((m) => m.classList.add("hidden"));
 });
 
 function initDropdowns() {
-  setupCustomDropdown('dropdown-region', PREFECTURES_DATA, (selectedRegion) => {
+  setupCustomDropdown("dropdown-region", PREFECTURES_DATA, (selectedRegion) => {
     updatePrefectures(selectedRegion.value);
   });
 
@@ -76,7 +153,7 @@ function initDropdowns() {
   const dateOptions = [];
 
   for (let i = 0; i < TOTAL_DAYS; i++) {
-    const timestamp = BASE_TIMESTAMP + (i * ONE_DAY_SECONDS);
+    const timestamp = BASE_TIMESTAMP + i * ONE_DAY_SECONDS;
     const currentDate = new Date(startDate);
     currentDate.setDate(startDate.getDate() + i);
 
@@ -84,19 +161,19 @@ function initDropdowns() {
     dateOptions.push({ value: timestamp, label: label });
   }
 
-  setupCustomDropdown('dropdown-date', dateOptions);
+  setupCustomDropdown("dropdown-date", dateOptions);
 }
 
 function updatePrefectures(regionValue) {
-  const region = PREFECTURES_DATA.find(r => r.value === regionValue);
+  const region = PREFECTURES_DATA.find((r) => r.value === regionValue);
   if (region) {
-    const prefOptions = region.prefectures.map(p => ({ value: p.label, label: p.label }));
-    
-    const prefContainer = document.getElementById('dropdown-pref');
-    prefContainer.querySelector('.selected-text').textContent = prefOptions[0].label;
+    const prefOptions = region.prefectures.map((p) => ({ value: p.label, label: p.label }));
+
+    const prefContainer = document.getElementById("dropdown-pref");
+    prefContainer.querySelector(".selected-text").textContent = prefOptions[0].label;
     prefContainer.querySelector('input[type="hidden"]').value = prefOptions[0].value;
 
-    setupCustomDropdown('dropdown-pref', prefOptions);
+    setupCustomDropdown("dropdown-pref", prefOptions);
   }
 }
 
@@ -129,8 +206,8 @@ function renderStockBadge(stockItem) {
 
 function mergeShopData(e, t, n) {
   const r = new Map();
-  [e, t, n].forEach(list => {
-    list.forEach(item => {
+  [e, t, n].forEach((list) => {
+    list.forEach((item) => {
       if (item && item.shop && !r.has(item.shop.id)) {
         r.set(item.shop.id, item.shop);
       }
@@ -140,17 +217,13 @@ function mergeShopData(e, t, n) {
   return Array.from(r.entries()).map(([shopId, shop]) => {
     return {
       shop: shop,
-      stocks: [
-        e.find(item => item && item.shop && item.shop.id === shopId),
-        t.find(item => item && item.shop && item.shop.id === shopId),
-        n.find(item => item && item.shop && item.shop.id === shopId)
-      ]
+      stocks: [e.find((item) => item && item.shop && item.shop.id === shopId), t.find((item) => item && item.shop && item.shop.id === shopId), n.find((item) => item && item.shop && item.shop.id === shopId)],
     };
   });
 }
 
 function filterActiveEventShops(shopList) {
-  return shopList.filter(item => {
+  return shopList.filter((item) => {
     const isShopActive = item.shop && item.shop.active !== 0;
     const hasEvent60 = item.shop && Array.isArray(item.shop.joined_event_ids) && item.shop.joined_event_ids.includes(60);
     return isShopActive && hasEvent60;
@@ -160,29 +233,43 @@ function filterActiveEventShops(shopList) {
 async function fetchStockData(e) {
   e.preventDefault();
 
-  const selectedPref = document.getElementById('pref-input').value;
-  const timestamp = document.getElementById('date-input').value;
+  const selectedPref = document.getElementById("pref-input").value;
+  const timestamp = document.getElementById("date-input").value;
 
-  loading.classList.remove('hidden');
-  messageContainer.classList.add('hidden');
-  tableContainer.classList.add('hidden');
-  cardContainer.classList.add('hidden');
-  
-  tbody.innerHTML = '';
-  cardContainer.innerHTML = '';
+  loading.classList.remove("hidden");
+  messageContainer.classList.add("hidden");
+  tableContainer.classList.add("hidden");
+  cardContainer.classList.add("hidden");
+
+  tbody.innerHTML = "";
+  cardContainer.innerHTML = "";
 
   try {
-    const requests = FOOD_IDS.map(id =>
-      fetch(`${BASE_URL}/foods_${id}_stocks_pickup_time=${timestamp}.json`)
-        .then(res => res.ok ? res.json() : [])
-        .catch(() => [])
-    );
+    // 巨大JSON破損対策 + Worker（プロキシ）経由の安全取得関数
+    const safeFetchJson = async (targetUrl) => {
+      try {
+        const proxyApiUrl = `${PROXY_URL}?url=${encodeURIComponent(targetUrl)}`;
+        const res = await fetch(proxyApiUrl);
+        if (!res.ok) return [];
+        const text = await res.text();
+        if (!text.trim().endsWith("]")) {
+          console.warn("JSONデータが途中で切れています:", targetUrl);
+          return [];
+        }
+        return JSON.parse(text);
+      } catch (err) {
+        console.error("Fetch/Parse Error:", err);
+        return [];
+      }
+    };
+
+    const requests = FOOD_IDS.map((id) => safeFetchJson(`${BASE_URL}/foods_${id}_stocks_pickup_time=${timestamp}.json`));
 
     const [data81790, data81791, data81792] = await Promise.all(requests);
     const mergedData = mergeShopData(data81790, data81791, data81792);
     const validShops = filterActiveEventShops(mergedData);
 
-    const filteredByPref = validShops.filter(item => {
+    const filteredByPref = validShops.filter((item) => {
       if (item.shop && item.shop.parsed_address && item.shop.parsed_address.length > 0) {
         return item.shop.parsed_address[0].indexOf(selectedPref) > -1;
       }
@@ -190,19 +277,22 @@ async function fetchStockData(e) {
     });
 
     if (filteredByPref.length === 0) {
-      messageContainer.classList.remove('hidden');
-      messageContainer.textContent = '選択した都道府県では選択した受取日で原神コラボ商品を取り扱っていません。';
+      tableContainer.classList.add("hidden");
+      cardContainer.classList.add("hidden");
+      messageContainer.classList.remove("hidden");
+      messageContainer.textContent = "選択した都道府県では選択した受取日で原神コラボ商品を取り扱っていません。";
     } else {
-      tableContainer.classList.remove('hidden', 'md:block');
-      tableContainer.classList.add('hidden', 'md:block');
-      cardContainer.classList.remove('hidden', 'md:hidden');
-      cardContainer.classList.add('block', 'md:hidden');
+      messageContainer.classList.add("hidden");
 
-      filteredByPref.forEach(item => {
-        const cleanName = item.shop.name ? item.shop.name.replace(/サーティワンアイスクリーム\s*/g, '') : '';
-        
-        const tr = document.createElement('tr');
-        tr.className = 'border-b border-[#D9DEEB] hover:bg-gray-50 transition-colors text-center';
+      tableContainer.classList.remove("hidden");
+      cardContainer.classList.remove("hidden");
+
+      filteredByPref.forEach((item) => {
+        const cleanName = item.shop.name ? item.shop.name.replace(/サーティワンアイスクリーム\s*/g, "") : "";
+
+        // 1. PC用（テーブル）
+        const tr = document.createElement("tr");
+        tr.className = "border-b border-[#D9DEEB] hover:bg-gray-50 transition-colors text-center";
         tr.innerHTML = `
           <td class="p-3 text-left font-bold text-gray-900">${cleanName}</td>
           <td class="p-2">${renderStockBadge(item.stocks[0])}</td>
@@ -211,8 +301,9 @@ async function fetchStockData(e) {
         `;
         tbody.appendChild(tr);
 
-        const card = document.createElement('div');
-        card.className = 'bg-white p-4 rounded border border-[#D9DEEB] shadow-sm flex flex-col gap-2.5';
+        // 2. スマホ用（カード）
+        const card = document.createElement("div");
+        card.className = "bg-white p-4 rounded border border-[#D9DEEB] shadow-sm flex flex-col gap-2.5";
         card.innerHTML = `
           <div class="font-bold text-gray-900 text-sm border-b border-gray-100 pb-2">${cleanName}</div>
           <div class="flex justify-between items-center text-xs">
@@ -233,13 +324,12 @@ async function fetchStockData(e) {
     }
   } catch (err) {
     console.error(err);
-    messageContainer.classList.remove('hidden');
-    messageContainer.textContent = 'データの取得に失敗しました。時間をおいて再試行してください。';
-    messageContainer.classList.add('text-red-500');
+    messageContainer.classList.remove("hidden");
+    messageContainer.textContent = "データの取得に失敗しました。時間をおいて再試行してください。";
   } finally {
-    loading.classList.add('hidden');
+    loading.classList.add("hidden");
   }
 }
 
-searchForm.addEventListener('submit', fetchStockData);
+searchForm.addEventListener("submit", fetchStockData);
 initDropdowns();
