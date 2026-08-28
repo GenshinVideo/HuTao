@@ -71,3 +71,7 @@
 .bg-\[\#F9EEF8\] {
   background-color: rgba(249, 238, 248, 0.5) !important;
 }
+
+.dropdown-menu {
+  background-color: white !important;
+}
