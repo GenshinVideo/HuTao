@@ -487,7 +487,7 @@ async function fetchStockData(e, isForceReload = false) {
           <td class="p-2">${renderStockBadge(item.stocks[2])}</td>
         `;
         tr.addEventListener("click", () => {
-          window.open(directOrderUrl, "_blank", "noopener,noreferrer");
+          openExternalLink(directOrderUrl);
         });
         tbody.appendChild(tr);
 
@@ -512,7 +512,7 @@ async function fetchStockData(e, isForceReload = false) {
           </div>
         `;
         card.addEventListener("click", () => {
-          window.open(directOrderUrl, "_blank", "noopener,noreferrer");
+          openExternalLink(directOrderUrl);
         });
         cardContainer.appendChild(card);
       });
@@ -527,7 +527,7 @@ async function fetchStockData(e, isForceReload = false) {
 }
 
 function initOfficialPopup() {
-  if (localStorage.getItem("official_popup_closed") === "true") {
+  if (getCookie("official_popup_closed") === "true") {
     return;
   }
   const popup = document.createElement("div");
@@ -539,7 +539,8 @@ function initOfficialPopup() {
     </div>
     <p class="text-xs text-gray-600 leading-relaxed">
       現在、公式のモバイルオーダーは待ち時間なくアクセスができるようになっております。コラボ期間中は問題がない限り、当サイトも継続して公開致しますが、公式ページもあわせてご活用ください。<BR><BR>
-      なお、当サイトは公式の在庫情報を取得して表示しておりますが、最大で5分の遅延が生じる場合がございます。また、公式の在庫情報自体が実店舗の在庫情報と齟齬がある場合もございますので、正確な状況は注文ページよりご確認ください。
+      なお、当サイトは公式の在庫情報を取得して表示しておりますが、最大で5分の遅延が生じる場合がございます。また、公式の在庫情報自体が実店舗の在庫情報と齟齬がある場合もございますので、正確な状況は注文ページよりご確認ください。<BR>
+      店舗名をクリック（タップ）することで、公式の注文ページが開かれます。
     </p>
     <div class="flex flex-col gap-1.5 text-xs pt-2 border-t border-gray-100">
       <span class="font-semibold text-gray-500 text-[11px]">サーティワン公式リンク</span>
@@ -558,9 +559,31 @@ function initOfficialPopup() {
   document.body.appendChild(popup);
 
   document.getElementById("close-popup").addEventListener("click", () => {
-    localStorage.setItem("official_popup_closed", "true");
+    setCookie("official_popup_closed", "true", 24);
     popup.remove();
   });
+}
+
+function openExternalLink(url) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+function setCookie(name, value, hours) {
+  const expires = new Date(Date.now() + hours * 60 * 60 * 1000).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
 }
 
 searchForm.addEventListener("submit", (e) => fetchStockData(e, false));
