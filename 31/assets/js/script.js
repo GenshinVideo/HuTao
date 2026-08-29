@@ -1,4 +1,4 @@
-const PROXY_URL = "https://genshin31.vercel.app/api/proxy";
+const PROXY_URL = "https://genshin313.vercel.app/api/proxy";
 const FOOD_IDS = [81790, 81791, 81792];
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const RELOAD_COOLDOWN_MS = 10000;
