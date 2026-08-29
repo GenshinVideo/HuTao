@@ -1,4 +1,4 @@
-const PROXY_URL = "https://genshin312.vercel.app/api/proxy";
+const PROXY_URL = "https://genshin31.vercel.app/api/proxy";
 const FOOD_IDS = [81790, 81791, 81792];
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const RELOAD_COOLDOWN_MS = 10000;
@@ -473,21 +473,31 @@ async function fetchStockData(e, isForceReload = false) {
 
       filteredByPref.forEach((item) => {
         const cleanName = item.shop.name ? item.shop.name.replace(/サーティワンアイスクリーム\s*/g, "") : "";
-
+        const shopId = item.shop.id;
+        const directOrderUrl = `https://order.br31.jp/search/${shopId}`;
         const tr = document.createElement("tr");
-        tr.className = "border-b border-[#D9DEEB] hover:bg-gray-50 transition-colors text-center";
+        tr.className = "border-b border-[#D9DEEB] hover:bg-pink-50/50 transition-colors text-center cursor-pointer";
+        tr.title = "クリックして公式注文ページを開く";
         tr.innerHTML = `
-          <td class="p-3 text-left font-bold text-gray-900">${cleanName}</td>
+          <td class="p-3 text-left font-bold text-pink-600 hover:underline">
+            ${cleanName}
+          </td>
           <td class="p-2">${renderStockBadge(item.stocks[0])}</td>
           <td class="p-2">${renderStockBadge(item.stocks[1])}</td>
           <td class="p-2">${renderStockBadge(item.stocks[2])}</td>
         `;
+        tr.addEventListener("click", () => {
+          window.open(directOrderUrl, "_blank", "noopener,noreferrer");
+        });
         tbody.appendChild(tr);
 
         const card = document.createElement("div");
-        card.className = "bg-white p-4 rounded border border-[#D9DEEB] shadow-sm flex flex-col gap-2.5";
+        card.className = "bg-white p-4 rounded border border-[#D9DEEB] shadow-sm flex flex-col gap-2.5 hover:border-pink-300 hover:bg-pink-50/20 transition-all cursor-pointer";
+        card.title = "クリックして公式注文ページを開く";
         card.innerHTML = `
-          <div class="font-bold text-gray-900 text-sm border-b border-gray-100 pb-2">${cleanName}</div>
+          <div class="font-bold text-pink-600 hover:underline text-sm border-b border-gray-100 pb-2">
+            ${cleanName}
+          </div>
           <div class="flex justify-between items-center text-xs">
             <span class="text-gray-600">アイスクリームセット（スモール）</span>
             ${renderStockBadge(item.stocks[0])}
@@ -501,6 +511,9 @@ async function fetchStockData(e, isForceReload = false) {
             ${renderStockBadge(item.stocks[2])}
           </div>
         `;
+        card.addEventListener("click", () => {
+          window.open(directOrderUrl, "_blank", "noopener,noreferrer");
+        });
         cardContainer.appendChild(card);
       });
     }
@@ -513,7 +526,45 @@ async function fetchStockData(e, isForceReload = false) {
   }
 }
 
+function initOfficialPopup() {
+  if (localStorage.getItem("official_popup_closed") === "true") {
+    return;
+  }
+  const popup = document.createElement("div");
+  popup.className = "fixed bottom-4 right-4 z-50 max-w-sm bg-white border border-[#D9DEEB] rounded-lg shadow-xl p-4 flex flex-col gap-3 text-sm text-gray-800 animate-fade-in";
+  popup.innerHTML = `
+    <div class="flex justify-between items-start border-b border-gray-100 pb-2">
+      <span class="font-bold text-gray-900 text-xs tracking-wider bg-pink-100 text-pink-700 px-2 py-0.5 rounded">お知らせ</span>
+      <button id="close-popup" class="text-gray-400 hover:text-gray-600 text-xl font-bold leading-none px-1">&times;</button>
+    </div>
+    <p class="text-xs text-gray-600 leading-relaxed">
+      現在、公式のモバイルオーダーは待ち時間なくアクセスができるようになっております。コラボ期間中は問題がない限り、当サイトも継続して公開致しますが、公式ページもあわせてご活用ください。<BR><BR>
+      なお、当サイトは公式の在庫情報を取得して表示しておりますが、最大で5分の遅延が生じる場合がございます。また、公式の在庫情報自体が実店舗の在庫情報と齟齬がある場合もございますので、正確な状況は注文ページよりご確認ください。
+    </p>
+    <div class="flex flex-col gap-1.5 text-xs pt-2 border-t border-gray-100">
+      <span class="font-semibold text-gray-500 text-[11px]">サーティワン公式リンク</span>
+      <a href="https://www.br31.jp/contents/topics/260908_01.html" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline font-medium flex items-center gap-1">
+        <span>🔗</span> キャンペーン詳細ページ
+      </a>
+      <a href="https://order.br31.jp" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline font-medium flex items-center gap-1">
+        <span>🔗</span> モバイルオーダー
+      </a>
+      <a href="https://order.br31.jp/genshin_stock" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline font-medium flex items-center gap-1">
+        <span>🔗</span> 公式 在庫検索ページ
+      </a>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  document.getElementById("close-popup").addEventListener("click", () => {
+    localStorage.setItem("official_popup_closed", "true");
+    popup.remove();
+  });
+}
+
 searchForm.addEventListener("submit", (e) => fetchStockData(e, false));
 reloadBtn.addEventListener("click", (e) => fetchStockData(e, true));
 
 initDropdowns();
+initOfficialPopup();

@@ -75,3 +75,12 @@
 .dropdown-menu {
   background-color: white !important;
 }
+
+tr.hover\:bg-pink-50\/50:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+tr td:first-child {
+  color: #111827 !important;
+  text-decoration: none !important;
+}
