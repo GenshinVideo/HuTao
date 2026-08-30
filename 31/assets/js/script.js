@@ -403,8 +403,7 @@ async function fetchStockData(e, isForceReload = false) {
 
       const safeFetchJson = async (foodId) => {
         try {
-          const proxyApiUrl =
-            `${PROXY_URL}?food=${encodeURIComponent(foodId)}&timestamp=${encodeURIComponent(timestamp)}`;
+          const proxyApiUrl = `${PROXY_URL}?food=${encodeURIComponent(foodId)}&timestamp=${encodeURIComponent(timestamp)}`;
 
           const res = await fetch(proxyApiUrl);
           const text = await res.text();
@@ -421,9 +420,7 @@ async function fetchStockData(e, isForceReload = false) {
         }
       };
 
-      const results = await Promise.all(
-        FOOD_IDS.map((foodId) => safeFetchJson(foodId))
-      );
+      const results = await Promise.all(FOOD_IDS.map((foodId) => safeFetchJson(foodId)));
 
       stockDataMap = {
         81790: results[0],
@@ -526,21 +523,37 @@ async function fetchStockData(e, isForceReload = false) {
   }
 }
 
-function initOfficialPopup() {
-  if (getCookie("official_popup_closed") === "true") {
-    return;
-  }
+function showNoticeTriggerButton() {
+  if (document.getElementById("notice-trigger-btn")) return;
+
+  const btn = document.createElement("button");
+  btn.id = "notice-trigger-btn";
+  btn.className = "fixed top-4 right-4 z-40 bg-white border border-[#D9DEEB] text-pink-600 hover:bg-pink-50 font-bold text-xs px-3 py-1.5 rounded-full shadow-md transition-all flex items-center gap-1 cursor-pointer";
+  btn.innerHTML = `お知らせ`;
+
+  btn.addEventListener("click", () => {
+    btn.remove();
+    createOfficialPopup();
+  });
+
+  document.body.appendChild(btn);
+}
+
+function createOfficialPopup() {
+  if (document.getElementById("official-popup")) return;
+
   const popup = document.createElement("div");
+  popup.id = "official-popup";
   popup.className = "fixed bottom-4 right-4 z-50 max-w-sm bg-white border border-[#D9DEEB] rounded-lg shadow-xl p-4 flex flex-col gap-3 text-sm text-gray-800 animate-fade-in";
   popup.innerHTML = `
     <div class="flex justify-between items-start border-b border-gray-100 pb-2">
       <span class="font-bold text-gray-900 text-xs tracking-wider bg-pink-100 text-pink-700 px-2 py-0.5 rounded">お知らせ</span>
-      <button id="close-popup" class="text-gray-400 hover:text-gray-600 text-xl font-bold leading-none px-1">&times;</button>
+      <button id="close-popup" class="text-black-400 hover:text-black-600 text-xl font-bold leading-none px-1 cursor-pointer">&times;</button>
     </div>
     <p class="text-xs text-gray-600 leading-relaxed">
       現在、公式のモバイルオーダーは待ち時間なくアクセスができるようになっております。コラボ期間中は問題がない限り、当サイトも継続して公開致しますが、公式ページもあわせてご活用ください。<BR><BR>
-      なお、当サイトは公式の在庫情報を取得して表示しておりますが、最大で5分の遅延が生じる場合がございます。また、公式の在庫情報自体が実店舗の在庫情報と齟齬がある場合もございますので、正確な状況は注文ページよりご確認ください。<BR>
-      店舗名をクリック（タップ）することで、公式の注文ページが開かれます。
+      なお、当サイトは公式の在庫情報を取得して表示しておりますが、最大で5分の遅延が生じる場合がございます。また、<span class="text-pink-600 font-semibold">公式の在庫情報自体が実店舗の在庫情報と齟齬がある場合もございますので、正確な状況は注文ページよりご確認ください。<BR>
+      店舗名をクリック（タップ）することで、公式の注文ページが開かれます。</span>
     </p>
     <div class="flex flex-col gap-1.5 text-xs pt-2 border-t border-gray-100">
       <span class="font-semibold text-gray-500 text-[11px]">サーティワン公式リンク</span>
@@ -559,9 +572,18 @@ function initOfficialPopup() {
   document.body.appendChild(popup);
 
   document.getElementById("close-popup").addEventListener("click", () => {
-    setCookie("official_popup_closed", "true", 24);
+    setCookie("official_popup_closed", "true", 60);
     popup.remove();
+    showNoticeTriggerButton();
   });
+}
+
+function initOfficialPopup() {
+  if (getCookie("official_popup_closed") === "true") {
+    showNoticeTriggerButton();
+  } else {
+    createOfficialPopup();
+  }
 }
 
 function openExternalLink(url) {
@@ -574,15 +596,15 @@ function openExternalLink(url) {
   a.remove();
 }
 
-function setCookie(name, value, hours) {
-  const expires = new Date(Date.now() + hours * 60 * 60 * 1000).toUTCString();
+function setCookie(name, value, minutes) {
+  const expires = new Date(Date.now() + minutes * 60 * 1000).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
 }
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
   return null;
 }
 
