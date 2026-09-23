@@ -1422,14 +1422,14 @@ function CharacterSet() {
             <th id="right" class="${S_Id}" colspan="17"></th>\
           </tr>\
           <tr>\
-            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}" class="bgv ${S_VideoBG}" loading="lazy"></td>\
+            <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../assets/image/${S_CharaImg}" class="bgv ${S_VideoBG}" loading="lazy"></td>\
             <td width="12%" colspan="3" class="textleft">レベル</td>\
             <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
+            <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Character_EXP.webp"></td>\
             <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
+            <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Heros_Wit.webp"></td>\
             <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
-            <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+            <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
             <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
             <td width="4%" colspan="1"></td>\
             <td width="8%" colspan="2"></td>\
@@ -1437,30 +1437,30 @@ function CharacterSet() {
           <tr>\
             <td colspan="3" class="textleft">突破段階</td>\
             <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
+            <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
             <td colspan="2" class="textright"><span class="${S_Id} ${S_Element}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
+            <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Boss}.webp"></td>\
             <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
+            <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Local}.webp"></td>\
             <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+            <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Common}.webp"></td>\
             <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
-            <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+            <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
             <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
           </tr>\
           <tr>\
           <td colspan="1" rowspan="3" class="textleft">天賦</td>\
           <td colspan="2" class="textleft">通常攻撃</td>\
           <td colspan="4"><div id="${S_Id}_T1" class="noUiSlider"></div></td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T1_T1_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_${S_Common}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T1_T2_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Talent2}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_${S_Talent2}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T1_T3_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Crown_of_Insight.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T1_T4_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T1_T5_Volume"></span></td>\
           </tr>\
           <tr>\
@@ -1496,14 +1496,14 @@ function HideCharacterSet() {
             <th id="right" class="${S_Id} hides" colspan="17"></th>\
           </tr>\
           <tr style="display: none;">\
-          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../image/${S_CharaImg}"></td>\
+          <td width="12%" colspan="3" rowspan="5"><img height="200px" src="../assets/image/${S_CharaImg}"></td>\
           <td width="12%" colspan="3" class="textleft">レベル</td>\
           <td width="16%" colspan="4"><div id="${S_Id}_Ex" class="noUiSlider"></div></td>\
-          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Character_EXP.webp"></td>\
+          <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Character_EXP.webp"></td>\
           <td width="8%" colspan="2" class="textright"><span class="${S_Id} Ex_Volume" id="${S_Id}_Ex_Volume"></span></td>\
-          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Heros_Wit.webp"></td>\
+          <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Heros_Wit.webp"></td>\
           <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Book_Volume"></span> 点</td>\
-          <td width="4%" colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td width="4%" colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
           <td width="8%" colspan="2" class="textright"><span class="${S_Id}" id="${S_Id}_Ex_Mora_Volume"></span></td>\
           <td width="4%" colspan="1"></td>\
           <td width="8%" colspan="2"></td>\
@@ -1511,30 +1511,30 @@ function HideCharacterSet() {
         <tr style="display: none;">\
           <td colspan="3" class="textleft">突破段階</td>\
           <td colspan="4"><div id="${S_Id}_Pr" class="noUiSlider"></div></td>\
-          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
+          <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Element}_Gemstone.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Element}" id="${S_Id}_Pr_P1_Volume"></span> 点</td>\
-          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Boss}.webp"></td>\
+          <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Boss}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Boss}" id="${S_Id}_Pr_P2_Volume"></span> 個</td>\
-          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Local}.webp"></td>\
+          <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Local}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Local}" id="${S_Id}_Pr_P3_Volume"></span> 個</td>\
-          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+          <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_${S_Common}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Ascension" id="${S_Id}_Pr_P4_Volume"></span> 点</td>\
-          <td colspan="1"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td colspan="1"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Mora Ascension" id="${S_Id}_Pr_P5_Volume"></span></td>\
         </tr>\
         <tr style="display: none;">\
           <td colspan="1" rowspan="3" class="textleft">天賦</td>\
           <td colspan="2" class="textleft">通常攻撃</td>\
           <td colspan="4"><div id="${S_Id}_T1" class="noUiSlider"></div></td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Philosophies_of_${S_Talent1}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent1}" id="${S_Id}_T1_T1_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Common}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_${S_Common}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Common} Talent" id="${S_Id}_T1_T2_Volume"></span> 点</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_${S_Talent2}.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_${S_Talent2}.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} ${S_Talent2}" id="${S_Id}_T1_T3_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Crown_of_Insight.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Crown_of_Insight.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Crown_of_Insight" id="${S_Id}_T1_T4_Volume"></span> 個</td>\
-          <td colspan="1" rowspan="3"><img class="icon" src="../image/Small/Item/Item_Mora.webp"></td>\
+          <td colspan="1" rowspan="3"><img class="icon" src="../assets/image/Small/Item/Item_Mora.webp"></td>\
           <td colspan="2" class="textright"><span class="${S_Id} Mora Talent" id="${S_Id}_T1_T5_Volume"></span></td>\
         </tr>\
         <tr style="display: none;">\
@@ -2027,7 +2027,7 @@ function CreateInventoryInput(itemName) {
   return `
     <td width="8%" colspan="1">
       <div class="input-field"><i class="prefix">
-        <img class="miniicon" src="../image/Small/Item/Item_${itemName}.webp"></i><input id="${itemName}" value="0" type="number" class="validate">
+        <img class="miniicon" src="../assets/image/Small/Item/Item_${itemName}.webp"></i><input id="${itemName}" value="0" type="number" class="validate">
       </div>
    </td>`;
 }
@@ -2440,13 +2440,13 @@ function CalculatorSet() {
   return `
     <tr>
       <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
-      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_1}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
-      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_2}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
-      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_3}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
-      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_4}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
-      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_5}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
-      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_6}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
-      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../image/Small/Item/Item_${S_Check_1}${S_ItemName_7}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_1}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_2}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_3}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_4}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_5}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_6}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="3"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_Check_1}${S_ItemName_7}${S_Check_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_Check_3}${S_ItemName_7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
     </tr>
     <tr>
       <td width="8.6%" colspan="2" class="textleft">所持数</td>
@@ -2475,13 +2475,13 @@ function CalculatorSet2() {
   return `
     <tr>
       <td width="8.6%" colspan="2" class="textleft">合計必要数</td>
-      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_1}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
-      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
-      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_3}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
-      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_4}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
-      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_5}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
-      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_6}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
-      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../image/Small/Item/Item_${S_ItemName_7}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
+      ${S_ItemName_1 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_1}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__1}_Volume"></span>${S_ItemUnit_1}</td>` : ""}
+      ${S_ItemName_2 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_2}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__2}_Volume"></span>${S_ItemUnit_2}</td>` : ""}
+      ${S_ItemName_3 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_3}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__3}_Volume"></span>${S_ItemUnit_3}</td>` : ""}
+      ${S_ItemName_4 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_4}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__4}_Volume"></span>${S_ItemUnit_4}</td>` : ""}
+      ${S_ItemName_5 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_5}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__5}_Volume"></span>${S_ItemUnit_5}</td>` : ""}
+      ${S_ItemName_6 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_6}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__6}_Volume"></span>${S_ItemUnit_6}</td>` : ""}
+      ${S_ItemName_7 ? `<td width="4.3%" colspan="1" rowspan="5"><img class="icon" alt="" src="../assets/image/Small/Item/Item_${S_ItemName_7}.webp"></td><td width="8.6%" colspan="2" class="textright"><span class="Calculator ${S_ItemType}" id="${S_ItemIDs__7}_Volume"></span>${S_ItemUnit_7}</td>` : ""}
     </tr>
     <tr>
       <td width="8.6%" colspan="2" class="textleft">突破必要数</td>
