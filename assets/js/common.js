@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function (event) {
       event.preventDefault();
 
-      const linkValue = event.target.getAttribute("query-link") || event.target.getAttribute("data-link");
+      const linkValue = event.currentTarget.getAttribute("query-link") || event.currentTarget.getAttribute("data-link");
       if (!linkValue) return;
       const cleanedValue = linkValue.replace(/\/+$/, "");
       const currentUrl = new URL(window.location);
