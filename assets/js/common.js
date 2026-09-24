@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Sidenav内のリンククリック時の処理
-  [].slice.call(document.querySelectorAll(".sidenav a[href]"))
+  [].slice.call(document.querySelectorAll(".sidenav a[href]:not(.Query)"))
     .forEach(function (i) {
       i.addEventListener("click", function () {
         document.querySelector(".progress").style.display = "";
