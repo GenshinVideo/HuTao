@@ -106,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentUrl = new URL(window.location);
 
       history.replaceState(null, "", currentUrl.origin + currentUrl.pathname + "?" + cleanedValue);
+
+      if (queryToSrcMap[cleanedValue]) {
+        iframe.src = queryToSrcMap[cleanedValue];
+      }
     });
   });
 
