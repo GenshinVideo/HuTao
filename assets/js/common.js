@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Material: "Material/",
     HYVLauncherVideo: "../HYVLauncherVideo/",
     Resource: "Resource/",
+    ResourceArchive: "ResourceArchive/",
     AutoSign: "AutoSign/",
     AutoSign2: "AutoSign2/",
     Gallery: "Gallery/",
