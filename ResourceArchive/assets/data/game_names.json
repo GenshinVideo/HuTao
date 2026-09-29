@@ -1,0 +1,18 @@
+{
+  "hk4e_global/gopR6Cufr3": {
+    "name": "Genshin Impact",
+    "bg": "assets/videos/hk4e_global.mp4"
+  },
+  "hkrpg_global/4ziysqXOQ8": {
+    "name": "Honkai: Star Rail",
+    "bg": "assets/videos/hkrpg_global.mp4"
+  },
+  "nap_global/U5hbdsT9W7": {
+    "name": "Zenless Zone Zero",
+    "bg": "assets/videos/nap_global.mp4"
+  },
+  "bh3_global/g0mMIvshDb": {
+    "name": "Honkai Impact 3rd",
+    "bg": "assets/videos/bh3_global.mp4"
+  }
+}
