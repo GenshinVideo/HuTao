@@ -1,7 +1,7 @@
 {
 	"data": [
 		{
-			"count": "47"
+			"count": "54"
 		}
 	],
 	"list": [
@@ -66,6 +66,10 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Columbina.png"
 		},
 		{
+			"name": "ヴォジャニーツァ",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Vodyanitsa.png"
+		},
+		{
 			"name": "三月なのか",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/March_7th.png"
 		},
@@ -126,8 +130,16 @@
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hyacine.png"
 		},
 		{
+			"name": "ヒアンシー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Hyacine_2.png"
+		},
+		{
 			"name": "火花",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparxie.png"
+		},
+		{
+			"name": "火花",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Sparxie_2.png"
 		},
 		{
 			"name": "ニコ・デマラ",
@@ -184,6 +196,22 @@
 		{
 			"name": "アリア",
 			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Aria_2.png"
+		},
+		{
+			"name": "南宮羽",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Nangong_Yu.png"
+		},
+		{
+			"name": "ノルムー",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Norma.png"
+		},
+		{
+			"name": "レミエール",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Remielle.png"
+		},
+		{
+			"name": "レミエール",
+			"avatar": "https://raw.githubusercontent.com/GenshinVideo/HuTao/main/AutoSign/image/icon/Remielle_2.png"
 		},
 		{
 			"name": "「メッセージ」人形",
