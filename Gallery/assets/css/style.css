@@ -148,7 +148,7 @@ html, body {
 
 
 body, .Contents {
-  cursor: url('../../images/cursor/cursor_default.webp'), auto;
+  cursor: url('https://raw.githubusercontent.com/GenshinVideo/Assets/refs/heads/main/Gallery/images/cursor/cursor_default.webp'), auto;
 }
 
 /* 指カーソルにしたい全要素にまとめて指定 */
@@ -158,5 +158,5 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 [role="button"]:hover,
 [onclick]:hover {
-  cursor: url('../../images/cursor/cursor_pointer.png'), auto !important;
+  cursor: url('https://raw.githubusercontent.com/GenshinVideo/Assets/refs/heads/main/Gallery/images/cursor/cursor_pointer.png'), auto !important;
 }
