@@ -118,8 +118,8 @@ html, body {
 .gallery a {
   width: calc(10% - 3px);
   box-sizing: border-box;
-  margin-right: 3px;
-  margin-bottom: -5px;
+  margin-right: 1px;
+  margin-bottom: 1px;
 }
 .gallery a:last-child {
   margin-right: 0;
