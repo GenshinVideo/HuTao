@@ -1,4 +1,4 @@
-var Version = "20260712";
+var Version = "20261120";
 
 httpObj = new XMLHttpRequest();
 httpObj.open("get", "Material.json", true);
@@ -2084,6 +2084,7 @@ function SetInventoryList() {
     "Small_Lamp_Grass",
     "Calla_Lily",
     "Dandelion_Seed",
+    "Etherwing_Moth",
     "Jueyun_Chili",
     "Noctilucous_Jade",
     "Silk_Flower",
@@ -2132,7 +2133,6 @@ function SetInventoryList() {
     "Moonfall_Silver",
     "Winter_Icelea",
     "Pine_Amber",
-    "Etherwing_Moth",
     "Fairy_Wormwood",
     "Kristallfold",
     "Frostfairy_Flower",
@@ -2354,7 +2354,6 @@ function SetCalculatorList() {
       { name: "Frostfairy_Flower", unit: " 個" },
       { name: "Kristallfold", unit: " 個" },
       { name: "Fairy_Wormwood", unit: " 個" },
-      { name: "Etherwing_Moth", unit: " 個" },
       { name: "Pine_Amber", unit: " 個" },
       { name: "Winter_Icelea", unit: " 個" },
       { name: "Moonfall_Silver", unit: " 個" },
@@ -2394,6 +2393,8 @@ function SetCalculatorList() {
       { name: "Crystal_Marrow", unit: " 個" },
       { name: "Sakura_Bloom", unit: " 個" },
       { name: "Onikabuto", unit: " 個" },
+      { name: "Clearwater_Jade", unit: " 個" },
+      { name: "Cor_Lapis", unit: " 個" },
       { name: "Violetgrass", unit: " 個" },
       { name: "Starconch", unit: " 個" },
       { name: "Qingxin", unit: " 個" },
@@ -2401,8 +2402,7 @@ function SetCalculatorList() {
       { name: "Silk_Flower", unit: " 個" },
       { name: "Noctilucous_Jade", unit: " 個" },
       { name: "Jueyun_Chili", unit: " 個" },
-      { name: "Clearwater_Jade", unit: " 個" },
-      { name: "Cor_Lapis", unit: " 個" },
+      { name: "Etherwing_Moth", unit: " 個" },
       { name: "Dandelion_Seed", unit: " 個" },
       { name: "Calla_Lily", unit: " 個" },
       { name: "Small_Lamp_Grass", unit: " 個" },
@@ -2666,12 +2666,19 @@ function SetPatchNoteList() {
   CalEle.insertAdjacentHTML(
     "beforeend",
     "\
+<b>2026/11/20</b><BR>\
+更新。<BR>\
+・スネージナヤキャラクターの実装に対応<BR>\
+<BR>\
+既知の問題。<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@SlavesAgain』までお願いします。）<BR>\
+<BR><BR>\
 <b>2026/07/12</b><BR>\
 更新。<BR>\
 ・ニコ、プルーネ、サンドローネの実装に対応<BR>\
 <BR>\
 既知の問題。<BR>\
-・サイトのHtmlやJavaScriptの軽量化問題（協力者募集中『@SlavesAgain』までお願いします。）<BR>\
+・サイトのHtmlやJavaScriptの軽量化問題<BR>\
 <BR><BR>\
 <b>2026/03/07</b><BR>\
 更新。<BR>\
@@ -3438,7 +3445,7 @@ function OpenScript() {
   } else {
     if (!(localStorage.getItem("_Version") === Version)) {
       Load();
-      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20250903 to ver." + Version + "）\n・ニコ、プルーネ、サンドローネの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
+      alert("Honey Apricot - Material Calculator\n\n更新情報（ver.20260718 to ver." + Version + "）\n・スネージナヤキャラクターの実装に対応\n\n既知の問題。\n・サイトのHtmlやJavaScriptの軽量化問題");
     } else {
       Load();
     }
