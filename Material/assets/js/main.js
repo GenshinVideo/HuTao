@@ -25,6 +25,102 @@ function SetCharacterList() {
 
   S_VideoBGB = "";
 
+  // アナスターシャ
+  S_Id = "Anastasya";
+  S_JpName = "アナスターシャ・フョードロヴナ・スネージナヤ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Anastasya.webp";
+  S_Element = "Shivada_Jade";
+  S_Boss = "Shattered_Stability_Anchor";
+  S_Local = "Fairy_Wormwood";
+  S_Common = "Prime_Chimeric_Nexus";
+  S_Talent1 = "Charity";
+  S_Talent2 = "";
+  Checkmate();
+
+  // ダニカ
+  S_Id = "Danica";
+  S_JpName = "ダニカ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Danica.webp";
+  S_Element = "Vajrada_Amethyst";
+  S_Boss = "";
+  S_Local = "Flockingweed";
+  S_Common = "Ethereal_Crystalscale_Stone";
+  S_Talent1 = "Glory";
+  S_Talent2 = "Twisted_Withered_Branch";
+  Checkmate();
+
+  // ミティヤ
+  S_Id = "Mitya";
+  S_JpName = "ミティヤ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Mitya.webp";
+  S_Element = "Vajrada_Amethyst";
+  S_Boss = "Shattered_Stability_Anchor";
+  S_Local = "Kristallfold";
+  S_Common = "Prime_Chimeric_Nexus";
+  S_Talent1 = "Charity";
+  S_Talent2 = "Mask_of_the_Virtuous_Doctor";
+  Checkmate();
+
+  // バレリー
+  S_Id = "Valeriy";
+  S_JpName = "バレリー";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Valeriy.webp";
+  S_Element = "Vajrada_Amethyst";
+  S_Boss = "Severed_Tail_of_the_Sky_Roamer";
+  S_Local = "Fairy_Wormwood";
+  S_Common = "Ethereal_Crystalscale_Stone";
+  S_Talent1 = "Glory";
+  S_Talent2 = "Counterfeit_Resin";
+  Checkmate();
+
+  // ヴェスナ
+  S_Id = "Vesna";
+  S_JpName = "ヴェスナ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Vesna.webp";
+  S_Element = "Vayuda_Turquoise";
+  S_Boss = "Vagabonds_Cracked_Armor";
+  S_Local = "Golden_Fern";
+  S_Common = "Ethereal_Crystalscale_Stone";
+  S_Talent1 = "Glory";
+  S_Talent2 = "Profaned_Sprout";
+  Checkmate();
+
+  // ヴォジャニーツァ
+  S_Id = "Vodyanitsa";
+  S_JpName = "ヴォジャニーツァ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Vodyanitsa.webp";
+  S_Element = "Varunada_Lazurite";
+  S_Boss = "Unscorched_Blossom_Branch";
+  S_Local = "Frostfairy_Flower";
+  S_Common = "Prime_Chimeric_Nexus";
+  S_Talent1 = "Fortitude";
+  S_Talent2 = "Madmans_Restraint";
+  Checkmate();
+
+  // オデット
+  S_Id = "Odette";
+  S_JpName = "オデット";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Odette.webp";
+  S_Element = "Shivada_Jade";
+  S_Boss = "Unscorched_Blossom_Branch";
+  S_Local = "Frostfairy_Flower";
+  S_Common = "Ethereal_Crystalscale_Stone";
+  S_Talent1 = "Charity";
+  S_Talent2 = "Twisted_Withered_Branch";
+  Checkmate();
+
+  // アリョーシャ
+  S_Id = "Alyosha";
+  S_JpName = "アリョーシャ";
+  S_CharaImg = "Original/Character3/UI_Gacha_AvatarImg_Alyosha.webp";
+  S_Element = "Vajrada_Amethyst";
+  S_Boss = "Severed_Tail_of_the_Sky_Roamer";
+  S_Local = "Flockingweed";
+  S_Common = "Prime_Chimeric_Nexus";
+  S_Talent1 = "Fortitude";
+  S_Talent2 = "Elixir_of_the_Heretic";
+  Checkmate();
+
   // サンドローネ
   S_Id = "Sandrone";
   S_JpName = "サンドローネ";
@@ -1762,6 +1858,12 @@ function SetInventoryList() {
     "Tattered_Warrant",
     "Immaculate_Warrant",
     "Frost_Etched_Warrant",
+    "Ethereal_Glimmershard",
+    "Ethereal_Crystal",
+    "Ethereal_Crystalscale_Stone",
+    "Chimeric_Core",
+    "Symbiotic_Chimeric_Nucleus",
+    "Prime_Chimeric_Nexus",
   ];
   InventorySet(ItemNames);
   // 週ボス素材
@@ -1857,6 +1959,10 @@ function SetInventoryList() {
     "Remnant_of_the_Dreadwing",
     "Prismatic_Severed_Tail",
     "Plume_of_the_Fallen_Watcher",
+    "Unscorched_Blossom_Branch",
+    "Severed_Tail_of_the_Sky_Roamer",
+    "Vagabonds_Cracked_Armor",
+    "Shattered_Stability_Anchor",
   ];
   InventorySet(ItemNames);
   // Jewels
@@ -1956,6 +2062,15 @@ function SetInventoryList() {
     "Teachings_of_Vagrancy",
     "Guide_to_Vagrancy",
     "Philosophies_of_Vagrancy",
+    "Teachings_of_Charity",
+    "Guide_to_Charity",
+    "Philosophies_of_Charity",
+    "Teachings_of_Fortitude",
+    "Guide_to_Fortitude",
+    "Philosophies_of_Fortitude",
+    "Teachings_of_Glory",
+    "Guide_to_Glory",
+    "Philosophies_of_Glory",
     "Crown_of_Insight",
   ];
   InventorySet(ItemNames);
@@ -2018,6 +2133,11 @@ function SetInventoryList() {
     "Winter_Icelea",
     "Pine_Amber",
     "Etherwing_Moth",
+    "Fairy_Wormwood",
+    "Kristallfold",
+    "Frostfairy_Flower",
+    "Flockingweed",
+    "Golden_Fern",
   ];
   InventorySet(ItemNames);
   SetCalculatorList();
@@ -2097,6 +2217,10 @@ function SetCalculatorList() {
     S_Check_2 = "";
     S_Check_3 = "";
     const allItems = [
+      { name: "Shattered_Stability_Anchor", unit: " 個" },
+      { name: "Vagabonds_Cracked_Armor", unit: " 個" },
+      { name: "Severed_Tail_of_the_Sky_Roamer", unit: " 個" },
+      { name: "Unscorched_Blossom_Branch", unit: " 個" },
       { name: "Plume_of_the_Fallen_Watcher", unit: " 個" },
       { name: "Prismatic_Severed_Tail", unit: " 個" },
       { name: "Remnant_of_the_Dreadwing", unit: " 個" },
@@ -2169,6 +2293,8 @@ function SetCalculatorList() {
     CalEle = document.querySelector('th[id="C_Common_Material"]').parentElement;
     S_ItemType = "Common_Material";
     const allItems = [
+      { name: "Prime_Chimeric_Nexus", ids: "Chimeric_Core Symbiotic_Chimeric_Nucleus Prime_Chimeric_Nexus", unit: " 点" },
+      { name: "Ethereal_Crystalscale_Stone", ids: "Ethereal_Glimmershard Ethereal_Crystal Ethereal_Crystalscale_Stone", unit: " 点" },
       { name: "Frost_Etched_Warrant", ids: "Tattered_Warrant Immaculate_Warrant Frost_Etched_Warrant", unit: " 点" },
       { name: "Precision_Drive_Shaft", ids: "Broken_Drive_Shaft Reinforced_Drive_Shaft Precision_Drive_Shaft", unit: " 点" },
       { name: "Saurian_Crowned_Warriors_Golden_Whistle", ids: "Sentrys_Wooden_Whistle Warriors_Metal_Whistle Saurian_Crowned_Warriors_Golden_Whistle", unit: " 点" },
@@ -2223,6 +2349,11 @@ function SetCalculatorList() {
     S_Check_2 = "";
     S_Check_3 = "";
     const allItems = [
+      { name: "Golden_Fern", unit: " 個" },
+      { name: "Flockingweed", unit: " 個" },
+      { name: "Frostfairy_Flower", unit: " 個" },
+      { name: "Kristallfold", unit: " 個" },
+      { name: "Fairy_Wormwood", unit: " 個" },
       { name: "Etherwing_Moth", unit: " 個" },
       { name: "Pine_Amber", unit: " 個" },
       { name: "Winter_Icelea", unit: " 個" },
@@ -2310,6 +2441,9 @@ function SetCalculatorList() {
     S_Check_2 = "";
     S_Check_3 = "TLUM_";
     const allItems = [
+      { name: "Glory", unit: " 点" },
+      { name: "Fortitude", unit: " 点" },
+      { name: "Charity", unit: " 点" },
       { name: "Vagrancy", unit: " 点" },
       { name: "Elysium", unit: " 点" },
       { name: "Moonlight", unit: " 点" },
